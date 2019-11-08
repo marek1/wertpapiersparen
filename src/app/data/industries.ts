@@ -889,6 +889,12 @@ export const industries: Industry[] = [
             description: 'Klebstoffe',
             imageName: 'tape.svg',
             subIndustries: null
+          },
+          {
+            id: 171013,
+            description: 'Farben und Lacke',
+            imageName: 'drop-silhouette.svg',
+            subIndustries: null
           }
         ]
       },
