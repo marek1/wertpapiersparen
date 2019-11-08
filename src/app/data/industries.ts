@@ -1,10 +1,4 @@
-export interface Industry {
-  id: number;
-  description: string;
-  imageName?: string;
-  subIndustries: Industry[]|null;
-  includeIndustries?: number[];
-}
+import { Industry } from '../interfaces/industry';
 
 export const industries: Industry[] = [
   {
@@ -341,7 +335,8 @@ export const industries: Industry[] = [
             id: 111315,
             description: 'Benzin, Gas und Öl',
             imageName: 'fuel-station.svg',
-            subIndustries: null
+            subIndustries: null,
+            includeIndustries: [171310]
           }
         ]
       }
@@ -399,6 +394,24 @@ export const industries: Industry[] = [
             id: 121111,
             description: 'Automobilhersteller',
             imageName: 'car.svg',
+            subIndustries: null
+          },
+          {
+            id: 121112,
+            description: 'Motorrad- und Mofahersteller',
+            imageName: 'motorcycle.svg',
+            subIndustries: null
+          },
+          {
+            id: 121113,
+            description: 'Carsharing und Autovermietung',
+            imageName: 'carsharing.svg',
+            subIndustries: null
+          },
+          {
+            id: 121114,
+            description: 'Digitale Mobilitätslösungen',
+            imageName: 'programming.svg',
             subIndustries: null
           }
         ]
@@ -856,7 +869,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1710,
-        description: 'Werkstoffe (inkl. Stahl)',
+        description: 'Werkstoffe (inkl. Stahl) und Kunststoffe',
         imageName: 'beam.svg',
         subIndustries: [
           {
@@ -867,7 +880,7 @@ export const industries: Industry[] = [
           },
           {
             id: 171011,
-            description: 'Polymer',
+            description: 'Kunststoffe  (inkl. Polymer)',
             imageName: 'nano-technology.svg',
             subIndustries: null
           },
@@ -1080,7 +1093,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1911,
-        description: 'Büroausstatter',
+        description: 'Büroausstattung und Büromaterialien',
         imageName: 'desk.svg',
         subIndustries: [],
       },
