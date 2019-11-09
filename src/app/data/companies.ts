@@ -42,10 +42,18 @@ export const companies: Company[] = [
     isin: 'DE000A1EWWW0',
     wkn: 'A1EWWW',
     symbol: 'ADS.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Adidas ADR',
+        isin: 'US00687A1079'
+      }
+    ],
     current_indices: [Indices.DAX, Indices.EuroStoxx50],
     end_of_month_prices: adidasPrices,
     dividends: adidasDividends,
-    tags: ['sportartikel', 'sportkleidung']
+    tags: ['sportartikel', 'sportkleidung'],
+    responsibilityAttributes: []
   },
   {
     id: 1001,
@@ -78,10 +86,18 @@ export const companies: Company[] = [
     isin: 'DE0008404005',
     wkn: '840400',
     symbol: 'ALV.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Allianz S',
+        isin: 'US0188051017'
+      }
+    ],
     current_indices: [Indices.DAX, Indices.EuroStoxx50],
     end_of_month_prices: allianzPrices,
     dividends: allianzDividends,
-    tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung']
+    tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung'],
+    responsibilityAttributes: []
   },
   {
     id: 1002,
@@ -142,10 +158,18 @@ export const companies: Company[] = [
     isin: 'DE000BASF111',
     wkn: 'BASF11',
     symbol: 'BAS.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'BASF ADR',
+        isin: 'US0552625057'
+      }
+    ],
     current_indices: [Indices.DAX, Indices.EuroStoxx50],
     end_of_month_prices: basfPrices,
     dividends: basfDividends,
-    tags: ['Chemie', 'Spezialchemie', 'Industriechemikalien', 'Kunststoffe', 'Pflanzenschutzmittel', 'Öl', 'Gas']
+    tags: ['Chemie', 'Spezialchemie', 'Industriechemikalien', 'Kunststoffe', 'Pflanzenschutzmittel', 'Öl', 'Gas'],
+    responsibilityAttributes: []
   },
   {
     id: 1003,
@@ -195,10 +219,18 @@ export const companies: Company[] = [
     isin: 'DE000BAY0017',
     wkn: 'BAY001',
     symbol: 'BAYN.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Bayer ADR',
+        isin: 'US0727303028'
+      }
+    ],
     current_indices: [Indices.DAX, Indices.EuroStoxx50],
     end_of_month_prices: bayerPrices,
     dividends: bayerDividends,
-    tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie']
+    tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie'],
+    responsibilityAttributes: []
   },
   {
     id: 1004,
@@ -270,10 +302,13 @@ export const companies: Company[] = [
     isin: 'DE0005200000',
     wkn: '520000',
     symbol: 'BEI.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [],
     current_indices: [Indices.DAX],
     end_of_month_prices: beiersdorfPrices,
     dividends: beiersdorfDividends,
-    tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte.']
+    tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte'],
+    responsibilityAttributes: []
   },
   {
     id: 1005,
@@ -330,10 +365,18 @@ export const companies: Company[] = [
     isin: 'DE0005190003',
     wkn: '519000',
     symbol: 'BMW.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Beiersdorf ADR',
+        isin: 'US07724U1034'
+      }
+    ],
     current_indices: [Indices.DAX, Indices.EuroStoxx50],
     end_of_month_prices: bmwPrices,
     dividends: bmwDividends,
-    tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität']
+    tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität'],
+    responsibilityAttributes: []
   },
   {
     id: 1006,
@@ -375,10 +418,18 @@ export const companies: Company[] = [
     isin: 'DE0005439004',
     wkn: '543900',
     symbol: 'CON.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Continental AG  Bearer Shares',
+        isin: 'US2107712000'
+      }
+    ],
     current_indices: [Indices.DAX],
     end_of_month_prices: continentalPrices,
     dividends: continentalDividends,
-    tags: ['Reifen', 'Fahrzeugindustrie', 'Reifen', 'Bremssysteme', 'Fahrdynamikregelungen', 'Luftfedersysteme']
+    tags: ['Reifen', 'Fahrzeugindustrie', 'Reifen', 'Bremssysteme', 'Fahrdynamikregelungen', 'Luftfedersysteme'],
+    responsibilityAttributes: []
   },
   {
     id: 1007,
@@ -399,10 +450,18 @@ export const companies: Company[] = [
     isin: 'DE0006062144',
     wkn: '606214',
     symbol: '1COV.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'COVESTRO AG SP.ADR 1/2',
+        isin: 'US22304D2071'
+      }
+    ],
     current_indices: [Indices.DAX],
     end_of_month_prices: covestroPrices,
     dividends: covestroDividends,
-    tags: ['Polymerwerkstoffe', 'Polycarbonat', 'Klebstoffe', 'Lacke', 'Bindemittel']
+    tags: ['Polymerwerkstoffe', 'Polycarbonat', 'Klebstoffe', 'Lacke', 'Bindemittel'],
+    responsibilityAttributes: []
   }
 ];
 

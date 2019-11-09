@@ -2,11 +2,23 @@ import { Product } from './product';
 import { Currency } from '../enums/currencies';
 import { Indices } from '../enums/indices';
 import { Country } from '../enums/country';
+import { ResponsibilityType } from '../enums/responsibility';
 
 export interface Dividends {
   year: number;
   rate: number;
   yield?: number;
+}
+
+export interface TradeableProduct {
+  name: string;
+  isin: string;
+}
+
+export interface ResponsibilityAttribute {
+  description: string;
+  responsibilityType: ResponsibilityType;
+  issuer: string;
 }
 
 export interface Company {
@@ -23,8 +35,11 @@ export interface Company {
   isin: string;
   wkn: string;
   symbol: string;
+  smallestTradeableUnit: number;
+  otherTradeableProducts: TradeableProduct[];
   current_indices: Indices[];
   end_of_month_prices: any;
   dividends: Dividends[];
   tags: string[];
+  responsibilityAttributes: ResponsibilityAttribute[];
 }
