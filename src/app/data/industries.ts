@@ -689,7 +689,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1410,
-        description: 'Banken, Zahlungsdienstleister',
+        description: 'Banken, Zahlungsdienstleister, Finanzdienstleister',
         imageName: 'bank-building.svg',
         subIndustries: [
           {
@@ -732,6 +732,12 @@ export const industries: Industry[] = [
             id: 141016,
             description: 'Vermögensverwalter und Finanzportfolioverwalter',
             imageName: 'hand.svg',
+            subIndustries: null
+          },
+          {
+            id: 141017,
+            description: 'Finanzdienstleister',
+            imageName: 'investor.svg',
             subIndustries: null
           }
         ]

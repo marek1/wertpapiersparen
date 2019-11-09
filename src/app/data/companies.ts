@@ -11,6 +11,8 @@ import { bmwDividends, bmwPrices } from './historical/bmw';
 import { continentalDividends, continentalPrices } from './historical/continental';
 import { covestroDividends, covestroPrices } from './historical/covestro';
 import { ResponsibilityType } from '../enums/responsibility';
+import { daimlerDividends, daimlerPrices } from './historical/daimler';
+import { deutscheBankDividends, deutscheBankPrices } from './historical/deutscheBank';
 
 export const companies: Company[] = [
   {
@@ -431,7 +433,7 @@ export const companies: Company[] = [
         logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/DES_Logo.png'
       }
     ],
-    industries: [121111, 121112, 121113, 121114],
+    industries: [121111, 121112, 121113, 121114, 141017],
     currency: Currency.EUR,
     isin: 'DE0005190003',
     wkn: '519000',
@@ -569,6 +571,162 @@ export const companies: Company[] = [
       },
       {
         result: '14,0 / 25 Punkte (26. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
+  },
+  {
+    id: 1008,
+    nnme: 'Daimler AG',
+    country: Country.Deutschland,
+    city: 'Stuttgart',
+    description: 'Die Daimler AG mit Sitz in Stuttgart ist ein börsennotierter deutscher Hersteller von Personenkraftwagen und Nutzfahrzeugen. Ihre bekannteste Marke ist Mercedes-Benz. Das Unternehmen ist außerdem Anbieter von Mobilitäts- und Finanzdienstleistungen.',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Daimler_AG',
+    logo: 'https://designnavigator.daimler.com/img/template/brand_mark_daimler_x2.png',
+    products: [
+      {
+        id: 100810,
+        name: 'Mercedes Benz',
+        logo: 'https://media.daimler.com/marsMediaSite/scr/cache/7517029v1tv3/D204359-Mercedes-Benz---Logo.jpg'
+      },
+      {
+        id: 100811,
+        name: 'Smart',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/smart-logo-w126xh70.png'
+      },
+      {
+        id: 100812,
+        name: 'Fuso',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/fuso-logo-w126xh70.png'
+      },
+      {
+        id: 100813,
+        name: 'AMG',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/mercedes-amg-logo-w126xh70.png'
+      },
+      {
+        id: 100814,
+        name: 'Maybach',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/mercedes-maybach-logo-w126xh70.png'
+      },
+      {
+        id: 100815,
+        name: 'EQ',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/mercedes-benz-eq-logo-w126xh70.png'
+      },
+      {
+        id: 100816,
+        name: 'Freightliner',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/freightliner-logo-w126xh70.png'
+      },
+      {
+        id: 100817,
+        name: 'Western Star',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/western-star-logo-w126xh70.png'
+      },
+      {
+        id: 100818,
+        name: 'Setra',
+        logo: 'https://www.daimler.com/bilder/misc/markenlogos/setra-logo-w126xh70.png'
+      },
+      {
+        id: 100819,
+        name: 'ShareNow'
+      },
+      {
+        id: 100820,
+        name: 'ReachNow'
+      },
+      {
+        id: 100821,
+        name: 'FreeNow'
+      }
+    ],
+    industries: [121111, 121113, 121114, 141017],
+    currency: Currency.EUR,
+    isin: 'DE0007100000',
+    wkn: '710000',
+    symbol: 'DAI.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'DAIMLER AG ADRS/1',
+        isin: 'US2338252073'
+      }
+    ],
+    current_indices: [Indices.DAX, Indices.EuroStoxx50],
+    end_of_month_prices: daimlerPrices,
+    dividends: daimlerDividends,
+    tags: ['Automobilhersteller', 'Personenkraftwagen', 'Nutzfahrzeuge', 'Finanzdienstleistungen'],
+    responsibilityAttributes: [
+      {
+        result: '41 / 100 Punkten (18.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '13,8 / 25 Punkte (27. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
+  },
+  {
+    id: 1009,
+    name: 'Deutsche Bank AG',
+    country: Country.Deutschland,
+    city: 'Frankfurt',
+    description: 'Die Deutsche Bank AG (Audio-Datei / Hörbeispiel Anhören?/i) ist das nach Bilanzsumme und Mitarbeiterzahl größte Kreditinstitut Deutschlands. Das Unternehmen mit Sitz in Frankfurt am Main ist als Universalbank tätig und unterhält bedeutende Niederlassungen in London, New York City, Singapur, Hongkong und Sydney.',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Bank',
+    logo:  'https://www.db.com/company/img/db_logo.gif',
+    products: [
+      {
+        id: 100910,
+        name: 'Deutsche Bank',
+        logo:  'https://www.db.com/company/img/db_logo.gif'
+      },
+      {
+        id: 100911,
+        name: 'DWS',
+        logo: 'https://www.dws.de/globalassets/media-gallery/images/logos/dws_logo_global.svg'
+      },
+      {
+        id: 100912,
+        name: 'Postbank',
+        logo: 'https://www.postbank.de/postbank/images/PB_Zentrale_sRGB_219.jpg'
+      },
+      {
+        id: 100913,
+        name: 'Norisbank',
+        logo: 'https://meine.norisbank.de/trxmcontent/19.42.0.0_PR41-76f6407a359/global/noris/images/logo.gif'
+      }
+    ],
+    industries: [141010, 141011],
+    currency: Currency.EUR,
+    isin: 'DE0005140008',
+    wkn: '514000',
+    symbol: 'DBK.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [],
+    current_indices: [Indices.DAX],
+    end_of_month_prices: deutscheBankPrices,
+    dividends: deutscheBankDividends,
+    tags: ['Bank'],
+    responsibilityAttributes: [
+      {
+        result: '39 / 100 Punkten (20.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '11,8 / 25 Punkte (29. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
