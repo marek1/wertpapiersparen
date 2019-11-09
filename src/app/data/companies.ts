@@ -10,6 +10,7 @@ import { beiersdorfDividends, beiersdorfPrices } from './historical/beiersdorf';
 import { bmwDividends, bmwPrices } from './historical/bmw';
 import { continentalDividends, continentalPrices } from './historical/continental';
 import { covestroDividends, covestroPrices } from './historical/covestro';
+import { ResponsibilityType } from '../enums/responsibility';
 
 export const companies: Company[] = [
   {
@@ -53,7 +54,21 @@ export const companies: Company[] = [
     end_of_month_prices: adidasPrices,
     dividends: adidasDividends,
     tags: ['sportartikel', 'sportkleidung'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '58 / 100 Punkten (13.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '16,5 / 25 Punkte (4. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1001,
@@ -97,7 +112,21 @@ export const companies: Company[] = [
     end_of_month_prices: allianzPrices,
     dividends: allianzDividends,
     tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '89 / 100 Punkten (1.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '15,6 / 25 Punkte (10. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1002,
@@ -169,7 +198,21 @@ export const companies: Company[] = [
     end_of_month_prices: basfPrices,
     dividends: basfDividends,
     tags: ['Chemie', 'Spezialchemie', 'Industriechemikalien', 'Kunststoffe', 'Pflanzenschutzmittel', 'Öl', 'Gas'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '39 / 100 Punkten (20.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '14,7 / 25 Punkte (21. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1003,
@@ -230,7 +273,21 @@ export const companies: Company[] = [
     end_of_month_prices: bayerPrices,
     dividends: bayerDividends,
     tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '38 / 100 Punkten (22.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '14,3 / 25 Punkte (23. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1004,
@@ -308,7 +365,21 @@ export const companies: Company[] = [
     end_of_month_prices: beiersdorfPrices,
     dividends: beiersdorfDividends,
     tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '66 / 100 Punkten (5.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '15,1 / 25 Punkte (17. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1005,
@@ -368,15 +439,29 @@ export const companies: Company[] = [
     smallestTradeableUnit: 1,
     otherTradeableProducts: [
       {
-        name: 'Beiersdorf ADR',
-        isin: 'US07724U1034'
+        name: 'BMW ADR',
+        isin: 'US0727432066'
       }
     ],
     current_indices: [Indices.DAX, Indices.EuroStoxx50],
     end_of_month_prices: bmwPrices,
     dividends: bmwDividends,
     tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '46 / 100 Punkten (15.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '14,8 / 25 Punkte (20. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1006,
@@ -429,7 +514,21 @@ export const companies: Company[] = [
     end_of_month_prices: continentalPrices,
     dividends: continentalDividends,
     tags: ['Reifen', 'Fahrzeugindustrie', 'Reifen', 'Bremssysteme', 'Fahrdynamikregelungen', 'Luftfedersysteme'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '43 / 100 Punkten (16.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '16,2 / 25 Punkte (7. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   },
   {
     id: 1007,
@@ -461,7 +560,21 @@ export const companies: Company[] = [
     end_of_month_prices: covestroPrices,
     dividends: covestroDividends,
     tags: ['Polymerwerkstoffe', 'Polycarbonat', 'Klebstoffe', 'Lacke', 'Bindemittel'],
-    responsibilityAttributes: []
+    responsibilityAttributes: [
+      {
+        result: '43 / 100 Punkten (16.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '14,0 / 25 Punkte (26. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
   }
 ];
 

@@ -16,9 +16,11 @@ export interface TradeableProduct {
 }
 
 export interface ResponsibilityAttribute {
-  description: string;
+  result: string;
   responsibilityType: ResponsibilityType;
   issuer: string;
+  ranking: string;
+  link?: string;
 }
 
 export interface Company {
