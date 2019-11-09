@@ -1,4 +1,9 @@
-export const beiersdorfDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+
+const beiersdorfDividends = [
   {year: 2018, rate: 0.70, yield: 0.77}, {year: 2017, rate: 0.70}, {year: 2016, rate: 0.70}, {
     year: 2015,
     rate: 0.70,
@@ -22,7 +27,7 @@ export const beiersdorfDividends = [
   }
 ];
 
-export const beiersdorfPrices = {
+const beiersdorfPrices = {
   '2019-11-08': {
     '1. open': '106.2000',
     '2. high': '107.7000',
@@ -1703,4 +1708,101 @@ export const beiersdorfPrices = {
     '4. close': '21.8333',
     '5. volume': '821205'
   }
+};
+
+export const beiersdorfShare = {
+  id: 1004,
+  name: 'Beiersdorf AG',
+  country: Country.Deutschland,
+  city: 'Hamburg',
+  description: 'Die Beiersdorf AG ist ein börsennotierter weltweit tätiger deutscher Konsumgüterkonzern mit Sitz in Hamburg-Eimsbüttel, der sich im Mehrheitsbesitz der Maxingvest AG, eines Holdingunternehmens der Familie Herz, befindet. Unter anderem gehören Marken wie 8×4, Nivea, Tesa, Labello, Eucerin und Hansaplast zur Beiersdorf AG.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Beiersdorf_AG',
+  logo: 'https://www.beiersdorf.de/~/images/MAM/Beiersdorf-Press-Center/Press_Information/Press_Releases_-_German/08.01.2014_Beiersdorf_Logo_in_neuem_Design/BDF_Logo_negativeWhite-77629-2.jpg?mw=320&mh=179',
+  products: [
+    {
+      id: 100410,
+      name: 'Nivea',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/teaser/NIVEA-Produkte-Beiersdorf.png?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100411,
+      name: 'Eucerin',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/teaser/Eucerin-Creme-Beiersdorf.png?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100412,
+      name: 'La Prairie',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/teaser/La-Prairie-Produkte-Beiersdorf.png?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100413,
+      name: 'Labello',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/brands/brands/labello/archive/labello-classic-5.jpg?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100414,
+      name: 'Hansaplast',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/brands/hansaplast/Hansaplast-Aqua-Protect-Teaser.png?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100415,
+      name: '8X4',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/brands/brands/8x4/Beiersdorf-8X4-logo.png?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100416,
+      name: 'Florena',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/brands/florena/refresh-2016/Beiersdorf-teaser-Florena-Dose.jpg?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100417,
+      name: 'Coppertone',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/brands/brands/coppertone/Beiersdorf-coppertone-logo-teaser.png?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100418,
+      name: 'HIDROFUGAL',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/hidrofugal-logo.jpg?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100419,
+      name: 'Tesa',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/tesa-ecoLogo-Handabroller-quer-Beiersdorf.jpg?mw=460&mh=260&highRes=1'
+    },
+    {
+      id: 100420,
+      name: 'GAMMON',
+      logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/Beiersdorf-gammon.png?mw=460&mh=260&highRes=1'
+    }
+  ],
+  industries: [1010, 1911],
+  currency: Currency.EUR,
+  isin: 'DE0005200000',
+  wkn: '520000',
+  symbol: 'BEI.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: beiersdorfPrices,
+  dividends: beiersdorfDividends,
+  tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte'],
+  responsibilityAttributes: [
+    {
+      result: '66 / 100 Punkten (5.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '15,1 / 25 Punkte (17. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
 };

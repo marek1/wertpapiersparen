@@ -21,6 +21,8 @@ export interface ResponsibilityAttribute {
   issuer: string;
   ranking: string;
   link?: string;
+  isTopTwentyPercent: boolean;
+  isBottomTwentyPercent: boolean;
 }
 
 export interface Company {

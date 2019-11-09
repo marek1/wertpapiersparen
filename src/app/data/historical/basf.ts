@@ -1,4 +1,9 @@
-export const basfDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+
+const basfDividends = [
   {year: 2018, rate: 3.20, yield: 5.30}, {year: 2017, rate: 3.10}, {year: 2016, rate: 3.00}, {
     year: 2015,
     rate: 2.90,
@@ -22,7 +27,7 @@ export const basfDividends = [
   }
 ];
 
-export const basfPrices = {
+const basfPrices = {
   '2019-11-08': {
     '1. open': '68.5600',
     '2. high': '72.1700',
@@ -1705,4 +1710,93 @@ export const basfPrices = {
   }
 };
 
-
+export const basfShare = {
+  id: 1002,
+  name: 'BASF SE',
+  country: Country.Deutschland,
+  city: 'Ludwigshafen',
+  description: 'Die BASF SE (ehemals Badische Anilin- & Soda-Fabrik) ist ein börsennotierter Chemiekonzern und der nach Umsatz weltweit größte Chemiekonzern.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/BASF',
+  logo: 'https://www.basf.com/global/images/news-media/multimedia/BASF-Logo.jpg.dynamic.1280w720h.3ec78282ee874c98c219fe271d56d2e00fffd423.jpeg',
+  products: [
+    {
+      id: 100210,
+      name: 'Oppanol B'
+    },
+    {
+      id: 100211,
+      name: 'Glysantin'
+    },
+    {
+      id: 100212,
+      name: 'AUS32 (Adblue)'
+    },
+    {
+      id: 100213,
+      name: 'Styropor'
+    },
+    {
+      id: 100214,
+      name: 'Amflora'
+    },
+    {
+      id: 100215,
+      name: 'Fortuna'
+    },
+    {
+      id: 100216,
+      name: 'Uvinul'
+    },
+    {
+      id: 100217,
+      name: 'Tinuvin®'
+    },
+    {
+      id: 100218,
+      name: 'Elastopir®'
+    },
+    {
+      id: 100219,
+      name: 'Neopor'
+    },
+    {
+      id: 100220,
+      name: 'Buna'
+    }
+  ],
+  industries: [1510, 1512, 171011, 171310, 111315],
+  currency: Currency.EUR,
+  isin: 'DE000BASF111',
+  wkn: 'BASF11',
+  symbol: 'BAS.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'BASF ADR',
+      isin: 'US0552625057'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: basfPrices,
+  dividends: basfDividends,
+  tags: ['Chemie', 'Spezialchemie', 'Industriechemikalien', 'Kunststoffe', 'Pflanzenschutzmittel', 'Öl', 'Gas'],
+  responsibilityAttributes: [
+    {
+      result: '39 / 100 Punkten (20.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '14,7 / 25 Punkte (21. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
+};

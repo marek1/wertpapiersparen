@@ -1,13 +1,13 @@
 import { Company } from '../interfaces/company';
 import { Currency } from '../enums/currencies';
 import { Indices } from '../enums/indices';
-import { adidasDividends, adidasPrices } from './historical/adidas';
+import { adidasShare } from './historical/adidas';
 import { Country } from '../enums/country';
-import { allianzDividends, allianzPrices } from './historical/allianz';
-import { basfDividends, basfPrices } from './historical/basf';
-import { bayerDividends, bayerPrices } from './historical/bayer';
-import { beiersdorfDividends, beiersdorfPrices } from './historical/beiersdorf';
-import { bmwDividends, bmwPrices } from './historical/bmw';
+import { allianzShare } from './historical/allianz';
+import { basfShare } from './historical/basf';
+import { bayerShare } from './historical/bayer';
+import { beiersdorfShare } from './historical/beiersdorf';
+import { bmwShare } from './historical/bmw';
 import { continentalDividends, continentalPrices } from './historical/continental';
 import { covestroDividends, covestroPrices } from './historical/covestro';
 import { ResponsibilityType } from '../enums/responsibility';
@@ -19,460 +19,18 @@ import { deutscheTelekomDividends, deutscheTelekomPrices } from './historical/de
 import { eonDividends, eonPrices } from './historical/eon';
 import { fmcDividends, fmcPrices } from './historical/fmc';
 import { freseniusDividends, freseniusPrices } from './historical/fresenius';
+import { heidelbergCementDividends, heidelbergCementPrices } from './historical/heidelbergCement';
+import { henkelDividends, henkelPrices } from './historical/henkel';
 
 
 // tslint:disable:max-line-length
-export const companies: Company[] = [
-  {
-    id: 1000,
-    name: 'Adidas AG',
-    country: Country.Deutschland,
-    city: 'München',
-    description: 'Die Adidas AG ist ein international tätiger deutscher Sportartikelhersteller mit Sitz in Herzogenaurach',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/Adidas',
-    logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/49/36/493649a2-ca5a-445d-b077-792bbf82c63c/core.jpg__243x0_q85_crop-smart_subsampling-2.jpg',
-    products: [
-      {
-        id: 100010,
-        name: 'Adidas Sportkleidung',
-        logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/49/36/493649a2-ca5a-445d-b077-792bbf82c63c/core.jpg__243x0_q85_crop-smart_subsampling-2.jpg'
-      },
-      {
-        id: 100011,
-        name: 'Rebook',
-        logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/3b/82/3b82d7a0-0303-4d35-9820-32b622a81f03/body_vector_logo_navy.png__243x0_q85_crop-smart_subsampling-2.png'
-      },
-      {
-        id: 100012,
-        name: 'Runtastic',
-        logo: 'https://d1ki59phkeobjj.cloudfront.net/rt-ember/ember-cli-runtastic-commons/assets/adidas-runtastic-logo-4de5d4eff5d4a6f5d7fa07c5061f014c.png'
-      }
-    ],
-    industries: [101110, 101111, 2010],
-    currency: Currency.EUR,
-    isin: 'DE000A1EWWW0',
-    wkn: 'A1EWWW',
-    symbol: 'ADS.DE',
-    smallestTradeableUnit: 1,
-    otherTradeableProducts: [
-      {
-        name: 'Adidas ADR',
-        isin: 'US00687A1079'
-      }
-    ],
-    current_indices: [Indices.DAX, Indices.EuroStoxx50],
-    end_of_month_prices: adidasPrices,
-    dividends: adidasDividends,
-    tags: ['sportartikel', 'sportkleidung'],
-    responsibilityAttributes: [
-      {
-        result: '58 / 100 Punkten (13.Platz)',
-        responsibilityType: ResponsibilityType.Nachhaltigkeit,
-        issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
-      },
-      {
-        result: '16,5 / 25 Punkte (4. Platz)',
-        responsibilityType: ResponsibilityType.Ethik,
-        issuer: 'Kirchhoff',
-        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
-      }
-    ]
-  },
-  {
-    id: 1001,
-    name: 'Allianz SE',
-    country: Country.Deutschland,
-    description: 'Die Allianz SE mit Sitz in München ist ein 1890 gegründeter, börsennotierter Versicherungskonzern und nach Umsatz einer der weltgrößten',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/Allianz_SE',
-    logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg',
-    products: [
-      {
-        id: 100110,
-        name: 'Allianz Versicherungen',
-        logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
-      },
-      {
-        id: 100111,
-        name: 'Allsecur / Allianz Direkt Versicherung',
-      },
-      {
-        id: 100112,
-        name: 'Pimco'
-      },
-      {
-        id: 100113,
-        name: 'Euler Hermes'
-      }
-    ],
-    industries: [141210],
-    currency: Currency.EUR,
-    isin: 'DE0008404005',
-    wkn: '840400',
-    symbol: 'ALV.DE',
-    smallestTradeableUnit: 1,
-    otherTradeableProducts: [
-      {
-        name: 'Allianz S',
-        isin: 'US0188051017'
-      }
-    ],
-    current_indices: [Indices.DAX, Indices.EuroStoxx50],
-    end_of_month_prices: allianzPrices,
-    dividends: allianzDividends,
-    tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung'],
-    responsibilityAttributes: [
-      {
-        result: '89 / 100 Punkten (1.Platz)',
-        responsibilityType: ResponsibilityType.Nachhaltigkeit,
-        issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
-      },
-      {
-        result: '15,6 / 25 Punkte (10. Platz)',
-        responsibilityType: ResponsibilityType.Ethik,
-        issuer: 'Kirchhoff',
-        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
-      }
-    ]
-  },
-  {
-    id: 1002,
-    name: 'BASF SE',
-    country: Country.Deutschland,
-    city: 'Ludwigshafen',
-    description: 'Die BASF SE (ehemals Badische Anilin- & Soda-Fabrik) ist ein börsennotierter Chemiekonzern und der nach Umsatz weltweit größte Chemiekonzern.',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/BASF',
-    logo: 'https://www.basf.com/global/images/news-media/multimedia/BASF-Logo.jpg.dynamic.1280w720h.3ec78282ee874c98c219fe271d56d2e00fffd423.jpeg',
-    products: [
-      {
-        id: 100210,
-        name: 'Oppanol B'
-      },
-      {
-        id: 100211,
-        name: 'Glysantin'
-      },
-      {
-        id: 100212,
-        name: 'AUS32 (Adblue)'
-      },
-      {
-        id: 100213,
-        name: 'Styropor'
-      },
-      {
-        id: 100214,
-        name: 'Amflora'
-      },
-      {
-        id: 100215,
-        name: 'Fortuna'
-      },
-      {
-        id: 100216,
-        name: 'Uvinul'
-      },
-      {
-        id: 100217,
-        name: 'Tinuvin®'
-      },
-      {
-        id: 100218,
-        name: 'Elastopir®'
-      },
-      {
-        id: 100219,
-        name: 'Neopor'
-      },
-      {
-        id: 100220,
-        name: 'Buna'
-      }
-    ],
-    industries: [1510, 1512, 171011, 171310, 111315],
-    currency: Currency.EUR,
-    isin: 'DE000BASF111',
-    wkn: 'BASF11',
-    symbol: 'BAS.DE',
-    smallestTradeableUnit: 1,
-    otherTradeableProducts: [
-      {
-        name: 'BASF ADR',
-        isin: 'US0552625057'
-      }
-    ],
-    current_indices: [Indices.DAX, Indices.EuroStoxx50],
-    end_of_month_prices: basfPrices,
-    dividends: basfDividends,
-    tags: ['Chemie', 'Spezialchemie', 'Industriechemikalien', 'Kunststoffe', 'Pflanzenschutzmittel', 'Öl', 'Gas'],
-    responsibilityAttributes: [
-      {
-        result: '39 / 100 Punkten (20.Platz)',
-        responsibilityType: ResponsibilityType.Nachhaltigkeit,
-        issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
-      },
-      {
-        result: '14,7 / 25 Punkte (21. Platz)',
-        responsibilityType: ResponsibilityType.Ethik,
-        issuer: 'Kirchhoff',
-        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
-      }
-    ]
-  },
-  {
-    id: 1003,
-    name: 'Bayer AG',
-    country: Country.Deutschland,
-    city: 'Leverkusen',
-    description: 'Die Bayer Aktiengesellschaft[1] (kurz Bayer AG) ist ein divisional gegliedertes Unternehmen, das aus 420 Gesellschaften[4] mit insgesamt 116.998 Mitarbeitern besteht (Stand: Jahresende 2018)',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/Bayer_AG',
-    logo: 'https://shared.bayer.com/img/bayer-logo.svg',
-    products: [
-      {
-        id: 100310,
-        name: 'Xarelto'
-      },
-      {
-        id: 100311,
-        name: 'Eylea'
-      },
-      {
-        id: 100312,
-        name: 'Kogenate / Kovaltry,'
-      },
-      {
-        id: 100313,
-        name: 'Claritin'
-      },
-      {
-        id: 100314,
-        name: 'Aleve'
-      },
-      {
-        id: 100315,
-        name: 'Bepanthen / Bepanthol'
-      },
-      {
-        id: 100316,
-        name: 'Aspirin',
-        logo: 'https://www.aspirin.de/static/media/images/product/aspirin_tablette_thumb.png'
-      },
-      {
-        id: 100317,
-        name: 'Glyphosat'
-      }
-    ],
-    industries: [1510, 1512, 1513, 1514, 1610, 161210, 171011],
-    currency: Currency.EUR,
-    isin: 'DE000BAY0017',
-    wkn: 'BAY001',
-    symbol: 'BAYN.DE',
-    smallestTradeableUnit: 1,
-    otherTradeableProducts: [
-      {
-        name: 'Bayer ADR',
-        isin: 'US0727303028'
-      }
-    ],
-    current_indices: [Indices.DAX, Indices.EuroStoxx50],
-    end_of_month_prices: bayerPrices,
-    dividends: bayerDividends,
-    tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie'],
-    responsibilityAttributes: [
-      {
-        result: '38 / 100 Punkten (22.Platz)',
-        responsibilityType: ResponsibilityType.Nachhaltigkeit,
-        issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
-      },
-      {
-        result: '14,3 / 25 Punkte (23. Platz)',
-        responsibilityType: ResponsibilityType.Ethik,
-        issuer: 'Kirchhoff',
-        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
-      }
-    ]
-  },
-  {
-    id: 1004,
-    name: 'Beiersdorf AG',
-    country: Country.Deutschland,
-    city: 'Hamburg',
-    description: 'Die Beiersdorf AG ist ein börsennotierter weltweit tätiger deutscher Konsumgüterkonzern mit Sitz in Hamburg-Eimsbüttel, der sich im Mehrheitsbesitz der Maxingvest AG, eines Holdingunternehmens der Familie Herz, befindet. Unter anderem gehören Marken wie 8×4, Nivea, Tesa, Labello, Eucerin und Hansaplast zur Beiersdorf AG.',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/Beiersdorf_AG',
-    logo: 'https://www.beiersdorf.de/~/images/MAM/Beiersdorf-Press-Center/Press_Information/Press_Releases_-_German/08.01.2014_Beiersdorf_Logo_in_neuem_Design/BDF_Logo_negativeWhite-77629-2.jpg?mw=320&mh=179',
-    products: [
-      {
-        id: 100410,
-        name: 'Nivea',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/teaser/NIVEA-Produkte-Beiersdorf.png?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100411,
-        name: 'Eucerin',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/teaser/Eucerin-Creme-Beiersdorf.png?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100412,
-        name: 'La Prairie',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/teaser/La-Prairie-Produkte-Beiersdorf.png?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100413,
-        name: 'Labello',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/brands/brands/labello/archive/labello-classic-5.jpg?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100414,
-        name: 'Hansaplast',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/brands/hansaplast/Hansaplast-Aqua-Protect-Teaser.png?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100415,
-        name: '8X4',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/brands/brands/8x4/Beiersdorf-8X4-logo.png?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100416,
-        name: 'Florena',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/brands/florena/refresh-2016/Beiersdorf-teaser-Florena-Dose.jpg?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100417,
-        name: 'Coppertone',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/brands/brands/coppertone/Beiersdorf-coppertone-logo-teaser.png?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100418,
-        name: 'HIDROFUGAL',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/hidrofugal-logo.jpg?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100419,
-        name: 'Tesa',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/tesa-ecoLogo-Handabroller-quer-Beiersdorf.jpg?mw=460&mh=260&highRes=1'
-      },
-      {
-        id: 100420,
-        name: 'GAMMON',
-        logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/Beiersdorf-gammon.png?mw=460&mh=260&highRes=1'
-      }
-    ],
-    industries: [1010, 1911],
-    currency: Currency.EUR,
-    isin: 'DE0005200000',
-    wkn: '520000',
-    symbol: 'BEI.DE',
-    smallestTradeableUnit: 1,
-    otherTradeableProducts: [],
-    current_indices: [Indices.DAX],
-    end_of_month_prices: beiersdorfPrices,
-    dividends: beiersdorfDividends,
-    tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte'],
-    responsibilityAttributes: [
-      {
-        result: '66 / 100 Punkten (5.Platz)',
-        responsibilityType: ResponsibilityType.Nachhaltigkeit,
-        issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
-      },
-      {
-        result: '15,1 / 25 Punkte (17. Platz)',
-        responsibilityType: ResponsibilityType.Ethik,
-        issuer: 'Kirchhoff',
-        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
-      }
-    ]
-  },
-  {
-    id: 1005,
-    name: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG)',
-    country: Country.Deutschland,
-    city: 'München',
-    description: 'Die Bayerische Motoren Werke Aktiengesellschaft (BMW AG) ist ein weltweit operierender, börsennotierter Automobil- und Motorradhersteller mit Sitz in München. Die Produktpalette umfasst die Automobil- und Motorrad-Marke BMW, die Automarken Mini und Rolls-Royce sowie die BMW-Submarken BMW M und BMW i.',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/BMW',
-    logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/group.png',
-    products: [
-      {
-        id: 100510,
-        name: 'BMW',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/bmw_logo.png'
-      },
-      {
-        id: 100511,
-        name: 'MINI',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/mini_logo.png'
-      },
-      {
-        id: 100512,
-        name: 'Rolls Royce',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/rollsroyce_logo.png'
-      },
-      {
-        id: 100513,
-        name: 'DriveNow',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/drivenow_logo.png'
-      },
-      {
-        id: 100514,
-        name: 'ReachNow',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/ReachNow_Logo_positiv_RGB_farbiggrau_33px.png'
-      },
-      {
-        id: 100515,
-        name: 'ParkNow',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/parknow_logo.png'
-      },
-      {
-        id: 100516,
-        name: 'ChargeNow',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/chargenow_logo.png'
-      },
-      {
-        id: 100517,
-        name: 'Digital Energy Solutions',
-        logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/DES_Logo.png'
-      }
-    ],
-    industries: [121111, 121112, 121113, 121114, 141017],
-    currency: Currency.EUR,
-    isin: 'DE0005190003',
-    wkn: '519000',
-    symbol: 'BMW.DE',
-    smallestTradeableUnit: 1,
-    otherTradeableProducts: [
-      {
-        name: 'BMW ADR',
-        isin: 'US0727432066'
-      }
-    ],
-    current_indices: [Indices.DAX, Indices.EuroStoxx50],
-    end_of_month_prices: bmwPrices,
-    dividends: bmwDividends,
-    tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität'],
-    responsibilityAttributes: [
-      {
-        result: '46 / 100 Punkten (15.Platz)',
-        responsibilityType: ResponsibilityType.Nachhaltigkeit,
-        issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
-      },
-      {
-        result: '14,8 / 25 Punkte (20. Platz)',
-        responsibilityType: ResponsibilityType.Ethik,
-        issuer: 'Kirchhoff',
-        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
-      }
-    ]
-  },
+export const daxCompanies: Company[] = [
+  adidasShare,
+  allianzShare,
+  basfShare,
+  bayerShare,
+  beiersdorfShare,
+  bmwShare,
   {
     id: 1006,
     name: 'Continental AG',
@@ -529,14 +87,18 @@ export const companies: Company[] = [
         result: '43 / 100 Punkten (16.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       },
       {
         result: '16,2 / 25 Punkte (7. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       }
     ]
   },
@@ -575,14 +137,18 @@ export const companies: Company[] = [
         result: '43 / 100 Punkten (16.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       },
       {
         result: '14,0 / 25 Punkte (26. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: true
       }
     ]
   },
@@ -674,14 +240,18 @@ export const companies: Company[] = [
         result: '41 / 100 Punkten (18.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       },
       {
         result: '13,8 / 25 Punkte (27. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: true
       }
     ]
   },
@@ -731,14 +301,18 @@ export const companies: Company[] = [
         result: '39 / 100 Punkten (20.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       },
       {
         result: '11,8 / 25 Punkte (29. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: true
       }
     ]
   },
@@ -793,14 +367,18 @@ export const companies: Company[] = [
         result: '85 / 100 Punkten (3.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: true,
+        isBottomTwentyPercent: false
       },
       {
         result: '14,2 / 25 Punkte (24. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       }
     ]
   },
@@ -845,14 +423,18 @@ export const companies: Company[] = [
         result: '61 / 100 Punkten (11.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       },
       {
         result: '15,3 / 25 Punkte (12. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       }
     ]
   },
@@ -901,14 +483,18 @@ export const companies: Company[] = [
         result: '61 / 100 Punkten (11.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       },
       {
         result: '14,4 / 25 Punkte (22. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
       }]
   },
   {
@@ -1074,15 +660,445 @@ export const companies: Company[] = [
         result: '35 / 100 Punkten (27.Platz)',
         responsibilityType: ResponsibilityType.Nachhaltigkeit,
         issuer: 'Globalance Bank',
-        ranking: 'Globalance Footprint'
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: true
       },
       {
         result: '16,8 / 25 Punkte (1. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: true,
+        isBottomTwentyPercent: false
       }]
+  },
+  {
+    id: 1016,
+    name: 'HeidelbergCement AG'
+    country: Country.Deutschland,
+    city:  'Heidelberg',
+    description: 'Die HeidelbergCement AG mit Sitz in Heidelberg ist ein börsennotierter Baustoffkonzern. Das Unternehmen ist weltweit die Nummer 1 bei Zuschlagstoffen, Nummer 2 bei Zement und Nummer 3 bei Transportbeton.',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/HeidelbergCement',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/HeidelbergCement_Logo.svg/500px-HeidelbergCement_Logo.svg.png',
+    products: [
+      {
+        id: 101610,
+        name: 'Zement'
+      }
+    ],
+    industries: [111111],
+    currency: Currency.EUR,
+    isin: 'DE0006047004',
+    wkn: '604700',
+    symbol: 'HEI.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'HeidelbergCement ADR',
+        isin: 'US42281P2056'
+      }
+    ],
+    current_indices: [Indices.DAX],
+    end_of_month_prices: heidelbergCementPrices,
+    dividends: heidelbergCementDividends,
+    tags: ['Zement'],
+    responsibilityAttributes: [
+      {
+        result: '35 / 100 Punkten (27.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: true
+      },
+      {
+        result: '15,2 / 25 Punkte (14. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
+      }
+    ]
+  },
+  {
+    id: 1017,
+    name: 'Henkel AG & Co. KGaA',
+    country: Country.Deutschland,
+    city: 'Düsseldorf',
+    description: 'Die Henkel AG & Co. KGaA mit Hauptsitz in Düsseldorf-Holthausen ist ein börsennotierter deutscher Hersteller der Konsumgüterindustrie mit weltweiten Marken und Techniken in den drei Geschäftsfeldern Laundry & Home Care (Wasch-/Reinigungsmittel), Beauty Care (Schönheitspflege) und Adhesive Technologies (Klebstoffe). ',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Henkel_(Unternehmen)',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Henkel-Logo.svg/443px-Henkel-Logo.svg.png',
+    products: [
+      {
+        id: 101710,
+        name: 'Schwarzkopf',
+        logo: 'https://www.henkel.com/resource/image/214622/1x1/670/670/6aac5b37116440b0eb2c8b883ea367f4/Vr/schwarzkopf-corporate.png'
+      },
+      {
+        id: 101711,
+        name: 'Dial',
+        logo: 'https://www.henkel.com/resource/image/30724/1x1/670/670/bef12de71a131f2a3ecc892dab14b624/ZY/dial-logo.png'
+      },
+      {
+        id: 101712,
+        name: 'syoss',
+        logo: 'https://www.henkel.com/resource/image/35476/1x1/670/670/453ca39ebfefb6dbaab095dd4ca07747/fS/syoss-logo.png'
+      },
+      {
+        id: 101713,
+        name: 'all',
+        logo: 'https://www.henkel.com/resource/image/740914/1x1/670/670/7512b9a2e57ca51548413566ec3ee36d/fh/all-logo.png'
+      },
+      {
+        id: 101714,
+        name: 'Bref',
+        logo: 'https://www.henkel.de/resource/image/210826/1x1/670/670/b35171eb8e0552a07a626f4f77867ab8/FT/bref-de-logo.png'
+      },
+      {
+        id: 101715,
+        name: 'Persil',
+        logo: 'https://www.henkel.com/resource/image/32556/1x1/670/670/c364671fdb46ad51f587c6c6e161ffc9/FH/persil-logo.png'
+      },
+      {
+        id: 101716,
+        name: 'Aquence',
+        logo: 'https://www.henkel.com/resource/image/22592/1x1/670/670/574ddf7148acc14ba684ecb961f25a76/tB/aquence-logo.png'
+      },
+      {
+        id: 101717,
+        name: 'Authentic Beauty Concept',
+        logo: 'https://www.henkel.com/resource/image/922452/1x1/670/670/d04750f78b39e3c6c83045c1be9cb789/aG/authentic-beauty-concept-logo-jpg.jpg'
+      },
+      {
+        id: 101718,
+        name: 'BC Bonacure',
+        logo: 'https://www.henkel.com/resource/image/841248/1x1/670/670/7743320fdd596d47756f86def00c3380/mt/uk-hu-bonacure-logo.jpg'
+      },
+      {
+        id: 101719,
+        name: 'biff',
+        logo: 'https://www.henkel.com/resource/image/54706/1x1/670/670/b5ba64a87ce8548baf1bf5b0f22421ed/OE/biff-logo.png'
+      },
+      {
+        id: 101720,
+        name: 'Blonde',
+        logo: 'https://www.henkel.com/resource/image/37176/1x1/670/670/7655c4053492427513b0a593f92c7a5/CL/blonde-logo.png'
+      },
+      {
+        id: 101721,
+        name: 'BlondMe',
+        logo: 'https://www.henkel.com/resource/image/845298/1x1/670/670/baa38cbf0a3ca72eb23e9926a27d9db7/mo/hu-blondme-logo.png'
+      },
+      {
+        id: 101722,
+        name: 'Bonderite',
+        logo: 'https://www.henkel.com/resource/image/22594/1x1/670/670/4e6ffaf1e4e79a3e93cba64bc5d29fe5/II/bonderite-logo.png'
+      },
+      {
+        id: 101723,
+        name: 'Brillance',
+        logo: 'https://www.henkel.com/resource/image/870684/1x1/670/670/d508112a0e445bd6f072d907c4f4b949/VQ/brillance-logo.png'
+      },
+      {
+        id: 101724,
+        name: 'Der General',
+        logo: 'https://www.henkel.com/resource/image/27592/1x1/670/670/b6a9391245b782ab9491470170b96621/uC/der-general-logo.png'
+      },
+      {
+        id: 101725,
+        name: 'Diadem',
+        logo: 'https://www.henkel.com/resource/image/32434/1x1/670/670/846d68d873fd535e152a02ea09594404/Rh/diadem-logo.png'
+      },
+      {
+        id: 101726,
+        name: 'Diadermine',
+        logo: 'https://www.henkel.com/resource/image/30202/1x1/670/670/e05a758e22d8143d4ae96e019e8392c6/WE/diadermine-logo.png'
+      },
+      {
+        id: 101727,
+        name: 'Dylon',
+        logo: 'https://www.henkel.com/resource/image/623030/1x1/670/670/c381820e697b80cf62bb2551295de684/Ba/dylon-logo-de-png.png'
+      },
+      {
+        id: 101728,
+        name: 'Essensity',
+        logo: 'https://www.henkel.com/resource/image/33588/1x1/670/670/f48bc0dcbf3f57fae2d713593ae6b10f/pz/essensity-logo.png'
+      },
+      {
+        id: 101729,
+        name: 'Fa',
+        logo: 'https://www.henkel.com/resource/image/32432/1x1/670/670/f3099b998d78353a53fab804b511f7b0/mP/fa-logo.png'
+      },
+      {
+        id: 101730,
+        name: 'Fibreplex',
+        logo: 'https://www.henkel.com/resource/image/611646/1x1/670/670/c42fa2a6629aa70e33d78641d1b1ff9/IL/fibreplex-logo-png.png'
+      },
+      {
+        id: 101731,
+        name: 'Freshlight',
+        logo: 'https://www.henkel.com/resource/image/30716/1x1/670/670/42f6d6a0f95c13d5ccf5afbd435594a6/sM/freshlight-logo.png'
+      },
+      {
+        id: 101732,
+        name: 'Gliss Kur',
+        logo: 'https://www.henkel.com/resource/image/368076/1x1/670/670/35e2caec58de41ca53c28310b03dcc4b/Bm/gliss-kur-logo-de-de.png'
+      },
+      {
+        id: 101733,
+        name: 'got2b',
+        logo: 'https://www.henkel.com/resource/image/33842/1x1/670/670/6776265a2fb2eacba87aebbe3266d10f/mw/got2b-us-logo.png'
+      },
+      {
+        id: 101734,
+        name: 'Hawaii',
+        logo: 'https://www.henkel.com/resource/image/953168/1x1/670/670/30583754628aa9f33c7dc95b7aa871a9/Qo/hawaii-logo.png'
+      },
+      {
+        id: 101735,
+        name: 'Igora',
+        logo: 'https://www.henkel.com/resource/image/33844/1x1/670/670/706a85c6cca5c2d006aa6d179d732bfe/wo/igora-logo.png'
+      },
+      {
+        id: 101736,
+        name: 'Indola',
+        logo: 'https://www.henkel.com/resource/image/30828/1x1/670/670/e939b6a3e6dca2aa429eeebaac67d509/Ws/indola-logo.png'
+      },
+      {
+        id: 101737,
+        name: 'LIVE',
+        logo: 'https://www.henkel.com/resource/image/870700/1x1/670/670/ddfe12cd3713004ebb408df6c16edec3/FL/live-logo.png'
+      },
+      {
+        id: 101738,
+        name: 'Loctite',
+        logo: 'https://www.henkel.com/resource/image/22588/1x1/670/670/36a0a800ff0a8d70961a0e927eb58837/ZR/loctite-logo.png'
+      },
+      {
+        id: 101739,
+        name: 'Lovables',
+        logo: 'https://www.henkel.com/resource/image/820348/1x1/670/670/801d1b4a3601c50c0178d861a8e069fc/NX/lovables-logo.png'
+      },
+      {
+        id: 101740,
+        name: 'Luminance',
+        logo: 'https://www.henkel.com/resource/image/953186/1x1/670/670/94a1e5ffe9214b3bf2abbfb642d2409d/ZD/sk-luminance-logo.png'
+      },
+      {
+        id: 101741,
+        name: 'Metylan',
+        logo: 'https://www.henkel.com/resource/image/26256/1x1/670/670/fb25638086755d132995ea07c32583e3/rH/metylan-logo.png'
+      },
+      {
+        id: 101742,
+        name: 'Nectra Color',
+        logo: 'https://www.henkel.com/resource/image/32442/1x1/670/670/646e607663d6c05bee2a4b38bed49189/rE/nectra-logo.png'
+      },
+      {
+        id: 101743,
+        name: 'Osis+',
+        logo: 'https://www.henkel.com/resource/image/33608/1x1/670/670/bcc6c3a21edb13f0d6d8b1c8d65dbd3e/Tv/osis-logo.png'
+      },
+      {
+        id: 101744,
+        name: 'Poly Color',
+        logo: 'https://www.henkel.com/resource/image/492414/1x1/670/670/ec65c6a596dee9a21afb383b382bf185/XN/poly-color-logo-at.png'
+      },
+      {
+        id: 101745,
+        name: 'Perfect Mousse',
+        logo: 'https://www.henkel.com/resource/image/32440/1x1/670/670/3d07ff16103e30ab3f2131fbb3d87a25/la/perfect-mousse-logo.png'
+      },
+      {
+        id: 101746,
+        name: 'Palette',
+        logo: 'https://www.henkel.com/resource/image/417906/1x1/670/670/b37a9a9aeb4fb5b8a0b1d7fbeccdc2ff/uS/schwarzkopf-palette-logo.png'
+      },
+      {
+        id: 101747,
+        name: 'Pattex',
+        logo: 'https://www.henkel.com/resource/image/26250/1x1/670/670/1d5aa3367f5abf063fb8d39c617ebeaf/ks/pattex-logo.png'
+      },
+      {
+        id: 101748,
+        name: 'Perwoll',
+        logo: 'https://www.henkel.com/resource/image/27810/1x1/670/670/b709fb199f80a683fe4a2e53bd36141/cv/perwoll-logo.png'
+      },
+      {
+        id: 101749,
+        name: 'Ponal',
+        logo: 'https://www.henkel.com/resource/image/26272/1x1/670/670/3b1fccf26f13b3b40889b0bc0559099/KG/ponal-logo.png'
+      },
+      {
+        id: 101750,
+        name: 'Pril',
+        logo: 'https://www.henkel.com/resource/image/27228/1x1/670/670/bc7906bfb15a76f6a5e1f53704067b6d/ye/pril-logo.png'
+      },
+      {
+        id: 101751,
+        name: 'Pritt',
+        logo: 'https://www.henkel.com/resource/image/26290/1x1/670/670/da3528027188840b23ecbba30911d5bb/Lt/pritt-logo.png'
+      },
+      {
+        id: 101752,
+        name: 'Purex',
+        logo: 'https://www.henkel.com/resource/image/50408/1x1/670/670/304bf8f83c912dd7b3c92746c6b0db38/US/purex-logo.png'
+      },
+      {
+        id: 101753,
+        name: 'Right Guard',
+        logo: 'https://www.henkel.com/resource/image/35622/1x1/670/670/323d34172be23599273a4cd964f2f7b/Mp/right-guard-logo.png'
+      },
+      {
+        id: 101754,
+        name: 'Re-Nature',
+        logo: 'https://www.henkel.com/resource/image/35762/1x1/670/670/613363abc48e05e6eada6f243415d57e/SF/re-nature-logo.png'
+      },
+      {
+        id: 101755,
+        name: 'Supreme Keratin',
+        logo: 'https://www.henkel.com/resource/image/33830/1x1/670/670/6cbbff6359f955294871cbc01fe7f0c5/cF/supreme-keratin-logo.png'
+      },
+      {
+        id: 101756,
+        name: 'Schauma',
+        logo: 'https://www.henkel.com/resource/image/35432/1x1/670/670/469267fce9cef60d4ea93675563cd6a6/MV/schauma-logo.png'
+      },
+      {
+        id: 101757,
+        name: 'Seah',
+        logo: 'https://www.henkel.com/resource/image/32446/1x1/670/670/daa8781bee1d3648689dabec7be796a0/yi/seah-logo.png'
+      },
+      {
+        id: 101758,
+        name: 'Seborin',
+        logo: 'https://www.henkel.com/resource/image/35430/1x1/670/670/aed96b7abf67e7049b9660b2bc208584/fo/seborin-logo.png'
+      },
+      {
+        id: 101759,
+        name: 'Sidol',
+        logo: 'https://www.henkel.com/resource/image/64764/1x1/670/670/68cb6c108ca228dbf8426345fa33eb28/Gk/sidol-logo.png'
+      },
+      {
+        id: 101760,
+        name: 'Sidolin',
+        logo: 'https://www.henkel.com/resource/image/64738/1x1/670/670/b00ede296b971f425bb1dd3d5cf4cb23/ca/sidolin-logo.png'
+      },
+      {
+        id: 101761,
+        name: 'Sil',
+        logo: 'https://www.henkel.com/resource/image/62040/1x1/670/670/2d0f0e2eaff366830f5643803eaceebb/TI/sil-logo.png'
+      },
+      {
+        id: 101762,
+        name: 'Silhouette',
+        logo: 'https://www.henkel.com/resource/image/33848/1x1/670/670/e89b4ec31c8eac4ef98ba24ebc3b0a2c/Wp/silhouette-logo.png'
+      },
+      {
+        id: 101763,
+        name: 'Sista',
+        logo: 'https://www.henkel.com/resource/image/26252/1x1/670/670/35e7789ba4c604c7a77e0acf74f9d79a/sz/sista-logo.png'
+      },
+      {
+        id: 101764,
+        name: 'Sofix',
+        logo: 'https://www.henkel.com/resource/image/64682/1x1/670/670/97696b25eeaba52c5158771fe9c6979f/we/sofix-logo.png'
+      },
+      {
+        id: 101765,
+        name: 'Somat',
+        logo: 'https://www.henkel.com/resource/image/30920/1x1/670/670/1e265e9b9cc51b8eae325df5a5531329/PQ/somat-logo.png'
+      },
+      {
+        id: 101766,
+        name: 'Spee',
+        logo: 'https://www.henkel.com/resource/image/27990/1x1/670/670/dbddac550191b6096a48fde12b674154/SB/spee-logo.png'
+      },
+      {
+        id: 101767,
+        name: 'Taft',
+        logo: 'https://www.henkel.com/resource/image/191508/1x1/670/670/a48cc9fb11afce2ab4341a8c4de9661e/xt/3-weather-taft-logo-com.png'
+      },
+      {
+        id: 101768,
+        name: 'Tangit',
+        logo: 'https://www.henkel.com/resource/image/26336/1x1/670/670/c06db771c3e11692cb57ac11e48ad38/AG/tangit-logo.png'
+      },
+      {
+        id: 101769,
+        name: 'Technomelt',
+        logo: 'https://www.henkel.com/resource/image/22596/1x1/670/670/e063cab28acfbcf46b172e583b1e474e/vg/technomelt-logo.png'
+      },
+      {
+        id: 101770,
+        name: 'Teroson',
+        logo: 'https://www.henkel.com/resource/image/22598/1x1/670/670/a710b5a3f8f9d3e1aeedcf0fe7bf4433/aR/teroson-logo.png'
+      },
+      {
+        id: 101771,
+        name: 'Theramed',
+        logo: 'https://www.henkel.com/resource/image/33834/1x1/670/670/dac1248940448d4426239346e1252140/DB/theramed-logo.png'
+      },
+      {
+        id: 101772,
+        name: 'Vernel',
+        logo: 'https://www.henkel.com/resource/image/27898/1x1/670/670/32d163598da4237c509c2d5ac88dc865/kg/vernel-logo.png'
+      },
+      {
+        id: 101773,
+        name: 'WC Frisch',
+        logo: 'https://www.henkel.com/resource/image/27648/1x1/670/670/6c963facf8a56bf717770c695ff52412/vB/wc-frisch-logo.png'
+      },
+      {
+        id: 101774,
+        name: 'Weißer Riese',
+        logo: 'https://www.henkel.com/resource/image/33504/1x1/670/670/3ce2fa4aecaef6dffed2fc0a0ee20676/XI/weisser-riese-logo.png'
+      },
+      {
+        id: 101775,
+        name: '[3D]Men',
+        logo: 'https://www.henkel.com/resource/image/30126/1x1/670/670/ef6e6e1febeca7cddc8ecebb04b3228c/pE/3dmen-logo.png'
+      }
+    ],
+    industries: [1010, 171012],
+    currency: Currency.EUR,
+    isin: 'DE0006048432',
+    wkn: '604843',
+    symbol: 'HEN3.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Henkel ADR',
+        isin: 'US42550U1097'
+      }
+    ],
+    current_indices: [Indices.DAX],
+    end_of_month_prices: henkelPrices,
+    dividends: henkelDividends,
+    tags: ['Haushalt', 'Handwerk', 'Körperpflege', 'Kosmetik', 'Büro', 'Schule', 'Hobby'],
+    responsibilityAttributes: [
+      {
+        result: '64 / 100 Punkten (7.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
+      },
+      {
+        result: '16,3 / 25 Punkte (6. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: true,
+        isBottomTwentyPercent: false
+      }
+    ]
   }
 ];
 // tslint:enable:max-line-length

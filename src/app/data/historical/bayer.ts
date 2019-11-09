@@ -1,4 +1,9 @@
-export const bayerDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+
+const bayerDividends = [
   {year: 2018, rate: 2.80, yield: 4.61}, {year: 2017, rate: 2.80}, {year: 2016, rate: 2.70}, {
     year: 2015,
     rate: 2.50,
@@ -22,7 +27,7 @@ export const bayerDividends = [
   }
 ];
 
-export const bayerPrices = {
+const bayerPrices = {
   '2019-11-08': {
     '1. open': '70.1900',
     '2. high': '72.2800',
@@ -1704,3 +1709,84 @@ export const bayerPrices = {
     '5. volume': '36760962'
   }
 };
+
+export const bayerShare =
+  {
+    id: 1003,
+    name: 'Bayer AG',
+    country: Country.Deutschland,
+    city: 'Leverkusen',
+    description: 'Die Bayer Aktiengesellschaft[1] (kurz Bayer AG) ist ein divisional gegliedertes Unternehmen, das aus 420 Gesellschaften[4] mit insgesamt 116.998 Mitarbeitern besteht (Stand: Jahresende 2018)',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Bayer_AG',
+    logo: 'https://shared.bayer.com/img/bayer-logo.svg',
+    products: [
+      {
+        id: 100310,
+        name: 'Xarelto'
+      },
+      {
+        id: 100311,
+        name: 'Eylea'
+      },
+      {
+        id: 100312,
+        name: 'Kogenate / Kovaltry,'
+      },
+      {
+        id: 100313,
+        name: 'Claritin'
+      },
+      {
+        id: 100314,
+        name: 'Aleve'
+      },
+      {
+        id: 100315,
+        name: 'Bepanthen / Bepanthol'
+      },
+      {
+        id: 100316,
+        name: 'Aspirin',
+        logo: 'https://www.aspirin.de/static/media/images/product/aspirin_tablette_thumb.png'
+      },
+      {
+        id: 100317,
+        name: 'Glyphosat'
+      }
+    ],
+    industries: [1510, 1512, 1513, 1514, 1610, 161210, 171011],
+    currency: Currency.EUR,
+    isin: 'DE000BAY0017',
+    wkn: 'BAY001',
+    symbol: 'BAYN.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Bayer ADR',
+        isin: 'US0727303028'
+      }
+    ],
+    current_indices: [Indices.DAX, Indices.EuroStoxx50],
+    end_of_month_prices: bayerPrices,
+    dividends: bayerDividends,
+    tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie'],
+    responsibilityAttributes: [
+      {
+        result: '38 / 100 Punkten (22.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
+      },
+      {
+        result: '14,3 / 25 Punkte (23. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+        isTopTwentyPercent: false,
+        isBottomTwentyPercent: false
+      }
+    ]
+  };

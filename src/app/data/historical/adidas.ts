@@ -1,6 +1,10 @@
 import { Dividends } from '../../interfaces/company';
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
 
-export const adidasDividends: Dividends[] = [
+const adidasDividends: Dividends[] = [
   {year: 2017, rate: 2.6}, {year: 2016, rate: 2.00}, {year: 2015, rate: 1.60, yield: 1.78}, {
     year: 2014,
     rate: 1.50,
@@ -20,7 +24,7 @@ export const adidasDividends: Dividends[] = [
   }, {year: 2001, rate: 0.23, yield: 1.09}, {year: 2000, rate: 0.23, yield: 1.39}, {year: 1999, rate: 0.23, yield: 1.24}
 ];
 
-export const adidasPrices = {
+const adidasPrices = {
   '2019-11-08': {
     '1. open': '278.0000',
     '2. high': '287.3500',
@@ -1703,3 +1707,64 @@ export const adidasPrices = {
   }
 };
 
+export const adidasShare = {
+  id: 1000,
+  name: 'Adidas AG',
+  country: Country.Deutschland,
+  city: 'München',
+  description: 'Die Adidas AG ist ein international tätiger deutscher Sportartikelhersteller mit Sitz in Herzogenaurach',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Adidas',
+  logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/49/36/493649a2-ca5a-445d-b077-792bbf82c63c/core.jpg__243x0_q85_crop-smart_subsampling-2.jpg',
+  products: [
+    {
+      id: 100010,
+      name: 'Adidas Sportkleidung',
+      logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/49/36/493649a2-ca5a-445d-b077-792bbf82c63c/core.jpg__243x0_q85_crop-smart_subsampling-2.jpg'
+    },
+    {
+      id: 100011,
+      name: 'Rebook',
+      logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/3b/82/3b82d7a0-0303-4d35-9820-32b622a81f03/body_vector_logo_navy.png__243x0_q85_crop-smart_subsampling-2.png'
+    },
+    {
+      id: 100012,
+      name: 'Runtastic',
+      logo: 'https://d1ki59phkeobjj.cloudfront.net/rt-ember/ember-cli-runtastic-commons/assets/adidas-runtastic-logo-4de5d4eff5d4a6f5d7fa07c5061f014c.png'
+    }
+  ],
+  industries: [101110, 101111, 2010],
+  currency: Currency.EUR,
+  isin: 'DE000A1EWWW0',
+  wkn: 'A1EWWW',
+  symbol: 'ADS.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Adidas ADR',
+      isin: 'US00687A1079'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: adidasPrices,
+  dividends: adidasDividends,
+  tags: ['sportartikel', 'sportkleidung'],
+  responsibilityAttributes: [
+    {
+      result: '58 / 100 Punkten (13.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '16,5 / 25 Punkte (4. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    }
+  ]
+};

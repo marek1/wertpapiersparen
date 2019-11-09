@@ -1,4 +1,9 @@
-export const allianzDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+
+const allianzDividends = [
   {year: 2018, rate: 9.00, yield: 5.12}, {year: 2017, rate: 8.00}, {year: 2016, rate: 7.60}, {
     year: 2015,
     rate: 7.30,
@@ -22,7 +27,7 @@ export const allianzDividends = [
   }
 ];
 
-export const allianzPrices = {
+const allianzPrices = {
   '2019-11-08': {
     '1. open': '220.0500',
     '2. high': '225.9000',
@@ -1703,4 +1708,67 @@ export const allianzPrices = {
     '4. close': '335.0000',
     '5. volume': '10784351'
   }
+};
+
+export const allianzShare = {
+  id: 1001,
+  name: 'Allianz SE',
+  country: Country.Deutschland,
+  description: 'Die Allianz SE mit Sitz in München ist ein 1890 gegründeter, börsennotierter Versicherungskonzern und nach Umsatz einer der weltgrößten',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Allianz_SE',
+  logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg',
+  products: [
+    {
+      id: 100110,
+      name: 'Allianz Versicherungen',
+      logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
+    },
+    {
+      id: 100111,
+      name: 'Allsecur / Allianz Direkt Versicherung',
+    },
+    {
+      id: 100112,
+      name: 'Pimco'
+    },
+    {
+      id: 100113,
+      name: 'Euler Hermes'
+    }
+  ],
+  industries: [141210],
+  currency: Currency.EUR,
+  isin: 'DE0008404005',
+  wkn: '840400',
+  symbol: 'ALV.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Allianz S',
+      isin: 'US0188051017'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: allianzPrices,
+  dividends: allianzDividends,
+  tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung'],
+  responsibilityAttributes: [
+    {
+      result: '89 / 100 Punkten (1.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '15,6 / 25 Punkte (10. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
 };

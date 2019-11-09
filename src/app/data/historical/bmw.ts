@@ -1,4 +1,9 @@
-export const bmwDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+
+const bmwDividends = [
   {year: 2018, rate: 3.50, yield: 4.96}, {year: 2017, rate: 4.00}, {year: 2016, rate: 3.50}, {
     year: 2015,
     rate: 3.20,
@@ -22,7 +27,7 @@ export const bmwDividends = [
   }
 ];
 
-export const bmwPrices = {
+const bmwPrices = {
   '2019-11-08': {
     '1. open': '68.8900',
     '2. high': '75.5100',
@@ -1703,4 +1708,91 @@ export const bmwPrices = {
     '4. close': '31.0000',
     '5. volume': '30245576'
   }
+};
+
+export const bmwShare = {
+  id: 1005,
+  name: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG)',
+  country: Country.Deutschland,
+  city: 'München',
+  description: 'Die Bayerische Motoren Werke Aktiengesellschaft (BMW AG) ist ein weltweit operierender, börsennotierter Automobil- und Motorradhersteller mit Sitz in München. Die Produktpalette umfasst die Automobil- und Motorrad-Marke BMW, die Automarken Mini und Rolls-Royce sowie die BMW-Submarken BMW M und BMW i.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/BMW',
+  logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/group.png',
+  products: [
+    {
+      id: 100510,
+      name: 'BMW',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/bmw_logo.png'
+    },
+    {
+      id: 100511,
+      name: 'MINI',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/mini_logo.png'
+    },
+    {
+      id: 100512,
+      name: 'Rolls Royce',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/rollsroyce_logo.png'
+    },
+    {
+      id: 100513,
+      name: 'DriveNow',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/drivenow_logo.png'
+    },
+    {
+      id: 100514,
+      name: 'ReachNow',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/ReachNow_Logo_positiv_RGB_farbiggrau_33px.png'
+    },
+    {
+      id: 100515,
+      name: 'ParkNow',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/parknow_logo.png'
+    },
+    {
+      id: 100516,
+      name: 'ChargeNow',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/chargenow_logo.png'
+    },
+    {
+      id: 100517,
+      name: 'Digital Energy Solutions',
+      logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/DES_Logo.png'
+    }
+  ],
+  industries: [121111, 121112, 121113, 121114, 141017],
+  currency: Currency.EUR,
+  isin: 'DE0005190003',
+  wkn: '519000',
+  symbol: 'BMW.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'BMW ADR',
+      isin: 'US0727432066'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: bmwPrices,
+  dividends: bmwDividends,
+  tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität'],
+  responsibilityAttributes: [
+    {
+      result: '46 / 100 Punkten (15.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '14,8 / 25 Punkte (20. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
 };
