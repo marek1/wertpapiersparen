@@ -13,6 +13,8 @@ import { covestroDividends, covestroPrices } from './historical/covestro';
 import { ResponsibilityType } from '../enums/responsibility';
 import { daimlerDividends, daimlerPrices } from './historical/daimler';
 import { deutscheBankDividends, deutscheBankPrices } from './historical/deutscheBank';
+import { deutscheBoerseDividends, deutscheBoersePrices } from './historical/deutscheBoerse';
+import { deutschePostDividends, deutschePostPrices } from './historical/deutschePost';
 
 export const companies: Company[] = [
   {
@@ -727,6 +729,120 @@ export const companies: Company[] = [
       },
       {
         result: '11,8 / 25 Punkte (29. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
+  },
+  {
+    id: 1010,
+    name: 'Deutsche Börse AG',
+    country: Country.Deutschland,
+    city: 'Frankfurt',
+    description: 'Die Deutsche Börse AG ist eine deutsche Aktiengesellschaft mit Sitz in Frankfurt am Main. Kerngeschäft ist die Entwicklung und der Betrieb von Handelsplattformen, Teilnehmernetzwerken und Abwicklungssystemen für Börsen. ',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_B%C3%B6rse'
+    logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/8/87/Deutsche_B%C3%B6rse_Group_Logo.svg/500px-Deutsche_B%C3%B6rse_Group_Logo.svg.png',
+    products: [
+      {
+        id: 101010,
+        name: 'Börse Frankfurt',
+        logo: 'https://www.deutsche-boerse.com/resource/blob/1597396/5488932901d7495eef60ae4b8a101e92/data/boerse-frankfurt.jpg'
+      },
+      {
+        id: 101011,
+        name: 'Xetra',
+        logo: 'https://www.deutsche-boerse.com/resource/blob/1597408/3e98c9122af9d2b7885bc5fef5484c73/data/xetra.jpg'
+      },
+      {
+        id: 101012,
+        name: 'Eurex',
+        logo: 'https://www.deutsche-boerse.com/resource/blob/1597402/18c1434414f2306965211d5aa04f99a2/data/eurex.jpg'
+      },
+      {
+        id: 101013,
+        name: 'Clearstream',
+        logo: 'https://www.deutsche-boerse.com/resource/blob/1597398/008750264a71be93865988219f46941c/data/clearstream.jpg'
+      },
+      {
+        id: 101014,
+        name: 'EEX',
+        logo: 'https://www.deutsche-boerse.com/resource/blob/1597400/9d7362a908ee0cac0198ed58ed3c58a0/data/eex.jpg'
+      }
+    ],
+    industries: [1411],
+    currency: Currency.EUR,
+    isin: 'DE0005810055',
+    wkn: '581005',
+    symbol: 'DB1.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [],
+    current_indices: [Indices.DAX, Indices.EuroStoxx50],
+    end_of_month_prices: deutscheBoersePrices,
+    dividends: deutscheBoerseDividends,
+    tags: ['Börse', 'Börsenplatz'],
+    responsibilityAttributes: [
+      {
+        result: '85 / 100 Punkten (3.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '14,2 / 25 Punkte (24. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
+  },
+  {
+    id: 1011,
+    name: 'Deutsche Post AG',
+    country: Country.Deutschland,
+    city: 'Bonn',
+    description: 'Die Deutsche Post AG mit Sitz in Bonn ist ein deutsches Logistik- und Postunternehmen. Das Unternehmen entstand 1995 durch Privatisierung der früheren Behörde Deutsche Bundespost und ist seit 2000 Bestandteil des deutschen Leitindexes DAX an der Frankfurter Wertpapierbörse',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Post_AG',
+    logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/official_dpdhllogo.svg',
+    products: [
+      {
+        id: 101110,
+        name: 'Deutsche Post',
+        logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/deutsche-post-logo.svg'
+      },
+      {
+        id: 101111,
+        name: 'DHL',
+        logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/dhl-logo.svg'
+      }
+    ],
+    industries: [1219],
+    currency: Currency.EUR,
+    isin: 'DE0005552004',
+    wkn: '555200',
+    symbol: 'DPW.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Deutsche Post ADR',
+        isin: 'US25157Y2028'
+      }
+    ],
+    current_indices: [Indices.DAX, Indices.EuroStoxx50],
+    end_of_month_prices: deutschePostPrices,
+    dividends: deutschePostDividends,
+    tags: ['Post', 'Briefe', 'Pakete'],
+    responsibilityAttributes: [
+      {
+        result: '61 / 100 Punkten (11.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '15,3 / 25 Punkte (12. Platz)',
         responsibilityType: ResponsibilityType.Ethik,
         issuer: 'Kirchhoff',
         ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',

@@ -526,9 +526,10 @@ export const industries: Industry[] = [
       },
       {
         id: 1219,
-        description: 'Logistikunternehmen',
+        description: 'Logistikunternehmen und Post',
         imageName: 'logistics.svg',
-        subIndustries: null
+        subIndustries: null,
+        includeIndustries: [121012, 121110, 121211]
       },
       {
         id: 1220,
