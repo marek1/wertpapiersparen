@@ -15,7 +15,13 @@ import { daimlerDividends, daimlerPrices } from './historical/daimler';
 import { deutscheBankDividends, deutscheBankPrices } from './historical/deutscheBank';
 import { deutscheBoerseDividends, deutscheBoersePrices } from './historical/deutscheBoerse';
 import { deutschePostDividends, deutschePostPrices } from './historical/deutschePost';
+import { deutscheTelekomDividends, deutscheTelekomPrices } from './historical/deutscheTelekom';
+import { eonDividends, eonPrices } from './historical/eon';
+import { fmcDividends, fmcPrices } from './historical/fmc';
+import { freseniusDividends, freseniusPrices } from './historical/fresenius';
 
+
+// tslint:disable:max-line-length
 export const companies: Company[] = [
   {
     id: 1000,
@@ -582,7 +588,7 @@ export const companies: Company[] = [
   },
   {
     id: 1008,
-    nnme: 'Daimler AG',
+    name: 'Daimler AG',
     country: Country.Deutschland,
     city: 'Stuttgart',
     description: 'Die Daimler AG mit Sitz in Stuttgart ist ein börsennotierter deutscher Hersteller von Personenkraftwagen und Nutzfahrzeugen. Ihre bekannteste Marke ist Mercedes-Benz. Das Unternehmen ist außerdem Anbieter von Mobilitäts- und Finanzdienstleistungen.',
@@ -742,7 +748,7 @@ export const companies: Company[] = [
     country: Country.Deutschland,
     city: 'Frankfurt',
     description: 'Die Deutsche Börse AG ist eine deutsche Aktiengesellschaft mit Sitz in Frankfurt am Main. Kerngeschäft ist die Entwicklung und der Betrieb von Handelsplattformen, Teilnehmernetzwerken und Abwicklungssystemen für Börsen. ',
-    link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_B%C3%B6rse'
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_B%C3%B6rse',
     logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/8/87/Deutsche_B%C3%B6rse_Group_Logo.svg/500px-Deutsche_B%C3%B6rse_Group_Logo.svg.png',
     products: [
       {
@@ -849,7 +855,234 @@ export const companies: Company[] = [
         link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
       }
     ]
+  },
+  {
+    id: 1012,
+    name: 'Deutsche Telekom AG',
+    country: Country.Deutschland,
+    city: 'Bonn',
+    description: 'Die Deutsche Telekom AG (Audio-Datei / Hörbeispiel Anhören?/i) ist Europas größtes Telekommunikationsunternehmen[4] mit Hauptsitz in Bonn',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Telekom',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telekom_Logo_2013.svg/500px-Telekom_Logo_2013.svg.png',
+    products: [
+      {
+        id: 101210,
+        name: 'Deutsche Telekom',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telekom_Logo_2013.svg/500px-Telekom_Logo_2013.svg.png'
+      },
+      {
+        id: 101211,
+        name: 'T-Mobile',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/T-Mobile_logo2.svg/500px-T-Mobile_logo2.svg.png'
+      },
+      {
+        id: 101212,
+        name: 'T-Systems'
+      }
+    ],
+    industries: [131010, 131214],
+    currency: Currency.EUR,
+    isin: 'DE0005557508',
+    wkn: '555750',
+    symbol: 'DTE.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Deutsche Telekom ADR',
+        isin: 'US2515661054'
+      }
+    ],
+    current_indices: [Indices.DAX, Indices.EuroStoxx50],
+    end_of_month_prices: deutscheTelekomPrices,
+    dividends: deutscheTelekomDividends,
+    tags: ['Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV'],
+    responsibilityAttributes: [
+      {
+        result: '61 / 100 Punkten (11.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '14,4 / 25 Punkte (22. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }]
+  },
+  {
+    id: 1013,
+    name: 'E.ON SE',
+    country: Country.Deutschland,
+    city: 'Essen',
+    description: 'Die börsennotierte E.ON SE ist die Holdinggesellschaft eines deutschen Energiekonzerns mit Sitz in Essen. Das Unternehmen ist hauptsächlich in den Bereichen Energienetze, Energiedienstleistungen, erneuerbare Energien und dem Betrieb und Rückbau deutscher Atomkraftwerke tätig.',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/E.ON',
+    logo: 'https://www.eon.com/etc/designs/eon/eon-com/images/logo-red.svg',
+    products: [
+      {
+        id: 101310,
+        name: 'Eon Gas'
+      },
+      {
+        id: 101311,
+        name: 'Eon Strom'
+      },
+      {
+        id: 101312,
+        name: 'Eon Solaranlagen'
+      }
+    ],
+    industries: [111310, 111314, 111315],
+    currency: Currency.EUR,
+    isin: 'DE000ENAG999',
+    wkn: 'ENAG99',
+    symbol: 'EOAN.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'E.ON ADR',
+        isin: 'US2687801033'
+      }
+    ],
+    current_indices: [Indices.DAX],
+    end_of_month_prices: eonPrices,
+    dividends: eonDividends,
+    tags: ['Energieunternehmen', 'Stromerzeugung', 'Erdgasförderung', 'Stromhandel', 'Gashandel'],
+    responsibilityAttributes: [
+      {
+        result: '36 / 100 Punkten (25.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '15,1 / 25 Punkte (18. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
+  },
+  {
+    id: 1014,
+    name: 'Fresenius Medical Care AG & Co. KGaA',
+    country: Country.Deutschland,
+    city: 'Hof',
+    description: 'Die Fresenius Medical Care AG & Co. KGaA mit rechtlichem Sitz in Hof (Saale) und operativem Sitz in Bad Homburg vor der Höhe ist ein weltweit führender deutscher Anbieter von Dialyseprodukten und Dialysedienstleistungen zur überlebensnotwendigen medizinischen Versorgung von Menschen mit chronischem und akutem Nierenversagen.',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Fresenius_Medical_Care',
+    logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/b/b8/Fresenius_Medical_Care_20xx_logo.svg/500px-Fresenius_Medical_Care_20xx_logo.svg.png',
+    products: [
+      {
+        id: 101410,
+        name: 'Fresenius Medical Care Heimdialyse-Geräte'
+      },
+      {
+        id: 101411,
+        name: 'Fresenius Medical Care Zentrumsdialyse-Geräte'
+      },
+      {
+        id: 101412,
+        name: 'Fresenius Medical Care Heim-Hämodialyse | Therapiesystem NxStage'
+      },
+      {
+        id: 101413,
+        name: 'Fresenius Medical Care | Akuttherapie multiFiltrate-System'
+      },
+      {
+        id: 101414,
+        name: 'NxStage | Akuttherapie-System'
+      }
+    ],
+    industries: [161210],
+    currency: Currency.EUR,
+    isin: 'DE0005785802',
+    wkn: '578580',
+    symbol: 'FME.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'Fresenius Medical Care ADR',
+        isin: 'US3580291066'
+      }
+    ],
+    current_indices: [Indices.DAX],
+    end_of_month_prices: fmcPrices,
+    dividends: fmcDividends,
+    tags: ['Dialysetechnik'],
+    responsibilityAttributes: [
+      {
+        result: '56 / 100 Punkten (14.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '16,1 / 25 Punkte (8. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }
+    ]
+  },
+  {
+    id: 1015,
+    name: 'Fresenius SE & Co. KGaA',
+    country: Country.Deutschland,
+    city: 'Bad Homburg',
+    description: 'Die Fresenius SE & Co. KGaA ist ein deutsches Medizintechnik- und Gesundheitsunternehmen mit Sitz im hessischen Bad Homburg vor der Höhe. Das Unternehmen ist einer der größten privaten Krankenhausbetreiber Deutschlands sowie im Pharma- und Gesundheitsdienstleistungsbereich tätig',
+    link_wikipedia: 'https://de.wikipedia.org/wiki/Fresenius_(Unternehmen)',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Fresenius.svg/500px-Fresenius.svg.png',
+    products: [
+      {
+        id: 101510,
+        name: 'Fresenius Helios Kliniken'
+      },
+      {
+        id: 101511,
+        name: 'Fresenius Krabi'
+      },
+      {
+        id: 101512,
+        name: 'Fresenius Vamed'
+      },
+      {
+        id: 101513,
+        name: 'Fresenius Medical Care'
+      }
+    ],
+    industries: [161210, 161110],
+    currency: Currency.EUR,
+    isin: 'DE0005785604',
+    wkn: '578560',
+    symbol: 'FRE.DE',
+    smallestTradeableUnit: 1,
+    otherTradeableProducts: [
+      {
+        name: 'FRESENIUS SE S/ADR',
+        isin: 'US35804M1053'
+      }
+    ],
+    current_indices: [Indices.DAX, Indices.EuroStoxx50],
+    end_of_month_prices: freseniusPrices,
+    dividends: freseniusDividends,
+    tags: ['Gesundheitskonzern', 'Krankenhäuser', 'Dialyse'],
+    responsibilityAttributes: [
+      {
+        result: '35 / 100 Punkten (27.Platz)',
+        responsibilityType: ResponsibilityType.Nachhaltigkeit,
+        issuer: 'Globalance Bank',
+        ranking: 'Globalance Footprint'
+      },
+      {
+        result: '16,8 / 25 Punkte (1. Platz)',
+        responsibilityType: ResponsibilityType.Ethik,
+        issuer: 'Kirchhoff',
+        ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+        link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf'
+      }]
   }
 ];
-
-
+// tslint:enable:max-line-length
