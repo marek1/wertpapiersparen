@@ -1,4 +1,10 @@
-export const daimlerDividends = [{year: 2018, rate: 3.25, yield: 7.10}, {year: 2017, rate: 3.65}, {
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const daimlerDividends = [{year: 2018, rate: 3.25, yield: 7.10}, {year: 2017, rate: 3.65}, {
   year: 2016,
   rate: 3.25
 }, {year: 2015, rate: 3.25, yield: 4.19}, {year: 2014, rate: 2.45, yield: 3.55}, {year: 2013, rate: 2.25, yield: 3.58}, {
@@ -19,7 +25,7 @@ export const daimlerDividends = [{year: 2018, rate: 3.25, yield: 7.10}, {year: 2
   yield: 5.25
 }, {year: 1999, rate: 2.35, yield: 3.05}];
 
-export const daimlerPrices = {
+const daimlerPrices = {
   '2019-11-08': {
     '1. open': '52.5600',
     '2. high': '54.5000',
@@ -1701,3 +1707,109 @@ export const daimlerPrices = {
     '5. volume': '58820923'
   }
 };
+
+// tslint:disable:max-line-length
+export const daimlerShare: Company = {
+  id: 1008,
+  name: 'Daimler AG',
+  country: Country.Deutschland,
+  city: 'Stuttgart',
+  description: 'Die Daimler AG mit Sitz in Stuttgart ist ein börsennotierter deutscher Hersteller von Personenkraftwagen und Nutzfahrzeugen. Ihre bekannteste Marke ist Mercedes-Benz. Das Unternehmen ist außerdem Anbieter von Mobilitäts- und Finanzdienstleistungen.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Daimler_AG',
+  logo: 'https://designnavigator.daimler.com/img/template/brand_mark_daimler_x2.png',
+  products: [
+    {
+      id: 100810,
+      name: 'Mercedes Benz',
+      logo: 'https://media.daimler.com/marsMediaSite/scr/cache/7517029v1tv3/D204359-Mercedes-Benz---Logo.jpg'
+    },
+    {
+      id: 100811,
+      name: 'Smart',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/smart-logo-w126xh70.png'
+    },
+    {
+      id: 100812,
+      name: 'Fuso',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/fuso-logo-w126xh70.png'
+    },
+    {
+      id: 100813,
+      name: 'AMG',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/mercedes-amg-logo-w126xh70.png'
+    },
+    {
+      id: 100814,
+      name: 'Maybach',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/mercedes-maybach-logo-w126xh70.png'
+    },
+    {
+      id: 100815,
+      name: 'EQ',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/mercedes-benz-eq-logo-w126xh70.png'
+    },
+    {
+      id: 100816,
+      name: 'Freightliner',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/freightliner-logo-w126xh70.png'
+    },
+    {
+      id: 100817,
+      name: 'Western Star',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/western-star-logo-w126xh70.png'
+    },
+    {
+      id: 100818,
+      name: 'Setra',
+      logo: 'https://www.daimler.com/bilder/misc/markenlogos/setra-logo-w126xh70.png'
+    },
+    {
+      id: 100819,
+      name: 'ShareNow'
+    },
+    {
+      id: 100820,
+      name: 'ReachNow'
+    },
+    {
+      id: 100821,
+      name: 'FreeNow'
+    }
+  ],
+  industries: [121111, 121113, 121114, 141017],
+  currency: Currency.EUR,
+  isin: 'DE0007100000',
+  wkn: '710000',
+  symbol: 'DAI.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'DAIMLER AG ADRS/1',
+      isin: 'US2338252073'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: daimlerPrices,
+  dividends: daimlerDividends,
+  tags: ['Automobilhersteller', 'Personenkraftwagen', 'Nutzfahrzeuge', 'Finanzdienstleistungen'],
+  responsibilityAttributes: [
+    {
+      result: '41 / 100 Punkten (18.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '13,8 / 25 Punkte (27. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: true
+    }
+  ]
+};
+// tslint:enable:max-line-length

@@ -1,4 +1,10 @@
-export const henkelDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const henkelDividends = [
   {year: 2018, rate: 1.85, yield: 1.93}, {year: 2017, rate: 1.79}, {year: 2016, rate: 1.62}, {
     year: 2015,
     rate: 1.47,
@@ -22,7 +28,7 @@ export const henkelDividends = [
   }
 ];
 
-export const henkelPrices = {
+const henkelPrices = {
   '2019-11-08': {
     '1. open': '93.5000',
     '2. high': '97.5600',
@@ -1704,3 +1710,382 @@ export const henkelPrices = {
     '5. volume': '14936343'
   }
 };
+
+// tslint:disable:max-line-length
+export const henkelShare: Company = {
+  id: 1017,
+  name: 'Henkel AG & Co. KGaA',
+  country: Country.Deutschland,
+  city: 'Düsseldorf',
+  description: 'Die Henkel AG & Co. KGaA mit Hauptsitz in Düsseldorf-Holthausen ist ein börsennotierter deutscher Hersteller der Konsumgüterindustrie mit weltweiten Marken und Techniken in den drei Geschäftsfeldern Laundry & Home Care (Wasch-/Reinigungsmittel), Beauty Care (Schönheitspflege) und Adhesive Technologies (Klebstoffe). ',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Henkel_(Unternehmen)',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Henkel-Logo.svg/443px-Henkel-Logo.svg.png',
+  products: [
+    {
+      id: 101710,
+      name: 'Schwarzkopf',
+      logo: 'https://www.henkel.com/resource/image/214622/1x1/670/670/6aac5b37116440b0eb2c8b883ea367f4/Vr/schwarzkopf-corporate.png'
+    },
+    {
+      id: 101711,
+      name: 'Dial',
+      logo: 'https://www.henkel.com/resource/image/30724/1x1/670/670/bef12de71a131f2a3ecc892dab14b624/ZY/dial-logo.png'
+    },
+    {
+      id: 101712,
+      name: 'syoss',
+      logo: 'https://www.henkel.com/resource/image/35476/1x1/670/670/453ca39ebfefb6dbaab095dd4ca07747/fS/syoss-logo.png'
+    },
+    {
+      id: 101713,
+      name: 'all',
+      logo: 'https://www.henkel.com/resource/image/740914/1x1/670/670/7512b9a2e57ca51548413566ec3ee36d/fh/all-logo.png'
+    },
+    {
+      id: 101714,
+      name: 'Bref',
+      logo: 'https://www.henkel.de/resource/image/210826/1x1/670/670/b35171eb8e0552a07a626f4f77867ab8/FT/bref-de-logo.png'
+    },
+    {
+      id: 101715,
+      name: 'Persil',
+      logo: 'https://www.henkel.com/resource/image/32556/1x1/670/670/c364671fdb46ad51f587c6c6e161ffc9/FH/persil-logo.png'
+    },
+    {
+      id: 101716,
+      name: 'Aquence',
+      logo: 'https://www.henkel.com/resource/image/22592/1x1/670/670/574ddf7148acc14ba684ecb961f25a76/tB/aquence-logo.png'
+    },
+    {
+      id: 101717,
+      name: 'Authentic Beauty Concept',
+      logo: 'https://www.henkel.com/resource/image/922452/1x1/670/670/d04750f78b39e3c6c83045c1be9cb789/aG/authentic-beauty-concept-logo-jpg.jpg'
+    },
+    {
+      id: 101718,
+      name: 'BC Bonacure',
+      logo: 'https://www.henkel.com/resource/image/841248/1x1/670/670/7743320fdd596d47756f86def00c3380/mt/uk-hu-bonacure-logo.jpg'
+    },
+    {
+      id: 101719,
+      name: 'biff',
+      logo: 'https://www.henkel.com/resource/image/54706/1x1/670/670/b5ba64a87ce8548baf1bf5b0f22421ed/OE/biff-logo.png'
+    },
+    {
+      id: 101720,
+      name: 'Blonde',
+      logo: 'https://www.henkel.com/resource/image/37176/1x1/670/670/7655c4053492427513b0a593f92c7a5/CL/blonde-logo.png'
+    },
+    {
+      id: 101721,
+      name: 'BlondMe',
+      logo: 'https://www.henkel.com/resource/image/845298/1x1/670/670/baa38cbf0a3ca72eb23e9926a27d9db7/mo/hu-blondme-logo.png'
+    },
+    {
+      id: 101722,
+      name: 'Bonderite',
+      logo: 'https://www.henkel.com/resource/image/22594/1x1/670/670/4e6ffaf1e4e79a3e93cba64bc5d29fe5/II/bonderite-logo.png'
+    },
+    {
+      id: 101723,
+      name: 'Brillance',
+      logo: 'https://www.henkel.com/resource/image/870684/1x1/670/670/d508112a0e445bd6f072d907c4f4b949/VQ/brillance-logo.png'
+    },
+    {
+      id: 101724,
+      name: 'Der General',
+      logo: 'https://www.henkel.com/resource/image/27592/1x1/670/670/b6a9391245b782ab9491470170b96621/uC/der-general-logo.png'
+    },
+    {
+      id: 101725,
+      name: 'Diadem',
+      logo: 'https://www.henkel.com/resource/image/32434/1x1/670/670/846d68d873fd535e152a02ea09594404/Rh/diadem-logo.png'
+    },
+    {
+      id: 101726,
+      name: 'Diadermine',
+      logo: 'https://www.henkel.com/resource/image/30202/1x1/670/670/e05a758e22d8143d4ae96e019e8392c6/WE/diadermine-logo.png'
+    },
+    {
+      id: 101727,
+      name: 'Dylon',
+      logo: 'https://www.henkel.com/resource/image/623030/1x1/670/670/c381820e697b80cf62bb2551295de684/Ba/dylon-logo-de-png.png'
+    },
+    {
+      id: 101728,
+      name: 'Essensity',
+      logo: 'https://www.henkel.com/resource/image/33588/1x1/670/670/f48bc0dcbf3f57fae2d713593ae6b10f/pz/essensity-logo.png'
+    },
+    {
+      id: 101729,
+      name: 'Fa',
+      logo: 'https://www.henkel.com/resource/image/32432/1x1/670/670/f3099b998d78353a53fab804b511f7b0/mP/fa-logo.png'
+    },
+    {
+      id: 101730,
+      name: 'Fibreplex',
+      logo: 'https://www.henkel.com/resource/image/611646/1x1/670/670/c42fa2a6629aa70e33d78641d1b1ff9/IL/fibreplex-logo-png.png'
+    },
+    {
+      id: 101731,
+      name: 'Freshlight',
+      logo: 'https://www.henkel.com/resource/image/30716/1x1/670/670/42f6d6a0f95c13d5ccf5afbd435594a6/sM/freshlight-logo.png'
+    },
+    {
+      id: 101732,
+      name: 'Gliss Kur',
+      logo: 'https://www.henkel.com/resource/image/368076/1x1/670/670/35e2caec58de41ca53c28310b03dcc4b/Bm/gliss-kur-logo-de-de.png'
+    },
+    {
+      id: 101733,
+      name: 'got2b',
+      logo: 'https://www.henkel.com/resource/image/33842/1x1/670/670/6776265a2fb2eacba87aebbe3266d10f/mw/got2b-us-logo.png'
+    },
+    {
+      id: 101734,
+      name: 'Hawaii',
+      logo: 'https://www.henkel.com/resource/image/953168/1x1/670/670/30583754628aa9f33c7dc95b7aa871a9/Qo/hawaii-logo.png'
+    },
+    {
+      id: 101735,
+      name: 'Igora',
+      logo: 'https://www.henkel.com/resource/image/33844/1x1/670/670/706a85c6cca5c2d006aa6d179d732bfe/wo/igora-logo.png'
+    },
+    {
+      id: 101736,
+      name: 'Indola',
+      logo: 'https://www.henkel.com/resource/image/30828/1x1/670/670/e939b6a3e6dca2aa429eeebaac67d509/Ws/indola-logo.png'
+    },
+    {
+      id: 101737,
+      name: 'LIVE',
+      logo: 'https://www.henkel.com/resource/image/870700/1x1/670/670/ddfe12cd3713004ebb408df6c16edec3/FL/live-logo.png'
+    },
+    {
+      id: 101738,
+      name: 'Loctite',
+      logo: 'https://www.henkel.com/resource/image/22588/1x1/670/670/36a0a800ff0a8d70961a0e927eb58837/ZR/loctite-logo.png'
+    },
+    {
+      id: 101739,
+      name: 'Lovables',
+      logo: 'https://www.henkel.com/resource/image/820348/1x1/670/670/801d1b4a3601c50c0178d861a8e069fc/NX/lovables-logo.png'
+    },
+    {
+      id: 101740,
+      name: 'Luminance',
+      logo: 'https://www.henkel.com/resource/image/953186/1x1/670/670/94a1e5ffe9214b3bf2abbfb642d2409d/ZD/sk-luminance-logo.png'
+    },
+    {
+      id: 101741,
+      name: 'Metylan',
+      logo: 'https://www.henkel.com/resource/image/26256/1x1/670/670/fb25638086755d132995ea07c32583e3/rH/metylan-logo.png'
+    },
+    {
+      id: 101742,
+      name: 'Nectra Color',
+      logo: 'https://www.henkel.com/resource/image/32442/1x1/670/670/646e607663d6c05bee2a4b38bed49189/rE/nectra-logo.png'
+    },
+    {
+      id: 101743,
+      name: 'Osis+',
+      logo: 'https://www.henkel.com/resource/image/33608/1x1/670/670/bcc6c3a21edb13f0d6d8b1c8d65dbd3e/Tv/osis-logo.png'
+    },
+    {
+      id: 101744,
+      name: 'Poly Color',
+      logo: 'https://www.henkel.com/resource/image/492414/1x1/670/670/ec65c6a596dee9a21afb383b382bf185/XN/poly-color-logo-at.png'
+    },
+    {
+      id: 101745,
+      name: 'Perfect Mousse',
+      logo: 'https://www.henkel.com/resource/image/32440/1x1/670/670/3d07ff16103e30ab3f2131fbb3d87a25/la/perfect-mousse-logo.png'
+    },
+    {
+      id: 101746,
+      name: 'Palette',
+      logo: 'https://www.henkel.com/resource/image/417906/1x1/670/670/b37a9a9aeb4fb5b8a0b1d7fbeccdc2ff/uS/schwarzkopf-palette-logo.png'
+    },
+    {
+      id: 101747,
+      name: 'Pattex',
+      logo: 'https://www.henkel.com/resource/image/26250/1x1/670/670/1d5aa3367f5abf063fb8d39c617ebeaf/ks/pattex-logo.png'
+    },
+    {
+      id: 101748,
+      name: 'Perwoll',
+      logo: 'https://www.henkel.com/resource/image/27810/1x1/670/670/b709fb199f80a683fe4a2e53bd36141/cv/perwoll-logo.png'
+    },
+    {
+      id: 101749,
+      name: 'Ponal',
+      logo: 'https://www.henkel.com/resource/image/26272/1x1/670/670/3b1fccf26f13b3b40889b0bc0559099/KG/ponal-logo.png'
+    },
+    {
+      id: 101750,
+      name: 'Pril',
+      logo: 'https://www.henkel.com/resource/image/27228/1x1/670/670/bc7906bfb15a76f6a5e1f53704067b6d/ye/pril-logo.png'
+    },
+    {
+      id: 101751,
+      name: 'Pritt',
+      logo: 'https://www.henkel.com/resource/image/26290/1x1/670/670/da3528027188840b23ecbba30911d5bb/Lt/pritt-logo.png'
+    },
+    {
+      id: 101752,
+      name: 'Purex',
+      logo: 'https://www.henkel.com/resource/image/50408/1x1/670/670/304bf8f83c912dd7b3c92746c6b0db38/US/purex-logo.png'
+    },
+    {
+      id: 101753,
+      name: 'Right Guard',
+      logo: 'https://www.henkel.com/resource/image/35622/1x1/670/670/323d34172be23599273a4cd964f2f7b/Mp/right-guard-logo.png'
+    },
+    {
+      id: 101754,
+      name: 'Re-Nature',
+      logo: 'https://www.henkel.com/resource/image/35762/1x1/670/670/613363abc48e05e6eada6f243415d57e/SF/re-nature-logo.png'
+    },
+    {
+      id: 101755,
+      name: 'Supreme Keratin',
+      logo: 'https://www.henkel.com/resource/image/33830/1x1/670/670/6cbbff6359f955294871cbc01fe7f0c5/cF/supreme-keratin-logo.png'
+    },
+    {
+      id: 101756,
+      name: 'Schauma',
+      logo: 'https://www.henkel.com/resource/image/35432/1x1/670/670/469267fce9cef60d4ea93675563cd6a6/MV/schauma-logo.png'
+    },
+    {
+      id: 101757,
+      name: 'Seah',
+      logo: 'https://www.henkel.com/resource/image/32446/1x1/670/670/daa8781bee1d3648689dabec7be796a0/yi/seah-logo.png'
+    },
+    {
+      id: 101758,
+      name: 'Seborin',
+      logo: 'https://www.henkel.com/resource/image/35430/1x1/670/670/aed96b7abf67e7049b9660b2bc208584/fo/seborin-logo.png'
+    },
+    {
+      id: 101759,
+      name: 'Sidol',
+      logo: 'https://www.henkel.com/resource/image/64764/1x1/670/670/68cb6c108ca228dbf8426345fa33eb28/Gk/sidol-logo.png'
+    },
+    {
+      id: 101760,
+      name: 'Sidolin',
+      logo: 'https://www.henkel.com/resource/image/64738/1x1/670/670/b00ede296b971f425bb1dd3d5cf4cb23/ca/sidolin-logo.png'
+    },
+    {
+      id: 101761,
+      name: 'Sil',
+      logo: 'https://www.henkel.com/resource/image/62040/1x1/670/670/2d0f0e2eaff366830f5643803eaceebb/TI/sil-logo.png'
+    },
+    {
+      id: 101762,
+      name: 'Silhouette',
+      logo: 'https://www.henkel.com/resource/image/33848/1x1/670/670/e89b4ec31c8eac4ef98ba24ebc3b0a2c/Wp/silhouette-logo.png'
+    },
+    {
+      id: 101763,
+      name: 'Sista',
+      logo: 'https://www.henkel.com/resource/image/26252/1x1/670/670/35e7789ba4c604c7a77e0acf74f9d79a/sz/sista-logo.png'
+    },
+    {
+      id: 101764,
+      name: 'Sofix',
+      logo: 'https://www.henkel.com/resource/image/64682/1x1/670/670/97696b25eeaba52c5158771fe9c6979f/we/sofix-logo.png'
+    },
+    {
+      id: 101765,
+      name: 'Somat',
+      logo: 'https://www.henkel.com/resource/image/30920/1x1/670/670/1e265e9b9cc51b8eae325df5a5531329/PQ/somat-logo.png'
+    },
+    {
+      id: 101766,
+      name: 'Spee',
+      logo: 'https://www.henkel.com/resource/image/27990/1x1/670/670/dbddac550191b6096a48fde12b674154/SB/spee-logo.png'
+    },
+    {
+      id: 101767,
+      name: 'Taft',
+      logo: 'https://www.henkel.com/resource/image/191508/1x1/670/670/a48cc9fb11afce2ab4341a8c4de9661e/xt/3-weather-taft-logo-com.png'
+    },
+    {
+      id: 101768,
+      name: 'Tangit',
+      logo: 'https://www.henkel.com/resource/image/26336/1x1/670/670/c06db771c3e11692cb57ac11e48ad38/AG/tangit-logo.png'
+    },
+    {
+      id: 101769,
+      name: 'Technomelt',
+      logo: 'https://www.henkel.com/resource/image/22596/1x1/670/670/e063cab28acfbcf46b172e583b1e474e/vg/technomelt-logo.png'
+    },
+    {
+      id: 101770,
+      name: 'Teroson',
+      logo: 'https://www.henkel.com/resource/image/22598/1x1/670/670/a710b5a3f8f9d3e1aeedcf0fe7bf4433/aR/teroson-logo.png'
+    },
+    {
+      id: 101771,
+      name: 'Theramed',
+      logo: 'https://www.henkel.com/resource/image/33834/1x1/670/670/dac1248940448d4426239346e1252140/DB/theramed-logo.png'
+    },
+    {
+      id: 101772,
+      name: 'Vernel',
+      logo: 'https://www.henkel.com/resource/image/27898/1x1/670/670/32d163598da4237c509c2d5ac88dc865/kg/vernel-logo.png'
+    },
+    {
+      id: 101773,
+      name: 'WC Frisch',
+      logo: 'https://www.henkel.com/resource/image/27648/1x1/670/670/6c963facf8a56bf717770c695ff52412/vB/wc-frisch-logo.png'
+    },
+    {
+      id: 101774,
+      name: 'Weißer Riese',
+      logo: 'https://www.henkel.com/resource/image/33504/1x1/670/670/3ce2fa4aecaef6dffed2fc0a0ee20676/XI/weisser-riese-logo.png'
+    },
+    {
+      id: 101775,
+      name: '[3D]Men',
+      logo: 'https://www.henkel.com/resource/image/30126/1x1/670/670/ef6e6e1febeca7cddc8ecebb04b3228c/pE/3dmen-logo.png'
+    }
+  ],
+  industries: [1010, 171012],
+  currency: Currency.EUR,
+  isin: 'DE0006048432',
+  wkn: '604843',
+  symbol: 'HEN3.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Henkel ADR',
+      isin: 'US42550U1097'
+    }
+  ],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: henkelPrices,
+  dividends: henkelDividends,
+  tags: ['Haushalt', 'Handwerk', 'Körperpflege', 'Kosmetik', 'Büro', 'Schule', 'Hobby'],
+  responsibilityAttributes: [
+    {
+      result: '64 / 100 Punkten (7.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '16,3 / 25 Punkte (6. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    }
+  ]
+};
+// tslint:enable:max-line-length

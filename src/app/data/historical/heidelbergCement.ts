@@ -1,4 +1,10 @@
-export const heidelbergCementDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const heidelbergCementDividends = [
   {year: 2018, rate: 2.10, yield: 3.95}, {year: 2017, rate: 1.90}, {year: 2016, rate: 1.60}, {
     year: 2015,
     rate: 1.30,
@@ -22,7 +28,7 @@ export const heidelbergCementDividends = [
   }
 ];
 
-export const heidelbergCementPrices = {
+const heidelbergCementPrices = {
   '2019-11-08': {
     '1. open': '66.8400',
     '2. high': '68.6000',
@@ -1704,3 +1710,56 @@ export const heidelbergCementPrices = {
     '5. volume': '1386409'
   }
 };
+
+// tslint:disable:max-line-length
+export const heidelbergCementShare: Company = {
+  id: 1016,
+  name: 'HeidelbergCement AG',
+  country: Country.Deutschland,
+  city: 'Heidelberg',
+  description: 'Die HeidelbergCement AG mit Sitz in Heidelberg ist ein börsennotierter Baustoffkonzern. Das Unternehmen ist weltweit die Nummer 1 bei Zuschlagstoffen, Nummer 2 bei Zement und Nummer 3 bei Transportbeton.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/HeidelbergCement',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/HeidelbergCement_Logo.svg/500px-HeidelbergCement_Logo.svg.png',
+  products: [
+    {
+      id: 101610,
+      name: 'Zement'
+    }
+  ],
+  industries: [111111],
+  currency: Currency.EUR,
+  isin: 'DE0006047004',
+  wkn: '604700',
+  symbol: 'HEI.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'HeidelbergCement ADR',
+      isin: 'US42281P2056'
+    }
+  ],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: heidelbergCementPrices,
+  dividends: heidelbergCementDividends,
+  tags: ['Zement'],
+  responsibilityAttributes: [
+    {
+      result: '35 / 100 Punkten (27.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: true
+    },
+    {
+      result: '15,2 / 25 Punkte (14. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
+};
+// tslint:enable:max-line-length

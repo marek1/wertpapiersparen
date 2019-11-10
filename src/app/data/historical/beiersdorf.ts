@@ -2,6 +2,7 @@ import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 import { Indices } from '../../enums/indices';
 import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
 
 const beiersdorfDividends = [
   {year: 2018, rate: 0.70, yield: 0.77}, {year: 2017, rate: 0.70}, {year: 2016, rate: 0.70}, {
@@ -1710,7 +1711,8 @@ const beiersdorfPrices = {
   }
 };
 
-export const beiersdorfShare = {
+// tslint:disable:max-line-length
+export const beiersdorfShare: Company = {
   id: 1004,
   name: 'Beiersdorf AG',
   country: Country.Deutschland,
@@ -1806,3 +1808,4 @@ export const beiersdorfShare = {
     }
   ]
 };
+// tslint:enable:max-line-length

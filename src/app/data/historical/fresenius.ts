@@ -1,4 +1,10 @@
-export const freseniusDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const freseniusDividends = [
   {year: 2018, rate: 0.80, yield: 1.89}, {year: 2017, rate: 0.75}, {
     year: 2016,
     rate: 0.62
@@ -21,7 +27,7 @@ export const freseniusDividends = [
   }
 ];
 
-export const freseniusPrices = {
+const freseniusPrices = {
   '2019-11-08': {
     '1. open': '47.3050',
     '2. high': '49.1950',
@@ -1703,3 +1709,67 @@ export const freseniusPrices = {
     '5. volume': '205386'
   }
 };
+
+// tslint:disable:max-line-length
+export const freseniusShare: Company = {
+  id: 1015,
+  name: 'Fresenius SE & Co. KGaA',
+  country: Country.Deutschland,
+  city: 'Bad Homburg',
+  description: 'Die Fresenius SE & Co. KGaA ist ein deutsches Medizintechnik- und Gesundheitsunternehmen mit Sitz im hessischen Bad Homburg vor der Höhe. Das Unternehmen ist einer der größten privaten Krankenhausbetreiber Deutschlands sowie im Pharma- und Gesundheitsdienstleistungsbereich tätig',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Fresenius_(Unternehmen)',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Fresenius.svg/500px-Fresenius.svg.png',
+  products: [
+    {
+      id: 101510,
+      name: 'Fresenius Helios Kliniken'
+    },
+    {
+      id: 101511,
+      name: 'Fresenius Krabi'
+    },
+    {
+      id: 101512,
+      name: 'Fresenius Vamed'
+    },
+    {
+      id: 101513,
+      name: 'Fresenius Medical Care'
+    }
+  ],
+  industries: [161210, 161110],
+  currency: Currency.EUR,
+  isin: 'DE0005785604',
+  wkn: '578560',
+  symbol: 'FRE.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'FRESENIUS SE S/ADR',
+      isin: 'US35804M1053'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: freseniusPrices,
+  dividends: freseniusDividends,
+  tags: ['Gesundheitskonzern', 'Krankenhäuser', 'Dialyse'],
+  responsibilityAttributes: [
+    {
+      result: '35 / 100 Punkten (27.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: true
+    },
+    {
+      result: '16,8 / 25 Punkte (1. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    }]
+};
+// tslint:enable:max-line-length

@@ -1,4 +1,10 @@
-export const deutscheBoerseDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const deutscheBoerseDividends = [
   {year: 2018, rate: 2.70, yield: 2.57}, {year: 2017, rate: 2.45}, {year: 2016, rate: 2.35}, {
     year: 2015,
     rate: 2.25,
@@ -17,7 +23,8 @@ export const deutscheBoerseDividends = [
     yield: 1.29
   }, {year: 2002, rate: 0.22, yield: 1.15}, {year: 2001, rate: 0.18, yield: 0.83}, {year: 2000, rate: 0.15}, {year: 1999, rate: 0.40}
 ];
-export const deutscheBoersePrices = {
+
+const deutscheBoersePrices = {
   '2019-11-08': {
     '1. open': '138.6500',
     '2. high': '141.2500',
@@ -1594,3 +1601,72 @@ export const deutscheBoersePrices = {
     '5. volume': '8450250'
   }
 };
+
+// tslint:disable:max-line-length
+export const deutschBoerseShare: Company = {
+  id: 1010,
+  name: 'Deutsche Börse AG',
+  country: Country.Deutschland,
+  city: 'Frankfurt',
+  description: 'Die Deutsche Börse AG ist eine deutsche Aktiengesellschaft mit Sitz in Frankfurt am Main. Kerngeschäft ist die Entwicklung und der Betrieb von Handelsplattformen, Teilnehmernetzwerken und Abwicklungssystemen für Börsen. ',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_B%C3%B6rse',
+  logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/8/87/Deutsche_B%C3%B6rse_Group_Logo.svg/500px-Deutsche_B%C3%B6rse_Group_Logo.svg.png',
+  products: [
+    {
+      id: 101010,
+      name: 'Börse Frankfurt',
+      logo: 'https://www.deutsche-boerse.com/resource/blob/1597396/5488932901d7495eef60ae4b8a101e92/data/boerse-frankfurt.jpg'
+    },
+    {
+      id: 101011,
+      name: 'Xetra',
+      logo: 'https://www.deutsche-boerse.com/resource/blob/1597408/3e98c9122af9d2b7885bc5fef5484c73/data/xetra.jpg'
+    },
+    {
+      id: 101012,
+      name: 'Eurex',
+      logo: 'https://www.deutsche-boerse.com/resource/blob/1597402/18c1434414f2306965211d5aa04f99a2/data/eurex.jpg'
+    },
+    {
+      id: 101013,
+      name: 'Clearstream',
+      logo: 'https://www.deutsche-boerse.com/resource/blob/1597398/008750264a71be93865988219f46941c/data/clearstream.jpg'
+    },
+    {
+      id: 101014,
+      name: 'EEX',
+      logo: 'https://www.deutsche-boerse.com/resource/blob/1597400/9d7362a908ee0cac0198ed58ed3c58a0/data/eex.jpg'
+    }
+  ],
+  industries: [1411],
+  currency: Currency.EUR,
+  isin: 'DE0005810055',
+  wkn: '581005',
+  symbol: 'DB1.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: deutscheBoersePrices,
+  dividends: deutscheBoerseDividends,
+  tags: ['Börse', 'Börsenplatz'],
+  responsibilityAttributes: [
+    {
+      result: '85 / 100 Punkten (3.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '14,2 / 25 Punkte (24. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
+};
+// tslint:enable:max-line-length

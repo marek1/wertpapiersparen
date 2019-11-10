@@ -1,4 +1,9 @@
-export const eonDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+
+const eonDividends = [
   {year: 2018, rate: 0.43, yield: 5.00}, {year: 2017, rate: 0.30}, {year: 2016, rate: 0.21}, {
     year: 2015,
     rate: 0.50,
@@ -22,7 +27,7 @@ export const eonDividends = [
   }
 ];
 
-export const eonPrices = {
+const eonPrices = {
   '2019-11-08': {
     '1. open': '9.0710',
     '2. high': '9.0800',
@@ -1690,3 +1695,64 @@ export const eonPrices = {
     '5. volume': '144114870'
   }
 };
+
+// tslint:disable:max-line-length
+export const eonShare = {
+  id: 1013,
+  name: 'E.ON SE',
+  country: Country.Deutschland,
+  city: 'Essen',
+  description: 'Die börsennotierte E.ON SE ist die Holdinggesellschaft eines deutschen Energiekonzerns mit Sitz in Essen. Das Unternehmen ist hauptsächlich in den Bereichen Energienetze, Energiedienstleistungen, erneuerbare Energien und dem Betrieb und Rückbau deutscher Atomkraftwerke tätig.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/E.ON',
+  logo: 'https://www.eon.com/etc/designs/eon/eon-com/images/logo-red.svg',
+  products: [
+    {
+      id: 101310,
+      name: 'Eon Gas'
+    },
+    {
+      id: 101311,
+      name: 'Eon Strom'
+    },
+    {
+      id: 101312,
+      name: 'Eon Solaranlagen'
+    }
+  ],
+  industries: [111310, 111314, 111315],
+  currency: Currency.EUR,
+  isin: 'DE000ENAG999',
+  wkn: 'ENAG99',
+  symbol: 'EOAN.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'E.ON ADR',
+      isin: 'US2687801033'
+    }
+  ],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: eonPrices,
+  dividends: eonDividends,
+  tags: ['Energieunternehmen', 'Stromerzeugung', 'Erdgasförderung', 'Stromhandel', 'Gashandel'],
+  responsibilityAttributes: [
+    {
+      result: '36 / 100 Punkten (25.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: true
+    },
+    {
+      result: '15,1 / 25 Punkte (18. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: true,
+      isBottomTwentyPercent: false
+    }
+  ]
+};
+// tslint:enable:max-line-length

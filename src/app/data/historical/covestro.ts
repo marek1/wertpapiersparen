@@ -1,4 +1,10 @@
-export const covestroDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const covestroDividends = [
   {year: 2018, rate: 2.40, yield: 5.56}, {year: 2017, rate: 2.20}, {year: 2016, rate: 1.35}, {
     year: 2015,
     rate: 0.70,
@@ -6,7 +12,7 @@ export const covestroDividends = [
   }
 ];
 
-export const covestroPrices = {
+const covestroPrices = {
   '2019-11-08': {
     '1. open': '43.2100',
     '2. high': '47.1700',
@@ -351,3 +357,56 @@ export const covestroPrices = {
     '5. volume': '6130372'
   }
 };
+
+// tslint:disable:max-line-length
+export const covestroShare: Company = {
+  id: 1007,
+  name: 'Covestro',
+  country: Country.Deutschland,
+  city: 'Leverkusen',
+  description: 'Die Covestro AG ist ein börsennotierter Werkstoffhersteller mit Sitz in Leverkusen. Das Unternehmen ist 2015 aus der ehemaligen Kunststoffsparte der Bayer AG hervorgegangen und firmierte bis dahin unter Bayer MaterialScience; es entwickelt, produziert und vertreibt Polymer-Werkstoffe an etwa 30 Standorten in Europa, Asien und Amerika. 2018 erzielte das Unternehmen einen Jahresumsatz von 14,6 Milliarden Euro',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Covestro',
+  logo: 'https://www.covestro.com/-/media/covestro/shared-library/logo/covestro-logo.png?la=de&hash=07D75E282471081C7E0E2D1CE0EC9B5B651EE665',
+  products: [
+    {
+      id: 100710,
+      name: 'Makrolon'
+    }
+  ],
+  industries: [171011, 171012],
+  currency: Currency.EUR,
+  isin: 'DE0006062144',
+  wkn: '606214',
+  symbol: '1COV.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'COVESTRO AG SP.ADR 1/2',
+      isin: 'US22304D2071'
+    }
+  ],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: covestroPrices,
+  dividends: covestroDividends,
+  tags: ['Polymerwerkstoffe', 'Polycarbonat', 'Klebstoffe', 'Lacke', 'Bindemittel'],
+  responsibilityAttributes: [
+    {
+      result: '43 / 100 Punkten (16.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '14,0 / 25 Punkte (26. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: true
+    }
+  ]
+};
+// tslint:enable:max-line-length

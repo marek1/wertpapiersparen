@@ -1,4 +1,4 @@
-import { Dividends } from '../../interfaces/company';
+import { Company, Dividends } from '../../interfaces/company';
 import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 import { Indices } from '../../enums/indices';
@@ -1707,7 +1707,7 @@ const adidasPrices = {
   }
 };
 
-export const adidasShare = {
+export const adidasShare: Company = {
   id: 1000,
   name: 'Adidas AG',
   country: Country.Deutschland,

@@ -2,6 +2,7 @@ import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 import { Indices } from '../../enums/indices';
 import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
 
 const basfDividends = [
   {year: 2018, rate: 3.20, yield: 5.30}, {year: 2017, rate: 3.10}, {year: 2016, rate: 3.00}, {
@@ -1710,7 +1711,7 @@ const basfPrices = {
   }
 };
 
-export const basfShare = {
+export const basfShare: Company = {
   id: 1002,
   name: 'BASF SE',
   country: Country.Deutschland,

@@ -1,4 +1,10 @@
-export const continentalDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const continentalDividends = [
   {year: 2018, rate: 4.75, yield: 3.96}, {year: 2017, rate: 4.50}, {year: 2016, rate: 4.25}, {
     year: 2015,
     rate: 3.75,
@@ -18,7 +24,7 @@ export const continentalDividends = [
   }, {year: 2002, rate: 0.45, yield: 3.02}, {year: 2001, rate: 0.00, yield: 0.00}, {year: 2000, rate: 0.51, yield: 2.98}
 ];
 
-export const continentalPrices = {
+const continentalPrices = {
   '2019-11-08': {
     '1. open': '122.1200',
     '2. high': '133.1000',
@@ -1699,4 +1705,76 @@ export const continentalPrices = {
     '4. close': '18.8086',
     '5. volume': '6389498'
   }
+};
+
+export const continentalShare: Company = {
+  id: 1006,
+  name: 'Continental AG',
+  country: Country.Deutschland,
+  city: 'Hannover',
+  description: 'Continental hat sich von einem reinen Reifenhersteller zu einem der größten Automobilzulieferer entwickelt und ist nach der Robert Bosch GmbH der größte Automobilzulieferer der Welt.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Continental_AG',
+  logo: 'https://www.ci-portal.de/wp-content/uploads/continental.jpg',
+  products: [
+    {
+      id: 100610,
+      name: 'Continental Reifen',
+      logo: 'https://www.continental.com/resource/image/135608/landscape_ratio16x9/272/153/cec0521818777f2d2eab9ce80ece2073/YB/tire-teaser-ab-test-kandidat-6-aiba.jpg'
+    },
+    {
+      id: 100611,
+      name: 'ATE'
+    },
+    {
+      id: 100612,
+      name: 'Barum'
+    },
+    {
+      id: 100613,
+      name: 'Temic'
+    },
+    {
+      id: 100614,
+      name: 'Teves'
+    },
+    {
+      id: 100615,
+      name: 'VDO'
+    }
+  ],
+  industries: [121110],
+  currency: Currency.EUR,
+  isin: 'DE0005439004',
+  wkn: '543900',
+  symbol: 'CON.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Continental AG  Bearer Shares',
+      isin: 'US2107712000'
+    }
+  ],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: continentalPrices,
+  dividends: continentalDividends,
+  tags: ['Reifen', 'Fahrzeugindustrie', 'Reifen', 'Bremssysteme', 'Fahrdynamikregelungen', 'Luftfedersysteme'],
+  responsibilityAttributes: [
+    {
+      result: '43 / 100 Punkten (16.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '16,2 / 25 Punkte (7. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
 };

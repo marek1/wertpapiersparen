@@ -32,6 +32,7 @@ export interface Company {
   city?: string;
   description: string;
   link_wikipedia: string;
+  link_video?: string;
   logo: string;
   products: Product[];
   industries: number[];

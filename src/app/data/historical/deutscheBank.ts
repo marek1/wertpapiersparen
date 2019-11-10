@@ -1,4 +1,10 @@
-export const deutscheBankDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const deutscheBankDividends = [
   {year: 2018, rate: 0.11, yield: 1.58}, {year: 2017, rate: 0.11}, {year: 2016, rate: 0.19}, {
     year: 2015,
     rate: 0.00,
@@ -22,7 +28,7 @@ export const deutscheBankDividends = [
   }
 ];
 
-export const deutscheBankPrices = {
+const deutscheBankPrices = {
   '2019-11-08': {
     '1. open': '6.5330',
     '2. high': '7.1380',
@@ -1704,3 +1710,67 @@ export const deutscheBankPrices = {
     '5. volume': '69475213'
   }
 };
+
+// tslint:disable:max-line-length
+export const deutscheBankShare: Company = {
+  id: 1009,
+  name: 'Deutsche Bank AG',
+  country: Country.Deutschland,
+  city: 'Frankfurt',
+  description: 'Die Deutsche Bank AG (Audio-Datei / Hörbeispiel Anhören?/i) ist das nach Bilanzsumme und Mitarbeiterzahl größte Kreditinstitut Deutschlands. Das Unternehmen mit Sitz in Frankfurt am Main ist als Universalbank tätig und unterhält bedeutende Niederlassungen in London, New York City, Singapur, Hongkong und Sydney.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Bank',
+  logo: 'https://www.db.com/company/img/db_logo.gif',
+  products: [
+    {
+      id: 100910,
+      name: 'Deutsche Bank',
+      logo: 'https://www.db.com/company/img/db_logo.gif'
+    },
+    {
+      id: 100911,
+      name: 'DWS',
+      logo: 'https://www.dws.de/globalassets/media-gallery/images/logos/dws_logo_global.svg'
+    },
+    {
+      id: 100912,
+      name: 'Postbank',
+      logo: 'https://www.postbank.de/postbank/images/PB_Zentrale_sRGB_219.jpg'
+    },
+    {
+      id: 100913,
+      name: 'Norisbank',
+      logo: 'https://meine.norisbank.de/trxmcontent/19.42.0.0_PR41-76f6407a359/global/noris/images/logo.gif'
+    }
+  ],
+  industries: [141010, 141011],
+  currency: Currency.EUR,
+  isin: 'DE0005140008',
+  wkn: '514000',
+  symbol: 'DBK.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: deutscheBankPrices,
+  dividends: deutscheBankDividends,
+  tags: ['Bank'],
+  responsibilityAttributes: [
+    {
+      result: '39 / 100 Punkten (20.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '11,8 / 25 Punkte (29. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: true
+    }
+  ]
+};
+// tslint:enable:max-line-length

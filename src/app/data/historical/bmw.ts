@@ -2,6 +2,7 @@ import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 import { Indices } from '../../enums/indices';
 import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
 
 const bmwDividends = [
   {year: 2018, rate: 3.50, yield: 4.96}, {year: 2017, rate: 4.00}, {year: 2016, rate: 3.50}, {
@@ -1710,7 +1711,8 @@ const bmwPrices = {
   }
 };
 
-export const bmwShare = {
+// tslint:disable:max-line-length
+export const bmwShare: Company = {
   id: 1005,
   name: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG)',
   country: Country.Deutschland,
@@ -1796,3 +1798,4 @@ export const bmwShare = {
     }
   ]
 };
+// tslint:enable:max-line-length

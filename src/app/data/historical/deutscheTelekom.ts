@@ -1,4 +1,10 @@
-export const deutscheTelekomDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const deutscheTelekomDividends = [
   {year: 2018, rate: 0.70, yield: 4.73}, {year: 2017, rate: 0.65}, {year: 2016, rate: 0.60}, {
     year: 2015,
     rate: 0.55,
@@ -18,7 +24,7 @@ export const deutscheTelekomDividends = [
   }, {year: 2002, rate: 0.00, yield: 0.00}, {year: 2001, rate: 0.37, yield: 1.92}, {year: 2000, rate: 0.62, yield: 1.93}
 ];
 
-export const deutscheTelekomPrices = {
+const deutscheTelekomPrices = {
   '2019-11-08': {
     '1. open': '15.8500',
     '2. high': '15.8520',
@@ -1700,3 +1706,65 @@ export const deutscheTelekomPrices = {
     '5. volume': '101157555'
   }
 };
+
+// tslint:disable:max-line-length
+export const deutscheTelekomShare: Company = {
+  id: 1012,
+  name: 'Deutsche Telekom AG',
+  country: Country.Deutschland,
+  city: 'Bonn',
+  description: 'Die Deutsche Telekom AG (Audio-Datei / Hörbeispiel Anhören?/i) ist Europas größtes Telekommunikationsunternehmen[4] mit Hauptsitz in Bonn',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Telekom',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telekom_Logo_2013.svg/500px-Telekom_Logo_2013.svg.png',
+  products: [
+    {
+      id: 101210,
+      name: 'Deutsche Telekom',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telekom_Logo_2013.svg/500px-Telekom_Logo_2013.svg.png'
+    },
+    {
+      id: 101211,
+      name: 'T-Mobile',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/T-Mobile_logo2.svg/500px-T-Mobile_logo2.svg.png'
+    },
+    {
+      id: 101212,
+      name: 'T-Systems'
+    }
+  ],
+  industries: [131010, 131214],
+  currency: Currency.EUR,
+  isin: 'DE0005557508',
+  wkn: '555750',
+  symbol: 'DTE.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Deutsche Telekom ADR',
+      isin: 'US2515661054'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: deutscheTelekomPrices,
+  dividends: deutscheTelekomDividends,
+  tags: ['Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV'],
+  responsibilityAttributes: [
+    {
+      result: '61 / 100 Punkten (11.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '14,4 / 25 Punkte (22. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }]
+};
+// tslint:enable:max-line-length

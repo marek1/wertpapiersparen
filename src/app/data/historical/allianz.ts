@@ -2,6 +2,7 @@ import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 import { Indices } from '../../enums/indices';
 import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
 
 const allianzDividends = [
   {year: 2018, rate: 9.00, yield: 5.12}, {year: 2017, rate: 8.00}, {year: 2016, rate: 7.60}, {
@@ -1710,7 +1711,7 @@ const allianzPrices = {
   }
 };
 
-export const allianzShare = {
+export const allianzShare: Company = {
   id: 1001,
   name: 'Allianz SE',
   country: Country.Deutschland,

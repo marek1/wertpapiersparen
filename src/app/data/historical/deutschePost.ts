@@ -1,4 +1,10 @@
-export const deutschePostDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const deutschePostDividends = [
   {year: 2018, rate: 1.15, yield: 4.82}, {year: 2017, rate: 1.15}, {year: 2016, rate: 1.05}, {
     year: 2015,
     rate: 0.85,
@@ -20,7 +26,8 @@ export const deutschePostDividends = [
     rate: 0.16
   }
 ];
-export const deutschePostPrices = {
+
+const deutschePostPrices = {
   '2019-11-08': {
     '1. open': '31.9100',
     '2. high': '32.9950',
@@ -1618,3 +1625,62 @@ export const deutschePostPrices = {
     '5. volume': '21159951'
   }
 };
+
+// tslint:disable:max-line-length
+export const deutschePostShare: Company = {
+  id: 1011,
+  name: 'Deutsche Post AG',
+  country: Country.Deutschland,
+  city: 'Bonn',
+  description: 'Die Deutsche Post AG mit Sitz in Bonn ist ein deutsches Logistik- und Postunternehmen. Das Unternehmen entstand 1995 durch Privatisierung der früheren Behörde Deutsche Bundespost und ist seit 2000 Bestandteil des deutschen Leitindexes DAX an der Frankfurter Wertpapierbörse',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Post_AG',
+  logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/official_dpdhllogo.svg',
+  products: [
+    {
+      id: 101110,
+      name: 'Deutsche Post',
+      logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/deutsche-post-logo.svg'
+    },
+    {
+      id: 101111,
+      name: 'DHL',
+      logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/dhl-logo.svg'
+    }
+  ],
+  industries: [1219],
+  currency: Currency.EUR,
+  isin: 'DE0005552004',
+  wkn: '555200',
+  symbol: 'DPW.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Deutsche Post ADR',
+      isin: 'US25157Y2028'
+    }
+  ],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  end_of_month_prices: deutschePostPrices,
+  dividends: deutschePostDividends,
+  tags: ['Post', 'Briefe', 'Pakete'],
+  responsibilityAttributes: [
+    {
+      result: '61 / 100 Punkten (11.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '15,3 / 25 Punkte (12. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
+};
+// tslint:enable:max-line-length

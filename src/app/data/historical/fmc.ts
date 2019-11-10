@@ -1,4 +1,10 @@
-export const fmcDividends = [
+import { Country } from '../../enums/country';
+import { Currency } from '../../enums/currencies';
+import { Indices } from '../../enums/indices';
+import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
+
+const fmcDividends = [
   {year: 2018, rate: 1.17, yield: 2.08}, {year: 2017, rate: 1.06}, {year: 2016, rate: 0.95}, {
     year: 2015,
     rate: 0.81,
@@ -22,7 +28,7 @@ export const fmcDividends = [
   }
 ];
 
-export const fmcPrices = {
+const fmcPrices = {
   '2019-11-08': {
     '1. open': '65.0000',
     '2. high': '69.0800',
@@ -1704,3 +1710,72 @@ export const fmcPrices = {
     '5. volume': '10066545'
   }
 };
+
+// tslint:disable:max-line-length
+export const fmcShare: Company = {
+  id: 1014,
+  name: 'Fresenius Medical Care AG & Co. KGaA',
+  country: Country.Deutschland,
+  city: 'Hof',
+  description: 'Die Fresenius Medical Care AG & Co. KGaA mit rechtlichem Sitz in Hof (Saale) und operativem Sitz in Bad Homburg vor der Höhe ist ein weltweit führender deutscher Anbieter von Dialyseprodukten und Dialysedienstleistungen zur überlebensnotwendigen medizinischen Versorgung von Menschen mit chronischem und akutem Nierenversagen.',
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Fresenius_Medical_Care',
+  logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/b/b8/Fresenius_Medical_Care_20xx_logo.svg/500px-Fresenius_Medical_Care_20xx_logo.svg.png',
+  products: [
+    {
+      id: 101410,
+      name: 'Fresenius Medical Care Heimdialyse-Geräte'
+    },
+    {
+      id: 101411,
+      name: 'Fresenius Medical Care Zentrumsdialyse-Geräte'
+    },
+    {
+      id: 101412,
+      name: 'Fresenius Medical Care Heim-Hämodialyse | Therapiesystem NxStage'
+    },
+    {
+      id: 101413,
+      name: 'Fresenius Medical Care | Akuttherapie multiFiltrate-System'
+    },
+    {
+      id: 101414,
+      name: 'NxStage | Akuttherapie-System'
+    }
+  ],
+  industries: [161210],
+  currency: Currency.EUR,
+  isin: 'DE0005785802',
+  wkn: '578580',
+  symbol: 'FME.DE',
+  smallestTradeableUnit: 1,
+  otherTradeableProducts: [
+    {
+      name: 'Fresenius Medical Care ADR',
+      isin: 'US3580291066'
+    }
+  ],
+  current_indices: [Indices.DAX],
+  end_of_month_prices: fmcPrices,
+  dividends: fmcDividends,
+  tags: ['Dialysetechnik'],
+  responsibilityAttributes: [
+    {
+      result: '56 / 100 Punkten (14.Platz)',
+      responsibilityType: ResponsibilityType.Nachhaltigkeit,
+      issuer: 'Globalance Bank',
+      ranking: 'Globalance Footprint',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    },
+    {
+      result: '16,1 / 25 Punkte (8. Platz)',
+      responsibilityType: ResponsibilityType.Ethik,
+      issuer: 'Kirchhoff',
+      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
+      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+      isTopTwentyPercent: false,
+      isBottomTwentyPercent: false
+    }
+  ]
+};
+// tslint:enable:max-line-length
