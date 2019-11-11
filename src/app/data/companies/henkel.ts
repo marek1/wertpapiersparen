@@ -1712,11 +1712,12 @@ const henkelPrices = {
 };
 
 // tslint:disable:max-line-length
-export const henkelShare: Company = {
+export const henkelCompany: Company = {
   id: 1017,
   name: 'Henkel AG & Co. KGaA',
   country: Country.Deutschland,
   city: 'Düsseldorf',
+  url: 'https://www.henkel.de/',
   description: 'Die Henkel AG & Co. KGaA mit Hauptsitz in Düsseldorf-Holthausen ist ein börsennotierter deutscher Hersteller der Konsumgüterindustrie mit weltweiten Marken und Techniken in den drei Geschäftsfeldern Laundry & Home Care (Wasch-/Reinigungsmittel), Beauty Care (Schönheitspflege) und Adhesive Technologies (Klebstoffe). ',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Henkel_(Unternehmen)',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Henkel-Logo.svg/443px-Henkel-Logo.svg.png',

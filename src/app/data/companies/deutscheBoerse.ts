@@ -1603,11 +1603,12 @@ const deutscheBoersePrices = {
 };
 
 // tslint:disable:max-line-length
-export const deutschBoerseShare: Company = {
+export const deutschBoerseCompany: Company = {
   id: 1010,
   name: 'Deutsche Börse AG',
   country: Country.Deutschland,
   city: 'Frankfurt',
+  url: 'https://www.deutsche-boerse.com/dbg-de/',
   description: 'Die Deutsche Börse AG ist eine deutsche Aktiengesellschaft mit Sitz in Frankfurt am Main. Kerngeschäft ist die Entwicklung und der Betrieb von Handelsplattformen, Teilnehmernetzwerken und Abwicklungssystemen für Börsen. ',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_B%C3%B6rse',
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/8/87/Deutsche_B%C3%B6rse_Group_Logo.svg/500px-Deutsche_B%C3%B6rse_Group_Logo.svg.png',

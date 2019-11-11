@@ -2,6 +2,7 @@ import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 import { Indices } from '../../enums/indices';
 import { ResponsibilityType } from '../../enums/responsibility';
+import { Company } from '../../interfaces/company';
 
 const eonDividends = [
   {year: 2018, rate: 0.43, yield: 5.00}, {year: 2017, rate: 0.30}, {year: 2016, rate: 0.21}, {
@@ -1697,11 +1698,12 @@ const eonPrices = {
 };
 
 // tslint:disable:max-line-length
-export const eonShare = {
+export const eonCompany: Company = {
   id: 1013,
   name: 'E.ON SE',
   country: Country.Deutschland,
   city: 'Essen',
+  url: 'https://www.eon.de/de/pk/unternehmen.html',
   description: 'Die börsennotierte E.ON SE ist die Holdinggesellschaft eines deutschen Energiekonzerns mit Sitz in Essen. Das Unternehmen ist hauptsächlich in den Bereichen Energienetze, Energiedienstleistungen, erneuerbare Energien und dem Betrieb und Rückbau deutscher Atomkraftwerke tätig.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/E.ON',
   logo: 'https://www.eon.com/etc/designs/eon/eon-com/images/logo-red.svg',

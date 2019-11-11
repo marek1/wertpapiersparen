@@ -1707,11 +1707,12 @@ const continentalPrices = {
   }
 };
 
-export const continentalShare: Company = {
+export const continentalCompany: Company = {
   id: 1006,
   name: 'Continental AG',
   country: Country.Deutschland,
   city: 'Hannover',
+  url: 'https://www.continental.com/de',
   description: 'Continental hat sich von einem reinen Reifenhersteller zu einem der größten Automobilzulieferer entwickelt und ist nach der Robert Bosch GmbH der größte Automobilzulieferer der Welt.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Continental_AG',
   logo: 'https://www.ci-portal.de/wp-content/uploads/continental.jpg',

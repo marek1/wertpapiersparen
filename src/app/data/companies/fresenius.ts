@@ -1711,11 +1711,12 @@ const freseniusPrices = {
 };
 
 // tslint:disable:max-line-length
-export const freseniusShare: Company = {
+export const freseniusCompany: Company = {
   id: 1015,
   name: 'Fresenius SE & Co. KGaA',
   country: Country.Deutschland,
   city: 'Bad Homburg',
+  url: 'https://www.fresenius.de/index',
   description: 'Die Fresenius SE & Co. KGaA ist ein deutsches Medizintechnik- und Gesundheitsunternehmen mit Sitz im hessischen Bad Homburg vor der Höhe. Das Unternehmen ist einer der größten privaten Krankenhausbetreiber Deutschlands sowie im Pharma- und Gesundheitsdienstleistungsbereich tätig',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Fresenius_(Unternehmen)',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Fresenius.svg/500px-Fresenius.svg.png',

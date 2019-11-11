@@ -1627,11 +1627,12 @@ const deutschePostPrices = {
 };
 
 // tslint:disable:max-line-length
-export const deutschePostShare: Company = {
+export const deutschePostCompany: Company = {
   id: 1011,
   name: 'Deutsche Post AG',
   country: Country.Deutschland,
   city: 'Bonn',
+  url: 'https://www.dpdhl.com/de.html',
   description: 'Die Deutsche Post AG mit Sitz in Bonn ist ein deutsches Logistik- und Postunternehmen. Das Unternehmen entstand 1995 durch Privatisierung der früheren Behörde Deutsche Bundespost und ist seit 2000 Bestandteil des deutschen Leitindexes DAX an der Frankfurter Wertpapierbörse',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Post_AG',
   logo: 'https://www.dpdhl.com/content/dam/dpdhl/en/logos/official_dpdhllogo.svg',

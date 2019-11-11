@@ -359,11 +359,12 @@ const covestroPrices = {
 };
 
 // tslint:disable:max-line-length
-export const covestroShare: Company = {
+export const covestroCompany: Company = {
   id: 1007,
   name: 'Covestro',
   country: Country.Deutschland,
   city: 'Leverkusen',
+  url: 'https://www.covestro.com/',
   description: 'Die Covestro AG ist ein börsennotierter Werkstoffhersteller mit Sitz in Leverkusen. Das Unternehmen ist 2015 aus der ehemaligen Kunststoffsparte der Bayer AG hervorgegangen und firmierte bis dahin unter Bayer MaterialScience; es entwickelt, produziert und vertreibt Polymer-Werkstoffe an etwa 30 Standorten in Europa, Asien und Amerika. 2018 erzielte das Unternehmen einen Jahresumsatz von 14,6 Milliarden Euro',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Covestro',
   logo: 'https://www.covestro.com/-/media/covestro/shared-library/logo/covestro-logo.png?la=de&hash=07D75E282471081C7E0E2D1CE0EC9B5B651EE665',

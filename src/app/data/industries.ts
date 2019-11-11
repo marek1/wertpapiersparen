@@ -309,7 +309,7 @@ export const industries: Industry[] = [
           },
           {
             id: 111311,
-            description: 'Strominfrastruktur',
+            description: 'Netzbetreiber / Strominfrastruktur',
             imageName: 'tower.svg',
             subIndustries: null
           },
@@ -330,13 +330,6 @@ export const industries: Industry[] = [
             description: 'Solaranlagen',
             imageName: 'ecology-and-environment.svg',
             subIndustries: null
-          },
-          {
-            id: 111315,
-            description: 'Benzin, Gas und Öl',
-            imageName: 'fuel-station.svg',
-            subIndustries: null,
-            includeIndustries: [171310]
           }
         ]
       }
@@ -349,34 +342,64 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1210,
-        description: 'Flug',
+        description: 'Fluggeräte',
         imageName: 'plane.svg',
         subIndustries: [
           {
             id: 121010,
-            description: 'Fluggesellschaften',
+            description: 'Fluggesellschaften (Passagierverkehr)',
             imageName: 'plane.svg',
             subIndustries: null,
             includeIndustries: [101510]
           },
           {
             id: 121011,
-            description: 'Flugzeughersteller',
+            description: 'Fluggesellschaften (Cargo)',
             imageName: 'plane.svg',
             subIndustries: null
           },
           {
             id: 121012,
+            description: 'Flugzeughersteller',
+            imageName: 'plane.svg',
+            subIndustries: null
+          },
+          {
+            id: 121013,
             description: 'Zulieferer der Flugzugindustrie',
             imageName: 'logistics.svg',
             subIndustries: null
           },
           {
-            id: 121013,
+            id: 121014,
+            description: 'Helikopter- und Hubschrauberflüge',
+            imageName: 'helicopter.svg',
+            subIndustries: null
+          },
+          {
+            id: 121015,
+            description: 'Hersteller von Helikoptern und Hubschraubern',
+            imageName: 'helicopter.svg',
+            subIndustries: null
+          },
+          {
+            id: 121016,
+            description: 'Hersteller von Hubschrauber-/Helikopterteilen',
+            imageName: 'helicopter.svg',
+            subIndustries: null
+          },
+          {
+            id: 121017,
+            description: 'Hersteller anderer Fluggeräte',
+            imageName: 'drone.svg',
+            subIndustries: null
+          },
+          {
+            id: 121018,
             description: 'Flughäfen und Flughafenbetreiber',
             imageName: 'airport.svg',
             subIndustries: null
-          }
+          },
         ]
       },
       {
@@ -701,7 +724,7 @@ export const industries: Industry[] = [
           },
           {
             id: 141011,
-            description: 'Immobilienfinanzierung',
+            description: 'Immobilienfinanzierung / Baufinanzierung',
             imageName: 'mortgage.svg',
             subIndustries: null
           },
@@ -777,7 +800,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1510,
-        description: 'Herstellung und Vertieb von Chemikalien / Chemieprodukten',
+        description: 'Herstellung und Vertrieb von Chemikalien / Chemieprodukten',
         imageName: 'flask.svg',
         subIndustries: null
       },
@@ -913,18 +936,18 @@ export const industries: Industry[] = [
       },
       {
         id: 1712,
-        description: 'Gase, Industriegase',
+        description: 'Gewinning und Erzeugung von Gasen',
         imageName: 'tanker.svg',
         subIndustries: null
       },
       {
         id: 1713,
-        description: 'Schmierstoffe, Öle und ölverarbeitende Betriebe',
+        description: 'Erzeugung vo Schmierstoffen und ölverarbeitende Betriebe',
         imageName: 'diesel.svg',
         subIndustries: [
           {
             id: 171310,
-            description: 'Öl, Raffinerien und ölverarbeitende Betriebe',
+            description: 'Ölverarbeitende Betriebe',
             imageName: 'oil-rig.svg',
             subIndustries: null
           },

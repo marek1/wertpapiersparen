@@ -1,4 +1,5 @@
 export enum Country {
-  'Deutschland'
+  'Deutschland',
+  'Irland'
 }
 

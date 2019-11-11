@@ -1679,11 +1679,12 @@ const infineonPices = {
   }
 };
 // tslint:disable:max-line-length
-export const infineonShare: Company = {
+export const infineonCompany: Company = {
   id: 1018,
   name: 'Infineon Technologies AG',
   country: Country.Deutschland,
   city: 'Neubiberg',
+  url: 'https://www.infineon.com/',
   description: 'Die Infineon Technologies AG mit Sitz in Neubiberg (Landkreis München) ist ein börsennotierter deutscher Halbleiterhersteller. Infineon bietet Halbleiter- und Systemlösungen mit Schwerpunkt auf den Themen Energieeffizienz, Mobilität und Sicherheit.[3] Das Unternehmen gliedert sich in die Geschäftsbereiche Automotive, Industrial Power Control, Power Management & Multimarket sowie Digital Security Solutions.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Infineon',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Infineon-Logo.svg/500px-Infineon-Logo.svg.png',

@@ -1712,11 +1712,12 @@ const beiersdorfPrices = {
 };
 
 // tslint:disable:max-line-length
-export const beiersdorfShare: Company = {
+export const beiersdorfCompany: Company = {
   id: 1004,
   name: 'Beiersdorf AG',
   country: Country.Deutschland,
   city: 'Hamburg',
+  url: 'https://www.beiersdorf.de/',
   description: 'Die Beiersdorf AG ist ein börsennotierter weltweit tätiger deutscher Konsumgüterkonzern mit Sitz in Hamburg-Eimsbüttel, der sich im Mehrheitsbesitz der Maxingvest AG, eines Holdingunternehmens der Familie Herz, befindet. Unter anderem gehören Marken wie 8×4, Nivea, Tesa, Labello, Eucerin und Hansaplast zur Beiersdorf AG.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Beiersdorf_AG',
   logo: 'https://www.beiersdorf.de/~/images/MAM/Beiersdorf-Press-Center/Press_Information/Press_Releases_-_German/08.01.2014_Beiersdorf_Logo_in_neuem_Design/BDF_Logo_negativeWhite-77629-2.jpg?mw=320&mh=179',

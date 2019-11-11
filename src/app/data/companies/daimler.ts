@@ -1709,11 +1709,12 @@ const daimlerPrices = {
 };
 
 // tslint:disable:max-line-length
-export const daimlerShare: Company = {
+export const daimlerCompany: Company = {
   id: 1008,
   name: 'Daimler AG',
   country: Country.Deutschland,
   city: 'Stuttgart',
+  url: 'https://www.daimler.com/de/',
   description: 'Die Daimler AG mit Sitz in Stuttgart ist ein börsennotierter deutscher Hersteller von Personenkraftwagen und Nutzfahrzeugen. Ihre bekannteste Marke ist Mercedes-Benz. Das Unternehmen ist außerdem Anbieter von Mobilitäts- und Finanzdienstleistungen.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Daimler_AG',
   logo: 'https://designnavigator.daimler.com/img/template/brand_mark_daimler_x2.png',

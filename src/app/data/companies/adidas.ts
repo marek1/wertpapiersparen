@@ -1707,11 +1707,12 @@ const adidasPrices = {
   }
 };
 
-export const adidasShare: Company = {
+export const adidasCompany: Company = {
   id: 1000,
   name: 'Adidas AG',
   country: Country.Deutschland,
   city: 'München',
+  url: 'https://www.adidas-group.com/de/',
   description: 'Die Adidas AG ist ein international tätiger deutscher Sportartikelhersteller mit Sitz in Herzogenaurach',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Adidas',
   logo: 'https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/49/36/493649a2-ca5a-445d-b077-792bbf82c63c/core.jpg__243x0_q85_crop-smart_subsampling-2.jpg',

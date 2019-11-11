@@ -1712,11 +1712,12 @@ const heidelbergCementPrices = {
 };
 
 // tslint:disable:max-line-length
-export const heidelbergCementShare: Company = {
+export const heidelbergCementCompany: Company = {
   id: 1016,
   name: 'HeidelbergCement AG',
   country: Country.Deutschland,
   city: 'Heidelberg',
+  url: 'https://www.heidelbergcement.com/de',
   description: 'Die HeidelbergCement AG mit Sitz in Heidelberg ist ein börsennotierter Baustoffkonzern. Das Unternehmen ist weltweit die Nummer 1 bei Zuschlagstoffen, Nummer 2 bei Zement und Nummer 3 bei Transportbeton.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/HeidelbergCement',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/HeidelbergCement_Logo.svg/500px-HeidelbergCement_Logo.svg.png',

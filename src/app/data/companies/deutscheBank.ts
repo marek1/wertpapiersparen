@@ -1712,11 +1712,12 @@ const deutscheBankPrices = {
 };
 
 // tslint:disable:max-line-length
-export const deutscheBankShare: Company = {
+export const deutscheBankCompany: Company = {
   id: 1009,
   name: 'Deutsche Bank AG',
   country: Country.Deutschland,
   city: 'Frankfurt',
+  url: 'https://www.deutsche-bank.de/pk.html',
   description: 'Die Deutsche Bank AG (Audio-Datei / Hörbeispiel Anhören?/i) ist das nach Bilanzsumme und Mitarbeiterzahl größte Kreditinstitut Deutschlands. Das Unternehmen mit Sitz in Frankfurt am Main ist als Universalbank tätig und unterhält bedeutende Niederlassungen in London, New York City, Singapur, Hongkong und Sydney.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Bank',
   logo: 'https://www.db.com/company/img/db_logo.gif',

@@ -1712,11 +1712,12 @@ const fmcPrices = {
 };
 
 // tslint:disable:max-line-length
-export const fmcShare: Company = {
+export const fmcCompany: Company = {
   id: 1014,
   name: 'Fresenius Medical Care AG & Co. KGaA',
   country: Country.Deutschland,
   city: 'Hof',
+  url: 'https://www.freseniusmedicalcare.com/de/startseite/',
   description: 'Die Fresenius Medical Care AG & Co. KGaA mit rechtlichem Sitz in Hof (Saale) und operativem Sitz in Bad Homburg vor der Höhe ist ein weltweit führender deutscher Anbieter von Dialyseprodukten und Dialysedienstleistungen zur überlebensnotwendigen medizinischen Versorgung von Menschen mit chronischem und akutem Nierenversagen.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Fresenius_Medical_Care',
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/b/b8/Fresenius_Medical_Care_20xx_logo.svg/500px-Fresenius_Medical_Care_20xx_logo.svg.png',

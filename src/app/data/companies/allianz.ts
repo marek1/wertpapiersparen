@@ -1711,33 +1711,53 @@ const allianzPrices = {
   }
 };
 
-export const allianzShare: Company = {
+export const allianzCompany: Company = {
   id: 1001,
   name: 'Allianz SE',
   country: Country.Deutschland,
+  city: 'München',
+  url: 'https://www.allianz.de/',
   description: 'Die Allianz SE mit Sitz in München ist ein 1890 gegründeter, börsennotierter Versicherungskonzern und nach Umsatz einer der weltgrößten',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Allianz_SE',
   logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg',
   products: [
     {
       id: 100110,
-      name: 'Allianz Versicherungen',
+      name: 'Allianz Baufinanzierung',
       logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
     },
     {
-      id: 100111,
-      name: 'Allsecur / Allianz Direkt Versicherung',
-    },
-    {
       id: 100112,
-      name: 'Pimco'
+      name: 'Pimco',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/PIMCO_Logo.svg/500px-PIMCO_Logo.svg.png'
     },
     {
       id: 100113,
-      name: 'Euler Hermes'
+      name: 'Euler Hermes',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Euler_Hermes_Kreditversicherung_logo.svg/500px-Euler_Hermes_Kreditversicherung_logo.svg.png',
+    },
+    {
+      id: 100114,
+      name: 'Allianz KFZ-Versicherung  (Allsecur)',
+      logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
+    },
+    {
+      id: 100115,
+      name: 'Allianz Hausratversicherung',
+      logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
+    },
+    {
+      id: 100116,
+      name: 'Allianz Haftpflichtversicherung',
+      logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
+    },
+    {
+      id: 100117,
+      name: 'Allianz Rechtsschutzversicherung',
+      logo: 'https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/media-database/allianz_logo.jpg'
     }
   ],
-  industries: [141210],
+  industries: [141210, 141011],
   currency: Currency.EUR,
   isin: 'DE0008404005',
   wkn: '840400',

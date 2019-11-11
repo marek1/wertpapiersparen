@@ -1711,11 +1711,12 @@ const basfPrices = {
   }
 };
 
-export const basfShare: Company = {
+export const basfCompany: Company = {
   id: 1002,
   name: 'BASF SE',
   country: Country.Deutschland,
   city: 'Ludwigshafen',
+  url: 'https://www.basf.com/global/de.html',
   description: 'Die BASF SE (ehemals Badische Anilin- & Soda-Fabrik) ist ein börsennotierter Chemiekonzern und der nach Umsatz weltweit größte Chemiekonzern.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/BASF',
   logo: 'https://www.basf.com/global/images/news-media/multimedia/BASF-Logo.jpg.dynamic.1280w720h.3ec78282ee874c98c219fe271d56d2e00fffd423.jpeg',

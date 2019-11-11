@@ -1712,11 +1712,12 @@ const bmwPrices = {
 };
 
 // tslint:disable:max-line-length
-export const bmwShare: Company = {
+export const bmwCompany: Company = {
   id: 1005,
   name: 'Bayerische Motoren Werke Aktiengesellschaft (BMW AG)',
   country: Country.Deutschland,
   city: 'München',
+  url: 'https://www.bmw.de/de/home.html',
   description: 'Die Bayerische Motoren Werke Aktiengesellschaft (BMW AG) ist ein weltweit operierender, börsennotierter Automobil- und Motorradhersteller mit Sitz in München. Die Produktpalette umfasst die Automobil- und Motorrad-Marke BMW, die Automarken Mini und Rolls-Royce sowie die BMW-Submarken BMW M und BMW i.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/BMW',
   logo: 'https://www.bmwgroup.com/etc.clientlibs/bmwgroup/clientlibs/clientlib-site/resources/img/brands/group.png',

@@ -1708,11 +1708,12 @@ const deutscheTelekomPrices = {
 };
 
 // tslint:disable:max-line-length
-export const deutscheTelekomShare: Company = {
+export const deutscheTelekomCompany: Company = {
   id: 1012,
   name: 'Deutsche Telekom AG',
   country: Country.Deutschland,
   city: 'Bonn',
+  url: 'https://www.telekom.com/de',
   description: 'Die Deutsche Telekom AG (Audio-Datei / Hörbeispiel Anhören?/i) ist Europas größtes Telekommunikationsunternehmen[4] mit Hauptsitz in Bonn',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Telekom',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telekom_Logo_2013.svg/500px-Telekom_Logo_2013.svg.png',

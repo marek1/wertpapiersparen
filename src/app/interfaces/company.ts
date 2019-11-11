@@ -30,6 +30,7 @@ export interface Company {
   name: string;
   country: Country;
   city?: string;
+  url?: string;
   description: string;
   link_wikipedia: string;
   link_video?: string;

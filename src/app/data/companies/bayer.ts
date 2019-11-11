@@ -1713,11 +1713,12 @@ const bayerPrices = {
 
 
 // tslint:disable:max-line-length
-export const bayerShare: Company = {
+export const bayerCompany: Company = {
   id: 1003,
   name: 'Bayer AG',
   country: Country.Deutschland,
   city: 'Leverkusen',
+  url: 'https://www.bayer.de/',
   description: 'Die Bayer Aktiengesellschaft[1] (kurz Bayer AG) ist ein divisional gegliedertes Unternehmen, das aus 420 Gesellschaften[4] mit insgesamt 116.998 Mitarbeitern besteht (Stand: Jahresende 2018)',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Bayer_AG',
   logo: 'https://shared.bayer.com/img/bayer-logo.svg',
