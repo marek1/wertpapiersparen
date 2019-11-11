@@ -1715,13 +1715,9 @@ export const eonCompany: Company = {
     {
       id: 101311,
       name: 'Eon Strom'
-    },
-    {
-      id: 101312,
-      name: 'Eon Solaranlagen'
     }
   ],
-  industries: [111310, 111314, 111315],
+  industries: [111310, 111315, 111314],
   currency: Currency.EUR,
   isin: 'DE000ENAG999',
   wkn: 'ENAG99',

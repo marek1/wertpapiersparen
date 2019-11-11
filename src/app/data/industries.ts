@@ -226,6 +226,12 @@ export const industries: Industry[] = [
             description: 'Projektentwickler',
             imageName: 'home-planning.svg',
             subIndustries: []
+          },
+          {
+            id: 111015,
+            description: 'Gebäudetechnik',
+            imageName: 'building.svg',
+            subIndustries: null
           }
         ]
       },
@@ -298,12 +304,12 @@ export const industries: Industry[] = [
       },
       {
         id: 1113,
-        description: 'Versorgung inkl. Strom',
+        description: 'Versorgung und Energie (inkl. Strom)',
         imageName: 'renewable-energy.svg',
         subIndustries: [
           {
             id: 111310,
-            description: 'Stromerzeuger',
+            description: 'Strom - und Energieerzeuger',
             imageName: 'plug.svg',
             subIndustries: null
           },
@@ -315,20 +321,38 @@ export const industries: Industry[] = [
           },
           {
             id: 111312,
-            description: 'Kraftwerksbau',
+            description: 'Kraftwerksbau (außer Windkraftanlagen)',
             imageName: 'power-plant.svg',
             subIndustries: null
           },
           {
             id: 111313,
-            description: 'Windkraftanlagen',
+            description: 'Hersteller von Windkraftanlagen',
             imageName: 'eolic.svg',
             subIndustries: null
           },
           {
             id: 111314,
-            description: 'Solaranlagen',
+            description: 'Betreiber von Windkraftanlagen',
+            imageName: 'eolic.svg',
+            subIndustries: null
+          },
+          {
+            id: 111315,
+            description: 'Hersteller von Solaranlagen',
             imageName: 'ecology-and-environment.svg',
+            subIndustries: null
+          },
+          {
+            id: 111316,
+            description: 'Hersteller von Windkraftanlagen',
+            imageName: 'eolic.svg',
+            subIndustries: null
+          },
+          {
+            id: 111317,
+            description: 'Zulieferer der Energieindustrie (inkl. Turbinen)',
+            imageName: 'logistics.svg',
             subIndustries: null
           }
         ]
@@ -543,30 +567,36 @@ export const industries: Industry[] = [
       },
       {
         id: 1218,
+        description: 'Verkehrstechnik',
+        imageName: 'traffic-light.svg',
+        subIndustries: null
+      },
+      {
+        id: 1219,
         description: 'Betreiber von Autobahnen und Strassen',
         imageName: 'toll-road.svg',
         subIndustries: null
       },
       {
-        id: 1219,
+        id: 1220,
         description: 'Logistikunternehmen und Post',
         imageName: 'logistics.svg',
         subIndustries: null,
         includeIndustries: [121012, 121110, 121211]
       },
       {
-        id: 1220,
+        id: 1221,
         description: 'Militär: Flug- und Fahrzeuge',
         imageName: '',
         subIndustries: [
           {
-            id: 122010,
+            id: 122110,
             description: 'Militärflugzeuge und Zulieferer',
             imageName: 'military-plane.svg',
             subIndustries: null
           },
           {
-            id: 122011,
+            id: 122111,
             description: 'Militärfahrzeuge und Zulieferer ',
             imageName: 'tank.svg',
             subIndustries: null
@@ -574,7 +604,7 @@ export const industries: Industry[] = [
         ]
       },
       {
-        id: 1221,
+        id: 1222,
         description: 'Raumfahrt und Zulieferer',
         imageName: 'rocket.svg',
         subIndustries: null
@@ -760,7 +790,7 @@ export const industries: Industry[] = [
           },
           {
             id: 141017,
-            description: 'Finanzdienstleister',
+            description: 'Finanzierungen /Diensleistungen rund um die Finanzierung',
             imageName: 'investor.svg',
             subIndustries: null
           }

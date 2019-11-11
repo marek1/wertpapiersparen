@@ -25,6 +25,8 @@ import { mtuAeroCompany } from './companies/mtuAero';
 import { munichReCompany } from './companies/munichRe';
 import { rweCompany } from './companies/rwe';
 import { sapCompany } from './companies/sap';
+import { siemensCompany } from './companies/siemens';
+import { vwCompany } from './companies/vw';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -54,5 +56,7 @@ export const daxCompanies: Company[] = [
   munichReCompany, // 1023
   rweCompany, // 1024
   sapCompany, // 1025
+  siemensCompany, // 1026
+  vwCompany, // 1027
 ];
 // tslint:enable:max-line-length
