@@ -623,7 +623,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131010,
-            description: 'Mobilfunkanbieter und Handynetzbetreiber',
+            description: 'Handynetzbetreiber',
             imageName: 'mobile-network.svg',
             subIndustries: null
           },
@@ -636,6 +636,12 @@ export const industries: Industry[] = [
           {
             id: 131012,
             description: 'Hersteller von Mobiltelefonen (Handyhersteller)',
+            imageName: 'smartphone.svg',
+            subIndustries: null
+          },
+          {
+            id: 131013,
+            description: 'Mobilfunk-, Daten- und Handyverträge',
             imageName: 'smartphone.svg',
             subIndustries: null
           }
