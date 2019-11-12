@@ -32,6 +32,8 @@ import { wirecardCompany } from './companies/dax/wirecard';
 import { einsUndEinsCompany } from './companies/1und1';
 import { aarealCompany } from './companies/mdax/aareal';
 import { airbusCompany } from './companies/mdax/airbus';
+import { alstriaOfficeReitCompany } from './companies/mdax/alstria';
+import { aroundTownCompany } from './companies/mdax/aroundtown';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -71,5 +73,7 @@ export const mdaxCompanies = [
   einsUndEinsCompany, // 1030
   aarealCompany, // 1031
   airbusCompany, // 1032
+  alstriaOfficeReitCompany, // 1034
+  aroundTownCompany, // 1035
 ];
 // tslint:enable:max-line-length
