@@ -1777,7 +1777,6 @@ export const merckKgCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: merckKgPrices,
   dividends: merckKgDividends,
-  tags: ['Chemie', 'Pharma', 'Life Science', 'Originalpräparate', 'Selbstmedikation', 'Flüssigkristalle', 'Elektronikchemikalien', 'Pigmente', 'Kosmetik', 'Pharmawirkstoffe', 'Reagenzien', 'Laborprodukte'],
-  responsibilityAttributes: []
+  tags: ['Chemie', 'Pharma', 'Life Science', 'Originalpräparate', 'Selbstmedikation', 'Flüssigkristalle', 'Elektronikchemikalien', 'Pigmente', 'Kosmetik', 'Pharmawirkstoffe', 'Reagenzien', 'Laborprodukte']
 };
 // tslint:enable:max-line-length

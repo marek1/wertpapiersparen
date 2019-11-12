@@ -1735,7 +1735,6 @@ export const siemensCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: siemensPrices,
   dividends: siemensDividends,
-  tags: ['Automatisierungstechnik', 'Antriebstechnik', 'Antriebe', 'Antriebskomponenten', 'Motoren', 'Verkehrstechnik', 'Antriebssysteme', 'Gebäudetechnik', 'Energielösungen', 'Windenergie', 'Motoren', 'Kraftwerkslösungen', 'Kraftwerkstechnik', 'Energieübertragung', 'Energieverteilung', 'Generatoren', 'Getriebe', 'Kupplungen', 'Medizintechnik', 'Schienenfahrzeuge', 'Sicherheitstechnik', 'Turbinen', 'Verdichter'],
-  responsibilityAttributes: []
+  tags: ['Automatisierungstechnik', 'Antriebstechnik', 'Antriebe', 'Antriebskomponenten', 'Motoren', 'Verkehrstechnik', 'Antriebssysteme', 'Gebäudetechnik', 'Energielösungen', 'Windenergie', 'Motoren', 'Kraftwerkslösungen', 'Kraftwerkstechnik', 'Energieübertragung', 'Energieverteilung', 'Generatoren', 'Getriebe', 'Kupplungen', 'Medizintechnik', 'Schienenfahrzeuge', 'Sicherheitstechnik', 'Turbinen', 'Verdichter']
 };
 // tslint:enable:max-line-length

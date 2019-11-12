@@ -1761,6 +1761,11 @@ export const lufthansaCompany: Company = {
       name: 'Lufthansa Cargo',
       logo: 'https://www.lufthansagroup.com/fileadmin/_processed_/4/c/csm_LHCrg_B777F_l_a1d5e3c526.png'
     },
+    {
+      id: 102018,
+      name: 'Sun Express',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/SunExpress_Logo.svg/500px-SunExpress_Logo.svg.png'
+    }
   ],
   industries: [121010, 121011],
   currency: Currency.EUR,
@@ -1777,7 +1782,6 @@ export const lufthansaCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: lufthansaPrices,
   dividends: lufthansaDividends,
-  tags: ['Fluggesellschaft', 'Passagier', 'Linienverkehr', 'Frachtlinienverkehr'],
-  responsibilityAttributes: []
+  tags: ['Fluggesellschaft', 'Passagier', 'Linienverkehr', 'Frachtlinienverkehr']
 };
 // tslint:enable:max-line-length

@@ -1766,7 +1766,6 @@ export const sapCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: sapPrices,
   dividends: sapDividends,
-  tags: ['Unternehmenssoftwarelösungen', 'ERP', 'Software', 'Cloud', 'Business Solutions'],
-  responsibilityAttributes: []
+  tags: ['Unternehmenssoftwarelösungen', 'ERP', 'Software', 'Cloud', 'Business Solutions']
 };
 // tslint:enable:max-line-length

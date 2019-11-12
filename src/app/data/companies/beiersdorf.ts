@@ -1788,25 +1788,6 @@ export const beiersdorfCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: beiersdorfPrices,
   dividends: beiersdorfDividends,
-  tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte'],
-  responsibilityAttributes: [
-    {
-      result: '66 / 100 Punkten (5.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: true,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '15,1 / 25 Punkte (17. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte']
 };
 // tslint:enable:max-line-length

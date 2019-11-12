@@ -1772,24 +1772,5 @@ export const allianzCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: allianzPrices,
   dividends: allianzDividends,
-  tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung'],
-  responsibilityAttributes: [
-    {
-      result: '89 / 100 Punkten (1.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: true,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '15,6 / 25 Punkte (10. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung']
 };

@@ -1753,24 +1753,6 @@ export const freseniusCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: freseniusPrices,
   dividends: freseniusDividends,
-  tags: ['Gesundheitskonzern', 'Krankenhäuser', 'Dialyse'],
-  responsibilityAttributes: [
-    {
-      result: '35 / 100 Punkten (27.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: true
-    },
-    {
-      result: '16,8 / 25 Punkte (1. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: true,
-      isBottomTwentyPercent: false
-    }]
+  tags: ['Gesundheitskonzern', 'Krankenhäuser']
 };
 // tslint:enable:max-line-length

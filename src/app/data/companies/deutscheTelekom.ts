@@ -1748,24 +1748,6 @@ export const deutscheTelekomCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: deutscheTelekomPrices,
   dividends: deutscheTelekomDividends,
-  tags: ['Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV'],
-  responsibilityAttributes: [
-    {
-      result: '61 / 100 Punkten (11.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '14,4 / 25 Punkte (22. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }]
+  tags: ['Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV']
 };
 // tslint:enable:max-line-length

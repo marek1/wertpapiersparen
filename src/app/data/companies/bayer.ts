@@ -1772,26 +1772,7 @@ export const bayerCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: bayerPrices,
   dividends: bayerDividends,
-  tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie'],
-  responsibilityAttributes: [
-    {
-      result: '38 / 100 Punkten (22.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '14,3 / 25 Punkte (23. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Chemie', 'Monsanto', 'Spezialchemie', 'Pharma', 'LifeScience', 'Kunststoffe', 'Medizinische Produkte', 'Medizintechnik', 'Biotechnologie']
 };
 
 

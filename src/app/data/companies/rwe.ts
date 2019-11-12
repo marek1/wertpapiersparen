@@ -1734,7 +1734,6 @@ export const rweCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: rwePrices,
   dividends: rweDividends,
-  tags: [],
-  responsibilityAttributes: []
+  tags: ['Energieunternehmen', 'Stromerzeugung', 'Erdgasförderung', 'Stromhandel', 'Gashandel']
 };
 // tslint:enable:max-line-length

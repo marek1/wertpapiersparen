@@ -1649,25 +1649,6 @@ export const deutschBoerseCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: deutscheBoersePrices,
   dividends: deutscheBoerseDividends,
-  tags: ['Börse', 'Börsenplatz'],
-  responsibilityAttributes: [
-    {
-      result: '85 / 100 Punkten (3.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: true,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '14,2 / 25 Punkte (24. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Börse', 'Börsenplatz']
 };
 // tslint:enable:max-line-length

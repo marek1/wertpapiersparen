@@ -1663,25 +1663,6 @@ export const deutschePostCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: deutschePostPrices,
   dividends: deutschePostDividends,
-  tags: ['Post', 'Briefe', 'Pakete'],
-  responsibilityAttributes: [
-    {
-      result: '61 / 100 Punkten (11.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '15,3 / 25 Punkte (12. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Post', 'Briefe', 'Pakete', 'Logistik', 'Logistics']
 };
 // tslint:enable:max-line-length

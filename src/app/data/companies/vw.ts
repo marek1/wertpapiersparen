@@ -1717,7 +1717,7 @@ export const vwCompany: Company = {
   city: 'Wolfsburg',
   url: 'https://www.volkswagenag.com/',
   description: 'Die Volkswagen Aktiengesellschaft (abgekürzt VW AG) mit Sitz im niedersächsischen Wolfsburg ist ein deutscher Automobilhersteller. Er ist indirekt mehrheitlich im Besitz der österreichischen Familien Porsche und Piëch.',
-  link_wikipedia: 'https://de.wikipedia.org/wiki/Volkswagen_AG'
+  link_wikipedia: 'https://de.wikipedia.org/wiki/Volkswagen_AG',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/VWAG-Logo.svg/500px-VWAG-Logo.svg.png',
   products: [
     {
@@ -1784,8 +1784,7 @@ export const vwCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: vwPrices,
   dividends: vwDividends,
-  tags: ['Auto', 'Automobile', 'Automobilhersteller', 'Motorrad', 'Motorräder', 'Nutzfahrzeuge', 'Finanzdienstleistungen'],
-  responsibilityAttributes: []
+  tags: ['Auto', 'Automobile', 'Automobilhersteller', 'Motorrad', 'Motorräder', 'Nutzfahrzeuge', 'Finanzdienstleistungen']
 };
 // tslint:enable:max-line-length
 

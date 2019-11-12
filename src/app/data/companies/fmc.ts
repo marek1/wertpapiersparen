@@ -1758,25 +1758,6 @@ export const fmcCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: fmcPrices,
   dividends: fmcDividends,
-  tags: ['Dialysetechnik'],
-  responsibilityAttributes: [
-    {
-      result: '56 / 100 Punkten (14.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '16,1 / 25 Punkte (8. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Dialysetechnik', 'Dialysegeräte']
 };
 // tslint:enable:max-line-length

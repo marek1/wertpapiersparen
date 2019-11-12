@@ -1796,8 +1796,7 @@ export const lindeCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: lindePrices,
   dividends: lindeDividends,
-  tags: ['Gabelstapler', 'Hubwagen', 'Niederhubwagen', 'Hochhubwagen', 'Gase', 'Industriegase'],
-  responsibilityAttributes: []
+  tags: ['Gabelstapler', 'Hubwagen', 'Niederhubwagen', 'Hochhubwagen', 'Gase', 'Industriegase']
 };
 // tslint:enable:max-line-length
 

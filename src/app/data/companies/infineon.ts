@@ -1704,25 +1704,6 @@ export const infineonCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: infineonPices,
   dividends: infineoDividends,
-  tags: ['Energieeffizienz', 'Mobilität', 'Sicherheit', 'Halbleiter', 'Systemlösungen', 'Automotive', 'Industrieelektronik', 'Chipkarte', 'Sicherheitsanwendungen'],
-  responsibilityAttributes: [
-    {
-      result: '75 / 100 Punkten (4.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: true,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '15,0 / 25 Punkte (19. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Energieeffizienz', 'Mobilität', 'Sicherheit', 'Halbleiter', 'Systemlösungen', 'Automotive', 'Industrieelektronik', 'Chipkarte', 'Sicherheitsanwendungen']
 };
 // tslint:enable:max-line-length

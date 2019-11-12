@@ -47,5 +47,4 @@ export interface Company {
   end_of_month_prices: any;
   dividends: Dividends[];
   tags: string[];
-  responsibilityAttributes: ResponsibilityAttribute[];
 }

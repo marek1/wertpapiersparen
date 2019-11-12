@@ -1753,25 +1753,6 @@ export const deutscheBankCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: deutscheBankPrices,
   dividends: deutscheBankDividends,
-  tags: ['Bank'],
-  responsibilityAttributes: [
-    {
-      result: '39 / 100 Punkten (20.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '11,8 / 25 Punkte (29. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: true
-    }
-  ]
+  tags: ['Bank', 'Banking', 'Finanzdienstleistungen', 'Girokonto', 'Finanzierung']
 };
 // tslint:enable:max-line-length

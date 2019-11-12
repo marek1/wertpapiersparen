@@ -1742,25 +1742,6 @@ export const heidelbergCementCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: heidelbergCementPrices,
   dividends: heidelbergCementDividends,
-  tags: ['Zement'],
-  responsibilityAttributes: [
-    {
-      result: '35 / 100 Punkten (27.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: true
-    },
-    {
-      result: '15,2 / 25 Punkte (14. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Zement']
 };
 // tslint:enable:max-line-length

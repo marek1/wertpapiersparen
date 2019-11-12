@@ -1778,25 +1778,6 @@ export const bmwCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: bmwPrices,
   dividends: bmwDividends,
-  tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität'],
-  responsibilityAttributes: [
-    {
-      result: '46 / 100 Punkten (15.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '14,8 / 25 Punkte (20. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['Automobile', 'Motorräder', 'BMW', 'Rolls-Royce', 'MINI', 'Finanzleistungen', 'Mobilität']
 };
 // tslint:enable:max-line-length

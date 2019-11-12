@@ -1772,7 +1772,6 @@ export const munichReCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: munichRePrices,
   dividends: munichReDividends,
-  tags: ['Rückversicherung', 'Rückversicherungsgesellschaft', 'Erstversicherung', 'Krankenrückversicherung', 'Krankenerstversicherung'],
-  responsibilityAttributes: []
+  tags: ['Rückversicherung', 'Rückversicherungsgesellschaft', 'Erstversicherung', 'Krankenrückversicherung', 'Krankenerstversicherung']
 };
 // tslint:enable:max-line-length

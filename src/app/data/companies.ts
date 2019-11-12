@@ -27,6 +27,8 @@ import { rweCompany } from './companies/rwe';
 import { sapCompany } from './companies/sap';
 import { siemensCompany } from './companies/siemens';
 import { vwCompany } from './companies/vw';
+import { vonoviaCompany } from './companies/vonovia';
+import { wirecardCompany } from './companies/wirecard';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -58,5 +60,7 @@ export const daxCompanies: Company[] = [
   sapCompany, // 1025
   siemensCompany, // 1026
   vwCompany, // 1027
+  vonoviaCompany, // 1028
+  wirecardCompany, // 1029
 ];
 // tslint:enable:max-line-length

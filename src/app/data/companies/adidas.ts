@@ -5,7 +5,7 @@ import { Indices } from '../../enums/indices';
 import { ResponsibilityType } from '../../enums/responsibility';
 
 const adidasDividends: Dividends[] = [
-  {year: 2017, rate: 2.6}, {year: 2016, rate: 2.00}, {year: 2015, rate: 1.60, yield: 1.78}, {
+  {year: 2018, rate: 3.35, yield: 1.83}, {year: 2017, rate: 2.6}, {year: 2016, rate: 2.00}, {year: 2015, rate: 1.60, yield: 1.78}, {
     year: 2014,
     rate: 1.50,
     yield: 2.60
@@ -1748,24 +1748,5 @@ export const adidasCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: adidasPrices,
   dividends: adidasDividends,
-  tags: ['sportartikel', 'sportkleidung'],
-  responsibilityAttributes: [
-    {
-      result: '58 / 100 Punkten (13.Platz)',
-      responsibilityType: ResponsibilityType.Nachhaltigkeit,
-      issuer: 'Globalance Bank',
-      ranking: 'Globalance Footprint',
-      isTopTwentyPercent: false,
-      isBottomTwentyPercent: false
-    },
-    {
-      result: '16,5 / 25 Punkte (4. Platz)',
-      responsibilityType: ResponsibilityType.Ethik,
-      issuer: 'Kirchhoff',
-      ranking: 'GOOD COMPANY RANKING 2018 / Gesellschaft',
-      link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
-      isTopTwentyPercent: true,
-      isBottomTwentyPercent: false
-    }
-  ]
+  tags: ['sportartikel', 'sportkleidung']
 };

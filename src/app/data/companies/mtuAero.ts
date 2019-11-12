@@ -1258,7 +1258,6 @@ export const mtuAeroCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: mtuPrices,
   dividends: mtuDividends,
-  tags: ['Triebwerke', 'Triebwerksmodule', 'Triebwerkskomponenten', 'Flugzeugtriebwerke', 'Industriegasturbinen'],
-  responsibilityAttributes: []
+  tags: ['Triebwerke', 'Triebwerksmodule', 'Triebwerkskomponenten', 'Flugzeugtriebwerke', 'Industriegasturbinen']
 };
 // tslint:enable:max-line-length
