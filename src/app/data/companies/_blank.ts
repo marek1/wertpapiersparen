@@ -3,6 +3,9 @@ import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
 
+const dividends = [];
+const prices = {};
+
 export const anyCompany: Company = {
   id: 0,
   name: '',
@@ -21,8 +24,8 @@ export const anyCompany: Company = {
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
   current_indices: [],
-  end_of_month_prices: null,
-  dividends: null,
+  end_of_month_prices: prices,
+  dividends,
   tags: []
 };
 // tslint:enable:max-line-length

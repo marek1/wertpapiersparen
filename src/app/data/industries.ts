@@ -966,7 +966,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1711,
-        description: 'Rohstoffe und rohstoffverarbeitende Betriebe',
+        description: 'Rohstoffe und Rohstoffverarbeitende Betriebe',
         imageName: 'drop.svg',
         subIndustries: null
       },

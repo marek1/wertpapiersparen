@@ -29,11 +29,16 @@ import { siemensCompany } from './companies/dax/siemens';
 import { vwCompany } from './companies/dax/vw';
 import { vonoviaCompany } from './companies/dax/vonovia';
 import { wirecardCompany } from './companies/dax/wirecard';
-import { einsUndEinsCompany } from './companies/1und1';
+import { einsUndEinsCompany } from './companies/mdax/1und1';
 import { aarealCompany } from './companies/mdax/aareal';
 import { airbusCompany } from './companies/mdax/airbus';
 import { alstriaOfficeReitCompany } from './companies/mdax/alstria';
 import { aroundTownCompany } from './companies/mdax/aroundtown';
+import { aurubisCompany } from './companies/mdax/aurubis';
+import { bechtleCompany } from './companies/mdax/bechtle';
+import { brenntagCompany } from './companies/mdax/brenntag';
+import { cancomCompany } from './companies/mdax/cancom';
+import { carlzeissmeditecCompany } from './companies/mdax/carlzeissmeditec';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -75,5 +80,10 @@ export const mdaxCompanies = [
   airbusCompany, // 1032
   alstriaOfficeReitCompany, // 1034
   aroundTownCompany, // 1035
+  aurubisCompany, // 1036
+  bechtleCompany, // 1037
+  brenntagCompany, // 1038
+  cancomCompany, // 1039
+  carlzeissmeditecCompany, // 1040
 ];
 // tslint:enable:max-line-length

@@ -1,7 +1,7 @@
-import { Company } from '../../interfaces/company';
-import { Country } from '../../enums/country';
-import { Indices } from '../../enums/indices';
-import { Currency } from '../../enums/currencies';
+import { Company } from '../../../interfaces/company';
+import { Country } from '../../../enums/country';
+import { Indices } from '../../../enums/indices';
+import { Currency } from '../../../enums/currencies';
 
 const dividends = [
   {year: 2018, rate: 0.05, yield: 0.11}, {year: 2017, rate: 1.60}, {year: 2016, rate: 1.80}, {
