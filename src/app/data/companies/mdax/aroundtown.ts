@@ -309,7 +309,7 @@ const prices = {
 export const aroundTownCompany: Company = {
   id: 1035,
   name: 'Aroundtown SA',
-  country: Country.Deutschland,
+  country: Country.Luxemburg,
   city: 'Luxemburg',
   url: 'http://www.aroundtown.de/',
   description: 'Die Aroundtown SA ist ein in Luxemburg ansässiges Unternehmen, das Anteile an Gewerbeimmobilien insbesondere in Deutschland und den Niederlanden hält. Der Schwerpunkt liegt auf Büro-, Hotel- und Gewerbeimmobilien.[2] Über eine Beteiligung an der Grand City Properties S.A. ist das Unternehmen im Wohnimmobiliensektor aktiv.',

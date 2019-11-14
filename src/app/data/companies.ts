@@ -39,6 +39,23 @@ import { bechtleCompany } from './companies/mdax/bechtle';
 import { brenntagCompany } from './companies/mdax/brenntag';
 import { cancomCompany } from './companies/mdax/cancom';
 import { carlzeissmeditecCompany } from './companies/mdax/carlzeissmeditec';
+import { commerzbankCompany } from './companies/mdax/commerzbank';
+import { compugroupCompany } from './companies/mdax/compugroup';
+import { ctsEventimCompany } from './companies/mdax/cts';
+import { deliveryHeroCompany } from './companies/mdax/deliveryHero';
+import { deutscheWohnenCompany } from './companies/mdax/deutscheWohnen';
+import { dialogSemiconductorCompany } from './companies/mdax/dialogSemi';
+import { duerrCompany } from './companies/mdax/duerr';
+import { evonikCompany } from './companies/mdax/evonik';
+import { evotecCompany } from './companies/mdax/evotec';
+import { fielmannCompany } from './companies/mdax/fielmann';
+import { fraportCompany } from './companies/mdax/fraport';
+import { freenetCompany } from './companies/mdax/freenet';
+import { fuchsCompany } from './companies/mdax/fuchs';
+import { geaCompany } from './companies/mdax/geaCompany';
+import { gerresheimerCompany } from './companies/mdax/gerresheimer';
+import { grandCityCompany } from './companies/mdax/grandCity';
+import { grenkeCompany } from './companies/mdax/grenke';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -85,5 +102,22 @@ export const mdaxCompanies = [
   brenntagCompany, // 1038
   cancomCompany, // 1039
   carlzeissmeditecCompany, // 1040
+  commerzbankCompany, // 1041
+  compugroupCompany, // 1042
+  ctsEventimCompany, // 1043
+  deliveryHeroCompany, // 1044
+  deutscheWohnenCompany, // 1045
+  dialogSemiconductorCompany, // 1046
+  duerrCompany, // 1047
+  evonikCompany, // 1048
+  evotecCompany, // 1049
+  fielmannCompany, // 1050
+  fraportCompany, // 1051
+  freenetCompany, // 1052
+  fuchsCompany, // 1053
+  geaCompany, // 1054
+  gerresheimerCompany, // 1055
+  grandCityCompany, // 1056
+  grenkeCompany, // 1057
 ];
 // tslint:enable:max-line-length

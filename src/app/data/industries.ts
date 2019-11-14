@@ -754,7 +754,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 141010,
-            description: 'Banken (Retailbanken) und Kreditinstitute',
+            description: 'Banken (Universalbanken) und Kreditinstitute',
             imageName: 'bank-building.svg',
             subIndustries: null
           },
@@ -799,6 +799,13 @@ export const industries: Industry[] = [
             description: 'Finanzierungen /Diensleistungen rund um die Finanzierung',
             imageName: 'investor.svg',
             subIndustries: null
+          },
+          {
+            id: 141018,
+            description: 'Leasing',
+            imageName: 'investor.svg',
+            subIndustries: null,
+            includeIndustries: [1815]
           }
         ]
       },
@@ -1058,7 +1065,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1722,
-        description: 'Verpackungen',
+        description: 'Verpackungen (Primärverpackungen)',
         imageName: 'box.svg',
         subIndustries: null
       },
