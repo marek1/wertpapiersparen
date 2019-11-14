@@ -56,6 +56,10 @@ import { geaCompany } from './companies/mdax/geaCompany';
 import { gerresheimerCompany } from './companies/mdax/gerresheimer';
 import { grandCityCompany } from './companies/mdax/grandCity';
 import { grenkeCompany } from './companies/mdax/grenke';
+import { hanoverReCompany } from './companies/mdax/hanoverRe';
+import { hellaCompany } from './companies/mdax/hella';
+import { hochtiefCompany } from './companies/mdax/hochtief';
+import { hugobossCompany } from './companies/mdax/hugoboss';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -119,5 +123,9 @@ export const mdaxCompanies = [
   gerresheimerCompany, // 1055
   grandCityCompany, // 1056
   grenkeCompany, // 1057
+  hanoverReCompany, // 1058
+  hellaCompany,  // 1059
+  hochtiefCompany, // 1060
+  hugobossCompany, // 1061
 ];
 // tslint:enable:max-line-length
