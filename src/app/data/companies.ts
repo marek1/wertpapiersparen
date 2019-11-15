@@ -60,6 +60,16 @@ import { hanoverReCompany } from './companies/mdax/hanoverRe';
 import { hellaCompany } from './companies/mdax/hella';
 import { hochtiefCompany } from './companies/mdax/hochtief';
 import { hugobossCompany } from './companies/mdax/hugoboss';
+import { ksCompany } from './companies/mdax/ks';
+import { kionCompany } from './companies/mdax/kion';
+import { knorrCompany } from './companies/mdax/knorr';
+import { lanxessCompany } from './companies/mdax/lanxess';
+import { legImmobilienCompany } from './companies/mdax/leg';
+import { metroCompany } from './companies/mdax/metro';
+import { morphosysCompany } from './companies/mdax/morphosys';
+import { nemetschekCompany } from './companies/mdax/nemetschek';
+import { osramCompany } from './companies/mdax/osram';
+import { pbbCompany } from './companies/mdax/pbb';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -127,5 +137,15 @@ export const mdaxCompanies = [
   hellaCompany,  // 1059
   hochtiefCompany, // 1060
   hugobossCompany, // 1061
+  ksCompany, // 1062
+  kionCompany, // 1063
+  knorrCompany, // 1064
+  lanxessCompany, // 1065
+  legImmobilienCompany, // 1066
+  metroCompany, // 1067
+  morphosysCompany, // 1068
+  nemetschekCompany, // 1070
+  osramCompany, // 1071
+  pbbCompany, // 1072
 ];
 // tslint:enable:max-line-length

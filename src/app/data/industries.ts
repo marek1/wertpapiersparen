@@ -867,7 +867,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1514,
-        description: 'Düngemittel',
+        description: 'Düngemittel und Salze',
         imageName: 'watering.svg',
         subIndustries: null
       }
