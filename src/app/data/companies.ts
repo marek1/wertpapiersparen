@@ -70,6 +70,9 @@ import { morphosysCompany } from './companies/mdax/morphosys';
 import { nemetschekCompany } from './companies/mdax/nemetschek';
 import { osramCompany } from './companies/mdax/osram';
 import { pbbCompany } from './companies/mdax/pbb';
+import { prosiebenCompany } from './companies/mdax/prosieben';
+import { pumaCompany } from './companies/mdax/puma';
+import { qiagenCompany } from './companies/mdax/qiagen';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -147,5 +150,8 @@ export const mdaxCompanies = [
   nemetschekCompany, // 1070
   osramCompany, // 1071
   pbbCompany, // 1072
+  prosiebenCompany, // 1073
+  pumaCompany, // 1074
+  qiagenCompany, // 1075
 ];
 // tslint:enable:max-line-length
