@@ -1151,7 +1151,7 @@ export const deutscheWohnenCompany: Company = {
   url: 'http://www.deutsche-wohnen.com/',
   description: 'Die Deutsche Wohnen SE ist eine börsennotierte deutsche Wohnungsgesellschaft mit Sitz in Berlin. Das Unternehmen besitzt etwa 163.000 Wohnungen und 2.600 Gewerbeimmobilien.[2] Rund 111.000 Wohnungen befinden sich in Berlin.[3] Zum Immobilienbestand gehören auch Pflege-Einrichtungen und Appartements für betreutes Wohnen.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Wohnen',
-  logo: 'https://de.wikipedia.org/wiki/Datei:Deutsche_Wohnen_logo.svg',
+  logo: 'https://www.deutsche-wohnen.com/assets/img/icons/dw_logo.svg',
   products: [],
   industries: [111010],
   currency: Currency.EUR,

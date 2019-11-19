@@ -16,12 +16,11 @@ interface SelectedIndustry {
   templateUrl: './by-industry.component.html',
   styleUrls: ['./by-industry.component.scss']
 })
-export class ByIndustryComponent implements OnInit {
+export class ByIndustryComponent {
 
   // holding the level of selected industries
-  public selectedIndustries: SelectedIndustry[];
   public industriesInThisLevel: Industry[];
-  public AllIndustries = industries;
+  public selectedIndustries: SelectedIndustry[];
 
   constructor() {
     this.industriesInThisLevel = [];
@@ -34,39 +33,29 @@ export class ByIndustryComponent implements OnInit {
     this.setIndustries();
   }
 
-  ngOnInit() {
-  }
-
-
   setIndustries() {
     this.industriesInThisLevel = [];
     if (this.selectedIndustries.length === 1) {
-      this.industriesInThisLevel = this.AllIndustries;
+      this.industriesInThisLevel = industries;
     } else {
-      this.industriesInThisLevel = this.iterateThroughChildren(this.AllIndustries);
+      this.industriesInThisLevel = this.iterateThroughChildren(industries);
     }
   }
 
   iterateThroughChildren(dataArray: Industry[]): Industry[] {
     const idToFind = this.selectedIndustries[this.selectedIndustries.length - 1].id;
-    console.log('idToFind : ', idToFind);
-
     for (const dataItem of dataArray) {
       if (dataItem.id === idToFind) {
         return dataItem.subIndustries;
         break;
       }
     }
-
-    console.log('otherwise go through  children');
     let concatSubs = [];
     for (const dataItem1 of dataArray) {
       if (dataItem1.subIndustries) {
         concatSubs = concatSubs.concat(dataItem1.subIndustries);
       }
     }
-    console.log('concatSubs : ', concatSubs);
-    // for (const dataItem2 of concatSubs) {
     return this.iterateThroughChildren(concatSubs);
   }
 
@@ -80,7 +69,6 @@ export class ByIndustryComponent implements OnInit {
       id: selectedIndustry.id,
       name: selectedIndustry.description
     });
-    console.log('this.selectedIndustries: ', this.selectedIndustries);
     this.setIndustries();
   }
 
@@ -88,4 +76,5 @@ export class ByIndustryComponent implements OnInit {
     this.selectedIndustries = this.selectedIndustries.slice(0, i + 1);
     this.setIndustries();
   }
+
 }

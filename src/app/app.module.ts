@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ByIndustryComponent } from './components/by-industry/by-industry.component';
+import { SecuritiesListInIndustryComponent } from './components/securities-list-in-industry/securities-list-in-industry.component';
+import { SecurityDetailsComponent } from './components/security-details/security-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ByIndustryComponent } from './components/by-industry/by-industry.compon
     HomeComponent,
     PageNotFoundComponent,
     NavComponent,
-    ByIndustryComponent
+    ByIndustryComponent,
+    SecuritiesListInIndustryComponent,
+    SecurityDetailsComponent
   ],
   imports: [
     BrowserModule,

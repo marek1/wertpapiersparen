@@ -1743,7 +1743,7 @@ export const deutscheBankCompany: Company = {
       logo: 'https://meine.norisbank.de/trxmcontent/19.42.0.0_PR41-76f6407a359/global/noris/images/logo.gif'
     }
   ],
-  industries: [141010, 141011],
+  industries: [141010, 141011, 141016, 141017],
   currency: Currency.EUR,
   isin: 'DE0005140008',
   wkn: '514000',

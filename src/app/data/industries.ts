@@ -281,6 +281,7 @@ export const industries: Industry[] = [
       {
         id: 1112,
         description: 'Hausinnenaustattung inkl. Haushaltsprodukte',
+        imageName: 'interior-design.svg',
         subIndustries: [
           {
             id: 111210,
@@ -725,6 +726,7 @@ export const industries: Industry[] = [
       {
         id: 1313,
         description: 'Computer, Konsolen und Spiele',
+        imageName: 'gameboy.svg',
         subIndustries: [
           {
             id: 101510,
@@ -1118,7 +1120,7 @@ export const industries: Industry[] = [
           {
             id: 181311,
             description: 'Hardware (ausser PCs)',
-            imageName: '',
+            imageName: 'printer.svg',
             subIndustries: null
           }
         ]
