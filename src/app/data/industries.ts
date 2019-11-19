@@ -840,6 +840,7 @@ export const industries: Industry[] = [
   {
     id: 15,
     description: 'Chemie, Bio, Biotechnologie und Agrar',
+    imageName: 'flask.svg',
     subIndustries: [
       {
         id: 1510,
@@ -876,6 +877,7 @@ export const industries: Industry[] = [
   {
     id: 16,
     description: 'Gesundheit und Pharma',
+    imageName: 'medicine.svg',
     subIndustries: [
       {
         id: 1610,
@@ -939,6 +941,7 @@ export const industries: Industry[] = [
   {
     id: 17,
     description: 'Industrie, Produktion, Produktionsanlagen, Werk- und Rohstoffe',
+    imageName: 'beam.svg',
     subIndustries: [
       {
         id: 1710,
@@ -1080,6 +1083,7 @@ export const industries: Industry[] = [
   {
     id: 18,
     description: 'Informationstechnologie (IT)',
+    imageName: 'programming.svg',
     subIndustries: [
       {
         id: 1810,
@@ -1187,6 +1191,7 @@ export const industries: Industry[] = [
   {
     id: 20,
     description: 'Handel',
+    imageName: 'retail.svg',
     subIndustries: [
       {
         id: 2010,

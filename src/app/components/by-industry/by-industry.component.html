@@ -1,0 +1,31 @@
+<div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" [ngClass]="{'active': (selectedIndustries.length -1) === i}" *ngFor="let selectedIndustry of selectedIndustries; let i = index">
+              <span
+                (click)="goToBreadcrumb(i)"
+              >{{selectedIndustries[i].name}}</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-sm-6" *ngFor="let industrie of industriesInThisLevel; let i = index;">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          <img class="industry-icon" src="../../../assets/images/{{industrie.imageName}}">
+          {{industrie.description}}
+        </p>
+        <span
+          (click)="openIndustry(industrie)"
+          class="btn btn-primary float-right"
+          *ngIf="industrie.subIndustries && industrie.subIndustries.length > 0">
+              Weiter
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+

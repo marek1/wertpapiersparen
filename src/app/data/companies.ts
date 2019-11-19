@@ -155,3 +155,5 @@ export const mdaxCompanies = [
   qiagenCompany, // 1075
 ];
 // tslint:enable:max-line-length
+
+export const AllCompanies = daxCompanies.concat(mdaxCompanies);

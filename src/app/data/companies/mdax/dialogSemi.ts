@@ -1,3 +1,7 @@
+import { Company } from '../../../interfaces/company';
+import { Country } from '../../../enums/country';
+import { Currency } from '../../../enums/currencies';
+
 const dividends = [];
 const prices = {};
 
