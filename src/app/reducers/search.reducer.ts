@@ -1,7 +1,6 @@
-import { ChosenSecurity } from '../interfaces/chosenSecurity';
 import { createReducer, on } from '@ngrx/store';
-import { SearchMethods } from '../enums/searchMethods';
 import { SearchActions } from '../actions';
+import { SelectedIndustry } from '../interfaces/selectedIndustry';
 
 export const featureKey = 'search';
 
@@ -9,12 +8,19 @@ export interface State {
   isLoading: boolean;
   errorMessage: string|null;
   selectedSearchMethod: string|null;
+  selectedIndustries: SelectedIndustry[];
 }
 
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
-  selectedSearchMethod: null
+  selectedSearchMethod: null,
+  selectedIndustries: [
+    {
+      id: 0,
+      name: 'Alle Industrien'
+    }
+  ]
 };
 
 export const reducer = createReducer(
@@ -25,8 +31,15 @@ export const reducer = createReducer(
     ...state,
     selectedSearchMethod
   })),
+  on(SearchActions.addToSelectedIndustries, (state, {selectedIndustries}) => ({
+    ...state,
+    selectedIndustries: [...state.selectedIndustries, selectedIndustries]
+  })),
+  on(SearchActions.removeFromSelectedIndustries, (state, {endPosition}) =>  ({
+    ...state,
+    selectedIndustries: state.selectedIndustries.slice(0, endPosition + 1)
+  }))
 );
 
 export const getSelectedSearchMethod = (state: State) => state.selectedSearchMethod;
-
-
+export const getSelectedIndustries = (state: State) => state.selectedIndustries;

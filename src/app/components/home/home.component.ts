@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchMethods } from '../../enums/searchMethods';
 import { HelperService } from '../../services/helpers';
-import { AllCompanies } from '../../data/companies';
-import { industries } from '../../data/industries';
-import { Industry } from '../../interfaces/industry';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/';
 import { SearchActions } from '../../actions';
@@ -14,27 +11,20 @@ import { Observable } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  // public selectedSearchMethod: string;
   public selectedSearchMethod$: Observable<string>;
+  public SearchMethods: typeof SearchMethods;
   public searchMethods: string[];
-  public SearchMethods = SearchMethods;
 
   constructor(private store: Store<fromRoot.AppState>, private helperService: HelperService) {
+    this.SearchMethods = SearchMethods;
     this.searchMethods = this.helperService.EnumToArray(SearchMethods);
-
   }
 
-  ngOnInit() {
-  }
-
-  setMethod(which: SearchMethods) {
-    // this.selectedSearchMethod = SearchMethods[which];
+  setMethod(which: SearchMethods): void {
     this.selectedSearchMethod$ = this.store.pipe(select(fromRoot.getSelectedSearchMethod));
     this.store.dispatch(SearchActions.setSelectedSearchMethodAction({selectedSearchMethod: SearchMethods[which]}));
   }
-
-
 
 }

@@ -71,3 +71,7 @@ export const getSelectedSearchMethod = createSelector(
   fromSearch.getSelectedSearchMethod
 );
 
+export const getSelectedIndustries = createSelector(
+  selectSearchState,
+  fromSearch.getSelectedIndustries
+);

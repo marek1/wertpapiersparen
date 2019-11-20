@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Industry } from '../../interfaces/industry';
 import { industries } from '../../data/industries';
-
-import * as _ from 'lodash';
-import { of } from 'rxjs';
-
-
-interface SelectedIndustry {
-  id: number;
-  name: string;
-}
+import { SelectedIndustry } from '../../interfaces/selectedIndustry';
+import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import * as fromRoot from '../../reducers';
+import { SearchActions } from '../../actions';
 
 @Component({
   selector: 'app-by-industry',
@@ -20,22 +16,20 @@ export class ByIndustryComponent {
 
   // holding the level of selected industries
   public industriesInThisLevel: Industry[];
-  public selectedIndustries: SelectedIndustry[];
+  public selectedIndustries$: Observable<SelectedIndustry[]>;
+  private lastId: number;
 
-  constructor() {
+  constructor(private store: Store<fromRoot.AppState>) {
     this.industriesInThisLevel = [];
-    this.selectedIndustries = [
-      {
-        id: 0,
-        name: 'Alle Industrien'
-      }
-    ];
-    this.setIndustries();
+    this.selectedIndustries$ = this.store.pipe(select(fromRoot.getSelectedIndustries));
+    this.selectedIndustries$.subscribe((selectedIndustries: SelectedIndustry[]) => {
+      this.lastId = selectedIndustries[selectedIndustries.length - 1].id;
+      this.setIndustries();
+    });
   }
 
   setIndustries() {
-    this.industriesInThisLevel = [];
-    if (this.selectedIndustries.length === 1) {
+    if (this.lastId === 0) {
       this.industriesInThisLevel = industries;
     } else {
       this.industriesInThisLevel = this.iterateThroughChildren(industries);
@@ -43,9 +37,8 @@ export class ByIndustryComponent {
   }
 
   iterateThroughChildren(dataArray: Industry[]): Industry[] {
-    const idToFind = this.selectedIndustries[this.selectedIndustries.length - 1].id;
     for (const dataItem of dataArray) {
-      if (dataItem.id === idToFind) {
+      if (dataItem.id === this.lastId) {
         return dataItem.subIndustries;
         break;
       }
@@ -59,22 +52,17 @@ export class ByIndustryComponent {
     return this.iterateThroughChildren(concatSubs);
   }
 
-  goThroughSelectedIndustries(obj: any) {
-    const idToFind = this.selectedIndustries[this.selectedIndustries.length - 1].id;
-
-  }
-
   openIndustry(selectedIndustry: Industry) {
-    this.selectedIndustries.push({
-      id: selectedIndustry.id,
-      name: selectedIndustry.description
-    });
-    this.setIndustries();
+    this.store.dispatch(SearchActions.addToSelectedIndustries({selectedIndustries:
+      {
+        id: selectedIndustry.id,
+        name: selectedIndustry.description
+      }
+    }));
   }
 
   goToBreadcrumb(i: number) {
-    this.selectedIndustries = this.selectedIndustries.slice(0, i + 1);
-    this.setIndustries();
+    this.store.dispatch(SearchActions.removeFromSelectedIndustries({endPosition: i}));
   }
 
 }

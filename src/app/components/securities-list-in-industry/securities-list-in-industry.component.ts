@@ -22,7 +22,6 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.industryId  && changes.industryId.currentValue) {
-      console.log('industryId : ', changes.industryId.currentValue);
       this.retrieveSecurities(changes.industryId.currentValue);
     }
   }
