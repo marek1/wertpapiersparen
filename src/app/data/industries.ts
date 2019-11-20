@@ -8,7 +8,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1010,
-        description: 'Pflegemittel und Kosmetik',
+        description: 'Pflegemittel und Kosmetik und deren Zulieferer',
         imageName: 'jigsaws.svg',
         subIndustries: null
       },
@@ -88,12 +88,18 @@ export const industries: Industry[] = [
           },
           {
             id: 101311,
-            description: 'Getränkehersteller',
-            imageName: 'soda.svg',
+            description: 'Nahrungsmittelhersteller und Zulieferer',
+            imageName: 'diet.svg',
             subIndustries: null
           },
           {
             id: 101312,
+            description: 'Getränkehersteller  und Zulieferer',
+            imageName: 'soda.svg',
+            subIndustries: null
+          },
+          {
+            id: 101313,
             description: 'Fastfood',
             imageName: 'fast-food.svg',
             subIndustries: null

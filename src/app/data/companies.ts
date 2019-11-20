@@ -80,6 +80,10 @@ import { rtlCompany } from './companies/mdax/rtl';
 import { sartoriusCompany } from './companies/mdax/sartorius';
 import { scout24Company } from './companies/mdax/scout24';
 import { siemensHealthineersCompany } from './companies/mdax/siemensHealthineers';
+import { siltronicCompany } from './companies/mdax/siltronic';
+import { softwareAgCompany } from './companies/mdax/softwareAg';
+import { symriseCompany } from './companies/mdax/symrise';
+import { tagImmobilienCompany } from './companies/mdax/tagImmobilien';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -169,6 +173,10 @@ export const mdaxCompanies = [
   sartoriusCompany, // 1080
   scout24Company, // 1081
   siemensHealthineersCompany, // 1082
+  siltronicCompany, // 1083
+  softwareAgCompany, // 1084
+  symriseCompany, // 1085
+  tagImmobilienCompany, // 1086
 ];
 // tslint:enable:max-line-length
 
