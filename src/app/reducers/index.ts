@@ -8,14 +8,17 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
+import * as fromSearch from './search.reducer';
 import * as fromBasket from './basket.reducer';
 import { InjectionToken } from '@angular/core';
+import { from } from 'rxjs';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface AppState {
+  [fromSearch.featureKey]: fromSearch.State;
   [fromBasket.featureKey]: fromBasket.State;
 }
 
@@ -26,6 +29,7 @@ export interface AppState {
  */
 export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Action>>('Root reducers token', {
   factory: () => ({
+    [fromSearch.featureKey]: fromSearch.reducer,
     [fromBasket.featureKey]: fromBasket.reducer
   })
 });
@@ -53,3 +57,17 @@ export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState
 export const metaReducers: MetaReducer<AppState>[] = !environment.production
   ? [logger]
   : [];
+
+/**
+ * Search Reducers
+ */
+
+export const selectSearchState = createFeatureSelector<AppState, fromSearch.State>(
+  fromSearch.featureKey
+);
+
+export const getSelectedSearchMethod = createSelector(
+  selectSearchState,
+  fromSearch.getSelectedSearchMethod
+);
+
