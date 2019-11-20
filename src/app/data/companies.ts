@@ -73,6 +73,13 @@ import { pbbCompany } from './companies/mdax/pbb';
 import { prosiebenCompany } from './companies/mdax/prosieben';
 import { pumaCompany } from './companies/mdax/puma';
 import { qiagenCompany } from './companies/mdax/qiagen';
+import { rationalCompany } from './companies/mdax/rational';
+import { rheinmetallCompany } from './companies/mdax/rheinmetall';
+import { rocketCompany } from './companies/mdax/rocket';
+import { rtlCompany } from './companies/mdax/rtl';
+import { sartoriusCompany } from './companies/mdax/sartorius';
+import { scout24Company } from './companies/mdax/scout24';
+import { siemensHealthineersCompany } from './companies/mdax/siemensHealthineers';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -112,6 +119,7 @@ export const mdaxCompanies = [
   einsUndEinsCompany, // 1030
   aarealCompany, // 1031
   airbusCompany, // 1032
+  // 1033 missing
   alstriaOfficeReitCompany, // 1034
   aroundTownCompany, // 1035
   aurubisCompany, // 1036
@@ -147,12 +155,20 @@ export const mdaxCompanies = [
   legImmobilienCompany, // 1066
   metroCompany, // 1067
   morphosysCompany, // 1068
+  // 1069 missing
   nemetschekCompany, // 1070
   osramCompany, // 1071
   pbbCompany, // 1072
   prosiebenCompany, // 1073
   pumaCompany, // 1074
   qiagenCompany, // 1075
+  rationalCompany, // 1076
+  rheinmetallCompany, // 1077
+  rocketCompany, // 1078
+  rtlCompany, // 1079
+  sartoriusCompany, // 1080
+  scout24Company, // 1081
+  siemensHealthineersCompany, // 1082
 ];
 // tslint:enable:max-line-length
 

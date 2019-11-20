@@ -259,7 +259,7 @@ export const airbusCompany: Company = {
       name: 'Airbus FCAS'
     }
   ],
-  industries: [121012, 122110, 121015],
+  industries: [121012, 121015, 2210],
   currency: Currency.EUR,
   isin: 'NL0000235190',
   wkn: '938914',

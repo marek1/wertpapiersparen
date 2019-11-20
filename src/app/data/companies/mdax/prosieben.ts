@@ -1736,7 +1736,7 @@ export const prosiebenCompany: Company = {
   current_indices: [Indices.MDAX],
   end_of_month_prices: prices,
   dividends,
-  tags: ['Medienkonzern', 'Free-TV', 'TV-Produktion', 'Fernsehsender', 'Streaming']
+  tags: ['Medienkonzern', 'Entertainment', 'Free-TV', 'Fernsehsender', 'TV-Produktion', 'Fernsehsendungen', 'TV-Produktionen', 'Streaming']
 };
 // tslint:enable:max-line-length
 

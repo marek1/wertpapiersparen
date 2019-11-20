@@ -586,25 +586,6 @@ export const industries: Industry[] = [
         includeIndustries: [121012, 121110, 121211]
       },
       {
-        id: 1221,
-        description: 'Militär: Flug- und Fahrzeuge',
-        imageName: '',
-        subIndustries: [
-          {
-            id: 122110,
-            description: 'Militärflugzeuge und Zulieferer',
-            imageName: 'military-plane.svg',
-            subIndustries: null
-          },
-          {
-            id: 122111,
-            description: 'Militärfahrzeuge und Zulieferer ',
-            imageName: 'tank.svg',
-            subIndustries: null
-          }
-        ]
-      },
-      {
         id: 1222,
         description: 'Raumfahrt und Zulieferer',
         imageName: 'rocket.svg',
@@ -655,7 +636,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131110,
-            description: 'TV-Kanäle / Fernsehsender',
+            description: 'TV-Kanäle / Fernsehsender ',
             imageName: 'television.svg',
             subIndustries: null
           },
@@ -680,7 +661,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131210,
-            description: 'Onlineshops, Onlinehandel, Internetshops, Ticketshops',
+            description: 'Onlineshops, Onlinehandel, Internetshops, Ticketshops, Marktplatz',
             imageName: 'online-booking.svg',
             subIndustries: null,
             includeIndustries: [101511]
@@ -1247,6 +1228,31 @@ export const industries: Industry[] = [
         imageName: 'online-ads.svg',
         subIndustries: null,
         includeIndustries: [131216]
+      }
+    ]
+  },
+  {
+    id: 22,
+    description: 'Militärische Ausrüstung',
+    imageName: 'war.svg',
+    subIndustries: [
+      {
+        id: 2210,
+        description: 'Militärische Fluggeräte inkl. Flugzeuge und deren Zulieferer',
+        imageName: 'military-plane.svg',
+        subIndustries: null
+      },
+      {
+        id: 2211,
+        description: 'Militärfahrzeuge und deren Zulieferer ',
+        imageName: 'tank.svg',
+        subIndustries: null
+      },
+      {
+        id: 2212,
+        description: 'Militärische Ausrüstung inkl. Gewehre',
+        imageName: 'rifle.svg',
+        subIndustries: null
       }
     ]
   }

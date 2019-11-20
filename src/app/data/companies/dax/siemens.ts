@@ -1718,7 +1718,7 @@ export const siemensCompany: Company = {
   url: 'https://new.siemens.com/de/de.html',
   description: 'Siemens ist ein integrierter, börsennotierter Technologiekonzern mit der Siemens AG als herrschendem Unternehmen und zahlreichen deutschen und internationalen Konzernunternehmen.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Siemens',
-  logo: 'https://new.siemens.com/etc.clientlibs/siemens-sites/components/content/header/clientlibs/resources/claim/siemens-logo-claim.png',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/2880px-Siemens-logo.svg.png',
   products: [],
   industries: [1720, 111312, 111313, 111317, 141017, 111015, 171410, 171411, 121311, 121312, 1218, 111115],
   currency: Currency.EUR,

@@ -4,7 +4,7 @@ import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 
 const dividends = [
-  {year: 2018, rate: 1.20, yield: 3.19}, {year: 2017, rate: 1.10,}, {year: 2016, rate: 1.05,}, {
+  {year: 2018, rate: 1.20, yield: 3.19}, {year: 2017, rate: 1.10,}, {year: 2016, rate: 1.05}, {
     year: 2015,
     rate: 1.00,
     yield: 2.07
@@ -838,7 +838,7 @@ export const brenntagCompany: Company = {
   url: 'http://www.brenntag.com/',
   description: 'Die Brenntag AG ist die Dachgesellschaft für die Brenntag Gruppe, die Weltmarktführer[2] im Chemiehandel ist. Sitz des Unternehmens ist Essen.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Brenntag',
-  logo: 'https://de.wikipedia.org/w/index.php?title=Datei:Brenntag.svg&filetimestamp=20091015170150&',
+  logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/5/54/Brenntag.svg/1599px-Brenntag.svg.png',
   products: [],
   industries: [1510],
   currency: Currency.EUR,
