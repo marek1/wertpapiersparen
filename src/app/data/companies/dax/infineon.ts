@@ -2,7 +2,6 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 
 const infineoDividends = [
   {year: 2018, rate: 0.27, yield: 1.38}, {year: 2017, rate: 0.25}, {year: 2016, rate: 0.22}, {
@@ -1701,7 +1700,7 @@ export const infineonCompany: Company = {
       isin: 'US45662N1037'
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.TecDAX],
   end_of_month_prices: infineonPices,
   dividends: infineoDividends,
   tags: ['Energieeffizienz', 'Mobilität', 'Sicherheit', 'Halbleiter', 'Systemlösungen', 'Automotive', 'Industrieelektronik', 'Chipkarte', 'Sicherheitsanwendungen']

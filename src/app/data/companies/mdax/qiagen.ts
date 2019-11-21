@@ -1707,7 +1707,7 @@ export const qiagenCompany: Company = {
   symbol: 'QIA',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.MDAX],
+  current_indices: [Indices.MDAX, Indices.TecDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Reagenzien', 'Laborroboter', 'Softwarelösungen', 'Bioinformatik', 'Diagnostik']

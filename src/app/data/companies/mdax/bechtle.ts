@@ -1714,7 +1714,7 @@ export const bechtleCompany: Company = {
   symbol: 'BC8.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.MDAX],
+  current_indices: [Indices.MDAX, Indices.TecDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['IT-Systemhaus', 'IT-Dienstleistungen', 'IT-Produkte', 'Beratungsleistungen', 'Systemintegration', 'Schulungen']

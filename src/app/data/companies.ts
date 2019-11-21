@@ -89,9 +89,17 @@ import { thyssenKruppCompany } from './companies/mdax/thyssenKrupp';
 import { uniperCompany } from './companies/mdax/uniper';
 import { unitedInternetCompany } from './companies/mdax/unitedInternet';
 import { zalandoCompany } from './companies/mdax/zalando';
+import { aixtronCompany } from './companies/tecdax/aixtron';
+import { draegerwerkCompany } from './companies/tecdax/draegerwerk';
+import { israVisionCompany } from './companies/tecdax/isra';
+import { jenoptikCompany } from './companies/tecdax/jenoptik';
+import { xingCompany } from './companies/tecdax/xing';
+import { nordexCompany } from './companies/tecdax/nordex';
+import { pfeifferVacuumCompany } from './companies/tecdax/pfeiffer';
+import { ribSoftwareCompany } from './companies/tecdax/ribSoftware';
 
 // tslint:disable:max-line-length
-export const daxCompanies: Company[] = [
+const daxCompanies: Company[] = [
   adidasCompany, // 1000
   allianzCompany, // 1001
   basfCompany, // 1002
@@ -124,7 +132,7 @@ export const daxCompanies: Company[] = [
   wirecardCompany, // 1029
 ];
 
-export const mdaxCompanies = [
+const mdaxCompanies = [
   einsUndEinsCompany, // 1030
   aarealCompany, // 1031
   airbusCompany, // 1032
@@ -188,6 +196,19 @@ export const mdaxCompanies = [
   unitedInternetCompany, // 1090
   zalandoCompany, // 1091
 ];
+
+const tecDaxCompanies = [
+  aixtronCompany, // 1100
+  draegerwerkCompany, // 1101
+  israVisionCompany, // 1102
+  jenoptikCompany, // 1103
+  xingCompany, // 1104
+  nordexCompany, // 1105
+  pfeifferVacuumCompany, // 1106
+  ribSoftwareCompany, // 1107
+];
 // tslint:enable:max-line-length
 
-export const AllCompanies = daxCompanies.concat(mdaxCompanies);
+export const AllCompanies = daxCompanies
+  .concat(mdaxCompanies)
+  .concat(tecDaxCompanies);

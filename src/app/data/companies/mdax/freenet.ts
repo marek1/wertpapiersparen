@@ -1775,7 +1775,7 @@ export const freenetCompany: Company = {
   symbol: 'FNTN.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.MDAX],
+  current_indices: [Indices.MDAX, Indices.TecDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Telekommunikationsanbieter', 'Mobilfunkdienstleistungen']

@@ -1,7 +1,6 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
 
 const deutscheTelekomDividends = [
@@ -1745,7 +1744,7 @@ export const deutscheTelekomCompany: Company = {
       isin: 'US2515661054'
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX],
   end_of_month_prices: deutscheTelekomPrices,
   dividends: deutscheTelekomDividends,
   tags: ['Telekommunikationsanbieter', 'Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV']
