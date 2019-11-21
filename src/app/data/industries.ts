@@ -352,8 +352,8 @@ export const industries: Industry[] = [
           },
           {
             id: 111316,
-            description: 'Hersteller von Windkraftanlagen',
-            imageName: 'eolic.svg',
+            description: 'Betreiber von Solaranlagen',
+            imageName: 'ecology-and-environment.svg',
             subIndustries: null
           },
           {

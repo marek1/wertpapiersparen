@@ -29,7 +29,7 @@ import { freseniusCompany } from '../companies/dax/fresenius';
 import { rweCompany } from '../companies/dax/rwe';
 import { vwCompany } from '../companies/dax/vw';
 import { Ranking } from '../../interfaces/ranking';
-import { thyssenKruppCompany } from '../companies/thyssenKrupp';
+import { thyssenKruppCompany } from '../companies/mdax/thyssenKrupp';
 
 export const globalanceFootprint: Ranking = {
   name: 'Globalance Footprint',

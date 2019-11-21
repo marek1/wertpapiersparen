@@ -84,6 +84,11 @@ import { siltronicCompany } from './companies/mdax/siltronic';
 import { softwareAgCompany } from './companies/mdax/softwareAg';
 import { symriseCompany } from './companies/mdax/symrise';
 import { tagImmobilienCompany } from './companies/mdax/tagImmobilien';
+import { telefonicaCompany } from './companies/mdax/telefonica';
+import { thyssenKruppCompany } from './companies/mdax/thyssenKrupp';
+import { uniperCompany } from './companies/mdax/uniper';
+import { unitedInternetCompany } from './companies/mdax/unitedInternet';
+import { zalandoCompany } from './companies/mdax/zalando';
 
 // tslint:disable:max-line-length
 export const daxCompanies: Company[] = [
@@ -177,6 +182,11 @@ export const mdaxCompanies = [
   softwareAgCompany, // 1084
   symriseCompany, // 1085
   tagImmobilienCompany, // 1086
+  telefonicaCompany, // 1087
+  thyssenKruppCompany, // 1088
+  uniperCompany, // 1089
+  unitedInternetCompany, // 1090
+  zalandoCompany, // 1091
 ];
 // tslint:enable:max-line-length
 

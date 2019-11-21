@@ -1748,6 +1748,6 @@ export const deutscheTelekomCompany: Company = {
   current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: deutscheTelekomPrices,
   dividends: deutscheTelekomDividends,
-  tags: ['Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV']
+  tags: ['Telekommunikationsanbieter', 'Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV']
 };
 // tslint:enable:max-line-length

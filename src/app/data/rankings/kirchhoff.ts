@@ -11,7 +11,7 @@ import { fmcCompany } from '../companies/dax/fmc';
 import { lufthansaCompany } from '../companies/dax/lufthansa';
 import { allianzCompany } from '../companies/dax/allianz';
 import { deutschePostCompany } from '../companies/dax/deutschePost';
-import { thyssenKruppCompany } from '../companies/thyssenKrupp';
+import { thyssenKruppCompany } from '../companies/mdax/thyssenKrupp';
 import { munichReCompany } from '../companies/dax/munichRe';
 import { heidelbergCementCompany } from '../companies/dax/heidelbergCement';
 import { merckKgCompany } from '../companies/dax/merckKg';
