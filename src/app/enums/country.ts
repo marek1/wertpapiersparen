@@ -3,6 +3,7 @@ export enum Country {
   'Irland',
   'Niederlande',
   'Luxemburg',
-  'UK'
+  'UK',
+  'Österreich'
 }
 

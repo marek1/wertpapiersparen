@@ -97,6 +97,7 @@ import { xingCompany } from './companies/tecdax/xing';
 import { nordexCompany } from './companies/tecdax/nordex';
 import { pfeifferVacuumCompany } from './companies/tecdax/pfeiffer';
 import { ribSoftwareCompany } from './companies/tecdax/ribSoftware';
+import { sundTCompany } from './companies/tecdax/sundT';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -206,6 +207,7 @@ const tecDaxCompanies = [
   nordexCompany, // 1105
   pfeifferVacuumCompany, // 1106
   ribSoftwareCompany, // 1107
+  sundTCompany, // 1108
 ];
 // tslint:enable:max-line-length
 

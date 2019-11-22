@@ -1763,7 +1763,7 @@ export const sapCompany: Company = {
       isin: 'US8030542042'
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX],
   end_of_month_prices: sapPrices,
   dividends: sapDividends,
   tags: ['Unternehmenssoftwarelösungen', 'ERP', 'Software', 'Cloud', 'Business Solutions']

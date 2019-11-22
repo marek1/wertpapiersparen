@@ -1426,7 +1426,7 @@ export const softwareAgCompany: Company = {
   symbol: 'SOW.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.MDAX],
+  current_indices: [Indices.MDAX, Indices.TecDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Software', 'Prozessmanagement', 'In-Memory-Datentechnologie', 'Anwendungsentwicklung', 'Echtzeit-Analyse', 'IT-Architektur-Management']

@@ -1145,7 +1145,7 @@ export const wirecardCompany: Company = {
       isin: 'US97654L1089'
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.TecDAX],
   end_of_month_prices: wirecardPrices,
   dividends: wirecardDividends,
   tags: ['Zahlungslösungen', 'Risikomanagementlösungen', 'Zahlungsprozesse', 'Kreditkarte']
