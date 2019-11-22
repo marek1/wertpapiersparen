@@ -1722,7 +1722,7 @@ export const aixtronCompany: Company = {
   symbol: 'AIXA.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.TecDAX],
+  current_indices: [Indices.TecDAX, Indices.SDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Beschichtungsanlagen', 'Maschinen', 'Anlagen', 'Halbleiterindustrie']

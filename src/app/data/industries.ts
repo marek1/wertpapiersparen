@@ -208,7 +208,7 @@ export const industries: Industry[] = [
           },
           {
             id: 111011,
-            description: 'Vermieter von Büros',
+            description: 'Vermieter von Büros und Gewerbeimmobilien',
             imageName: 'building.svg',
             subIndustries: null,
             includeIndustries: [1910]
@@ -221,13 +221,6 @@ export const industries: Industry[] = [
             includeIndustries: [1911]
           },
           {
-            id: 111013,
-            description: 'Vermieter von Gewerbeimmobilien',
-            imageName: 'factory.svg',
-            subIndustries: null,
-            includeIndustries: []
-          },
-          {
             id: 111014,
             description: 'Projektentwickler',
             imageName: 'home-planning.svg',
@@ -236,6 +229,12 @@ export const industries: Industry[] = [
           {
             id: 111015,
             description: 'Gebäudetechnik',
+            imageName: 'building.svg',
+            subIndustries: null
+          },
+          {
+            id: 111016,
+            description: 'Immobilieninvestor',
             imageName: 'building.svg',
             subIndustries: null
           }
@@ -280,6 +279,12 @@ export const industries: Industry[] = [
             id: 111115,
             description: 'Brandschutz und Sicherheitstechnik',
             imageName: 'helmet.svg',
+            subIndustries: null
+          },
+          {
+            id: 111116,
+            description: 'Ingenier- und Planungsdienstleistungen',
+            imageName: 'engineer.svg',
             subIndustries: null
           }
         ]
@@ -617,7 +622,7 @@ export const industries: Industry[] = [
           },
           {
             id: 131011,
-            description: 'Netzausrüster',
+            description: 'Telekommunikations- und Netzausrüstung ',
             imageName: '5g.svg',
             subIndustries: null
           },
@@ -1173,6 +1178,12 @@ export const industries: Industry[] = [
         id: 1912,
         description: 'Arbeitsvermittler',
         imageName: 'agent.svg',
+        subIndustries: []
+      },
+      {
+        id: 1913,
+        description: 'Zeitarbeit',
+        imageName: 'work1.svg',
         subIndustries: []
       }
     ]

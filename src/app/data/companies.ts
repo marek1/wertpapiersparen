@@ -98,6 +98,19 @@ import { nordexCompany } from './companies/tecdax/nordex';
 import { pfeifferVacuumCompany } from './companies/tecdax/pfeiffer';
 import { ribSoftwareCompany } from './companies/tecdax/ribSoftware';
 import { sundTCompany } from './companies/tecdax/sundT';
+import { adlerRealCompany } from './companies/sdax/adlerReal';
+import { adoCompany } from './companies/sdax/ado';
+import { advaCompany } from './companies/sdax/adva';
+import { amadeusCompany } from './companies/sdax/amadeus';
+import { baywaCompany } from './companies/sdax/baywa';
+import { befesaCompany } from './companies/sdax/befesa';
+import { bilfingerCompany } from './companies/sdax/bilfinger';
+import { bertrandtCompany } from './companies/sdax/bertrandt';
+import { bvbCompany } from './companies/sdax/bvb';
+import { ceconomyCompany } from './companies/sdax/ceconomy';
+import { ceweCompany } from './companies/sdax/cewe';
+import { coreStateCompany } from './companies/sdax/corestate';
+import { demapharmCompany, dermapharmCompany } from './companies/sdax/dermapharm';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -208,6 +221,22 @@ const tecDaxCompanies = [
   pfeifferVacuumCompany, // 1106
   ribSoftwareCompany, // 1107
   sundTCompany, // 1108
+];
+
+const sdaxCompany = [
+  adlerRealCompany, // 1109
+  adoCompany, // 1110
+  advaCompany,  // 1111
+  amadeusCompany, // 1112
+  baywaCompany, // 1113
+  befesaCompany, // 1114
+  bertrandtCompany, // 1115
+  bilfingerCompany, // 1116
+  bvbCompany, // 1117
+  ceconomyCompany, // 1118
+  ceweCompany, // 1119
+  coreStateCompany, // 1120
+  dermapharmCompany, // 1121
 ];
 // tslint:enable:max-line-length
 

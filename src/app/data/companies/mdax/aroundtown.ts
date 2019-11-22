@@ -316,7 +316,7 @@ export const aroundTownCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/Aroundtown_SA',
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/d/d9/Aroundtown_SA_logo.svg/500px-Aroundtown_SA_logo.svg.png',
   products: [],
-  industries: [1910, 111013],
+  industries: [1910, 111011],
   currency: Currency.EUR,
   isin: 'LU1673108939',
   wkn: 'A2DW8Z',
