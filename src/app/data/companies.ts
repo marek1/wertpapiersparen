@@ -111,6 +111,13 @@ import { ceconomyCompany } from './companies/sdax/ceconomy';
 import { ceweCompany } from './companies/sdax/cewe';
 import { coreStateCompany } from './companies/sdax/corestate';
 import { demapharmCompany, dermapharmCompany } from './companies/sdax/dermapharm';
+import { deutscheBeteiligungsCompany } from './companies/sdax/deutscheBeteiligungs';
+import { deutscheEuroshopCompany } from './companies/sdax/deutscheEuroshop';
+import { deutzCompany } from './companies/sdax/deutz';
+import { dicCompany } from './companies/sdax/dic';
+import { dmgMoriCompany } from './companies/sdax/dmg';
+import { drHoenleCompany } from './companies/sdax/drhoenle';
+import { dwsGroupCompany } from './companies/sdax/dws';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -237,6 +244,13 @@ const sdaxCompany = [
   ceweCompany, // 1119
   coreStateCompany, // 1120
   dermapharmCompany, // 1121
+  deutscheBeteiligungsCompany, // 1122
+  deutscheEuroshopCompany, // 1123
+  deutzCompany, // 1124
+  dicCompany, // 1125
+  dmgMoriCompany, // 1126
+  drHoenleCompany, // 1127
+  dwsGroupCompany, // 1128
 ];
 // tslint:enable:max-line-length
 

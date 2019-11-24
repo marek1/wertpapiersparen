@@ -1208,7 +1208,7 @@ export const industries: Industry[] = [
       },
       {
         id: 2012,
-        description: 'Kaufhaus und Mall-Betreiber',
+        description: 'Kaufhaus, Shoppingcenter bzw. Mall-Betreiber',
         imageName: 'shopping-mall.svg',
         subIndustries: null
       }

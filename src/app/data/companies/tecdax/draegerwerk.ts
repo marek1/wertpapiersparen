@@ -1940,7 +1940,7 @@ export const draegerwerkCompany: Company = {
   symbol: 'DRW3.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.TecDAX],
+  current_indices: [Indices.TecDAX, Indices.SDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Medizintechnik', 'Sicherheitstechnik', 'Anästhesiearbeitsplätze', 'Beatmungsgeräte', 'Patientenmonitoring', 'Versorgung von Neugeborenen', 'Versorgung von Frühchen']
