@@ -1607,7 +1607,7 @@ export const nordexCompany: Company = {
   current_indices: [Indices.TecDAX],
   end_of_month_prices: prices,
   dividends,
-  tags: ['Windkraft', 'Windenergieanlagen', 'Onshore-Anlagen', 'Windkraftanlagen']
+  tags: ['Windkraft', 'Windenergieanlagen', 'Onshore-Anlagen', 'Windkraftanlagen', 'Erneuerbare Energien']
 };
 // tslint:enable:max-line-length
 

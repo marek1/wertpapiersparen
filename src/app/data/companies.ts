@@ -110,7 +110,7 @@ import { bvbCompany } from './companies/sdax/bvb';
 import { ceconomyCompany } from './companies/sdax/ceconomy';
 import { ceweCompany } from './companies/sdax/cewe';
 import { coreStateCompany } from './companies/sdax/corestate';
-import { demapharmCompany, dermapharmCompany } from './companies/sdax/dermapharm';
+import { dermapharmCompany } from './companies/sdax/dermapharm';
 import { deutscheBeteiligungsCompany } from './companies/sdax/deutscheBeteiligungs';
 import { deutscheEuroshopCompany } from './companies/sdax/deutscheEuroshop';
 import { deutzCompany } from './companies/sdax/deutz';
@@ -118,6 +118,13 @@ import { dicCompany } from './companies/sdax/dic';
 import { dmgMoriCompany } from './companies/sdax/dmg';
 import { drHoenleCompany } from './companies/sdax/drhoenle';
 import { dwsGroupCompany } from './companies/sdax/dws';
+import { eckertCompany } from './companies/sdax/eckert';
+import { encavisCompany } from './companies/sdax/encavis';
+import { hambornerCompany } from './companies/sdax/hamborner';
+import { heidelbergDruckCompany } from './companies/sdax/heidelbergDruck';
+import { helloFreshCompany } from './companies/sdax/hellofresh';
+import { hhlaCompany } from './companies/sdax/hhla';
+import { hornbachCompany } from './companies/sdax/hornbach';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -251,6 +258,13 @@ const sdaxCompany = [
   dmgMoriCompany, // 1126
   drHoenleCompany, // 1127
   dwsGroupCompany, // 1128
+  eckertCompany, // 1129
+  encavisCompany, // 1130
+  hambornerCompany,  // 1131
+  heidelbergDruckCompany, // 1132
+  helloFreshCompany, // 1133
+  hhlaCompany, // 1134
+  hornbachCompany,  // 1135
 ];
 // tslint:enable:max-line-length
 
