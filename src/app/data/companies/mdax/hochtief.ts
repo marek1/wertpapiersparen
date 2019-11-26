@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 4.98, yield: 4.30}, {year: 2017, rate: 3.38}, {year: 2016, rate: 2.60}, {
   year: 2015,
@@ -1719,6 +1720,7 @@ export const hochtiefCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/9/9e/Hochtief-Logo.svg/500px-Hochtief-Logo.svg.png',
   products: [],
   industries: [111110],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006070006',
   wkn: '607000',

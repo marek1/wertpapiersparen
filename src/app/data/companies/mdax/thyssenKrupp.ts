@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2019, rate: 0, yield: 0}, {year: 2018, rate: 0.15, yield: 0.69}, {year: 2017, rate: 0.15}, {year: 2016, rate: 0.15}, {
@@ -1730,6 +1731,7 @@ export const thyssenKruppCompany: Company = {
     }
   ],
   industries: [121110, 171410, 171411, 111114, 171010, 1711, 121013, 1722],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0007500001',
   wkn: '750000',

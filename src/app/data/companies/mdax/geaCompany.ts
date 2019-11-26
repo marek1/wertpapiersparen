@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 0.85, yield: 3.76}, {year: 2017, rate: 0.85}, {year: 2016, rate: 0.80}, {
   year: 2015,
@@ -1705,6 +1706,7 @@ export const geaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/3/3e/GEA_Group_2010_logo.svg/500px-GEA_Group_2010_logo.svg.png',
   products: [],
   industries: [171410, 171411],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006602006',
   wkn: '660200',

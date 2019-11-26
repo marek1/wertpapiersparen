@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2019, rate: 0.06, yield: 0.72}, {year: 2018, rate: 0.06, yield: 1.11}, {
@@ -1640,6 +1641,7 @@ export const bvbCompany: Company = {
   products: [],
   industries: [101112],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005493092',
   wkn: 'DE0005493092',
   symbol: 'BVB.DE',

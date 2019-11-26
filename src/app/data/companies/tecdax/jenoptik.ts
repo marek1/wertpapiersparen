@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.35, yield: 1.51}, {year: 2017, rate: 0.30}, {year: 2016, rate: 0.25}, {
@@ -1721,6 +1722,7 @@ export const jenoptikCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jenoptik-Logo.svg/313px-Jenoptik-Logo.svg.png',
   products: [],
   industries: [1717, 121110, 121013],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A2NB601',
   wkn: 'A2NB60',

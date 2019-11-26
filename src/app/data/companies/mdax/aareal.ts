@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 2.10, yield: 7.82}, {year: 2017, rate: 2.50}, {year: 2016, rate: 2.00}, {
@@ -172,6 +173,7 @@ export const aarealCompany: Company = {
   products: [],
   industries: [141011],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005408116',
   wkn: '540811',
   symbol: 'ARL',

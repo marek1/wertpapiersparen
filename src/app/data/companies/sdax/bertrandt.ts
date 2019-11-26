@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 2.00, yield: 2.51}, {year: 2017, rate: 2.50}, {year: 2016, rate: 2.50}, {
@@ -1718,6 +1719,7 @@ export const bertrandtCompany: Company = {
   products: [],
   industries: [121110, 121013],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005232805',
   wkn: '523280',
   symbol: 'BDT.DE',

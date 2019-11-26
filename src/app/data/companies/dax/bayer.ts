@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const bayerDividends = [
   {year: 2018, rate: 2.80, yield: 4.61}, {year: 2017, rate: 2.80}, {year: 2016, rate: 2.70}, {
@@ -1758,6 +1758,7 @@ export const bayerCompany: Company = {
     }
   ],
   industries: [1510, 1512, 1513, 1514, 1610, 161210, 171011],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000BAY0017',
   wkn: 'BAY001',
@@ -1766,7 +1767,8 @@ export const bayerCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Bayer ADR',
-      isin: 'US0727303028'
+      isin: 'US0727303028',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

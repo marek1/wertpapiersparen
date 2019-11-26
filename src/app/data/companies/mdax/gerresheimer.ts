@@ -2,6 +2,7 @@ import { Country } from '../../../enums/country';
 import { Company } from '../../../interfaces/company';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.15, yield: 1.82}, {year: 2017, rate: 1.10}, {year: 2016, rate: 1.05}, {
@@ -1076,6 +1077,7 @@ export const gerresheimerCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Gerresheimer_logo.svg/500px-Gerresheimer_logo.svg.png',
   products: [],
   industries: [1722],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000A0LD6E6',
   wkn: 'A0LD6E',

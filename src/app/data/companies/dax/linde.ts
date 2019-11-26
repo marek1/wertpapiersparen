@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const lindeDividends = [
   {year: 2018, rate: 3.20, yield: 2.02}, {year: 2017, rate: 3.90}, {year: 2016, rate: 3.70}, {
@@ -1782,6 +1783,7 @@ export const lindeCompany: Company = {
     }
   ],
   industries: [1712, 1719],
+  securityType: SecurityType.RegisteredShares,
   currency: Currency.EUR,
   isin: 'IE00BZ12WP82',
   wkn: 'A2DSYC',
@@ -1790,7 +1792,8 @@ export const lindeCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Linde ADR',
-      isin: 'US5352232004'
+      isin: 'US5352232004',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

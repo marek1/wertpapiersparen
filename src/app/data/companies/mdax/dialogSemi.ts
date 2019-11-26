@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00, yield: 0.00}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {
@@ -170,6 +171,7 @@ export const dialogSemiconductorCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/9/92/Dialog-Semiconductor-Logo.svg/500px-Dialog-Semiconductor-Logo.svg.png',
   products: [],
   industries: [1811],
+  securityType: SecurityType.RegisteredShares,
   currency: Currency.EUR,
   isin: 'GB0059822006',
   wkn: '927200',

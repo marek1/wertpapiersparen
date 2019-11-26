@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const allianzDividends = [
   {year: 2018, rate: 9.00, yield: 5.12}, {year: 2017, rate: 8.00}, {year: 2016, rate: 7.60}, {
@@ -1758,6 +1758,7 @@ export const allianzCompany: Company = {
     }
   ],
   industries: [141210, 141011],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE0008404005',
   wkn: '840400',
@@ -1766,7 +1767,8 @@ export const allianzCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Allianz S',
-      isin: 'US0188051017'
+      isin: 'US0188051017',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

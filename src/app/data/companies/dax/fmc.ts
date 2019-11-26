@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const fmcDividends = [
   {year: 2018, rate: 1.17, yield: 2.08}, {year: 2017, rate: 1.06}, {year: 2016, rate: 0.95}, {
@@ -1745,6 +1745,7 @@ export const fmcCompany: Company = {
   ],
   industries: [161210],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005785802',
   wkn: '578580',
   symbol: 'FME.DE',
@@ -1752,7 +1753,8 @@ export const fmcCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Fresenius Medical Care ADR',
-      isin: 'US3580291066'
+      isin: 'US3580291066',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

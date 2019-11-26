@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.27, yield: 0.85}, {year: 2017, rate: 0.25}, {year: 2016, rate: 0.22}, {
@@ -1721,6 +1722,7 @@ export const nemetschekCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Nemetschek_AG_Logo.svg/500px-Nemetschek_AG_Logo.svg.png',
   products: [],
   industries: [1810],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006452907',
   wkn: '645290',

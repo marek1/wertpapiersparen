@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const infineoDividends = [
   {year: 2018, rate: 0.27, yield: 1.38}, {year: 2017, rate: 0.25}, {year: 2016, rate: 0.22}, {
@@ -1690,6 +1691,7 @@ export const infineonCompany: Company = {
   products: [],
   industries: [1811],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE0006231004',
   wkn: '623100',
   symbol: 'IFX.DE',
@@ -1697,7 +1699,8 @@ export const infineonCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Infineon ADR',
-      isin: 'US45662N1037'
+      isin: 'US45662N1037',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.TecDAX],

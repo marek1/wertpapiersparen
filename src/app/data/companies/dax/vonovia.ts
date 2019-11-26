@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Indices } from '../../../enums/indices';
 import { Currency } from '../../../enums/currencies';
+import { SecurityType } from '../../../enums/securityType';
 
 const vonoviaDividends = [
   {year: 2018, rate: 1.44, yield: 3.62}, {year: 2017, rate: 1.32}, {year: 2016, rate: 1.12}, {
@@ -558,6 +559,7 @@ export const vonoviaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Vonovia_Logo.svg/500px-Vonovia_Logo.svg.png',
   products: [],
   industries: [111010],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1ML7J1',
   wkn: 'A1ML7J',
@@ -566,7 +568,8 @@ export const vonoviaCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Vonovia ADR',
-      isin: 'US92887H1077'
+      isin: 'US92887H1077',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX],

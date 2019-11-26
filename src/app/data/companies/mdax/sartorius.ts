@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2017, rate: 0.50}, {year: 2016, rate: 0.45}, {year: 2015, rate: 0.38, yield: 0.48}, {
@@ -1717,6 +1718,7 @@ export const sartoriusCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sartorius.svg/500px-Sartorius.svg.png',
   products: [],
   industries: [161211, 1511],
+  securityType: SecurityType.InhaberStamm,
   currency: Currency.EUR,
   isin: 'DE0007165607',
   wkn: '716560',
@@ -1725,7 +1727,8 @@ export const sartoriusCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Sartorius AG Vz.',
-      isin: 'DE0007165631'
+      isin: 'DE0007165631',
+      securityType: SecurityType.Vorzugsaktie,
     }
   ],
   current_indices: [Indices.MDAX, Indices.TecDAX],

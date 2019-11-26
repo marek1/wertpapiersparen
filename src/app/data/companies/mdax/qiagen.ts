@@ -2,9 +2,26 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
-  {  year: 2018, rate: 0.00, yield: 0.00 }, {  year: 2017, rate: 0.00, yield: 0.00 }, {  year: 2016, rate: 0.00, yield: 0.00 }, {  year: 2015, rate: 0.00, yield: 0.00 }, {  year: 2014, rate: 0.00, yield: 0.00 }, {  year: 2013, rate: 0.00, yield: 0.00 }, {  year: 2012, rate: 0.00, yield: 0.00 }, {  year: 2011, rate: 0.00, yield: 0.00 }, {  year: 2010, rate: 0.00, yield: 0.00 }, {  year: 2009, rate: 0.00, yield: 0.00 }, {  year: 2008, rate: 0.00, yield: 0.00 }, {  year: 2007, rate: 0.00, yield: 0.00 }, {  year: 2006, rate: 0.00, yield: 0.00 }, {  year: 2005, rate: 0.00, yield: 0.00 }, {  year: 2004, rate: 0.00, yield: 0.00 }, {  year: 2003, rate: 0.00, yield: 0.00 }
+  {year: 2018, rate: 0.00, yield: 0.00}, {year: 2017, rate: 0.00, yield: 0.00}, {year: 2016, rate: 0.00, yield: 0.00}, {
+    year: 2015,
+    rate: 0.00,
+    yield: 0.00
+  }, {year: 2014, rate: 0.00, yield: 0.00}, {year: 2013, rate: 0.00, yield: 0.00}, {year: 2012, rate: 0.00, yield: 0.00}, {
+    year: 2011,
+    rate: 0.00,
+    yield: 0.00
+  }, {year: 2010, rate: 0.00, yield: 0.00}, {year: 2009, rate: 0.00, yield: 0.00}, {year: 2008, rate: 0.00, yield: 0.00}, {
+    year: 2007,
+    rate: 0.00,
+    yield: 0.00
+  }, {year: 2006, rate: 0.00, yield: 0.00}, {year: 2005, rate: 0.00, yield: 0.00}, {year: 2004, rate: 0.00, yield: 0.00}, {
+    year: 2003,
+    rate: 0.00,
+    yield: 0.00
+  }
 ];
 const prices = {
   '2019-11-15': {
@@ -1701,6 +1718,7 @@ export const qiagenCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Qiagen_Logo.svg/292px-Qiagen_Logo.svg.png',
   products: [],
   industries: [1511],
+  securityType: SecurityType.AandelenOopNaam,
   currency: Currency.EUR,
   isin: 'NL0012169213',
   wkn: 'A2DKCH',

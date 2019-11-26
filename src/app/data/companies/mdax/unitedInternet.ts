@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.88, yield: 2.29}, {year: 2017, rate: 0.85}, {year: 2016, rate: 0.80}, {
@@ -204,6 +205,7 @@ export const unitedInternetCompany: Company = {
     }
   ],
   industries: [131013, 131212, 131214, 131215],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE0005089031',
   wkn: '508903',

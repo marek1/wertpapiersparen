@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00, yield: 0.00}, {year: 2016, rate: 0.00, yield: 0.00}, {year: 2015, rate: 0.00, yield: 0.00}, {
@@ -166,6 +167,7 @@ export const advaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/ADVA_Optical_Networking_Logo.svg/500px-ADVA_Optical_Networking_Logo.svg.png',
   products: [],
   industries: [131011],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005103006',
   wkn: '510300',

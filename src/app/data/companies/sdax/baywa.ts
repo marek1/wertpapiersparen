@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.90, yield: 4.36}, {year: 2017, rate: 0.90}, {
@@ -1510,6 +1511,7 @@ export const baywaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/BayWa.svg/237px-BayWa.svg.png',
   products: [],
   industries: [2011],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE0005194062',
   wkn: '519406',

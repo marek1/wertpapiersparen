@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 3.53, yield: 3.84}, {year: 2017, rate: 3.04}, {year: 2016, rate: 2.76}, {
   year: 2015,
@@ -556,6 +557,7 @@ export const legImmobilienCompany: Company = {
   products: [],
   industries: [111010],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE000LEG1110',
   wkn: 'LEG111',
   symbol: 'LEG.DE',

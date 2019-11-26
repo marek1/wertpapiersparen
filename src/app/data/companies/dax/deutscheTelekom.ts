@@ -2,6 +2,7 @@ import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const deutscheTelekomDividends = [
   {year: 2018, rate: 0.70, yield: 4.73}, {year: 2017, rate: 0.65}, {year: 2016, rate: 0.60}, {
@@ -1734,6 +1735,7 @@ export const deutscheTelekomCompany: Company = {
   ],
   industries: [131010, 131013, 131214],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE0005557508',
   wkn: '555750',
   symbol: 'DTE.DE',
@@ -1741,7 +1743,8 @@ export const deutscheTelekomCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Deutsche Telekom ADR',
-      isin: 'US2515661054'
+      isin: 'US2515661054',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX],

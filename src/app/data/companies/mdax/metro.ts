@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.70, yield: 5.21}, {year: 2017, rate: 0.70}, {year: 2016, rate: 1.00}, {
@@ -249,6 +250,7 @@ export const metroCompany: Company = {
 
   ],
   industries: [2010, 2011],
+  securityType: SecurityType.InhaberStamm,
   currency: Currency.EUR,
   isin: 'DE000BFB0019',
   wkn: 'BFB001',
@@ -256,8 +258,9 @@ export const metroCompany: Company = {
   smallestTradeableUnit: 1,
   otherTradeableProducts: [
     {
-      name: 'Metro Vz. (Vorzugsaktien)',
-      isin: 'DE000BFB0027'
+      name: 'Metro AG Vz.',
+      isin: 'DE000BFB0027',
+      securityType: SecurityType.InhaberVorzug
     }
   ],
   current_indices: [Indices.MDAX],

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.35, yield: 0.83}, {year: 2017, rate: 1.25}, {year: 2016, rate: 0.08}, {
@@ -1723,6 +1724,7 @@ export const pumaCompany: Company = {
     }
   ],
   industries: [101110],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006969603',
   wkn: '696960',

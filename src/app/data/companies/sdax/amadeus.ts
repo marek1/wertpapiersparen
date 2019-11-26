@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 4.66, yield: 5.80}, {year: 2017, rate: 3.96}, {year: 2016, rate: 3.66}, {
@@ -1721,6 +1722,7 @@ export const amadeusCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Amadeus_FiRe_Logo_Personaldienstleistung.svg/500px-Amadeus_FiRe_Logo_Personaldienstleistung.svg.png',
   products: [],
   industries: [1912, 1913],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005093108',
   wkn: '509310',

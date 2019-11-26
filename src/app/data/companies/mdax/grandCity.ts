@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 0.77, yield: 4.12}, {year: 2017, rate: 0.73}, {year: 2016, rate: 0.68}, {
   year: 2015,
@@ -439,6 +440,7 @@ export const grandCityCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Grand_City_Logo_Schwarz.png',
   products: [],
   industries: [111010],
+  securityType: SecurityType.ActionsAuPorteur,
   currency: Currency.EUR,
   isin: 'LU0775917882',
   wkn: 'A1JXCV',

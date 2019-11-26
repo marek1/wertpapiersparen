@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const deutschePostDividends = [
   {year: 2018, rate: 1.15, yield: 4.82}, {year: 2017, rate: 1.15}, {year: 2016, rate: 1.05}, {
@@ -1650,6 +1650,7 @@ export const deutschePostCompany: Company = {
   ],
   industries: [1219],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE0005552004',
   wkn: '555200',
   symbol: 'DPW.DE',
@@ -1657,7 +1658,8 @@ export const deutschePostCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Deutsche Post ADR',
-      isin: 'US25157Y2028'
+      isin: 'US25157Y2028',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

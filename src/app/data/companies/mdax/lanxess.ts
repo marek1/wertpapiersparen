@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 0.90, yield: 2.22}, {year: 2017, rate: 0.80}, {year: 2016, rate: 0.70}, {
   year: 2015,
@@ -1701,6 +1702,7 @@ export const lanxessCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/LanXess-Logo.svg/500px-LanXess-Logo.svg.png',
   products: [],
   industries: [1510, 171011],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005470405',
   wkn: '547040',

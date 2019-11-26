@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.80, yield: 1.10}, {year: 2017, rate: 0.70}, {year: 2016, rate: 0.58}, {
@@ -1683,6 +1684,7 @@ export const grenkeCompany: Company = {
   products: [],
   industries: [141018],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE000A161N30',
   wkn: 'A161N3',
   symbol: 'GLJ.DE',

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.80, yield: 4.61}, {year: 2017, rate: 0.67}, {
@@ -1040,6 +1041,7 @@ export const hhlaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/b/b5/Hhla-logo.svg/500px-Hhla-logo.svg.png',
   products: [],
   industries: [121411, 1220],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A0S8488',
   wkn: 'A0S848',

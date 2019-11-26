@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const lufthansaDividends = [
   {year: 2018, rate: 0.80, yield: 4.08}, {year: 2017, rate: 0.80}, {year: 2016, rate: 0.50}, {
@@ -1769,6 +1770,7 @@ export const lufthansaCompany: Company = {
   ],
   industries: [121010, 121011],
   currency: Currency.EUR,
+  securityType: SecurityType.VinkulierteNamensaktie,
   isin: 'DE0008232125',
   wkn: '823212',
   symbol: 'LHA.DE',
@@ -1776,7 +1778,8 @@ export const lufthansaCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Lufthansa ADR',
-      isin: 'US2515613048'
+      isin: 'US2515613048',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX],

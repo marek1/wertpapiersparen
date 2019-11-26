@@ -2,7 +2,7 @@ import { Company, Dividends } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
+import { SecurityType } from '../../../enums/securityType';
 
 const adidasDividends: Dividends[] = [
   {year: 2018, rate: 3.35, yield: 1.83}, {year: 2017, rate: 2.6}, {year: 2016, rate: 2.00}, {year: 2015, rate: 1.60, yield: 1.78}, {
@@ -1734,6 +1734,7 @@ export const adidasCompany: Company = {
     }
   ],
   industries: [101110, 101111, 2010],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1EWWW0',
   wkn: 'A1EWWW',
@@ -1742,7 +1743,8 @@ export const adidasCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Adidas ADR',
-      isin: 'US00687A1079'
+      isin: 'US00687A1079',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

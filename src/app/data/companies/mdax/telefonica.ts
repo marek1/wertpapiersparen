@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.27, yield: 7.90}, {year: 2017, rate: 0.26}, {year: 2016, rate: 0.25}, {
@@ -641,6 +642,7 @@ export const telefonicaCompany: Company = {
     }
   ],
   industries: [131010, 131013, 131214],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1J5RX9',
   wkn: 'A1J5RX',

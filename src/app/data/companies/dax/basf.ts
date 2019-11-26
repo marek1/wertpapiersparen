@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const basfDividends = [
   {year: 2018, rate: 3.20, yield: 5.30}, {year: 2017, rate: 3.10}, {year: 2016, rate: 3.00}, {
@@ -1767,6 +1767,7 @@ export const basfCompany: Company = {
     }
   ],
   industries: [1510, 1512, 171011, 171310, 111315],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000BASF111',
   wkn: 'BASF11',
@@ -1775,7 +1776,8 @@ export const basfCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'BASF ADR',
-      isin: 'US0552625057'
+      isin: 'US0552625057',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

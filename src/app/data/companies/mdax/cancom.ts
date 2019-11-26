@@ -2,9 +2,10 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
-  {year: 2018, rate: 0.50, yield: 1.74}, {year: 2017, rate: 0.50,}, {year: 2016, rate: 0.25,}, {
+  {year: 2018, rate: 0.50, yield: 1.74}, {year: 2017, rate: 0.50}, {year: 2016, rate: 0.25}, {
     year: 2015,
     rate: 0.25,
     yield: 1.14
@@ -1718,6 +1719,7 @@ export const cancomCompany: Company = {
   products: [],
   industries: [1812],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005419105',
   wkn: '541910',
   symbol: 'COK.DE',

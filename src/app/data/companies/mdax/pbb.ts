@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.00, yield: 11.48}, {year: 2017, rate: 1.07}, {year: 2016, rate: 1.05}, {
@@ -389,6 +390,7 @@ export const pbbCompany: Company = {
   logo: 'https://www.pfandbriefbank.com/typo3conf/ext/pbb_distribution/Resources/Public/Images/pbb.svg',
   products: [],
   industries: [141011],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0008019001',
   wkn: '801900',

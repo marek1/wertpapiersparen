@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {year: 2015, rate: 0.00, yield: 0.00}, {
@@ -1713,6 +1714,7 @@ export const morphosysCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Morphosys-logo.svg/500px-Morphosys-logo.svg.png',
   products: [],
   industries: [1511],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006632003',
   wkn: '663200',

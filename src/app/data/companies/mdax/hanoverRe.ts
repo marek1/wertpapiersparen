@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 5.25, yield: 4.50}, {year: 2017, rate: 3.50}, {year: 2016, rate: 3.50}, {
@@ -1644,6 +1645,7 @@ export const hanoverReCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/HannoverRe.svg/500px-HannoverRe.svg.png',
   products: [],
   industries: [141211],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE0008402215',
   wkn: '840221',

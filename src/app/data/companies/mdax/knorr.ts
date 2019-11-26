@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 1.75, yield: 2.24}];
 const prices = {
@@ -110,6 +111,7 @@ export const knorrCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/1/1c/Knorr-Bremse_logo.svg/500px-Knorr-Bremse_logo.svg.png',
   products: [],
   industries: [121110],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000KBX1006',
   wkn: 'KBX100',

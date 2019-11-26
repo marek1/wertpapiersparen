@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 2.10, yield: 2.71}, {year: 2017, rate: 1.70}, {year: 2016, rate: 1.45}, {
@@ -1717,6 +1718,7 @@ export const rheinmetallCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Rheinmetall_logo_2016.svg/500px-Rheinmetall_logo_2016.svg.png',
   products: [],
   industries: [2211, 2212, 121110],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0007030009',
   wkn: '703000',

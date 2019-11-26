@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.80, yield: 1.05}, {year: 2017, rate: 0.60}, {
@@ -1711,6 +1712,7 @@ export const drHoenleCompany: Company = {
     }
   ],
   industries: [1715],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005157101',
   wkn: '515710',

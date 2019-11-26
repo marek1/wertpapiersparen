@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const eonDividends = [
   {year: 2018, rate: 0.43, yield: 5.00}, {year: 2017, rate: 0.30}, {year: 2016, rate: 0.21}, {
@@ -1719,6 +1719,7 @@ export const eonCompany: Company = {
   ],
   industries: [111310, 111315, 111314],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE000ENAG999',
   wkn: 'ENAG99',
   symbol: 'EOAN.DE',
@@ -1726,7 +1727,8 @@ export const eonCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'E.ON ADR',
-      isin: 'US2687801033'
+      isin: 'US2687801033',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

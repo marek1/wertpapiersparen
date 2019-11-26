@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.90, yield: 1.38}, {year: 2017, rate: 0.88}, {year: 2016, rate: 0.85}, {
@@ -1118,6 +1119,7 @@ export const symriseCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/SYM_Logo.png/500px-SYM_Logo.png',
   products: [],
   industries: [101311, 1510, 1010],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000SYM9999',
   wkn: 'SYM999',

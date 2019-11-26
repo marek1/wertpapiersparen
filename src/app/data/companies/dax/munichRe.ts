@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const munichReDividends = [
   {year: 2018, rate: 9.25, yield: 4.87}, {year: 2017, rate: 8.60}, {year: 2016, rate: 8.60}, {
@@ -1759,6 +1760,7 @@ export const munichReCompany: Company = {
   ],
   industries: [141210, 141211],
   currency: Currency.EUR,
+  securityType: SecurityType.VinkulierteNamensaktie,
   isin: 'DE0008430026',
   wkn: '843002',
   symbol: 'MUV2.DE',
@@ -1766,7 +1768,8 @@ export const munichReCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Munich Re ADR',
-      isin: 'US6261881063'
+      isin: 'US6261881063',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

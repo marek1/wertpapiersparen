@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.75, yield: 3.75}, {year: 2017, rate: 0.65}, {year: 2016, rate: 0.57}, {
@@ -1636,6 +1637,7 @@ export const tagImmobilienCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/TAG_Immobilien_logo.svg/250px-TAG_Immobilien_logo.svg.png',
   products: [],
   industries: [111010],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0008303504',
   wkn: '830350',

@@ -2,6 +2,7 @@ import { Country } from '../../../enums/country';
 import { Company } from '../../../interfaces/company';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.45, yield: 4.13}, {year: 2017, rate: 1.40}, {year: 2016, rate: 1.20}, {
@@ -1721,6 +1722,7 @@ export const deutscheBeteiligungsCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/3/36/Deutsche_Beteiligungs_AG_Logo.svg/500px-Deutsche_Beteiligungs_AG_Logo.svg.png',
   products: [],
   industries: [1723],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1TNUT7',
   wkn: 'A1TNUT',

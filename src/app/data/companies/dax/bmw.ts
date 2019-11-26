@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const bmwDividends = [
   {year: 2018, rate: 3.50, yield: 4.96}, {year: 2017, rate: 4.00}, {year: 2016, rate: 3.50}, {
@@ -1764,6 +1764,7 @@ export const bmwCompany: Company = {
     }
   ],
   industries: [121111, 121112, 121113, 121114, 141017],
+  securityType: SecurityType.Stammaktie,
   currency: Currency.EUR,
   isin: 'DE0005190003',
   wkn: '519000',
@@ -1772,7 +1773,8 @@ export const bmwCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'BMW ADR',
-      isin: 'US0727432066'
+      isin: 'US0727432066',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

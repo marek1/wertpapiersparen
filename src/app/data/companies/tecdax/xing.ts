@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 5.70, yield: 2.48}, {year: 2017, rate: 1.68}, {year: 2016, rate: 1.37}, {
@@ -75,6 +76,7 @@ export const xingCompany: Company = {
     }
   ],
   industries: [131211, 131212, 1912],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000NWRK013',
   wkn: 'NWRK01',
@@ -84,7 +86,7 @@ export const xingCompany: Company = {
   current_indices: [Indices.TecDAX],
   end_of_month_prices: prices,
   dividends,
-  tags: ['Business-Netzwerk', 'Internet-Plattform', 'vernetzen']
+  tags: ['Business-Netzwerk', 'Internet-Plattform', 'Business-Kontakte']
 };
 // tslint:enable:max-line-length
 

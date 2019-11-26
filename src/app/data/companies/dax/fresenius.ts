@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const freseniusDividends = [
   {year: 2018, rate: 0.80, yield: 1.89}, {year: 2017, rate: 0.75}, {
@@ -1740,6 +1740,7 @@ export const freseniusCompany: Company = {
   ],
   industries: [161210, 161110],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005785604',
   wkn: '578560',
   symbol: 'FRE.DE',
@@ -1747,7 +1748,8 @@ export const freseniusCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'FRESENIUS SE S/ADR',
-      isin: 'US35804M1053'
+      isin: 'US35804M1053',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

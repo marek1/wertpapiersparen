@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {  year: 2018, rate: 1.32, yield: 3.57 }
@@ -182,6 +183,7 @@ export const befesaCompany: Company = {
   logo: 'https://www.befesa.com/export/sites/befesa2014/resources/img/logo.png',
   products: [],
   industries: [1721],
+  securityType: SecurityType.Actions,
   currency: Currency.EUR,
   isin: 'LU1704650164',
   wkn: 'A2H5Z1',

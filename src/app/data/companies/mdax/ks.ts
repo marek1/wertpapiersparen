@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.25, yield: 1.57}, {year: 2017, rate: 0.35}, {year: 2016, rate: 0.30}, {
@@ -174,6 +175,7 @@ export const ksCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ks_logo.svg/500px-Ks_logo.svg.png',
   products: [],
   industries: [1514],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000KSAG888',
   wkn: 'KSAG88',

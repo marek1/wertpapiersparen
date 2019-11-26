@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const wirecardDividends = [
   {year: 2018, rate: 0.20, yield: 0.15}, {year: 2017, rate: 0.18}, {year: 2016, rate: 0.16}, {
@@ -1135,6 +1136,7 @@ export const wirecardCompany: Company = {
   ],
   industries: [141014],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0007472060',
   wkn: '747206',
   symbol: 'WDI.DE',
@@ -1142,7 +1144,8 @@ export const wirecardCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Wirecard ADR',
-      isin: 'US97654L1089'
+      isin: 'US97654L1089',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.TecDAX],

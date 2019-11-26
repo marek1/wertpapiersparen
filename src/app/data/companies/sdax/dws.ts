@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.37, yield: 5.83}
@@ -170,6 +171,7 @@ export const dwsGroupCompany: Company = {
     }
   ],
   industries: [141012],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000DWS1007',
   wkn: 'DWS100',

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.00, yield: 3.25}, {year: 2017, rate: 1.10}, {year: 2016, rate: 1.05}, {
@@ -1718,6 +1719,7 @@ export const duerrCompany: Company = {
   logo: 'https://de.wikipedia.org/wiki/Datei:Duerr_Group_mittel_cmyk-100.jpg',
   products: [],
   industries: [171410],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005565204',
   wkn: '556520',

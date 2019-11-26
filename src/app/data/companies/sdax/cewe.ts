@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.95, yield: 3.19}, {year: 2017, rate: 1.85}, {year: 2016, rate: 1.80}, {
@@ -1721,6 +1722,7 @@ export const ceweCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/1/12/CEWE_logo.svg/500px-CEWE_logo.svg.png',
   products: [],
   industries: [2010],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005403901',
   wkn: '540390',

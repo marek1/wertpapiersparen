@@ -1,8 +1,8 @@
-// tslint:disable:max-line-length
 
 import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.65, yield: 1.98}, {year: 2017, rate: 1.50}, {year: 2016, rate: 1.35}, {
@@ -160,6 +160,7 @@ const prices = {
   }
 };
 
+// tslint:disable:max-line-length
 export const airbusCompany: Company = {
   id: 1032,
   name: 'Airbus SE',
@@ -261,6 +262,7 @@ export const airbusCompany: Company = {
   ],
   industries: [121012, 121015, 2210],
   currency: Currency.EUR,
+  securityType: SecurityType.OopNaam,
   isin: 'NL0000235190',
   wkn: '938914',
   symbol: 'AIR.DE',

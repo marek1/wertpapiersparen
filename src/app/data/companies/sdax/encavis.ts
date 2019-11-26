@@ -2,8 +2,27 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
-const dividends = [];
+const dividends = [
+  {year: 2018, rate: 0.24, yield: 4.43}, {year: 2017, rate: 0.22}, {year: 2016, rate: 0.20}, {
+    year: 2015,
+    rate: 0.18,
+    yield: 2.28
+  }, {year: 2014, rate: 0.15, yield: 3.12}, {year: 2013, rate: 0.10, yield: 2.67}, {year: 2012, rate: 0.08, yield: 2.11}, {
+    year: 2011,
+    rate: 0.05,
+    yield: 1.52
+  }, {year: 2010, rate: 0.00, yield: 0.00}, {year: 2009, rate: 0.00, yield: 0.00}, {year: 2008, rate: 0.00, yield: 0.00}, {
+    year: 2007,
+    rate: 0.00,
+    yield: 0.00
+  }, {year: 2006, rate: 0.00, yield: 0.00}, {year: 2005, rate: 0.00, yield: 0.00}, {year: 2004, rate: 0.00, yield: 0.00}, {
+    year: 2003,
+    rate: 0.00,
+    yield: 0.00
+  }, {year: 2002, rate: 0.00, yield: 0.00}, {year: 2001, rate: 0.00, yield: 0.00}, {year: 2000, rate: 0.00, yield: 0.00}
+];
 const prices = {
   '2019-11-25': {
     '1. open': '8.9400',
@@ -1685,6 +1704,7 @@ export const encavisCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Encavis_logo.svg/500px-Encavis_logo.svg.png',
   products: [],
   industries: [111314, 111316],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006095003',
   wkn: '609500',

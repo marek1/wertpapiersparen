@@ -2,6 +2,7 @@ import { Country } from '../../../enums/country';
 import { Company } from '../../../interfaces/company';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.20, yield: 2.70}, {year: 2017, rate: 0.99}, {year: 2016, rate: 0.80}, {
@@ -557,6 +558,7 @@ export const kionCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Kion_Group_logo.svg/500px-Kion_Group_logo.svg.png',
   products: [],
   industries: [1719],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000KGX8881',
   wkn: 'KGX888',

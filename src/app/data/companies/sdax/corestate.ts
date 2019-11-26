@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 2.50, yield: 8.20}, {year: 2017, rate: 2.00}, {year: 2016, rate: 1.00}
@@ -280,6 +281,7 @@ export const coreStateCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Corestate_Capital_Group_Logo_Sep_2015_CMYK_klein.jpg',
   products: [],
   industries: [111016],
+  securityType: SecurityType.ActionsAuPorteur,
   currency: Currency.EUR,
   isin: 'LU1296758029',
   wkn: 'A141J3',

@@ -2,9 +2,10 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
-  {year: 2018, rate: 0.52, yield: 4.28}, {year: 2017, rate: 0.52,}, {year: 2016, rate: 0.52,}, {
+  {year: 2018, rate: 0.52, yield: 4.28}, {year: 2017, rate: 0.52}, {year: 2016, rate: 0.52}, {
     year: 2015,
     rate: 0.50,
     yield: 4.06
@@ -1092,6 +1093,7 @@ export const alstriaOfficeReitCompany: Company = {
   products: [],
   industries: [1910],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE000A0LD2U1',
   wkn: 'A0LD2U',
   symbol: 'AOX.DE',

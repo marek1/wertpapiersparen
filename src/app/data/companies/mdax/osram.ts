@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.11, yield: 3.24}, {year: 2017, rate: 1.11}, {year: 2016, rate: 1.00}, {
@@ -563,6 +564,7 @@ export const osramCompany: Company = {
     }
   ],
   industries: [111212, 121110],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000LED4000',
   wkn: 'LED400',

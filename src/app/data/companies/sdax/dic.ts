@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.48, yield: 5.28}, {year: 2017, rate: 0.44}, {year: 2016, rate: 0.40}, {
@@ -1202,6 +1203,7 @@ export const dicCompany: Company = {
   logo: 'https://www.dic-asset.de/media/layout/Logo-DIC-Asset-2014.gif',
   products: [],
   industries: [111011],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1X3XX4',
   wkn: 'A1X3XX',

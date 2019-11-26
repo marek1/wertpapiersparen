@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.55, yield: 0.76}, {year: 2017, rate: 0.55}, {year: 2016, rate: 0.42}, {
@@ -1745,6 +1746,7 @@ export const carlzeissmeditecCompany: Company = {
     },
   ],
   industries: [161210, 1715],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005313704',
   wkn: '531370',

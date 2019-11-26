@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2019, rate: 1.50, yield: 3.31}, {year: 2018, rate: 1.50, yield: 2.11}, {year: 2017, rate: 1.50}, {
@@ -992,6 +993,7 @@ export const hornbachCompany: Company = {
     }
   ],
   industries: [111113, 111011],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006083405',
   wkn: '608340',

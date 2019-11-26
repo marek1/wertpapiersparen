@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.19, yield: 0.41}, {year: 2017, rate: 0.46}, {year: 2016, rate: 0.19}, {
@@ -1934,12 +1935,19 @@ export const draegerwerkCompany: Company = {
     }
   ],
   industries: [161210, 161111, 161112],
+  securityType: SecurityType.InhaberVorzug,
   currency: Currency.EUR,
   isin: 'DE0005550636',
   wkn: '555063',
   symbol: 'DRW3.DE',
   smallestTradeableUnit: 1,
-  otherTradeableProducts: [],
+  otherTradeableProducts: [
+    {
+      name: 'Drägerwerk AG & Co. KGaA Inhaber-Stammaktien',
+      isin: 'DE0005550602',
+      securityType: SecurityType.InhaberStamm
+    }
+  ],
   current_indices: [Indices.TecDAX, Indices.SDAX],
   end_of_month_prices: prices,
   dividends,

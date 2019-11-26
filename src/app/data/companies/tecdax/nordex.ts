@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00, yield: 0.00}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {
@@ -1598,6 +1599,7 @@ export const nordexCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/7/74/Nordex_Logo.svg/500px-Nordex_Logo.svg.png',
   products: [],
   industries: [111313],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A0D6554',
   wkn: 'A0D655',

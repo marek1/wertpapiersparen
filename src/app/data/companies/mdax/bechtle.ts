@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.00, yield: 1.47}, {year: 2017, rate: 0.90}, {
@@ -1709,6 +1710,7 @@ export const bechtleCompany: Company = {
   products: [],
   industries: [1812],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005158703',
   wkn: '515870',
   symbol: 'BC8.DE',

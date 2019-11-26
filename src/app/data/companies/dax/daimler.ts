@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const daimlerDividends = [{year: 2018, rate: 3.25, yield: 7.10}, {year: 2017, rate: 3.65}, {
   year: 2016,
@@ -1779,6 +1779,7 @@ export const daimlerCompany: Company = {
   ],
   industries: [121111, 121113, 121114, 141017],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE0007100000',
   wkn: '710000',
   symbol: 'DAI.DE',
@@ -1786,7 +1787,8 @@ export const daimlerCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'DAIMLER AG ADRS/1',
-      isin: 'US2338252073'
+      isin: 'US2338252073',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

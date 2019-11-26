@@ -2,9 +2,10 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
-  {year: 2018, rate: 1.55, yield: 2.59}, {year: 2017, rate: 1.45,}, {year: 2016, rate: 1.25,}, {
+  {year: 2018, rate: 1.55, yield: 2.59}, {year: 2017, rate: 1.45}, {year: 2016, rate: 1.25}, {
     year: 2015,
     rate: 1.35,
     yield: 2.37
@@ -1722,6 +1723,7 @@ export const aurubisCompany: Company = {
   products: [],
   industries: [1711],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0006766504',
   wkn: '676650',
   symbol: 'NDA.DE',
@@ -1729,7 +1731,7 @@ export const aurubisCompany: Company = {
   otherTradeableProducts: [],
   current_indices: [Indices.MDAX],
   end_of_month_prices: prices,
-  dividends: dividends,
+  dividends,
   tags: ['Kupfer', 'Kupferproduktion']
 };
 // tslint:enable:max-line-length

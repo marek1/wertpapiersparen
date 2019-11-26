@@ -1,7 +1,8 @@
-import { Company, Dividends, ResponsibilityAttribute } from '../../../interfaces/company';
+import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const merckKgDividends = [
   {year: 2018, rate: 1.25, yield: 1.38}, {year: 2017, rate: 1.25}, {year: 2016, rate: 1.20}, {
@@ -1764,6 +1765,7 @@ export const merckKgCompany: Company = {
   ],
   industries: [1510, 1511, 1610, 161211],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0006599905',
   wkn: '659990',
   symbol: 'MRK.DE',
@@ -1771,7 +1773,8 @@ export const merckKgCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Merck ADR',
-      isin: 'US5893392093'
+      isin: 'US5893392093',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

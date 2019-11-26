@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 4.00, yield: 8.60}, {year: 2017, rate: 3.00}, {year: 2016, rate: 3.00}, {
@@ -890,6 +891,7 @@ export const rtlCompany: Company = {
     }
   ],
   industries: [131110, 131111, 131112, 2112, 131210, 131212, 131213, 131216],
+  securityType: SecurityType.ActionsAuPorteur,
   currency: Currency.EUR,
   isin: 'LU0061462528',
   wkn: '861149',

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2019, rate: 0.00, yield: 0.13}, {year: 2018, rate: 0.00, yield: 0.20}, {year: 2017, rate: 0.00}, {
@@ -1720,6 +1721,7 @@ export const heidelbergDruckCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Heidelberger-Druckmaschinen.svg/500px-Heidelberger-Druckmaschinen.svg.png',
   products: [],
   industries: [171410],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0007314007',
   wkn: '731400',

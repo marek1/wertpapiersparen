@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.90, yield: 4.04}, {year: 2017, rate: 0.74}, {year: 2016, rate: 0.55}
@@ -287,6 +288,7 @@ export const uniperCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Uniper_logo.svg/289px-Uniper_logo.svg.png',
   products: [],
   industries: [111310],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000UNSE018',
   wkn: 'UNSE01',

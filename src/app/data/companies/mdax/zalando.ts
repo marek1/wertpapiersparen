@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00, yield: 0.00}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {
@@ -452,6 +453,7 @@ export const zalandoCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Zalando_201x_logo.svg/500px-Zalando_201x_logo.svg.png',
   products: [],
   industries: [131210],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000ZAL1111',
   wkn: 'ZAL111',

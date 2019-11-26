@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 1.90, yield: 3.49}, {year: 2017, rate: 1.85}, {year: 2016, rate: 1.80}, {
   year: 2015,
@@ -1644,6 +1645,7 @@ export const fielmannCompany: Company = {
     }
   ],
   industries: [101412, 2010],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005772206',
   wkn: '577220',

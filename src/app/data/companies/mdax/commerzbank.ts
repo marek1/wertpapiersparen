@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.20, yield: 3.47}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {
@@ -1723,6 +1724,7 @@ export const commerzbankCompany: Company = {
   ],
   industries: [141010, 141011, 141016, 141017],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE000CBK1001',
   wkn: 'CBK100',
   symbol: 'CBK.DE',
@@ -1730,7 +1732,8 @@ export const commerzbankCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Commerzbank ADR',
-      isin: 'US2025976059'
+      isin: 'US2025976059',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.MDAX],

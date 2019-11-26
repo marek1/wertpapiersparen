@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 2.30, yield: 2.11}, {year: 2017, rate: 2.00}, {year: 2016, rate: 3.60}, {
@@ -1717,6 +1718,7 @@ export const pfeifferVacuumCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/3/34/Pfeiffer_Vacuum_Logo.svg/500px-Pfeiffer_Vacuum_Logo.svg.png',
   products: [],
   industries: [171410],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006916604',
   wkn: '691660',

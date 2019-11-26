@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {year: 2015, rate: 0.00, yield: 0.00}, {
@@ -1713,6 +1714,7 @@ export const evotecCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Evotec.svg/500px-Evotec.svg.png',
   products: [],
   industries: [1511],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005664809',
   wkn: '566480',

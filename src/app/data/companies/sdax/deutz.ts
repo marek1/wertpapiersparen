@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.15, yield: 2.92}, {year: 2017, rate: 0.15}, {year: 2016, rate: 0.07}, {
@@ -1717,6 +1718,7 @@ export const deutzCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/9/90/Deutz_Logo.svg/250px-Deutz_Logo.svg.png',
   products: [],
   industries: [1720, 171411],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006305006',
   wkn: '630500',

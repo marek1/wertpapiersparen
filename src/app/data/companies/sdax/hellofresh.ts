@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {  year: 2018, rate: 0.00 }, {  year: 2017, rate: 0.00 }
@@ -195,6 +196,7 @@ export const helloFreshCompany: Company = {
     }
   ],
   industries: [2010, 101310],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000A161408',
   wkn: 'A16140',

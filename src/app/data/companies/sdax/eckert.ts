@@ -2,6 +2,7 @@ import { Country } from '../../../enums/country';
 import { Company } from '../../../interfaces/company';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00, yield: 1.48}, {year: 2017, rate: 0.80}, {year: 2016, rate: 0.60}, {
@@ -1721,6 +1722,7 @@ export const eckertCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Eckert_logo.svg/500px-Eckert_logo.svg.png',
   products: [],
   industries: [161210],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005659700',
   wkn: '565970',

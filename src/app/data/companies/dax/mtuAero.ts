@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const mtuDividends = [
   {year: 2018, rate: 2.85, yield: 1.80}, {year: 2017, rate: 2.30}, {
@@ -1245,6 +1246,7 @@ export const mtuAeroCompany: Company = {
   products: [],
   industries: [171410, 121013, 121016],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE000A0D9PT0',
   wkn: 'A0D9PT',
   symbol: 'MTX.DE',
@@ -1252,7 +1254,8 @@ export const mtuAeroCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'MTU Aero Engines AG ADR',
-      isin: 'US62473G1022'
+      isin: 'US62473G1022',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX],

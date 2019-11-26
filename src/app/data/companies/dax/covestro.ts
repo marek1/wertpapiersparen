@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const covestroDividends = [
   {year: 2018, rate: 2.40, yield: 5.56}, {year: 2017, rate: 2.20}, {year: 2016, rate: 1.35}, {
@@ -375,6 +375,7 @@ export const covestroCompany: Company = {
     }
   ],
   industries: [171011, 171012],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006062144',
   wkn: '606214',
@@ -383,7 +384,8 @@ export const covestroCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'COVESTRO AG SP.ADR 1/2',
-      isin: 'US22304D2071'
+      isin: 'US22304D2071',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

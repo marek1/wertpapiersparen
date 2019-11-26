@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.00, yield: 0.05}, {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {
@@ -1398,6 +1399,7 @@ export const adlerRealCompany: Company = {
   logo: 'https://adler-ag.com/new/wp-content/uploads/2017/05/logo_328_invert.png',
   products: [],
   industries: [111010],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005008007',
   wkn: '500800',

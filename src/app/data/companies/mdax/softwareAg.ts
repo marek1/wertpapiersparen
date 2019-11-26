@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.70, yield: 2.22}, {year: 2017, rate: 0.65}, {year: 2016, rate: 0.60}, {
@@ -1420,6 +1421,7 @@ export const softwareAgCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/4/42/Software_AG_logo.svg/500px-Software_AG_logo.svg.png',
   products: [],
   industries: [1810],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A2GS401',
   wkn: 'A2GS40',

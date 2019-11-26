@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const siemensDividends = [
   {year: 2018, rate: 3.80, yield: 3.44}, {year: 2017, rate: 3.70}, {year: 2016, rate: 3.60}, {
@@ -1722,6 +1723,7 @@ export const siemensCompany: Company = {
   products: [],
   industries: [1720, 111312, 111313, 111317, 141017, 111015, 171410, 171411, 121311, 121312, 1218, 111115],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE0007236101',
   wkn: '723610',
   symbol: 'SIE',
@@ -1729,7 +1731,8 @@ export const siemensCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Siemens ADR',
-      isin: 'US8261975010'
+      isin: 'US8261975010',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

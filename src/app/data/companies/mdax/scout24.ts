@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.65, yield: 1.64}, {year: 2017, rate: 0.56}, {
@@ -388,6 +389,7 @@ export const scout24Company: Company = {
     }
   ],
   industries: [131210],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A12DM80',
   wkn: 'A12DM8',

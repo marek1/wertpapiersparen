@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const vwDividends = [
   {year: 2018, rate: 4.83, yield: 3.47}, {year: 2017, rate: 3.96}, {year: 2016, rate: 2.06}, {
@@ -1763,22 +1764,26 @@ export const vwCompany: Company = {
   ],
   industries: [121111, 121112, 121113, 121114, 121210, 141017],
   currency: Currency.EUR,
+  securityType: SecurityType.Vorzugsaktie,
   isin: 'DE0007664039',
   wkn: '766403',
   symbol: 'VOW3.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [
     {
-      name: 'Volkswagen St.',
-      isin: 'DE0007664005'
+      name: 'Volkswagen AG',
+      isin: 'DE0007664005',
+      securityType: SecurityType.InhaberStamm
     },
     {
       name: 'VOLKSWAGEN AG VZ ADR1/5',
-      isin: 'US9286625010'
+      isin: 'US9286625010',
+      securityType: SecurityType.ADR
     },
     {
       name: 'VOLKSWAGEN AG ADR 1/5/O.N',
-      isin: 'US9286626000'
+      isin: 'US9286626000',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50],

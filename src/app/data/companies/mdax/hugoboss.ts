@@ -2,6 +2,7 @@ import { Country } from '../../../enums/country';
 import { Company } from '../../../interfaces/company';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [{year: 2018, rate: 2.70, yield: 5.02}, {year: 2017, rate: 2.65}, {year: 2016, rate: 2.60}, {
   year: 2015,
@@ -1726,6 +1727,7 @@ export const hugobossCompany: Company = {
     }
   ],
   industries: [2010, 101410],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1PHFF7',
   wkn: 'A1PHFF',

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.15, yield: 5.24}, {year: 2017, rate: 1.15}, {year: 2016, rate: 1.15}, {
@@ -560,6 +561,7 @@ export const evonikCompany: Company = {
   products: [],
   industries: [1510],
   currency: Currency.EUR,
+  securityType: SecurityType.Namensaktie,
   isin: 'DE000EVNK013',
   wkn: 'EVNK01',
   symbol: 'EVK.DE',

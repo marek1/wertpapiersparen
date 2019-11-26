@@ -2,9 +2,10 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
-  {year: 2018, rate: 0.25, yield: 3.50}, {year: 2018, rate: 0.25, yield: 3.50}, {year: 2017, rate: 0.23,}, {
+  {year: 2018, rate: 0.25, yield: 3.50}, {year: 2018, rate: 0.25, yield: 3.50}, {year: 2017, rate: 0.23}, {
     year: 2016,
     rate: 0.16,
   }, {year: 2015, rate: 0.05, yield: 1.17}
@@ -318,6 +319,7 @@ export const aroundTownCompany: Company = {
   products: [],
   industries: [1910, 111011],
   currency: Currency.EUR,
+  securityType: SecurityType.BearerShares,
   isin: 'LU1673108939',
   wkn: 'A2DW8Z',
   symbol: 'AT1.DE',

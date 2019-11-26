@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const henkelDividends = [
   {year: 2018, rate: 1.85, yield: 1.93}, {year: 2017, rate: 1.79}, {year: 2016, rate: 1.62}, {
@@ -2055,6 +2055,7 @@ export const henkelCompany: Company = {
   ],
   industries: [1010, 171012],
   currency: Currency.EUR,
+  securityType: SecurityType.InhaberVorzug,
   isin: 'DE0006048432',
   wkn: '604843',
   symbol: 'HEN3.DE',
@@ -2062,7 +2063,8 @@ export const henkelCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Henkel ADR',
-      isin: 'US42550U1097'
+      isin: 'US42550U1097',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const sapDividends = [{year: 2018, rate: 1.42, yield: 1.63}, {year: 2017, rate: 1.40}, {year: 2016, rate: 1.25}, {
   year: 2015,
@@ -1753,6 +1754,7 @@ export const sapCompany: Company = {
   ],
   industries: [1810],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0007164600',
   wkn: '716460',
   symbol: 'SAP.DE',
@@ -1760,7 +1762,8 @@ export const sapCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'SAP ADR',
-      isin: 'US8030542042'
+      isin: 'US8030542042',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX],

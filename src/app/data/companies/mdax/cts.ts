@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.62, yield: 1.89}, {year: 2017, rate: 0.59}, {
@@ -1705,6 +1706,7 @@ export const ctsEventimCompany: Company = {
     }
   ],
   industries: [131210],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005470306',
   wkn: '547030',

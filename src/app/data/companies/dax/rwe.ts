@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const rweDividends = [
   {year: 2018, rate: 0.70, yield: 3.73}, {year: 2017, rate: 0.50}, {year: 2016, rate: 0.00}, {
@@ -1721,6 +1722,7 @@ export const rweCompany: Company = {
   products: [],
   industries: [111310, 111313],
   currency: Currency.EUR,
+  securityType: SecurityType.InhaberStamm,
   isin: 'DE0007037129',
   wkn: '703712',
   symbol: 'RWE.DE',
@@ -1728,7 +1730,8 @@ export const rweCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'RWE ADR',
-      isin: 'US74975E3036'
+      isin: 'US74975E3036',
+      securityType: SecurityType.ADR,
     }
   ],
   current_indices: [Indices.DAX],

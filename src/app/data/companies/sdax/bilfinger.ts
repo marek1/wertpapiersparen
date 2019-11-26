@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.00, yield: 3.92}, {year: 2017, rate: 1.00}, {year: 2016, rate: 1.00}, {
@@ -1722,6 +1723,7 @@ export const bilfingerCompany: Company = {
   products: [],
   industries: [111116],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005909006',
   wkn: '590900',
   symbol: 'GBF.DE',

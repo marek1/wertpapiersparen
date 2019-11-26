@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 5.00, yield: 6.91}, {year: 2017, rate: 2.50}, {year: 2016, rate: 0.00}, {year: 2015, rate: 0.00, yield: 0.00}
@@ -392,6 +393,7 @@ export const siltronicCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Siltronic_Logo.svg/500px-Siltronic_Logo.svg.png',
   products: [],
   industries: [1811],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000WAF3001',
   wkn: 'WAF300',

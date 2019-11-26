@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.95, yield: 2.65}, {year: 2017, rate: 0.91}, {year: 2016, rate: 0.89}, {
@@ -1727,6 +1728,7 @@ export const fuchsCompany: Company = {
     }
   ],
   industries: [171311],
+  securityType: SecurityType.InhaberVorzug,
   currency: Currency.EUR,
   isin: 'DE0005790430',
   wkn: '579043',

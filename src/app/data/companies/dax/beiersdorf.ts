@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const beiersdorfDividends = [
   {year: 2018, rate: 0.70, yield: 0.77}, {year: 2017, rate: 0.70}, {year: 2016, rate: 0.70}, {
@@ -1779,12 +1779,19 @@ export const beiersdorfCompany: Company = {
     }
   ],
   industries: [1010, 1911],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005200000',
   wkn: '520000',
   symbol: 'BEI.DE',
   smallestTradeableUnit: 1,
-  otherTradeableProducts: [],
+  otherTradeableProducts: [
+    {
+      name: 'Beiersdorf ADR',
+      isin: 'US07724U1034',
+      securityType: SecurityType.ADR
+    }
+  ],
   current_indices: [Indices.DAX],
   end_of_month_prices: beiersdorfPrices,
   dividends: beiersdorfDividends,

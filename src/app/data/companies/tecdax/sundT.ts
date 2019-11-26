@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.16, yield: 1.00}, {year: 2017, rate: 0.13}, {year: 2016, rate: 0.10}, {
@@ -1633,6 +1634,7 @@ export const sundTCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/S%26T_logo.svg/494px-S%26T_logo.svg.png',
   products: [],
   industries: [1812],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'AT0000A0E9W5',
   wkn: 'A0X9EJ',

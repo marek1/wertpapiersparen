@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.19, yield: 7.69}, {year: 2017, rate: 1.93}, {year: 2016, rate: 1.90}, {
@@ -1722,6 +1723,7 @@ export const prosiebenCompany: Company = {
     }
   ],
   industries: [131110, 131111, 131112, 2112, 131210, 131212, 131213, 131216],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000PSM7770',
   wkn: 'PSM777',

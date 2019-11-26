@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.18, yield: 1.55}, {year: 2017, rate: 0.18}, {year: 2016, rate: 0.16}, {
@@ -764,6 +765,7 @@ export const ribSoftwareCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/e/e5/Rz_RIB_2010-07-01_logo-200px-3D_rgb_.png',
   products: [],
   industries: [1810],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A0Z2XN6',
   wkn: 'A0Z2XN',

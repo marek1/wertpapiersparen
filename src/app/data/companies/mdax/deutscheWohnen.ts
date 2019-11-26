@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.87, yield: 2.16}, {year: 2017, rate: 0.80}, {year: 2016, rate: 0.74}, {
@@ -1154,6 +1155,7 @@ export const deutscheWohnenCompany: Company = {
   logo: 'https://www.deutsche-wohnen.com/assets/img/icons/dw_logo.svg',
   products: [],
   industries: [111010],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000A0HN5C6',
   wkn: 'A0HN5C',

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.75, yield: 1.66}, {year: 2017, rate: 0.60}, {year: 2016, rate: 0.45}, {
@@ -319,6 +320,7 @@ export const adoCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/f/f7/ADO_Properties_logo.svg/500px-ADO_Properties_logo.svg.png',
   products: [],
   industries: [111010, 111011],
+  securityType: SecurityType.ActionsNominatives,
   currency: Currency.EUR,
   isin: 'LU1250154413',
   wkn: 'A14U78',

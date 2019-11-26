@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.46, yield: 5.44}, {year: 2017, rate: 0.45}, {year: 2016, rate: 0.43}, {
@@ -1661,6 +1662,7 @@ export const hambornerCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/f/fc/Hamborner_Logo.svg/484px-Hamborner_Logo.svg.png',
   products: [],
   industries: [111011],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006013006',
   wkn: '601300',

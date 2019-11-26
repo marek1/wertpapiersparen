@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.65, yield: 9.72}, {year: 2017, rate: 1.65}, {year: 2016, rate: 1.60}, {
@@ -1769,6 +1770,7 @@ export const freenetCompany: Company = {
     }
   ],
   industries: [131013, 2010],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A0Z2ZZ5',
   wkn: 'A0Z2ZZ',

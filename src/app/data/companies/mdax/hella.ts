@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.05, yield: 1.95}, {year: 2017, rate: 0.92}, {
@@ -444,6 +445,7 @@ export const hellaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/8/87/HELLA_Logo_3D_Background_4C_300dpi.jpg/307px-HELLA_Logo_3D_Background_4C_300dpi.jpg',
   products: [],
   industries: [121110],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000A13SX22',
   wkn: 'A13SX2',

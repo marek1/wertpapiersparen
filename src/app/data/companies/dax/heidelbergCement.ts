@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const heidelbergCementDividends = [
   {year: 2018, rate: 2.10, yield: 3.95}, {year: 2017, rate: 1.90}, {year: 2016, rate: 1.60}, {
@@ -1729,6 +1729,7 @@ export const heidelbergCementCompany: Company = {
   ],
   industries: [111111],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0006047004',
   wkn: '604700',
   symbol: 'HEI.DE',
@@ -1736,7 +1737,8 @@ export const heidelbergCementCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'HeidelbergCement ADR',
-      isin: 'US42281P2056'
+      isin: 'US42281P2056',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

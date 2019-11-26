@@ -1,6 +1,7 @@
 import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2017, rate: 0.00}, {year: 2016, rate: 0.00}, {year: 2015, rate: 0.60, yield: 1.58}, {
@@ -1716,6 +1717,7 @@ export const dmgMoriCompany: Company = {
   logo: 'https://de.dmgmori-ag.com/resource/blob/271646/a2d713ed53ad0cbe2ddb537a0bd580ee/logo-ag-icon.svg',
   products: [],
   industries: [171410],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005878003',
   wkn: '587800',

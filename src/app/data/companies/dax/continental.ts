@@ -1,8 +1,8 @@
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
-import { ResponsibilityType } from '../../../enums/responsibility';
 import { Company } from '../../../interfaces/company';
+import { SecurityType } from '../../../enums/securityType';
 
 const continentalDividends = [
   {year: 2018, rate: 4.75, yield: 3.96}, {year: 2017, rate: 4.50}, {year: 2016, rate: 4.25}, {
@@ -1744,6 +1744,7 @@ export const continentalCompany: Company = {
     }
   ],
   industries: [121110],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005439004',
   wkn: '543900',
@@ -1752,7 +1753,8 @@ export const continentalCompany: Company = {
   otherTradeableProducts: [
     {
       name: 'Continental AG  Bearer Shares',
-      isin: 'US2107712000'
+      isin: 'US2107712000',
+      securityType: SecurityType.ADR
     }
   ],
   current_indices: [Indices.DAX],

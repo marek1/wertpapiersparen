@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.50, yield: 1.24}, {year: 2017, rate: 0.35}, {year: 2016, rate: 0.35}, {
@@ -1298,6 +1299,7 @@ export const compugroupCompany: Company = {
   products: [],
   industries: [161111],
   currency: Currency.EUR,
+  securityType: SecurityType.Inhaberaktie,
   isin: 'DE0005437305',
   wkn: '543730',
   symbol: 'COP.DE',

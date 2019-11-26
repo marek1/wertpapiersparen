@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 1.50, yield: 5.91}, {year: 2017, rate: 1.45}, {year: 2016, rate: 1.40}, {
@@ -1570,6 +1571,7 @@ export const deutscheEuroshopCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/f/fd/DeutscheEuroShop_Logo.svg/500px-DeutscheEuroShop_Logo.svg.png',
   products: [],
   industries: [2012],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE0007480204',
   wkn: '748020',

@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.15, yield: 0.35}, {year: 2017, rate: 0.59}, {year: 2016, rate: 0.10}, {
@@ -1682,6 +1683,7 @@ export const israVisionCompany: Company = {
   logo: 'https://www.isravision.com/typo3conf/ext/isravision/Resources/Public/Images/isra_vision_logo.svg',
   products: [],
   industries: [1716],
+  securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005488100',
   wkn: '548810',

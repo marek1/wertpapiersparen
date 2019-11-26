@@ -3,6 +3,7 @@ import { Currency } from '../enums/currencies';
 import { Indices } from '../enums/indices';
 import { Country } from '../enums/country';
 import { ResponsibilityType } from '../enums/responsibility';
+import { SecurityType } from '../enums/securityType';
 
 export interface Dividends {
   year: number;
@@ -13,6 +14,7 @@ export interface Dividends {
 export interface TradeableProduct {
   name: string;
   isin: string;
+  securityType?: SecurityType;
 }
 
 export interface ResponsibilityAttribute {
@@ -37,6 +39,7 @@ export interface Company {
   logo: string;
   products: Product[];
   industries: number[];
+  securityType?: SecurityType;
   currency: Currency;
   isin: string;
   wkn: string;

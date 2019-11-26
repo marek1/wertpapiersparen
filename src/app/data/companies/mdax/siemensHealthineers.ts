@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { SecurityType } from '../../../enums/securityType';
 
 const dividends = [
   {year: 2018, rate: 0.70, yield: 1.85}, {year: 2017, rate: 0.00}, {
@@ -519,6 +520,7 @@ export const siemensHealthineersCompany: Company = {
     }
   ],
   industries: [161210],
+  securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000SHL1006',
   wkn: 'SHL100',
