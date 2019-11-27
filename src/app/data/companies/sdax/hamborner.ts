@@ -1661,7 +1661,7 @@ export const hambornerCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/Hamborner',
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/f/fc/Hamborner_Logo.svg/484px-Hamborner_Logo.svg.png',
   products: [],
-  industries: [111011],
+  industries: [111018],
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0006013006',

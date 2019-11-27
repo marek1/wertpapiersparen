@@ -146,6 +146,10 @@ import { shopApothekeCompany } from './companies/sdax/shopApotheke';
 import { sixtCompany } from './companies/sdax/sixt';
 import { smasolarCompany } from './companies/sdax/smasolar';
 import { stabilusCompany } from './companies/sdax/stabilus';
+import { steinhoffCompany } from './companies/sdax/steinhoff';
+import { stroerCompany } from './companies/sdax/stroer';
+import { suedzuckerCompany } from './companies/sdax/suedzucker';
+import { takktCompany } from './companies/sdax/takkt';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -307,6 +311,10 @@ const sdaxCompany = [
   sixtCompany, // 1154
   smasolarCompany, // 1155
   stabilusCompany, // 1156
+  steinhoffCompany, // 1157
+  stroerCompany, // 1158
+  suedzuckerCompany, // 1159
+  takktCompany, // 1160
 ];
 // tslint:enable:max-line-length
 

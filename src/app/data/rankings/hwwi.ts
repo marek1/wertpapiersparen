@@ -4,6 +4,7 @@ import { continentalCompany } from '../companies/dax/continental';
 import { osramCompany } from '../companies/mdax/osram';
 import { siemensCompany } from '../companies/dax/siemens';
 import { normaCompany } from '../companies/sdax/norna';
+import { suedzuckerCompany } from '../companies/sdax/suedzucker';
 
 export const hwwi: Ranking = {
   name: 'Welche deutsche Firmen liefern "den größten ökologischen, sozialen und ökonomischen Mehrwert für die Menschen"?',
@@ -30,16 +31,8 @@ export const hwwi: Ranking = {
       points: 84.7
     },
     {
-      id: suedZucker.id,
+      id: suedzuckerCompany.id,
       points: 84.4
-    },
-    {
-      id:,
-      points:
-    },
-    {
-      id:,
-      points:
     }
   ]
-}
+};

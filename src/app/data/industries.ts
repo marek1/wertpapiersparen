@@ -243,6 +243,12 @@ export const industries: Industry[] = [
             description: 'Immobilienverwalter',
             imageName: 'building.svg',
             subIndustries: null
+          },
+          {
+            id: 111018,
+            description: 'Real-Estate-Investment-Trust (REIT)',
+            imageName: 'building.svg',
+            subIndustries: null
           }
         ]
       },
@@ -1228,6 +1234,12 @@ export const industries: Industry[] = [
         id: 2012,
         description: 'Kaufhaus, Shoppingcenter bzw. Mall-Betreiber',
         imageName: 'shopping-mall.svg',
+        subIndustries: null
+      },
+      {
+        id: 2013,
+        description: 'Versandhandel',
+        imageName: 'package.svg',
         subIndustries: null
       }
     ]

@@ -1091,7 +1091,7 @@ export const alstriaOfficeReitCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/Alstria_office',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Alstria-office-REIT-Logo.svg/500px-Alstria-office-REIT-Logo.svg.png',
   products: [],
-  industries: [1910],
+  industries: [111018],
   currency: Currency.EUR,
   securityType: SecurityType.Inhaberaktie,
   isin: 'DE000A0LD2U1',
