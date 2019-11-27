@@ -1606,7 +1606,7 @@ export const nordexCompany: Company = {
   symbol: 'NDX1.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.TecDAX],
+  current_indices: [Indices.TecDAX, Indices.SDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Windkraft', 'Windenergieanlagen', 'Onshore-Anlagen', 'Windkraftanlagen', 'Erneuerbare Energien']

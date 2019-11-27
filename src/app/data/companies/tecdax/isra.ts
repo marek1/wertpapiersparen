@@ -1690,7 +1690,7 @@ export const israVisionCompany: Company = {
   symbol: 'ISR.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.TecDAX],
+  current_indices: [Indices.TecDAX, Indices.SDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Oberflächeninspektionssysteme', 'Bildverarbeitungsprogramme', 'Machine Vision', '3D Vision', '3D Robotersehen']

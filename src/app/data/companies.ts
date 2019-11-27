@@ -125,6 +125,27 @@ import { heidelbergDruckCompany } from './companies/sdax/heidelbergDruck';
 import { helloFreshCompany } from './companies/sdax/hellofresh';
 import { hhlaCompany } from './companies/sdax/hhla';
 import { hornbachCompany } from './companies/sdax/hornbach';
+import { hypoportCompany } from './companies/sdax/hypoport';
+import { indusCompany } from './companies/sdax/indus';
+import { innogyCompany } from './companies/sdax/innogy';
+import { instoneCompany } from './companies/sdax/instone';
+import { jostWerkeCompany } from './companies/sdax/jost';
+import { jungheinrichCompany } from './companies/sdax/jungheinrich';
+import { kloecknerCompany } from './companies/sdax/kloeckner';
+import { koenigBauerCompany } from './companies/sdax/koenigBauer';
+import { kronesCompany } from './companies/sdax/krones';
+import { kwsCompany } from './companies/sdax/kws';
+import { leoniCompany } from './companies/sdax/leoni';
+import { normaCompany } from './companies/sdax/norna';
+import { patriziaCompany } from './companies/sdax/patrizia';
+import { rhoenCompany } from './companies/sdax/rhoen';
+import { salzgitterCompany } from './companies/sdax/salzgitter';
+import { schaefflerCompany } from './companies/sdax/schaeffler';
+import { sglCarbonCompany } from './companies/sdax/sglCarbon';
+import { shopApothekeCompany } from './companies/sdax/shopApotheke';
+import { sixtCompany } from './companies/sdax/sixt';
+import { smasolarCompany } from './companies/sdax/smasolar';
+import { stabilusCompany } from './companies/sdax/stabilus';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -265,6 +286,27 @@ const sdaxCompany = [
   helloFreshCompany, // 1133
   hhlaCompany, // 1134
   hornbachCompany,  // 1135
+  hypoportCompany, // 1136
+  indusCompany, // 1137
+  innogyCompany, // 1138
+  instoneCompany, // 1139
+  jostWerkeCompany, // 1140
+  jungheinrichCompany, // 1141
+  kloecknerCompany, // 1142
+  koenigBauerCompany, // 1143
+  kronesCompany, // 1144
+  kwsCompany, // 1145
+  leoniCompany, // 1146
+  normaCompany, // 1147
+  patriziaCompany, // 1148
+  rhoenCompany, // 1149
+  salzgitterCompany,  // 1150
+  schaefflerCompany, // 1151
+  sglCarbonCompany, // 1152
+  shopApothekeCompany, // 1153
+  sixtCompany, // 1154
+  smasolarCompany, // 1155
+  stabilusCompany, // 1156
 ];
 // tslint:enable:max-line-length
 

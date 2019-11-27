@@ -2,6 +2,7 @@
 import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
 import { Currency } from '../../enums/currencies';
+import { SecurityType } from '../../enums/securityType';
 
 const dividends = [];
 const prices = {};
@@ -17,6 +18,7 @@ export const anyCompany: Company = {
   logo: '',
   products: [],
   industries: [],
+  securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: '',
   wkn: '',

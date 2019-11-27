@@ -1723,7 +1723,8 @@ export const freseniusCompany: Company = {
   products: [
     {
       id: 101510,
-      name: 'Fresenius Helios Kliniken'
+      name: 'Helios Kliniken',
+      logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/1/14/Helios_Kliniken_logo.svg/500px-Helios_Kliniken_logo.svg.png'
     },
     {
       id: 101511,

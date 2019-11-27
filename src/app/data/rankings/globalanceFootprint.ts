@@ -37,6 +37,7 @@ export const globalanceFootprint: Ranking = {
   responsibilityType: ResponsibilityType.Nachhaltigkeit,
   issuer: 'Globalance Bank',
   link: 'https://www.handelsblatt.com/finanzen/anlagestrategie/trends/globalance-footprint-so-nachhaltig-sind-die-dax-unternehmen/24245144.html',
+  maxResult: 100,
   results: [
     {
       id: allianzCompany.id,

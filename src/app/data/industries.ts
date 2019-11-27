@@ -234,7 +234,13 @@ export const industries: Industry[] = [
           },
           {
             id: 111016,
-            description: 'Immobilieninvestor',
+            description: 'Immobilieninvestor (Ankauf, Optimierung u/o Verkauf)',
+            imageName: 'building.svg',
+            subIndustries: null
+          },
+          {
+            id: 111017,
+            description: 'Immobilienverwalter',
             imageName: 'building.svg',
             subIndustries: null
           }
@@ -351,7 +357,7 @@ export const industries: Industry[] = [
           },
           {
             id: 111315,
-            description: 'Hersteller von Solaranlagen',
+            description: 'Hersteller von Solaranlagen und deren Zulieferer',
             imageName: 'ecology-and-environment.svg',
             subIndustries: null
           },
@@ -477,7 +483,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1212,
-        description: 'Hersteller von LKWs und deren Zulieferer',
+        description: 'Hersteller von LKWs und Nutzfahrzeugen, sowie deren Zulieferer',
         imageName: 'truck.svg',
         subIndustries: [
           {
@@ -488,7 +494,19 @@ export const industries: Industry[] = [
           },
           {
             id: 121211,
-            description: 'Zulieferer von LKW-Herstellern',
+            description: 'Zulieferer der LKW-Industrie',
+            imageName: 'logistics.svg',
+            subIndustries: null
+          },
+          {
+            id: 121212,
+            description: 'Hersteller von Nutzfahrzeugen (wie Traktoren)',
+            imageName: 'traktor.svg',
+            subIndustries: null
+          },
+          {
+            id: 121212,
+            description: 'Zulieferer von Nutzfahrzeug-Industrie',
             imageName: 'logistics.svg',
             subIndustries: null
           }
@@ -743,7 +761,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1410,
-        description: 'Banken, Zahlungsdienstleister, Finanzdienstleister',
+        description: 'Banken und Finanzen',
         imageName: 'bank-building.svg',
         subIndustries: [
           {
@@ -790,7 +808,7 @@ export const industries: Industry[] = [
           },
           {
             id: 141017,
-            description: 'Finanzierungen /Diensleistungen rund um die Finanzierung',
+            description: 'Kredite (inkl. Ratenkredite) und Dienstleistungen rund um die Finanzierung',
             imageName: 'investor.svg',
             subIndustries: null
           },
@@ -944,25 +962,25 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 171010,
-            description: 'Stahl',
+            description: 'Produzenten von Stahl',
             imageName: 'crucible.svg',
             subIndustries: null
           },
           {
             id: 171011,
-            description: 'Kunststoffe  (inkl. Polymer)',
+            description: 'Produzenten von Kunststoffen  (inkl. Polymer)',
             imageName: 'nano-technology.svg',
             subIndustries: null
           },
           {
             id: 171012,
-            description: 'Klebstoffe',
+            description: 'Produzenten von Klebstoffen',
             imageName: 'tape.svg',
             subIndustries: null
           },
           {
             id: 171013,
-            description: 'Farben und Lacke',
+            description: 'Produzenten von Farben und Lacken',
             imageName: 'drop-silhouette.svg',
             subIndustries: null
           }
@@ -1044,7 +1062,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1719,
-        description: 'Fördertechnik inkl. Gabelstapler',
+        description: 'Intralogistik und Fördertechnik (inkl. Gabelstapler)',
         imageName: 'conveyor.svg',
         subIndustries: null
       },
@@ -1202,7 +1220,7 @@ export const industries: Industry[] = [
       },
       {
         id: 2011,
-        description: 'Großhandel (Wholesale) und Lagerei',
+        description: 'Großhandel (Wholesale), Distributeure und Lagerei',
         imageName: 'storehouse.svg',
         subIndustries: null
       },

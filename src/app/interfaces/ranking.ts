@@ -11,5 +11,6 @@ export interface Ranking {
   responsibilityType: ResponsibilityType;
   issuer: string;
   link: string;
+  maxResult: number;
   results: ShareRank[];
 }

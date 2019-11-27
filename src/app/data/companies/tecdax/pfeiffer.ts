@@ -1725,7 +1725,7 @@ export const pfeifferVacuumCompany: Company = {
   symbol: 'PFV.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.TecDAX],
+  current_indices: [Indices.TecDAX, Indices.SDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Vakuumpumpen', 'Vakuumpumpensysteme', 'Messgeräte', 'Analysegeräten']

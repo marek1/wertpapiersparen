@@ -37,6 +37,7 @@ export const kirchhoff: Ranking = {
   responsibilityType: ResponsibilityType.Ethik,
   issuer: 'Kirchhoff',
   link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
+  maxResult: 25,
   results: [
     {
       id: freseniusCompany.id,
