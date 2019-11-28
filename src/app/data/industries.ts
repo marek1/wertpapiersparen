@@ -452,7 +452,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1211,
-        description: 'Automobilhersteller und deren Zulieferer',
+        description: 'Alles rund ums Auto und Motorrad',
         imageName: 'car.svg',
         subIndustries: [
           {
@@ -483,6 +483,12 @@ export const industries: Industry[] = [
             id: 121114,
             description: 'Digitale Mobilitätslösungen',
             imageName: 'programming.svg',
+            subIndustries: null
+          },
+          {
+            id: 121115,
+            description: 'Hersteller von Autowaschanlagen',
+            imageName: 'car-wash.svg',
             subIndustries: null
           }
         ]
@@ -630,7 +636,7 @@ export const industries: Industry[] = [
   },
   {
     id: 13,
-    description: 'Elektronik & Entertainment inkl. TV und Musik',
+    description: 'Elektronik, Elektrotechnik und Entertainment inkl. TV und Musik',
     imageName: 'spotlights.svg',
     subIndustries: [
       {
@@ -696,7 +702,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131210,
-            description: 'Onlineshops, Onlinehandel, Internetshops, Ticketshops, Marktplatz',
+            description: 'Online-Shops, Onlinehandel, Internetshops, Ticketshops, Marktplatz',
             imageName: 'online-booking.svg',
             subIndustries: null,
             includeIndustries: [101511]
@@ -745,18 +751,24 @@ export const industries: Industry[] = [
         imageName: 'gameboy.svg',
         subIndustries: [
           {
-            id: 101510,
+            id: 131310,
             description: 'Software inkl. Computerspiele',
             imageName: 'gameboy.svg',
             subIndustries: null
           },
           {
-            id: 101511,
+            id: 131311,
             description: 'Hardware inkl. Konsolen',
             imageName: 'gamepad-controller.svg',
             subIndustries: null
           }
         ]
+      },
+      {
+        id: 1314,
+        description: 'Elektrotechnik',
+        imageName: 'battery.svg',
+        subIndustries: null
       }
     ]
   },
@@ -778,13 +790,13 @@ export const industries: Industry[] = [
           },
           {
             id: 141011,
-            description: 'Immobilienfinanzierung / Baufinanzierung',
+            description: 'Immobilienfinanzierung, Baufinanzierung und Bausparkassen',
             imageName: 'mortgage.svg',
             subIndustries: null
           },
           {
             id: 141012,
-            description: 'Fondsgesellschaften',
+            description: 'Fondsgesellschaften und Asset Manager',
             imageName: 'investor.svg',
             subIndustries: null
           },

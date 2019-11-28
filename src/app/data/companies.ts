@@ -150,6 +150,15 @@ import { steinhoffCompany } from './companies/sdax/steinhoff';
 import { stroerCompany } from './companies/sdax/stroer';
 import { suedzuckerCompany } from './companies/sdax/suedzucker';
 import { takktCompany } from './companies/sdax/takkt';
+import { talanxCompany } from './companies/sdax/talanx';
+import { tlgCompany } from './companies/sdax/tlg';
+import { tratonCompany } from './companies/sdax/traton';
+import { vartaCompany } from './companies/sdax/varta';
+import { wackerChemieCompany } from './companies/sdax/wackerChemie';
+import { wackerNeusonCompany } from './companies/sdax/wackerNeuson';
+import { washtecCompany } from './companies/sdax/washtec';
+import { wuestenrotCompany } from './companies/sdax/wuestenrot';
+import { zooplusCompany } from './companies/sdax/zooplus';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -315,6 +324,15 @@ const sdaxCompany = [
   stroerCompany, // 1158
   suedzuckerCompany, // 1159
   takktCompany, // 1160
+  talanxCompany, // 1161
+  tlgCompany, // 1162
+  tratonCompany, // 1163
+  vartaCompany, // 1164
+  wackerChemieCompany, // 1165
+  wackerNeusonCompany, // 1166
+  washtecCompany, // 1167
+  wuestenrotCompany, // 1168
+  zooplusCompany, // 1169
 ];
 // tslint:enable:max-line-length
 
