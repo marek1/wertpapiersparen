@@ -159,6 +159,15 @@ import { wackerNeusonCompany } from './companies/sdax/wackerNeuson';
 import { washtecCompany } from './companies/sdax/washtec';
 import { wuestenrotCompany } from './companies/sdax/wuestenrot';
 import { zooplusCompany } from './companies/sdax/zooplus';
+import { abInbevCompany } from './companies/eurostoxx50/abInbev';
+import { aholdCompany } from './companies/eurostoxx50/ahold';
+import { airliquideCompany } from './companies/eurostoxx50/airliquide';
+import { amadeusItCompany } from './companies/eurostoxx50/amadeusIt';
+import { asmlCompany } from './companies/eurostoxx50/asml';
+import { axaCompany } from './companies/eurostoxx50/axa';
+import { bbvaCompany } from './companies/eurostoxx50/bbva';
+import { bnpCompany } from './companies/eurostoxx50/bnp';
+import { crhCompany } from './companies/eurostoxx50/crh';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -334,8 +343,29 @@ const sdaxCompany = [
   wuestenrotCompany, // 1168
   zooplusCompany, // 1169
 ];
+
+const euroStoxx50Companies = [
+  abInbevCompany, // 1170
+  // adidas
+  aholdCompany, // 1171
+  airliquideCompany, // 1172
+  // airbus
+  // allianz
+  amadeusItCompany, // 1173
+  asmlCompany, // 1174
+  axaCompany, // 1175
+  // basf
+  // bayer
+  bbvaCompany, // 1176
+  // bmw
+  bnpCompany, // 1177
+  crhCompany, // 1178
+  // daimler
+];
 // tslint:enable:max-line-length
 
 export const AllCompanies = daxCompanies
   .concat(mdaxCompanies)
-  .concat(tecDaxCompanies);
+  .concat(tecDaxCompanies)
+  .concat(sdaxCompany)
+  .concat(euroStoxx50Companies);

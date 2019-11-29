@@ -14,6 +14,9 @@ export enum SecurityType {
   'ActionsAuPorteur' = 'Actions au Porteur [Inhaberaktie]',
   'ActionsNominatives' = 'Actions Nominatives [Namensaktie]',
   'Actions' = 'Actions [Aktie]',
+  'ActionsPort' = 'Actions Port. (FR)',
+  'AccionesPort' = 'Acciones Port. (ES)',
+  'AccionesNom' = 'Acciones Nom. (ES)',
   'ETF' = 'ETF',
   'ADR' = 'ADR'
 }

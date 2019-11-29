@@ -88,7 +88,7 @@ export const industries: Industry[] = [
           },
           {
             id: 101311,
-            description: 'Nahrungsmittelhersteller und Zulieferer',
+            description: 'Nahrungsmittelhersteller und deren Zulieferer',
             imageName: 'diet.svg',
             subIndustries: null
           },
@@ -100,8 +100,14 @@ export const industries: Industry[] = [
           },
           {
             id: 101313,
-            description: 'Fastfood',
+            description: 'Hersteller und Verkäufer von Fastfood',
             imageName: 'fast-food.svg',
+            subIndustries: null
+          },
+          {
+            id: 101314,
+            description: 'Genussmittelhersteller und deren Zulieferer',
+            imageName: 'genuss.svg',
             subIndustries: null
           }
         ]

@@ -1,8 +1,8 @@
-
 import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { SecurityType } from '../../../enums/securityType';
+import { Indices } from '../../../enums/indices';
 
 const dividends = [
   {year: 2018, rate: 1.65, yield: 1.98}, {year: 2017, rate: 1.50}, {year: 2016, rate: 1.35}, {
@@ -262,13 +262,13 @@ export const airbusCompany: Company = {
   ],
   industries: [121012, 121015, 2210],
   currency: Currency.EUR,
-  securityType: SecurityType.OopNaam,
+  securityType: SecurityType.AandelenOopNaam,
   isin: 'NL0000235190',
   wkn: '938914',
   symbol: 'AIR.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [],
+  current_indices: [Indices.EuroStoxx50, Indices.MDAX],
   end_of_month_prices: prices,
   dividends,
   tags: ['Luftfahrtunternehmen', 'Raumfahrtunternehmen', 'zivile Luftfahrt']
