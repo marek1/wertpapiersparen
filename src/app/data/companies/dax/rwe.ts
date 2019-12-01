@@ -1720,7 +1720,7 @@ export const rweCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/RWE',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/RWE_Logo_2018.svg/500px-RWE_Logo_2018.svg.png',
   products: [],
-  industries: [111310, 111313],
+  industries: [111309, 111310, 111313],
   currency: Currency.EUR,
   securityType: SecurityType.InhaberStamm,
   isin: 'DE0007037129',

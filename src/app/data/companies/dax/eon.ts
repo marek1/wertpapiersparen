@@ -1717,7 +1717,7 @@ export const eonCompany: Company = {
       name: 'Eon Strom'
     }
   ],
-  industries: [111310, 111315, 111314],
+  industries: [111309, 111310, 111315, 111314],
   currency: Currency.EUR,
   securityType: SecurityType.Namensaktie,
   isin: 'DE000ENAG999',

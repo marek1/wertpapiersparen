@@ -7,6 +7,7 @@ export enum Country {
   'Österreich',
   'Belgien',
   'Frankreich',
-  'Spanien'
+  'Spanien',
+  'Italien'
 }
 

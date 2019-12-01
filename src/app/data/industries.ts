@@ -131,7 +131,7 @@ export const industries: Industry[] = [
           },
           {
             id: 101412,
-            description: 'Brillen',
+            description: 'Brillen, Linsen und optische Instrumente',
             imageName: 'glasses.svg',
             subIndustries: null
           }
@@ -344,8 +344,14 @@ export const industries: Industry[] = [
             subIndustries: null
           },
           {
+            id: 111309, // <- !!!
+            description: 'Stromversorger',
+            imageName: 'socket.svg',
+            subIndustries: null
+          },
+          {
             id: 111311,
-            description: 'Netzbetreiber / Strominfrastruktur',
+            description: 'Netzbetreiber und Strominfrastruktur',
             imageName: 'tower.svg',
             subIndustries: null
           },
@@ -1037,6 +1043,12 @@ export const industries: Industry[] = [
             id: 171311,
             description: 'Schmierstoffe',
             imageName: 'change-car-oil.svg',
+            subIndustries: null
+          },
+          {
+            id: 171312,
+            description: 'Treibstoffe fürs Auto',
+            imageName: 'gasoline.svg',
             subIndustries: null
           }
         ]

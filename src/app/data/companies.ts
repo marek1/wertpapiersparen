@@ -168,6 +168,15 @@ import { axaCompany } from './companies/eurostoxx50/axa';
 import { bbvaCompany } from './companies/eurostoxx50/bbva';
 import { bnpCompany } from './companies/eurostoxx50/bnp';
 import { crhCompany } from './companies/eurostoxx50/crh';
+import { danoneCompany } from './companies/eurostoxx50/danone';
+import { enelCompany } from './companies/eurostoxx50/enel';
+import { engieCompany } from './companies/eurostoxx50/engie';
+import { eniCompany } from './companies/eurostoxx50/eni';
+import { essilorLuxotticaCompany } from './companies/eurostoxx50/essilor';
+import { iberdrolaCompany } from './companies/eurostoxx50/iberdrola';
+import { inditexCompany } from './companies/eurostoxx50/inditex';
+import { ingCompany } from './companies/eurostoxx50/ing';
+import { intesaCompany } from './companies/eurostoxx50/intesa';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -361,6 +370,19 @@ const euroStoxx50Companies = [
   bnpCompany, // 1177
   crhCompany, // 1178
   // daimler
+  danoneCompany, // 1179
+  // deutschBoerseCompany
+  // deutschePostCompany
+  // deutscheTelekomCompany
+  enelCompany, // 1180
+  engieCompany, // 1181
+  eniCompany, // 1182
+  essilorLuxotticaCompany, // 1183
+  // freseniusCompany
+  iberdrolaCompany, // 1184
+  inditexCompany, // 1185
+  ingCompany, // 1186
+  intesaCompany, // 1187
 ];
 // tslint:enable:max-line-length
 
