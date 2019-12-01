@@ -1796,7 +1796,7 @@ export const lindeCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50],
   end_of_month_prices: lindePrices,
   dividends: lindeDividends,
   tags: ['Gabelstapler', 'Hubwagen', 'Niederhubwagen', 'Hochhubwagen', 'Gase', 'Industriegase']

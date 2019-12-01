@@ -177,6 +177,9 @@ import { iberdrolaCompany } from './companies/eurostoxx50/iberdrola';
 import { inditexCompany } from './companies/eurostoxx50/inditex';
 import { ingCompany } from './companies/eurostoxx50/ing';
 import { intesaCompany } from './companies/eurostoxx50/intesa';
+import { keringCompany } from './companies/eurostoxx50/kering';
+import { lorealCompany } from './companies/eurostoxx50/loreal';
+import { lvmhCompany } from './companies/eurostoxx50/lvmh';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -383,6 +386,11 @@ const euroStoxx50Companies = [
   inditexCompany, // 1185
   ingCompany, // 1186
   intesaCompany, // 1187
+  keringCompany, // 1188
+  // lindeCompany
+  lorealCompany, // 1189
+  lvmhCompany, // 1190
+  // munichReCompany
 ];
 // tslint:enable:max-line-length
 
