@@ -8,7 +8,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1010,
-        description: 'Pflegemittel und Kosmetik und deren Zulieferer',
+        description: 'Pflegemittel, Körperplege, Kosmetik und deren Zulieferer',
         imageName: 'jigsaws.svg',
         subIndustries: null
       },
@@ -653,7 +653,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1310,
-        description: 'Mobilfunk, Handy und Handynetze',
+        description: 'Telekommunikation, Handy und Handynetze',
         imageName: 'mobile-network.svg',
         subIndustries: [
           {
@@ -670,7 +670,7 @@ export const industries: Industry[] = [
           },
           {
             id: 131012,
-            description: 'Hersteller von Mobiltelefonen (Handyhersteller)',
+            description: 'Hersteller von Telefonen (inkl. Mobiltelefonen / Handies)',
             imageName: 'smartphone.svg',
             subIndustries: null
           },
@@ -703,6 +703,12 @@ export const industries: Industry[] = [
             id: 131112,
             description: 'Marketing: TV-Werbung',
             imageName: 'online-ads.svg',
+            subIndustries: null
+          },
+          {
+            id: 131113,
+            description: 'Hersteller von TV- und Fernsehgeräten',
+            imageName: 'television.svg',
             subIndustries: null
           }
         ]
@@ -759,12 +765,12 @@ export const industries: Industry[] = [
       },
       {
         id: 1313,
-        description: 'Computer, Konsolen und Spiele',
+        description: 'Home-Entertainment inkl. Konsolen und Spiele',
         imageName: 'gameboy.svg',
         subIndustries: [
           {
             id: 131310,
-            description: 'Software inkl. Computerspiele',
+            description: 'Computer- und Konsolenspiele',
             imageName: 'gameboy.svg',
             subIndustries: null
           },
@@ -772,6 +778,12 @@ export const industries: Industry[] = [
             id: 131311,
             description: 'Hardware inkl. Konsolen',
             imageName: 'gamepad-controller.svg',
+            subIndustries: null
+          },
+          {
+            id: 131312,
+            description: 'Home-Entertainment inkl. Hi-Fi',
+            imageName: 'speakers.svg',
             subIndustries: null
           }
         ]
@@ -791,7 +803,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1410,
-        description: 'Banken und Finanzen',
+        description: 'Banken und Finanzunternehmen',
         imageName: 'bank-building.svg',
         subIndustries: [
           {
@@ -1165,7 +1177,7 @@ export const industries: Industry[] = [
           },
           {
             id: 181311,
-            description: 'Hardware (ausser PCs)',
+            description: 'Computer-Zubehör',
             imageName: 'printer.svg',
             subIndustries: null
           }

@@ -1754,6 +1754,6 @@ export const deutscheBankCompany: Company = {
   current_indices: [Indices.DAX],
   end_of_month_prices: deutscheBankPrices,
   dividends: deutscheBankDividends,
-  tags: ['Bank', 'Banking', 'Finanzdienstleistungen', 'Girokonto', 'Finanzierung', 'Immobilienfinanzierung']
+  tags: ['Bank', 'Banking', 'Finanzdienstleistungen', 'Girokonto', 'Finanzierung', 'Immobilienfinanzierung', 'Universalbank', 'Privatkundengeschäft', 'Firmenkundengeschäft', 'Kreditkarten', 'Kredite', 'Darlehen', 'Geldanlagen']
 };
 // tslint:enable:max-line-length

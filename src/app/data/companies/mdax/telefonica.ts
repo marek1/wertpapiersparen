@@ -610,7 +610,7 @@ const prices = {
 };
 
 // tslint:disable:max-line-length
-export const telefonicaCompany: Company = {
+export const telefonicaDeutschlandCompany: Company = {
   id: 1087,
   name: 'Telefónica Deutschland Holding AG',
   country: Country.Deutschland,

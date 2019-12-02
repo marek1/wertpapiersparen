@@ -84,7 +84,7 @@ import { siltronicCompany } from './companies/mdax/siltronic';
 import { softwareAgCompany } from './companies/mdax/softwareAg';
 import { symriseCompany } from './companies/mdax/symrise';
 import { tagImmobilienCompany } from './companies/mdax/tagImmobilien';
-import { telefonicaCompany } from './companies/mdax/telefonica';
+import { telefonicaDeutschlandCompany } from './companies/mdax/telefonica';
 import { thyssenKruppCompany } from './companies/mdax/thyssenKrupp';
 import { uniperCompany } from './companies/mdax/uniper';
 import { unitedInternetCompany } from './companies/mdax/unitedInternet';
@@ -180,6 +180,17 @@ import { intesaCompany } from './companies/eurostoxx50/intesa';
 import { keringCompany } from './companies/eurostoxx50/kering';
 import { lorealCompany } from './companies/eurostoxx50/loreal';
 import { lvmhCompany } from './companies/eurostoxx50/lvmh';
+import { nokiaCompany } from './companies/eurostoxx50/nokia';
+import { orangeCompany } from './companies/eurostoxx50/orange';
+import { philipsCompany } from './companies/eurostoxx50/philips';
+import { safranCompany } from './companies/eurostoxx50/safran';
+import { sanofiCompany } from './companies/eurostoxx50/sanofi';
+import { santanderCompany } from './companies/eurostoxx50/santander';
+import { schneiderCompany } from './companies/eurostoxx50/schneider';
+import { societeGeneralCompany } from './companies/eurostoxx50/societe';
+import { telefonicaCompany } from './companies/eurostoxx50/telefonica';
+import { totalCompany } from './companies/eurostoxx50/total';
+import { unileverCompany } from './companies/eurostoxx50/unilever';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -273,7 +284,7 @@ const mdaxCompanies = [
   softwareAgCompany, // 1084
   symriseCompany, // 1085
   tagImmobilienCompany, // 1086
-  telefonicaCompany, // 1087
+  telefonicaDeutschlandCompany, // 1087
   thyssenKruppCompany, // 1088
   uniperCompany, // 1089
   unitedInternetCompany, // 1090
@@ -391,6 +402,19 @@ const euroStoxx50Companies = [
   lorealCompany, // 1189
   lvmhCompany, // 1190
   // munichReCompany
+  nokiaCompany, // 1191
+  orangeCompany, // 1192
+  philipsCompany, // 1193
+  safranCompany, // 1194
+  sanofiCompany, // 1195
+  santanderCompany, // 1196
+  // sapCompany
+  schneiderCompany, // 1197
+  // siemensCompany
+  societeGeneralCompany, // 1198
+  telefonicaCompany, // 1199
+  totalCompany, // 1200
+  unileverCompany // 1201
 ];
 // tslint:enable:max-line-length
 
