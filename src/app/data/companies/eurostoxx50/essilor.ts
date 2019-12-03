@@ -20,55 +20,22 @@ const dividends = [
   }
 ];
 const prices = {
-  '2019-11-29': {
-    '1. open': '139.65',
-    '2. high': '140.85',
-    '3. low': '139.65',
-    '4. close': '140.85',
-    '5. volume': ''
-  },
-  '2019-10-31': {
-    '1. open': '134.80',
-    '2. high': '137.35',
-    '3. low': '134.80',
-    '4. close': '137.10',
-    '5. volume': ''
-  },
-  '2018-12-28': {
-    '1. open': '109.70',
-    '2. high': '109.70',
-    '3. low': '109.40',
-    '4. close': '109.55',
-    '5. volume': ''
-  },
-  '2017-12-29': {
-    '1. open': '114.88',
-    '2. high': '114.88',
-    '3. low': '114.88',
-    '4. close': '114.88',
-    '5. volume': ''
-  },
-  '2016-12-30': {
-    '1. open': '106.49',
-    '2. high': '106.49',
-    '3. low': '106.49',
-    '4. close': '106.49',
-    '5. volume': ''
-  },
-  '2015-12-30': {
-    '1. open': '116.41',
-    '2. high': '116.48',
-    '3. low': '116.41',
-    '4. close': '116.48',
-    '5. volume': ''
-  },
-  '2014-12-30': {
-    '1. open': '91.47',
-    '2. high': '91.48',
-    '3. low': '91.47',
-    '4. close': '91.48',
-    '5. volume': ''
-  },
+  '2019-12-30': {'1. open': '109.95', '4. close': '136.60'},
+  '2018-12-30': {'1. open': '115.15', '4. close': '109.65'},
+  '2017-12-30': {'1. open': '107.51', '4. close': '115.40'},
+  '2016-12-30': {'1. open': '115.22', '4. close': '106.60'},
+  '2015-12-30': {'1. open': '93.00', '4. close': '116.28'},
+  '2014-12-30': {'1. open': '77.67', '4. close': '91.35'},
+  '2013-12-30': {'1. open': '76.82', '4. close': '76.95'},
+  '2012-12-30': {'1. open': '54.49', '4. close': '76.47'},
+  '2011-12-30': {'1. open': '48.68', '4. close': '54.13'},
+  '2010-12-30': {'1. open': '41.82', '4. close': '49.47'},
+  '2009-12-30': {'1. open': '33.32', '4. close': '41.82'},
+  '2008-12-30': {'1. open': '43.32', '4. close': '33.32'},
+  '2007-12-30': {'1. open': '40.35', '4. close': '43.32'},
+  '2006-12-30': {'1. open': '34.07', '4. close': '40.35'},
+  '2005-12-30': {'1. open': '28.90', '4. close': '34.17'},
+  '2004-12-30': {'1. open': '24.75', '4. close': '27.34'}
 };
 
 // tslint:disable:max-line-length
@@ -80,6 +47,7 @@ export const essilorLuxotticaCompany: Company = {
   url: 'http://essilor-luxottica.com/',
   description: 'EssilorLuxottica entstand im Oktober 2018 aus der Fusion der Essilor International S.A. mit der Luxottica S.p.A. Es ist ein weltweit operierendes augenoptisches Unternehmen mit Hauptsitz in Charenton-le-Pont am Südrand von Paris. Seine Aktien werden Pariser Börse als Teil des CAC40 gehandelt.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/EssilorLuxottica',
+  link_stockPrices: 'https://www.boerse.de/historische-kurse/EssilorLuxottica-Aktie/FR0000121667',
   logo: 'https://www.essilorluxottica.com/sites/default/files/images/2018-03/Essilorluxottica_Logo_Col_RGB.svg',
   products: [
     {

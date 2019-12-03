@@ -15,7 +15,18 @@ const dividends = [
     yield: 2.95
   }, {year: 2010, rate: 0.30, yield: 1.91}
 ];
-const prices = {};
+const prices = {
+  '2019-12-30': {'1. open': '60.70', '4. close': '71.34'},
+  '2018-12-30': {'1. open': '60.10', '4. close': '60.96'},
+  '2017-12-30': {'1. open': '42.97', '4. close': '60.22'},
+  '2016-12-30': {'1. open': '39.84', '4. close': '43.13'},
+  '2015-12-30': {'1. open': '32.93', '4. close': '40.93'},
+  '2014-12-30': {'1. open': '31.01', '4. close': '32.60'},
+  '2013-12-30': {'1. open': '19.21', '4. close': '30.82'},
+  '2012-12-30': {'1. open': '12.55', '4. close': '19.05'},
+  '2011-12-30': {'1. open': '15.48', '4. close': '12.31'},
+  '2010-12-30': {'1. open': '11.80', '4. close': '15.51'}
+};
 
 // tslint:disable:max-line-length
 export const amadeusItCompany: Company = {
@@ -26,6 +37,7 @@ export const amadeusItCompany: Company = {
   url: 'https://corporate.amadeus.com/',
   description: 'Amadeus ist ein europäisches Softwareunternehmen, das das gleichnamige Computerreservierungssystem (CRS) vertreibt.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Amadeus_IT_Group',
+  link_stockPrices: 'https://www.boerse.de/historische-kurse/Amadeus-IT-Group-Aktie/ES0109067019',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Amadeus_%28CRS%29_Logo.svg/500px-Amadeus_%28CRS%29_Logo.svg.png',
   products: [],
   industries: [1810],

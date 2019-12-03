@@ -953,7 +953,7 @@ export const unileverCompany: Company = {
       id: 120110,
       name: 'Axe',
       logo: 'https://www.unilever.com/Images/axe_tcm244-408738_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120111,
@@ -965,13 +965,13 @@ export const unileverCompany: Company = {
       id: 120112,
       name: 'Cif',
       logo: 'https://www.unilever.com/Images/cif_tcm244-408746_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120113,
       name: 'CLEAR',
       logo: 'https://www.unilever.com/Images/global-clear-logo_tcm244-521204_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120114,
@@ -995,19 +995,19 @@ export const unileverCompany: Company = {
       id: 120117,
       name: 'Dove',
       logo: 'https://www.unilever.com/Images/dove_tcm244-408752_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120118,
       name: 'Dove Men Care',
       logo: 'https://www.unilever.com/Images/dove-men-care-dark_tcm244-460359.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120119,
       name: 'Fair&Lovely',
       logo: 'https://www.unilever.com/Images/fair-lovely_tcm244-408989_1_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120120,
@@ -1031,19 +1031,19 @@ export const unileverCompany: Company = {
       id: 120123,
       name: 'Lifebuoy',
       logo: 'https://www.unilever.com/Images/lifebuoy-logo-2016-280x280_tcm244-408770_1_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120124,
       name: 'Lipton',
       logo: 'https://www.unilever.com/Images/LIPTON_OPTIMUM_RGB_STANDARD_tcm244-408771_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120125,
       name: 'LUX',
       logo: 'https://www.unilever.com/Images/lux_tcm244-408773_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120126,
@@ -1067,19 +1067,19 @@ export const unileverCompany: Company = {
       id: 120129,
       name: 'Rexona',
       logo: 'https://www.unilever.com/Images/rexona_tcm244-408784.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120130,
       name: 'Smile',
       logo: 'https://www.unilever.com/Images/Smile-280-280_tcm244-521904_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120131,
       name: 'Sunsilk',
       logo: 'https://www.unilever.com/Images/sunsilk_tcm244-408794_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120132,
@@ -1097,7 +1097,7 @@ export const unileverCompany: Company = {
       id: 120134,
       name: 'Alberto Balsam',
       logo: 'https://www.unilever.com/Images/UK-Alberto-Balsam-brand-logo_tcm244-498506_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120135,
@@ -1109,277 +1109,277 @@ export const unileverCompany: Company = {
       id: 120136,
       name: 'aviance',
       logo: 'https://www.unilever.com/Images/aviance_tcm244-408961_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120137,
       name: 'Breeze',
       logo: 'https://www.unilever.com/Images/breeze_tcm244-408966_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120138,
       name: 'Brut',
       logo: 'https://www.unilever.com/Images/brut_tcm244-408970_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120139,
       name: 'Citra',
       logo: 'https://www.unilever.com/Images/citra-logo_tcm244-507915_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120140,
       name: 'closeup',
       logo: 'https://www.unilever.com/Images/closeup_tcm244-408748_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120141,
       name: 'dusch das',
       logo: 'https://www.unilever.com/Images/duschdas_tcm244-408987_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120142,
       name: 'Eskinol',
       logo: 'https://www.unilever.com/Images/eskinol_tcm244-408988_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120143,
       name: 'Fissan',
       logo: 'https://www.unilever.com/Images/fissan_tcm244-408990_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120144,
       name: 'Hazeline',
       logo: 'https://www.unilever.com/Images/hazeline_tcm244-408995_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120145,
       name: 'Impulse',
       logo: 'https://www.unilever.com/Images/hazeline_tcm244-408995_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120146,
       name: 'Lakme',
       logo: 'https://www.unilever.com/Images/lakme_tcm244-409003.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120147,
       name: 'Lever2000',
       logo: 'https://www.unilever.com/Images/lever1000_tcm244-409005_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120148,
       name: 'mod´s hair',
       logo: 'https://www.unilever.com/Images/mods_tcm244-409014_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120149,
       name: 'Noxzema',
       logo: 'https://www.unilever.com/Images/noxzema_tcm244-409018_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120150,
       name: 'Pears',
       logo: 'https://www.unilever.com/Images/pears_tcm244-409019_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120151,
       name: 'Pond´s',
       logo: 'https://www.unilever.com/Images/ponds_tcm244-408782_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120152,
       name: 'Q-Tips',
       logo: 'https://www.unilever.com/Images/qtips_tcm244-409025_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120153,
       name: 'simple',
       logo: 'https://www.unilever.com/Images/simple_tcm244-409033_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120154,
       name: 'St.Ives',
       logo: 'https://www.unilever.com/Images/stives_tcm244-409035_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120155,
       name: 'Suave',
       logo: 'https://www.unilever.com/Images/suave_tcm244-409037_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120156,
       name: 'TIGI',
       logo: 'https://www.unilever.com/Images/tigi_tcm244-409042_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120157,
       name: 'TreSemme',
       logo: 'https://www.unilever.com/Images/tresemme_tcm244-408798_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120158,
       name: 'Timotei',
       logo: 'https://www.unilever.com/Images/tresemme_tcm244-408798_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120159,
       name: 'Toni&Guy',
       logo: 'https://www.unilever.com/Images/ToniandGuy-logo_tcm244-409045.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120160,
       name: 'vo5',
       logo: 'https://www.unilever.com/Images/vo5_tcm244-409052_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120161,
       name: 'Vaseline',
       logo: 'https://www.unilever.com/Images/vaseline_tcm244-408800_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120162,
       name: 'Zwitsal',
       logo: 'https://www.unilever.com/Images/zwitsal_tcm244-409056.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120163,
       name: 'Andrelon',
       logo: 'https://www.unilever.com/Images/andrelon_tcm244-408811_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120164,
       name: 'Block&White',
       logo: 'https://www.unilever.com/Images/block-white_tcm244-408822_1_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120165,
       name: 'Clinic Plus',
       logo: 'https://www.unilever.com/Images/clinicplus_tcm244-408833_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120166,
       name: 'Cream Silk',
       logo: 'https://www.unilever.com/Images/creamsilk_tcm244-408838_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120167,
       name: 'dawn',
       logo: 'https://www.unilever.com/Images/dawn_tcm244-408842_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120168,
       name: 'elle 18',
       logo: 'https://www.unilever.com/Images/elle18_tcm244-408853.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120169,
       name: 'Folicure',
       logo: 'https://www.unilever.com/Images/folicure_tcm244-408858_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120170,
       name: 'Hamam',
       logo: 'https://www.unilever.com/Images/hamam_tcm244-408871_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120171,
       name: 'indulekha',
       logo: 'https://www.unilever.com/Images/Indulekha-Logo-280x280_tcm244-484783_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120172,
       name: 'kalina',
       logo: 'https://www.unilever.com/Images/kalina_tcm244-408878_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120173,
       name: 'Le Sancy',
       logo: 'https://www.unilever.com/Images/lesancy_tcm244-408887_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120174,
       name: 'ayush theraphy',
       logo: 'https://www.unilever.com/Images/leverayushtherapy_tcm244-408888_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120175,
       name: 'Liril',
       logo: 'https://www.unilever.com/Images/liril-logo_tcm244-409512_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120176,
       name: 'Matey',
       logo: 'https://www.unilever.com/Images/global-matey-Logo-090217_tcm244-498305_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120177,
       name: 'Organics',
       logo: 'https://www.unilever.com/Images/organics_tcm244-408910.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120178,
       name: 'P/S',
       logo: 'https://www.unilever.com/Images/ps_tcm244-408911.gif',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120179,
       name: 'Signal',
       logo: 'https://www.unilever.de/Images/Signal_logo_208_tcm1350-408790.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120180,
       name: 'Pure Derm',
       logo: 'https://www.unilever.com/Images/purederm-logo_tcm244-521897_w198.jpg',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120181,
       name: 'Zhonghua',
       logo: 'https://www.unilever.com/Images/zhonghua_tcm244-408955_w198.png',
-      segment: 1010
+      segment: 101010
     },
     {
       id: 120182,
@@ -1868,7 +1868,7 @@ export const unileverCompany: Company = {
       segment: 101311
     }
   ],
-  industries: [101311, 1010, 111211],
+  industries: [101311, 101010, 111211],
   securityType: SecurityType.AandelenOopNaam,
   currency: Currency.EUR,
   isin: 'NL0000009355',

@@ -917,7 +917,14 @@ export const orangeCompany: Company = {
   description: 'Die Orange S.A. (ehemals France Télécom S.A.) ist das größte Telekommunikationsunternehmen in Frankreich. Die Konzernzentrale befindet sich in der rue Olivier de Serres im 15. Arrondissement von Paris. Mit 170.531 Mitarbeitern versorgte das Unternehmen 2012 230,7 Millionen Kunden weltweit und erzielte einen konsolidierten Umsatz von 43,515 Milliarden Euro.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Orange_(Unternehmen)',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/249px-Orange_logo.svg.png',
-  products: [],
+  products: [
+    {
+      id: 119210,
+      name: 'Orange',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/249px-Orange_logo.svg.png',
+      segment: 131010
+    }
+  ],
   industries: [131010, 131013, 131214],
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,

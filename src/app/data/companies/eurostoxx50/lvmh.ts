@@ -1288,85 +1288,85 @@ export const lvmhCompany: Company = {
       id: 119052,
       name: 'Aqua di Parma',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/acqua-di-parma_black-def.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119053,
       name: 'Benefit',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/logo_benefit400.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119054,
       name: 'Cha Ling',
       logo: 'https://r.lvmh-static.com/uploads/2019/06/logo-chaling-ok.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119055,
       name: 'Fenty Beauty by Rihanna',
       logo: 'https://r.lvmh-static.com/uploads/2018/03/logo-fentybeautybyrihanna_white.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119056,
       name: 'Fresh',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/fresh_logo2.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119057,
       name: 'Givenchy Parfums',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/parfumsgivenchy_logo.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119058,
       name: 'Guerlain',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/guerlain-logo-temporaire.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119059,
       name: 'Kat Von D',
       logo: 'https://r.lvmh-static.com/uploads/2018/03/kvd_logo-primary_white2.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119060,
       name: 'Kenzo Parfums',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/kenzo-logo-parfums-paris.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119061,
       name: 'Maison Francis Kurkdijan',
       logo: 'https://r.lvmh-static.com/uploads/2017/03/logo-mfk-white.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119062,
       name: 'Make up for ever',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/mufe_logo.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119063,
       name: 'Marc Jacobs Beauty',
       logo: 'https://r.lvmh-static.com/uploads/2018/04/marc-jacobs-beauty-logo1.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119064,
       name: 'Christian Dior Parfums',
       logo: 'https://r.lvmh-static.com/uploads/2014/07/dior.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119065,
       name: 'Parfumes Loewe',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/logo-loewe.png',
-      segment: 1010
+      segment: 101012
     },
     {
       id: 119066,
@@ -1396,7 +1396,7 @@ export const lvmhCompany: Company = {
       id: 119070,
       name: 'Tag Heuer',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/tagheuer_logo1.png',
-      segment: 101411
+      segment: 101413
     },
     {
       id: 119071,
@@ -1435,7 +1435,7 @@ export const lvmhCompany: Company = {
       segment: 2010
     }
   ],
-  industries: [101314, 101410, 1010, 101411, 2010],
+  industries: [101314, 101410, 101012, 101411, 101413, 1019, 2010],
   securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: 'FR0000121014',

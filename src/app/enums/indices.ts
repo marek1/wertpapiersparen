@@ -4,6 +4,5 @@ export enum Indices {
   'SDAX',
   'TecDAX',
   'EuroStoxx50',
-  'DOW Jones',
-  'NASDAQ'
+  'CAC40'
 }

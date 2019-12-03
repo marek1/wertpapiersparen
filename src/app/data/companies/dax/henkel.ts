@@ -2053,7 +2053,7 @@ export const henkelCompany: Company = {
       logo: 'https://www.henkel.com/resource/image/30126/1x1/670/670/ef6e6e1febeca7cddc8ecebb04b3228c/pE/3dmen-logo.png'
     }
   ],
-  industries: [1010, 171012],
+  industries: [101010, 101011, 171012],
   currency: Currency.EUR,
   securityType: SecurityType.InhaberVorzug,
   isin: 'DE0006048432',

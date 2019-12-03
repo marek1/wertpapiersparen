@@ -1117,7 +1117,7 @@ export const lorealCompany: Company = {
       logo: 'https://loreal-dam-front-corp-en-cdn.damdy.com/ressources/afile/165731-7f764-picture_original-seed-main-logo-may-2018.jpg'
     }
   ],
-  industries: [1010],
+  industries: [101011],
   securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: 'FR0000120321',

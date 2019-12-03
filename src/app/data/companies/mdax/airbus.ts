@@ -268,7 +268,7 @@ export const airbusCompany: Company = {
   symbol: 'AIR.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.MDAX],
+  current_indices: [Indices.EuroStoxx50, Indices.MDAX, Indices.CAC40],
   end_of_month_prices: prices,
   dividends,
   tags: ['Luftfahrtunternehmen', 'Raumfahrtunternehmen', 'zivile Luftfahrt']

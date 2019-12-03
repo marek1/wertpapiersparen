@@ -193,6 +193,9 @@ import { totalCompany } from './companies/eurostoxx50/total';
 import { unileverCompany } from './companies/eurostoxx50/unilever';
 import { vinciCompany } from './companies/eurostoxx50/vinci';
 import { vivendiCompany } from './companies/eurostoxx50/vivendi';
+import { accorCompany } from './companies/cac40/accor';
+import { hermesCompany } from './companies/cac40/hermes';
+import { pernodCompany } from './companies/cac40/pernod';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -421,10 +424,38 @@ const euroStoxx50Companies = [
   vivendiCompany, // 1203
   // vwCompany
 ];
+
+const cac40Companies = [
+  accorCompany, // 1204
+  // airliquideCompany
+  // airbusCompany
+  // TODO : ArcelorMittal 1205
+  // TODO: Atos 1206
+  // axaCompany
+  // TODO: Bouygues 1207
+  // TODO: Cap Gemini 1208
+  // TODO: Carrefour 1209
+  // TODO: CA 1210
+  // danoneCompany
+  // TODO: Dassault 1210
+  // engieCompany
+  // essilorLuxotticaCompany
+  hermesCompany, // 1211
+  // keringCompany
+  // TODO: Legrand 1212
+  // lorealCompany
+  // lvmhCompany
+  // TODO: Michelin
+  // orangeCompany
+  pernodCompany, // 1213
+];
+
 // tslint:enable:max-line-length
+
 
 export const AllCompanies = daxCompanies
   .concat(mdaxCompanies)
   .concat(tecDaxCompanies)
   .concat(sdaxCompany)
-  .concat(euroStoxx50Companies);
+  .concat(euroStoxx50Companies)
+  .concat(cac40Companies);

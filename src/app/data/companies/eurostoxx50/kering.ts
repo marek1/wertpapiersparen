@@ -978,67 +978,80 @@ export const keringCompany: Company = {
     {
       id: 118810,
       name: 'Gucci',
-      logo: 'https://keringcorporate.dam.kering.com/m/0aa8c6ba29b06e68/original/GUCCI-STORY-BRAND-DESKTOP.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/0aa8c6ba29b06e68/original/GUCCI-STORY-BRAND-DESKTOP.png',
+      segment: 101411
     },
     {
       id: 118811,
       name: 'Saint Laurent',
-      logo: 'https://keringcorporate.dam.kering.com/m/17f9d278713d0ea9/original/STORY-BRAND-DESKTOP.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/17f9d278713d0ea9/original/STORY-BRAND-DESKTOP.png',
+      segment: 101411
     },
     {
       id: 118812,
       name: 'Bottega Veneta',
-      logo: 'https://keringcorporate.dam.kering.com/m/476ddb1df7ff0ad6/original/100x100-LOGO.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/476ddb1df7ff0ad6/original/100x100-LOGO.png',
+      segment: 101411
     },
     {
       id: 118813,
       name: 'Balenciaga',
-      logo: 'https://keringcorporate.dam.kering.com/m/23d27d1e0d6a218e/original/BAL_STORY-BRAND-DESKTOP.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/23d27d1e0d6a218e/original/BAL_STORY-BRAND-DESKTOP.png',
+      segment: 101411
     },
     {
       id: 118814,
       name: 'Alexander McQueen',
-      logo: 'https://keringcorporate.dam.kering.com/m/5250d61940ecae52/original/LOGO-DESKTOP-AMQ-V2.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/5250d61940ecae52/original/LOGO-DESKTOP-AMQ-V2.png',
+      segment: 101411
     },
     {
       id: 118815,
       name: 'Brioni',
-      logo: 'https://keringcorporate.dam.kering.com/m/3b0f97403f5960c2/original/BRIONI-STORY-BRAND-DESKTOP.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/3b0f97403f5960c2/original/BRIONI-STORY-BRAND-DESKTOP.png',
+      segment: 101411
     },
     {
       id: 118816,
       name: 'Boucheron',
-      logo: 'https://keringcorporate.dam.kering.com/m/610ca07938b78681/original/STORY-BRAND-DESKTOP-BOUCHERON.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/610ca07938b78681/original/STORY-BRAND-DESKTOP-BOUCHERON.png',
+      segment: 101414
     },
     {
       id: 118817,
       name: 'Pomellato',
-      logo: 'https://keringcorporate.dam.kering.com/m/086bee0b10b62997/original/DESKTOP-1POMELLATO.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/086bee0b10b62997/original/DESKTOP-1POMELLATO.png',
+      segment: 101414
     },
     {
       id: 118818,
       name: 'DoDo',
-      logo: 'https://keringcorporate.dam.kering.com/m/4c77da3e13be9a57/original/1DODO.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/4c77da3e13be9a57/original/1DODO.png',
+      segment: 101414
     },
     {
       id: 118819,
       name: 'Qeelin',
-      logo: 'https://keringcorporate.dam.kering.com/m/05cdeefe65bac441/original/DESKTOP-1QEELIN.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/05cdeefe65bac441/original/DESKTOP-1QEELIN.png',
+      segment: 101414
     },
     {
       id: 118820,
       name: 'Ulysse-Nardin',
-      logo: 'https://keringcorporate.dam.kering.com/m/1b239e8a009c5aa5/original/LOGO-DESKTOP-ULYSSE-NARDIN-V2.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/1b239e8a009c5aa5/original/LOGO-DESKTOP-ULYSSE-NARDIN-V2.png',
+      segment: 101413
     },
     {
       id: 118821,
       name: 'Girard Perregaux',
-      logo: 'https://keringcorporate.dam.kering.com/m/4bd7377c62d1b767/original/Logo-GP-100x100-Stories.jpg'
+      logo: 'https://keringcorporate.dam.kering.com/m/4bd7377c62d1b767/original/Logo-GP-100x100-Stories.jpg',
+      segment: 101413
     },
     {
       id: 118822,
       name: 'Kering Eyewear',
-      logo: 'https://keringcorporate.dam.kering.com/m/2fb195ea433085a8/original/STORY-BRAND-DESKTOP.png'
+      logo: 'https://keringcorporate.dam.kering.com/m/2fb195ea433085a8/original/STORY-BRAND-DESKTOP.png',
+      segment: 101412
     }
   ],
   industries: [101410, 101411],

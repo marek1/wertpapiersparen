@@ -8,9 +8,28 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1010,
-        description: 'Pflegemittel, Körperplege, Kosmetik und deren Zulieferer',
+        description: 'Pflegemittel, Körperpflege, Kosmetik und deren Zulieferer',
         imageName: 'jigsaws.svg',
-        subIndustries: null
+        subIndustries: [
+          {
+            id: 101010,
+            description: 'Körperpflege',
+            imageName: 'gel.svg',
+            subIndustries: null
+          },
+          {
+            id: 101011,
+            description: 'Kosmetikindustrie',
+            imageName: 'makeup.svg',
+            subIndustries: null
+          },
+          {
+            id: 101012,
+            description: 'Parfüm',
+            imageName: 'parfume.svg',
+            subIndustries: null
+          }
+        ]
       },
       {
         id: 1011,
@@ -75,7 +94,7 @@ export const industries: Industry[] = [
           },
           {
             id: 101314,
-            description: 'Genussmittelhersteller',
+            description: 'Genussmittelhersteller (inkl. Alkohol und Tabak)',
             imageName: 'genuss.svg',
             subIndustries: null
           },
@@ -100,14 +119,26 @@ export const industries: Industry[] = [
           },
           {
             id: 101411,
-            description: 'Schmuck und Accessoires',
-            imageName: 'rings.svg',
+            description: 'Mode-Accessoires (wie Hüte, Handschuhe etc.)',
+            imageName: 'pamela.svg',
             subIndustries: null
           },
           {
             id: 101412,
             description: 'Brillen, Linsen und optische Instrumente',
             imageName: 'glasses.svg',
+            subIndustries: null
+          },
+          {
+            id: 101413,
+            description: 'Uhren',
+            imageName: 'wristwatch.svg',
+            subIndustries: null
+          },
+          {
+            id: 101414,
+            description: 'Schmuck (wie Ringe und Ohrringe)',
+            imageName: 'rings.svg',
             subIndustries: null
           }
         ]
@@ -167,6 +198,12 @@ export const industries: Industry[] = [
         id: 1018,
         description: 'Freizeit- und Erlebnisparks',
         imageName: 'ferris-wheel.svg',
+        subIndustries: null
+      },
+      {
+        id: 1019,
+        description: 'Hersteller von Luxusgütern (inkl. Diamanten, Porzellan)',
+        imageName: 'diamond.svg',
         subIndustries: null
       }
     ]

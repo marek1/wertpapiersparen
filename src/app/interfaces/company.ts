@@ -36,6 +36,7 @@ export interface Company {
   description: string;
   link_wikipedia: string;
   link_video?: string;
+  link_stockPrices?: string;
   logo: string;
   products: Product[];
   industries: number[];

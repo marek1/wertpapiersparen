@@ -28,125 +28,21 @@ const dividends = [
   }
 ];
 const prices = {
-  '2019-11-29': {
-    '1. open': '14.9700',
-    '2. high': '14.9700',
-    '3. low': '13.9900',
-    '4. close': '14.3600',
-    '5. volume': '332407'
-  },
-  '2019-10-31': {
-    '1. open': '15.0200',
-    '2. high': '15.2050',
-    '3. low': '14.4400',
-    '4. close': '14.9950',
-    '5. volume': '316494'
-  },
-  '2019-09-30': {
-    '1. open': '13.8300',
-    '2. high': '14.9550',
-    '3. low': '13.3100',
-    '4. close': '14.9550',
-    '5. volume': '219579'
-  },
-  '2019-08-30': {
-    '1. open': '13.9350',
-    '2. high': '13.9350',
-    '3. low': '13.2400',
-    '4. close': '13.8250',
-    '5. volume': '150978'
-  },
-  '2019-07-31': {
-    '1. open': '13.4100',
-    '2. high': '14.3450',
-    '3. low': '13.3250',
-    '4. close': '13.9250',
-    '5. volume': '270941'
-  },
-  '2019-06-28': {
-    '1. open': '12.4000',
-    '2. high': '13.5950',
-    '3. low': '12.3350',
-    '4. close': '13.3450',
-    '5. volume': '198392'
-  },
-  '2019-05-31': {
-    '1. open': '13.1800',
-    '2. high': '13.8250',
-    '3. low': '12.3300',
-    '4. close': '12.4500',
-    '5. volume': '405495'
-  },
-  '2019-04-30': {
-    '1. open': '13.3150',
-    '2. high': '13.6300',
-    '3. low': '12.9600',
-    '4. close': '13.2050',
-    '5. volume': '230489'
-  },
-  '2019-03-29': {
-    '1. open': '13.2850',
-    '2. high': '13.5500',
-    '3. low': '13.0700',
-    '4. close': '13.2800',
-    '5. volume': '175947'
-  },
-  '2019-02-28': {
-    '1. open': '13.9950',
-    '2. high': '14.2000',
-    '3. low': '13.2050',
-    '4. close': '13.2750',
-    '5. volume': '228530'
-  },
-  '2019-01-31': {
-    '1. open': '12.2900',
-    '2. high': '14.0700',
-    '3. low': '12.2900',
-    '4. close': '13.9850',
-    '5. volume': '291741'
-  },
-  '2018-12-28': {
-    '1. open': '12.5650',
-    '2. high': '13.0300',
-    '3. low': '11.9600',
-    '4. close': '12.2550',
-    '5. volume': '266267'
-  },
-  '2018-11-30': {
-    '1. open': '11.7650',
-    '2. high': '12.7250',
-    '3. low': '11.7450',
-    '4. close': '12.4250',
-    '5. volume': '184760'
-  },
-  '2018-10-31': {
-    '1. open': '12.6300',
-    '2. high': '12.8450',
-    '3. low': '11.2850',
-    '4. close': '11.7800',
-    '5. volume': '782038'
-  },
-  '2018-09-28': {
-    '1. open': '12.6350',
-    '2. high': '12.6950',
-    '3. low': '12.0700',
-    '4. close': '12.6700',
-    '5. volume': '167206'
-  },
-  '2018-08-31': {
-    '1. open': '13.7200',
-    '2. high': '13.7200',
-    '3. low': '12.6150',
-    '4. close': '12.6300',
-    '5. volume': '152827'
-  },
-  '2018-07-31': {
-    '1. open': '13.1100',
-    '2. high': '14.2600',
-    '3. low': '12.9900',
-    '4. close': '13.8200',
-    '5. volume': '154003'
-  }
+  '2019-12-30': {'1. open': '12.55', '4. close': '14.06'},
+  '2018-12-30': {'1. open': '14.38', '4. close': '12.26'},
+  '2017-12-30': {'1. open': '12.31', '4. close': '14.36'},
+  '2016-12-30': {'1. open': '15.85', '4. close': '12.08'},
+  '2015-12-30': {'1. open': '19.38', '4. close': '16.51'},
+  '2014-12-30': {'1. open': '17.29', '4. close': '19.70'},
+  '2013-12-30': {'1. open': '15.95', '4. close': '17.03'},
+  '2012-12-30': {'1. open': '20.98', '4. close': '15.33'},
+  '2011-12-30': {'1. open': '27.16', '4. close': '20.53'},
+  '2010-12-30': {'1. open': '30.10', '4. close': '27.30'},
+  '2009-12-30': {'1. open': '33.96', '4. close': '30.10'},
+  '2008-12-30': {'1. open': '40.38', '4. close': '33.96'},
+  '2007-12-30': {'1. open': '33.60', '4. close': '40.38'},
+  '2006-12-30': {'1. open': '24.60', '4. close': '33.60'},
+  '2005-12-30': {'1. open': '28.00', '4. close': '24.76'}
 };
 
 // tslint:disable:max-line-length
@@ -158,6 +54,7 @@ export const engieCompany: Company = {
   url: 'http://www.engie.com/',
   description: 'Die Engie SA [ˈɛndʒi] (bis 2015: GDF Suez) mit Sitz im Geschäftsviertel La Défense bei Paris ist ein international tätiger Energieversorgungskonzern, ursprünglich hervorgegangen aus der Fusion des mehrheitlich in staatlicher Hand befindlichen Gasversorgers Gaz de France (GDF) und des Mischkonzerns Suez im Juli 2008 unter dem Namen GDF Suez. Die Engie-Aktie ist Bestandteil des französischen Leitindexes CAC 40. Der französische Staat hält 24,1 Prozent der Anteile an Engie.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Engie',
+  link_stockPrices: 'https://www.boerse.de/historische-kurse/Engie-Aktie/FR0010208488',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/LOGO_ENGIE.jpg/500px-LOGO_ENGIE.jpg',
   products: [],
   industries: [111309, 111310],
