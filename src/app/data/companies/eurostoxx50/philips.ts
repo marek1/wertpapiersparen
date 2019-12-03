@@ -1106,7 +1106,7 @@ export const philipsCompany: Company = {
       segment: 1010
     }
   ],
-  industries: [111212, 161210, 131012, 131113, 131312, 1314],
+  industries: [111212, 161210, 131012, 131113, 131312, 1724],
   securityType: SecurityType.AandelenAanToonder,
   currency: Currency.EUR,
   isin: 'NL0000009538',

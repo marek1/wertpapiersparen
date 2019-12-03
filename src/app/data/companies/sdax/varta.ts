@@ -613,7 +613,7 @@ export const vartaCompany: Company = {
       logo: 'https://www.varta-microbattery.com/wp-content/uploads/2016/09/VA_Logo.png'
     }
   ],
-  industries: [1314],
+  industries: [1724],
   securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: 'DE000A0TGJ55',

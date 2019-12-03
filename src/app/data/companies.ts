@@ -191,6 +191,8 @@ import { societeGeneralCompany } from './companies/eurostoxx50/societe';
 import { telefonicaCompany } from './companies/eurostoxx50/telefonica';
 import { totalCompany } from './companies/eurostoxx50/total';
 import { unileverCompany } from './companies/eurostoxx50/unilever';
+import { vinciCompany } from './companies/eurostoxx50/vinci';
+import { vivendiCompany } from './companies/eurostoxx50/vivendi';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -414,7 +416,10 @@ const euroStoxx50Companies = [
   societeGeneralCompany, // 1198
   telefonicaCompany, // 1199
   totalCompany, // 1200
-  unileverCompany // 1201
+  unileverCompany, // 1201
+  vinciCompany, // 1202
+  vivendiCompany, // 1203
+  // vwCompany
 ];
 // tslint:enable:max-line-length
 

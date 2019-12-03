@@ -970,7 +970,7 @@ export const schneiderCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/Schneider_Electric',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Schneider_Electric_2007.svg/500px-Schneider_Electric_2007.svg.png',
   products: [],
-  industries: [1314],
+  industries: [1724],
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000121972',

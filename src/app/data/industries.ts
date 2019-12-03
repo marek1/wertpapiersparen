@@ -45,37 +45,6 @@ export const industries: Industry[] = [
         ]
       },
       {
-        id: 1012,
-        description: 'Lesen: Bücher, Zeitschriften und Co.',
-        imageName:  'books.svg',
-        subIndustries: [
-          {
-            id: 101210,
-            description: 'Verlag',
-            imageName:  'books.svg',
-            subIndustries: null
-          },
-          {
-            id: 101211,
-            description: 'Buchhandlung',
-            imageName:  'shopping-bag.svg',
-            subIndustries: null
-          },
-          {
-            id: 101212,
-            description: 'Zeitungen und Zeitschriften',
-            imageName: 'newspaper.svg',
-            subIndustries: null
-          },
-          {
-            id: 101213,
-            description: 'Marketing: Print-Werbung',
-            imageName: 'ads.svg',
-            subIndustries: null
-          }
-        ]
-      },
-      {
         id: 1013,
         description: 'Ernährung und Lebensmittel',
         imageName: 'diet.svg',
@@ -88,13 +57,13 @@ export const industries: Industry[] = [
           },
           {
             id: 101311,
-            description: 'Nahrungsmittelhersteller und deren Zulieferer',
+            description: 'Nahrungsmittelhersteller',
             imageName: 'diet.svg',
             subIndustries: null
           },
           {
             id: 101312,
-            description: 'Getränkehersteller  und Zulieferer',
+            description: 'Getränkehersteller',
             imageName: 'soda.svg',
             subIndustries: null
           },
@@ -106,8 +75,14 @@ export const industries: Industry[] = [
           },
           {
             id: 101314,
-            description: 'Genussmittelhersteller und deren Zulieferer',
+            description: 'Genussmittelhersteller',
             imageName: 'genuss.svg',
+            subIndustries: null
+          },
+          {
+            id: 101315,
+            description: 'Zulieferer für die Nahrungsmittelsmittelindustrie (inkl. Getreide)',
+            imageName: 'oat.svg',
             subIndustries: null
           }
         ]
@@ -627,7 +602,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1219,
-        description: 'Betreiber von Autobahnen und Strassen',
+        description: 'Betreiber von Autobahnen und/oder Strassen',
         imageName: 'toll-road.svg',
         subIndustries: null
       },
@@ -648,7 +623,7 @@ export const industries: Industry[] = [
   },
   {
     id: 13,
-    description: 'Elektronik, Elektrotechnik und Entertainment inkl. TV und Musik',
+    description: 'Elektronik und Entertainment inkl. Spiele, TV, Musik und Buch',
     imageName: 'spotlights.svg',
     subIndustries: [
       {
@@ -689,7 +664,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131110,
-            description: 'TV-Kanäle / Fernsehsender ',
+            description: 'TV-Kanäle / Fernsehsender',
             imageName: 'television.svg',
             subIndustries: null
           },
@@ -709,6 +684,12 @@ export const industries: Industry[] = [
             id: 131113,
             description: 'Hersteller von TV- und Fernsehgeräten',
             imageName: 'television.svg',
+            subIndustries: null
+          },
+          {
+            id: 131114,
+            description: 'Nachrichtenagenturen',
+            imageName: 'newspaper.svg',
             subIndustries: null
           }
         ]
@@ -770,7 +751,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131310,
-            description: 'Computer- und Konsolenspiele',
+            description: 'Computer-, Video- und Konsolenspiele',
             imageName: 'gameboy.svg',
             subIndustries: null
           },
@@ -789,10 +770,54 @@ export const industries: Industry[] = [
         ]
       },
       {
-        id: 1314,
-        description: 'Elektrotechnik',
-        imageName: 'battery.svg',
-        subIndustries: null
+        id: 1315,
+        description: 'Alles rund um die Musik',
+        imageName: 'music-player.svg',
+        subIndustries: [
+          {
+            id: 131510,
+            description: 'Label und Musikproduzenten',
+            imageName: 'music.svg',
+            subIndustries: null
+          },
+          {
+            id: 131511,
+            description: 'Lieferung von Musik als Content (z.B. durch Streaming)',
+            imageName: 'music-player.svg',
+            subIndustries: null
+          }
+        ]
+      },
+      {
+        id: 1316,
+        description: 'Lesen: Bücher, Zeitschriften und Co.',
+        imageName:  'books.svg',
+        subIndustries: [
+          {
+            id: 101210,
+            description: 'Verlag',
+            imageName:  'books.svg',
+            subIndustries: null
+          },
+          {
+            id: 101211,
+            description: 'Buchhandlung',
+            imageName:  'shopping-bag.svg',
+            subIndustries: null
+          },
+          {
+            id: 101212,
+            description: 'Zeitungen und Zeitschriften',
+            imageName: 'newspaper.svg',
+            subIndustries: null
+          },
+          {
+            id: 101213,
+            description: 'Marketing: Print-Werbung',
+            imageName: 'ads.svg',
+            subIndustries: null
+          }
+        ]
       }
     ]
   },
@@ -1137,7 +1162,13 @@ export const industries: Industry[] = [
         description: 'Industriebeteiligungen, Beteiligungsgesellschaften',
         imageName: 'investor.svg',
         subIndustries: null
-      }
+      },
+      {
+        id: 1724,
+        description: 'Elektrotechnik',
+        imageName: 'battery.svg',
+        subIndustries: null
+      },
     ]
   },
   {
