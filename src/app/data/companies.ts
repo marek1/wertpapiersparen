@@ -196,6 +196,7 @@ import { vivendiCompany } from './companies/eurostoxx50/vivendi';
 import { accorCompany } from './companies/cac40/accor';
 import { hermesCompany } from './companies/cac40/hermes';
 import { pernodCompany } from './companies/cac40/pernod';
+import { peugeotCompany } from './companies/cac40/peugeot';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -448,6 +449,7 @@ const cac40Companies = [
   // TODO: Michelin
   // orangeCompany
   pernodCompany, // 1213
+  peugeotCompany // 1214
 ];
 
 // tslint:enable:max-line-length
