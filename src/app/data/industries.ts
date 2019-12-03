@@ -1184,7 +1184,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1721,
-        description: 'Recycling und Wiederverwendung',
+        description: 'Umweltservice & Recycling',
         imageName: 'recycle.svg',
         subIndustries: null
       },
@@ -1205,7 +1205,7 @@ export const industries: Industry[] = [
         description: 'Elektrotechnik',
         imageName: 'battery.svg',
         subIndustries: null
-      },
+      }
     ]
   },
   {

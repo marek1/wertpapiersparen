@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
+import { Indices } from '../../../enums/indices';
 
 const dividends = [
   {year: 2018, rate: 3.07, yield: 4.09}, {year: 2017, rate: 3.03}, {year: 2016, rate: 2.96}, {
@@ -926,7 +927,7 @@ export const sanofiCompany: Company = {
   symbol: 'SNW.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40],
   end_of_month_prices: prices,
   dividends,
   tags: ['Onkologie', 'Pharmaunternehmen', 'Diabetes', 'Stoffwechsel', 'Herz-Kreislauf', 'Thrombose', 'Zentrales Nervensystem', 'Innere Medizin', 'Onkologie', 'Impfstoffe']

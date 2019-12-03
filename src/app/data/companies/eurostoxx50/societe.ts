@@ -909,7 +909,7 @@ export const societeGeneralCompany: Company = {
   symbol: 'SGE.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40],
   end_of_month_prices: prices,
   dividends,
   tags: ['Bank', 'Banking', 'Finanzdienstleistungen', 'Girokonto', 'Finanzierung', 'Immobilienfinanzierung', 'Universalbank', 'Privatkundengeschäft', 'Firmenkundengeschäft', 'Kreditkarten', 'Konsumkredite', 'Darlehen', 'Geldanlagen']

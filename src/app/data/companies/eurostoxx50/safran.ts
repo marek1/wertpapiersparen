@@ -86,7 +86,7 @@ export const safranCompany: Company = {
   symbol: 'SEJ1.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40],
   end_of_month_prices: prices,
   dividends,
   tags: ['Luftfahrt', 'Raumfahrt', 'Weltraum', 'Antriebssysteme']

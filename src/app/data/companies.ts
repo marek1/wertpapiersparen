@@ -197,6 +197,8 @@ import { accorCompany } from './companies/cac40/accor';
 import { hermesCompany } from './companies/cac40/hermes';
 import { pernodCompany } from './companies/cac40/pernod';
 import { peugeotCompany } from './companies/cac40/peugeot';
+import { renaultCompany } from './companies/cac40/renault';
+import { veoliaCompany } from './companies/cac40/veolia';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -449,11 +451,25 @@ const cac40Companies = [
   // TODO: Michelin
   // orangeCompany
   pernodCompany, // 1213
-  peugeotCompany // 1214
+  peugeotCompany, // 1214
+  // TODO: Publicis 1215
+  renaultCompany, // 1216
+  // safranCompany
+  // TODO: Saint Gobain 1217
+  // sanofiCompany
+  // schneiderCompany
+  // societeGeneralCompany
+  // TODO: Sodexo 1218
+  // TODO: STMicroelectronics 1219
+  // TODO: TechnipFMC 1220
+  // totalCompany
+  // TODO: Unibail-Rodamco-Westfield 1221
+  // TODO: Valeo 1222
+  veoliaCompany, // 1223
+  // TODO: Vinci 1224
+  // vivendiCompany
 ];
-
 // tslint:enable:max-line-length
-
 
 export const AllCompanies = daxCompanies
   .concat(mdaxCompanies)

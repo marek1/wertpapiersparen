@@ -1760,6 +1760,11 @@ export const vwCompany: Company = {
       id: 102717,
       name: 'Scania',
       logo: 'https://www.volkswagenag.com/presence/markenlogos/Scania_Logo.jpg.x_632.y_1000.trans'
+    },
+    {
+      id: 102718,
+      name: 'Porsche',
+      logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/7/70/Porsche_Logo.svg/414px-Porsche_Logo.svg.png'
     }
   ],
   industries: [121111, 121112, 121113, 121114, 121210, 141017],
