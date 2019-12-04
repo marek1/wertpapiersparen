@@ -179,6 +179,12 @@ export const industries: Industry[] = [
             imageName: 'journey.svg',
             subIndustries: null,
             includeIndustries: [121412]
+          },
+          {
+            id: 101515,
+            description: 'Hersteller (und Verleger) von Reiseführern',
+            imageName: 'map-of-roads.svg',
+            subIndustries: null
           }
         ]
       },
@@ -240,7 +246,7 @@ export const industries: Industry[] = [
           },
           {
             id: 111014,
-            description: 'Projektentwickler',
+            description: '(Bau-) Projektentwickler',
             imageName: 'home-planning.svg',
             subIndustries: []
           },
@@ -301,7 +307,7 @@ export const industries: Industry[] = [
           },
           {
             id: 111114,
-            description: 'Aufzüge und Treppen',
+            description: 'Aufzüge, Rolltreppen und Automatiktüren',
             imageName: 'stairs.svg',
             subIndustries: null
           },
@@ -602,7 +608,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1215,
-        description: 'Fahrradhersteller',
+        description: 'Hersteller von Fahrrädern und Fahrradteilen (wie Fahrradreifen)',
         imageName: 'bike.svg',
         subIndustries: null
       },
@@ -639,7 +645,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1219,
-        description: 'Betreiber von Autobahnen und/oder Strassen',
+        description: 'Verkehrsinfrastruktur sowie Betreiber von Autobahnen & Strassen',
         imageName: 'toll-road.svg',
         subIndustries: null
       },
@@ -670,7 +676,7 @@ export const industries: Industry[] = [
         subIndustries: [
           {
             id: 131010,
-            description: 'Handynetzbetreiber',
+            description: 'Mobilfunk-Netzbetreiber',
             imageName: 'mobile-network.svg',
             subIndustries: null
           },

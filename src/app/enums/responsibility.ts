@@ -1,4 +1,5 @@
 export enum ResponsibilityType {
   'Nachhaltigkeit',
-  'Ethik'
+  'Ethik',
+  'Umweltbewusstsein'
 }

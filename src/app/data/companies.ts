@@ -199,6 +199,12 @@ import { pernodCompany } from './companies/cac40/pernod';
 import { peugeotCompany } from './companies/cac40/peugeot';
 import { renaultCompany } from './companies/cac40/renault';
 import { veoliaCompany } from './companies/cac40/veolia';
+import { bouyguesCompany } from './companies/cac40/bouygues';
+import { carrefourCompany } from './companies/cac40/carrefour';
+import { electroluxCompany } from './companies/other/electrolux';
+import { michelinCompany } from './companies/cac40/michelin';
+import { ericcsonCompany } from './companies/other/ericsson';
+import { koneCompany } from './companies/other/kone';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -435,9 +441,9 @@ const cac40Companies = [
   // TODO : ArcelorMittal 1205
   // TODO: Atos 1206
   // axaCompany
-  // TODO: Bouygues 1207
+  bouyguesCompany, // 1207
   // TODO: Cap Gemini 1208
-  // TODO: Carrefour 1209
+  carrefourCompany, // 1209
   // TODO: CA 1210
   // danoneCompany
   // TODO: Dassault 1210
@@ -448,7 +454,7 @@ const cac40Companies = [
   // TODO: Legrand 1212
   // lorealCompany
   // lvmhCompany
-  // TODO: Michelin
+  michelinCompany, // 1226
   // orangeCompany
   pernodCompany, // 1213
   peugeotCompany, // 1214
@@ -468,6 +474,12 @@ const cac40Companies = [
   veoliaCompany, // 1223
   // TODO: Vinci 1224
   // vivendiCompany
+];
+
+const otherCompaneis = [
+  electroluxCompany, // 1225
+  ericcsonCompany, // 1227
+  koneCompany, // 1228
 ];
 // tslint:enable:max-line-length
 

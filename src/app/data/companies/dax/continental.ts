@@ -1743,7 +1743,7 @@ export const continentalCompany: Company = {
       name: 'VDO'
     }
   ],
-  industries: [121110],
+  industries: [121110, 121211, 1215, 121611],
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005439004',
