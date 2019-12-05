@@ -20,6 +20,7 @@ import { siemensCompany } from '../companies/dax/siemens';
 import { telefonicaCompany } from '../companies/eurostoxx50/telefonica';
 import { thyssenKruppCompany } from '../companies/mdax/thyssenKrupp';
 import { unileverCompany } from '../companies/eurostoxx50/unilever';
+import { accentureCompany } from '../companies/other/accenture';
 
 export const cdp: Ranking = {
   name: 'Our annual A List names the world\'s businesses leading on environmental performance"?',
@@ -29,6 +30,10 @@ export const cdp: Ranking = {
   link: 'https://www.cdp.net/en/companies/companies-scores',
   maxResult: 1,
   results: [
+    {
+      id: accentureCompany.id,
+      points: 1
+    },
     {
       id: basfCompany.id,
       points: 1

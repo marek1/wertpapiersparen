@@ -1418,5 +1418,24 @@ export const industries: Industry[] = [
         subIndustries: null
       }
     ]
+  },
+  {
+    id: 23,
+    description: 'Unternehmensberatungen, Steuer und Verwaltung',
+    imageName: 'consulting.svg',
+    subIndustries: [
+      {
+        id: 2310,
+        description: 'Unternehmensberatungen / Consulting',
+        imageName: 'consulting.svg',
+        subIndustries: null
+      },
+      {
+        id: 2311,
+        description: 'Steuerberatung',
+        imageName: 'taxes.svg',
+        subIndustries: null
+      }
+    ]
   }
 ];

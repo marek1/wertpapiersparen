@@ -9,6 +9,7 @@ export enum SecurityType {
   'InhaberStamm' = 'Inhaber-Stammaktien',
   'BearerShares' = 'Bearer shares [Inhaberaktie]',
   'RegisteredShares' = 'Registered Shares [Namensaktie]',
+  'RegisteredSharesA' = 'Registered Shares Type A [Namensaktie]',
   'AandelenAanToonder' = 'Aandelen aan toonder [Inhaberaktie]',
   'AandelenOopNaam' = 'Aandelen   oop naam [Namensaktie]',
   'ActionsAuPorteur' = 'Actions au Porteur [Inhaberaktie]',

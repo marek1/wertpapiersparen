@@ -205,6 +205,7 @@ import { electroluxCompany } from './companies/other/electrolux';
 import { michelinCompany } from './companies/cac40/michelin';
 import { ericcsonCompany } from './companies/other/ericsson';
 import { koneCompany } from './companies/other/kone';
+import { accentureCompany } from './companies/other/accenture';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -480,6 +481,7 @@ const otherCompaneis = [
   electroluxCompany, // 1225
   ericcsonCompany, // 1227
   koneCompany, // 1228
+  accentureCompany, // 1229
 ];
 // tslint:enable:max-line-length
 
