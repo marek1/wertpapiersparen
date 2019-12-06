@@ -8,7 +8,7 @@ export const industries: Industry[] = [
     subIndustries: [
       {
         id: 1010,
-        description: 'Pflegemittel, Körperpflege, Kosmetik und deren Zulieferer',
+        description: 'Pflegemittel, Körperpflege- und Kosmetikprodukte',
         imageName: 'jigsaws.svg',
         subIndustries: [
           {
@@ -50,22 +50,16 @@ export const industries: Industry[] = [
           },
           {
             id: 101112,
-            description: 'Sportvereine',
+            description: 'Sportvereine (inkl. Fussballvereine)',
             imageName: 'exercise.svg',
             subIndustries: null,
             includeIndustries: [101113]
-          },
-          {
-            id: 101113,
-            description: 'Fussballvereine',
-            imageName: 'football.svg',
-            subIndustries: null
           }
         ]
       },
       {
         id: 1013,
-        description: 'Ernährung und Lebensmittel',
+        description: 'Lebensmittel; Nahrungs- und Genussmittel; Ernährung',
         imageName: 'diet.svg',
         subIndustries: [
           {
@@ -187,12 +181,6 @@ export const industries: Industry[] = [
             subIndustries: null
           }
         ]
-      },
-      {
-        id: 1016,
-        description: 'Genussmittel inkl. Alkhol und Tabak',
-        imageName: 'cocktail.svg',
-        subIndustries: null
       },
       {
         id: 1017,

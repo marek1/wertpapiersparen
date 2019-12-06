@@ -46,31 +46,13 @@ export const hermesCompany: Company = {
   url: 'https://finance.hermes.com/en/',
   description: 'Hermès [ɛʀˈmɛs] bzw. die Hermès International SCA (Société en Commandite par Actions) ist ein französisches Familienunternehmen mit Firmensitz in Paris, das seine Ursprünge im Sattlerwesen und in der gehobenen Lederverarbeitung hat. Das heutzutage vorwiegend aus Luxus-Modeartikeln bestehende Sortiment, das über ein internationales Netzwerk von Hermès-Boutiquen weltweit angeboten wird, umfasst 14 verschiedene Produktbereiche: Lederwaren, Seiden- und Kaschmir-Schals, Krawatten, Damen und Herren Prêt-à-porter, Parfum, Uhren, Schuhe, Handschuhe, Schreibwaren, Emaille, Schmuck, Porzellan, Inneneinrichtung.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Herm%C3%A8s_(Unternehmen)',
-  logo: 'https://finance.hermes.com/var/finances/storage/images/media/images/logo-en2/15461-1-eng-GB/logo-EN.png',
+  logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Herm%C3%A8s.svg/400px-Herm%C3%A8s.svg.png',
   products: [
     {
       id: 121110,
-      name: 'Hermès',
-      logo: 'https://finance.hermes.com/var/finances/storage/images/media/images/logo-en2/15461-1-eng-GB/logo-EN.png',
+      name: 'Hermès Mode',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Herm%C3%A8s.svg/400px-Herm%C3%A8s.svg.png',
       segment: 101410
-    },
-    {
-      id: 121111,
-      name: 'Hermès',
-      logo: 'https://finance.hermes.com/var/finances/storage/images/media/images/logo-en2/15461-1-eng-GB/logo-EN.png',
-      segment: 101411
-    },
-    {
-      id: 121112,
-      name: 'Hermès',
-      logo: 'https://finance.hermes.com/var/finances/storage/images/media/images/logo-en2/15461-1-eng-GB/logo-EN.png',
-      segment: 101413
-    },
-    {
-      id: 121113,
-      name: 'Hermès',
-      logo: 'https://finance.hermes.com/var/finances/storage/images/media/images/logo-en2/15461-1-eng-GB/logo-EN.png',
-      segment: 101414
     }
   ],
   industries: [101410, 101414, 1019, 101012],

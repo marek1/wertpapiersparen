@@ -1,2 +1,63 @@
-<p>{{company.name}}</p>
-TODO!
+<div class="margin-vertical-10-px">
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      <img class="logo" src="{{company.logo}}">
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      <h1>{{company.name}}</h1>
+      Isin : {{company.isin}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        {{company.city}}, {{Countries[company.country]}}
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <div class="font-italic">
+            <span>
+              {{ showMore.description ? company.description : company.description.substr(0,100)}}
+            </span>
+            <ng-container [ngSwitch]="showMore.description">
+              <span class="small btn-link" *ngSwitchCase="true" (click)="showMore.description=false">weniger</span>
+              <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.description=true">mehr</span>
+            </ng-container>
+          </div>
+          <div class="small">
+            Quelle: {{company.link_wikipedia}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <canvas baseChart
+                  [data]="chartData"
+                  [labels]="chartLabels"
+                  [chartType]="chartType"
+                  [legend]="chartLegend"
+                  [options]="chartOptions">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="company.products.length>0">
+      Produkte:
+    </div>
+    <div class="col-12" *ngIf="company.products.length>0">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4" *ngFor="let product of company.products | slice:0:endNo">
+          <img src="{{product.logo}}">
+          {{product.name}}
+        </div>
+        <div class="col-xs-6 col-sm-4" *ngIf="endNo !== company.products.length">
+          <ng-container [ngSwitch]="showMore.products">
+            <span class="small btn-link" *ngSwitchCase="true" (click)="setNumberOfProducts()">weniger</span>
+            <span class="small btn-link" *ngSwitchCase="false" (click)="setNumberOfProducts()">mehr</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

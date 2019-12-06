@@ -2,15 +2,12 @@
       Gefundene Wertpapiere:
 </div>
 <div *ngFor="let security of foundSecurities">
-  <div class="row result">
+  <a class="row result" [routerLink]="['/wertpapier', security.name, security.id]">
+    <div class="col-7">
+      <a class="" [routerLink]="['/wertpapier', security.name, security.id]"><img src="{{security.logo}}"></a>
+    </div>
     <div class="col-5">
       <a class="" [routerLink]="['/wertpapier', security.name, security.id]">{{security.name}}</a>
     </div>
-    <div class="col-5">
-      <img src="{{security.logo}}">
-    </div>
-    <div class="col-2">
-      +
-    </div>
-  </div>
+  </a>
 </div>

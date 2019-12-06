@@ -27,6 +27,6 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
   }
 
   retrieveSecurities(industryId: number) {
-    this.foundSecurities = AllCompanies.filter((company: Company) => company.industries.indexOf(industryId) > -1);
+    this.foundSecurities = AllCompanies.filter((company: Company) => company.industries.includes(industryId));
   }
 }

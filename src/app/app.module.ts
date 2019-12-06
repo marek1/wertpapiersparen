@@ -15,6 +15,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ByIndustryComponent } from './components/by-industry/by-industry.component';
 import { SecuritiesListInIndustryComponent } from './components/securities-list-in-industry/securities-list-in-industry.component';
 import { SecurityDetailsComponent } from './components/security-details/security-details.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SecurityDetailsComponent } from './components/security-details/security
     SecurityDetailsComponent
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,

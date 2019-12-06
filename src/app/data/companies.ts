@@ -477,7 +477,7 @@ const cac40Companies = [
   // vivendiCompany
 ];
 
-const otherCompaneis = [
+const otherCompanies = [
   electroluxCompany, // 1225
   ericcsonCompany, // 1227
   koneCompany, // 1228
@@ -490,4 +490,5 @@ export const AllCompanies = daxCompanies
   .concat(tecDaxCompanies)
   .concat(sdaxCompany)
   .concat(euroStoxx50Companies)
-  .concat(cac40Companies);
+  .concat(cac40Companies)
+  .concat(otherCompanies);

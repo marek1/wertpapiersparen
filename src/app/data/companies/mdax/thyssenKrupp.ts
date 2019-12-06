@@ -1719,7 +1719,7 @@ export const thyssenKruppCompany: Company = {
   url: 'https://www.thyssenkrupp.com/',
   description: 'Die Thyssenkrupp AG ([ˌtʏsn̩ˈkrʊp] oder [ˌtɪsn̩ˈkrʊp], Eigenschreibweise thyssenkrupp) mit Sitz in Essen ist ein börsennotierter, diversifizierter Industriekonzern mit Schwerpunkt in der Stahl-Verarbeitung und Deutschlands größter Stahlhersteller.[3] Der Konzern entstand 1999 aus der Fusion der Friedrich Krupp AG Hoesch-Krupp mit der Thyssen AG.[4][5] Der Konzern beschäftigt weltweit rund 161.000 Mitarbeiter und hat einen Umsatz von rund 43 Mrd. Euro.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Thyssenkrupp',
-  logo: 'https://d13qmi8c46i38w.cloudfront.net/media/UCPthyssenkruppAG/assets.files/media/logo-(header)/thyssenkrupp_logo_claim_d.svg',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Thyssenkrupp_AG_Logo_2015.svg/324px-Thyssenkrupp_AG_Logo_2015.svg.png',
   products: [
     {
       id: 108810,
