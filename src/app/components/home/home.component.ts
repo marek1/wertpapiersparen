@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchMethods } from '../../enums/searchMethods';
 import { HelperService } from '../../services/helpers';
 import { select, Store } from '@ngrx/store';
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   public selectedSearchMethod$: Observable<string>;
   public SearchMethods: typeof SearchMethods;
@@ -22,8 +22,11 @@ export class HomeComponent {
     this.searchMethods = this.helperService.EnumToArray(SearchMethods);
   }
 
-  setMethod(which: SearchMethods): void {
+  ngOnInit(): void {
     this.selectedSearchMethod$ = this.store.pipe(select(fromRoot.getSelectedSearchMethod));
+  }
+
+  setMethod(which: SearchMethods): void {
     this.store.dispatch(SearchActions.setSelectedSearchMethodAction({selectedSearchMethod: SearchMethods[which]}));
   }
 
