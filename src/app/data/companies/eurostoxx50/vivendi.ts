@@ -928,7 +928,7 @@ export const vivendiCompany: Company = {
     {
       id: 120311,
       name: 'Editis',
-      logo: 'https://www.editis.com/editis-content/uploads/2019/08/logo_editis.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/fr/6/65/Editis.png',
       segment: 131510
     },
     {
@@ -946,7 +946,7 @@ export const vivendiCompany: Company = {
     {
       id: 120314,
       name: 'Studiocanal',
-      logo: 'http://www.studiocanal.com/images/logo.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Studiocanal_2011_logo.svg/langfr-560px-Studiocanal_2011_logo.svg.png',
       segment: 131111
     },
     {

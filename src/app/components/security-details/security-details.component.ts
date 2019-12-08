@@ -30,6 +30,7 @@ export class SecurityDetailsComponent implements OnInit {
   public chartOptions: Legend;
   public showMore: ShowMore;
   public endNo: number;
+  public selectedTab: number;
 
   constructor(public route: ActivatedRoute) {
     this.Countries = Country;
@@ -46,6 +47,7 @@ export class SecurityDetailsComponent implements OnInit {
       products: false
     };
     this.endNo = 0;
+    this.selectedTab = 1;
   }
 
   ngOnInit() {

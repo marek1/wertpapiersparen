@@ -1,9 +1,9 @@
 <div class="margin vertical top-bottom-10">
   <div class="row">
-    <div class="col-xs-12 col-sm-5">
+    <div class="col-xs-12 col-sm-5 text-center">
       <img class="logo" src="{{company.logo}}">
     </div>
-    <div class="col-xs-12 col-sm-7">
+    <div class="col-xs-12 col-sm-7 text-right">
       <h1>{{company.name}}</h1>
       <div>
         {{company.city}}, {{Countries[company.country]}}
@@ -18,47 +18,10 @@
       </div>
     </div>
   </div>
+  
   <div class="row">
     <div class="col-12">
-      <div>
-        <small>Wertpapier des Unternehmens:</small>
-      </div>
-      <div>
-        <div>
-          ISIN: {{company.isin}}
-        </div>
-      </div>
-      <div *ngIf="showMore.info" (click)="showMore.info=!showMore.info">
-        <div>
-          WKN: {{company.wkn}}
-        </div>
-        <div>
-          Symbol: {{company.symbol}}
-        </div>
-        <div>
-          Typ: {{company.securityType}}
-        </div>
-        <div>
-          Indizes:
-          <span class="small badge badge-primary margin horizontal right-5" *ngFor="let ind of company.current_indices">
-            {{ind}}
-          </span>
-        </div>
-        <div *ngIf="company.otherTradeableProducts.length > 0">
-          <span *ngFor="let tra of company.otherTradeableProducts">
-            {{tra.name}}, ISIN: {{tra.isin}}
-          </span>
-        </div>
-      </div>
-      <div [ngSwitch]="showMore.info">
-          <span class="small btn-link" *ngSwitchCase="true" (click)="showMore.info=false">weniger über das Wertpapier</span>
-          <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.info=true">mehr über das Wertpapier</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-        <small>Das Unternehmen:</small>
+      <small>Das Unternehmen:</small>
     </div>
     <div class="col-12">
       <div class="row">
@@ -66,34 +29,87 @@
           <div class="font-italic">
             <span (click)="showMore.description=!showMore.description">
               {{ showMore.description || company.description.length < 100 ? company.description : company.description.substr(0,100) + '.....' }}
-              <span class="small">
+              <div class="small" *ngIf="showMore.description">
                 Quelle: <a href="{{company.link_wikipedia}}" target="_blank">{{company.link_wikipedia}}</a>
-              </span>
+              </div>
             </span>
-            <div *ngIf="company.description.length >= 100" [ngSwitch]="showMore.description">
-              <span class="small btn-link" *ngSwitchCase="true" (click)="showMore.description=false">weniger über {{company.name}}</span>
+            <span *ngIf="company.description.length >= 100" [ngSwitch]="showMore.description">
               <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.description=true">mehr über {{company.name}}</span>
-            </div>
+            </span>
           </div>
-         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <small>Der Chart:</small>
-        </div>
-        <div class="col-12">
-          <canvas baseChart
-                  [data]="chartData"
-                  [labels]="chartLabels"
-                  [chartType]="chartType"
-                  [legend]="chartLegend"
-                  [options]="chartOptions">
-          </canvas>
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="row">
+    
+    <div class="col-12 margin vertical top-bottom-10">
+      
+      <div class="btn-group" role="group" aria-label="details">
+        <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===1}" (click)="selectedTab = 1">Chart</button>
+        <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===0}" (click)="selectedTab = 0">Wertpapier</button>
+        <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===2}" (click)="selectedTab = 2">Produkte</button>
+      </div>
+      
+    </div>
+  
+  </div>
+  
+  <div class="row" *ngIf="selectedTab===0">
+    <div class="col-12">
+      <div>
+        <small>Wertpapier(e) des Unternehmens:</small>
+      </div>
+      <div>
+        <div>
+          Typ: {{company.securityType}}
+        </div>
+        <div>
+          ISIN: {{company.isin}}
+        </div>
+        <div>
+          Indizes:
+          <span class="small badge badge-primary margin horizontal right-5" *ngFor="let ind of company.current_indices">
+            {{ind}}
+          </span>
+        </div>
+        <div>
+          WKN: {{company.wkn}}
+        </div>
+        <div>
+          Symbol: {{company.symbol}}
+        </div>
+        <div *ngIf="company.otherTradeableProducts.length > 0">
+          <div>
+            Andere handelbare Wertpapiere:
+          </div>
+          <ul>
+            <li *ngFor="let tra of company.otherTradeableProducts">
+              {{tra.name}}, ISIN: {{tra.isin}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="selectedTab===1">
+    <div class="col-12">
+      <div>
+        <small>Der Chart für {{company.name}}, ISIN: {{company.isin}}</small>
+      </div>
+        <canvas baseChart
+                [data]="chartData"
+                [labels]="chartLabels"
+                [chartType]="chartType"
+                [legend]="chartLegend"
+                [options]="chartOptions">
+        </canvas>
+    </div>
+  </div>
+  <div class="row" *ngIf="selectedTab===2">
     <div class="col-12" *ngIf="company.products.length>0">
-        <small>Produkte:</small>
+        <a name="produkte"><small>Produkte:</small></a>
     </div>
     <div class="col-12" *ngIf="company.products.length>0">
       <div class="row">
@@ -104,7 +120,6 @@
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 text-center" *ngIf="company.products.length > 0">
-
           <div [ngSwitch]="showMore.products">
             <span class="small btn-link" *ngSwitchCase="true" (click)="setNumberOfProducts()">
               <span class="fa fa-chevron-up icon-big"></span>
