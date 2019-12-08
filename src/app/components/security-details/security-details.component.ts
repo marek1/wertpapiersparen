@@ -9,6 +9,7 @@ interface Legend {
 }
 
 interface ShowMore {
+  info: boolean;
   description: boolean;
   products: boolean;
 }
@@ -40,6 +41,7 @@ export class SecurityDetailsComponent implements OnInit {
       legend: ''
     };
     this.showMore = {
+      info: false,
       description: false,
       products: false
     };
@@ -73,6 +75,7 @@ export class SecurityDetailsComponent implements OnInit {
       this.endNo = this.company.products.length > 3 ? 3 : this.company.products.length;
       this.showMore.products = false;
     }
+    console.log('this.showMore.products : ', this.showMore.products);
   }
 
 }

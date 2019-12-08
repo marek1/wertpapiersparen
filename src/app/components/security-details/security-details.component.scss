@@ -1,7 +1,10 @@
 :host {
   img {
-    max-height: 35px;
+    max-height: 100px;
     max-width: 100%;
+  }
+  .icon-big {
+    font-size: 100px;
   }
   canvas {
     width: 100%;

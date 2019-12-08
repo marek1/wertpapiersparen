@@ -1714,7 +1714,7 @@ export const deutscheTelekomCompany: Company = {
   country: Country.Deutschland,
   city: 'Bonn',
   url: 'https://www.telekom.com/de',
-  description: 'Die Deutsche Telekom AG (Audio-Datei / Hörbeispiel Anhören?/i) ist Europas größtes Telekommunikationsunternehmen[4] mit Hauptsitz in Bonn',
+  description: 'Die Deutsche Telekom AG ist Europas größtes Telekommunikationsunternehmen mit Hauptsitz in Bonn.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Deutsche_Telekom',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telekom_Logo_2013.svg/500px-Telekom_Logo_2013.svg.png',
   products: [
@@ -1730,7 +1730,8 @@ export const deutscheTelekomCompany: Company = {
     },
     {
       id: 101212,
-      name: 'T-Systems'
+      name: 'T-Systems',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/T-SYSTEMS-LOGO2013.svg/500px-T-SYSTEMS-LOGO2013.svg.png'
     }
   ],
   industries: [131010, 131013, 131214],

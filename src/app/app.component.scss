@@ -1,3 +1,13 @@
-.margin-vertical-10-px{
-  margin: 10px 0;
+.margin {
+  &.vertical {
+    &.top-bottom-10 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  &.horizontal {
+    &.right-5 {
+      margin-right: 5px;
+    }
+  }
 }

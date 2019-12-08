@@ -1,8 +1,8 @@
 export enum Indices {
-  'DAX',
-  'MDAX',
-  'SDAX',
-  'TecDAX',
-  'EuroStoxx50',
-  'CAC40'
+  'DAX' = 'DAX',
+  'MDAX' = 'MDAX',
+  'SDAX' = 'SDAX',
+  'TecDAX' = 'TecDAX',
+  'EuroStoxx50' = 'EuroStoxx50',
+  'CAC40' = 'CAC40'
 }

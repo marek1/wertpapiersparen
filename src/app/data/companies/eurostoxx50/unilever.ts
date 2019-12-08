@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
+import { Indices } from '../../../enums/indices';
 
 const dividends = [
   {year: 2018, rate: 1.55, yield: 3.30}, {year: 2017, rate: 1.40}, {
@@ -1876,7 +1877,7 @@ export const unileverCompany: Company = {
   symbol: 'UNI3.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [],
+  current_indices: [Indices.EuroStoxx50],
   end_of_month_prices: prices,
   dividends,
   tags: ['Ernährung', 'Körperpflege', 'Parfum', 'Kosmetik', 'Waschmittel', 'Reinigungsmittel']

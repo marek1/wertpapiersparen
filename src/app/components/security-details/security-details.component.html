@@ -1,35 +1,86 @@
-<div class="margin-vertical-10-px">
+<div class="margin vertical top-bottom-10">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
       <img class="logo" src="{{company.logo}}">
     </div>
     <div class="col-xs-12 col-sm-7">
       <h1>{{company.name}}</h1>
-      Isin : {{company.isin}}
+      <div>
+        {{company.city}}, {{Countries[company.country]}}
+      </div>
+      <div>
+        <a href="{{company.url}}" target="_blank">{{company.url}}</a>
+      </div>
+      <div>
+        <span class="small badge badge-secondary margin horizontal right-5" *ngFor="let tag of company.tags">
+          {{tag}}
+        </span>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-        {{company.city}}, {{Countries[company.country]}}
+      <div>
+        <small>Wertpapier des Unternehmens:</small>
+      </div>
+      <div>
+        <div>
+          ISIN: {{company.isin}}
+        </div>
+      </div>
+      <div *ngIf="showMore.info" (click)="showMore.info=!showMore.info">
+        <div>
+          WKN: {{company.wkn}}
+        </div>
+        <div>
+          Symbol: {{company.symbol}}
+        </div>
+        <div>
+          Typ: {{company.securityType}}
+        </div>
+        <div>
+          Indizes:
+          <span class="small badge badge-primary margin-horizontal-5-px" *ngFor="let ind of company.current_indices">
+            {{ind}}
+          </span>
+        </div>
+        <div *ngIf="company.otherTradeableProducts.length > 0">
+          <span *ngFor="let tra of company.otherTradeableProducts">
+            {{tra.name}}, ISIN: {{tra.isin}}
+          </span>
+        </div>
+      </div>
+      <div [ngSwitch]="showMore.info">
+          <span class="small btn-link" *ngSwitchCase="true" (click)="showMore.info=false">weniger über das Wertpapier</span>
+          <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.info=true">mehr über das Wertpapier</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <small>Das Unternehmen:</small>
     </div>
     <div class="col-12">
       <div class="row">
         <div class="col-12">
           <div class="font-italic">
-            <span>
-              {{ showMore.description ? company.description : company.description.substr(0,100)}}
+            <span (click)="showMore.description=!showMore.description">
+              {{ showMore.description || company.description.length < 100 ? company.description : company.description.substr(0,100) + '.....' }}
+              <span class="small">
+                Quelle: <a href="{{company.link_wikipedia}}" target="_blank">{{company.link_wikipedia}}</a>
+              </span>
             </span>
-            <ng-container [ngSwitch]="showMore.description">
-              <span class="small btn-link" *ngSwitchCase="true" (click)="showMore.description=false">weniger</span>
-              <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.description=true">mehr</span>
-            </ng-container>
+            <div *ngIf="company.description.length >= 100" [ngSwitch]="showMore.description">
+              <span class="small btn-link" *ngSwitchCase="true" (click)="showMore.description=false">weniger über {{company.name}}</span>
+              <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.description=true">mehr über {{company.name}}</span>
+            </div>
           </div>
-          <div class="small">
-            Quelle: {{company.link_wikipedia}}
-          </div>
-        </div>
+         </div>
       </div>
       <div class="row">
+        <div class="col-12">
+          <small>Der Chart:</small>
+        </div>
         <div class="col-12">
           <canvas baseChart
                   [data]="chartData"
@@ -42,19 +93,32 @@
       </div>
     </div>
     <div class="col-12" *ngIf="company.products.length>0">
-      Produkte:
+        <small>Produkte:</small>
     </div>
     <div class="col-12" *ngIf="company.products.length>0">
       <div class="row">
-        <div class="col-xs-6 col-sm-4" *ngFor="let product of company.products | slice:0:endNo">
+        <div class="col-xs-6 col-sm-6 text-center" *ngFor="let product of company.products | slice:0:endNo">
           <img src="{{product.logo}}">
-          {{product.name}}
+          <div>
+            {{product.name}}
+          </div>
         </div>
-        <div class="col-xs-6 col-sm-4" *ngIf="endNo !== company.products.length">
-          <ng-container [ngSwitch]="showMore.products">
-            <span class="small btn-link" *ngSwitchCase="true" (click)="setNumberOfProducts()">weniger</span>
-            <span class="small btn-link" *ngSwitchCase="false" (click)="setNumberOfProducts()">mehr</span>
-          </ng-container>
+        <div class="col-xs-6 col-sm-6 text-center" *ngIf="company.products.length > 0">
+
+          <div [ngSwitch]="showMore.products">
+            <span class="small btn-link" *ngSwitchCase="true" (click)="setNumberOfProducts()">
+              <span class="fa fa-chevron-up icon-big"></span>
+              <div>
+                weniger Produkte
+              </div>
+            </span>
+            <span class="small btn-link" *ngSwitchCase="false" (click)="setNumberOfProducts()">
+              <span class="fa fa-chevron-down icon-big"></span>
+              <div>
+                mehr
+              </div>
+            </span>
+          </div>
         </div>
       </div>
     </div>
