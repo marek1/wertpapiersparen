@@ -3,6 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
+import { select, Store } from '@ngrx/store';
+import * as fromRoot from '../../reducers';
+import { BasketActions, SearchActions } from '../../actions';
+import { Observable } from 'rxjs';
 
 interface Legend {
   legend: string;
@@ -21,6 +25,8 @@ interface ShowMore {
 })
 export class SecurityDetailsComponent implements OnInit {
 
+  public favouredSecurities$: Observable<Company[]>;
+  public favouredSecuritiesIdList$: Observable<number[]>;
   public company: Company;
   public Countries: typeof Country;
   public chartLabels: string[];
@@ -29,10 +35,11 @@ export class SecurityDetailsComponent implements OnInit {
   public chartLegend: boolean;
   public chartOptions: Legend;
   public showMore: ShowMore;
+  public batchOfProductsToBeShown: number;
   public endNo: number;
   public selectedTab: number;
 
-  constructor(public route: ActivatedRoute) {
+  constructor(public route: ActivatedRoute, private store: Store<fromRoot.AppState>) {
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -46,11 +53,14 @@ export class SecurityDetailsComponent implements OnInit {
       description: false,
       products: false
     };
+    this.batchOfProductsToBeShown = 3;
     this.endNo = 0;
     this.selectedTab = 1;
   }
 
   ngOnInit() {
+    this.favouredSecurities$ = this.store.pipe(select(fromRoot.getFavouredSecurities));
+    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
     const id = this.route.snapshot.paramMap.get('id');
     if (id && !isNaN(parseInt(id, 10))) {
       this.company = AllCompanies.filter((company: Company) => company.id === parseInt(id, 10))[0];
@@ -70,14 +80,17 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   setNumberOfProducts() {
-    if (this.endNo === 3) {
+    if (this.endNo === this.batchOfProductsToBeShown) {
       this.endNo = this.company.products.length;
       this.showMore.products = true;
     } else {
-      this.endNo = this.company.products.length > 3 ? 3 : this.company.products.length;
+      this.endNo = this.company.products.length > this.batchOfProductsToBeShown ? this.batchOfProductsToBeShown : this.company.products.length;
       this.showMore.products = false;
     }
     console.log('this.showMore.products : ', this.showMore.products);
   }
 
+  addToFavourites() {
+    this.store.dispatch(BasketActions.addToFavourites({company: this.company}));
+  }
 }

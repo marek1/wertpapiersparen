@@ -1,4 +1,6 @@
+import { Company } from './company';
+
 export interface ChosenSecurity {
-  id: number;
+  company: Company;
   amount: number;
 }

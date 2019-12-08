@@ -43,7 +43,6 @@ export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState
     console.log('action', action);
     console.log('next state', result);
     console.groupEnd();
-
     return result;
   };
 }
@@ -74,4 +73,22 @@ export const getSelectedSearchMethod = createSelector(
 export const getSelectedIndustries = createSelector(
   selectSearchState,
   fromSearch.getSelectedIndustries
+);
+
+/**
+ * Basket Reducers
+ */
+
+export const selectBasketState = createFeatureSelector<AppState, fromBasket.State>(
+  fromBasket.featureKey
+);
+
+export const getFavouredSecurities = createSelector(
+  selectBasketState,
+  fromBasket.getFavourites
+);
+
+export const getFavouredSecuritiesAsList = createSelector(
+  selectBasketState,
+  fromBasket.getFavouritesAsList
 );

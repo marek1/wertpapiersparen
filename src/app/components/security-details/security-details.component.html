@@ -6,6 +6,14 @@
     <div class="col-xs-12 col-sm-7 text-right">
       <h1>{{company.name}}</h1>
       <div>
+        <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary" (click)="addToFavourites()">
+          Zu Favoriten <span class="fa fa-heart"></span> hinzufügen
+        </button>
+        <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger" (click)="addToFavourites()">
+          Aus Favoriten <span class="fa fa-heart"></span> entfernen
+        </button>
+      </div>
+      <div>
         {{company.city}}, {{Countries[company.country]}}
       </div>
       <div>
@@ -119,7 +127,7 @@
             {{product.name}}
           </div>
         </div>
-        <div class="col-xs-6 col-sm-6 text-center" *ngIf="company.products.length > 0">
+        <div class="col-xs-6 col-sm-6 text-center" *ngIf="company.products.length > batchOfProductsToBeShown">
           <div [ngSwitch]="showMore.products">
             <span class="small btn-link" *ngSwitchCase="true" (click)="setNumberOfProducts()">
               <span class="fa fa-chevron-up icon-big"></span>

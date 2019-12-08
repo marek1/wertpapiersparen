@@ -1724,7 +1724,8 @@ export const heidelbergCementCompany: Company = {
   products: [
     {
       id: 101610,
-      name: 'Zement'
+      name: 'Zement',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/HeidelbergCement_Logo.svg/500px-HeidelbergCement_Logo.svg.png',
     }
   ],
   industries: [111111],
