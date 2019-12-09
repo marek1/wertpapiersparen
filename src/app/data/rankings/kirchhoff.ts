@@ -32,12 +32,13 @@ import { deutscheBankCompany } from '../companies/dax/deutscheBank';
 import { vwCompany } from '../companies/dax/vw';
 
 export const kirchhoff: Ranking = {
-  name: 'GOOD COMPANY RANKING 2018 (Punkte für Gesellschaft)',
+  name: 'GOOD COMPANY RANKING 2018.',
   year: 2018,
   responsibilityType: ResponsibilityType.Ethik,
   issuer: 'Kirchhoff',
   link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
   maxResult: 25,
+  unit: 'Punkten',
   results: [
     {
       id: freseniusCompany.id,

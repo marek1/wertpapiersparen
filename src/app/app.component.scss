@@ -14,3 +14,11 @@
 .btn-group {
   width: 100%;
 }
+.color {
+  &.color--green {
+    color: green;
+  }
+  &.color--red{
+    color: red;
+  }
+}

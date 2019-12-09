@@ -1,6 +1,6 @@
 import { ResponsibilityType } from '../enums/responsibility';
 
-interface ShareRank {
+export interface ShareRank {
   id: number;
   points: number;
 }
@@ -12,5 +12,6 @@ export interface Ranking {
   issuer: string;
   link: string;
   maxResult: number;
+  unit: string|null;
   results: ShareRank[];
 }

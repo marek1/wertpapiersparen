@@ -1725,22 +1725,26 @@ export const deutscheBankCompany: Company = {
     {
       id: 100910,
       name: 'Deutsche Bank (Girokonto u/o Depot)',
-      logo: 'https://www.db.com/company/img/db_logo.gif'
+      logo: 'https://www.db.com/company/img/db_logo.gif',
+      segment: 141010
     },
     {
       id: 100911,
       name: 'DWS (Fonds)',
-      logo: 'https://www.dws.de/globalassets/media-gallery/images/logos/dws_logo_global.svg'
+      logo: 'https://www.dws.de/globalassets/media-gallery/images/logos/dws_logo_global.svg',
+      segment: 141012
     },
     {
       id: 100912,
       name: 'Postbank  (Girokonto u/o Depot)',
-      logo: 'https://www.postbank.de/postbank/images/PB_Zentrale_sRGB_219.jpg'
+      logo: 'https://www.postbank.de/postbank/images/PB_Zentrale_sRGB_219.jpg',
+      segment: 141010
     },
     {
       id: 100913,
       name: 'Norisbank (Girokonto u/o Depot)',
-      logo: 'https://meine.norisbank.de/trxmcontent/19.42.0.0_PR41-76f6407a359/global/noris/images/logo.gif'
+      logo: 'https://meine.norisbank.de/trxmcontent/19.42.0.0_PR41-76f6407a359/global/noris/images/logo.gif',
+      segment: 141010
     }
   ],
   industries: [141010, 141011, 141016, 141017],

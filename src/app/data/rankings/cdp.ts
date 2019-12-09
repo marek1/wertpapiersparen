@@ -23,12 +23,13 @@ import { unileverCompany } from '../companies/eurostoxx50/unilever';
 import { accentureCompany } from '../companies/other/accenture';
 
 export const cdp: Ranking = {
-  name: 'Our annual A List names the world\'s businesses leading on environmental performance"?',
+  name: 'Our annual A List names the world\'s businesses leading on environmental performance.',
   year: 2018,
   responsibilityType: ResponsibilityType.Umweltbewusstsein,
   issuer: 'CDP',
   link: 'https://www.cdp.net/en/companies/companies-scores',
   maxResult: 1,
+  unit: '',
   results: [
     {
       id: accentureCompany.id,

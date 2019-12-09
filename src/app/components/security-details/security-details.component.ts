@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
+import { Ranking, ShareRank } from '../../interfaces/ranking';
+import { AllRankings } from '../../data/rankings';
 
 interface Legend {
   legend: string;
@@ -21,6 +23,7 @@ interface ShowMore {
 })
 export class SecurityDetailsComponent implements OnInit {
 
+  public allRankings: Ranking[];
   public company: Company;
   public Countries: typeof Country;
   public chartLabels: string[];
@@ -33,6 +36,7 @@ export class SecurityDetailsComponent implements OnInit {
   public selectedTab: number;
 
   constructor(public route: ActivatedRoute) {
+    this.allRankings = AllRankings;
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -80,4 +84,15 @@ export class SecurityDetailsComponent implements OnInit {
     console.log('this.showMore.products : ', this.showMore.products);
   }
 
+  getRankingsForCompany(): Ranking[] {
+    return AllRankings.filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false);
+  }
+
+  getPointsInRanking(ranking: Ranking): ShareRank {
+    return ranking.results.filter((res) => res.id === this.company.id)[0];
+  }
+
+  getPercentage(x: number, of: number) {
+    return (x * 100) / of;
+  }
 }
