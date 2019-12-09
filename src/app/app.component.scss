@@ -21,4 +21,19 @@
   &.color--red{
     color: red;
   }
+  &.color--blue{
+    color: blue;
+  }
+}
+.badge-number {
+  font-size: 9px;
+  padding: 0;
+  background: red;
+  border-radius: 10px;
+  width: 15px;
+  height: 15px;
+  color: white;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
 }

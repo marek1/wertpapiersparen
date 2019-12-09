@@ -9,7 +9,7 @@
         <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary" (click)="addToFavourites()">
           Zu Favoriten <span class="fa fa-heart"></span> hinzufügen
         </button>
-        <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger" (click)="addToFavourites()">
+        <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger" (click)="removeFromFavourites()">
           Aus Favoriten <span class="fa fa-heart"></span> entfernen
         </button>
       </div>

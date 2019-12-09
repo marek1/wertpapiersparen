@@ -7,7 +7,7 @@ import { Ranking, ShareRank } from '../../interfaces/ranking';
 import { AllRankings } from '../../data/rankings';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
-import { BasketActions, SearchActions } from '../../actions';
+import { BasketActions } from '../../actions';
 import { Observable } from 'rxjs';
 
 interface Legend {
@@ -27,9 +27,7 @@ interface ShowMore {
 })
 export class SecurityDetailsComponent implements OnInit {
 
-  public favouredSecurities$: Observable<Company[]>;
   public favouredSecuritiesIdList$: Observable<number[]>;
-  public allRankings: Ranking[];
   public company: Company;
   public Countries: typeof Country;
   public chartLabels: string[];
@@ -43,7 +41,6 @@ export class SecurityDetailsComponent implements OnInit {
   public selectedTab: number;
 
   constructor(public route: ActivatedRoute, private store: Store<fromRoot.AppState>) {
-    this.allRankings = AllRankings;
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -63,7 +60,6 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.favouredSecurities$ = this.store.pipe(select(fromRoot.getFavouredSecurities));
     this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
     const id = this.route.snapshot.paramMap.get('id');
     if (id && !isNaN(parseInt(id, 10))) {
@@ -91,12 +87,16 @@ export class SecurityDetailsComponent implements OnInit {
       this.endNo = this.company.products.length > this.batchOfProductsToBeShown ? this.batchOfProductsToBeShown : this.company.products.length;
       this.showMore.products = false;
     }
-    console.log('this.showMore.products : ', this.showMore.products);
   }
 
   addToFavourites() {
     this.store.dispatch(BasketActions.addToFavourites({company: this.company}));
   }
+
+  removeFromFavourites() {
+    this.store.dispatch(BasketActions.removeFromFavourites({company: this.company}));
+  }
+
   getRankingsForCompany(): Ranking[] {
     return AllRankings.filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false);
   }
