@@ -10,6 +10,8 @@ export interface State {
   items: Company[];
 }
 
+// TODO : add noOfStocks ^ to items
+
 const initialState: State = {
   isLoading: false,
   errorMessage: null,

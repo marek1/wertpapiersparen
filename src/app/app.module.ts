@@ -16,6 +16,7 @@ import { ByIndustryComponent } from './components/by-industry/by-industry.compon
 import { SecuritiesListInIndustryComponent } from './components/securities-list-in-industry/securities-list-in-industry.component';
 import { SecurityDetailsComponent } from './components/security-details/security-details.component';
 import { ChartsModule } from 'ng2-charts';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChartsModule } from 'ng2-charts';
     NavComponent,
     ByIndustryComponent,
     SecuritiesListInIndustryComponent,
-    SecurityDetailsComponent
+    SecurityDetailsComponent,
+    FavouritesComponent
   ],
   imports: [
     ChartsModule,
