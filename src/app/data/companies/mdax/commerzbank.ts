@@ -1719,7 +1719,15 @@ export const commerzbankCompany: Company = {
   products: [
     {
       id: 104110,
-      name: 'Commerzank (Girokonto u/o Depot)'
+      name: 'Commerzank (Girokonto u/o Depot)',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Commerzbank_%282009%29.svg/500px-Commerzbank_%282009%29.svg.png',
+      segment: 141010
+    },
+    {
+      id: 104111,
+      name: 'Comdirect (Girokonto u/o Depot)',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Comdirect_Logo_10.2019.svg/500px-Comdirect_Logo_10.2019.svg.png',
+      segment: 141010
     }
   ],
   industries: [141010, 141011, 141016, 141017],

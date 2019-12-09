@@ -37,12 +37,13 @@ import { lufthansaCompany } from '../companies/dax/lufthansa';
 import { rweCompany } from '../companies/dax/rwe';
 
 export const ioew: Ranking = {
-  name: 'CSR-Reporting von Großunternehmen und KMU in Deutschland',
+  name: 'CSR-Reporting von Großunternehmen und KMU in Deutschland.',
   year: 2018,
   responsibilityType: ResponsibilityType.Nachhaltigkeit,
   issuer: 'IÖW und future',
   link: 'https://www.emas.de/aktuelles/2019/15-05-19-ranking-nachhaltigkeitsberichte/',
   maxResult: 700,
+  unit: 'Punkten',
   results: [
     {
       id: bmwCompany.id,

@@ -11,12 +11,13 @@ import { koneCompany } from '../companies/other/kone';
 
 
 export const globalKnights: Ranking = {
-  name: 'Overview of 2019 Global 100 Most Sustainable Corporations in the World index\n',
+  name: 'Overview of 2019 Global 100 Most Sustainable Corporations in the World.',
   year: 2019,
   responsibilityType: ResponsibilityType.Nachhaltigkeit,
   issuer: 'Global Knights',
   link: 'https://www.corporateknights.com/reports/2019-global-100/2019-global-100-results-15481153/',
   maxResult: 100,
+  unit: '%',
   results: [
     {
       id: keringCompany.id,

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
+import { Ranking, ShareRank } from '../../interfaces/ranking';
+import { AllRankings } from '../../data/rankings';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { BasketActions, SearchActions } from '../../actions';
@@ -27,6 +29,7 @@ export class SecurityDetailsComponent implements OnInit {
 
   public favouredSecurities$: Observable<Company[]>;
   public favouredSecuritiesIdList$: Observable<number[]>;
+  public allRankings: Ranking[];
   public company: Company;
   public Countries: typeof Country;
   public chartLabels: string[];
@@ -40,6 +43,7 @@ export class SecurityDetailsComponent implements OnInit {
   public selectedTab: number;
 
   constructor(public route: ActivatedRoute, private store: Store<fromRoot.AppState>) {
+    this.allRankings = AllRankings;
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -92,5 +96,16 @@ export class SecurityDetailsComponent implements OnInit {
 
   addToFavourites() {
     this.store.dispatch(BasketActions.addToFavourites({company: this.company}));
+  }
+  getRankingsForCompany(): Ranking[] {
+    return AllRankings.filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false);
+  }
+
+  getPointsInRanking(ranking: Ranking): ShareRank {
+    return ranking.results.filter((res) => res.id === this.company.id)[0];
+  }
+
+  getPercentage(x: number, of: number) {
+    return (x * 100) / of;
   }
 }

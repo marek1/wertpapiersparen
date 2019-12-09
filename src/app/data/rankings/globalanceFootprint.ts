@@ -32,12 +32,13 @@ import { Ranking } from '../../interfaces/ranking';
 import { thyssenKruppCompany } from '../companies/mdax/thyssenKrupp';
 
 export const globalanceFootprint: Ranking = {
-  name: 'Globalance Footprint',
+  name: 'Globalance Footprint.',
   year: 2019,
   responsibilityType: ResponsibilityType.Nachhaltigkeit,
   issuer: 'Globalance Bank',
   link: 'https://www.handelsblatt.com/finanzen/anlagestrategie/trends/globalance-footprint-so-nachhaltig-sind-die-dax-unternehmen/24245144.html',
   maxResult: 100,
+  unit: 'Punkten',
   results: [
     {
       id: allianzCompany.id,
