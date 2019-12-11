@@ -1,0 +1,17 @@
+<div class="number-input">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text" (click)="decrease()">-</div>
+    </div>
+    <input type="number"
+           class="form-control"
+           id="inlineFormInputGroup"
+           placeholder="Anzahl"
+           value="{{anzahl}}"
+          [disabled]="true"
+    >
+    <div class="input-group-append">
+      <div class="input-group-text" (click)="increase()">+</div>
+    </div>
+  </div>
+</div>

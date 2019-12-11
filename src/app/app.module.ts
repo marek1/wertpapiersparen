@@ -7,7 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -17,6 +17,13 @@ import { SecuritiesListInIndustryComponent } from './components/securities-list-
 import { SecurityDetailsComponent } from './components/security-details/security-details.component';
 import { ChartsModule } from 'ng2-charts';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { NumberInputComponent } from './components/number-input/number-input.component';
+import { PriceDisplayComponent } from './components/price-display/price-display.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
+registerLocaleData(localeDe, 'de');
 
 @NgModule({
   declarations: [
@@ -27,9 +34,12 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     ByIndustryComponent,
     SecuritiesListInIndustryComponent,
     SecurityDetailsComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    NumberInputComponent,
+    PriceDisplayComponent
   ],
   imports: [
+    FormsModule,
     ChartsModule,
     BrowserModule,
     RouterModule.forRoot(

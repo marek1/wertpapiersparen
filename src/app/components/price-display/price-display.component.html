@@ -1,0 +1,6 @@
+<div>
+  ca. {{getLatestPrice() | number:'1.2-2':'de'}} {{fav.company.currency}}
+</div>
+<small>
+  (Letzter bekannter Kurs, Datum: {{getDateOfLastPriceEntry() | date:'d.M.y'}})
+</small>
