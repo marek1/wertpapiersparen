@@ -7,7 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -22,6 +22,8 @@ import { PriceDisplayComponent } from './components/price-display/price-display.
 
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import { BasketEffects } from './effects/basket.effects';
+import { BasketService } from './services/basket.service';
 
 registerLocaleData(localeDe, 'de');
 
@@ -53,12 +55,12 @@ registerLocaleData(localeDe, 'de');
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([BasketEffects]),
     HttpClientModule,
     StoreRouterConnectingModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [BasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

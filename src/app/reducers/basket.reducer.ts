@@ -26,6 +26,10 @@ export const reducer = createReducer(
   initialState,
   // Actions to go here
   // i.e. on(action.actionName,,,,)
+  on(BasketActions.getFromLocalStorageSuccess, (state, {items}) => ({
+      ...state,
+      items
+  })),
   on(BasketActions.addToFavourites, (state, {company}) => ({
     ...state,
     items: [...state.items, {
