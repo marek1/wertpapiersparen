@@ -24,6 +24,7 @@ import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { BasketEffects } from './effects/basket.effects';
 import { BasketService } from './services/basket.service';
+import { PriceService } from './services/price.service';
 
 registerLocaleData(localeDe, 'de');
 
@@ -60,7 +61,10 @@ registerLocaleData(localeDe, 'de');
     StoreRouterConnectingModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [BasketService],
+  providers: [
+    BasketService,
+    PriceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

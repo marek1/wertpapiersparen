@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Company } from '../../interfaces/company';
 import { CompanyStocks } from '../../reducers/basket.reducer';
 import { BasketActions } from '../../actions';
+import { PriceService } from '../../services/price.service';
 
 @Component({
   selector: 'app-favourites',
@@ -15,7 +16,9 @@ export class FavouritesComponent implements OnInit {
 
   favouredSecurities$: Observable<CompanyStocks[]>;
 
-  constructor(private store: Store<fromRoot.AppState>) {
+  constructor(
+    private priceService: PriceService,
+    private store: Store<fromRoot.AppState>) {
   }
 
   ngOnInit() {
@@ -24,6 +27,17 @@ export class FavouritesComponent implements OnInit {
 
   updateStore(anzahl: number, firma: Company): void {
     this.store.dispatch(BasketActions.updateFavourites({amount: anzahl, company: firma}));
+  }
+
+
+  getNetSum(items: CompanyStocks[], currency: string) {
+    let returnValue = 0;
+    items.map((item) => {
+      if (item.company.currency === currency) {
+        returnValue += this.priceService.getLatestPrice(item);
+      }
+    });
+    return returnValue;
   }
 
 

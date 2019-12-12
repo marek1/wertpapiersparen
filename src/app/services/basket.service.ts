@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { CompanyStocks } from '../reducers/basket.reducer';
 

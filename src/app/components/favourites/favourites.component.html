@@ -24,3 +24,10 @@
     </li>
   </ul>
 </div>
+<div class="row">
+  <div class="col-12 text-right" *ngIf="(favouredSecurities$|async).length > 0">
+
+    Summe: ca. {{getNetSum((favouredSecurities$|async), 'EUR') | number:'1.2-2':'de'}} EUR
+
+  </div>
+</div>
