@@ -1,5 +1,19 @@
-<div>
-  <div *ngFor="let x of amountByIndustry">
-    {{x.amount}} of {{x.industryIds}}
+<div class="row">
+
+  <div class="col-12">
+    <small>Chart:</small>
+  </div>
+  <div class="col-12" *ngIf="pieChartData.length > 0">
+
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+    </canvas>
+
   </div>
 </div>
