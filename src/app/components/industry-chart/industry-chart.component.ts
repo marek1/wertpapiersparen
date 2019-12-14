@@ -46,8 +46,6 @@ export class IndustryChartComponent implements OnInit, OnChanges {
   constructor(private priceService: PriceService, private industryService: IndustryService) { }
 
   ngOnInit() {
-    console.log('ÖÖÖÖÖ : ', this.industryService.iterateThroughChildren(industries, 1410));
-    console.log('LLLL : ', this.industryService.getTopLevelIndustry([141010, 141011, 141016, 141017], 2));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -81,7 +79,7 @@ export class IndustryChartComponent implements OnInit, OnChanges {
       this.amountByIndustry.push({
         amount: this.priceService.getLatestPrice(companyStock),
         industryIds,
-        industryNames
+        industryNames: industryNames.length > 1 ? ['Mischkonzern'] : industryNames
       });
     } else {
       foundItems[0].amount += this.priceService.getLatestPrice(companyStock);
