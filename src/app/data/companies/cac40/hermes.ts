@@ -55,7 +55,7 @@ export const hermesCompany: Company = {
       segment: 101410
     }
   ],
-  industries: [101410, 101414, 1019, 101012],
+  industries: [101410, 101414, 1019],
   securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: 'FR0000052292',

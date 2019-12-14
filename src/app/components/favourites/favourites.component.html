@@ -31,3 +31,9 @@
 
   </div>
 </div>
+<div class="row" *ngIf="(favouredSecurities$|async).length > 0">
+
+  <app-industry-chart [companyStocks]="favouredSecurities$|async"></app-industry-chart>
+
+
+</div>

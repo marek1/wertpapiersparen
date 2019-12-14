@@ -4,6 +4,8 @@ import { Indices } from '../enums/indices';
 import { Country } from '../enums/country';
 import { ResponsibilityType } from '../enums/responsibility';
 import { SecurityType } from '../enums/securityType';
+import { Industry } from './industry';
+import { IndustryGroup } from '../enums/industryGroup';
 
 export interface Dividends {
   year: number;

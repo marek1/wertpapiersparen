@@ -22,12 +22,6 @@ export const industries: Industry[] = [
             description: 'Kosmetikindustrie',
             imageName: 'makeup.svg',
             subIndustries: null
-          },
-          {
-            id: 101012,
-            description: 'Parfüm',
-            imageName: 'parfume.svg',
-            subIndustries: null
           }
         ]
       },
@@ -196,7 +190,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1019,
-        description: 'Hersteller von Luxusgütern (inkl. Diamanten, Porzellan)',
+        description: 'Hersteller von Luxusgütern (inkl. Diamanten, Porzellan, teurem Parfüm)',
         imageName: 'diamond.svg',
         subIndustries: null
       }
@@ -315,7 +309,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1112,
-        description: 'Hausinnenaustattung inkl. Haushaltsprodukte',
+        description: 'Innenaustattung inkl. Haushaltsprodukte',
         imageName: 'interior-design.svg',
         subIndustries: [
           {
@@ -569,7 +563,7 @@ export const industries: Industry[] = [
       },
       {
         id: 1214,
-        description: 'Schiff',
+        description: 'Schiffe und Häfen',
         imageName: 'ship.svg',
         subIndustries: [
           {
@@ -590,7 +584,6 @@ export const industries: Industry[] = [
             imageName: 'journey.svg',
             subIndustries: null,
             includeIndustries: [101514]
-
           }
         ]
       },

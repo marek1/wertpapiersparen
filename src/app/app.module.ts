@@ -25,6 +25,8 @@ import localeDe from '@angular/common/locales/de';
 import { BasketEffects } from './effects/basket.effects';
 import { BasketService } from './services/basket.service';
 import { PriceService } from './services/price.service';
+import { IndustryChartComponent } from './components/industry-chart/industry-chart.component';
+import { IndustryService } from './services/industry.service';
 
 registerLocaleData(localeDe, 'de');
 
@@ -39,7 +41,8 @@ registerLocaleData(localeDe, 'de');
     SecurityDetailsComponent,
     FavouritesComponent,
     NumberInputComponent,
-    PriceDisplayComponent
+    PriceDisplayComponent,
+    IndustryChartComponent
   ],
   imports: [
     FormsModule,
@@ -63,7 +66,8 @@ registerLocaleData(localeDe, 'de');
   ],
   providers: [
     BasketService,
-    PriceService
+    PriceService,
+    IndustryService
   ],
   bootstrap: [AppComponent]
 })
