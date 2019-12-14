@@ -241,7 +241,7 @@ export const deliveryHeroCompany: Company = {
       logo: 'https://www.deliveryhero.com/wp-content/uploads/2017/08/logo-sweden-onlinepizzase-2.png'
     }
   ],
-  industries: [101310],
+  industries: [2410],
   securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A2E4K43',

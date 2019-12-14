@@ -1042,145 +1042,145 @@ export const lvmhCompany: Company = {
       id: 119010,
       name: 'Moët & Chandon',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/moetchandon_logo-3.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119011,
       name: 'Chandon',
       logo: 'https://r.lvmh-static.com/uploads/2015/02/logo_chandon_transparent.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119012,
       name: 'Ardbeg',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/ardbeg_logo_horizontal.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119013,
       name: 'Belvedere',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/belvedere_vodka_pure_blk.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119014,
       name: 'Bodega Numanthia',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/15-09-18_nouveau-logo-orang.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119015,
       name: 'Cape Mentelle',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/capementelle_logo.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119016,
       name: 'Chateau Cheval Blanc',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/chateauchevalblanc_logo1.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119017,
       name: 'Ao Yun',
       logo: 'https://r.lvmh-static.com/uploads/2017/07/logo.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119018,
       name: 'Chateau dYquem',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/logo-yquem-2013.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119019,
       name: 'Cheval des Andes',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/chevaldesandes_logo1.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119020,
       name: 'Clos des Lambrays',
       logo: 'https://r.lvmh-static.com/uploads/2017/02/logo-ok.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119021,
       name: 'Clos19',
       logo: 'https://r.lvmh-static.com/uploads/2017/04/logo_no_strap_white.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119022,
       name: 'Cloudy Bay',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/cloudybay_logo_noir.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119023,
       name: 'Dom Perignon',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/domperignon_logo.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119024,
       name: 'Glenmorangie',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/glenmorangie_logo.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119025,
       name: 'Hennessy',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/hennessy_logo.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119026,
       name: 'Krug',
       logo: 'https://r.lvmh-static.com/uploads/2014/07/krug-logo_pantone_gold.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119027,
       name: 'Mercier',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/mercier_logo.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119028,
       name: 'Newton Napa Valley',
       logo: 'https://r.lvmh-static.com/uploads/2018/05/logonewton_final-ok.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119029,
       name: 'Ruinart',
       logo: 'https://r.lvmh-static.com/uploads/2014/09/logo_ok_ruinart_gris_or.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119030,
       name: 'Terrazas de los Andes',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/tdla_logo-white-400x300.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119031,
       name: 'Veuve Clicquot',
       logo: 'https://r.lvmh-static.com/uploads/2014/10/veuveclicquot_logo1.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119032,
       name: 'Volcan de mi Tierra',
       logo: 'https://r.lvmh-static.com/uploads/2018/04/logovolcan-e1523894896568.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119033,
       name: 'Woodinville',
       logo: 'https://r.lvmh-static.com/uploads/2019/02/ww-logo-2017-noline.png',
-      segment: 101314
+      segment: 2414
     },
     {
       id: 119034,
@@ -1435,7 +1435,7 @@ export const lvmhCompany: Company = {
       segment: 2010
     }
   ],
-  industries: [101314, 101410, 1019, 101411, 101413, 1019, 2010],
+  industries: [1019],
   securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: 'FR0000121014',

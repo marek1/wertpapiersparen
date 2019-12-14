@@ -212,7 +212,7 @@ export const pernodCompany: Company = {
       logo: 'https://assets.pernod-ricard.com/styles/portefeuille_bouteilles_marques_desktop_1x/s3/marque_image_portfolio/khalua.png'
     }
   ],
-  industries: [101314],
+  industries: [2414],
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000120693',

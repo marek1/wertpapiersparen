@@ -14,8 +14,6 @@ export interface State {
   items: CompanyStocks[];
 }
 
-// TODO : add noOfStocks ^ to items
-
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
@@ -43,10 +41,13 @@ export const reducer = createReducer(
   })),
   on(BasketActions.updateFavourites, (state, {amount, company}) =>  ({
     ...state,
-    items: [...state.items.filter(com => com.company.id !== company.id), {
-      amount,
-      company
-    }]
+    items: [...state.items.map((com) => {
+      // overwrite the amount for the given company
+      if (com.company.id === company.id) {
+        com = {...com, amount};
+      }
+      return com;
+    })]
   }))
 );
 

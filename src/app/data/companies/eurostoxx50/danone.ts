@@ -1032,7 +1032,7 @@ export const danoneCompany: Company = {
       logo: 'https://www.danone.com/content/dam/danone-corp/danone-com/brands/waters/aqua/Aqua.png'
     }
   ],
-  industries: [101311, 101312],
+  industries: [2411, 2412],
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000120644',

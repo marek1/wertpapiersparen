@@ -1722,7 +1722,7 @@ export const suedzuckerCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/S%C3%BCdzucker',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/S%C3%BCdzucker-Logo.svg/500px-S%C3%BCdzucker-Logo.svg.png',
   products: [],
-  industries: [101315],
+  industries: [2415],
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0007297004',

@@ -1118,7 +1118,7 @@ export const symriseCompany: Company = {
   link_wikipedia: 'https://de.wikipedia.org/wiki/Symrise',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/SYM_Logo.png/500px-SYM_Logo.png',
   products: [],
-  industries: [101315, 1510, 101011],
+  industries: [2415, 1510, 101011],
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000SYM9999',

@@ -52,49 +52,6 @@ export const industries: Industry[] = [
         ]
       },
       {
-        id: 1013,
-        description: 'Lebensmittel; Nahrungs- und Genussmittel; Ernährung',
-        imageName: 'diet.svg',
-        subIndustries: [
-          {
-            id: 101310,
-            description: 'Lieferdienste (Lebensmittel und Essen)',
-            imageName: 'shipped.svg',
-            subIndustries: null
-          },
-          {
-            id: 101311,
-            description: 'Nahrungsmittelhersteller',
-            imageName: 'diet.svg',
-            subIndustries: null
-          },
-          {
-            id: 101312,
-            description: 'Getränkehersteller',
-            imageName: 'soda.svg',
-            subIndustries: null
-          },
-          {
-            id: 101313,
-            description: 'Hersteller und Verkäufer von Fastfood',
-            imageName: 'fast-food.svg',
-            subIndustries: null
-          },
-          {
-            id: 101314,
-            description: 'Genussmittelhersteller (inkl. Alkohol und Tabak)',
-            imageName: 'genuss.svg',
-            subIndustries: null
-          },
-          {
-            id: 101315,
-            description: 'Zulieferer für die Nahrungsmittelsmittelindustrie (inkl. Getreide)',
-            imageName: 'oat.svg',
-            subIndustries: null
-          }
-        ]
-      },
-      {
         id: 1014,
         description: 'Mode und Schmuck (inkl. Brillen)',
         imageName: 'fashion.svg',
@@ -1418,5 +1375,48 @@ export const industries: Industry[] = [
         subIndustries: null
       }
     ]
-  }
+  },
+  {
+    id: 24,
+    description: 'Lebensmittel; Nahrungs- und Genussmittel; Ernährung',
+    imageName: 'diet.svg',
+    subIndustries: [
+      {
+        id: 2410, // old: 101310,
+        description: 'Lieferdienste (Lebensmittel und Essen)',
+        imageName: 'shipped.svg',
+        subIndustries: null
+      },
+      {
+        id: 2411, // old: 101311,
+        description: 'Nahrungsmittelhersteller',
+        imageName: 'diet.svg',
+        subIndustries: null
+      },
+      {
+        id: 2412, // 101312,
+        description: 'Getränkehersteller',
+        imageName: 'soda.svg',
+        subIndustries: null
+      },
+      {
+        id: 2413, // 101313,
+        description: 'Hersteller und Verkäufer von Fastfood',
+        imageName: 'fast-food.svg',
+        subIndustries: null
+      },
+      {
+        id: 2414, // 101314,
+        description: 'Genussmittelhersteller (inkl. Alkohol und Tabak)',
+        imageName: 'genuss.svg',
+        subIndustries: null
+      },
+      {
+        id: 2415, // 101315,
+        description: 'Zulieferer für die Nahrungsmittelsmittelindustrie (inkl. Getreide)',
+        imageName: 'oat.svg',
+        subIndustries: null
+      }
+    ]
+  },
 ];

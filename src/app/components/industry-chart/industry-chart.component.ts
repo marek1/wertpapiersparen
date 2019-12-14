@@ -31,6 +31,7 @@ export class IndustryChartComponent implements OnInit, OnChanges {
   public pieChartOptions: ChartOptions = {
     responsive: true,
     legend: {
+      display: false
     },
     plugins: {
       datalabels: {
@@ -79,7 +80,7 @@ export class IndustryChartComponent implements OnInit, OnChanges {
       this.amountByIndustry.push({
         amount: this.priceService.getLatestPrice(companyStock),
         industryIds,
-        industryNames: industryNames.length > 1 ? ['Mischkonzern'] : industryNames
+        industryNames //: industryNames.length > 1 ? ['Mischkonzern'] : industryNames
       });
     } else {
       foundItems[0].amount += this.priceService.getLatestPrice(companyStock);

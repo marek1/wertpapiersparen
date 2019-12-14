@@ -9,11 +9,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { BasketActions } from '../../actions';
 import { Observable } from 'rxjs';
-
-interface Legend {
-  legend: string;
-}
-
+import { ChartOptions } from 'chart.js';
 interface ShowMore {
   info: boolean;
   description: boolean;
@@ -34,7 +30,7 @@ export class SecurityDetailsComponent implements OnInit {
   public chartData: number[];
   public chartType: string;
   public chartLegend: boolean;
-  public chartOptions: Legend;
+  public chartOptions: ChartOptions;
   public showMore: ShowMore;
   public batchOfProductsToBeShown: number;
   public endNo: number;
@@ -47,7 +43,16 @@ export class SecurityDetailsComponent implements OnInit {
     this.chartType = 'line';
     this.chartLegend = false;
     this.chartOptions = {
-      legend: ''
+      legend: {
+        display: false
+      },
+      plugins: {
+        datalabels: {
+          formatter: (value, ctx) => {
+            return null;
+          },
+        },
+      }
     };
     this.showMore = {
       info: false,

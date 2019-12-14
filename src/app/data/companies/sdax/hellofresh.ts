@@ -195,7 +195,7 @@ export const helloFreshCompany: Company = {
       logo: 'https://cdn.hellofresh.com/logo/HelloFresh_Logo_Horizontal_V2.svg'
     }
   ],
-  industries: [2010, 101310],
+  industries: [2010, 2410],
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE000A161408',

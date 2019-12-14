@@ -1044,7 +1044,7 @@ export const abInbevCompany: Company = {
       logo: 'https://www.ab-inbev.com/content/dam/abinbev/our-brands/landing-page/desktop/beer/WalsBrut_Card.png'
     }
   ],
-  industries: [101314, 101312],
+  industries: [2414, 2412],
   securityType: SecurityType.ActionsAuPorteur,
   currency: Currency.EUR,
   isin: 'BE0974293251',
