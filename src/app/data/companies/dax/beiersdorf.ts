@@ -1778,7 +1778,7 @@ export const beiersdorfCompany: Company = {
       logo: 'https://www.beiersdorf.de/~/media/Beiersdorf/local/de/brands/overview/Beiersdorf-gammon.png?mw=460&mh=260&highRes=1'
     }
   ],
-  industries: [101010, 101011, 1911],
+  industries: [101010, 101011],
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005200000',

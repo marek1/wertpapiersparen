@@ -1734,7 +1734,7 @@ export const adidasCompany: Company = {
       logo: 'https://d1ki59phkeobjj.cloudfront.net/rt-ember/ember-cli-runtastic-commons/assets/adidas-runtastic-logo-4de5d4eff5d4a6f5d7fa07c5061f014c.png'
     }
   ],
-  industries: [101110, 101111, 2010],
+  industries: [101110, 101111],
   securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1EWWW0',
