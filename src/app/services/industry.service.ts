@@ -20,7 +20,6 @@ export class IndustryService {
     return finalIndustries;
   }
 
-
   iterateThroughChildren(dataArray: Industry[], lastId): Industry {
     // we have a mother and we want the children
     // how to use if you want all subIndustries for id === 14 :

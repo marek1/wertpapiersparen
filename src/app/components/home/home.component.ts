@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  public selectedSearchMethod$: Observable<string>;
+  public selectedSearchMethod$: Observable<number>;
   public SearchMethods: typeof SearchMethods;
   public searchMethods: string[];
 
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   setMethod(which: SearchMethods): void {
-    this.store.dispatch(SearchActions.setSelectedSearchMethodAction({selectedSearchMethod: SearchMethods[which]}));
+    this.store.dispatch(SearchActions.setSelectedSearchMethodAction({selectedSearchMethod: which}));
   }
 
 }

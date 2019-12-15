@@ -27,6 +27,7 @@ import { BasketService } from './services/basket.service';
 import { PriceService } from './services/price.service';
 import { IndustryChartComponent } from './components/industry-chart/industry-chart.component';
 import { IndustryService } from './services/industry.service';
+import { BySearchtermComponent } from './components/by-searchterm/by-searchterm.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -42,7 +43,8 @@ registerLocaleData(localeDe, 'de');
     FavouritesComponent,
     NumberInputComponent,
     PriceDisplayComponent,
-    IndustryChartComponent
+    IndustryChartComponent,
+    BySearchtermComponent
   ],
   imports: [
     FormsModule,

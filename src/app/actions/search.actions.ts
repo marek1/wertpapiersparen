@@ -3,7 +3,7 @@ import { SelectedIndustry } from '../interfaces/selectedIndustry';
 
 export const setSelectedSearchMethodAction = createAction(
   '[Home Component] Set Selected SearchMethod',
-  props<{selectedSearchMethod: string}>()
+  props<{selectedSearchMethod: number}>()
 );
 
 export const addToSelectedIndustries = createAction(

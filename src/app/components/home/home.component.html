@@ -10,17 +10,24 @@
 
   <div class="d-flex justify-content-center align-items-center min-h-500px">
 
-      <div class="btn-group" role="group" aria-label="such methoden" *ngFor="let x of searchMethods | keyvalue; let i = index">
-          <button type="button" class="btn btn-secondary" [ngClass]="{'active': (selectedSearchMethod$ | async)===searchMethods[i]}" (click)="setMethod(i)">{{searchMethods[i]}}</button>
+      <div class="btn-group" role="group" aria-label="Suchmethoden" *ngFor="let x of searchMethods | keyvalue; let i = index">
+          <button type="button"
+                  class="btn btn-secondary"
+                  [ngClass]="{'active': (selectedSearchMethod$ | async) === i}"
+                  (click)="setMethod(i)">
+            {{searchMethods[i]}}
+          </button>
       </div>
 
   </div>
-  
-  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods[0]"></div>
-  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods[1]">
+
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">
+    <app-by-searchterm></app-by-searchterm>
+  </div>
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Industrie']">
     <app-by-industry></app-by-industry>
   </div>
-  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods[2]"></div>
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Produkt(e)']"></div>
 
 
 </div>

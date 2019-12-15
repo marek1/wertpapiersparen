@@ -1,20 +1,21 @@
 import { createReducer, on } from '@ngrx/store';
 import { SearchActions } from '../actions';
 import { SelectedIndustry } from '../interfaces/selectedIndustry';
+import { SearchMethods } from '../enums/searchMethods';
 
 export const featureKey = 'search';
 
 export interface State {
   isLoading: boolean;
   errorMessage: string|null;
-  selectedSearchMethod: string|null;
+  selectedSearchMethod: number|null;
   selectedIndustries: SelectedIndustry[];
 }
 
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
-  selectedSearchMethod: null,
+  selectedSearchMethod: SearchMethods.Industrie,
   selectedIndustries: [
     {
       id: 0,

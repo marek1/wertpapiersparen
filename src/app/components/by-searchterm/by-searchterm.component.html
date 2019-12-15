@@ -1,0 +1,36 @@
+<div class="margin vertical top-bottom-10">
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <label for="searchTerm">Suchbegriff</label>
+      <input
+        type="text"
+        class="form-control"
+        id="searchTerm"
+        [formControl]="searchTermFormControl"
+        placeholder="Suchbegriff eingeben">
+    </div>
+    <div [hidden]="searchTermFormControl.valid || searchTermFormControl.pristine"
+         class="alert alert-danger">
+      Bitte einen Suchbegriff eingeben
+    </div>
+  </form>
+</div>
+<div class="row" *ngIf="results.length > 0">
+  <div class="col-12">
+    <div *ngFor="let security of results">
+      <a class="row result" [routerLink]="['/wertpapier', security.name, security.id]">
+        <div class="col-12">
+          <div>
+            {{security.name}}
+          </div>
+          <div>
+            {{security.city}}, {{Countries[security.country]}}
+          </div>
+          <div class="small">
+            {{security.description.length < 100 ? security.description : security.description.substr(0,95) + '...'}}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
