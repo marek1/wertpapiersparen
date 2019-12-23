@@ -4,10 +4,14 @@
 <div *ngFor="let security of foundSecurities">
   <a class="row result" [routerLink]="['/wertpapier', security.name, security.id]">
     <div class="col-7">
-      <a class="" [routerLink]="['/wertpapier', security.name, security.id]"><img src="{{security.logo}}"></a>
+      <a [routerLink]="['/wertpapier', security.name, security.id]">
+        <img src="{{security.logo}}">
+      </a>
     </div>
     <div class="col-5">
-      <a class="" [routerLink]="['/wertpapier', security.name, security.id]">{{security.name}}</a>
+      <a [routerLink]="['/wertpapier', security.name, security.id]">
+        {{security.name}} <span class="fa fa-arrow-circle-right"></span>
+      </a>
     </div>
   </a>
 </div>

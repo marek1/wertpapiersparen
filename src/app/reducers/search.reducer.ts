@@ -10,6 +10,7 @@ export interface State {
   errorMessage: string|null;
   selectedSearchMethod: number|null;
   selectedIndustries: SelectedIndustry[];
+  searchTerm: string;
 }
 
 const initialState: State = {
@@ -21,7 +22,8 @@ const initialState: State = {
       id: 0,
       name: 'Alle Industrien'
     }
-  ]
+  ],
+  searchTerm: ''
 };
 
 export const reducer = createReducer(
@@ -39,8 +41,13 @@ export const reducer = createReducer(
   on(SearchActions.removeFromSelectedIndustries, (state, {endPosition}) =>  ({
     ...state,
     selectedIndustries: state.selectedIndustries.slice(0, endPosition + 1)
+  })),
+  on(SearchActions.updateSearchTerm, (state, {searchTerm}) =>  ({
+    ...state,
+    searchTerm
   }))
 );
 
 export const getSelectedSearchMethod = (state: State) => state.selectedSearchMethod;
 export const getSelectedIndustries = (state: State) => state.selectedIndustries;
+export const getSearchTerm = (state: State) => state.searchTerm;

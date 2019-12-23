@@ -15,3 +15,8 @@ export const removeFromSelectedIndustries = createAction(
   '[By-Industry Component] Remove from Selected Industries',
   props<{endPosition: number}>()
 );
+
+export const updateSearchTerm = createAction(
+  '[By-SearchTerm Component] Update SearchTerm',
+  props<{searchTerm: string}>()
+);

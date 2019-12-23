@@ -75,6 +75,11 @@ export const getSelectedIndustries = createSelector(
   fromSearch.getSelectedIndustries
 );
 
+export const getSearchTerm = createSelector(
+  selectSearchState,
+  fromSearch.getSearchTerm
+);
+
 /**
  * Basket Reducers
  */

@@ -6,6 +6,10 @@ import { IndustryService } from '../../services/industry.service';
 import { industries } from '../../data/industries';
 import { FormControl } from '@angular/forms';
 import { Country } from '../../enums/country';
+import { select, Store } from '@ngrx/store';
+import * as fromRoot from '../../reducers';
+import { Observable } from 'rxjs';
+import { SearchActions } from '../../actions';
 
 @Component({
   selector: 'app-by-searchterm',
@@ -14,27 +18,31 @@ import { Country } from '../../enums/country';
 })
 export class BySearchtermComponent implements OnInit {
 
+  public searchTerm$: Observable<string>;
   public submitted: boolean;
   public results: Company[];
   public searchTermFormControl: FormControl;
-
   public Countries = Country;
 
-  constructor(private industryService: IndustryService) {
+  constructor(private industryService: IndustryService, private store: Store<fromRoot.AppState>) {
     this.submitted = false;
     this.results = [];
-
     this.searchTermFormControl = new FormControl();
     this.searchTermFormControl.valueChanges.subscribe((val) => {
+      this.store.dispatch(SearchActions.updateSearchTerm({searchTerm: val}));
+    });
+  }
+
+  ngOnInit() {
+    this.searchTerm$ = this.store.pipe(select(fromRoot.getSearchTerm));
+    this.searchTerm$.subscribe((val) => {
+      this.searchTermFormControl.setValue(val);
       if (val && val.length > 0) {
         this.results = this.searchWithinCompanies(val);
       } else {
         this.results = [];
       }
     });
-  }
-
-  ngOnInit() {
   }
 
   searchWithinCompanies(val: string) {
