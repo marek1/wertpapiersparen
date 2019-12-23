@@ -28,6 +28,7 @@ import { PriceService } from './services/price.service';
 import { IndustryChartComponent } from './components/industry-chart/industry-chart.component';
 import { IndustryService } from './services/industry.service';
 import { BySearchtermComponent } from './components/by-searchterm/by-searchterm.component';
+import { ByProductComponent } from './components/by-product/by-product.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -44,7 +45,8 @@ registerLocaleData(localeDe, 'de');
     NumberInputComponent,
     PriceDisplayComponent,
     IndustryChartComponent,
-    BySearchtermComponent
+    BySearchtermComponent,
+    ByProductComponent
   ],
   imports: [
     FormsModule,

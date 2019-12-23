@@ -1,0 +1,24 @@
+<div class="margin vertical top-bottom-10">
+  <div class="col-12">
+      <span class="badge"
+            [ngClass]="filterArg === lastFilterArgs ? 'badge-primary' : 'badge-secondary'"
+            (click)="filter(filterArg)"
+            *ngFor="let filterArg of filterArgs">
+        {{filterArg}}
+      </span>
+  </div>
+</div>
+<div class="row" *ngIf="products.length > 0">
+  <div class="col-12">
+    <div *ngFor="let product of filteredProducts">
+      <div class="card">
+        <div class="card-body">
+          {{product.product.name}} von
+          <a [routerLink]="['/wertpapier', product.name, product.id]">
+            {{product.name}} <span class="fa fa-arrow-circle-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
