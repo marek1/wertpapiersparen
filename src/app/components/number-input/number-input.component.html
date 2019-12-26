@@ -8,7 +8,7 @@
            id="inlineFormInputGroup"
            placeholder="Anzahl"
            value="{{anzahl}}"
-          [disabled]="true"
+           (keyup.enter)="changeAnzahl($event)"
     >
     <div class="input-group-append">
       <div class="input-group-text" (click)="increase()">+</div>
