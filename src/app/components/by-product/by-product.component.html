@@ -10,13 +10,25 @@
 </div>
 <div class="row" *ngIf="products.length > 0">
   <div class="col-12">
-    <div *ngFor="let product of filteredProducts">
+    <div *ngFor="let companyProduct of filteredProducts">
       <div class="card">
         <div class="card-body">
-          {{product.product.name}} von
-          <a [routerLink]="['/wertpapier', product.name, product.id]">
-            {{product.name}} <span class="fa fa-arrow-circle-right"></span>
-          </a>
+          <div class="row">
+            <div class="col-9">
+              {{companyProduct.product.name}} von
+              <a [routerLink]="['/wertpapier', companyProduct.company.name, companyProduct.company.id]">
+                {{companyProduct.product.name}} <span class="fa fa-arrow-circle-right"></span>
+              </a>
+            </div>
+            <div class="col-3 text-right">
+              <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(companyProduct.company.id) === -1" type="button" class="btn btn-primary btn-sm" (click)="addToFavourites(companyProduct.company)">
+                <span class="fa fa-heart"></span>
+              </button>
+              <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(companyProduct.company.id) > -1" type="button" class="btn btn-danger btn-sm" (click)="removeFromFavourites(companyProduct.company)">
+                <span class="fa fa-heart"></span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

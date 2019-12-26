@@ -1,6 +1,10 @@
 import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
+import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import * as fromRoot from '../../reducers';
+import { BasketActions } from '../../actions';
 
 @Component({
   selector: 'app-securities-list-in-industry',
@@ -11,13 +15,15 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
 
   @Input() industryId: number;
 
+  public favouredSecuritiesIdList$: Observable<number[]>;
   public foundSecurities: Company[];
 
-  constructor() {
+  constructor(private store: Store<fromRoot.AppState>) {
     this.foundSecurities = [];
   }
 
   ngOnInit() {
+    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -29,4 +35,13 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
   retrieveSecurities(industryId: number) {
     this.foundSecurities = AllCompanies.filter((company: Company) => company.industries.includes(industryId));
   }
+
+  addToFavourites(company: Company) {
+    this.store.dispatch(BasketActions.addToFavourites({company}));
+  }
+
+  removeFromFavourites(company: Company) {
+    this.store.dispatch(BasketActions.removeFromFavourites({company}));
+  }
+
 }

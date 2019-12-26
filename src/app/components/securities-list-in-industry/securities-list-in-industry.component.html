@@ -2,8 +2,8 @@
       Gefundene Wertpapiere:
 </div>
 <div *ngFor="let security of foundSecurities">
-  <a class="row result" [routerLink]="['/wertpapier', security.name, security.id]">
-    <div class="col-7">
+  <div class="row result">
+    <div class="col-5">
       <a [routerLink]="['/wertpapier', security.name, security.id]">
         <img src="{{security.logo}}">
       </a>
@@ -13,5 +13,13 @@
         {{security.name}} <span class="fa fa-arrow-circle-right"></span>
       </a>
     </div>
-  </a>
+    <div class="col-2 text-right">
+      <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(security.id) === -1" type="button" class="btn btn-primary btn-sm" (click)="addToFavourites(security)">
+        <span class="fa fa-heart"></span>
+      </button>
+      <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(security.id) > -1" type="button" class="btn btn-danger btn-sm" (click)="removeFromFavourites(security)">
+        <span class="fa fa-heart"></span>
+      </button>
+    </div>
+  </div>
 </div>

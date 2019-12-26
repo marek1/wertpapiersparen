@@ -9,7 +9,7 @@ import { Country } from '../../enums/country';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
-import { SearchActions } from '../../actions';
+import { BasketActions, SearchActions } from '../../actions';
 
 @Component({
   selector: 'app-by-searchterm',
@@ -18,6 +18,7 @@ import { SearchActions } from '../../actions';
 })
 export class BySearchtermComponent implements OnInit {
 
+  public favouredSecuritiesIdList$: Observable<number[]>;
   public searchTerm$: Observable<string>;
   public submitted: boolean;
   public results: Company[];
@@ -34,6 +35,7 @@ export class BySearchtermComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
     this.searchTerm$ = this.store.pipe(select(fromRoot.getSearchTerm));
     this.searchTerm$.subscribe((val) => {
       this.searchTermFormControl.setValue(val);
@@ -63,6 +65,14 @@ export class BySearchtermComponent implements OnInit {
       const foundIndustry = this.industryService.iterateThroughChildren(industries, industryId);
       return foundIndustry.description.toLowerCase().indexOf(val.toLowerCase()) > -1;
     });
+  }
+
+  addToFavourites(company: Company) {
+    this.store.dispatch(BasketActions.addToFavourites({company}));
+  }
+
+  removeFromFavourites(company: Company) {
+    this.store.dispatch(BasketActions.removeFromFavourites({company}));
   }
 
 }
