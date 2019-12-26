@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../interfaces/product';
 import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
-import { BasketActions } from '../../actions';
+import { BasketActions, SearchActions } from '../../actions';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
+import { ProductFilters } from '../../data/product-filters';
 
 interface CompanyProduct {
   company: Company;
@@ -20,10 +21,10 @@ interface CompanyProduct {
 export class ByProductComponent implements OnInit {
 
   private products: CompanyProduct[];
+  public productFilter$: Observable<string>;
   public favouredSecuritiesIdList$: Observable<number[]>;
   public filteredProducts: CompanyProduct[];
-  public filterArgs = ['Alle', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  public lastFilterArgs: string;
+  public filterArgs = ProductFilters;
 
   constructor(private store: Store<fromRoot.AppState>) {
     this.products = [];
@@ -42,11 +43,14 @@ export class ByProductComponent implements OnInit {
 
   ngOnInit() {
     this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
-    this.filter(this.filterArgs[0]);
+    this.productFilter$ = this.store.pipe(select(fromRoot.getProductFilter));
+    this.productFilter$.subscribe((productFilter: string) => {
+      this.filter(productFilter);
+    });
   }
 
   filter(filterArg: string) {
-    this.lastFilterArgs = filterArg;
+    this.store.dispatch(SearchActions.updateProductFilter({productFilter: filterArg}));
     if (filterArg === this.filterArgs[0]) {
       this.filteredProducts = [...this.products];
     } else {

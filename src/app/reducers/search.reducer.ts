@@ -2,6 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { SearchActions } from '../actions';
 import { SelectedIndustry } from '../interfaces/selectedIndustry';
 import { SearchMethods } from '../enums/searchMethods';
+import { ProductFilters } from '../data/product-filters';
 
 export const featureKey = 'search';
 
@@ -11,6 +12,7 @@ export interface State {
   selectedSearchMethod: number|null;
   selectedIndustries: SelectedIndustry[];
   searchTerm: string;
+  productFilter: string;
 }
 
 const initialState: State = {
@@ -23,7 +25,8 @@ const initialState: State = {
       name: 'Alle Industrien'
     }
   ],
-  searchTerm: ''
+  searchTerm: '',
+  productFilter: ProductFilters[0]
 };
 
 export const reducer = createReducer(
@@ -45,9 +48,14 @@ export const reducer = createReducer(
   on(SearchActions.updateSearchTerm, (state, {searchTerm}) =>  ({
     ...state,
     searchTerm
+  })),
+  on(SearchActions.updateProductFilter, (state, {productFilter}) =>  ({
+    ...state,
+    productFilter
   }))
 );
 
 export const getSelectedSearchMethod = (state: State) => state.selectedSearchMethod;
 export const getSelectedIndustries = (state: State) => state.selectedIndustries;
 export const getSearchTerm = (state: State) => state.searchTerm;
+export const getProductFilter = (state: State) => state.productFilter;

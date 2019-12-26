@@ -80,6 +80,11 @@ export const getSearchTerm = createSelector(
   fromSearch.getSearchTerm
 );
 
+export const getProductFilter = createSelector(
+  selectSearchState,
+  fromSearch.getProductFilter
+);
+
 /**
  * Basket Reducers
  */

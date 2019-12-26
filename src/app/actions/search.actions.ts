@@ -20,3 +20,8 @@ export const updateSearchTerm = createAction(
   '[By-SearchTerm Component] Update SearchTerm',
   props<{searchTerm: string}>()
 );
+
+export const updateProductFilter = createAction(
+  '[By-Product Component] Update ProductFilter',
+  props<{productFilter: string}>()
+);

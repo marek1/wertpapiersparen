@@ -80,7 +80,7 @@ export class IndustryChartComponent implements OnInit, OnChanges {
       this.amountByIndustry.push({
         amount: this.priceService.getLatestPrice(companyStock),
         industryIds,
-        industryNames //: industryNames.length > 1 ? ['Mischkonzern'] : industryNames
+        industryNames: industryNames.length > 1 ? [ this.returnShortIndustryName(industryNames[0]) + ' und weitere Branchen (Mischkonzern)'] : [this.returnShortIndustryName(industryNames[0])]
       });
     } else {
       foundItems[0].amount += this.priceService.getLatestPrice(companyStock);
@@ -91,4 +91,7 @@ export class IndustryChartComponent implements OnInit, OnChanges {
     return arrA.sort().toString() === arrB.sort().toString();
   }
 
+  private returnShortIndustryName(name: string) {
+    return name.length > 20 ? name.toString().substr(0, 15) + '...' : name;
+  }
 }

@@ -1,7 +1,7 @@
 <div class="margin vertical top-bottom-10">
   <div class="col-12">
       <span class="badge"
-            [ngClass]="filterArg === lastFilterArgs ? 'badge-primary' : 'badge-secondary'"
+            [ngClass]="filterArg === (productFilter$|async) ? 'badge-primary' : 'badge-secondary'"
             (click)="filter(filterArg)"
             *ngFor="let filterArg of filterArgs">
         {{filterArg}}
@@ -17,7 +17,7 @@
             <div class="col-9">
               {{companyProduct.product.name}} von
               <a [routerLink]="['/wertpapier', companyProduct.company.name, companyProduct.company.id]">
-                {{companyProduct.product.name}} <span class="fa fa-arrow-circle-right"></span>
+                {{companyProduct.company.name}} <span class="fa fa-arrow-circle-right"></span>
               </a>
             </div>
             <div class="col-3 text-right">
