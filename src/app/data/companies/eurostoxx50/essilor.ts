@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 2.04, yield: 1.86}, {year: 2017, rate: 1.53}, {year: 2016, rate: 1.50}, {
@@ -107,6 +108,7 @@ export const essilorLuxotticaCompany: Company = {
     }
   ],
   industries: [101412],
+  isharesIndustryName: IsharesIndustryNames.ZyklischeKonsumgueter,
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000121667',

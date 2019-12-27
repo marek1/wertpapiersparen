@@ -3,7 +3,7 @@ import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { SecurityType } from '../../../enums/securityType';
-import { IndustryGroup } from '../../../enums/industryGroup';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const adidasDividends: Dividends[] = [
   {year: 2018, rate: 3.35, yield: 1.83}, {year: 2017, rate: 2.6}, {year: 2016, rate: 2.00}, {year: 2015, rate: 1.60, yield: 1.78}, {
@@ -1735,6 +1735,7 @@ export const adidasCompany: Company = {
     }
   ],
   industries: [101110, 101111],
+  isharesIndustryName: IsharesIndustryNames.ZyklischeKonsumgueter,
   securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE000A1EWWW0',

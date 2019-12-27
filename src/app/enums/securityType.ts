@@ -7,6 +7,7 @@ export enum SecurityType {
   'Vorzugsaktie' = 'Vorzugsaktie / Vorzüge',
   'InhaberVorzug' = 'Inhaber-Vorzugsaktien',
   'InhaberStamm' = 'Inhaber-Stammaktien',
+  'InhaberGenuss' = 'Inhaber-Genußscheine O.N.',
   'BearerShares' = 'Bearer shares [Inhaberaktie]',
   'RegisteredShares' = 'Registered Shares [Namensaktie]',
   'RegisteredSharesA' = 'Registered Shares Type A [Namensaktie]',
@@ -21,6 +22,7 @@ export enum SecurityType {
   'AccionesNom' = 'Acciones Nom. (ES)',
   'AzioniNom' = 'Azioni nom. (IT)',
   'NamnAktierB' = 'Namn-Aktier B (SE)',
+  'NavneAktierB' = 'Navne-Aktier B (DK)',
   'ETF' = 'ETF',
   'ADR' = 'ADR'
 }

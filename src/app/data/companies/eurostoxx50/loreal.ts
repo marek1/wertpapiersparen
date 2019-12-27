@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [{year: 2018, rate: 3.85, yield: 1.94}, {year: 2017, rate: 3.55}, {year: 2016, rate: 3.30}, {
   year: 2015,
@@ -1118,6 +1119,7 @@ export const lorealCompany: Company = {
     }
   ],
   industries: [101011],
+  isharesIndustryName: IsharesIndustryNames.NichtzyklischeKonsumgueter,
   securityType: SecurityType.Aktie,
   currency: Currency.EUR,
   isin: 'FR0000120321',

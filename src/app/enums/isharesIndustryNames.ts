@@ -1,4 +1,4 @@
-export enum ISharesIndustryNames {
+export enum IsharesIndustryNames {
   'Gesundheitsversorgung' = 'Gesundheitsversorgung',
   'IT' = 'IT',
   'Industrie' = 'Industrie',

@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 1.55, yield: 3.30}, {year: 2017, rate: 1.40}, {
@@ -1870,6 +1871,7 @@ export const unileverCompany: Company = {
     }
   ],
   industries: [2411, 101010, 111211],
+  isharesIndustryName: IsharesIndustryNames.NichtzyklischeKonsumgueter,
   securityType: SecurityType.AandelenOopNaam,
   currency: Currency.EUR,
   isin: 'NL0000009355',

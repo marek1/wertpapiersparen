@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 0.26, yield: 5.62}, {year: 2017, rate: 0.09}, {year: 2016, rate: 0.08}, {
@@ -1697,6 +1698,7 @@ export const bbvaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/BBVA_2019.svg/500px-BBVA_2019.svg.png',
   products: [],
   industries: [141010, 141011],
+  isharesIndustryName: IsharesIndustryNames.Financials,
   securityType: SecurityType.AccionesNom,
   currency: Currency.EUR,
   isin: 'ES0113211835',

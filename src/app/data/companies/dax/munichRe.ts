@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const munichReDividends = [
   {year: 2018, rate: 9.25, yield: 4.87}, {year: 2017, rate: 8.60}, {year: 2016, rate: 8.60}, {
@@ -1759,6 +1760,7 @@ export const munichReCompany: Company = {
     }
   ],
   industries: [141210, 141211],
+  isharesIndustryName: IsharesIndustryNames.Financials,
   currency: Currency.EUR,
   securityType: SecurityType.VinkulierteNamensaktie,
   isin: 'DE0008430026',

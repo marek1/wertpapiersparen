@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 1.94, yield: 3.19}, {year: 2017, rate: 1.90}, {
@@ -1033,6 +1034,7 @@ export const danoneCompany: Company = {
     }
   ],
   industries: [2411, 2412],
+  isharesIndustryName: IsharesIndustryNames.NichtzyklischeKonsumgueter,
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000120644',

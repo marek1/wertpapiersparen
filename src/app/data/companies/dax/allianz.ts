@@ -3,6 +3,7 @@ import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { Company } from '../../../interfaces/company';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const allianzDividends = [
   {year: 2018, rate: 9.00, yield: 5.12}, {year: 2017, rate: 8.00}, {year: 2016, rate: 7.60}, {
@@ -1758,6 +1759,7 @@ export const allianzCompany: Company = {
     }
   ],
   industries: [141210, 141011],
+  isharesIndustryName: IsharesIndustryNames.Financials,
   securityType: SecurityType.Namensaktie,
   currency: Currency.EUR,
   isin: 'DE0008404005',

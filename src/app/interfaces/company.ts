@@ -4,8 +4,7 @@ import { Indices } from '../enums/indices';
 import { Country } from '../enums/country';
 import { ResponsibilityType } from '../enums/responsibility';
 import { SecurityType } from '../enums/securityType';
-import { Industry } from './industry';
-import { IndustryGroup } from '../enums/industryGroup';
+import { IsharesIndustryNames } from '../enums/isharesIndustryNames';
 
 export interface Dividends {
   year: number;
@@ -42,6 +41,7 @@ export interface Company {
   logo: string;
   products: Product[];
   industries: number[];
+  isharesIndustryName?: IsharesIndustryNames;
   securityType?: SecurityType;
   currency: Currency;
   isin: string;

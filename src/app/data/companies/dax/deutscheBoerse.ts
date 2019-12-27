@@ -3,6 +3,7 @@ import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { Company } from '../../../interfaces/company';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const deutscheBoerseDividends = [
   {year: 2018, rate: 2.70, yield: 2.57}, {year: 2017, rate: 2.45}, {year: 2016, rate: 2.35}, {
@@ -1640,6 +1641,7 @@ export const deutschBoerseCompany: Company = {
     }
   ],
   industries: [1411],
+  isharesIndustryName: IsharesIndustryNames.Financials,
   currency: Currency.EUR,
   securityType: SecurityType.Namensaktie,
   isin: 'DE0005810055',

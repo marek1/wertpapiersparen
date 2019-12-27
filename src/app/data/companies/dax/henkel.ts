@@ -3,6 +3,7 @@ import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { Company } from '../../../interfaces/company';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const henkelDividends = [
   {year: 2018, rate: 1.85, yield: 1.93}, {year: 2017, rate: 1.79}, {year: 2016, rate: 1.62}, {
@@ -2054,6 +2055,7 @@ export const henkelCompany: Company = {
     }
   ],
   industries: [101010, 101011, 171012],
+  isharesIndustryName: IsharesIndustryNames.NichtzyklischeKonsumgueter,
   currency: Currency.EUR,
   securityType: SecurityType.InhaberVorzug,
   isin: 'DE0006048432',

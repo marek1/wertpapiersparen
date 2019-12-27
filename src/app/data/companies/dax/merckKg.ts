@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const merckKgDividends = [
   {year: 2018, rate: 1.25, yield: 1.38}, {year: 2017, rate: 1.25}, {year: 2016, rate: 1.20}, {
@@ -1764,6 +1765,7 @@ export const merckKgCompany: Company = {
     }
   ],
   industries: [1510, 1511, 1610, 161211],
+  isharesIndustryName: IsharesIndustryNames.Gesundheitsversorgung,
   currency: Currency.EUR,
   securityType: SecurityType.Inhaberaktie,
   isin: 'DE0006599905',

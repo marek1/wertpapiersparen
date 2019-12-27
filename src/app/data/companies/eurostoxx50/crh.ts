@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 0.72, yield: 3.22}, {
@@ -56,6 +57,7 @@ export const crhCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/b/bc/Cement_Roadstone_Holding_logo.svg/238px-Cement_Roadstone_Holding_logo.svg.png',
   products: [],
   industries: [111111],
+  isharesIndustryName: IsharesIndustryNames.Materialien,
   securityType: SecurityType.RegisteredShares,
   currency: Currency.EUR,
   isin: 'IE0001827041',

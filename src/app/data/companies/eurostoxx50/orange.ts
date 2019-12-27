@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 0.70, yield: 5.04}, {year: 2017, rate: 0.65}, {
@@ -926,6 +927,7 @@ export const orangeCompany: Company = {
     }
   ],
   industries: [131010, 131013, 131214],
+  isharesIndustryName: IsharesIndustryNames.Kommunikation,
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000133308',

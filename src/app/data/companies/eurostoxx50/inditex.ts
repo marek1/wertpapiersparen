@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2019, rate: 0.88, yield: 3.65}, {year: 2018, rate: 0.75, yield: 2.59}, {year: 2017, rate: 0.68}, {
@@ -1397,6 +1398,7 @@ export const inditexCompany: Company = {
     }
   ],
   industries: [101410, 2010],
+  isharesIndustryName: IsharesIndustryNames.ZyklischeKonsumgueter,
   securityType: SecurityType.AccionesPort,
   currency: Currency.EUR,
   isin: 'ES0148396007',

@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 1.34, yield: 7.07}, {year: 2017, rate: 1.26}, {year: 2016, rate: 1.16}, {
@@ -391,6 +392,7 @@ export const axaCompany: Company = {
     }
   ],
   industries: [141210],
+  isharesIndustryName: IsharesIndustryNames.Financials,
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000120628',

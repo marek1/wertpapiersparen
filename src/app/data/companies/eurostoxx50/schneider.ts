@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 2.35, yield: 3.98}, {year: 2017, rate: 2.20}, {
@@ -971,6 +972,7 @@ export const schneiderCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Schneider_Electric_2007.svg/500px-Schneider_Electric_2007.svg.png',
   products: [],
   industries: [1724],
+  isharesIndustryName: IsharesIndustryNames.Industrie,
   securityType: SecurityType.ActionsPort,
   currency: Currency.EUR,
   isin: 'FR0000121972',

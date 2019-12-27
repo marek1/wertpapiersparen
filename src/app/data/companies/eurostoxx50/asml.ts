@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 1.51, yield: 1.11}, {year: 2017, rate: 1.40}, {year: 2016, rate: 1.20}, {
@@ -57,6 +58,7 @@ export const asmlCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ASML_Logo.svg/500px-ASML_Logo.svg.png',
   products: [],
   industries: [1811],
+  isharesIndustryName: IsharesIndustryNames.IT,
   securityType: SecurityType.AandelenOopNaam,
   currency: Currency.EUR,
   isin: 'NL0010273215',

@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const siemensDividends = [
   {year: 2018, rate: 3.80, yield: 3.44}, {year: 2017, rate: 3.70}, {year: 2016, rate: 3.60}, {
@@ -1722,6 +1723,7 @@ export const siemensCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/2880px-Siemens-logo.svg.png',
   products: [],
   industries: [1720, 111312, 111313, 111317, 141017, 111015, 171410, 171411, 121311, 121312, 1218, 111115],
+  isharesIndustryName: IsharesIndustryNames.Industrie,
   currency: Currency.EUR,
   securityType: SecurityType.Namensaktie,
   isin: 'DE0007236101',

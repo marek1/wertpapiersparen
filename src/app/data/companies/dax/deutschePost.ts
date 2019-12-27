@@ -3,6 +3,7 @@ import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { Company } from '../../../interfaces/company';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const deutschePostDividends = [
   {year: 2018, rate: 1.15, yield: 4.82}, {year: 2017, rate: 1.15}, {year: 2016, rate: 1.05}, {
@@ -1649,6 +1650,7 @@ export const deutschePostCompany: Company = {
     }
   ],
   industries: [1219],
+  isharesIndustryName: IsharesIndustryNames.Industrie,
   currency: Currency.EUR,
   securityType: SecurityType.Namensaktie,
   isin: 'DE0005552004',

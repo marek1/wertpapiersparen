@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 0.20, yield: 10.23}, {year: 2017, rate: 0.20}, {year: 2016, rate: 0.18}, {
@@ -55,6 +56,7 @@ export const intesaCompany: Company = {
   logo: 'https://upload.wikimedia.org/wikipedia/de/thumb/5/51/Intesa_Sanpaolo_logo.svg/500px-Intesa_Sanpaolo_logo.svg.png',
   products: [],
   industries: [141010],
+  isharesIndustryName: IsharesIndustryNames.Financials,
   securityType: SecurityType.AzioniNom,
   currency: Currency.EUR,
   isin: 'IT0000072618',
