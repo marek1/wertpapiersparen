@@ -489,7 +489,7 @@ const otherCompanies = [
 ];
 // tslint:enable:max-line-length
 
-export const AllCompanies = daxCompanies
+export const Companies = daxCompanies
   .concat(mdaxCompanies)
   .concat(tecDaxCompanies)
   .concat(sdaxCompany)

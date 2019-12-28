@@ -1,6 +1,6 @@
 import { Industry } from '../interfaces/industry';
 
-export const industries: Industry[] = [
+export const Industries: Industry[] = [
   {
     id: 10,
     description: 'Urlaub, Erholung, Freizeit und Pflege',

@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
-import { Industry } from '../../interfaces/industry';
 import { IndustryService } from '../../services/industry.service';
-import { industries } from '../../data/industries';
+import { Industries } from '../../data/industries';
 import { FormControl } from '@angular/forms';
 import { Country } from '../../enums/country';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
-import { BasketActions, SearchActions } from '../../actions';
+import { SearchActions } from '../../actions';
 import { Product } from '../../interfaces/product';
+import { Companies } from '../../data/companies';
 
 @Component({
   selector: 'app-by-searchterm',
@@ -47,7 +46,7 @@ export class BySearchtermComponent implements OnInit {
   }
 
   searchWithinCompanies(val: string) {
-    return AllCompanies.filter((comp: Company) => {
+    return Companies.filter((comp: Company) => {
       return comp.name.toLowerCase().indexOf(val.toLowerCase()) > -1
       || comp.description.toLowerCase().indexOf(val.toLowerCase()) > -1
       || comp.tags.map(tag => tag.toLowerCase()).indexOf(val.toLowerCase()) > -1
@@ -62,7 +61,7 @@ export class BySearchtermComponent implements OnInit {
 
   getIndustryName(industryIds: number[], val: string) {
     return industryIds.filter((industryId) => {
-      const foundIndustry = this.industryService.iterateThroughChildren(industries, industryId);
+      const foundIndustry = this.industryService.iterateThroughChildren(Industries, industryId);
       return foundIndustry.description.toString().toLowerCase().indexOf(val.toLowerCase()) > -1;
     });
   }

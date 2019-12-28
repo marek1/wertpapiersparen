@@ -1,5 +1,5 @@
 import { Industry } from '../interfaces/industry';
-import { industries } from '../data/industries';
+import { Industries } from '../data/industries';
 
 export class IndustryService {
 
@@ -38,35 +38,5 @@ export class IndustryService {
     }
     return this.iterateThroughChildren(concatSubs, lastId);
   }
-
-  isChildren(childId: number) {
-
-  }
-  //
-  // getMother(arr: Industry[], industryId: number) {
-  //   console.log('arr : ', arr, ' industryId : ', industryId);
-  //   if (arr === undefined || !arr || arr.length === undefined) {
-  //     return null;
-  //   }
-  //   // we have child, and we want the mother
-  //   // how to use if you want the mother for id = 141010
-  //   for (const industry of arr) {
-  //     // industry is like 10, 11, 12, ...
-  //     const subs = this.iterateThroughChildren(arr, industry.id);
-  //     // // subs is like 1010 ...
-  //     if (!subs) {
-  //       return;
-  //     }
-  //     const lengthOfFoundResults = subs.filter(sub => sub.id === industryId);
-  //     console.log('found ? ', lengthOfFoundResults.length);
-  //     if (lengthOfFoundResults.length === 0) {
-  //       return this.getMother(industry.subIndustries, industryId);
-  //     } else {
-  //       console.log('result : ', industry);
-  //       return industry;
-  //       break;
-  //     }
-  //   }
-  // }
 
 }

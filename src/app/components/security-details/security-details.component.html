@@ -60,6 +60,26 @@
       </div>
   </div>
   
+  <ng-container *ngIf="findInEtfs() as foundEtfs">
+    <div class="row" *ngIf="foundEtfs.length>0">
+      <div class="col-12">
+        <small>
+          In folgenden ETFs enthalten:
+          <span *ngIf="!showMore.etfs" (click)="showMore.etfs=true">zeigen <span class="fa fa-arrow-down"></span> </span>
+          <span *ngIf="showMore.etfs" (click)="showMore.etfs=false">verstecken <span class="fa fa-arrow-up"></span> </span>
+        </small>
+      </div>
+      <div *ngIf="showMore.etfs">
+        TODO: in own component
+        <ul>
+          <li *ngFor="let etf of foundEtfs">
+            {{etf.name}}, ISIN: {{etf.isin}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+  
   <div class="row">
     <div class="col-12">
       <small>Das Unternehmen:</small>

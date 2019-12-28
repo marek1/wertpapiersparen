@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { CompanyStocks } from '../../reducers/basket.reducer';
 import { PriceService } from '../../services/price.service';
 import { IndustryService } from '../../services/industry.service';
-import { industries } from '../../data/industries';
+import { Industries } from '../../data/industries';
 import { Label } from 'ng2-charts';
 import { ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
@@ -76,7 +76,7 @@ export class IndustryChartComponent implements OnInit, OnChanges {
       return this.checkArrays(industryIds, x.industryIds);
     });
     if (foundItems.length === 0) {
-      const industryNames = industryIds.map(industryId => this.industryService.iterateThroughChildren(industries, industryId).description);
+      const industryNames = industryIds.map(industryId => this.industryService.iterateThroughChildren(Industries, industryId).description);
       this.amountByIndustry.push({
         amount: this.priceService.getLatestPrice(companyStock),
         industryIds,

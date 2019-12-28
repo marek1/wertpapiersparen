@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../interfaces/product';
-import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
-import { BasketActions, SearchActions } from '../../actions';
+import { SearchActions } from '../../actions';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
 import { ProductFilters } from '../../data/product-filters';
+import { Companies } from '../../data/companies';
 
 interface CompanyProduct {
   company: Company;
@@ -27,7 +27,7 @@ export class ByProductComponent implements OnInit {
 
   constructor(private store: Store<fromRoot.AppState>) {
     this.products = [];
-    AllCompanies.map((company: Company) => {
+    Companies.map((company: Company) => {
       if (company.products.length > 0) {
         company.products.map((product) => {
           this.products.push({

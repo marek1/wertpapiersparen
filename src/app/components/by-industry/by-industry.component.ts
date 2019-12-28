@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Industry } from '../../interfaces/industry';
-import { industries } from '../../data/industries';
+import { Industries } from '../../data/industries';
 import { SelectedIndustry } from '../../interfaces/selectedIndustry';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
@@ -31,9 +31,9 @@ export class ByIndustryComponent {
 
   setIndustries() {
     if (this.lastId === 0) {
-      this.industriesInThisLevel = industries;
+      this.industriesInThisLevel = Industries;
     } else {
-      this.industriesInThisLevel = this.industryService.iterateThroughChildren(industries, this.lastId).subIndustries;
+      this.industriesInThisLevel = this.industryService.iterateThroughChildren(Industries, this.lastId).subIndustries;
     }
   }
 

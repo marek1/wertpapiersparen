@@ -1,10 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
-import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
-import { Observable } from 'rxjs';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
-import { BasketActions } from '../../actions';
+import { Companies } from '../../data/companies';
 
 @Component({
   selector: 'app-securities-list-in-industry',
@@ -31,7 +29,7 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
   }
 
   retrieveSecurities(industryId: number) {
-    this.foundSecurities = AllCompanies.filter((company: Company) => company.industries.includes(industryId));
+    this.foundSecurities = Companies.filter((company: Company) => company.industries.includes(industryId));
   }
 
 }

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AllCompanies } from '../../data/companies';
 import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
 import { Ranking, ShareRank } from '../../interfaces/ranking';
 import { AllRankings } from '../../data/rankings';
-import { select, Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
-import { BasketActions } from '../../actions';
 import { ChartOptions } from 'chart.js';
-import { industries } from '../../data/industries';
 import { IndustryService } from '../../services/industry.service';
+import { Companies } from '../../data/companies';
+import { Industries } from '../../data/industries';
+import { Etfs } from '../../data/etfs';
+import { Etf } from '../../interfaces/etf';
 
 interface ShowMore {
   industries: boolean;
   badges: boolean;
+  etfs: boolean;
   info: boolean;
   description: boolean;
   products: boolean;
@@ -60,6 +60,7 @@ export class SecurityDetailsComponent implements OnInit {
     this.showMore = {
       industries: false,
       badges: false,
+      etfs: false,
       info: false,
       description: false,
       products: false
@@ -72,7 +73,7 @@ export class SecurityDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id && !isNaN(parseInt(id, 10))) {
-      this.company = AllCompanies.filter((company: Company) => company.id === parseInt(id, 10))[0];
+      this.company = Companies.filter((company: Company) => company.id === parseInt(id, 10))[0];
       this.fillChartData();
       this.setNumberOfProducts();
     }
@@ -111,6 +112,10 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   getIndustryName(industryId: number) {
-    return this.industryService.iterateThroughChildren(industries, industryId).description;
+    return this.industryService.iterateThroughChildren(Industries, industryId).description;
+  }
+
+  findInEtfs(): Etf[] {
+    return Etfs.filter((etf) => etf.shares.includes(this.company.id));
   }
 }

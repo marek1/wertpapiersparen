@@ -8,6 +8,7 @@ interface ShareRatio {
 
 export interface Etf {
   name: string;
+  url: string;
   isin: string;
   currency: Currency;
   manager: string;
