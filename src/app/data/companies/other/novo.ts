@@ -1566,7 +1566,203 @@ export const novoNordiskCompany: Company = {
   description: 'Novo Nordisk A/S produziert und vermarktet pharmazeutische Produkte und Dienstleistungen. Seit der Gründung in Dänemark im Jahr 1923 hat sich das Unternehmen zu einem Weltmarktführer im Sektor Diabetes-Pharmazie entwickelt. In diesem Bereich hat das Unternehmen auch die breiteste Produktpalette der gesamten Industrie. Auch in den Bereichen Blutgerinnungsmedikamente, Wachstumshormontherapie und Hormonersatztherapie ist das Unternehmen vertreten.',
   link_wikipedia: 'https://de.wikipedia.org/wiki/Novo_Nordisk',
   logo: 'https://www.novonordisk.com/content/dam/Denmark/HQ/Commons/images/novo-logo-dhpx.image.136.0.png',
-  products: [], // TODO: https://www.novonordisk.com/products.html
+  products: [
+    {
+      id: 123110,
+      name: 'NovoPen Echo®',
+      logo: ''
+    },
+    {
+      id: 123111,
+      name: 'NovoPen® 5',
+      logo: ''
+    },
+    {
+      id: 123112,
+      name: 'NovoPen® 4',
+      logo: ''
+    },
+    {
+      id: 123113,
+      name: 'FlexTouch®',
+      logo: ''
+    },
+    {
+      id: 123114,
+      name: 'FlexPen®',
+      logo: ''
+    },
+    {
+      id: 123115,
+      name: 'InnoLet®',
+      logo: ''
+    },
+    {
+      id: 123116,
+      name: 'NovoFine Plus®',
+      logo: ''
+    },
+    {
+      id: 123117,
+      name: 'NovoFine®',
+      logo: ''
+    },
+    {
+      id: 123118,
+      name: 'NovoTwist®',
+      logo: ''
+    },
+    {
+      id: 123119,
+      name: 'NovoFine®  AutoCover®',
+      logo: ''
+    },
+    {
+      id: 123120,
+      name: 'Tresiba®',
+      logo: ''
+    },
+    {
+      id: 123121,
+      name: 'Xultophy®',
+      logo: ''
+    },
+    {
+      id: 123122,
+      name: 'Levemir®',
+      logo: ''
+    },
+    {
+      id: 123123,
+      name: 'Ryzodeg®',
+      logo: ''
+    },
+    {
+      id: 123124,
+      name: 'NovoMix®',
+      logo: ''
+    },
+    {
+      id: 123125,
+      name: 'Fiasp®',
+      logo: ''
+    },
+    {
+      id: 123126,
+      name: 'NovoRapid®',
+      logo: ''
+    },
+    {
+      id: 123127,
+      name: 'Insulatard®',
+      logo: ''
+    },
+    {
+      id: 123128,
+      name: 'Actrapid®',
+      logo: ''
+    },
+    {
+      id: 123129,
+      name: 'Mixtard®',
+      logo: ''
+    },
+    {
+      id: 123130,
+      name: 'Victoza®',
+      logo: ''
+    },
+    {
+      id: 123131,
+      name: 'Ozempic®',
+      logo: ''
+    },
+    {
+      id: 123132,
+      name: 'NovoNorm®',
+      logo: ''
+    },
+    {
+      id: 123133,
+      name: 'Saxenda®',
+      logo: ''
+    },
+    {
+      id: 123134,
+      name: 'NovoSeven®',
+      logo: ''
+    },
+    {
+      id: 123135,
+      name: 'NovoEight®',
+      logo: ''
+    },
+    {
+      id: 123136,
+      name: 'NovoThirteen®',
+      logo: ''
+    },
+    {
+      id: 123137,
+      name: 'Refixia®',
+      logo: ''
+    },
+    {
+      id: 123138,
+      name: 'Esperoct®',
+      logo: ''
+    },
+    {
+      id: 123139,
+      name: 'Norditropin®',
+      logo: ''
+    },
+    {
+      id: 123140,
+      name: 'NordiPen®',
+      logo: ''
+    },
+    {
+      id: 123141,
+      name: 'PenMate®',
+      logo: ''
+    },
+    {
+      id: 123142,
+      name: 'Macrilen™',
+      logo: ''
+    },
+    {
+      id: 123143,
+      name: 'Vagifem®',
+      logo: ''
+    },
+    {
+      id: 123144,
+      name: 'Activelle®',
+      logo: ''
+    },
+    {
+      id: 123145,
+      name: 'Kliogest®',
+      logo: ''
+    },
+    {
+      id: 123146,
+      name: 'Novofem®',
+      logo: ''
+    },
+    {
+      id: 123147,
+      name: 'Trisequens®',
+      logo: ''
+    },
+    {
+      id: 123148,
+      name: 'Estrofem®',
+      logo: ''
+    }
+  ],
   industries: [1610],
   isharesIndustryName: IsharesIndustryNames.Gesundheitsversorgung,
   securityType: SecurityType.NavneAktierB,
@@ -1579,7 +1775,7 @@ export const novoNordiskCompany: Company = {
   current_indices: [Indices.EuroStoxx50],
   end_of_month_prices: prices,
   dividends,
-  tags: ['Pharmaunternehmen', 'Diabetes', 'Hämophilie', 'Wachstumshormontherapie', 'Hormonersatztherapie']
+  tags: ['Pharmaunternehmen', 'Diabetes', 'Hämophilie', 'Wachstumshormontherapie', 'Hormonersatztherapie', 'Insulin']
 };
 // tslint:enable:max-line-length
 

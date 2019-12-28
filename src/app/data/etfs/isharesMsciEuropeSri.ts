@@ -32,6 +32,9 @@ import { deutschBoerseCompany } from '../companies/dax/deutscheBoerse';
 import { orangeCompany } from '../companies/eurostoxx50/orange';
 import { henkelCompany } from '../companies/dax/henkel';
 import { merckKgCompany } from '../companies/dax/merckKg';
+import { beiersdorfCompany } from '../companies/dax/beiersdorf';
+import { electroluxCompany } from '../companies/other/electrolux';
+import { metroCompany } from '../companies/mdax/metro';
 
 export const isharesMsciEuropeSri: Etf = {
   name: 'iShares MSCI Europe SRI UCITS',
@@ -42,106 +45,36 @@ export const isharesMsciEuropeSri: Etf = {
   country: Country.Irland,
   gewinn: 'thesaurierend',
   ter: 0.3,
+  yields: [
+    20.57, 11.38, 6.99
+  ],
+  lastUpdate: '2019-12-26',
   shares: [
-    {
-      companyId: asmlCompany.id,
-      ratio: 4.73
-    },
-    {
-      companyId: rocheCompany.id,
-      ratio: 4.67
-    },
-    {
-      companyId: allianzCompany.id,
-      ratio: 4.42
-    },
-    {
-      companyId: siemensCompany.id,
-      ratio: 4.39
-    },
-    {
-      companyId: novoNordiskCompany.id,
-      ratio: 4.38
-    },
-    {
-      companyId: sapCompany.id,
-      ratio: 4.34
-    },
-    {
-      companyId: unileverCompany.id,
-      ratio: 3.68
-    },
-    {
-      companyId: lorealCompany.id,
-      ratio: 3.26
-    },
-    {
-      companyId: adidasCompany.id,
-      ratio: 2.56
-    },
-    {
-      companyId: schneiderCompany.id,
-      ratio: 2.48
-    },
-    {
-      companyId: axaCompany.id,
-      ratio: 2.38
-    },
-    {
-      companyId: danoneCompany.id,
-      ratio: 2.24
-    },
-    // TODO: RELX PLC, 2.13%
-    {
-      companyId: essilorLuxotticaCompany.id,
-      ratio: 1.91
-    },
-    {
-      companyId: munichReCompany.id,
-      ratio: 1.87
-    },
-    {
-      companyId: intesaCompany.id,
-      ratio: 1.74
-    },
-    {
-      companyId: inditexCompany.id,
-      ratio: 1.66
-    },
-    {
-      companyId: bbvaCompany.id,
-      ratio: 1.64
-    },
-    {
-      companyId: deutschePostCompany.id,
-      ratio: 1.64
-    },
-    // TODO: SwissRe, 1.45%
-    {
-      companyId: crhCompany.id,
-      ratio: 1.39
-    },
-    // TODO: London Stock Exchange, 1.38%
-    {
-      companyId: deutschBoerseCompany.id,
-      ratio: 1.29
-    },
-    {
-      companyId: orangeCompany.id,
-      ratio: 1.29
-    },
-    // TODO: Givaudan, 1.25%
-    // TODO: Lonza, 1.18%
-    // TODO: STANDARD CHARTERED PLC, 1.18%
-    // aso.
-    {
-      companyId: henkelCompany.id,
-      ratio: 0.8
-    },
-    {
-      companyId: merckKgCompany.id,
-      ratio: 0.66
-    }
-    // continue with page 5
+    asmlCompany.id,
+    rocheCompany.id,
+    allianzCompany.id,
+    siemensCompany.id,
+    novoNordiskCompany.id,
+    sapCompany.id,
+    unileverCompany.id,
+    lorealCompany.id,
+    adidasCompany.id,
+    schneiderCompany.id,
+    axaCompany.id,
+    danoneCompany.id,
+    essilorLuxotticaCompany.id,
+    munichReCompany.id,
+    intesaCompany.id,
+    inditexCompany.id,
+    bbvaCompany.id,
+    deutschePostCompany.id,
+    crhCompany.id,
+    deutschBoerseCompany.id,
+    orangeCompany.id,
+    henkelCompany.id,
+    merckKgCompany.id,
+    beiersdorfCompany.id,
+    electroluxCompany.id,
+    metroCompany.id,
   ],
 };

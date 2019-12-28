@@ -3,6 +3,7 @@ import { Currency } from '../../../enums/currencies';
 import { Indices } from '../../../enums/indices';
 import { Company } from '../../../interfaces/company';
 import { SecurityType } from '../../../enums/securityType';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const beiersdorfDividends = [
   {year: 2018, rate: 0.70, yield: 0.77}, {year: 2017, rate: 0.70}, {year: 2016, rate: 0.70}, {
@@ -1779,6 +1780,7 @@ export const beiersdorfCompany: Company = {
     }
   ],
   industries: [101010, 101011],
+  isharesIndustryName: IsharesIndustryNames.NichtzyklischeKonsumgueter,
   securityType: SecurityType.Inhaberaktie,
   currency: Currency.EUR,
   isin: 'DE0005200000',

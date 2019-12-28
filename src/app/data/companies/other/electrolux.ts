@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 const dividends = [
   {year: 2018, rate: 8.50, yield: 4.55}, {year: 2017, rate: 8.30}, {year: 2016, rate: 7.50}, {
@@ -104,6 +105,7 @@ export const electroluxCompany: Company = {
     }
   ],
   industries: [111212],
+  isharesIndustryName: IsharesIndustryNames.ZyklischeKonsumgueter,
   securityType: SecurityType.NamnAktierB,
   currency: Currency.EUR,
   isin: 'SE0000103814',

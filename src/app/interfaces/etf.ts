@@ -15,5 +15,7 @@ export interface Etf {
   country: Country;
   gewinn: 'thesaurierend' | 'ausschüttend';
   ter: number;
-  shares: ShareRatio[];
+  yields: number[]; // 1, 3, 5, 10, 15, 20 Jahre
+  lastUpdate: string;
+  shares: number[];
 }
