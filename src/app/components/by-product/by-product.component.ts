@@ -22,7 +22,6 @@ export class ByProductComponent implements OnInit {
 
   private products: CompanyProduct[];
   public productFilter$: Observable<string>;
-  public favouredSecuritiesIdList$: Observable<number[]>;
   public filteredProducts: CompanyProduct[];
   public filterArgs = ProductFilters;
 
@@ -42,7 +41,6 @@ export class ByProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
     this.productFilter$ = this.store.pipe(select(fromRoot.getProductFilter));
     this.productFilter$.subscribe((productFilter: string) => {
       this.filter(productFilter);
@@ -68,11 +66,4 @@ export class ByProductComponent implements OnInit {
     });
   }
 
-  addToFavourites(company: Company) {
-    this.store.dispatch(BasketActions.addToFavourites({company}));
-  }
-
-  removeFromFavourites(company: Company) {
-    this.store.dispatch(BasketActions.removeFromFavourites({company}));
-  }
 }

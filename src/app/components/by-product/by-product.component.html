@@ -21,12 +21,7 @@
               </a>
             </div>
             <div class="col-3 text-right">
-              <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(companyProduct.company.id) === -1" type="button" class="btn btn-primary btn-sm" (click)="addToFavourites(companyProduct.company)">
-                <span class="fa fa-heart"></span>
-              </button>
-              <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(companyProduct.company.id) > -1" type="button" class="btn btn-danger btn-sm" (click)="removeFromFavourites(companyProduct.company)">
-                <span class="fa fa-heart"></span>
-              </button>
+              <app-add-to-favourites [version]="'short'" [company]="companyProduct.company"></app-add-to-favourites>
             </div>
           </div>
         </div>

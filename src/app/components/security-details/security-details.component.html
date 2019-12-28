@@ -6,12 +6,7 @@
     <div class="col-7 text-right">
       <h3>{{company.name}}</h3>
       <div>
-        <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary" (click)="addToFavourites()">
-          Zu Favoriten <span class="fa fa-heart"></span> hinzufügen
-        </button>
-        <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger" (click)="removeFromFavourites()">
-          Aus Favoriten <span class="fa fa-heart"></span> entfernen
-        </button>
+        <app-add-to-favourites [version]="'long'" [company]="company"></app-add-to-favourites>
       </div>
       <div>
         {{company.city}}, {{Countries[company.country]}}
@@ -19,19 +14,32 @@
       <div>
         <a href="{{company.url}}" target="_blank">Webseite</a>
       </div>
-      <div>
-        <span class="small badge badge-secondary margin horizontal right-5" *ngFor="let tag of company.tags">
-          {{tag}}
-        </span>
-      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <small>
+        Industrien:
+        <span *ngIf="!showMore.industries" (click)="showMore.industries=true">zeigen <span class="fa fa-arrow-down"></span> </span>
+        <span *ngIf="showMore.industries" (click)="showMore.industries=false">verstecken <span class="fa fa-arrow-up"></span> </span>
+      </small>
+    </div>
+    <div class="col-12" *ngIf="showMore.industries">
+      <span class="small badge badge-info margin horizontal right-5" *ngFor="let industryId of company.industries">
+        {{getIndustryName(industryId)}}
+      </span>
     </div>
   </div>
 
   <div class="row" *ngIf="getRankingsForCompany().length > 0">
       <div class="col-12">
-        <small>Auszeichnungen:</small>
+        <small>
+          Auszeichnungen:
+          <span *ngIf="!showMore.badges" (click)="showMore.badges=true">zeigen <span class="fa fa-arrow-down"></span> </span>
+          <span *ngIf="showMore.badges" (click)="showMore.badges=false">verstecken <span class="fa fa-arrow-up"></span> </span>
+        </small>
       </div>
-      <div class="col-12">
+      <div class="col-12" *ngIf="showMore.badges">
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let x of getRankingsForCompany()">
             <span *ngIf="x.maxResult!==1">
@@ -51,7 +59,7 @@
         </ul>
       </div>
   </div>
-
+  
   <div class="row">
     <div class="col-12">
       <small>Das Unternehmen:</small>
@@ -73,8 +81,13 @@
         </div>
       </div>
     </div>
+    <div class="col-12">
+      <span class="small badge badge-secondary margin horizontal right-5" *ngFor="let tag of company.tags">
+        {{tag}}
+      </span>
+    </div>
   </div>
-
+  
   <div class="row">
 
     <div class="col-12 margin vertical top-bottom-10">

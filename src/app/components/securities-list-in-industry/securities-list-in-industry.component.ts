@@ -15,7 +15,6 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
 
   @Input() industryId: number;
 
-  public favouredSecuritiesIdList$: Observable<number[]>;
   public foundSecurities: Company[];
 
   constructor(private store: Store<fromRoot.AppState>) {
@@ -23,7 +22,6 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -34,14 +32,6 @@ export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
 
   retrieveSecurities(industryId: number) {
     this.foundSecurities = AllCompanies.filter((company: Company) => company.industries.includes(industryId));
-  }
-
-  addToFavourites(company: Company) {
-    this.store.dispatch(BasketActions.addToFavourites({company}));
-  }
-
-  removeFromFavourites(company: Company) {
-    this.store.dispatch(BasketActions.removeFromFavourites({company}));
   }
 
 }

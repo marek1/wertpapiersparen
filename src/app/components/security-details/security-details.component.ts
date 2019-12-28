@@ -8,9 +8,13 @@ import { AllRankings } from '../../data/rankings';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { BasketActions } from '../../actions';
-import { Observable } from 'rxjs';
 import { ChartOptions } from 'chart.js';
+import { industries } from '../../data/industries';
+import { IndustryService } from '../../services/industry.service';
+
 interface ShowMore {
+  industries: boolean;
+  badges: boolean;
   info: boolean;
   description: boolean;
   products: boolean;
@@ -23,7 +27,6 @@ interface ShowMore {
 })
 export class SecurityDetailsComponent implements OnInit {
 
-  public favouredSecuritiesIdList$: Observable<number[]>;
   public company: Company;
   public Countries: typeof Country;
   public chartLabels: string[];
@@ -36,7 +39,7 @@ export class SecurityDetailsComponent implements OnInit {
   public endNo: number;
   public selectedTab: number;
 
-  constructor(public route: ActivatedRoute, private store: Store<fromRoot.AppState>) {
+  constructor(public route: ActivatedRoute, private industryService: IndustryService) {
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -55,6 +58,8 @@ export class SecurityDetailsComponent implements OnInit {
       }
     };
     this.showMore = {
+      industries: false,
+      badges: false,
       info: false,
       description: false,
       products: false
@@ -65,7 +70,6 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
     const id = this.route.snapshot.paramMap.get('id');
     if (id && !isNaN(parseInt(id, 10))) {
       this.company = AllCompanies.filter((company: Company) => company.id === parseInt(id, 10))[0];
@@ -94,14 +98,6 @@ export class SecurityDetailsComponent implements OnInit {
     }
   }
 
-  addToFavourites() {
-    this.store.dispatch(BasketActions.addToFavourites({company: this.company}));
-  }
-
-  removeFromFavourites() {
-    this.store.dispatch(BasketActions.removeFromFavourites({company: this.company}));
-  }
-
   getRankingsForCompany(): Ranking[] {
     return AllRankings.filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false);
   }
@@ -112,5 +108,9 @@ export class SecurityDetailsComponent implements OnInit {
 
   getPercentage(x: number, of: number) {
     return (x * 100) / of;
+  }
+
+  getIndustryName(industryId: number) {
+    return this.industryService.iterateThroughChildren(industries, industryId).description;
   }
 }

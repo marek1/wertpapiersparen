@@ -1,5 +1,5 @@
-import { ISharesIndustryNames } from '../enums/isharesIndustryNames';
 import { IndustryGroup } from '../enums/industryGroup';
+import { IsharesIndustryNames } from '../enums/isharesIndustryNames';
 
 export interface Industry {
   id: number;
@@ -8,5 +8,5 @@ export interface Industry {
   industryGroup?: IndustryGroup;
   subIndustries: Industry[]|null;
   includeIndustries?: number[];
-  isharesIndustryNames?: ISharesIndustryNames[];
+  isharesIndustryNames?: IsharesIndustryNames[];
 }

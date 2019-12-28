@@ -10,6 +10,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
 import { BasketActions, SearchActions } from '../../actions';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-by-searchterm',
@@ -18,7 +19,6 @@ import { BasketActions, SearchActions } from '../../actions';
 })
 export class BySearchtermComponent implements OnInit {
 
-  public favouredSecuritiesIdList$: Observable<number[]>;
   public searchTerm$: Observable<string>;
   public submitted: boolean;
   public results: Company[];
@@ -35,7 +35,6 @@ export class BySearchtermComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
     this.searchTerm$ = this.store.pipe(select(fromRoot.getSearchTerm));
     this.searchTerm$.subscribe((val) => {
       this.searchTermFormControl.setValue(val);
@@ -56,23 +55,19 @@ export class BySearchtermComponent implements OnInit {
       || comp.wkn.toLowerCase().indexOf(val.toLowerCase()) > -1
       || comp.isin.toLowerCase().indexOf(val.toLowerCase()) > -1
       || comp.symbol.toLowerCase().indexOf(val.toLowerCase()) > -1
-      || this.getIndustryName(comp.industries, val).length > 0;
+      || this.getIndustryName(comp.industries, val).length > 0
+      || this.getProductName(comp.products, val).length > 0;
     });
   }
 
   getIndustryName(industryIds: number[], val: string) {
     return industryIds.filter((industryId) => {
       const foundIndustry = this.industryService.iterateThroughChildren(industries, industryId);
-      return foundIndustry.description.toLowerCase().indexOf(val.toLowerCase()) > -1;
+      return foundIndustry.description.toString().toLowerCase().indexOf(val.toLowerCase()) > -1;
     });
   }
 
-  addToFavourites(company: Company) {
-    this.store.dispatch(BasketActions.addToFavourites({company}));
+  getProductName(products: Product[], val: string) {
+    return products.filter((product) => product.name.toString().toLowerCase().indexOf(val.toLowerCase()) > -1);
   }
-
-  removeFromFavourites(company: Company) {
-    this.store.dispatch(BasketActions.removeFromFavourites({company}));
-  }
-
 }

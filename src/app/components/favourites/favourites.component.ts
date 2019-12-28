@@ -6,6 +6,7 @@ import { Company } from '../../interfaces/company';
 import { CompanyStocks } from '../../reducers/basket.reducer';
 import { BasketActions } from '../../actions';
 import { PriceService } from '../../services/price.service';
+import { Country } from '../../enums/country';
 
 @Component({
   selector: 'app-favourites',
@@ -14,7 +15,8 @@ import { PriceService } from '../../services/price.service';
 })
 export class FavouritesComponent implements OnInit {
 
-  favouredSecurities$: Observable<CompanyStocks[]>;
+  public favouredSecurities$: Observable<CompanyStocks[]>;
+  public Countries = Country;
 
   constructor(
     private priceService: PriceService,
