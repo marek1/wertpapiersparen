@@ -16,32 +16,35 @@
       </div>
     </div>
   </div>
+  
   <div class="row">
     <div class="col-12">
       <small>
-        Industrien:
-        <span *ngIf="!showMore.industries" (click)="showMore.industries=true">zeigen <span class="fa fa-arrow-down"></span> </span>
-        <span *ngIf="showMore.industries" (click)="showMore.industries=false">verstecken <span class="fa fa-arrow-up"></span> </span>
+        <span>Industrie(n): </span>
       </small>
     </div>
-    <div class="col-12" *ngIf="showMore.industries">
-      <span class="small badge badge-info margin horizontal right-5" *ngFor="let industryId of company.industries">
+    <div class="col-12">
+      <span class="small badge badge-info margin horizontal right-5" *ngFor="let industryId of company.industries | slice:0:showMore.noIndustries">
         {{getIndustryName(industryId)}}
       </span>
+      <small *ngIf="company.industries.length > 1">
+        <span class="clickable" *ngIf="showMore.noIndustries === 1" (click)="showMore.noIndustries = company.industries.length">weitere <span class="fa fa-plus-circle"></span> </span>
+        <span class="clickable" *ngIf="showMore.noIndustries > 1" (click)="showMore.noIndustries = 1">weniger <span class="fa fa-minus-circle"></span> </span>
+      </small>
     </div>
   </div>
-
-  <div class="row" *ngIf="getRankingsForCompany().length > 0">
+  
+  <ng-container *ngIf="getRankingsForCompany() as rankings">
+  
+    <div class="row" *ngIf="rankings.length > 0">
       <div class="col-12">
         <small>
           Auszeichnungen:
-          <span *ngIf="!showMore.badges" (click)="showMore.badges=true">zeigen <span class="fa fa-arrow-down"></span> </span>
-          <span *ngIf="showMore.badges" (click)="showMore.badges=false">verstecken <span class="fa fa-arrow-up"></span> </span>
         </small>
       </div>
-      <div class="col-12" *ngIf="showMore.badges">
+      <div class="col-12">
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let x of getRankingsForCompany()">
+          <li class="list-group-item" *ngFor="let x of rankings | slice:0:showMore.noBadges">
             <span *ngIf="x.maxResult!==1">
               <span class="fa color"
                     [ngClass]="{'fa-thumbs-up color--green': getPercentage(getPointsInRanking(x).points, x.maxResult) > 75,
@@ -57,25 +60,31 @@
             <span class="small"><a href="{{x.link}}" target="_blank">Zur Webseite</a></span>
           </li>
         </ul>
+        <div class="text-right small" *ngIf="rankings.length > 1">
+          <span class="clickable" *ngIf="showMore.noBadges === 1" (click)="showMore.noBadges = rankings.length">weitere <span class="fa fa-plus-circle"></span> </span>
+          <span class="clickable" *ngIf="showMore.noBadges > 1" (click)="showMore.noBadges = 1">weniger <span class="fa fa-minus-circle"></span> </span>
+        </div>
       </div>
-  </div>
+    </div>
+  </ng-container>
   
   <ng-container *ngIf="findInEtfs() as foundEtfs">
-    <div class="row" *ngIf="foundEtfs.length>0">
+    <div class="row" *ngIf="foundEtfs.length > 0">
       <div class="col-12">
         <small>
           In folgenden ETFs enthalten:
-          <span *ngIf="!showMore.etfs" (click)="showMore.etfs=true">zeigen <span class="fa fa-arrow-down"></span> </span>
-          <span *ngIf="showMore.etfs" (click)="showMore.etfs=false">verstecken <span class="fa fa-arrow-up"></span> </span>
         </small>
       </div>
-      <div *ngIf="showMore.etfs">
-        TODO: in own component
-        <ul>
-          <li *ngFor="let etf of foundEtfs">
-            {{etf.name}}, ISIN: {{etf.isin}}
+      <div class="col-12" *ngIf="showMore.etfs">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let etf of foundEtfs | slice:0:showMore.etfs">
+            <app-etf-detail [etf]="etf"></app-etf-detail>
           </li>
         </ul>
+        <div class="text-right small"  *ngIf="foundEtfs.length > 1">
+          <span class="clickable" *ngIf="showMore.etfs === 1" (click)="showMore.etfs = foundEtfs.length">weitere <span class="fa fa-plus-circle"></span> </span>
+          <span class="clickable" *ngIf="showMore.etfs > 1" (click)="showMore.etfs = 1">weniger <span class="fa fa-minus-circle"></span> </span>
+        </div>
       </div>
     </div>
   </ng-container>
@@ -88,12 +97,12 @@
       <div class="row">
         <div class="col-12">
           <div class="font-italic">
-            <span (click)="showMore.description=!showMore.description">
+            <span class="clickable" (click)="showMore.description=!showMore.description">
               {{ showMore.description || company.description.length < 100 ? company.description : company.description.substr(0,100) + '.....' }}
             </span>
-            <span *ngIf="company.description.length >= 100" [ngSwitch]="showMore.description">
-              <span class="small btn-link" *ngSwitchCase="false" (click)="showMore.description=true">mehr über {{company.name}}</span>
-            </span>
+            <ng-container *ngIf="company.description.length >= 100" [ngSwitch]="showMore.description">
+              <span class="clickable" *ngSwitchCase="false" (click)="showMore.description=true">mehr <span class="fa fa-arrow-circle-o-down"></span> </span>
+            </ng-container>
             <div class="small" *ngIf="showMore.description">
               Quelle: <a href="{{company.link_wikipedia}}" target="_blank">{{company.link_wikipedia}}</a>
             </div>

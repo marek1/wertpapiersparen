@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-12">
+    <div class="clickable" (click)="showMore=!showMore">{{etf.name}}</div>
+    <small>
+      <span class="clickable" *ngIf="!showMore" (click)="showMore=true">mehr <span class="fa fa-arrow-circle-o-down"></span> </span>
+    </small>
+  </div>
+</div>
+<ng-container *ngIf="showMore">
+  
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      ISIN
+    </div>
+    <div class="col-12 col-sm-8">
+      {{etf.isin}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Emittent
+    </div>
+    <div class="col-12 col-sm-8">
+      {{etf.issuer}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Fondsmanager
+    </div>
+    <div class="col-12 col-sm-8">
+      {{etf.manager}}
+    </div>
+  </div>
+  
+  
+  
+  <small>
+    <span class="clickable" *ngIf="showMore" (click)="showMore=false">weniger <span class="fa fa-arrow-circle-o-up"></span> </span>
+  </small>
+</ng-container>

@@ -28,8 +28,10 @@ import { beiersdorfCompany } from '../../companies/dax/beiersdorf';
 import { electroluxCompany } from '../../companies/other/electrolux';
 import { metroCompany } from '../../companies/mdax/metro';
 
+// tslint:disable:max-line-length
 export const isharesMsciEuropeSri: Etf = {
   name: 'iShares MSCI Europe SRI UCITS',
+  description: 'Der Fonds ist bestrebt, die Performance eines Index nachzubilden, der sich aus europäischen ESG (umweltverträglich, sozial und staatlich)-überprüften Unternehmensanleihen zusammensetzt.',
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251767/ishares-dow-jones-europe-sustainability-screened-ucits-etf#/',
   isin: 'IE00B52VJ196',
   currency: Currency.EUR,
@@ -71,3 +73,5 @@ export const isharesMsciEuropeSri: Etf = {
     metroCompany.id,
   ],
 };
+// tslint:enable:max-line-length
+

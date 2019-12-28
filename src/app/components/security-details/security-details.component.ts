@@ -12,10 +12,9 @@ import { Etfs } from '../../data/etfs';
 import { Etf } from '../../interfaces/etf';
 
 interface ShowMore {
-  industries: boolean;
-  badges: boolean;
-  etfs: boolean;
-  info: boolean;
+  noIndustries: number;
+  noBadges: number;
+  etfs: number;
   description: boolean;
   products: boolean;
 }
@@ -58,10 +57,9 @@ export class SecurityDetailsComponent implements OnInit {
       }
     };
     this.showMore = {
-      industries: false,
-      badges: false,
-      etfs: false,
-      info: false,
+      noIndustries: 1,
+      noBadges: 1,
+      etfs: 1,
       description: false,
       products: false
     };

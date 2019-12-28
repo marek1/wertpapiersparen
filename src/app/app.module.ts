@@ -30,6 +30,7 @@ import { IndustryService } from './services/industry.service';
 import { BySearchtermComponent } from './components/by-searchterm/by-searchterm.component';
 import { ByProductComponent } from './components/by-product/by-product.component';
 import { AddToFavouritesComponent } from './components/add-to-favourites/add-to-favourites.component';
+import { EtfDetailComponent } from './components/etf-detail/etf-detail.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -48,7 +49,8 @@ registerLocaleData(localeDe, 'de');
     IndustryChartComponent,
     BySearchtermComponent,
     ByProductComponent,
-    AddToFavouritesComponent
+    AddToFavouritesComponent,
+    EtfDetailComponent
   ],
   imports: [
     FormsModule,

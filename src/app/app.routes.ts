@@ -5,7 +5,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
 
 export const appRoutes = [
   {
-    path: 'wertpapier/:name/:id',
+    path: 'unternehmen/:name/:id',
     component: SecurityDetailsComponent
   },
   {
