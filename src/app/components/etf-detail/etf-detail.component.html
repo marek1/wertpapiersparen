@@ -1,20 +1,27 @@
-<div class="row">
-  <div class="col-12">
-    <div class="clickable" (click)="showMore=!showMore">{{etf.name}}</div>
-    <small>
-      <span class="clickable" *ngIf="!showMore" (click)="showMore=true">mehr <span class="fa fa-arrow-circle-o-down"></span> </span>
-    </small>
-  </div>
-</div>
-<ng-container *ngIf="showMore">
+<div class="margin vertical top-bottom-10">
   <div class="row">
-    <div class="col-12 font-italic">
+    <div class="col-12">
+      <img src="{{etf.logo}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="clickable">
+        {{etf.name}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Anlageziel:
+    </div>
+    <div class="col-12 col-sm-8 font-italic">
       {{etf.description}}
     </div>
   </div>
   <div class="row">
     <div class="col-12 col-sm-4 small">
-      ISIN
+      ISIN:
     </div>
     <div class="col-12 col-sm-8">
       {{etf.isin}}
@@ -22,7 +29,7 @@
   </div>
   <div class="row">
     <div class="col-12 col-sm-4 small">
-      Emittent
+      Emittent:
     </div>
     <div class="col-12 col-sm-8">
       {{etf.issuer}}
@@ -30,16 +37,64 @@
   </div>
   <div class="row">
     <div class="col-12 col-sm-4 small">
-      Fondsmanager
+      Fondsmanager:
     </div>
     <div class="col-12 col-sm-8">
       {{etf.manager}}
     </div>
   </div>
-  
-  
-  
-  <small>
-    <span class="clickable" *ngIf="showMore" (click)="showMore=false">weniger <span class="fa fa-arrow-circle-o-up"></span> </span>
-  </small>
-</ng-container>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      TER bzw. jährliche Kosten:
+    </div>
+    <div class="col-12 col-sm-8">
+      {{etf.ter | number:'1.2-2':'de' }} %
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Domizil:
+    </div>
+    <div class="col-12 col-sm-8">
+      {{Countries[etf.country]}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Gewinnverwendung:
+    </div>
+    <div class="col-12 col-sm-8">
+      {{etf.gewinn}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Perfomance:
+    </div>
+    <div class="col-12 col-sm-8">
+      <div class="row" *ngFor="let per of etf.yields; let i = index">
+        <div class="col-6">
+          {{['1 Jahr', '3 Jahre', '5 Jahre', '10 Jahre', '15 Jahre', '20 Jahre'][i]}}
+        </div>
+        <div class="col-6">
+          {{per | number:'1.2-2':'de'}} %
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Enthaltene Unternehmen:
+    </div>
+    <div class="col-12 col-sm-8">
+      <div *ngFor="let comps of etf.shares">
+        <a [routerLink]="['/unternehmen', comps.name, comps.id]">
+          {{comps.name}} <span class="fa fa-arrow-circle-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

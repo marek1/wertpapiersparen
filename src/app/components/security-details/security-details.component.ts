@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Company } from '../../interfaces/company';
 import { Country } from '../../enums/country';
@@ -26,7 +26,8 @@ interface ShowMore {
 })
 export class SecurityDetailsComponent implements OnInit {
 
-  public company: Company;
+  @Input() company: Company;
+
   public Countries: typeof Country;
   public chartLabels: string[];
   public chartData: number[];
@@ -38,7 +39,7 @@ export class SecurityDetailsComponent implements OnInit {
   public endNo: number;
   public selectedTab: number;
 
-  constructor(public route: ActivatedRoute, private industryService: IndustryService) {
+  constructor(private industryService: IndustryService) {
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -69,12 +70,8 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id && !isNaN(parseInt(id, 10))) {
-      this.company = Companies.filter((company: Company) => company.id === parseInt(id, 10))[0];
-      this.fillChartData();
-      this.setNumberOfProducts();
-    }
+    this.fillChartData();
+    this.setNumberOfProducts();
   }
 
   fillChartData() {
@@ -98,7 +95,18 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   getRankingsForCompany(): Ranking[] {
-    return AllRankings.filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false);
+    return AllRankings
+      .filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false)
+      .sort((x, y) => {
+        const _x = this.getPercentage(this.getPointsInRanking(x).points, x.maxResult);
+        const _y = this.getPercentage(this.getPointsInRanking(y).points, y.maxResult);
+        if (_x > _y) {
+          return -1;
+        } else {
+          return 1;
+        }
+        return 0;
+      });
   }
 
   getPointsInRanking(ranking: Ranking): ShareRank {
@@ -114,6 +122,6 @@ export class SecurityDetailsComponent implements OnInit {
   }
 
   findInEtfs(): Etf[] {
-    return Etfs.filter((etf) => etf.shares.includes(this.company.id));
+    return Etfs.filter((etf) => etf.shares.filter((comp) => comp.id === this.company.id));
   }
 }

@@ -39,7 +39,7 @@
     <div class="row" *ngIf="rankings.length > 0">
       <div class="col-12">
         <small>
-          Auszeichnungen:
+          Das Unternehmen wurde in Studien zum Thema Nachhaltigkeit und CSR untersucht:
         </small>
       </div>
       <div class="col-12">
@@ -78,7 +78,10 @@
       <div class="col-12" *ngIf="showMore.etfs">
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let etf of foundEtfs | slice:0:showMore.etfs">
-            <app-etf-detail [etf]="etf"></app-etf-detail>
+            {{etf.name}}
+            <a [routerLink]="['/etf', etf.name, etf.isin]">
+             <span class="fa fa-arrow-circle-right"></span>
+            </a>
           </li>
         </ul>
         <div class="text-right small"  *ngIf="foundEtfs.length > 1">

@@ -31,6 +31,8 @@ import { BySearchtermComponent } from './components/by-searchterm/by-searchterm.
 import { ByProductComponent } from './components/by-product/by-product.component';
 import { AddToFavouritesComponent } from './components/add-to-favourites/add-to-favourites.component';
 import { EtfDetailComponent } from './components/etf-detail/etf-detail.component';
+import { EtfPageComponent } from './components/etf-page/etf-page.component';
+import { CompanyPageComponent } from './components/company-page/company-page.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -50,7 +52,9 @@ registerLocaleData(localeDe, 'de');
     BySearchtermComponent,
     ByProductComponent,
     AddToFavouritesComponent,
-    EtfDetailComponent
+    EtfDetailComponent,
+    EtfPageComponent,
+    CompanyPageComponent
   ],
   imports: [
     FormsModule,
