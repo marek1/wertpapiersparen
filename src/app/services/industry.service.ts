@@ -6,6 +6,10 @@ export class IndustryService {
   constructor() {
   }
 
+  getIndustryName(industryId: number) {
+    return this.iterateThroughChildren(Industries, industryId).description;
+  }
+
   getTopLevelIndustry(industryIds: number[], digitsWanted: number) {
     // numbers are the industry ids
     // if id has more than x digits then go up until id with length digitsWanted is found

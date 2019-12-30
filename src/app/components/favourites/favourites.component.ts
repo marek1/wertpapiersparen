@@ -7,6 +7,8 @@ import { CompanyStocks } from '../../reducers/basket.reducer';
 import { BasketActions } from '../../actions';
 import { PriceService } from '../../services/price.service';
 import { Country } from '../../enums/country';
+import { Industries } from '../../data/industries';
+import { IndustryService } from '../../services/industry.service';
 
 @Component({
   selector: 'app-favourites',
@@ -16,14 +18,16 @@ import { Country } from '../../enums/country';
 export class FavouritesComponent implements OnInit {
 
   public favouredSecurities$: Observable<CompanyStocks[]>;
-  public Countries = Country;
+  public showMore: number;
 
   constructor(
     private priceService: PriceService,
+    private industryService: IndustryService,
     private store: Store<fromRoot.AppState>) {
   }
 
   ngOnInit() {
+    this.showMore = 1;
     this.favouredSecurities$ = this.store.pipe(select(fromRoot.getFavouredSecurities));
   }
 
@@ -31,6 +35,9 @@ export class FavouritesComponent implements OnInit {
     this.store.dispatch(BasketActions.updateFavourites({amount: anzahl, company: firma}));
   }
 
+  getIndustryName(industryId: number) {
+    return this.industryService.getIndustryName(industryId);
+  }
 
   getNetSum(items: CompanyStocks[], currency: string) {
     let returnValue = 0;

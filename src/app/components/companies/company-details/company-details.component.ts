@@ -130,7 +130,7 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   getIndustryName(industryId: number) {
-    return this.industryService.iterateThroughChildren(Industries, industryId).description;
+    return this.industryService.getIndustryName(industryId);
   }
 
   findInEtfs(): Etf[] {

@@ -25,6 +25,10 @@
     color: blue;
   }
 }
+.badge {
+  max-width: 100%;
+  overflow: hidden;
+}
 .badge-number {
   font-size: 9px;
   padding: 0;
