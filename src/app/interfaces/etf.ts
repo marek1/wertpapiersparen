@@ -1,7 +1,7 @@
 import { Currency } from '../enums/currencies';
 import { Country } from '../enums/country';
 
-interface CompanyShort {
+export interface CompanyShort {
   id: number;
   name: string;
 }

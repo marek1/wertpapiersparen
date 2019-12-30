@@ -65,24 +65,29 @@ export const selectSearchState = createFeatureSelector<AppState, fromSearch.Stat
   fromSearch.featureKey
 );
 
-export const getSelectedSearchMethod = createSelector(
+export const getCompaniesSelectedSearchMethod = createSelector(
   selectSearchState,
-  fromSearch.getSelectedSearchMethod
+  fromSearch.getCompaniesSelectedSearchMethod
 );
 
-export const getSelectedIndustries = createSelector(
+export const getCompaniesSelectedIndustries = createSelector(
   selectSearchState,
-  fromSearch.getSelectedIndustries
+  fromSearch.getCompaniesSelectedIndustries
 );
 
-export const getSearchTerm = createSelector(
+export const getCompaniesSearchTerm = createSelector(
   selectSearchState,
-  fromSearch.getSearchTerm
+  fromSearch.getCompaniesSearchTerm
 );
 
-export const getProductFilter = createSelector(
+export const getCompaniesProductFilter = createSelector(
   selectSearchState,
-  fromSearch.getProductFilter
+  fromSearch.getCompaniesProductFilter
+);
+
+export const getEtfsSearchTerm = createSelector(
+  selectSearchState,
+  fromSearch.getEtfsSearchTerm
 );
 
 /**

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Companies } from '../../data/companies';
-import { Company } from '../../interfaces/company';
+import { Companies } from '../../../data/companies';
+import { Company } from '../../../interfaces/company';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ByIndustryComponent } from './by-industry.component';
+import { EtfsBySearchtermComponent } from './etfs-by-searchterm.component';
 
-describe('ByIndustryComponent', () => {
-  let component: ByIndustryComponent;
-  let fixture: ComponentFixture<ByIndustryComponent>;
+describe('EtfsBySearchtermComponent', () => {
+  let component: EtfsBySearchtermComponent;
+  let fixture: ComponentFixture<EtfsBySearchtermComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ByIndustryComponent ]
+      declarations: [ EtfsBySearchtermComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ByIndustryComponent);
+    fixture = TestBed.createComponent(EtfsBySearchtermComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

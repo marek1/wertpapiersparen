@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../interfaces/product';
-import { Company } from '../../interfaces/company';
-import { SearchActions } from '../../actions';
+import { Product } from '../../../interfaces/product';
+import { Company } from '../../../interfaces/company';
+import { SearchActions } from '../../../actions';
 import { select, Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
+import * as fromRoot from '../../../reducers';
 import { Observable } from 'rxjs';
-import { ProductFilters } from '../../data/product-filters';
-import { Companies } from '../../data/companies';
+import { ProductFilters } from '../../../data/product-filters';
+import { Companies } from '../../../data/companies';
 
 interface CompanyProduct {
   company: Company;
@@ -14,11 +14,11 @@ interface CompanyProduct {
 }
 
 @Component({
-  selector: 'app-by-product',
-  templateUrl: './by-product.component.html',
-  styleUrls: ['./by-product.component.scss']
+  selector: 'app-companies-by-product',
+  templateUrl: './companies-by-product.component.html',
+  styleUrls: ['./companies-by-product.component.scss']
 })
-export class ByProductComponent implements OnInit {
+export class CompaniesByProductComponent implements OnInit {
 
   private products: CompanyProduct[];
   public productFilter$: Observable<string>;
@@ -41,7 +41,7 @@ export class ByProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productFilter$ = this.store.pipe(select(fromRoot.getProductFilter));
+    this.productFilter$ = this.store.pipe(select(fromRoot.getCompaniesProductFilter));
     this.productFilter$.subscribe((productFilter: string) => {
       this.filter(productFilter);
     });

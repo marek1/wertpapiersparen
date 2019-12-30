@@ -9,24 +9,34 @@ export const featureKey = 'search';
 export interface State {
   isLoading: boolean;
   errorMessage: string|null;
-  selectedSearchMethod: number|null;
-  selectedIndustries: SelectedIndustry[];
-  searchTerm: string;
-  productFilter: string;
+  companies: {
+    selectedSearchMethod: number|null
+    selectedIndustries: SelectedIndustry[];
+    searchTerm: string;
+    productFilter: string;
+  };
+  etfs: {
+    searchTerm: string;
+  };
 }
 
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
-  selectedSearchMethod: SearchMethods.Industrie,
-  selectedIndustries: [
-    {
-      id: 0,
-      name: 'Alle Industrien'
-    }
-  ],
-  searchTerm: '',
-  productFilter: ProductFilters[0]
+  companies: {
+    selectedSearchMethod: SearchMethods.Industrie,
+    selectedIndustries: [
+      {
+        id: 0,
+        name: 'Alle Industrien'
+      }
+    ],
+    searchTerm: '',
+    productFilter: ProductFilters[0]
+  },
+  etfs: {
+    searchTerm: ''
+  }
 };
 
 export const reducer = createReducer(
@@ -35,27 +45,50 @@ export const reducer = createReducer(
   // i.e. on(action.actionName,,,,)
   on(SearchActions.setSelectedSearchMethodAction, (state, {selectedSearchMethod}) => ({
     ...state,
-    selectedSearchMethod
+    companies: {
+      ...state.companies,
+      selectedSearchMethod
+    }
   })),
   on(SearchActions.addToSelectedIndustries, (state, {selectedIndustries}) => ({
     ...state,
-    selectedIndustries: [...state.selectedIndustries, selectedIndustries]
+    companies: {
+      ...state.companies,
+      selectedIndustries: [...state.companies.selectedIndustries, selectedIndustries]
+    }
   })),
   on(SearchActions.removeFromSelectedIndustries, (state, {endPosition}) =>  ({
     ...state,
-    selectedIndustries: state.selectedIndustries.slice(0, endPosition + 1)
+    companies: {
+      ...state.companies,
+      selectedIndustries: state.companies.selectedIndustries.slice(0, endPosition + 1)
+    }
   })),
-  on(SearchActions.updateSearchTerm, (state, {searchTerm}) =>  ({
+  on(SearchActions.updateCompaniesSearchTerm, (state, {searchTerm}) =>  ({
     ...state,
-    searchTerm
+    companies: {
+      ...state.companies,
+      searchTerm
+    }
   })),
   on(SearchActions.updateProductFilter, (state, {productFilter}) =>  ({
     ...state,
-    productFilter
+    companies: {
+      ...state.companies,
+      productFilter
+    }
+  })),
+  on(SearchActions.updateEtfsSearchTerm, (state, {searchTerm}) =>  ({
+    ...state,
+    etfs: {
+      ...state.etfs,
+      searchTerm
+    }
   }))
 );
 
-export const getSelectedSearchMethod = (state: State) => state.selectedSearchMethod;
-export const getSelectedIndustries = (state: State) => state.selectedIndustries;
-export const getSearchTerm = (state: State) => state.searchTerm;
-export const getProductFilter = (state: State) => state.productFilter;
+export const getCompaniesSelectedSearchMethod = (state: State) => state.companies.selectedSearchMethod;
+export const getCompaniesSelectedIndustries = (state: State) => state.companies.selectedIndustries;
+export const getCompaniesSearchTerm = (state: State) => state.companies.searchTerm;
+export const getCompaniesProductFilter = (state: State) => state.companies.productFilter;
+export const getEtfsSearchTerm = (state: State) => state.etfs.searchTerm;

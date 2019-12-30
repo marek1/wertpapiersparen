@@ -1,15 +1,15 @@
 import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
-import { Company } from '../../interfaces/company';
+import { Company } from '../../../interfaces/company';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
-import { Companies } from '../../data/companies';
+import * as fromRoot from '../../../reducers';
+import { Companies } from '../../../data/companies';
 
 @Component({
-  selector: 'app-securities-list-in-industry',
-  templateUrl: './securities-list-in-industry.component.html',
-  styleUrls: ['./securities-list-in-industry.component.scss']
+  selector: 'app-companies-list-in-industry',
+  templateUrl: './companies-list-in-industry.component.html',
+  styleUrls: ['./companies-list-in-industry.component.scss']
 })
-export class SecuritiesListInIndustryComponent implements OnInit, OnChanges {
+export class CompaniesListInIndustryComponent implements OnInit, OnChanges {
 
   @Input() industryId: number;
 

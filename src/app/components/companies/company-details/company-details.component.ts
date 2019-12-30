@@ -1,15 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Company } from '../../interfaces/company';
-import { Country } from '../../enums/country';
-import { Ranking, ShareRank } from '../../interfaces/ranking';
-import { AllRankings } from '../../data/rankings';
+import { Company } from '../../../interfaces/company';
+import { Country } from '../../../enums/country';
+import { Ranking, ShareRank } from '../../../interfaces/ranking';
+import { AllRankings } from '../../../data/rankings';
 import { ChartOptions } from 'chart.js';
-import { IndustryService } from '../../services/industry.service';
-import { Companies } from '../../data/companies';
-import { Industries } from '../../data/industries';
-import { Etfs } from '../../data/etfs';
-import { Etf } from '../../interfaces/etf';
+import { IndustryService } from '../../../services/industry.service';
+import { Industries } from '../../../data/industries';
+import { Etfs } from '../../../data/etfs';
+import { Etf } from '../../../interfaces/etf';
 
 interface ShowMore {
   noIndustries: number;
@@ -20,11 +18,11 @@ interface ShowMore {
 }
 
 @Component({
-  selector: 'app-security-details',
-  templateUrl: './security-details.component.html',
-  styleUrls: ['./security-details.component.scss']
+  selector: 'app-company-details',
+  templateUrl: './company-details.component.html',
+  styleUrls: ['./company-details.component.scss']
 })
-export class SecurityDetailsComponent implements OnInit {
+export class CompanyDetailsComponent implements OnInit {
 
   @Input() company: Company;
 

@@ -12,14 +12,10 @@ import { ROOT_REDUCERS, metaReducers } from './reducers';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavComponent } from './components/nav/nav.component';
-import { ByIndustryComponent } from './components/by-industry/by-industry.component';
-import { SecuritiesListInIndustryComponent } from './components/securities-list-in-industry/securities-list-in-industry.component';
-import { SecurityDetailsComponent } from './components/security-details/security-details.component';
 import { ChartsModule } from 'ng2-charts';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { NumberInputComponent } from './components/number-input/number-input.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
-
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { BasketEffects } from './effects/basket.effects';
@@ -27,12 +23,18 @@ import { BasketService } from './services/basket.service';
 import { PriceService } from './services/price.service';
 import { IndustryChartComponent } from './components/industry-chart/industry-chart.component';
 import { IndustryService } from './services/industry.service';
-import { BySearchtermComponent } from './components/by-searchterm/by-searchterm.component';
-import { ByProductComponent } from './components/by-product/by-product.component';
 import { AddToFavouritesComponent } from './components/add-to-favourites/add-to-favourites.component';
-import { EtfDetailComponent } from './components/etf-detail/etf-detail.component';
-import { EtfPageComponent } from './components/etf-page/etf-page.component';
-import { CompanyPageComponent } from './components/company-page/company-page.component';
+import { EtfDetailComponent } from './components/etfs/etf-detail/etf-detail.component';
+import { EtfPageComponent } from './components/etfs/etf-page/etf-page.component';
+import { CompanyPageComponent } from './components/companies/company-page/company-page.component';
+import { CompaniesHomeComponent } from './components/companies/companies-home/companies-home.component';
+import { EtfsHomeComponent } from './components/etfs/etfs-home/etfs-home.component';
+import { EtfsBySearchtermComponent } from './components/etfs/etfs-by-searchterm/etfs-by-searchterm.component';
+import { CompaniesByIndustryComponent } from './components/companies/companies-by-industry/companies-by-industry.component';
+import { CompaniesBySearchtermComponent } from './components/companies/companies-by-searchterm/companies-by-searchterm.component';
+import { CompaniesByProductComponent } from './components/companies/companies-by-product/companies-by-product.component';
+import { CompaniesListInIndustryComponent } from './components/companies/companies-list-in-industry/companies-list-in-industry.component';
+import { CompanyDetailsComponent } from './components/companies/company-details/company-details.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -42,19 +44,22 @@ registerLocaleData(localeDe, 'de');
     HomeComponent,
     PageNotFoundComponent,
     NavComponent,
-    ByIndustryComponent,
-    SecuritiesListInIndustryComponent,
-    SecurityDetailsComponent,
+    CompaniesByIndustryComponent,
+    CompaniesListInIndustryComponent,
+    CompanyDetailsComponent,
     FavouritesComponent,
     NumberInputComponent,
     PriceDisplayComponent,
     IndustryChartComponent,
-    BySearchtermComponent,
-    ByProductComponent,
+    CompaniesBySearchtermComponent,
+    CompaniesByProductComponent,
     AddToFavouritesComponent,
     EtfDetailComponent,
     EtfPageComponent,
-    CompanyPageComponent
+    CompanyPageComponent,
+    CompaniesHomeComponent,
+    EtfsHomeComponent,
+    EtfsBySearchtermComponent
   ],
   imports: [
     FormsModule,

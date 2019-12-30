@@ -1,34 +1,24 @@
-<div class="home">
+<div class="home row position-absolut w-100-percent h-100-percent">
+  
+  <div class="col-12 margin-top-50-percent h-100-percent">
+  
+  
+        <a
+        class="btn btn-primary w-100-percent margin vertical top-bottom-10"
+        [routerLink]="'/unternehmen'"
+        role="button">
+          Ich suche Unternehmen (und deren Aktien)
+        </a>
+        
+        
+        <a
+        class="btn btn-primary w-100-percent margin vertical top-bottom-10"
+        [routerLink]="'/etfs'"
+        role="button">
+          Ich suche ETFs
+        </a>
+      
 
-  <div class="d-flex justify-content-center align-items-center min-h-500px">
-
-    <div class="text-center">
-      Suche nach Unternehmen (und deren Aktien) mit Hilfe folgender Suchmethoden
-    </div>
-
-  </div>
-
-  <div class="d-flex justify-content-center align-items-center min-h-500px">
-
-      <div class="btn-group" role="group" aria-label="Suchmethoden" *ngFor="let x of searchMethods | keyvalue; let i = index">
-          <button type="button"
-                  class="btn btn-secondary"
-                  [ngClass]="{'active': (selectedSearchMethod$ | async) === i}"
-                  (click)="setMethod(i)">
-            {{searchMethods[i]}}
-          </button>
-      </div>
-
-  </div>
-
-  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">
-    <app-by-searchterm></app-by-searchterm>
-  </div>
-  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Industrie']">
-    <app-by-industry></app-by-industry>
-  </div>
-  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Produkt(e)']">
-    <app-by-product></app-by-product>
   </div>
 
 

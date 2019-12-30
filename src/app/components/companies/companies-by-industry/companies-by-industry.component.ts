@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { Industry } from '../../interfaces/industry';
-import { Industries } from '../../data/industries';
-import { SelectedIndustry } from '../../interfaces/selectedIndustry';
+import { Industry } from '../../../interfaces/industry';
+import { Industries } from '../../../data/industries';
+import { SelectedIndustry } from '../../../interfaces/selectedIndustry';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
-import { SearchActions } from '../../actions';
-import { IndustryService } from '../../services/industry.service';
+import * as fromRoot from '../../../reducers';
+import { SearchActions } from '../../../actions';
+import { IndustryService } from '../../../services/industry.service';
 
 @Component({
-  selector: 'app-by-industry',
-  templateUrl: './by-industry.component.html',
-  styleUrls: ['./by-industry.component.scss']
+  selector: 'app-companies-by-industry',
+  templateUrl: './companies-by-industry.component.html',
+  styleUrls: ['./companies-by-industry.component.scss']
 })
-export class ByIndustryComponent {
+export class CompaniesByIndustryComponent {
 
   // holding the level of selected industries
   public industriesInThisLevel: Industry[];
@@ -22,7 +22,7 @@ export class ByIndustryComponent {
 
   constructor(private industryService: IndustryService, private store: Store<fromRoot.AppState>) {
     this.industriesInThisLevel = [];
-    this.selectedIndustries$ = this.store.pipe(select(fromRoot.getSelectedIndustries));
+    this.selectedIndustries$ = this.store.pipe(select(fromRoot.getCompaniesSelectedIndustries));
     this.selectedIndustries$.subscribe((selectedIndustries: SelectedIndustry[]) => {
       this.lastId = selectedIndustries[selectedIndustries.length - 1].id;
       this.setIndustries();

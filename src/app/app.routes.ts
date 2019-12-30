@@ -1,9 +1,10 @@
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
-import { SecurityDetailsComponent } from './components/security-details/security-details.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
-import { EtfPageComponent } from './components/etf-page/etf-page.component';
-import { CompanyPageComponent } from './components/company-page/company-page.component';
+import { EtfPageComponent } from './components/etfs/etf-page/etf-page.component';
+import { CompanyPageComponent } from './components/companies/company-page/company-page.component';
+import { CompaniesHomeComponent } from './components/companies/companies-home/companies-home.component';
+import { EtfsHomeComponent } from './components/etfs/etfs-home/etfs-home.component';
 
 export const appRoutes = [
   {
@@ -21,6 +22,14 @@ export const appRoutes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'unternehmen',
+    component: CompaniesHomeComponent
+  },
+  {
+    path: 'etfs',
+    component: EtfsHomeComponent
   },
   { path: '',
     redirectTo: 'home',

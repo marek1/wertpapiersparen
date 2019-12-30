@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Etfs } from '../../data/etfs';
-import { Etf } from '../../interfaces/etf';
+import { Etfs } from '../../../data/etfs';
+import { Etf } from '../../../interfaces/etf';
 
 @Component({
   selector: 'app-etf-page',

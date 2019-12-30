@@ -1,0 +1,34 @@
+<div class="margin vertical top-bottom-10">
+  <form>
+    <div class="form-group">
+      <input
+      type="text"
+      class="form-control"
+      id="searchTerm"
+      [formControl]="searchTermFormControl"
+      placeholder="Suchbegriff eingeben">
+    </div>
+    <div [hidden]="searchTermFormControl.valid || searchTermFormControl.pristine"
+         class="alert alert-danger">
+      Bitte einen Suchbegriff eingeben
+    </div>
+  </form>
+</div>
+<div class="row" *ngIf="results.length > 0">
+  <div class="col-12">
+    <div *ngFor="let etf of results">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              {{etf.name}}
+              <a [routerLink]="['/etf', etf.name, etf.isin]">
+                <span class="fa fa-arrow-circle-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

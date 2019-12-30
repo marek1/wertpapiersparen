@@ -1,0 +1,35 @@
+<div class="home">
+  
+  <div class="d-flex justify-content-center align-items-center min-h-500px">
+    
+    <div class="text-center margin vertical top-bottom-10">
+      Hier kannst du nach Unternehmen (und deren Aktien) mit Hilfe folgender Suchmethoden suchen.
+    </div>
+  
+  </div>
+  
+  <div class="d-flex justify-content-center align-items-center min-h-500px">
+    
+    <div class="btn-group" role="group" aria-label="Suchmethoden" *ngFor="let x of searchMethods | keyvalue; let i = index">
+      <button type="button"
+              class="btn btn-secondary"
+              [ngClass]="{'active': (selectedSearchMethod$ | async) === i}"
+              (click)="setMethod(i)">
+        {{searchMethods[i]}}
+      </button>
+    </div>
+  
+  </div>
+  
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">
+    <app-companies-by-searchterm></app-companies-by-searchterm>
+  </div>
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Industrie']">
+    <app-companies-by-industry></app-companies-by-industry>
+  </div>
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Produkt(e)']">
+    <app-companies-by-product></app-companies-by-product>
+  </div>
+
+
+</div>

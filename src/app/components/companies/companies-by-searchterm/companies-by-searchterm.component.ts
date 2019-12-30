@@ -1,40 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { Company } from '../../interfaces/company';
-import { IndustryService } from '../../services/industry.service';
-import { Industries } from '../../data/industries';
+import { Company } from '../../../interfaces/company';
+import { IndustryService } from '../../../services/industry.service';
+import { Industries } from '../../../data/industries';
 import { FormControl } from '@angular/forms';
-import { Country } from '../../enums/country';
+import { Country } from '../../../enums/country';
 import { select, Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
+import * as fromRoot from '../../../reducers';
 import { Observable } from 'rxjs';
-import { SearchActions } from '../../actions';
-import { Product } from '../../interfaces/product';
-import { Companies } from '../../data/companies';
+import { SearchActions } from '../../../actions';
+import { Product } from '../../../interfaces/product';
+import { Companies } from '../../../data/companies';
 
 @Component({
-  selector: 'app-by-searchterm',
-  templateUrl: './by-searchterm.component.html',
-  styleUrls: ['./by-searchterm.component.scss']
+  selector: 'app-companies-by-searchterm',
+  templateUrl: './companies-by-searchterm.component.html',
+  styleUrls: ['./companies-by-searchterm.component.scss']
 })
-export class BySearchtermComponent implements OnInit {
+export class CompaniesBySearchtermComponent implements OnInit {
 
   public searchTerm$: Observable<string>;
   public submitted: boolean;
   public results: Company[];
   public searchTermFormControl: FormControl;
-  public Countries = Country;
+  public Countries: typeof Country;
 
   constructor(private industryService: IndustryService, private store: Store<fromRoot.AppState>) {
     this.submitted = false;
     this.results = [];
     this.searchTermFormControl = new FormControl();
     this.searchTermFormControl.valueChanges.subscribe((val) => {
-      this.store.dispatch(SearchActions.updateSearchTerm({searchTerm: val}));
+      this.store.dispatch(SearchActions.updateCompaniesSearchTerm({searchTerm: val}));
     });
+    this.Countries = Country;
   }
 
   ngOnInit() {
-    this.searchTerm$ = this.store.pipe(select(fromRoot.getSearchTerm));
+    this.searchTerm$ = this.store.pipe(select(fromRoot.getCompaniesSearchTerm));
     this.searchTerm$.subscribe((val) => {
       this.searchTermFormControl.setValue(val);
       if (val && val.length > 0) {
