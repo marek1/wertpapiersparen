@@ -74,7 +74,7 @@
     <div class="col-12 col-sm-8">
       <div class="row" *ngFor="let per of etf.yields; let i = index">
         <div class="col-6">
-          {{['1 Jahr', '3 Jahre', '5 Jahre', '10 Jahre', '15 Jahre', '20 Jahre'][i]}}
+          {{performanceYears[i]}}
         </div>
         <div class="col-6">
           {{per | number:'1.2-2':'de'}} %

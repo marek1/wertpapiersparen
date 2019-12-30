@@ -30,4 +30,24 @@ export class PriceService {
     return latestPriceEntry[0];
   }
 
+  getPerformanceFor(prices: any, yearDiff: number) {
+    const thisYear = 2019; // TODO: new Date().getFullYear();
+    let result = null;
+    let newestPrice = null;
+    // take last price we have
+    Object.entries(prices).forEach((price: any, counter: number) => {
+      if (counter === 0) {
+        newestPrice = parseFloat(price[1]['4. close']);
+      } else {
+        const priceYear = parseInt(price[0].toString().substr(0, 4), 10);
+        if (!isNaN(priceYear) && thisYear - priceYear === yearDiff && !result) {
+          const oldPrice = parseFloat(price[1]['4. close']);
+          result = !isNaN(oldPrice) ? ((newestPrice * 100 / oldPrice) - 100) : 0;
+        }
+      }
+    });
+    return result;
+  }
+
+
 }

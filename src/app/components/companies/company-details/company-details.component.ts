@@ -8,6 +8,11 @@ import { IndustryService } from '../../../services/industry.service';
 import { Industries } from '../../../data/industries';
 import { Etfs } from '../../../data/etfs';
 import { Etf } from '../../../interfaces/etf';
+import { HelperService } from '../../../services/helpers';
+import { Performances } from '../../../enums/performances';
+import { patchTsGetExpandoInitializer } from '@angular/compiler-cli/ngcc/src/packages/patch_ts_expando_initializer';
+import { last } from 'rxjs/operators';
+import { PriceService } from '../../../services/price.service';
 
 interface ShowMore {
   noIndustries: number;
@@ -36,8 +41,12 @@ export class CompanyDetailsComponent implements OnInit {
   public batchOfProductsToBeShown: number;
   public endNo: number;
   public selectedTab: number;
+  public performanceYears: number[];
+  public performances: number[];
 
-  constructor(private industryService: IndustryService) {
+  constructor(private industryService: IndustryService,
+              private priceService: PriceService,
+              private helperService: HelperService) {
     this.Countries = Country;
     this.chartLabels = [];
     this.chartData = [];
@@ -65,11 +74,16 @@ export class CompanyDetailsComponent implements OnInit {
     this.batchOfProductsToBeShown = 3;
     this.endNo = 0;
     this.selectedTab = 1;
+    this.performanceYears = this.helperService.EnumToArray(Performances);
+
   }
 
   ngOnInit() {
     this.fillChartData();
     this.setNumberOfProducts();
+    this.performances = this.performanceYears.map((x, y) => {
+      return this.priceService.getPerformanceFor(this.company.end_of_month_prices, parseInt(Performances[x], 10));
+    });
   }
 
   fillChartData() {
@@ -122,4 +136,5 @@ export class CompanyDetailsComponent implements OnInit {
   findInEtfs(): Etf[] {
     return Etfs.filter((etf) => etf.shares.filter((comp) => comp.id === this.company.id));
   }
+
 }

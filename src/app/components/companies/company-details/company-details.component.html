@@ -39,7 +39,7 @@
     <div class="row" *ngIf="rankings.length > 0">
       <div class="col-12">
         <small>
-          Das Unternehmen wurde in Studien zum Thema Nachhaltigkeit und CSR untersucht:
+          Einschätzungen zu Nachhaltigkeit und CSR:
         </small>
       </div>
       <div class="col-12">
@@ -183,6 +183,19 @@
                 [legend]="chartLegend"
                 [options]="chartOptions">
         </canvas>
+    </div>
+    <div class="col-12">
+      <div>
+        <small>Performance</small>
+      </div>
+      <div class="row" *ngFor="let per of performanceYears; let i = index">
+        <div class="col-6">
+          {{per}}
+        </div>
+        <div class="col-6">
+          {{performances[i] | number:'1.2-2':'de'}} %
+        </div>
+      </div>
     </div>
   </div>
   <div class="row" *ngIf="selectedTab===2">

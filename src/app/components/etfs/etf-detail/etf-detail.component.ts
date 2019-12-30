@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Etf } from '../../../interfaces/etf';
 import { Country } from '../../../enums/country';
+import { HelperService } from '../../../services/helpers';
+import { Performances } from '../../../enums/performances';
 
 @Component({
   selector: 'app-etf-detail',
@@ -12,13 +14,14 @@ export class EtfDetailComponent implements OnInit {
   @Input() etf: Etf;
 
   public Countries: typeof Country;
+  public performanceYears: number[];
 
-  constructor() {
+  constructor(private helperService: HelperService) {
     this.Countries = Country;
+    this.performanceYears = this.helperService.EnumToArray(Performances);
   }
 
   ngOnInit() {
-    console.log('this.etf : ', this.etf);
   }
 
 }
