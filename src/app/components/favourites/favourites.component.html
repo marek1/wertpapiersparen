@@ -5,9 +5,9 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let fav of (favouredSecurities$|async)">
+<div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
+  <ul class="list-group" *ngIf="favouredSecurities.length > 0">
+    <li class="list-group-item" *ngFor="let fav of favouredSecurities">
       <div class="row">
         <div class="col-6 col-sm-4">
           <app-number-input
@@ -23,11 +23,6 @@
           <div>
             {{fav.company.city}}, {{Countries[fav.company.country]}}
           </div>
-          <div>
-            <span class="small badge badge-secondary margin horizontal right-5" *ngFor="let tag of fav.company.industries">
-              {{tag}}
-            </span>
-          </div>
         </div>
         <div class="col-6 col-sm-2 text-right">
           <app-price-display [fav]="fav"></app-price-display>
@@ -38,19 +33,26 @@
       </div>
     </li>
   </ul>
+  <div class="col-12" *ngIf="favouredSecurities.length === 0">
+    Du hast noch keine Aktien favourisiert.
+  </div>
 </div>
-<div class="row">
-  <div class="col-12 text-right" *ngIf="(favouredSecurities$|async).length > 0">
+<div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
+  <div class="col-12 text-right" *ngIf="favouredSecurities.length > 0">
     <div>
-      Summe: ca. {{getNetSum((favouredSecurities$|async), 'EUR') | number:'1.2-2':'de'}} EUR
+      Summe: ca. {{getNetSum(favouredSecurities, 'EUR') | number:'1.2-2':'de'}} EUR
     </div>
     <div class="small">
       Ohne Kaufgebühren
     </div>
   </div>
 </div>
-<ng-container *ngIf="(favouredSecurities$|async).length > 0">
+<div class="row"  *ngIf="(favouredSecurities$|async) as favouredSecurities">
+  
+  <div class="col-12" *ngIf="favouredSecurities.length > 0">
+  
+    <app-industry-chart [companyStocks]="favouredSecurities"></app-industry-chart>
+  
+  </div>
 
-  <app-industry-chart [companyStocks]="favouredSecurities$|async"></app-industry-chart>
-
-</ng-container>
+</div>
