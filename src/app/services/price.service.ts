@@ -1,7 +1,10 @@
 import { CompanyStocks } from '../reducers/basket.reducer';
 
 export class PriceService {
-  constructor() {}
+  thisYear: number;
+  constructor() {
+    this.thisYear = 2019; // TODO: new Date().getFullYear();
+  }
 
   getLatestPrice(fav: CompanyStocks): number {
     const latestPriceEntry = this.getLatestPriceEntry(fav);
@@ -31,22 +34,25 @@ export class PriceService {
   }
 
   getPerformanceFor(prices: any, yearDiff: number) {
-    const thisYear = 2019; // TODO: new Date().getFullYear();
-    let result = null;
-    let newestPrice = null;
+    const pricePair = this.getPriceAt(prices, yearDiff);
+    return !isNaN(pricePair[1]) ? ((pricePair[0] * 100 / pricePair[1]) - 100) : 0;
+  }
+
+  getPriceAt(prices: any, yearDiff: number) {
+    let newestPrice = 0;
+    let priceInYear = 0;
     // take last price we have
     Object.entries(prices).forEach((price: any, counter: number) => {
       if (counter === 0) {
         newestPrice = parseFloat(price[1]['4. close']);
       } else {
         const priceYear = parseInt(price[0].toString().substr(0, 4), 10);
-        if (!isNaN(priceYear) && thisYear - priceYear === yearDiff && !result) {
-          const oldPrice = parseFloat(price[1]['4. close']);
-          result = !isNaN(oldPrice) ? ((newestPrice * 100 / oldPrice) - 100) : 0;
+        if (!isNaN(priceYear) && this.thisYear - priceYear === yearDiff && !priceInYear) {
+          priceInYear = parseFloat(price[1]['4. close']);
         }
       }
     });
-    return result;
+    return [newestPrice, priceInYear];
   }
 
 
