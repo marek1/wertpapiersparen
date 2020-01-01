@@ -107,3 +107,8 @@ export const getFavouredSecuritiesAsList = createSelector(
   selectBasketState,
   fromBasket.getFavouritesAsList
 );
+
+export const getSelectedTab = createSelector(
+  selectBasketState,
+  fromBasket.getSelectedTab
+);

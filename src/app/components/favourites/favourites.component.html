@@ -1,85 +1,109 @@
-<div class="row">
-  <div class="col-12">
-    <div class="small">
-      Ihre favourisierten Aktien:
+<div class="margin vertical top-bottom-10">
+  <div class="d-flex justify-content-center align-items-center min-h-500px">
+    <div class="btn-group" role="group" aria-label="Auswertung" *ngFor="let tab of tabs; let i = index">
+      <button type="button"
+              class="btn btn-secondary"
+              [ngClass]="{'active': (selectedTab$|async) === i}"
+              (click)="setTab(i)">
+        {{tab}}
+      </button>
     </div>
   </div>
 </div>
-<div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
-  <ul class="list-group" *ngIf="favouredSecurities.length > 0">
-    <li class="list-group-item" *ngFor="let fav of favouredSecurities">
-      <div class="row">
-        <div class="col-12 col-sm-4">
-          <app-number-input
-          [anzahl]="fav.amount"
-          [smallestUnit]="fav.company.smallestTradeableUnit"
-          (numberChanged)="updateStore($event, fav.company)"
-          ></app-number-input>
-        </div>
-        <div class="col-12 col-sm-5">
-          <a class="" [routerLink]="['/unternehmen', fav.company.name, fav.company.id]">
-            {{fav.company.name}} <span class="fa fa-arrow-circle-right"></span>
-          </a>
-          <div>
+<ng-container *ngIf="(selectedTab$|async) === 0">
+  <div class="row">
+    <div class="col-12">
+      <div class="small">
+        Ihre favourisierten Aktien:
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
+    <ul class="list-group" *ngIf="favouredSecurities.length > 0">
+      <li class="list-group-item" *ngFor="let fav of favouredSecurities">
+        <div class="row">
+          <div class="col-12 col-sm-4">
+            <app-number-input
+            [anzahl]="fav.amount"
+            [smallestUnit]="fav.company.smallestTradeableUnit"
+            (numberChanged)="updateStore($event, fav.company)"
+            ></app-number-input>
+          </div>
+          <div class="col-12 col-sm-5">
+            <a class="" [routerLink]="['/unternehmen', fav.company.name, fav.company.id]">
+              {{fav.company.name}} <span class="fa fa-arrow-circle-right"></span>
+            </a>
+            <div>
             <span class="badge badge-info margin horizontal right-5" *ngFor="let industryId of fav.company.industries | slice:0:showMore">
               {{getIndustryName(industryId)}}
             </span>
-            <ng-container *ngIf="fav.company.industries.length > 1">
-              <span class="clickable badge badge-secondary" *ngIf="showMore === 1" (click)="showMore = fav.company.industries.length">weitere <span class="fa fa-plus-circle"></span> </span>
-              <span class="clickable badge badge-secondary" *ngIf="showMore > 1" (click)="showMore = 1">weniger <span class="fa fa-minus-circle"></span> </span>
-            </ng-container>
+              <ng-container *ngIf="fav.company.industries.length > 1">
+                <span class="clickable badge badge-secondary" *ngIf="showMore === 1" (click)="showMore = fav.company.industries.length">weitere <span class="fa fa-plus-circle"></span> </span>
+                <span class="clickable badge badge-secondary" *ngIf="showMore > 1" (click)="showMore = 1">weniger <span class="fa fa-minus-circle"></span> </span>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col-6 col-sm-2 text-right">
+            <app-price-display [fav]="fav"></app-price-display>
+          </div>
+          <div class="col-6 col-sm-1 text-right">
+            <app-add-to-favourites [version]="'short'" [company]="fav.company"></app-add-to-favourites>
           </div>
         </div>
-        <div class="col-6 col-sm-2 text-right">
-          <app-price-display [fav]="fav"></app-price-display>
-        </div>
-        <div class="col-6 col-sm-1 text-right">
-          <app-add-to-favourites [version]="'short'" [company]="fav.company"></app-add-to-favourites>
-        </div>
+      </li>
+    </ul>
+    <div class="col-12" *ngIf="favouredSecurities.length === 0">
+      Du hast noch keine Aktien favourisiert.
+    </div>
+  </div>
+  <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
+    <div class="col-12 text-right" *ngIf="favouredSecurities.length > 0">
+      <div>
+        Summe: ca. {{totalPrice | number:'1.2-2':'de'}} EUR
       </div>
-    </li>
-  </ul>
-  <div class="col-12" *ngIf="favouredSecurities.length === 0">
-    Du hast noch keine Aktien favourisiert.
-  </div>
-</div>
-<div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
-  <div class="col-12 text-right" *ngIf="favouredSecurities.length > 0">
-    <div>
-      Summe: ca. {{totalPrice | number:'1.2-2':'de'}} EUR
+      <div class="small">
+        Ohne Kaufgebühren
+      </div>
     </div>
-    <div class="small">
-      Ohne Kaufgebühren
-    </div>
-  </div>
-  <div class="col-12">
-    <small>
-      Zum Vergleich
-    </small>
-    <div class="text-right" *ngFor="let x of totalPastPrices; let i = index">
-        Hättest du vor {{performanceYears[i]}}{{ performanceYears[i] != '1 Jahr' ? 'n' : '' }} gekauft, hättest du ca. {{totalPastPrices[i] | number:'1.2-2':'de'}} EUR bezahlt.
-    </div>
-  </div>
-  <div class="col-12">
-    <small>
-      Performances
-    </small>
-    <div class="row" *ngFor="let x of totalPastPrices; let i = index">
-      <div class="col-6 text-right" >
+    <div class="col-12">
+      <small>
+        Performances
+      </small>
+      <div class="row" *ngFor="let x of totalPastPrices; let i = index">
+        <div class="col-6 text-right" >
           {{performanceYears[i]}}
-      </div>
-      <div class="col-6">
+        </div>
+        <div class="col-6">
           {{getPerformance(x) | number:'1.2-2':'de' }} %
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <small>
+        das heisst, wenn
+      </small>
+      <div class="text-right" *ngFor="let x of totalPastPrices; let i = index">
+        du vor {{performanceYears[i]}}{{ performanceYears[i] != '1 Jahr' ? 'n' : '' }} gekauft hättest, hättest du ca. {{totalPastPrices[i] | number:'1.2-2':'de'}} EUR bezahlt.
       </div>
     </div>
   </div>
-</div>
-<div class="row"  *ngIf="(favouredSecurities$|async) as favouredSecurities">
-  
-  <div class="col-12" *ngIf="favouredSecurities.length > 0">
-  
-    <app-industry-chart [companyStocks]="favouredSecurities"></app-industry-chart>
-  
+</ng-container>
+<ng-container *ngIf="(selectedTab$|async) === 1">
+  <div class="row"  *ngIf="(favouredSecurities$|async) as favouredSecurities">
+    <div class="col-12" *ngIf="favouredSecurities.length > 0">
+      <app-industry-chart [companyStocks]="favouredSecurities"></app-industry-chart>
+    </div>
   </div>
-
-</div>
+</ng-container>
+<ng-container *ngIf="(selectedTab$|async) === 2">
+  <div class="row">
+    <div class="col-12">
+      <small>
+        Folgende ETFs beinhalten ähnliche Unternehmen:
+      </small>
+      <div>
+        To come
+      </div>
+    </div>
+  </div>
+</ng-container>

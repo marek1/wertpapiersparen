@@ -4,7 +4,7 @@ import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
 import { Company } from '../../interfaces/company';
 import { CompanyStocks } from '../../reducers/basket.reducer';
-import { BasketActions } from '../../actions';
+import { BasketActions, SearchActions } from '../../actions';
 import { PriceService } from '../../services/price.service';
 import { IndustryService } from '../../services/industry.service';
 import { Performances } from '../../enums/performances';
@@ -22,12 +22,16 @@ export class FavouritesComponent implements OnInit {
   public performanceYears: number[];
   public totalPrice: number;
   public totalPastPrices: number[];
+  public tabs: string[];
+  public selectedTab$: Observable<number>;
 
   constructor(
     private priceService: PriceService,
     private helperService: HelperService,
     private industryService: IndustryService,
-    private store: Store<fromRoot.AppState>) {
+    private store: Store<fromRoot.AppState>
+  ) {
+    this.tabs = ['Übersicht', 'Chart', 'ETFs'];
     this.performanceYears = this.helperService.EnumToArray(Performances);
   }
 
@@ -35,7 +39,6 @@ export class FavouritesComponent implements OnInit {
     this.showMore = 1;
     this.favouredSecurities$ = this.store.pipe(select(fromRoot.getFavouredSecurities));
     this.favouredSecurities$.subscribe((items: CompanyStocks[]) => {
-      console.log('items : ', items);
       this.totalPrice = this.getNetSum(items, 'EUR');
       this.totalPastPrices = [];
       this.performanceYears.map((x) => {
@@ -45,15 +48,14 @@ export class FavouritesComponent implements OnInit {
         items.map((item: CompanyStocks) => {
           results.push(item.amount * this.priceService.getPriceAt(item.company.end_of_month_prices, parseInt(Performances[x], 10))[1]);
         });
-        console.log('... ', results);
         if (results.includes(0)) {
           this.totalPastPrices.push(0);
         } else {
-          console.log('total : ', results.reduce((a, b) => a + b, 0));
           this.totalPastPrices.push(results.reduce((a, b) => a + b, 0));
         }
       });
     });
+    this.selectedTab$ = this.store.pipe(select(fromRoot.getSelectedTab));
   }
 
   updateStore(anzahl: number, firma: Company): void {
@@ -78,4 +80,7 @@ export class FavouritesComponent implements OnInit {
     return !isNaN(amount) ? ((this.totalPrice * 100 / amount) - 100) : 0;
   }
 
+  setTab(which: number): void {
+    this.store.dispatch(BasketActions.setSelectedTabAction({selectedTab: which}));
+  }
 }

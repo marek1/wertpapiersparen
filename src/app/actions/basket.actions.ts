@@ -22,6 +22,11 @@ export const updateFavourites = createAction(
   props<{amount: number, company: Company}>()
 );
 
+export const setSelectedTabAction = createAction(
+  '[Basket Component] Set Selected Tab',
+  props<{selectedTab: number}>()
+);
+
 export const getFromLocalStorage = createAction(
   '[Basket Component] Retrieve From LocalStorage',
   props<{}>()
@@ -46,3 +51,4 @@ export const savedToLocalStorageFailed = createAction(
   '[Basket Component] Saved To LocalStorage FAILED',
   props<{error: string}>()
 );
+

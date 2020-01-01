@@ -12,12 +12,14 @@ export interface State {
   isLoading: boolean;
   errorMessage: string|null;
   items: CompanyStocks[];
+  selectedTab: number;
 }
 
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
-  items: []
+  items: [],
+  selectedTab: 0
 };
 
 export const reducer = createReducer(
@@ -48,7 +50,12 @@ export const reducer = createReducer(
       }
       return com;
     })]
-  }))
+  })),
+  // setSelectedTabAction
+  on(BasketActions.setSelectedTabAction, (state, {selectedTab}) =>  ({
+    ...state,
+    selectedTab
+  })),
 );
 
 export const getFavourites = (state: State) => state.items;
@@ -57,3 +64,4 @@ export const getFavouritesAsList = (state: State) => {
   state.items.map((item) => x.push(item.company.id));
   return x;
 };
+export const getSelectedTab = (state: State) => state.selectedTab;
