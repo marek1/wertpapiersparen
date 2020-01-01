@@ -83,4 +83,8 @@ export class FavouritesComponent implements OnInit {
   setTab(which: number): void {
     this.store.dispatch(BasketActions.setSelectedTabAction({selectedTab: which}));
   }
+
+  findEtfs() {
+
+  }
 }
