@@ -32,6 +32,7 @@ import { metroCompany } from '../../companies/mdax/metro';
 export const isharesMsciEuropeSriThesaurierend: Etf = {
   name: 'iShares MSCI Europe SRI UCITS (thesaurierend)',
   description: 'Der Fonds ist bestrebt, die Performance eines Index nachzubilden, der sich aus europäischen ESG (umweltverträglich, sozial und staatlich)-überprüften Unternehmensanleihen zusammensetzt.',
+  tracks: 'MSCI Europe SRI Select Reduced Fossil Fuel Index',
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251767/ishares-dow-jones-europe-sustainability-screened-ucits-etf#/',
   isin: 'IE00B52VJ196',
   currency: Currency.EUR,
@@ -41,8 +42,8 @@ export const isharesMsciEuropeSriThesaurierend: Etf = {
   country: Country.Irland,
   gewinn: 'thesaurierend',
   ter: 0.3,
-  yields: [
-    20.57, 11.38, 6.99
+  yields: [ // kumulativ
+    20.57, 38.18, 40.19
   ],
   lastUpdate: '2019-12-26',
   shares: [

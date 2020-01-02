@@ -1,5 +1,5 @@
 <div class="margin vertical top-bottom-10">
-  <div class="row">
+  <div class="row margin vertical top-bottom-10">
     <div class="col-12">
       <img src="{{etf.logo}}">
     </div>
@@ -9,6 +9,14 @@
       <div class="clickable">
         {{etf.name}}
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-4 small">
+      Vergleichsindex:
+    </div>
+    <div class="col-12 col-sm-8">
+      {{etf.tracks}}
     </div>
   </div>
   <div class="row">
@@ -69,7 +77,7 @@
   </div>
   <div class="row">
     <div class="col-12 col-sm-4 small">
-      Perfomance:
+      Perfomance (kumulativ):
     </div>
     <div class="col-12 col-sm-8">
       <div class="row" *ngFor="let per of etf.yields; let i = index">

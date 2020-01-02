@@ -8,7 +8,9 @@ export const isharesMsciEuropeSriAusschuettend: Etf = {
   isin: 'IE00BGDPWW94',
   gewinn: 'ausschüttend',
   ter: 0.3,
-  yields: []
+  yields: [ // kumulativ
+    // no data yet
+  ]
 };
 // tslint:enable:max-line-length
 

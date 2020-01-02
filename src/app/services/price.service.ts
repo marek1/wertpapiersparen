@@ -35,7 +35,7 @@ export class PriceService {
 
   getPerformanceFor(prices: any, yearDiff: number) {
     const pricePair = this.getPriceAt(prices, yearDiff);
-    return !isNaN(pricePair[1]) ? ((pricePair[0] * 100 / pricePair[1]) - 100) : 0;
+    return !isNaN(pricePair[1]) && !isNaN(pricePair[0]) ? ((pricePair[0] - pricePair[1]) / pricePair[1]) * 100 : 0;
   }
 
   getPriceAt(prices: any, yearDiff: number) {

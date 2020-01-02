@@ -208,6 +208,7 @@ import { koneCompany } from './companies/other/kone';
 import { accentureCompany } from './companies/other/accenture';
 import { rocheCompany } from './companies/other/roche';
 import { novoNordiskCompany } from './companies/other/novo';
+import { Indices } from '../enums/indices';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -496,3 +497,8 @@ export const Companies = daxCompanies
   .concat(euroStoxx50Companies)
   .concat(cac40Companies)
   .concat(otherCompanies);
+
+
+export const findCompaniesInIndex = (indx: Indices) => {
+  return Companies.filter((company: Company) => company.current_indices.includes(indx));
+};

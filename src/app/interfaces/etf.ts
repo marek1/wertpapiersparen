@@ -9,6 +9,7 @@ export interface CompanyShort {
 export interface Etf {
   name: string;
   description: string;
+  tracks: string;
   url: string;
   isin: string;
   currency: Currency;

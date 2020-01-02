@@ -46,17 +46,16 @@ export class EtfsBySearchtermComponent implements OnInit {
   }
 
   searchWithinEtfs(val: string) {
-    console.log('val #2 : ', val);
-    let x = Etfs.filter((etf: Etf) => {
+    const etfs = Etfs.filter((etf: Etf) => {
       return etf.name.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.description.toLowerCase().indexOf(val.toLowerCase()) > -1
+        || etf.tracks.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.isin.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.manager.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.issuer.toLowerCase().indexOf(val.toLowerCase()) > -1
         || this.isInCompanies(etf.shares, val).length > 0;
     });
-    console.log('xx : ', x);
-    return x;
+    return etfs;
   }
 
   isInCompanies(comps: CompanyShort[], val: string) {

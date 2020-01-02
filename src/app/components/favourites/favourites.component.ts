@@ -31,7 +31,7 @@ export class FavouritesComponent implements OnInit {
     private industryService: IndustryService,
     private store: Store<fromRoot.AppState>
   ) {
-    this.tabs = ['Übersicht', 'Chart', 'ETFs'];
+    this.tabs = ['Übersicht', 'Zusammensetzung', 'ETFs'];
     this.performanceYears = this.helperService.EnumToArray(Performances);
   }
 
@@ -77,7 +77,8 @@ export class FavouritesComponent implements OnInit {
   }
 
   getPerformance(amount: number) {
-    return !isNaN(amount) ? ((this.totalPrice * 100 / amount) - 100) : 0;
+    return !isNaN(amount) ? ((this.totalPrice - amount) / amount) * 100 : 0;
+    // return !isNaN(amount) ? ((this.totalPrice * 100 / amount) - 100) : 0;
   }
 
   setTab(which: number): void {
