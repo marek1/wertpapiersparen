@@ -48,7 +48,7 @@ export const amadeusItCompany: Company = {
   symbol: 'AMADF',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Software', 'Buchungssystem', 'Tourismus', 'Reisen', 'Flugbuchung']

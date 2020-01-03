@@ -2069,7 +2069,7 @@ export const henkelCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIEuropeSRI],
   end_of_month_prices: henkelPrices,
   dividends: henkelDividends,
   tags: ['Haushalt', 'Handwerk', 'Körperpflege', 'Kosmetik', 'Büro', 'Schule', 'Hobby']

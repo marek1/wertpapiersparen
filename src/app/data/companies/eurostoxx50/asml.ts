@@ -66,7 +66,7 @@ export const asmlCompany: Company = {
   symbol: 'ASME.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Halbleiterindustrie', 'Lithographie-Systeme']

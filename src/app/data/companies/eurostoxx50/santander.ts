@@ -1729,7 +1729,7 @@ export const santanderCompany: Company = {
   symbol: 'BSD2.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Bank', 'Banking', 'Finanzdienstleistungen', 'Girokonto', 'Finanzierung', 'Immobilienfinanzierung', 'Universalbank', 'Privatkundengeschäft', 'Firmenkundengeschäft', 'Kreditkarten', 'Kredite', 'Darlehen', 'Geldanlagen']

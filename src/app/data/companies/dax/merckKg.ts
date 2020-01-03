@@ -1779,7 +1779,7 @@ export const merckKgCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIEuropeSRI],
   end_of_month_prices: merckKgPrices,
   dividends: merckKgDividends,
   tags: ['Chemie', 'Pharma', 'Life Science', 'Originalpräparate', 'Selbstmedikation', 'Flüssigkristalle', 'Elektronikchemikalien', 'Pigmente', 'Kosmetik', 'Pharmawirkstoffe', 'Reagenzien', 'Laborprodukte']

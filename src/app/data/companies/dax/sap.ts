@@ -1768,7 +1768,7 @@ export const sapCompany: Company = {
       securityType: SecurityType.ADR,
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: sapPrices,
   dividends: sapDividends,
   tags: ['Unternehmenssoftwarelösungen', 'ERP', 'Software', 'Cloud', 'Business Solutions']

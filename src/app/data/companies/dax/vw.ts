@@ -1791,7 +1791,7 @@ export const vwCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: vwPrices,
   dividends: vwDividends,
   tags: ['Auto', 'Automobile', 'Automobilhersteller', 'Motorrad', 'Motorräder', 'Nutzfahrzeuge', 'Finanzdienstleistungen']

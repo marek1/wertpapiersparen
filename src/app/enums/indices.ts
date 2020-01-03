@@ -5,5 +5,7 @@ export enum Indices {
   'TecDAX' = 'TecDAX',
   'EuroStoxx50' = 'EuroStoxx50',
   'CAC40' = 'CAC40',
-  'SMI' = 'SMI'
+  'SMI' = 'SMI',
+  'MSCIEuropeSRI' = 'MSCI Europe SRI Select Reduced Fossil Fuel Index',
+  'MSCIWorld' = 'MSCI World'
 }

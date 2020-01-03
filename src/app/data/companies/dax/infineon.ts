@@ -1703,7 +1703,7 @@ export const infineonCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.TecDAX],
+  current_indices: [Indices.DAX, Indices.TecDAX, Indices.MSCIWorld],
   end_of_month_prices: infineonPices,
   dividends: infineoDividends,
   tags: ['Energieeffizienz', 'Mobilität', 'Sicherheit', 'Halbleiter', 'Systemlösungen', 'Automotive', 'Industrieelektronik', 'Chipkarte', 'Sicherheitsanwendungen']

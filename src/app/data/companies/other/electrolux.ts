@@ -3,6 +3,7 @@ import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
+import { Indices } from '../../../enums/indices';
 
 const dividends = [
   {year: 2018, rate: 8.50, yield: 4.55}, {year: 2017, rate: 8.30}, {year: 2016, rate: 7.50}, {
@@ -113,7 +114,7 @@ export const electroluxCompany: Company = {
   symbol: '',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [],
+  current_indices: [Indices.MSCIEuropeSRI],
   end_of_month_prices: prices,
   dividends,
   tags: ['Elektrogeräte', 'Haushaltsgeräte']

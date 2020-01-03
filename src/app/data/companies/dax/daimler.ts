@@ -1791,7 +1791,7 @@ export const daimlerCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: daimlerPrices,
   dividends: daimlerDividends,
   tags: ['Automobilhersteller', 'Personenkraftwagen', 'Nutzfahrzeuge', 'Finanzdienstleistungen']

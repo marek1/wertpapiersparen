@@ -1748,7 +1748,7 @@ export const deutscheTelekomCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.TecDAX, Indices.MSCIWorld],
   end_of_month_prices: deutscheTelekomPrices,
   dividends: deutscheTelekomDividends,
   tags: ['Telekommunikationsanbieter', 'Telekommunikation', 'Informationstechnologie', 'Festnetztelefonie', 'Breitbandinternet', 'Mobilfunk', 'TV']

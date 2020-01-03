@@ -1649,7 +1649,7 @@ export const deutschBoerseCompany: Company = {
   symbol: 'DB1.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: deutscheBoersePrices,
   dividends: deutscheBoerseDividends,
   tags: ['Börse', 'Börsenplatz']

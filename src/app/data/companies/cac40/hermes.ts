@@ -63,7 +63,7 @@ export const hermesCompany: Company = {
   symbol: 'HMI.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.CAC40],
+  current_indices: [Indices.CAC40, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Modeartikel', 'Lederwaren', 'Schals', 'Krawatten', 'Damenbekleidung', 'Herrenbekleidung', 'Parfums', 'Uhren', 'Schmuck', 'Notizbücher', 'Hüte', 'Schuhe', 'Handschuhe', 'Heimtextilien', 'Porzellan', 'Geschirr']

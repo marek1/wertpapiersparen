@@ -1664,7 +1664,7 @@ export const deutschePostCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: deutschePostPrices,
   dividends: deutschePostDividends,
   tags: ['Post', 'Briefe', 'Pakete', 'Logistik', 'Logistics']

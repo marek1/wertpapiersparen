@@ -220,7 +220,7 @@ export const pernodCompany: Company = {
   symbol: 'PER.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.CAC40],
+  current_indices: [Indices.CAC40, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Alkohol', 'Weine', 'Spirituosen', 'Whiskey', 'Rum', 'Branntweine', 'Anisprodukte', 'Liköre', 'Cognac', 'Brandy', 'Magenbitter']

@@ -7,7 +7,7 @@ import { Indices } from '../../../enums/indices';
 export const isharesTecdax: Etf = {
   name: 'iShares TecDAX® UCITS (DE)',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus den 30 größten an der Frankfurter Wertpapierbörse notierten Technologieunternehmen besteht',
-  tracks: 'TecDAX',
+  tracks: Indices.TecDAX,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251975/',
   isin: 'DE0005933972',
   currency: Currency.EUR,

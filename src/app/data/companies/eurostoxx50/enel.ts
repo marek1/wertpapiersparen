@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
+import { Indices } from '../../../enums/indices';
 
 const dividends = [
   {year: 2018, rate: 0.28, yield: 5.52}, {year: 2017, rate: 0.24}, {year: 2016, rate: 0.18}, {
@@ -1668,7 +1669,7 @@ export const enelCompany: Company = {
   symbol: 'ENL.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [],
+  current_indices: [Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Stromanbieter', 'Stromerzeugung', 'Stromversorgung', 'Stromversorgung']

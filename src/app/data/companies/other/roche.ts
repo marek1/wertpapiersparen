@@ -1597,7 +1597,7 @@ export const rocheCompany: Company = {
   symbol: 'RHO5.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.SMI],
+  current_indices: [Indices.SMI, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Gesundheitslösungen', 'Healthcare', 'Erforschung', 'Entwicklung', 'Medizin']

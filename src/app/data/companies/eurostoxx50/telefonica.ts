@@ -1725,7 +1725,7 @@ export const telefonicaCompany: Company = {
   symbol: 'TNE5.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Telekommunikationsanbieter', 'Festnetz', 'Mobilfunk', 'Internet', 'Lateinamerika', 'Telekommunikationsgesellschaft']

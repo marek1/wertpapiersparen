@@ -1773,7 +1773,7 @@ export const allianzCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: allianzPrices,
   dividends: allianzDividends,
   tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung']

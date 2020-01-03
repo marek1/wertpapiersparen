@@ -1794,7 +1794,7 @@ export const beiersdorfCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIEuropeSRI],
   end_of_month_prices: beiersdorfPrices,
   dividends: beiersdorfDividends,
   tags: ['Hautprodukte', 'Schönheitsprodukte', 'Pflegeprodukte']

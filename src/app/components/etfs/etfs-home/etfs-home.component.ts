@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { findCompaniesInIndex } from '../../../data/companies';
+import { Indices } from '../../../enums/indices';
 
 @Component({
   selector: 'app-etfs-home',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EtfsHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('test : ', findCompaniesInIndex(Indices.DAX));
+  }
 
   ngOnInit() {
   }

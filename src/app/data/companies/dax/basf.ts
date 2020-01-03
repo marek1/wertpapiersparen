@@ -1780,7 +1780,7 @@ export const basfCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: basfPrices,
   dividends: basfDividends,
   tags: ['Chemie', 'Spezialchemie', 'Industriechemikalien', 'Kunststoffe', 'Pflanzenschutzmittel', 'Öl', 'Gas']

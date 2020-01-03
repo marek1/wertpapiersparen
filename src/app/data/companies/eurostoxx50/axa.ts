@@ -400,7 +400,7 @@ export const axaCompany: Company = {
   symbol: 'AXA.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.CAC40],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40, Indices.MSCIEuropeSRI],
   end_of_month_prices: prices,
   dividends,
   tags: ['Versicherung', 'Versicherungen', 'Haftpflichversicherung', 'Lebensversicherung', 'Hausratversicherung']

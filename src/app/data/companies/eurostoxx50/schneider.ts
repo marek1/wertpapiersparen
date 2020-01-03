@@ -980,7 +980,7 @@ export const schneiderCompany: Company = {
   symbol: 'SND.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.CAC40],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Energieverteilung', 'industrielle Automation', 'Energie', 'Infrastruktur', 'Netzwerkindustrie', 'Datenindustrie', 'Gebäudetechnik']

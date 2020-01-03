@@ -1731,7 +1731,7 @@ export const eonCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIWorld],
   end_of_month_prices: eonPrices,
   dividends: eonDividends,
   tags: ['Energieunternehmen', 'Stromerzeugung', 'Erdgasförderung', 'Stromhandel', 'Gashandel']

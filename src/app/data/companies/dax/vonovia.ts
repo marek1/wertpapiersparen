@@ -572,7 +572,7 @@ export const vonoviaCompany: Company = {
       securityType: SecurityType.ADR,
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIWorld],
   end_of_month_prices: vonoviaPrices,
   dividends: vonoviaDividends,
   tags: ['Immobilienunternehmen', 'Immobilienverwaltung', 'Vermietung', 'Mietwohnungen']

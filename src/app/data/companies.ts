@@ -209,6 +209,7 @@ import { accentureCompany } from './companies/other/accenture';
 import { rocheCompany } from './companies/other/roche';
 import { novoNordiskCompany } from './companies/other/novo';
 import { Indices } from '../enums/indices';
+import { nestleCompany } from './companies/other/nestle';
 
 // tslint:disable:max-line-length
 const daxCompanies: Company[] = [
@@ -487,6 +488,7 @@ const otherCompanies = [
   accentureCompany, // 1229
   rocheCompany, // 1230
   novoNordiskCompany, // 1231
+  nestleCompany, // 1232
 ];
 // tslint:enable:max-line-length
 
@@ -500,5 +502,8 @@ export const Companies = daxCompanies
 
 
 export const findCompaniesInIndex = (indx: Indices) => {
-  return Companies.filter((company: Company) => company.current_indices.includes(indx));
+  return Companies.filter((company: Company) => company.current_indices.includes(indx))
+    .map((company) => {
+      return { id: company.id, name: company.name };
+    });
 };

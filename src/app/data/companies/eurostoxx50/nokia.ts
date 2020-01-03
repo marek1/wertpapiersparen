@@ -622,7 +622,7 @@ export const nokiaCompany: Company = {
   symbol: 'NOA3.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Telekommunikationskonzern', '5G', 'Netzwerkausrüstung']

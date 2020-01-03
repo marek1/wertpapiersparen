@@ -1443,7 +1443,7 @@ export const lvmhCompany: Company = {
   symbol: 'MOH.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Luxusgüter', 'Marken', 'Wein', 'Spirituosen', 'Mode', 'Lederwaren', 'Parfüm', 'Kosmetik', 'Uhren', 'Schmuck']

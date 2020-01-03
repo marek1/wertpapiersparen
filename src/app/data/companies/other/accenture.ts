@@ -2,6 +2,7 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
+import { Indices } from '../../../enums/indices';
 
 const dividends = [
   {year: 2018, rate: 2.66, yield: 1.57}, {year: 2017, rate: 2.42}, {
@@ -50,7 +51,7 @@ export const accentureCompany: Company = {
   symbol: 'XET.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [],
+  current_indices: [Indices.MSCIWorld],
   end_of_month_prices: prices,
   dividends,
   tags: ['Unternehmensberatung', 'Managementberatungsunternehmen', 'Technologieunternehmen', 'Dienstleistungsunternehmen']
