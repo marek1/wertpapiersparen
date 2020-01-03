@@ -56,3 +56,12 @@
 .margin-top-50-percent{
   margin-top: 50%;
 }
+
+@media (max-width: 315px) {
+  .btn-group {
+    button {
+      font-size: 10px !important;
+    }
+  }
+}
+

@@ -12,12 +12,16 @@ export class PriceDisplayComponent {
   @Input() fav: CompanyStocks;
   constructor(private priceService: PriceService) { }
 
-  getLatestPrice(): number {
-    return this.priceService.getLatestPrice(this.fav);
-  }
+  // getLatestPrice(): number {
+  //   return this.priceService.getLatestPrice(this.fav);
+  // }
+  //
+  // getLatestTotalPrice(): number {
+  //   return this.priceService.getLatestTotalPrice(this.fav);
+  // }
 
-  getDateOfLastPriceEntry() {
-    return this.priceService.getDateOfLastPriceEntry(this.fav);
-  }
+  // getDateOfLastPriceEntry() {
+  //   return this.priceService.getDateOfLastPriceEntry(this.fav);
+  // }
 
 }

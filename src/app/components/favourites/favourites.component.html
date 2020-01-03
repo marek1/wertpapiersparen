@@ -59,7 +59,7 @@
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-12 text-right" *ngIf="favouredSecurities.length > 0">
       <div>
-        Summe: ca. {{totalPrice | number:'1.2-2':'de'}} EUR
+        Summe: ca. {{totalPrice | number:'1.0-0':'de'}} EUR
       </div>
       <div class="small">
         Ohne Kaufgebühren
@@ -74,7 +74,7 @@
           {{performanceYears[i]}}
         </div>
         <div class="col-6">
-          {{getPerformance(x) | number:'1.2-2':'de' }} %
+          ca. {{getPerformance(x) | number:'1.0-0':'de' }} %
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
         das heisst, wenn
       </small>
       <div class="text-right" *ngFor="let x of totalPastPrices; let i = index">
-        du vor {{performanceYears[i]}}{{ performanceYears[i] != '1 Jahr' ? 'n' : '' }} gekauft hättest, hättest du ca. {{totalPastPrices[i] | number:'1.2-2':'de'}} EUR bezahlt.
+        du vor {{performanceYears[i]}}{{ performanceYears[i] != '1 Jahr' ? 'n' : '' }} gekauft hättest, hättest du ca. {{totalPastPrices[i] | number:'1.0-0':'de'}} EUR bezahlt.
       </div>
     </div>
   </div>

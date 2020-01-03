@@ -78,12 +78,12 @@ export class IndustryChartComponent implements OnInit, OnChanges {
     if (foundItems.length === 0) {
       const industryNames = industryIds.map(industryId => this.industryService.iterateThroughChildren(Industries, industryId).description);
       this.amountByIndustry.push({
-        amount: this.priceService.getLatestPrice(companyStock),
+        amount: this.priceService.getLatestTotalPrice(companyStock),
         industryIds,
-        industryNames: industryNames.length > 1 ? [ this.returnShortIndustryName(industryNames[0]) + ' und weitere Branchen (Mischkonzern)'] : [this.returnShortIndustryName(industryNames[0])]
+        industryNames: industryNames.length > 1 ? [ this.returnShortIndustryName(industryNames[0]) + ' & weitere Branchen (Mischkonzern)'] : [this.returnShortIndustryName(industryNames[0])]
       });
     } else {
-      foundItems[0].amount += this.priceService.getLatestPrice(companyStock);
+      foundItems[0].amount += this.priceService.getLatestTotalPrice(companyStock);
     }
   }
 
@@ -92,6 +92,6 @@ export class IndustryChartComponent implements OnInit, OnChanges {
   }
 
   private returnShortIndustryName(name: string) {
-    return name.length > 20 ? name.toString().substr(0, 15) + '...' : name;
+    return name.length > 15 ? name.toString().substr(0, 15) + '...' : name;
   }
 }

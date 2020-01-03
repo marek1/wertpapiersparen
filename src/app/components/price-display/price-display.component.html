@@ -1,7 +1,7 @@
 <div>
-  ca. {{getLatestPrice() | number:'1.2-2':'de'}} {{fav.company.currency}}
+  ca. {{priceService.getLatestTotalPrice(fav) | number:'1.0-0':'de'}} {{fav.company.currency}}
   <small>zzgl. Kaufgebühren</small>
 </div>
 <div class="small">
-  (Letzter bekannter Kurs, Datum: {{getDateOfLastPriceEntry() | date:'d.M.y'}})
+  (Letzter bekannter Kurs: {{priceService.getLatestPrice(fav) | number:'1.0-0':'de'}} {{fav.company.currency}} vom {{priceService.getDateOfLastPriceEntry(fav) | date:'d.M.y'}})
 </div>

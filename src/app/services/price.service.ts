@@ -15,7 +15,11 @@ export class PriceService {
     if (isNaN(parseFloat(closePrice))) {
       return 0;
     }
-    return parseFloat(closePrice) * fav.amount;
+    return parseFloat(closePrice);
+  }
+
+  getLatestTotalPrice(fav: CompanyStocks): number {
+    return this.getLatestPrice(fav) * fav.amount;
   }
 
   getLatestPriceEntry(fav: CompanyStocks): any[] {

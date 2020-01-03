@@ -70,7 +70,7 @@ export class FavouritesComponent implements OnInit {
     let returnValue = 0;
     items.map((item) => {
       if (item.company.currency === currency) {
-        returnValue += this.priceService.getLatestPrice(item);
+        returnValue += this.priceService.getLatestTotalPrice(item);
       }
     });
     return returnValue;
