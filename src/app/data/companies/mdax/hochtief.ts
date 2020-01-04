@@ -1727,7 +1727,7 @@ export const hochtiefCompany: Company = {
   symbol: 'HOT.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.MDAX],
+  current_indices: [Indices.MDAX, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Baukonzern', 'Hochbau', 'Tiefbau', 'Infrastrukturprojekte']

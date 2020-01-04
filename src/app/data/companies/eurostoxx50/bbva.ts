@@ -1706,7 +1706,7 @@ export const bbvaCompany: Company = {
   symbol: 'BOY.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Universalbank', 'Privatkunden', 'Firmenkundengeschäft', 'Europa', 'Lateinamerika']

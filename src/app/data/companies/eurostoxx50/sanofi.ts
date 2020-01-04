@@ -927,7 +927,7 @@ export const sanofiCompany: Company = {
   symbol: 'SNW.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.CAC40],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Onkologie', 'Pharmaunternehmen', 'Diabetes', 'Stoffwechsel', 'Herz-Kreislauf', 'Thrombose', 'Zentrales Nervensystem', 'Innere Medizin', 'Onkologie', 'Impfstoffe']

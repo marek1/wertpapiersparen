@@ -1737,7 +1737,7 @@ export const siemensCompany: Company = {
       securityType: SecurityType.ADR,
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: siemensPrices,
   dividends: siemensDividends,
   tags: ['Automatisierungstechnik', 'Antriebstechnik', 'Antriebe', 'Antriebskomponenten', 'Motoren', 'Verkehrstechnik', 'Antriebssysteme', 'Gebäudetechnik', 'Energielösungen', 'Windenergie', 'Motoren', 'Kraftwerkslösungen', 'Kraftwerkstechnik', 'Energieübertragung', 'Energieverteilung', 'Generatoren', 'Getriebe', 'Kupplungen', 'Medizintechnik', 'Schienenfahrzeuge', 'Sicherheitstechnik', 'Turbinen', 'Verdichter']

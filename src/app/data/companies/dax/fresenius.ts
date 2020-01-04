@@ -1753,7 +1753,7 @@ export const freseniusCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: freseniusPrices,
   dividends: freseniusDividends,
   tags: ['Gesundheitskonzern', 'Krankenhäuser']

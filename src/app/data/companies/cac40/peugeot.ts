@@ -88,7 +88,7 @@ export const peugeotCompany: Company = {
   symbol: 'PEU.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.CAC40],
+  current_indices: [Indices.CAC40, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Fahrzeughersteller', 'PKWs', 'Nutzfahrzeuge', 'Peugeot', 'Citröen', 'DS']

@@ -964,7 +964,7 @@ export const totalCompany: Company = {
   symbol: 'TOTB.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Ölförderung', 'Gasförderung', 'Weiterverarbeitung', 'Energiegewinnung', 'Elf', 'Stationen', 'Tankstellen']

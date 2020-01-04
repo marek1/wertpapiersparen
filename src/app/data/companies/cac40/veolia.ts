@@ -992,7 +992,7 @@ export const veoliaCompany: Company = {
   symbol: 'VVD.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.CAC40],
+  current_indices: [Indices.CAC40, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Umweltdienstleistungen', 'Abfallbewirtschaftung', 'Abwasserdienstleistungen']

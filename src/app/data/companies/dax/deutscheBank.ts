@@ -1755,7 +1755,7 @@ export const deutscheBankCompany: Company = {
   symbol: 'DBK.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIWorld],
   end_of_month_prices: deutscheBankPrices,
   dividends: deutscheBankDividends,
   tags: ['Bank', 'Banking', 'Finanzdienstleistungen', 'Girokonto', 'Finanzierung', 'Immobilienfinanzierung', 'Universalbank', 'Privatkundengeschäft', 'Firmenkundengeschäft', 'Kreditkarten', 'Kredite', 'Darlehen', 'Geldanlagen']

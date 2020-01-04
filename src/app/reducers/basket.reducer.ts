@@ -51,8 +51,7 @@ export const reducer = createReducer(
       return com;
     })]
   })),
-  // setSelectedTabAction
-  on(BasketActions.setSelectedTabAction, (state, {selectedTab}) =>  ({
+  on(BasketActions.setSelectedTab, (state, {selectedTab}) =>  ({
     ...state,
     selectedTab
   })),

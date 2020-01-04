@@ -9,5 +9,11 @@ export enum IsharesIndustryNames {
   'Kommunikation' = 'Kommunikation',
   'Energie' = 'Energie',
   'Immobilien' = 'Immobilien',
-  'Versorger' = 'Versorger'
+  'Versorger' = 'Versorger',
+  'Technologie' = 'Technologie',
+  'IndustrieDienstleistungen' = 'Industriegüter und Dienstleistungen',
+  'HaushaltsKonsumgüter' = 'Haushalts- und Konsumgüter',
+  'Einzelhandel' = 'Einzelhandel',
+  'ÖlGas' = 'Öl und Gas',
+  'Telekommunikation' = 'Telekommunikation'
 }

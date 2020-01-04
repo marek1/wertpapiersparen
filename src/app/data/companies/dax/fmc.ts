@@ -1757,7 +1757,7 @@ export const fmcCompany: Company = {
       securityType: SecurityType.ADR
     }
   ],
-  current_indices: [Indices.DAX],
+  current_indices: [Indices.DAX, Indices.MSCIWorld],
   end_of_month_prices: fmcPrices,
   dividends: fmcDividends,
   tags: ['Dialysetechnik', 'Dialysegeräte']

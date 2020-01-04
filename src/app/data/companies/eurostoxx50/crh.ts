@@ -65,7 +65,7 @@ export const crhCompany: Company = {
   symbol: 'CRG.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Baustoffhersteller', 'Rohstoffproduktion', 'Bauindustrie', 'Kies', 'Zement', 'Asphalt', 'Fertigbeton', 'Betonprodukte']

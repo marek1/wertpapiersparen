@@ -1879,7 +1879,7 @@ export const unileverCompany: Company = {
   symbol: 'UNI3.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Ernährung', 'Körperpflege', 'Parfum', 'Kosmetik', 'Waschmittel', 'Reinigungsmittel']

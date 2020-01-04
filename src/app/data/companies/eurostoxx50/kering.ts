@@ -1062,7 +1062,7 @@ export const keringCompany: Company = {
   symbol: 'PPX.DE',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld],
+  current_indices: [Indices.EuroStoxx50, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Großhandelsunternehmen', 'Luxusprodukte', 'Sportprodukte', 'Lifestyleprodukte', 'Luxusmarken', 'Sport', 'Lifestyle']

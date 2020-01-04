@@ -1736,7 +1736,7 @@ export const bnpCompany: Company = {
   symbol: 'BNP',
   smallestTradeableUnit: 1,
   otherTradeableProducts: [],
-  current_indices: [Indices.EuroStoxx50, Indices.CAC40, Indices.MSCIWorld],
+  current_indices: [Indices.EuroStoxx50, Indices.CAC40, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Finanzinstitut', 'Universalbank', 'Privatkunden', 'Firmenkundengeschäft', 'Direktbanken', 'Onlinebanken', 'Broker']

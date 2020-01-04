@@ -5,13 +5,10 @@ import { Ranking, ShareRank } from '../../../interfaces/ranking';
 import { AllRankings } from '../../../data/rankings';
 import { ChartOptions } from 'chart.js';
 import { IndustryService } from '../../../services/industry.service';
-import { Industries } from '../../../data/industries';
 import { Etfs } from '../../../data/etfs';
 import { Etf } from '../../../interfaces/etf';
 import { HelperService } from '../../../services/helpers';
 import { Performances } from '../../../enums/performances';
-import { patchTsGetExpandoInitializer } from '@angular/compiler-cli/ngcc/src/packages/patch_ts_expando_initializer';
-import { last } from 'rxjs/operators';
 import { PriceService } from '../../../services/price.service';
 
 interface ShowMore {
@@ -53,6 +50,7 @@ export class CompanyDetailsComponent implements OnInit {
     this.chartType = 'line';
     this.chartLegend = false;
     this.chartOptions = {
+      responsive: true,
       legend: {
         display: false
       },

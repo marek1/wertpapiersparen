@@ -1774,7 +1774,7 @@ export const munichReCompany: Company = {
       securityType: SecurityType.ADR,
     }
   ],
-  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld],
+  current_indices: [Indices.DAX, Indices.EuroStoxx50, Indices.MSCIEuropeSRI, Indices.MSCIWorld, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: munichRePrices,
   dividends: munichReDividends,
   tags: ['Rückversicherung', 'Rückversicherungsgesellschaft', 'Erstversicherung', 'Krankenrückversicherung', 'Krankenerstversicherung']

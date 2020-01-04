@@ -78,9 +78,9 @@
       <div class="col-12" *ngIf="showMore.etfs">
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let etf of foundEtfs | slice:0:showMore.etfs">
-            {{etf.name}}
             <a [routerLink]="['/etf', etf.name, etf.isin]">
-             <span class="fa fa-arrow-circle-right"></span>
+              {{etf.name}}
+              <span class="fa fa-arrow-circle-right"></span>
             </a>
           </li>
         </ul>
@@ -176,13 +176,13 @@
       <div>
         <small>Der Chart für {{company.name}}, ISIN: {{company.isin}}</small>
       </div>
-        <canvas baseChart
-                [data]="chartData"
-                [labels]="chartLabels"
-                [chartType]="chartType"
-                [legend]="chartLegend"
-                [options]="chartOptions">
-        </canvas>
+      <canvas baseChart
+              [data]="chartData"
+              [labels]="chartLabels"
+              [chartType]="chartType"
+              [legend]="chartLegend"
+              [options]="chartOptions">
+      </canvas>
     </div>
     <div class="col-12">
       <div>

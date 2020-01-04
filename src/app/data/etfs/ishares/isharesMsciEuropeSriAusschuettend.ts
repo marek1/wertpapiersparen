@@ -5,6 +5,7 @@ import { isharesMsciEuropeSriThesaurierend } from './isharesMsciEuropeSriThesaur
 export const isharesMsciEuropeSriAusschuettend: Etf = {
   ...isharesMsciEuropeSriThesaurierend,
   name: 'iShares MSCI Europe SRI UCITS (ausschüttend)',
+  url: 'https://www.ishares.com/de/privatanleger/de/produkte/306549/',
   isin: 'IE00BGDPWW94',
   gewinn: 'ausschüttend',
   ter: 0.3,

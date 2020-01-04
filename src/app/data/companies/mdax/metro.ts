@@ -265,7 +265,7 @@ export const metroCompany: Company = {
       securityType: SecurityType.InhaberVorzug
     }
   ],
-  current_indices: [Indices.MDAX, Indices.MSCIEuropeSRI],
+  current_indices: [Indices.MDAX, Indices.MSCIEuropeSRI, Indices.DowJonesSustainabilityEurozone],
   end_of_month_prices: prices,
   dividends,
   tags: ['Einzelhandel', 'Großhandel', 'Cash&Carry']

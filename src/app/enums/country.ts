@@ -12,6 +12,11 @@ export enum Country {
   'Finnland',
   'Schweden',
   'Schweiz',
-  'Dänemark'
+  'Dänemark',
+  'USA',
+  'Japan',
+  'Kanada',
+  'Australien',
+  'Hongkong'
 }
 
