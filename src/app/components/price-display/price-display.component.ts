@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CompanyStocks } from '../../reducers/basket.reducer';
+import { Component, Input } from '@angular/core';
+import { AmountOfItem } from '../../reducers/basket.reducer';
 import { PriceService } from '../../services/price.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PriceService } from '../../services/price.service';
 })
 export class PriceDisplayComponent {
 
-  @Input() fav: CompanyStocks;
+  @Input() fav: AmountOfItem;
   constructor(private priceService: PriceService) { }
 
   // getLatestPrice(): number {

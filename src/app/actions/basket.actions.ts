@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Company } from '../interfaces/company';
-import { CompanyStocks } from '../reducers/basket.reducer';
+import { AmountOfItem } from '../reducers/basket.reducer';
+import { Etf } from '../interfaces/etf';
 
 export const getFavourites = createAction(
   '[Detail Component] Retrieve Favourites (from Localstorage)',
@@ -9,17 +10,17 @@ export const getFavourites = createAction(
 
 export const addToFavourites = createAction(
   '[Detail Component] Add To Favourites',
-  props<{company: Company}>()
+  props<{item: Company|Etf}>()
 );
 
 export const removeFromFavourites = createAction(
   '[Detail Component] Remove from Favourites',
-  props<{company: Company}>()
+  props<{item: Company|Etf}>()
 );
 
 export const updateFavourites = createAction(
   '[Basket Component] Update a Favourite',
-  props<{amount: number, company: Company}>()
+  props<{amount: number, item: Company|Etf}>()
 );
 
 export const setSelectedTab = createAction(
@@ -29,7 +30,7 @@ export const setSelectedTab = createAction(
 
 export const getFromLocalStorageSuccess = createAction(
   '[Basket Component] Retrieve From LocalStorage SUCCESS',
-  props<{items: CompanyStocks[]}>()
+  props<{items: AmountOfItem[]}>()
 );
 
 export const getFromLocalStorageFailed = createAction(
@@ -39,7 +40,7 @@ export const getFromLocalStorageFailed = createAction(
 
 export const savedToLocalStorageSuccess = createAction(
   '[Basket Component] Saved To LocalStorage',
-  props<{items: CompanyStocks[]}>()
+  props<{items: AmountOfItem[]}>()
 );
 
 export const savedToLocalStorageFailed = createAction(

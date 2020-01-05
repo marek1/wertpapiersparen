@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { BasketActions } from '../actions';
-import { exhaustMap, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { exhaustMap, map, withLatestFrom } from 'rxjs/operators';
 import { BasketService } from '../services/basket.service';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../reducers';
-import { CompanyStocks } from '../reducers/basket.reducer';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 

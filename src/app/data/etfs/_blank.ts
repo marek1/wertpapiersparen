@@ -5,13 +5,15 @@ import { SecurityType } from '../../enums/securityType';
 
 // tslint:disable:max-line-length
 export const _blank: Etf = {
+  id: 5000,
   name: '',
   description: '',
   tracks: '',
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: '',
   isin: '',
   symbol: '',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: '',
   issuer: '',
@@ -19,10 +21,11 @@ export const _blank: Etf = {
   country: Country.Irland,
   gewinn: 'thesaurierend',
   ter: 0,
-  prices: null,
+  end_of_month_prices: null,
   yields: [],
   lastUpdate: '2019-12-26',
   shares: [],
+  sectors: [],
   industries: [],
   countries: [],
   tags: []

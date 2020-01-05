@@ -5,6 +5,7 @@ import { Country } from '../enums/country';
 import { ResponsibilityType } from '../enums/responsibility';
 import { SecurityType } from '../enums/securityType';
 import { IsharesIndustryNames } from '../enums/isharesIndustryNames';
+import { Portion } from './etf';
 
 export interface Dividends {
   year: number;
@@ -40,6 +41,7 @@ export interface Company {
   link_stockPrices?: string;
   logo: string;
   products: Product[];
+  sectors?: Portion[];
   industries: number[];
   isharesIndustryName?: IsharesIndustryNames;
   securityType?: SecurityType;

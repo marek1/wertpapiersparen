@@ -1481,13 +1481,15 @@ const prices = {
 
 // tslint:disable:max-line-length
 export const isharesMdax: Etf = {
+  id: 5004,
   name: 'iShares MDAX® UCITS ETF (DE)',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus 60 deutschen Unternehmen mit mittlerer Marktkapitalisierung besteht, die im Prime-Standard-Segment der Frankfurter Börse notiert oder vorwiegend in Deutschland tätig sind.',
   tracks: Indices.MDAX,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251845/',
   isin: 'DE0005933923',
   symbol: 'EXS3.DE',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',
   issuer: 'BlackRock Asset Management Deutschland AG',
@@ -1495,7 +1497,7 @@ export const isharesMdax: Etf = {
   country: Country.Deutschland,
   gewinn: 'thesaurierend',
   ter: 0.51,
-  prices,
+  end_of_month_prices: prices,
   yields: [
     30.23, 24.72, 61.81, 256.71
   ],
@@ -1505,7 +1507,7 @@ export const isharesMdax: Etf = {
     {name: Country[Country.Deutschland], portion: 89.91},
     {name: Country[Country.Frankreich], portion: 10.06}
   ],
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.Industrie, portion: 24.33},
     {name: IsharesIndustryNames.Immobilien, portion: 13.01},
     {name: IsharesIndustryNames.Materialien, portion: 12.9},
@@ -1516,6 +1518,7 @@ export const isharesMdax: Etf = {
     {name: IsharesIndustryNames.IT, portion: 6.75},
     {name: IsharesIndustryNames.Versorger, portion: 1.77},
     {name: IsharesIndustryNames.NichtzyklischeKonsumgueter, portion: 0.94}
-  ]
+  ],
+  industries: []
 };
 // tslint:enable:max-line-length

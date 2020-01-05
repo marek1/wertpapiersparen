@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CompanyStocks } from '../../../reducers/basket.reducer';
+import { AmountOfItem } from '../../../reducers/basket.reducer';
 
 @Component({
   selector: 'app-etfs-matcher',
@@ -8,7 +8,7 @@ import { CompanyStocks } from '../../../reducers/basket.reducer';
 })
 export class EtfsMatcherComponent implements OnInit {
 
-  @Input() favourites: CompanyStocks[];
+  @Input() favourites: AmountOfItem[];
   constructor() { }
 
   ngOnInit() {

@@ -1592,13 +1592,15 @@ const prices = {
 };
 // tslint:disable:max-line-length
 export const isharesEurostoxx50: Etf = {
+  id: 5003,
   name: 'iShares Core EURO STOXX 50 UCITS ETF (DE)',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus den 50 größten Unternehmen in der Eurozone besteht.',
   tracks: Indices.EuroStoxx50,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251783/',
   isin: 'DE0005933956',
   symbol: 'EXW1.DE',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',
   issuer: 'BlackRock Asset Management Deutschland AG',
@@ -1606,7 +1608,7 @@ export const isharesEurostoxx50: Etf = {
   country: Country.Deutschland,
   gewinn: 'ausschüttend',
   ter: 0.11,
-  prices,
+  end_of_month_prices: prices,
   yields: [ // kumulativ
     29.51, 25.05, 40.43, 80.71
   ],
@@ -1622,7 +1624,7 @@ export const isharesEurostoxx50: Etf = {
     {name: Country[Country.Belgien], portion: 2.3},
     {name: Country[Country.Irland], portion: 1.06}
   ],
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.Financials, portion: 17.59},
     {name: IsharesIndustryNames.ZyklischeKonsumgueter, portion: 14.14},
     {name: IsharesIndustryNames.Industrie, portion: 13.28},
@@ -1634,5 +1636,6 @@ export const isharesEurostoxx50: Etf = {
     {name: IsharesIndustryNames.Versorger, portion: 5.03},
     {name: IsharesIndustryNames.Kommunikation, portion: 4.68},
   ],
+  industries: []
 };
 // tslint:enable:max-line-length

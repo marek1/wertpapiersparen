@@ -1025,13 +1025,15 @@ const prices = {
 };
 
 export const isharesTecdax: Etf = {
+  id: 5008,
   name: 'iShares TecDAX® UCITS (DE)',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus den 30 größten an der Frankfurter Wertpapierbörse notierten Technologieunternehmen besteht',
   tracks: Indices.TecDAX,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251975/',
   isin: 'DE0005933972',
   symbol: 'EXS2.DE',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',
   issuer: 'BlackRock Asset Management Deutschland AG',
@@ -1039,7 +1041,7 @@ export const isharesTecdax: Etf = {
   country: Country.Deutschland,
   gewinn: 'thesaurierend',
   ter: 0.51,
-  prices,
+  end_of_month_prices: prices,
   yields: [ // kumulativ
     22.36, 64.16, 115.74, 257.68
   ],
@@ -1048,7 +1050,7 @@ export const isharesTecdax: Etf = {
   countries: [
     {name: Country[Country.Deutschland], portion: 99.98}
   ],
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.Technologie, portion: 41.95},
     {name: IsharesIndustryNames.Gesundheitsversorgung, portion: 21.22},
     {name: IsharesIndustryNames.IndustrieDienstleistungen, portion: 18.25},
@@ -1056,6 +1058,7 @@ export const isharesTecdax: Etf = {
     {name: IsharesIndustryNames.HaushaltsKonsumgüter, portion: 1.81},
     {name: IsharesIndustryNames.Einzelhandel, portion: 0.91},
     {name: IsharesIndustryNames.ÖlGas, portion: 0.73}
-  ]
+  ],
+  industries: []
 };
 

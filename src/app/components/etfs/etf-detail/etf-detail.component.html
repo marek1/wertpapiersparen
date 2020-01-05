@@ -5,10 +5,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-sm-6">
       <div class="clickable">
         {{etf.name}}
       </div>
+    </div>
+    <div class="col-12 col-sm-6 text-right">
+      <app-add-to-favourites [version]="'long'" [company]="etf"></app-add-to-favourites>
     </div>
   </div>
 </div>

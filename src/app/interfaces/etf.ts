@@ -13,6 +13,7 @@ export interface Portion {
 }
 
 export interface Etf {
+  id: number;
   name: string;
   description: string;
   tracks: string;
@@ -20,6 +21,7 @@ export interface Etf {
   url: string;
   isin: string;
   symbol: string;
+  smallestTradeableUnit: number;
   currency: Currency;
   manager: string;
   issuer: string;
@@ -27,11 +29,12 @@ export interface Etf {
   country: Country;
   gewinn: 'thesaurierend' | 'ausschüttend';
   ter: number;
-  prices: any;
+  end_of_month_prices: any;
   yields: number[]; // 1, 3, 5, 10, 15, 20 Jahre
   lastUpdate: string;
   shares: CompanyShort[];
   countries?: Portion[];
-  industries?: Portion[];
+  sectors?: Portion[];
+  industries: number[];
   tags?: string[];
 }

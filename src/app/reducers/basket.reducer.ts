@@ -1,17 +1,18 @@
 import { createReducer, on } from '@ngrx/store';
 import { BasketActions } from '../actions';
 import { Company } from '../interfaces/company';
+import { Etf } from '../interfaces/etf';
 
-export interface CompanyStocks {
+export interface AmountOfItem {
   amount: number;
-  company: Company;
+  item: Company|Etf;
 }
 export const featureKey = 'basket';
 
 export interface State {
   isLoading: boolean;
   errorMessage: string|null;
-  items: CompanyStocks[];
+  items: AmountOfItem[];
   selectedTab: number;
 }
 
@@ -30,22 +31,22 @@ export const reducer = createReducer(
       ...state,
       items
   })),
-  on(BasketActions.addToFavourites, (state, {company}) => ({
+  on(BasketActions.addToFavourites, (state, {item}) => ({
     ...state,
     items: [...state.items, {
-      amount: company.smallestTradeableUnit,
-      company
+      amount: item.smallestTradeableUnit,
+      item
     }]
   })),
-  on(BasketActions.removeFromFavourites, (state, {company}) =>  ({
+  on(BasketActions.removeFromFavourites, (state, {item}) =>  ({
     ...state,
-    items: [...state.items.filter(com => com.company.id !== company.id)]
+    items: [...state.items.filter(com => com.item.id !== item.id)]
   })),
-  on(BasketActions.updateFavourites, (state, {amount, company}) =>  ({
+  on(BasketActions.updateFavourites, (state, {amount, item}) =>  ({
     ...state,
     items: [...state.items.map((com) => {
       // overwrite the amount for the given company
-      if (com.company.id === company.id) {
+      if (com.item.id === item.id) {
         com = {...com, amount};
       }
       return com;
@@ -60,7 +61,7 @@ export const reducer = createReducer(
 export const getFavourites = (state: State) => state.items;
 export const getFavouritesAsList = (state: State) => {
   const x = [];
-  state.items.map((item) => x.push(item.company.id));
+  state.items.map((item) => x.push(item.item.id));
   return x;
 };
 export const getSelectedTab = (state: State) => state.selectedTab;

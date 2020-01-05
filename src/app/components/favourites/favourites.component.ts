@@ -3,12 +3,13 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
 import { Company } from '../../interfaces/company';
-import { CompanyStocks } from '../../reducers/basket.reducer';
-import { BasketActions, SearchActions } from '../../actions';
+import { AmountOfItem } from '../../reducers/basket.reducer';
+import { BasketActions } from '../../actions';
 import { PriceService } from '../../services/price.service';
 import { IndustryService } from '../../services/industry.service';
 import { Performances } from '../../enums/performances';
 import { HelperService } from '../../services/helpers';
+import { SecurityType } from '../../enums/securityType';
 
 @Component({
   selector: 'app-favourites',
@@ -17,13 +18,14 @@ import { HelperService } from '../../services/helpers';
 })
 export class FavouritesComponent implements OnInit {
 
-  public favouredSecurities$: Observable<CompanyStocks[]>;
+  public favouredSecurities$: Observable<AmountOfItem[]>;
   public showMore: number;
   public performanceYears: number[];
   public totalPrice: number;
   public totalPastPrices: number[];
   public tabs: string[];
   public selectedTab$: Observable<number>;
+  public SecurityType = SecurityType;
 
   constructor(
     private priceService: PriceService,
@@ -38,15 +40,15 @@ export class FavouritesComponent implements OnInit {
   ngOnInit() {
     this.showMore = 1;
     this.favouredSecurities$ = this.store.pipe(select(fromRoot.getFavouredSecurities));
-    this.favouredSecurities$.subscribe((items: CompanyStocks[]) => {
+    this.favouredSecurities$.subscribe((items: AmountOfItem[]) => {
       this.totalPrice = this.getNetSum(items, 'EUR');
       this.totalPastPrices = [];
       this.performanceYears.map((x) => {
         // i.e. x = 1 Jahr, Performances[x] = 1
         // TODO: if 1 returns a 0 -> then the whole result is to be 0 !!!
         const results = [];
-        items.map((item: CompanyStocks) => {
-          results.push(item.amount * this.priceService.getPriceAt(item.company.end_of_month_prices, parseInt(Performances[x], 10))[1]);
+        items.map((item: AmountOfItem) => {
+          results.push(item.amount * this.priceService.getPriceAt(item.item.end_of_month_prices, parseInt(Performances[x], 10))[1]);
         });
         if (results.includes(0)) {
           this.totalPastPrices.push(0);
@@ -59,17 +61,17 @@ export class FavouritesComponent implements OnInit {
   }
 
   updateStore(anzahl: number, firma: Company): void {
-    this.store.dispatch(BasketActions.updateFavourites({amount: anzahl, company: firma}));
+    this.store.dispatch(BasketActions.updateFavourites({amount: anzahl, item: firma}));
   }
 
   getIndustryName(industryId: number) {
     return this.industryService.getIndustryName(industryId);
   }
 
-  getNetSum(items: CompanyStocks[], currency: string) {
+  getNetSum(items: AmountOfItem[], currency: string) {
     let returnValue = 0;
     items.map((item) => {
-      if (item.company.currency === currency) {
+      if (item.item.currency === currency) {
         returnValue += this.priceService.getLatestTotalPrice(item);
       }
     });
@@ -77,6 +79,7 @@ export class FavouritesComponent implements OnInit {
   }
 
   getPerformance(amount: number) {
+    console.log('')
     return !isNaN(amount) ? ((this.totalPrice - amount) / amount) * 100 : 0;
     // return !isNaN(amount) ? ((this.totalPrice * 100 / amount) - 100) : 0;
   }

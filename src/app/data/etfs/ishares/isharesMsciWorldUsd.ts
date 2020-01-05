@@ -508,21 +508,23 @@ const prices = {
 
 // tslint:disable:max-line-length
 export const isharesMsciWorldUsd: Etf = {
+  id: 5007,
   name: 'iShares MSCI World UCITS ETF',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus Unternehmen aus Industrieländern besteht.',
   tracks: Indices.MSCIWorld,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251881/',
   isin: 'IE00B0M62Q58',
   symbol: 'IQQW.DE',
-  currency: Currency.USD,
+  smallestTradeableUnit: 1,
+  currency: Currency.EUR,
   manager: 'BlackRock Asset Management Ireland Limited',
   issuer: 'iShares plc',
   logo: 'https://www.ishares.com/uk-retail-assets/cache-1564149267000/images/media-bin/web/global/logos/logo-ishares.svg',
   country: Country.Irland,
   gewinn: 'ausschüttend',
   ter: 0.5,
-  prices,
+  end_of_month_prices: prices,
   yields: [
     27.35, 41.85, 50.94, 140.02
   ],
@@ -540,7 +542,7 @@ export const isharesMsciWorldUsd: Etf = {
     {name: Country[Country.Niederlande], portion: 1.33},
     {name: Country[Country.Hongkong], portion: 1.15}
   ],
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.IT, portion: 17.44},
     {name: IsharesIndustryNames.Financials, portion: 15.68},
     {name: IsharesIndustryNames.Gesundheitsversorgung, portion: 12.89},
@@ -551,6 +553,7 @@ export const isharesMsciWorldUsd: Etf = {
     {name: IsharesIndustryNames.Energie, portion: 4.91},
     {name: IsharesIndustryNames.Materialien, portion: 4.34},
     {name: IsharesIndustryNames.Versorger, portion: 3.37},
-  ]
+  ],
+  industries: []
 };
 // tslint:enable:max-line-length

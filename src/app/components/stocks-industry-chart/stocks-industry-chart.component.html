@@ -1,0 +1,19 @@
+<div class="row" *ngIf="pieChartData.length > 0">
+
+  <div class="col-12">
+    <small>Die gewählten Aktien enthalten folgende Industrien:</small>
+  </div>
+  <div class="col-12">
+
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+    </canvas>
+
+  </div>
+</div>

@@ -1019,13 +1019,15 @@ const prices = {
 
 // tslint:disable:max-line-length
 export const isharesDax: Etf = {
+  id: 5001,
   name: 'iShares Core DAX® UCITS ETF (DE)',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus den 30 größten und am häufigsten gehandelten deutschen Unternehmen besteht, die im Prime-Standard-Segment der Frankfurter Börse notiert sind.',
   tracks: Indices.DAX,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251464/',
   isin: 'DE0005933931',
   symbol: 'EXS1.DE',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',
   issuer: 'BlackRock Asset Management Deutschland AG',
@@ -1033,7 +1035,7 @@ export const isharesDax: Etf = {
   country: Country.Deutschland,
   gewinn: 'thesaurierend',
   ter: 0.16,
-  prices,
+  end_of_month_prices: prices,
   yields: [ // kumulativ
     24.79, 13.97, 33.08, 117.09
   ],
@@ -1043,7 +1045,7 @@ export const isharesDax: Etf = {
     {name: Country[Country.Deutschland], portion: 90.41},
     {name: Country[Country.USA], portion: 9.59}
   ],
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.Materialien, portion: 17.05},
     {name: IsharesIndustryNames.Financials, portion: 16.11},
     {name: IsharesIndustryNames.ZyklischeKonsumgueter, portion: 15.44},
@@ -1054,7 +1056,8 @@ export const isharesDax: Etf = {
     {name: IsharesIndustryNames.Versorger, portion: 3.47},
     {name: IsharesIndustryNames.NichtzyklischeKonsumgueter, portion: 2.48},
     {name: IsharesIndustryNames.Immobilien, portion: 2.31},
-  ]
+  ],
+  industries: []
 };
 // tslint:enable:max-line-length
 

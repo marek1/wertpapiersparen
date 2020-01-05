@@ -1,4 +1,4 @@
-import { CompanyStocks } from '../reducers/basket.reducer';
+import { AmountOfItem } from '../reducers/basket.reducer';
 
 export class PriceService {
   thisYear: number;
@@ -6,7 +6,7 @@ export class PriceService {
     this.thisYear = 2019; // TODO: new Date().getFullYear();
   }
 
-  getLatestPrice(fav: CompanyStocks): number {
+  getLatestPrice(fav: AmountOfItem): number {
     const latestPriceEntry = this.getLatestPriceEntry(fav);
     if (!latestPriceEntry || latestPriceEntry.length < 2 || latestPriceEntry[1]['4. close'] === undefined) {
       return 0;
@@ -18,18 +18,18 @@ export class PriceService {
     return parseFloat(closePrice);
   }
 
-  getLatestTotalPrice(fav: CompanyStocks): number {
+  getLatestTotalPrice(fav: AmountOfItem): number {
     return this.getLatestPrice(fav) * fav.amount;
   }
 
-  getLatestPriceEntry(fav: CompanyStocks): any[] {
-    if (Object.entries(fav.company.end_of_month_prices).length === 0) {
+  getLatestPriceEntry(fav: AmountOfItem): any[] {
+    if (Object.entries(fav.item.end_of_month_prices).length === 0) {
       return [];
     }
-    return Object.entries(fav.company.end_of_month_prices)[0];
+    return Object.entries(fav.item.end_of_month_prices)[0];
   }
 
-  getDateOfLastPriceEntry(fav: CompanyStocks) {
+  getDateOfLastPriceEntry(fav: AmountOfItem) {
     const latestPriceEntry = this.getLatestPriceEntry(fav);
     if (!latestPriceEntry || latestPriceEntry.length < 2) {
       return 'nicht bekannt';

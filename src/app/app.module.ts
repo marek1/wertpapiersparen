@@ -21,7 +21,6 @@ import localeDe from '@angular/common/locales/de';
 import { BasketEffects } from './effects/basket.effects';
 import { BasketService } from './services/basket.service';
 import { PriceService } from './services/price.service';
-import { IndustryChartComponent } from './components/industry-chart/industry-chart.component';
 import { IndustryService } from './services/industry.service';
 import { AddToFavouritesComponent } from './components/add-to-favourites/add-to-favourites.component';
 import { EtfDetailComponent } from './components/etfs/etf-detail/etf-detail.component';
@@ -36,6 +35,8 @@ import { CompaniesByProductComponent } from './components/companies/companies-by
 import { CompaniesListInIndustryComponent } from './components/companies/companies-list-in-industry/companies-list-in-industry.component';
 import { CompanyDetailsComponent } from './components/companies/company-details/company-details.component';
 import { EtfsMatcherComponent } from './components/etfs/etfs-matcher/etfs-matcher.component';
+import { StocksIndustryChartComponent } from './components/stocks-industry-chart/stocks-industry-chart.component';
+import { EtfSectorChartComponent } from './components/etf-sector-chart/etf-sector-chart.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -51,7 +52,7 @@ registerLocaleData(localeDe, 'de');
     FavouritesComponent,
     NumberInputComponent,
     PriceDisplayComponent,
-    IndustryChartComponent,
+    StocksIndustryChartComponent,
     CompaniesBySearchtermComponent,
     CompaniesByProductComponent,
     AddToFavouritesComponent,
@@ -61,7 +62,8 @@ registerLocaleData(localeDe, 'de');
     CompaniesHomeComponent,
     EtfsHomeComponent,
     EtfsBySearchtermComponent,
-    EtfsMatcherComponent
+    EtfsMatcherComponent,
+    EtfSectorChartComponent
   ],
   imports: [
     FormsModule,

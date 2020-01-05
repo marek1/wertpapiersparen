@@ -66,8 +66,8 @@ export class EtfDetailComponent implements OnInit {
         this.regionChartLabels.unshift(portion.name);
       });
     }
-    if (this.etf.industries !== undefined) {
-      this.etf.industries.map((portion: Portion) => {
+    if (this.etf.sectors !== undefined) {
+      this.etf.sectors.map((portion: Portion) => {
         this.industryChartData.unshift(portion.portion);
         this.industryChartLabels.unshift(portion.name);
       });

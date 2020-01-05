@@ -4,6 +4,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Company } from '../../interfaces/company';
 import { BasketActions } from '../../actions';
+import { Etf } from '../../interfaces/etf';
 
 @Component({
   selector: 'app-add-to-favourites',
@@ -23,11 +24,11 @@ export class AddToFavouritesComponent implements OnInit {
     this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
   }
 
-  addToFavourites(company: Company) {
-    this.store.dispatch(BasketActions.addToFavourites({company}));
+  addToFavourites(item: Company|Etf) {
+    this.store.dispatch(BasketActions.addToFavourites({item}));
   }
 
-  removeFromFavourites(company: Company) {
-    this.store.dispatch(BasketActions.removeFromFavourites({company}));
+  removeFromFavourites(item: Company|Etf) {
+    this.store.dispatch(BasketActions.removeFromFavourites({item}));
   }
 }

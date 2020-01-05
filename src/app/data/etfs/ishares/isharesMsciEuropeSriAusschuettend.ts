@@ -3,6 +3,7 @@ import { isharesMsciEuropeSriThesaurierend } from './isharesMsciEuropeSriThesaur
 
 // tslint:disable:max-line-length
 export const isharesMsciEuropeSriAusschuettend: Etf = {
+  id: 5006,
   ...isharesMsciEuropeSriThesaurierend,
   name: 'iShares MSCI Europe SRI UCITS (ausschüttend)',
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/306549/',
@@ -10,7 +11,7 @@ export const isharesMsciEuropeSriAusschuettend: Etf = {
   symbol: '36B3',
   gewinn: 'ausschüttend',
   ter: 0.3,
-  prices: null,
+  end_of_month_prices: null,
   yields: [ // kumulativ
     // no data yet
   ]

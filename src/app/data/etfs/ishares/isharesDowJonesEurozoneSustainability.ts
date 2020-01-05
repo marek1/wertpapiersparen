@@ -1017,13 +1017,15 @@ const prices = {
 };
 // tslint:disable:max-line-length
 export const isharesDowJonesEurozoneSustainability: Etf = {
+  id: 5002,
   name: 'iShares Dow Jones Eurozone Sustainability Screened UCITS ETF (DE)',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus Unternehmen in der Eurozone besteht, die im Bereich der Nachhaltigkeit führend sind.',
   tracks: Indices.DowJonesSustainabilityEurozone,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251706/ishares-dow-jones-eurozone-sustainability-screened-ucits-etf-de-fund',
   isin: 'DE000A0F5UG3',
   symbol: 'EXXV.DE',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',
   issuer: 'BlackRock Asset Management Deutschland AG',
@@ -1031,13 +1033,13 @@ export const isharesDowJonesEurozoneSustainability: Etf = {
   country: Country.Irland,
   gewinn: 'ausschüttend',
   ter: 0.41,
-  prices,
+  end_of_month_prices: prices,
   yields: [
     29.63
   ],
   lastUpdate: '2019-12-31',
   shares: [],
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.Financials, portion: 18.88},
     {name: IsharesIndustryNames.Industrie, portion: 13.21},
     {name: IsharesIndustryNames.IT, portion: 12.08},
@@ -1049,6 +1051,7 @@ export const isharesDowJonesEurozoneSustainability: Etf = {
     {name: IsharesIndustryNames.Materialien, portion: 6.09},
     {name: IsharesIndustryNames.Immobilien, portion: 0.89},
   ],
+  industries: [],
   countries: [
     {name: Country[Country.Frankreich], portion: 39.74},
     {name: Country[Country.Deutschland], portion: 25.37},

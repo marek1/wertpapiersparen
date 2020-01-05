@@ -598,13 +598,15 @@ const prices = {
 };
 // tslint:disable:max-line-length
 export const isharesMsciEuropeSriThesaurierend: Etf = {
+  id: 5005,
   name: 'iShares MSCI Europe SRI UCITS (thesaurierend)',
   description: 'Der Fonds ist bestrebt, die Performance eines Index nachzubilden, der sich aus europäischen ESG (umweltverträglich, sozial und staatlich)-überprüften Unternehmensanleihen zusammensetzt.',
   tracks: Indices.MSCIEuropeSRI,
-  securityType: SecurityType.Aktie,
+  securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251767/',
   isin: 'IE00B52VJ196',
   symbol: 'IUSK.DE',
+  smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Ireland Limited',
   issuer: 'iShares II plc',
@@ -612,13 +614,13 @@ export const isharesMsciEuropeSriThesaurierend: Etf = {
   country: Country.Irland,
   gewinn: 'thesaurierend',
   ter: 0.3,
-  prices,
+  end_of_month_prices: prices,
   yields: [ // kumulativ
     20.57, 38.18, 40.19
   ],
   lastUpdate: '2019-12-26',
   shares: findCompaniesInIndex(Indices.MSCIEuropeSRI),
-  industries: [
+  sectors: [
     {name: IsharesIndustryNames.Financials, portion: 19.41},
     {name: IsharesIndustryNames.NichtzyklischeKonsumgueter, portion: 15.37},
     {name: IsharesIndustryNames.Industrie, portion: 14.87},
@@ -642,6 +644,7 @@ export const isharesMsciEuropeSriThesaurierend: Etf = {
     {name: Country[Country.Italien], portion: 2.62},
     {name: Country[Country.Irland], portion: 2.28}
   ],
+  industries: [],
   tags: ['Anleihen', 'ESG', 'geprüft', 'umweltverträglich', 'sozial', 'staatlich']
 };
 // tslint:enable:max-line-length

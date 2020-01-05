@@ -1,11 +1,11 @@
 import { of } from 'rxjs';
-import { CompanyStocks } from '../reducers/basket.reducer';
+import { AmountOfItem } from '../reducers/basket.reducer';
 
 export class BasketService {
   constructor() {}
 
   getBasket() {
-    const basket: CompanyStocks[] = JSON.parse(localStorage.getItem('stockpicking_basket'));
+    const basket: AmountOfItem[] = JSON.parse(localStorage.getItem('stockpicking_basket'));
 
     if (basket != null) {
       return of(basket);
@@ -13,7 +13,7 @@ export class BasketService {
     return of([]);
   }
 
-  setBasket(items: CompanyStocks[]) {
+  setBasket(items: AmountOfItem[]) {
     localStorage.setItem('stockpicking_basket', JSON.stringify(items));
     return of(items);
   }
