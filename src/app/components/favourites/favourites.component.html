@@ -70,10 +70,10 @@
         Performance (kumulativ, und ohne Dividende)
       </small>
       <div class="row" *ngFor="let x of totalPastPrices; let i = index">
-        <div class="col-6 text-right" >
+        <div class="col-6 col-sm-3 text-right" >
           {{performanceYears[i]}}
         </div>
-        <div class="col-6">
+        <div class="col-6 col-sm-3">
           ca. {{getPerformance(x) | number:'1.0-0':'de' }} %
         </div>
       </div>
@@ -82,7 +82,7 @@
       <small>
         das heisst, wenn
       </small>
-      <div class="text-right" *ngFor="let x of totalPastPrices; let i = index">
+      <div class="text-left" *ngFor="let x of totalPastPrices; let i = index">
         du vor {{performanceYears[i]}}{{ performanceYears[i] != '1 Jahr' ? 'n' : '' }} gekauft hättest, hättest du ca. {{totalPastPrices[i] | number:'1.0-0':'de'}} EUR bezahlt.
       </div>
     </div>

@@ -19,6 +19,7 @@ export interface Etf {
   securityType: SecurityType;
   url: string;
   isin: string;
+  symbol: string;
   currency: Currency;
   manager: string;
   issuer: string;
@@ -26,6 +27,7 @@ export interface Etf {
   country: Country;
   gewinn: 'thesaurierend' | 'ausschüttend';
   ter: number;
+  prices: any;
   yields: number[]; // 1, 3, 5, 10, 15, 20 Jahre
   lastUpdate: string;
   shares: CompanyShort[];
