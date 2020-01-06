@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { SelectedIndustry } from '../interfaces/selectedIndustry';
 
-export const setSelectedSearchMethodAction = createAction(
+export const setSelectedSearchMethod = createAction(
   '[Companies-Home Component] Set Selected SearchMethod',
   props<{selectedSearchMethod: number}>()
 );
@@ -26,7 +26,3 @@ export const updateProductFilter = createAction(
   props<{productFilter: string}>()
 );
 
-export const updateEtfsSearchTerm = createAction(
-  '[Etfs-By-SearchTerm Component] Update SearchTerm',
-  props<{searchTerm: string}>()
-);

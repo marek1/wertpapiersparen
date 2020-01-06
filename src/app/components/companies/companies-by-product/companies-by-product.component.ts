@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../interfaces/product';
 import { Company } from '../../../interfaces/company';
-import { SearchActions } from '../../../actions';
+import { CompaniesActions } from '../../../actions';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { Observable } from 'rxjs';
@@ -48,7 +48,7 @@ export class CompaniesByProductComponent implements OnInit {
   }
 
   filter(filterArg: string) {
-    this.store.dispatch(SearchActions.updateProductFilter({productFilter: filterArg}));
+    this.store.dispatch(CompaniesActions.updateProductFilter({productFilter: filterArg}));
     if (filterArg === this.filterArgs[0]) {
       this.filteredProducts = [...this.products];
     } else {

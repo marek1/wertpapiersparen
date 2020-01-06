@@ -8,17 +8,18 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
-import * as fromSearch from './search.reducer';
+import * as fromCompanies from './companies.reducer';
+import * as fromEtfs from './etfs.reducer';
 import * as fromBasket from './basket.reducer';
 import { InjectionToken } from '@angular/core';
-import { from } from 'rxjs';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface AppState {
-  [fromSearch.featureKey]: fromSearch.State;
+  [fromCompanies.featureKey]: fromCompanies.State;
+  [fromEtfs.featureKey]: fromEtfs.State;
   [fromBasket.featureKey]: fromBasket.State;
 }
 
@@ -29,7 +30,8 @@ export interface AppState {
  */
 export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Action>>('Root reducers token', {
   factory: () => ({
-    [fromSearch.featureKey]: fromSearch.reducer,
+    [fromCompanies.featureKey]: fromCompanies.reducer,
+    [fromEtfs.featureKey]: fromEtfs.reducer,
     [fromBasket.featureKey]: fromBasket.reducer
   })
 });
@@ -58,36 +60,49 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production
   : [];
 
 /**
- * Search Reducers
+ * Companies Reducers
  */
 
-export const selectSearchState = createFeatureSelector<AppState, fromSearch.State>(
-  fromSearch.featureKey
+export const selectCompaniesState = createFeatureSelector<AppState, fromCompanies.State>(
+  fromCompanies.featureKey
 );
 
 export const getCompaniesSelectedSearchMethod = createSelector(
-  selectSearchState,
-  fromSearch.getCompaniesSelectedSearchMethod
+  selectCompaniesState,
+  fromCompanies.getCompaniesSelectedSearchMethod
 );
 
 export const getCompaniesSelectedIndustries = createSelector(
-  selectSearchState,
-  fromSearch.getCompaniesSelectedIndustries
+  selectCompaniesState,
+  fromCompanies.getCompaniesSelectedIndustries
 );
 
 export const getCompaniesSearchTerm = createSelector(
-  selectSearchState,
-  fromSearch.getCompaniesSearchTerm
+  selectCompaniesState,
+  fromCompanies.getCompaniesSearchTerm
 );
 
 export const getCompaniesProductFilter = createSelector(
-  selectSearchState,
-  fromSearch.getCompaniesProductFilter
+  selectCompaniesState,
+  fromCompanies.getCompaniesProductFilter
+);
+
+/**
+ * Etfs Reducers
+ */
+
+export const selectEtfsState = createFeatureSelector<AppState, fromCompanies.State>(
+  fromEtfs.featureKey
+);
+
+export const getEtfsSelectedSearchMethod = createSelector(
+  selectEtfsState,
+  fromEtfs.getEtfsSelectedSearchMethod
 );
 
 export const getEtfsSearchTerm = createSelector(
-  selectSearchState,
-  fromSearch.getEtfsSearchTerm
+  selectEtfsState,
+  fromEtfs.getEtfsSearchTerm
 );
 
 /**

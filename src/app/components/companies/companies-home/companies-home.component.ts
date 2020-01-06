@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { HelperService } from '../../../services/helpers';
-import { SearchActions } from '../../../actions';
+import { CompaniesActions } from '../../../actions';
 import { SearchMethods } from '../../../enums/searchMethods';
 
 @Component({
@@ -19,7 +19,11 @@ export class CompaniesHomeComponent implements OnInit {
 
   constructor(private store: Store<fromRoot.AppState>, private helperService: HelperService) {
     this.SearchMethods = SearchMethods;
-    this.searchMethods = this.helperService.EnumToArray(SearchMethods);
+    this.searchMethods = [
+      SearchMethods[SearchMethods.Suchbegriff],
+      SearchMethods[SearchMethods['Industrie(n)']],
+      SearchMethods[SearchMethods['Produkt(e)']]
+    ];
   }
 
   ngOnInit(): void {
@@ -27,7 +31,7 @@ export class CompaniesHomeComponent implements OnInit {
   }
 
   setMethod(which: SearchMethods): void {
-    this.store.dispatch(SearchActions.setSelectedSearchMethodAction({selectedSearchMethod: which}));
+    this.store.dispatch(CompaniesActions.setSelectedSearchMethod({selectedSearchMethod: which}));
   }
 
 }

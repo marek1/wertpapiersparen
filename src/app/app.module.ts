@@ -37,6 +37,8 @@ import { CompanyDetailsComponent } from './components/companies/company-details/
 import { EtfsMatcherComponent } from './components/etfs/etfs-matcher/etfs-matcher.component';
 import { StocksIndustryChartComponent } from './components/stocks-industry-chart/stocks-industry-chart.component';
 import { EtfSectorChartComponent } from './components/etf-sector-chart/etf-sector-chart.component';
+import { EtfsByRegionComponent } from './components/etfs/etfs-by-region/etfs-by-region.component';
+import { EtfsResultComponent } from './components/etfs/etfs-result/etfs-result.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -63,7 +65,9 @@ registerLocaleData(localeDe, 'de');
     EtfsHomeComponent,
     EtfsBySearchtermComponent,
     EtfsMatcherComponent,
-    EtfSectorChartComponent
+    EtfSectorChartComponent,
+    EtfsByRegionComponent,
+    EtfsResultComponent
   ],
   imports: [
     FormsModule,

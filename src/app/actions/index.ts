@@ -1,4 +1,5 @@
-import * as SearchActions from './search.actions';
 import * as BasketActions from './basket.actions';
+import * as CompaniesActions from './companies.actions';
+import * as EtfsActions from './etfs.actions';
 
-export { SearchActions, BasketActions };
+export { BasketActions, CompaniesActions, EtfsActions };

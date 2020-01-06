@@ -5,7 +5,7 @@ import { Country } from '../../../enums/country';
 import { IndustryService } from '../../../services/industry.service';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
-import { SearchActions } from '../../../actions';
+import { EtfsActions } from '../../../actions';
 import { Etfs } from '../../../data/etfs';
 import { CompanyShort, Etf } from '../../../interfaces/etf';
 
@@ -27,7 +27,7 @@ export class EtfsBySearchtermComponent implements OnInit {
     this.results = [];
     this.searchTermFormControl = new FormControl();
     this.searchTermFormControl.valueChanges.subscribe((val) => {
-      this.store.dispatch(SearchActions.updateEtfsSearchTerm({searchTerm: val}));
+      this.store.dispatch(EtfsActions.updateEtfsSearchTerm({searchTerm: val}));
     });
     this.Countries = Country;
   }

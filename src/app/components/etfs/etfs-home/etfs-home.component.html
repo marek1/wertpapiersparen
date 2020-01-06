@@ -5,10 +5,28 @@
     <div class="text-center margin vertical top-bottom-10">
       Hier kannst du nach ETFS suchen
     </div>
+    
+  </div>
   
+  <div class="d-flex justify-content-center align-items-center min-h-500px">
+  
+    <div class="btn-group" role="group" aria-label="Suchmethoden" *ngFor="let x of searchMethods | keyvalue; let i = index">
+      <button type="button"
+              class="btn btn-secondary"
+              [ngClass]="{'active': (selectedSearchMethod$ | async) === SearchMethods[x.value]}"
+              (click)="setMethod(SearchMethods[x.value])">
+        {{searchMethods[i]}}
+      </button>
+    </div>
+
+  </div>
+  
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">
     <app-etfs-by-searchterm></app-etfs-by-searchterm>
-
-
+  </div>
+  
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Region(en)']">
+    <app-etfs-by-region></app-etfs-by-region>
   </div>
   
 </div>

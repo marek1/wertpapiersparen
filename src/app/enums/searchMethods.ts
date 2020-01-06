@@ -1,5 +1,7 @@
 export enum SearchMethods {
   'Suchbegriff',
-  'Industrie',
-  'Produkt(e)'
+  'Industrie(n)',
+  'Produkt(e)',
+  'Region(en)',
+  'Sektor(en)'
 }

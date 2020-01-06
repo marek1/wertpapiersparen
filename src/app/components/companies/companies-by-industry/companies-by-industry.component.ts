@@ -5,7 +5,7 @@ import { SelectedIndustry } from '../../../interfaces/selectedIndustry';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
-import { SearchActions } from '../../../actions';
+import { CompaniesActions } from '../../../actions';
 import { IndustryService } from '../../../services/industry.service';
 
 @Component({
@@ -38,7 +38,7 @@ export class CompaniesByIndustryComponent {
   }
 
   openIndustry(selectedIndustry: Industry) {
-    this.store.dispatch(SearchActions.addToSelectedIndustries({selectedIndustries:
+    this.store.dispatch(CompaniesActions.addToSelectedIndustries({selectedIndustries:
       {
         id: selectedIndustry.id,
         name: selectedIndustry.description
@@ -47,7 +47,7 @@ export class CompaniesByIndustryComponent {
   }
 
   goToBreadcrumb(i: number) {
-    this.store.dispatch(SearchActions.removeFromSelectedIndustries({endPosition: i}));
+    this.store.dispatch(CompaniesActions.removeFromSelectedIndustries({endPosition: i}));
   }
 
 }

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { findCompaniesInIndex } from '../../../data/companies';
 import { Indices } from '../../../enums/indices';
+import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import * as fromRoot from '../../../reducers';
+import { HelperService } from '../../../services/helpers';
+import { SearchMethods } from '../../../enums/searchMethods';
+import { CompaniesActions, EtfsActions } from '../../../actions';
 
 @Component({
   selector: 'app-etfs-home',
@@ -9,11 +15,24 @@ import { Indices } from '../../../enums/indices';
 })
 export class EtfsHomeComponent implements OnInit {
 
-  constructor() {
-    console.log('test : ', findCompaniesInIndex(Indices.DAX));
+  public selectedSearchMethod$: Observable<number>;
+  public SearchMethods: typeof SearchMethods;
+  public searchMethods: string[];
+
+  constructor(private store: Store<fromRoot.AppState>, private helperService: HelperService) {
+    this.SearchMethods = SearchMethods;
+    this.searchMethods = [
+      SearchMethods[SearchMethods.Suchbegriff],
+      SearchMethods[SearchMethods['Region(en)']],
+    ];
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.selectedSearchMethod$ = this.store.pipe(select(fromRoot.getEtfsSelectedSearchMethod));
   }
 
+  setMethod(which: SearchMethods): void {
+    console.log('which : ', which);
+    this.store.dispatch(EtfsActions.setSelectedSearchMethod({selectedSearchMethod: which}));
+  }
 }

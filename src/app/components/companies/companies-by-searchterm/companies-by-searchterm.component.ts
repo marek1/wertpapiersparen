@@ -7,7 +7,7 @@ import { Country } from '../../../enums/country';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { Observable } from 'rxjs';
-import { SearchActions } from '../../../actions';
+import { CompaniesActions } from '../../../actions';
 import { Product } from '../../../interfaces/product';
 import { Companies } from '../../../data/companies';
 
@@ -29,7 +29,7 @@ export class CompaniesBySearchtermComponent implements OnInit {
     this.results = [];
     this.searchTermFormControl = new FormControl();
     this.searchTermFormControl.valueChanges.subscribe((val) => {
-      this.store.dispatch(SearchActions.updateCompaniesSearchTerm({searchTerm: val}));
+      this.store.dispatch(CompaniesActions.updateCompaniesSearchTerm({searchTerm: val}));
     });
     this.Countries = Country;
   }
