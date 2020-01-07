@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from '../../../enums/country';
 import { HelperService } from '../../../services/helpers';
-import { Etf, Portion } from '../../../interfaces/etf';
-import { Etfs } from '../../../data/etfs';
+import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 
 @Component({
-  selector: 'app-etfs-by-region',
-  templateUrl: './etfs-by-region.component.html',
-  styleUrls: ['./etfs-by-region.component.scss']
+  selector: 'app-etfs-by-industry',
+  templateUrl: './etfs-by-industry.component.html',
+  styleUrls: ['./etfs-by-industry.component.scss']
 })
-export class EtfsByRegionComponent implements OnInit {
+export class EtfsByIndustryComponent implements OnInit {
 
-  public regions: string[];
+  public industries: string[];
 
   constructor(private helperService: HelperService) {
   }
 
   ngOnInit() {
-    this.regions = this.helperService.enumToArray(Country).sort((x, y) => {
+    this.industries = this.helperService.enumGetValues(IsharesIndustryNames).sort((x, y) => {
       if (this.replaceUmlate(x.toString().toLowerCase()) < this.replaceUmlate(y.toString().toLowerCase())) {
         return -1;
       } else {
@@ -25,9 +23,11 @@ export class EtfsByRegionComponent implements OnInit {
       }
       return 0;
     });
+    console.log('this.industries : ', this.industries);
   }
 
   private replaceUmlate(x: string) {
     return x.replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue');
   }
+
 }

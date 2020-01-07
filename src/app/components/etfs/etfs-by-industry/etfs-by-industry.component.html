@@ -1,0 +1,9 @@
+<div class="row margin vertical top-bottom-10">
+  <div class="col-sm-6" *ngFor="let industry of industries; let i = index;">
+    <div class="card">
+      <div class="card-body">
+        <app-etfs-result [valueName]="industry" [filterBy]="'industry'"></app-etfs-result>
+      </div>
+    </div>
+  </div>
+</div>

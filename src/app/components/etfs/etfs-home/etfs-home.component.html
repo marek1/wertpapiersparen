@@ -25,6 +25,10 @@
     <app-etfs-by-searchterm></app-etfs-by-searchterm>
   </div>
   
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Industrie(n)']">
+    <app-etfs-by-industry></app-etfs-by-industry>
+  </div>
+  
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Region(en)']">
     <app-etfs-by-region></app-etfs-by-region>
   </div>

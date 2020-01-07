@@ -72,7 +72,7 @@ export class CompanyDetailsComponent implements OnInit {
     this.batchOfProductsToBeShown = 3;
     this.endNo = 0;
     this.selectedTab = 1;
-    this.performanceYears = this.helperService.EnumToArray(Performances);
+    this.performanceYears = this.helperService.enumToArray(Performances);
 
   }
 

@@ -34,7 +34,7 @@ export class FavouritesComponent implements OnInit {
     private store: Store<fromRoot.AppState>
   ) {
     this.tabs = ['Übersicht', 'Zusammensetzung', 'ETFs'];
-    this.performanceYears = this.helperService.EnumToArray(Performances);
+    this.performanceYears = this.helperService.enumToArray(Performances);
   }
 
   ngOnInit() {

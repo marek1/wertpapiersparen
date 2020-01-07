@@ -9,19 +9,29 @@ import { Etf, Portion } from '../../../interfaces/etf';
 })
 export class EtfsResultComponent implements OnInit {
 
-  @Input() region: string;
+  @Input() valueName: string;
+  @Input() filterBy: null|'region'|'industry';
+
   public results: Etf[];
   public showMore: boolean;
 
   constructor() {
     this.results = [];
     this.showMore = false;
+    this.filterBy = null;
   }
 
   ngOnInit() {
-    this.results = Etfs.filter((etf: Etf) => {
-      return etf.countries.filter((country: Portion) => country.name === this.region).length > 0;
-    });
+    if (this.filterBy === 'region') {
+      this.results = Etfs.filter((etf: Etf) => {
+        return etf.countries.filter((portion: Portion) => portion.name === this.valueName).length > 0;
+      });
+    }
+    if (this.filterBy === 'industry') {
+      this.results = Etfs.filter((etf: Etf) => {
+        return etf.sectors.filter((portion: Portion) => portion.name === this.valueName).length > 0;
+      });
+    }
   }
 
 }

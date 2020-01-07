@@ -10,14 +10,23 @@ export class HelperService {
   constructor() {
   }
 
-  EnumToArray(enumV: any) {
+  enumToArray(enumV: any) {
     return Object.keys(enumV)
-      .filter(this.StringIsNumber)
+      .filter(this.stringIsNumber)
       .map(key => enumV[key]);
   }
 
-  StringIsNumber(value) {
+  stringIsNumber(value) {
     return isNaN(Number(value)) === false;
+  }
+
+  enumGetValues(enumV: any): string[] {
+    return Object.entries(enumV).map((val: [string, string], i: number) => {
+      if (val[1] !== undefined && val[1]) {
+         return val[1];
+      }
+      return '';
+    });
   }
 
 }

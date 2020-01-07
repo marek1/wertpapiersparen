@@ -23,6 +23,7 @@ export class EtfsHomeComponent implements OnInit {
     this.SearchMethods = SearchMethods;
     this.searchMethods = [
       SearchMethods[SearchMethods.Suchbegriff],
+      SearchMethods[SearchMethods['Industrie(n)']],
       SearchMethods[SearchMethods['Region(en)']],
     ];
   }
@@ -32,7 +33,6 @@ export class EtfsHomeComponent implements OnInit {
   }
 
   setMethod(which: SearchMethods): void {
-    console.log('which : ', which);
     this.store.dispatch(EtfsActions.setSelectedSearchMethod({selectedSearchMethod: which}));
   }
 }

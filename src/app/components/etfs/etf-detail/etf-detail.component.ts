@@ -46,7 +46,7 @@ export class EtfDetailComponent implements OnInit {
     private helperService: HelperService
   ) {
     this.Countries = Country;
-    this.performanceYears = this.helperService.EnumToArray(Performances);
+    this.performanceYears = this.helperService.enumToArray(Performances);
     this.tabs = ['Übersicht', 'Zusammensetzung'];
     this.regionChartLabels = [];
     this.regionChartData = [];

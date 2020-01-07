@@ -2,7 +2,7 @@
   <div class="col-sm-6" *ngFor="let region of regions; let i = index;">
     <div class="card">
       <div class="card-body">
-        <app-etfs-result [region]="region"></app-etfs-result>
+        <app-etfs-result [valueName]="region" [filterBy]="'region'"></app-etfs-result>
       </div>
     </div>
   </div>
