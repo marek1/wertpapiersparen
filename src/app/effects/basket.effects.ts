@@ -15,7 +15,6 @@ export class BasketEffects {
     return this.actions$.pipe(
         ofType(BasketActions.getFavourites.type),
         exhaustMap(() => {
-          console.log('effect fro gettonng from ….. ');
           return this.basketService.getBasket()
             .pipe(
               map(items => BasketActions.getFromLocalStorageSuccess({items})),
@@ -28,7 +27,11 @@ export class BasketEffects {
 
   pushItems$ = createEffect(() => {
       return this.actions$.pipe(
-        ofType(BasketActions.addToFavourites.type),
+        ofType(
+          BasketActions.addToFavourites.type,
+          BasketActions.removeFromFavourites.type,
+          BasketActions.updateFavourites.type,
+        ),
         withLatestFrom(
           this.store.pipe(select(fromRoot.getFavouredSecurities))
         ),
@@ -43,22 +46,6 @@ export class BasketEffects {
     }
   );
 
-  updateItems$ = createEffect(() => {
-      return this.actions$.pipe(
-        ofType(BasketActions.updateFavourites.type),
-        withLatestFrom(
-          this.store.pipe(select(fromRoot.getFavouredSecurities))
-        ),
-        exhaustMap(([company, itemList]) => {
-          return this.basketService.setBasket(itemList)
-            .pipe(
-              map(items => BasketActions.savedToLocalStorageSuccess({items})),
-              catchError(error => of(BasketActions.savedToLocalStorageFailed({ error })))
-            );
-        })
-      );
-    }
-  );
 
 
   constructor(

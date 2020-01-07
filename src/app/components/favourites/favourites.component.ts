@@ -33,7 +33,7 @@ export class FavouritesComponent implements OnInit {
     private industryService: IndustryService,
     private store: Store<fromRoot.AppState>
   ) {
-    this.tabs = ['Übersicht', 'Zusammensetzung', 'ETFs'];
+    this.tabs = ['Übersicht', 'Zusammensetzung']; // add 'ETFs' if Stocks are within favourites
     this.performanceYears = this.helperService.enumToArray(Performances);
   }
 
@@ -56,6 +56,12 @@ export class FavouritesComponent implements OnInit {
           this.totalPastPrices.push(results.reduce((a, b) => a + b, 0));
         }
       });
+      // if there are items in favourites which arent ETFs
+      if (items.filter((amountOfItem: AmountOfItem) => amountOfItem.item.securityType !== SecurityType.ETF).length > 0) {
+        this.tabs.push('ETFs');
+      } else if (this.tabs.indexOf('ETFs') > -1) {
+        this.tabs.splice(this.tabs.indexOf('ETFs'), 1);
+      }
     });
     this.selectedTab$ = this.store.pipe(select(fromRoot.getSelectedTab));
   }
@@ -79,7 +85,6 @@ export class FavouritesComponent implements OnInit {
   }
 
   getPerformance(amount: number) {
-    console.log('')
     return !isNaN(amount) ? ((this.totalPrice - amount) / amount) * 100 : 0;
     // return !isNaN(amount) ? ((this.totalPrice * 100 / amount) - 100) : 0;
   }
