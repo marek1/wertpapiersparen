@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public show: {
+    whatIsAStock: boolean;
+    whatIsAnEtf: boolean;
+  };
+
+  constructor() {
+    this.show = {
+      whatIsAStock: false,
+      whatIsAnEtf: false
+    };
+  }
 
   ngOnInit() {
   }

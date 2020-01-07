@@ -1,25 +1,43 @@
 <div class="home row position-absolut w-100-percent h-100-percent">
   
   <div class="col-12 margin-top-50-percent h-100-percent">
+    
+    <a
+    class="btn btn-primary w-100-percent margin vertical top-bottom-10"
+    [routerLink]="'/unternehmen'"
+    role="button">
+      Ich suche Unternehmen (und deren Aktien)
+    </a>
+    
+    <div class="text-center">
   
+      <small class="clickable" (click)="show.whatIsAStock=!show.whatIsAStock">Was ist eine Aktie <span class="fa fa-question-circle"></span></small>
   
-        <a
-        class="btn btn-primary w-100-percent margin vertical top-bottom-10"
-        [routerLink]="'/unternehmen'"
-        role="button">
-          Ich suche Unternehmen (und deren Aktien)
-        </a>
-        
-        
-        <a
-        class="btn btn-primary w-100-percent margin vertical top-bottom-10"
-        [routerLink]="'/etfs'"
-        role="button">
-          Ich suche ETFs
-        </a>
+      <div class="clickable" *ngIf="show.whatIsAStock" (click)="show.whatIsAStock=!show.whatIsAStock">
+        Die Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft oder einer Kommanditgesellschaft auf Aktien verbrieft.
+        Quelle: <a href="https://de.wikipedia.org/wiki/Aktie">Wikipedia</a>
+      </div>
       
-
+    </div>
+    
+    <a
+    class="btn btn-primary w-100-percent margin vertical top-bottom-10"
+    [routerLink]="'/etfs'"
+    role="button">
+      Ich suche ETFs
+    </a>
+  
+    <div class="text-center">
+      
+      <small class="clickable" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">Was ist ein ETF <span class="fa fa-question-circle"></span></small>
+    
+      <div class="clickable" *ngIf="show.whatIsAnEtf" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">
+        Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird.
+        Quelle: <a href="https://de.wikipedia.org/wiki/B%C3%B6rsengehandelter_Fonds">Wikipedia</a>
+      </div>
+    
+    </div>
+    
   </div>
-
-
+  
 </div>
