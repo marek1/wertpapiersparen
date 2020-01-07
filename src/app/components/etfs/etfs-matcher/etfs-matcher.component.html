@@ -1,1 +1,15 @@
-<p>etfs-matcher works!</p>
+<div class="row margin vertical top-bottom-10">
+  <div class="col-sm-6" *ngFor="let etf of results; let i = index;">
+    <div class="card">
+      <div class="card-body">
+        <a [routerLink]="['/etf', etf.name, etf.isin]">
+          {{etf.name}}
+          <span class="fa fa-arrow-circle-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="results.length === 0">
+    Keine ETFS gefunden
+  </div>
+</div>
