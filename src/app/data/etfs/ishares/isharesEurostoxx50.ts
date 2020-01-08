@@ -1636,6 +1636,13 @@ export const isharesEurostoxx50: Etf = {
     {name: IsharesIndustryNames.Versorger, portion: 5.03},
     {name: IsharesIndustryNames.Kommunikation, portion: 4.68},
   ],
-  industries: []
+  industries: [],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 // tslint:enable:max-line-length

@@ -1,12 +1,38 @@
-<div class="home row position-absolut w-100-percent h-100-percent">
+<div class="home row">
   
-  <div class="col-12 margin-top-50-percent h-100-percent">
+  <div class="col-12 margin vertical top-bottom-10">
+  
+    <div class="card">
+      <div class="card-body text-center">
+        <p>
+          Das Versorgungsniveau der künftigen Rentner werde "ohne zusätzliche Altersvorsorge in den kommenden Jahren deutlich zurückgehen".
+        </p>
+        <p>
+          <small>
+            Quelle:
+            <a href="https://www.sueddeutsche.de/karriere/rente-zeitung-regierung-raet-in-rentenbericht-zur-privaten-vorsorge-dpa.urn-newsml-dpa-com-20090101-161026-99-940200"
+               target="_blank">
+              Süddeutsche Zeitung
+            </a>
+          </small>
+        </p>
+      </div>
+    </div>
     
+  </div>
+
+  
+  <div class="col-12">
+    
+    <div class="text-center">
+      Warte also nicht. Plane deine private Rente <span class="font-weight-bold">jetzt</span>.
+      Finde die für dich passenden Aktien und/oder ETFs (inkl. Sparplan). Ganz einfach.
+    </div>
     <a
     class="btn btn-primary w-100-percent margin vertical top-bottom-10"
     [routerLink]="'/unternehmen'"
     role="button">
-      Ich suche Unternehmen (und deren Aktien)
+      Finde börsengelistete Unternehmen (bzw. deren Aktien)
     </a>
     
     <div class="text-center">
@@ -15,7 +41,7 @@
   
       <div class="clickable" *ngIf="show.whatIsAStock" (click)="show.whatIsAStock=!show.whatIsAStock">
         Die Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft oder einer Kommanditgesellschaft auf Aktien verbrieft.
-        Quelle: <a href="https://de.wikipedia.org/wiki/Aktie">Wikipedia</a>
+        Quelle: <a target="_blank" href="https://de.wikipedia.org/wiki/Aktie">Wikipedia</a>
       </div>
       
     </div>
@@ -24,7 +50,7 @@
     class="btn btn-primary w-100-percent margin vertical top-bottom-10"
     [routerLink]="'/etfs'"
     role="button">
-      Ich suche ETFs
+      Finde ETFs
     </a>
   
     <div class="text-center">
@@ -33,7 +59,7 @@
     
       <div class="clickable" *ngIf="show.whatIsAnEtf" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">
         Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird.
-        Quelle: <a href="https://de.wikipedia.org/wiki/B%C3%B6rsengehandelter_Fonds">Wikipedia</a>
+        Quelle: <a target="_blank" href="https://de.wikipedia.org/wiki/B%C3%B6rsengehandelter_Fonds">Wikipedia</a>
       </div>
     
     </div>

@@ -554,6 +554,13 @@ export const isharesMsciWorldUsd: Etf = {
     {name: IsharesIndustryNames.Materialien, portion: 4.34},
     {name: IsharesIndustryNames.Versorger, portion: 3.37},
   ],
-  industries: []
+  industries: [],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 // tslint:enable:max-line-length

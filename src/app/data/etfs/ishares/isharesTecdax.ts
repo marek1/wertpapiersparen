@@ -1059,6 +1059,13 @@ export const isharesTecdax: Etf = {
     {name: IsharesIndustryNames.Einzelhandel, portion: 0.91},
     {name: IsharesIndustryNames.ÖlGas, portion: 0.73}
   ],
-  industries: []
+  industries: [],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 

@@ -12,6 +12,12 @@ export interface Portion {
   portion: number;
 }
 
+export interface SavingPlan {
+  broker: string;
+  minInvestment: number;
+  costs: number;
+}
+
 export interface Etf {
   id: number;
   name: string;
@@ -37,4 +43,5 @@ export interface Etf {
   sectors?: Portion[];
   industries: number[];
   tags?: string[];
+  savingPlans: SavingPlan[];
 }

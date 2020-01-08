@@ -1057,7 +1057,14 @@ export const isharesDax: Etf = {
     {name: IsharesIndustryNames.NichtzyklischeKonsumgueter, portion: 2.48},
     {name: IsharesIndustryNames.Immobilien, portion: 2.31},
   ],
-  industries: []
+  industries: [],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 // tslint:enable:max-line-length
 

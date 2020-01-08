@@ -28,6 +28,7 @@ export const _blank: Etf = {
   sectors: [],
   industries: [],
   countries: [],
-  tags: []
+  tags: [],
+  savingPlans: []
 };
 // tslint:enable:max-line-length

@@ -1519,6 +1519,13 @@ export const isharesMdax: Etf = {
     {name: IsharesIndustryNames.Versorger, portion: 1.77},
     {name: IsharesIndustryNames.NichtzyklischeKonsumgueter, portion: 0.94}
   ],
-  industries: []
+  industries: [],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 // tslint:enable:max-line-length

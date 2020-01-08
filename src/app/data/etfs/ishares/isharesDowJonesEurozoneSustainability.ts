@@ -1061,6 +1061,13 @@ export const isharesDowJonesEurozoneSustainability: Etf = {
     {name: Country[Country.Finnland], portion: 2.86},
     {name: Country[Country.Irland], portion: 1.81},
   ],
-  tags: ['Nachhaltigkeit', 'Sustainability']
+  tags: ['Nachhaltigkeit', 'Sustainability'],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 // tslint:enable:max-line-length

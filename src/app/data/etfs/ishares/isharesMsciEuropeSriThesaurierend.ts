@@ -645,7 +645,14 @@ export const isharesMsciEuropeSriThesaurierend: Etf = {
     {name: Country[Country.Irland], portion: 2.28}
   ],
   industries: [],
-  tags: ['Anleihen', 'ESG', 'geprüft', 'umweltverträglich', 'sozial', 'staatlich']
+  tags: ['Anleihen', 'ESG', 'geprüft', 'umweltverträglich', 'sozial', 'staatlich'],
+  savingPlans: [
+    {
+      broker: 'Trade Republic',
+      minInvestment: 25,
+      costs: 0
+    }
+  ]
 };
 // tslint:enable:max-line-length
 
