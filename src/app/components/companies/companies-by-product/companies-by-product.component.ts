@@ -49,13 +49,9 @@ export class CompaniesByProductComponent implements OnInit {
 
   filter(filterArg: string) {
     this.store.dispatch(CompaniesActions.updateProductFilter({productFilter: filterArg}));
-    if (filterArg === this.filterArgs[0]) {
-      this.filteredProducts = [...this.products];
-    } else {
-      this.filteredProducts = this.products.filter((companyProduct) => {
-        return companyProduct.product.name[0].toLowerCase() === filterArg.toLowerCase();
-      });
-    }
+    this.filteredProducts = this.products.filter((companyProduct) => {
+      return companyProduct.product.name[0].toLowerCase() === filterArg.toLowerCase();
+    });
   }
 
   sortAlphabetically() {
