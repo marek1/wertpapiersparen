@@ -8,6 +8,11 @@ export const getFavourites = createAction(
   props<{}>()
 );
 
+export const getFavouritesFromLocalStorageSuccess = createAction(
+  '[Basket Component] Retrieve Favourites From LocalStorage SUCCESS',
+  props<{items: AmountOfItem[]}>()
+);
+
 export const addToFavourites = createAction(
   '[Detail Component] Add To Favourites',
   props<{item: Company|Etf}>()
@@ -28,19 +33,15 @@ export const setSelectedTab = createAction(
   props<{selectedTab: number}>()
 );
 
-export const getFromLocalStorageSuccess = createAction(
-  '[Basket Component] Retrieve From LocalStorage SUCCESS',
-  props<{items: AmountOfItem[]}>()
-);
 
 export const getFromLocalStorageFailed = createAction(
   '[Basket Component] Retrieve From LocalStorage FAILED',
-  props<{}>()
+  props<{error: string}>()
 );
 
 export const savedToLocalStorageSuccess = createAction(
   '[Basket Component] Saved To LocalStorage',
-  props<{items: AmountOfItem[]}>()
+  props<{success: string}>()
 );
 
 export const savedToLocalStorageFailed = createAction(
@@ -48,3 +49,17 @@ export const savedToLocalStorageFailed = createAction(
   props<{error: string}>()
 );
 
+export const getSparplanSum = createAction(
+  '[Basket Component] Retrieve Sparplan Sum (from Localstorage)',
+  props<{}>()
+);
+
+export const getSparplansumFromLocalStorageSuccess = createAction(
+  '[Basket Component] Retrieve Sparplan Sum From LocalStorage SUCCESS',
+  props<{sum: number}>()
+);
+
+export const updateSparplanSum = createAction(
+  '[Basket Component] Update Sparplan Sum',
+  props<{sum: number}>()
+);

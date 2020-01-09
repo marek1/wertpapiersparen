@@ -10,23 +10,13 @@ export class NumberInputComponent implements OnInit {
 
   @Input() anzahl: number;
   @Input() smallestUnit: number;
+  @Input() unit: string;
   @Output() numberChanged = new EventEmitter<number>();
 
-  // public AnzahlControl: FormControl;
-
   constructor() {
-    // this.AnzahlControl = new FormControl();
   }
 
   ngOnInit() {
-    // this.AnzahlControl.patchValue(this.anzahl);
-    // this.AnzahlControl.valueChanges.subscribe((val) => {
-    //   console.log('setting value : ', this.anzahl, ' ,,, val: ', val);
-    //   if (val !== this.anzahl) {
-    //     this.anzahl = val;
-    //     this.numberChanged.emit(val);
-    //   }
-    // });
   }
 
   decrease() {

@@ -1,0 +1,10 @@
+<app-number-input
+  [anzahl]="percentage"
+  [smallestUnit]="1"
+  [unit]="'%'"
+  (numberChanged)="updateStore($event, fav.item)"
+></app-number-input>
+<div>
+  ca. {{calculatedAmount | number:'1.0-0':'de'}} {{fav.item.currency}}
+  <small>oder {{share | number:'1.2-2':'de'}} Anteile</small>
+</div>

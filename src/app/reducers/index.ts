@@ -127,3 +127,8 @@ export const getSelectedTab = createSelector(
   selectBasketState,
   fromBasket.getSelectedTab
 );
+
+export const getSparplanSum = createSelector(
+  selectBasketState,
+  fromBasket.getSparplanSum
+);

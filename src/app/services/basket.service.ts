@@ -18,4 +18,18 @@ export class BasketService {
     return of(items);
   }
 
+  getSparplanSum() {
+    const sum: number = parseInt(localStorage.getItem('stockpicking_sparplansum'), 10);
+
+    if (sum != null) {
+      return of(sum);
+    }
+    return of(0);
+  }
+
+  setSparplanSum(sum: number) {
+    localStorage.setItem('stockpicking_sparplansum', sum.toString());
+    return of(sum);
+  }
+
 }

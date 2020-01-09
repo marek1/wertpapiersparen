@@ -14,20 +14,22 @@ export interface State {
   errorMessage: string|null;
   items: AmountOfItem[];
   selectedTab: number;
+  sparplanSum: number;
 }
 
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
   items: [],
-  selectedTab: 0
+  selectedTab: 0,
+  sparplanSum: 25
 };
 
 export const reducer = createReducer(
   initialState,
   // Actions to go here
   // i.e. on(action.actionName,,,,)
-  on(BasketActions.getFromLocalStorageSuccess, (state, {items}) => ({
+  on(BasketActions.getFavouritesFromLocalStorageSuccess, (state, {items}) => ({
       ...state,
       items
   })),
@@ -56,6 +58,14 @@ export const reducer = createReducer(
     ...state,
     selectedTab
   })),
+  on(BasketActions.getSparplansumFromLocalStorageSuccess, (state, {sum}) => ({
+    ...state,
+    sparplanSum: sum
+  })),
+  on(BasketActions.updateSparplanSum, (state, {sum}) =>  ({
+    ...state,
+    sparplanSum: sum
+  })),
 );
 
 export const getFavourites = (state: State) => state.items;
@@ -65,3 +75,4 @@ export const getFavouritesAsList = (state: State) => {
   return x;
 };
 export const getSelectedTab = (state: State) => state.selectedTab;
+export const getSparplanSum = (state: State) => state.sparplanSum;

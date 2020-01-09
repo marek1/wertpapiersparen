@@ -12,16 +12,4 @@ export class PriceDisplayComponent {
   @Input() fav: AmountOfItem;
   constructor(private priceService: PriceService) { }
 
-  // getLatestPrice(): number {
-  //   return this.priceService.getLatestPrice(this.fav);
-  // }
-  //
-  // getLatestTotalPrice(): number {
-  //   return this.priceService.getLatestTotalPrice(this.fav);
-  // }
-
-  // getDateOfLastPriceEntry() {
-  //   return this.priceService.getDateOfLastPriceEntry(this.fav);
-  // }
-
 }

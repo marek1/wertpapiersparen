@@ -1,16 +1,16 @@
 <ng-container *ngIf="version === 'long'">
   <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary" (click)="addToFavourites(company)">
-      Zu Sparplan <span class="fa fa-list"></span> hinzufügen
+      Zu Sparplan hinzufügen
   </button>
   <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger" (click)="removeFromFavourites(company)">
-      Aus Sparplan <span class="fa fa-list"></span> entfernen
+      Aus Sparplan entfernen
   </button>
 </ng-container>
 <ng-container *ngIf="version === 'short'">
   <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary btn-sm" (click)="addToFavourites(company)">
-    <span class="fa fa-arrow-right"></span> &nbsp; <span class="fa fa-list"></span>
+    <span class="fa fa-plus-circle abs-fa"></span><span class="fa fa-list"></span>
   </button>
   <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger btn-sm" (click)="removeFromFavourites(company)">
-    <span class="fa fa-arrow-left"></span> &nbsp; <span class="fa fa-list"></span>
+    <span class="fa fa-minus-circle abs-fa"></span><span class="fa fa-list"></span>
   </button>
 </ng-container>

@@ -9,9 +9,11 @@
            placeholder="Anzahl"
            value="{{anzahl}}"
            (keyup.enter)="changeAnzahl($event)"
+           (keyup.tab)="changeAnzahl($event)"
+           (focusout)="changeAnzahl($event)"
     >
     <div class="input-group-append">
-      <div class="input-group-text" (click)="increase()">+</div>
+      <div class="input-group-text" (click)="increase()">{{unit}} +</div>
     </div>
   </div>
 </div>

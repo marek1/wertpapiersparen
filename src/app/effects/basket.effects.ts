@@ -17,7 +17,7 @@ export class BasketEffects {
         exhaustMap(() => {
           return this.basketService.getBasket()
             .pipe(
-              map(items => BasketActions.getFromLocalStorageSuccess({items})),
+              map(items => BasketActions.getFavouritesFromLocalStorageSuccess({items})),
               catchError(error => of(BasketActions.getFromLocalStorageFailed({ error })))
             );
         })
@@ -38,7 +38,7 @@ export class BasketEffects {
         exhaustMap(([company, itemList]) => {
           return this.basketService.setBasket(itemList)
             .pipe(
-              map(items => BasketActions.savedToLocalStorageSuccess({items})),
+              map(items => BasketActions.savedToLocalStorageSuccess({success: items.toString()})),
               catchError(error => of(BasketActions.savedToLocalStorageFailed({ error })))
             );
         })
@@ -46,7 +46,38 @@ export class BasketEffects {
     }
   );
 
+  getSparplanSum$ = createEffect(() => {
+      return this.actions$.pipe(
+        ofType(BasketActions.getSparplanSum.type),
+        exhaustMap(() => {
+          return this.basketService.getSparplanSum()
+            .pipe(
+              map(sum => BasketActions.getSparplansumFromLocalStorageSuccess({sum})),
+              catchError(error => of(BasketActions.getFromLocalStorageFailed({ error })))
+            );
+        })
+      );
+    }
+  );
 
+  pushSparplanSum$ = createEffect(() => {
+      return this.actions$.pipe(
+        ofType(
+          BasketActions.updateSparplanSum.type,
+        ),
+        withLatestFrom(
+          this.store.pipe(select(fromRoot.getSparplanSum))
+        ),
+        exhaustMap(([company, sum]) => {
+          return this.basketService.setSparplanSum(sum)
+            .pipe(
+              map(items => BasketActions.savedToLocalStorageSuccess({success: sum.toString()})),
+              catchError(error => of(BasketActions.savedToLocalStorageFailed({ error })))
+            );
+        })
+      );
+    }
+  );
 
   constructor(
     private actions$: Actions,

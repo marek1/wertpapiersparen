@@ -26,6 +26,7 @@ export class SparplanComponent implements OnInit {
   public tabs: string[];
   public selectedTab$: Observable<number>;
   public SecurityType = SecurityType;
+  public sparplanSum$: Observable<number>;
 
   constructor(
     private priceService: PriceService,
@@ -64,6 +65,7 @@ export class SparplanComponent implements OnInit {
       }
     });
     this.selectedTab$ = this.store.pipe(select(fromRoot.getSelectedTab));
+    this.sparplanSum$ = this.store.pipe(select(fromRoot.getSparplanSum));
   }
 
   updateStore(anzahl: number, firma: Company): void {
@@ -86,11 +88,13 @@ export class SparplanComponent implements OnInit {
 
   getPerformance(amount: number) {
     return !isNaN(amount) ? ((this.totalPrice - amount) / amount) * 100 : 0;
-    // return !isNaN(amount) ? ((this.totalPrice * 100 / amount) - 100) : 0;
   }
 
   setTab(which: number): void {
     this.store.dispatch(BasketActions.setSelectedTab({selectedTab: which}));
   }
 
+  updateSparplanTotal(x) {
+    this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
+  }
 }
