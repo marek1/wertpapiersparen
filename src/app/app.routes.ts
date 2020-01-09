@@ -1,10 +1,10 @@
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
-import { FavouritesComponent } from './components/favourites/favourites.component';
 import { EtfPageComponent } from './components/etfs/etf-page/etf-page.component';
 import { CompanyPageComponent } from './components/companies/company-page/company-page.component';
 import { CompaniesHomeComponent } from './components/companies/companies-home/companies-home.component';
 import { EtfsHomeComponent } from './components/etfs/etfs-home/etfs-home.component';
+import { SparplanComponent } from './components/sparplan/sparplan.component';
 
 export const appRoutes = [
   {
@@ -16,8 +16,8 @@ export const appRoutes = [
     component: EtfPageComponent,
   },
   {
-    path: 'favouriten',
-    component: FavouritesComponent
+    path: 'sparplan',
+    component: SparplanComponent
   },
   {
     path: 'home',

@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-12">
       <div class="small">
-        Ihre favourisierten Aktien:
+        Dein erstellter Sparplan enthält:
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
             <app-price-display [fav]="fav"></app-price-display>
           </div>
           <div class="col-6 col-sm-1 text-right">
-            <app-add-to-favourites [version]="'short'" [company]="fav.item"></app-add-to-favourites>
+            <app-add-to-sparplan [version]="'short'" [company]="fav.item"></app-add-to-sparplan>
           </div>
         </div>
       </li>
@@ -62,10 +62,11 @@
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-12 text-right" *ngIf="favouredSecurities.length > 0">
       <div>
-        Summe: ca. {{totalPrice | number:'1.0-0':'de'}} EUR
+        <div>Würdest du an der Börse kaufen, wäre die</div>
+        <div>Summe: <span class="font-weight-bold">ca. {{totalPrice | number:'1.0-0':'de'}}</span> EUR</div>
       </div>
       <div class="small">
-        Ohne Kaufgebühren
+        (Ohne Kaufgebühren, Provisionen etc.)
       </div>
     </div>
     <div class="col-12" *ngIf="favouredSecurities.length > 0">
@@ -112,7 +113,7 @@
   <div class="row">
     <div class="col-12">
       <small>
-        Diese ETFs enthalten ähnliche Aktien (wie in deinen Favoriten):
+        Diese ETFs enthalten ähnliche Aktien (wie in deinem Sparplan):
       </small>
       <div>
         <app-etfs-matcher [favourites]="favouredSecurities$|async"></app-etfs-matcher>

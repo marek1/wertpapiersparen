@@ -13,7 +13,6 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ChartsModule } from 'ng2-charts';
-import { FavouritesComponent } from './components/favourites/favourites.component';
 import { NumberInputComponent } from './components/number-input/number-input.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
 import { registerLocaleData } from '@angular/common';
@@ -22,7 +21,6 @@ import { BasketEffects } from './effects/basket.effects';
 import { BasketService } from './services/basket.service';
 import { PriceService } from './services/price.service';
 import { IndustryService } from './services/industry.service';
-import { AddToFavouritesComponent } from './components/add-to-favourites/add-to-favourites.component';
 import { EtfDetailComponent } from './components/etfs/etf-detail/etf-detail.component';
 import { EtfPageComponent } from './components/etfs/etf-page/etf-page.component';
 import { CompanyPageComponent } from './components/companies/company-page/company-page.component';
@@ -40,6 +38,8 @@ import { EtfSectorChartComponent } from './components/etf-sector-chart/etf-secto
 import { EtfsByRegionComponent } from './components/etfs/etfs-by-region/etfs-by-region.component';
 import { EtfsResultComponent } from './components/etfs/etfs-result/etfs-result.component';
 import { EtfsByIndustryComponent } from './components/etfs/etfs-by-industry/etfs-by-industry.component';
+import { SparplanComponent } from './components/sparplan/sparplan.component';
+import { AddToSparplanComponent } from './components/add-to-sparplan/add-to-sparplan.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -52,13 +52,13 @@ registerLocaleData(localeDe, 'de');
     CompaniesByIndustryComponent,
     CompaniesListInIndustryComponent,
     CompanyDetailsComponent,
-    FavouritesComponent,
+    SparplanComponent,
+    AddToSparplanComponent,
     NumberInputComponent,
     PriceDisplayComponent,
     StocksIndustryChartComponent,
     CompaniesBySearchtermComponent,
     CompaniesByProductComponent,
-    AddToFavouritesComponent,
     EtfDetailComponent,
     EtfPageComponent,
     CompanyPageComponent,

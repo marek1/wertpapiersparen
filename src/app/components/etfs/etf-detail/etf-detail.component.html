@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="col-12 col-sm-6 text-right">
-      <app-add-to-favourites [version]="'long'" [company]="etf"></app-add-to-favourites>
+      <app-add-to-sparplan [version]="'long'" [company]="etf"></app-add-to-sparplan>
     </div>
   </div>
 </div>
@@ -27,18 +27,18 @@
 </div>
 <ng-container *ngIf="selectedTab === 0">
   
-  <div class="row" *ngIf="etf.savingPlans.length > 0">
-    <div class="col-12" *ngFor="let savingPlan of etf.savingPlans">
-      <div class="card">
-        <div class="card-body text-center">
-          Sparplanfähig ab {{savingPlan.costs}} EUR Kosten.
-          <div class="small">
-            Ein Angebot von {{savingPlan.broker}}. (Minimum: {{savingPlan.minInvestment}} EUR / Monat)
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--  <div class="row" *ngIf="etf.savingPlans.length > 0">-->
+<!--    <div class="col-12" *ngFor="let savingPlan of etf.savingPlans">-->
+<!--      <div class="card">-->
+<!--        <div class="card-body text-center">-->
+<!--          Sparplanfähig ab {{savingPlan.costs}} EUR Kosten.-->
+<!--          <div class="small">-->
+<!--            Ein Angebot von {{savingPlan.broker}}. (Minimum: {{savingPlan.minInvestment}} EUR / Monat)-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
   <div class="row">
     <div class="col-12 col-sm-4 small">
       Vergleichsindex:

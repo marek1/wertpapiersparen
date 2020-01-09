@@ -12,11 +12,11 @@ import { HelperService } from '../../services/helpers';
 import { SecurityType } from '../../enums/securityType';
 
 @Component({
-  selector: 'app-favourites',
-  templateUrl: './favourites.component.html',
-  styleUrls: ['./favourites.component.scss']
+  selector: 'app-sparplan',
+  templateUrl: './sparplan.component.html',
+  styleUrls: ['./sparplan.component.scss']
 })
-export class FavouritesComponent implements OnInit {
+export class SparplanComponent implements OnInit {
 
   public favouredSecurities$: Observable<AmountOfItem[]>;
   public showMore: number;
@@ -33,7 +33,7 @@ export class FavouritesComponent implements OnInit {
     private industryService: IndustryService,
     private store: Store<fromRoot.AppState>
   ) {
-    this.tabs = ['Übersicht', 'Zusammensetzung']; // add 'ETFs' if Stocks are within favourites
+    this.tabs = [];
     this.performanceYears = this.helperService.enumToArray(Performances);
   }
 
@@ -58,9 +58,9 @@ export class FavouritesComponent implements OnInit {
       });
       // if there are items in favourites which arent ETFs
       if (items.filter((amountOfItem: AmountOfItem) => amountOfItem.item.securityType !== SecurityType.ETF).length > 0) {
-        this.tabs.push('ETFs');
+        this.tabs = ['Übersicht', 'Zusammensetzung', 'ETFs']; // add 'ETFs' if Stocks are within favourites
       } else if (this.tabs.indexOf('ETFs') > -1) {
-        this.tabs.splice(this.tabs.indexOf('ETFs'), 1);
+        this.tabs = ['Übersicht', 'Zusammensetzung']; // add 'ETFs' if Stocks are within favourites
       }
     });
     this.selectedTab$ = this.store.pipe(select(fromRoot.getSelectedTab));

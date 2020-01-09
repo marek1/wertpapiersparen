@@ -7,11 +7,11 @@ import { BasketActions } from '../../actions';
 import { Etf } from '../../interfaces/etf';
 
 @Component({
-  selector: 'app-add-to-favourites',
-  templateUrl: './add-to-favourites.component.html',
-  styleUrls: ['./add-to-favourites.component.scss']
+  selector: 'app-add-to-sparplan',
+  templateUrl: './add-to-sparplan.component.html',
+  styleUrls: ['./add-to-sparplan.component.scss']
 })
-export class AddToFavouritesComponent implements OnInit {
+export class AddToSparplanComponent implements OnInit {
 
   @Input() version: 'long'|'short';
   @Input() company: Company;
@@ -29,6 +29,8 @@ export class AddToFavouritesComponent implements OnInit {
   }
 
   removeFromFavourites(item: Company|Etf) {
-    this.store.dispatch(BasketActions.removeFromFavourites({item}));
+    if (window.confirm('Dieses Wertpapier aus dem Sparplan entfernen.')) {
+      this.store.dispatch(BasketActions.removeFromFavourites({item}));
+    }
   }
 }

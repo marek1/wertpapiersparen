@@ -1,6 +1,9 @@
 <div class="margin vertical top-bottom-10">
   <form>
     <div class="form-group">
+      <label for="searchTerm">
+        Suche z.B. nach Name, Produkt, Ort, Industrie
+      </label>
       <input
         type="text"
         class="form-control"
@@ -26,7 +29,7 @@
               </a>
             </div>
             <div class="col-5 text-right">
-              <app-add-to-favourites [version]="'short'" [company]="security"></app-add-to-favourites>
+              <app-add-to-sparplan [version]="'short'" [company]="security"></app-add-to-sparplan>
             </div>
           </div>
           <div>
