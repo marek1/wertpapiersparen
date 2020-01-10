@@ -13,26 +13,32 @@ export class NumberInputComponent implements OnInit {
   @Input() unit: string;
   @Output() numberChanged = new EventEmitter<number>();
 
+  public editMode: boolean;
+
   constructor() {
   }
 
   ngOnInit() {
+    this.editMode = false;
   }
 
   decrease() {
     this.anzahl = this.anzahl - this.smallestUnit;
-    this.numberChanged.emit(this.anzahl);
   }
 
   increase() {
     this.anzahl = this.anzahl + this.smallestUnit;
-    this.numberChanged.emit(this.anzahl);
   }
 
-  changeAnzahl(event: any) {
+  changeNumber(event: any) {
     if (isNaN(parseInt(event.target.value, 10))) {
       return;
     }
-    this.numberChanged.emit(parseInt(event.target.value, 10));
+    this.anzahl = parseInt(event.target.value, 10);
   }
+
+  changeAnzahl() {
+    this.numberChanged.emit(this.anzahl);
+  }
+
 }

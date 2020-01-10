@@ -1,19 +1,26 @@
 <div class="number-input">
-  <div class="input-group mb-2">
-    <div class="input-group-prepend">
-      <div class="input-group-text" (click)="decrease()">-</div>
-    </div>
-    <input type="number"
-           class="form-control"
-           id="inlineFormInputGroup"
-           placeholder="Anzahl"
-           value="{{anzahl}}"
-           (keyup.enter)="changeAnzahl($event)"
-           (keyup.tab)="changeAnzahl($event)"
-           (focusout)="changeAnzahl($event)"
-    >
-    <div class="input-group-append">
-      <div class="input-group-text" (click)="increase()">{{unit}} +</div>
+  
+  <div *ngIf="!editMode">
+    {{anzahl}} {{unit}} <span class="fa fa-edit" (click)="editMode=!editMode"></span>
+  </div>
+  <div *ngIf="editMode">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text" (click)="decrease()">-</div>
+      </div>
+      <input type="number"
+             class="form-control"
+             id="inlineFormInputGroup"
+             placeholder="Anzahl"
+             value="{{anzahl}}"
+             (change)="changeNumber($event)"
+             (keyup.enter)="changeAnzahl()"
+      >
+      <div class="input-group-append">
+        <div class="input-group-text" (click)="increase()">{{unit}} +</div>
+      </div>
+      <button class="btn btn-primary" (click)="changeAnzahl()">OK</button>
     </div>
   </div>
+  
 </div>

@@ -11,21 +11,17 @@
   </div>
 </div>
 <ng-container *ngIf="(selectedTab$|async) === 0">
-  <div class="row">
-    <div class="col-12">
-      <div class="small">
-        Dein erstellter Sparplan enthält:
-      </div>
-    </div>
-  </div>
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
-    <div class="col-12">
+    <div class="col-12" *ngIf="favouredSecurities.length > 0">
       <div class="row">
         <div class="col-6 font-weight-bold">
-          An der Börse
+          Du investierst direkt an der Börse
         </div>
         <div class="col-6 font-weight-bold">
-          In deinem Sparplan
+          oder in einen Sparplan
+          <div class="error" *ngIf="!percentagesAreCorrect(favouredSecurities)">
+            Die Gewichtungen ergeben keine 100%!
+          </div>
         </div>
       </div>
     </div>
@@ -56,6 +52,9 @@
               </div>
               <div class="col-6">
                 <app-get-percentage [fav]="fav" [totalPrice]="totalPrice" [sparplanSum]="sparplanSum$|async"></app-get-percentage>
+                <div class="error" *ngIf="!percentagesAreCorrect(favouredSecurities)">
+                  Überprüfe den Wert
+                </div>
               </div>
             </div>
           </div>
@@ -69,16 +68,16 @@
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-6" *ngIf="favouredSecurities.length > 0">
       <div>
-        <div>Würdest du an der Börse kaufen, wäre die</div>
-        <div>Kaufsumme <span class="font-weight-bold">ca. {{totalPrice | number:'1.0-0':'de'}}</span> EUR</div>
+        <div>Deine Kaufsumme an der Börse</div>
+        <div>wäre <span class="font-weight-bold">ca. {{totalPrice | number:'1.0-0':'de'}}</span> EUR</div>
       </div>
       <div class="small">
         (Ohne Kaufgebühren, Provisionen etc.)
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6" *ngIf="favouredSecurities.length > 0">
       <div>
-        <div>Oder du investierst in einen Sparplan</div>
+        <div>Deine Sparplansumme beträgt</div>
         <app-number-input
         [anzahl]="sparplanSum$|async"
         [smallestUnit]="1"
@@ -86,17 +85,12 @@
         (numberChanged)="updateSparplanTotal($event)"
         ></app-number-input>
         <div class="small">
-          (zzgl. Kaufgebühren)
+          (Ohne Kaufgebühren)
         </div>
       </div>
     </div>
   </div>
   <hr />
-  <div class="row margin vertical top-bottom-10">
-    <div class="col-6">
-      Zur Info:
-    </div>
-  </div>
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-6" *ngIf="favouredSecurities.length > 0">
       <small>
@@ -121,10 +115,13 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6" *ngIf="favouredSecurities.length > 0">
       <small>
         Mit ähnlicher Performance und monatlicher Einzahlung ...
       </small>
+      <div>
+<!--        <app-sparplan-chart></app-sparplan-chart>-->
+      </div>
     </div>
   </div>
 </ng-container>

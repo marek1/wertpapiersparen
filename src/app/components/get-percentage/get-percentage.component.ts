@@ -1,6 +1,11 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AmountOfItem } from '../../reducers/basket.reducer';
 import { PriceService } from '../../services/price.service';
+import { BasketActions } from '../../actions';
+import { Etf } from '../../interfaces/etf';
+import { Company } from '../../interfaces/company';
+import { Store } from '@ngrx/store';
+import * as fromRoot from '../../reducers';
 
 @Component({
   selector: 'app-get-percentage',
@@ -17,7 +22,8 @@ export class GetPercentageComponent implements OnInit, OnChanges {
   public calculatedAmount: number;
   public share: number;
 
-  constructor(private priceService: PriceService) {
+  constructor(private priceService: PriceService,
+              private store: Store<fromRoot.AppState>) {
   }
 
   ngOnInit() {
@@ -31,12 +37,17 @@ export class GetPercentageComponent implements OnInit, OnChanges {
   }
 
   getPercentage() {
-    this.percentage = Math.round((this.priceService.getLatestTotalPrice(this.fav) * 100) / this.totalPrice);
+    if (!this.fav.percentage) {
+      this.percentage = Math.round((this.priceService.getLatestTotalPrice(this.fav) * 100) / this.totalPrice);
+      this.updateStore(this.percentage, this.fav.item);
+    } else {
+      this.percentage = this.fav.percentage;
+    }
     this.calculatedAmount = (this.sparplanSum * this.percentage) / 100;
     this.share = this.calculatedAmount / this.priceService.getLatestPrice(this.fav);
   }
 
-  updateStore(x, y) {
-    console.log('x : ', x, ' y : ', y);
+  updateStore(percentage: number, item: Etf|Company) {
+    this.store.dispatch(BasketActions.updateFavourites({amount: null, percentage, item}));
   }
 }

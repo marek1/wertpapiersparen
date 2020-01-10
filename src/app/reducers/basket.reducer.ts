@@ -5,6 +5,7 @@ import { Etf } from '../interfaces/etf';
 
 export interface AmountOfItem {
   amount: number;
+  percentage: number;
   item: Company|Etf;
 }
 export const featureKey = 'basket';
@@ -37,6 +38,7 @@ export const reducer = createReducer(
     ...state,
     items: [...state.items, {
       amount: item.smallestTradeableUnit,
+      percentage: null,
       item
     }]
   })),
@@ -44,12 +46,14 @@ export const reducer = createReducer(
     ...state,
     items: [...state.items.filter(com => com.item.id !== item.id)]
   })),
-  on(BasketActions.updateFavourites, (state, {amount, item}) =>  ({
+  on(BasketActions.updateFavourites, (state, {amount, percentage, item}) =>  ({
     ...state,
-    items: [...state.items.map((com) => {
+    items: [...state.items.map((com: AmountOfItem) => {
       // overwrite the amount for the given company
       if (com.item.id === item.id) {
-        com = {...com, amount};
+        com = {...com,
+          percentage: percentage !== null ? percentage : com.percentage,
+          amount: amount !== null ? amount : com.amount};
       }
       return com;
     })]

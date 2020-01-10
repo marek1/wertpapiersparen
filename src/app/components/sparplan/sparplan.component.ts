@@ -10,6 +10,7 @@ import { IndustryService } from '../../services/industry.service';
 import { Performances } from '../../enums/performances';
 import { HelperService } from '../../services/helpers';
 import { SecurityType } from '../../enums/securityType';
+import { Etf } from '../../interfaces/etf';
 
 @Component({
   selector: 'app-sparplan',
@@ -68,8 +69,8 @@ export class SparplanComponent implements OnInit {
     this.sparplanSum$ = this.store.pipe(select(fromRoot.getSparplanSum));
   }
 
-  updateStore(anzahl: number, firma: Company): void {
-    this.store.dispatch(BasketActions.updateFavourites({amount: anzahl, item: firma}));
+  updateStore(anzahl: number, firma: Etf|Company): void {
+    this.store.dispatch(BasketActions.updateFavourites({amount: anzahl, percentage: null, item: firma}));
   }
 
   getIndustryName(industryId: number) {
@@ -96,5 +97,13 @@ export class SparplanComponent implements OnInit {
 
   updateSparplanTotal(x) {
     this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
+  }
+
+  percentagesAreCorrect(favs: AmountOfItem[]) {
+    let x = 0;
+    favs.map((amountOfItem: AmountOfItem) => {
+      x += amountOfItem.percentage;
+    });
+    return x === 100;
   }
 }
