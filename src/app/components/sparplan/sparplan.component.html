@@ -120,7 +120,7 @@
         Mit ähnlicher Performance und monatlicher Einzahlung ...
       </small>
       <div>
-<!--        <app-sparplan-chart></app-sparplan-chart>-->
+        <app-sparplan-chart [sparplanSum]="sparplanSum$|async" [years]="numberOfYearsWithPerformance"></app-sparplan-chart>
       </div>
     </div>
   </div>

@@ -24,6 +24,7 @@ export class SparplanComponent implements OnInit {
   public performanceYears: number[];
   public totalPrice: number;
   public totalPastPrices: number[];
+  public numberOfYearsWithPerformance: string|number;
   public tabs: string[];
   public selectedTab$: Observable<number>;
   public SecurityType = SecurityType;
@@ -56,6 +57,7 @@ export class SparplanComponent implements OnInit {
           this.totalPastPrices.push(0);
         } else {
           this.totalPastPrices.push(results.reduce((a, b) => a + b, 0));
+          this.numberOfYearsWithPerformance = Performances[x];
         }
       });
       // if there are items in favourites which arent ETFs

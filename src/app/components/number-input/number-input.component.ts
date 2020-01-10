@@ -39,6 +39,7 @@ export class NumberInputComponent implements OnInit {
 
   changeAnzahl() {
     this.numberChanged.emit(this.anzahl);
+    this.editMode = !this.editMode;
   }
 
 }

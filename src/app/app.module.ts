@@ -41,6 +41,7 @@ import { EtfsByIndustryComponent } from './components/etfs/etfs-by-industry/etfs
 import { SparplanComponent } from './components/sparplan/sparplan.component';
 import { AddToSparplanComponent } from './components/add-to-sparplan/add-to-sparplan.component';
 import { GetPercentageComponent } from './components/get-percentage/get-percentage.component';
+import { SparplanChartComponent } from './components/sparplan-chart/sparplan-chart.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -71,7 +72,8 @@ registerLocaleData(localeDe, 'de');
     EtfsByRegionComponent,
     EtfsResultComponent,
     EtfsByIndustryComponent,
-    GetPercentageComponent
+    GetPercentageComponent,
+    SparplanChartComponent
   ],
   imports: [
     FormsModule,
