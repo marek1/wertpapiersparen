@@ -20,6 +20,7 @@ export class GetPercentageComponent implements OnInit, OnChanges {
 
   public percentage: number;
   public calculatedAmount: number;
+  public suggestedPercentage: number;
   public share: number;
 
   constructor(private priceService: PriceService,
@@ -37,14 +38,19 @@ export class GetPercentageComponent implements OnInit, OnChanges {
   }
 
   getPercentage() {
+    this.suggestedPercentage = Math.round((this.priceService.getLatestTotalPrice(this.fav) * 100) / this.totalPrice);
     if (!this.fav.percentage) {
-      this.percentage = Math.round((this.priceService.getLatestTotalPrice(this.fav) * 100) / this.totalPrice);
+      this.percentage = this.suggestedPercentage;
       this.updateStore(this.percentage, this.fav.item);
     } else {
       this.percentage = this.fav.percentage;
     }
     this.calculatedAmount = (this.sparplanSum * this.percentage) / 100;
     this.share = this.calculatedAmount / this.priceService.getLatestPrice(this.fav);
+  }
+
+  updatePercentage(percentage: number) {
+    this.updateStore(percentage, this.fav.item);
   }
 
   updateStore(percentage: number, item: Etf|Company) {

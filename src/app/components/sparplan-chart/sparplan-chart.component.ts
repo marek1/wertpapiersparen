@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from
 import { ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
+import { AmountOfItem } from '../../reducers/basket.reducer';
 
 @Component({
   selector: 'app-sparplan-chart',
@@ -13,6 +14,8 @@ export class SparplanChartComponent implements OnInit, OnChanges {
   @Input() sparplanSum: number;
   @Input() numberOfYearsWithPerformance: number;
   @Input() yieldYears: number[];
+  // IMPORTANT : favouredSecurities is an input, so changes in them can be detected in ngonchanges!
+  @Input() favouredSecurities: AmountOfItem[];
 
   public chartLabels: Label[] = [];
   public chartData: any[] = [];
@@ -27,7 +30,7 @@ export class SparplanChartComponent implements OnInit, OnChanges {
     plugins: {
       datalabels: {
         formatter: (value, ctx) => {
-          const label = ctx.chart.data.labels[ctx.dataIndex];
+          const label = ''; // ctx.chart.data.labels[ctx.dataIndex];
           return label;
         },
       },
@@ -41,7 +44,10 @@ export class SparplanChartComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.sparplanSum  && changes.sparplanSum.currentValue) {
+    if ((changes.sparplanSum  && changes.sparplanSum.currentValue) ||
+      (changes.numberOfYearsWithPerformance && changes.numberOfYearsWithPerformance.currentValue) ||
+      (changes.yieldYears && changes.yieldYears.currentValue) ||
+      changes.favouredSecurities && changes.favouredSecurities.currentValue) {
       this.fillData();
     }
   }
@@ -61,9 +67,9 @@ export class SparplanChartComponent implements OnInit, OnChanges {
       // and the end of the year > calculate interest for accrued amount for remaining years
       // accruedSumLine2 += this.returnInterest(accruedSumLine2, i, this.numberOfYearsWithPerformance, yieldForNumberOfYearsWithPerformance);
       if (i === 0) {
-        accruedSumLine2 = accruedSumLine1 * yieldForNumberOfYearsWithPerformance;
+        accruedSumLine2 = Math.round(accruedSumLine1 * yieldForNumberOfYearsWithPerformance);
       } else {
-        accruedSumLine2 += ((accruedSumLine2 * yieldForNumberOfYearsWithPerformance) - accruedSumLine2);
+        accruedSumLine2 += Math.round(((accruedSumLine2 * yieldForNumberOfYearsWithPerformance) - accruedSumLine2));
         accruedSumLine2 += (this.sparplanSum * 12);
       }
       line1.data.push(accruedSumLine1);
