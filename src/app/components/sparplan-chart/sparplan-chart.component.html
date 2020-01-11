@@ -1,7 +1,7 @@
 <div *ngIf="chartData.length > 0">
   
   <canvas baseChart
-          [data]="chartData"
+          [datasets]="chartData"
           [labels]="chartLabels"
           [chartType]="chartType"
           [plugins]="chartPlugins"

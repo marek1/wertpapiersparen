@@ -22,6 +22,7 @@ export class SparplanComponent implements OnInit {
   public favouredSecurities$: Observable<AmountOfItem[]>;
   public showMore: number;
   public performanceYears: number[];
+  public yieldYears: number[];
   public totalPrice: number;
   public totalPastPrices: number[];
   public numberOfYearsWithPerformance: string|number;
@@ -38,6 +39,7 @@ export class SparplanComponent implements OnInit {
   ) {
     this.tabs = [];
     this.performanceYears = this.helperService.enumToArray(Performances);
+    this.yieldYears = [];
   }
 
   ngOnInit() {
@@ -55,9 +57,12 @@ export class SparplanComponent implements OnInit {
         });
         if (results.includes(0)) {
           this.totalPastPrices.push(0);
+          this.yieldYears.push(0);
         } else {
-          this.totalPastPrices.push(results.reduce((a, b) => a + b, 0));
-          this.numberOfYearsWithPerformance = Performances[x];
+          const pastPrice = results.reduce((a, b) => a + b, 0);
+          this.totalPastPrices.push(pastPrice);
+          this.yieldYears.push(Math.pow((this.totalPrice / pastPrice), 1 / parseInt(Performances[x], 10)));
+          this.numberOfYearsWithPerformance = parseInt(Performances[x], 10);
         }
       });
       // if there are items in favourites which arent ETFs

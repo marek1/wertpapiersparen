@@ -11,17 +11,18 @@ import { Label } from 'ng2-charts';
 export class SparplanChartComponent implements OnInit, OnChanges {
 
   @Input() sparplanSum: number;
-  @Input() years: number;
+  @Input() numberOfYearsWithPerformance: number;
+  @Input() yieldYears: number[];
 
   public chartLabels: Label[] = [];
-  public chartData: number[] = [];
+  public chartData: any[] = [];
   public chartType: ChartType = 'line';
-  public chartLegend = false;
+  public chartLegend = true;
   public chartPlugins = [pluginDataLabels];
   public chartOptions: ChartOptions = {
     responsive: true,
     legend: {
-      display: false
+      display: true
     },
     plugins: {
       datalabels: {
@@ -48,12 +49,30 @@ export class SparplanChartComponent implements OnInit, OnChanges {
   fillData() {
     this.chartData = [];
     this.chartLabels = [];
+    const line1 = { data: [], label: 'Nur Einzahlung' };
+    const line2 = { data: [], label: 'Einzahlung + Performance' };
+    let accruedSumLine1 = 0;
+    let accruedSumLine2 = 0;
     // 20 years , 12 months
-    let accruedSum = this.sparplanSum;
-    for (let i = 0; i < this.years; i++) {
-      accruedSum += this.sparplanSum * 12; // months
-      this.chartData.push(accruedSum);
+    const yieldForNumberOfYearsWithPerformance = this.yieldYears[this.yieldYears.map((yld: number) => yld > 0).lastIndexOf(true)];
+    // go through each year
+    for (let i = 0; i < this.numberOfYearsWithPerformance; i++) {
+      accruedSumLine1 += (this.sparplanSum * 12);
+      // and the end of the year > calculate interest for accrued amount for remaining years
+      // accruedSumLine2 += this.returnInterest(accruedSumLine2, i, this.numberOfYearsWithPerformance, yieldForNumberOfYearsWithPerformance);
+      if (i === 0) {
+        accruedSumLine2 = accruedSumLine1 * yieldForNumberOfYearsWithPerformance;
+      } else {
+        accruedSumLine2 += ((accruedSumLine2 * yieldForNumberOfYearsWithPerformance) - accruedSumLine2);
+        accruedSumLine2 += (this.sparplanSum * 12);
+      }
+      line1.data.push(accruedSumLine1);
+      // other way around
+      line2.data.push(accruedSumLine2);
       this.chartLabels.push((i + 1).toString() + 'Jahre');
     }
+    this.chartData.push(line1);
+    this.chartData.push(line2);
   }
+
 }
