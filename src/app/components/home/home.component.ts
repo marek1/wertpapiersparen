@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   public show: {
+    whatIsASavingPlan: boolean;
     whatIsAStock: boolean;
     whatIsAnEtf: boolean;
   };
 
   constructor() {
     this.show = {
+      whatIsASavingPlan: false,
       whatIsAStock: false,
       whatIsAnEtf: false
     };

@@ -25,14 +25,27 @@
   <div class="col-12">
     
     <h4 class="text-center">
-      Warte also nicht. Plane deine private Rente jetzt - mit einem Sparplan.
+      Warte also nicht. Plane deine private Rente jetzt - mit einem Wertpapiersparplan.
     </h4>
     
     <div class="text-center">
-      Nutze unsere Software um einen Sparplan aus den Aktien und ETFs zu erstellen, die zu dir passen.
-      Anhand von Stichwörtern, Produkten und/oder Industriebereichen kannst du die Wertpapiere finden,
-      die zu dir passen.
+      
+      <div>
+        Nutze unsere Software um einen Sparplan <small class="clickable" (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan"><span class="fa fa-question-circle"></span></small>
+        aus den Aktien und ETFs zu erstellen. Einen Aktien-Sparplan bzw. ETF-Sparplan, den zu selbst einfach zusammengestellt hast.
+        Anhand von Stichwörtern, Produkten und/oder Industriebereichen kannst du die Wertpapiere finden, die du interessant findest.
+      </div>
+      <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsASavingPlan" >
+        Ein Sparplan beinhaltet die regelmässige Einzahlung eines gewählten Betrages, um eine Sparsumme anzusparen. Im Fall eines
+        Wertpapiersparplan geht es um einen Sparplan auf Aktien (Aktien-Sparen) oder ETFs/Indexfonds (ETF-Sparen), um neben der Ansparsumme
+        auch noch mögliche Rendite zu erzielen.
+        <button (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
     </div>
+    
     <a
     class="btn btn-primary w-100-percent margin vertical top-bottom-10"
     [routerLink]="'/unternehmen'"
@@ -44,9 +57,12 @@
   
       <small class="clickable" (click)="show.whatIsAStock=!show.whatIsAStock">Was ist eine Aktie <span class="fa fa-question-circle"></span></small>
   
-      <div class="clickable" *ngIf="show.whatIsAStock" (click)="show.whatIsAStock=!show.whatIsAStock">
+      <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsAStock">
         Die Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft oder einer Kommanditgesellschaft auf Aktien verbrieft.
         Quelle: <a target="_blank" href="https://de.wikipedia.org/wiki/Aktie">Wikipedia</a>
+        <button (click)="show.whatIsAStock=!show.whatIsAStock" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       
     </div>
@@ -55,16 +71,19 @@
     class="btn btn-primary w-100-percent margin vertical top-bottom-10"
     [routerLink]="'/etfs'"
     role="button">
-      Finde ETFs
+      Finde börsengelistete ETFs
     </a>
   
     <div class="text-center">
       
       <small class="clickable" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">Was ist ein ETF <span class="fa fa-question-circle"></span></small>
     
-      <div class="clickable" *ngIf="show.whatIsAnEtf" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">
+      <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsAnEtf">
         Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird.
         Quelle: <a target="_blank" href="https://de.wikipedia.org/wiki/B%C3%B6rsengehandelter_Fonds">Wikipedia</a>
+        <button (click)="show.whatIsAnEtf=!show.whatIsAnEtf" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     
     </div>
