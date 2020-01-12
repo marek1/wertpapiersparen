@@ -12,6 +12,12 @@
 </div>
 <ng-container *ngIf="(selectedTab$|async) === 0">
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
+    <div class="col-12" *ngIf="favouredSecurities.length > 1">
+      <div class="alert alert-warning" role="alert">
+        Achtung! Die meisten Banken/Broker erlauben nur Sparpläne mit einen Wert.
+        <a [routerLink]="['/kosten-eines-sparplans']">mehr <span class="fa fa-arrow-circle-right"></span></a>
+      </div>
+    </div>
     <div class="col-12" *ngIf="favouredSecurities.length > 0">
       <div class="row">
         <div class="col-6 font-weight-bold">
@@ -23,7 +29,7 @@
           <div>
             oder in einen Sparplan
           </div>
-          <div class="error" *ngIf="!percentagesAreCorrect(favouredSecurities)">
+          <div class="alert alert-danger" role="alert" *ngIf="!percentagesAreCorrect(favouredSecurities)">
             Die Gewichtungen ergeben keine 100%!
           </div>
         </div>

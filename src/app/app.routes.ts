@@ -5,6 +5,7 @@ import { CompanyPageComponent } from './components/companies/company-page/compan
 import { CompaniesHomeComponent } from './components/companies/companies-home/companies-home.component';
 import { EtfsHomeComponent } from './components/etfs/etfs-home/etfs-home.component';
 import { SparplanComponent } from './components/sparplan/sparplan.component';
+import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 
 export const appRoutes = [
   {
@@ -18,6 +19,10 @@ export const appRoutes = [
   {
     path: 'sparplan',
     component: SparplanComponent
+  },
+  {
+    path: 'kosten-eines-sparplans',
+    component: SparplanKostenComponent
   },
   {
     path: 'home',
