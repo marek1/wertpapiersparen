@@ -15,10 +15,14 @@
     <div class="col-12" *ngIf="favouredSecurities.length > 0">
       <div class="row">
         <div class="col-6 font-weight-bold">
-          Du investierst direkt an der Börse
+          <div>
+            Du investierst direkt an der Börse
+          </div>
         </div>
         <div class="col-6 font-weight-bold">
-          oder in einen Sparplan
+          <div>
+            oder in einen Sparplan
+          </div>
           <div class="error" *ngIf="!percentagesAreCorrect(favouredSecurities)">
             Die Gewichtungen ergeben keine 100%!
           </div>
@@ -78,12 +82,14 @@
     <div class="col-6" *ngIf="favouredSecurities.length > 0">
       <div>
         <div>Deine Sparplansumme beträgt</div>
-        <app-number-input
-        [anzahl]="sparplanSum$|async"
-        [smallestUnit]="1"
-        [unit]="'EUR'"
-        (numberChanged)="updateSparplanTotal($event)"
-        ></app-number-input>
+        <div class="font-weight-bold">
+          <app-number-input
+          [anzahl]="sparplanSum$|async"
+          [smallestUnit]="1"
+          [unit]="'EUR'"
+          (numberChanged)="updateSparplanTotal($event)"
+          ></app-number-input>
+        </div>
         <div class="small">
           (Ohne Kaufgebühren)
         </div>
@@ -92,7 +98,7 @@
   </div>
   <hr />
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
-    <div class="col-6" *ngIf="favouredSecurities.length > 0">
+    <div class="{{chartExpanded ? 'col-2 small' : 'col-6'}}" *ngIf="favouredSecurities.length > 0">
       <small>
         Performance (kumulativ, und ohne Dividende)
       </small>
@@ -115,9 +121,12 @@
         </div>
       </div>
     </div>
-    <div class="col-6" *ngIf="favouredSecurities.length > 0">
+    <div class="{{chartExpanded ? 'col-10' : 'col-6'}}" *ngIf="favouredSecurities.length > 0">
       <small>
         Mit ähnlicher Performance und monatlicher Einzahlung ...
+        <div class="float-right clickable" (click)="chartExpanded=!chartExpanded">
+          <span class="fa fa-expand"></span>
+        </div>
       </small>
       <div>
         <app-sparplan-chart

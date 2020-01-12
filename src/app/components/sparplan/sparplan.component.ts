@@ -30,6 +30,7 @@ export class SparplanComponent implements OnInit {
   public selectedTab$: Observable<number>;
   public SecurityType = SecurityType;
   public sparplanSum$: Observable<number>;
+  public chartExpanded: boolean;
 
   constructor(
     private priceService: PriceService,
@@ -40,6 +41,7 @@ export class SparplanComponent implements OnInit {
     this.tabs = [];
     this.performanceYears = this.helperService.enumToArray(Performances);
     this.yieldYears = [];
+    this.chartExpanded = false;
   }
 
   ngOnInit() {
