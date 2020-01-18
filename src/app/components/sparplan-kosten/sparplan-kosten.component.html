@@ -6,15 +6,17 @@
       <div class="card-body text-center">
         <p>
           Es gibt so viele Banken und Broker, die Sparpläne anbieten.
+          Hier einige unserer beliebtesten.
         </p>
       </div>
     </div>
   
   </div>
   
-  <div>
-   Loop!
+  <div class="col-12  margin vertical top-bottom-10" *ngFor="let broker of sparplanBroker">
+   
+    <app-sparplan-kosten-details [broker]="broker"></app-sparplan-kosten-details>
+  
   </div>
-
   
 </div>

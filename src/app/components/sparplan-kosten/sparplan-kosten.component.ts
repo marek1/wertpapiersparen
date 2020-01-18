@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SavingplanBroker } from '../../data/savingplanBroker';
 
 @Component({
   selector: 'app-sparplan-kosten',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SparplanKostenComponent implements OnInit {
 
+  public sparplanBroker = SavingplanBroker;
   constructor() { }
 
   ngOnInit() {

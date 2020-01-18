@@ -100,12 +100,16 @@
       <div class="row">
         <div class="col-12">
           <div class="font-italic">
-            <span class="clickable" (click)="showMore.description=!showMore.description">
+            <span class="clickable"
+                  (click)="showMore.description=!showMore.description">
               {{ showMore.description || company.description.length < 100 ? company.description : company.description.substr(0,100) + '.....' }}
             </span>
-            <ng-container *ngIf="company.description.length >= 100" [ngSwitch]="showMore.description">
-              <span class="clickable" *ngSwitchCase="false" (click)="showMore.description=true">mehr <span class="fa fa-arrow-circle-o-down"></span> </span>
-            </ng-container>
+            <span class="clickable"
+                  (click)="showMore.description=true"
+                  *ngIf="company.description.length >= 100 && !showMore.description">
+              mehr
+              <span class="fa fa-arrow-circle-o-down"></span>
+            </span>
             <div class="small" *ngIf="showMore.description">
               Quelle: <a href="{{company.link_wikipedia}}" target="_blank">{{company.link_wikipedia}}</a>
             </div>

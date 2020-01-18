@@ -1,0 +1,81 @@
+<div class="row">
+  
+  <div class="col-12 col-sm-6">
+    <div class="font-weight-bold">
+      {{broker.name}}
+    </div>
+    <div>
+      <img class="{{broker.name.toLowerCase().indexOf('flatex') > -1 ? 'background-black' : ''}}"
+           src="{{broker.logo}}">
+    </div>
+  </div>
+  
+  <div class="col-12 col-sm-6">
+    
+    <div>
+      <span class="small">Sparplanfähig ist/sind: </span>
+      <span *ngFor="let x of broker.securityTypesIncluded; let i = index">
+            {{x}}<span *ngIf="i + 1 < broker.securityTypesIncluded.length">,</span>
+          </span>
+    </div>
+    
+    <div>
+      <span class="small">pro Sparplan: </span>
+      <span>{{broker.maxNumberOfSecuritiesPerSavingPlan}} Wertpapier(e)</span>
+    </div>
+    
+    <div>
+      <span class="small">Minimum-Sparrate: </span>
+      <span>{{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}}</span>
+    </div>
+    
+    <div>
+      <span class="small">Kosten: </span>
+      <span class="font-weight-bold">{{broker.costs | number:'1.2-2':'de'}} {{broker.fixAmountOrPercent}}</span>
+    </div>
+  
+    <div>
+      <span class="clickable"
+            (click)="showMore=true"
+            *ngIf="!showMore">
+        mehr
+        <span class="fa fa-arrow-circle-o-down"></span>
+      </span>
+    </div>
+    
+    <ng-container *ngIf="showMore">
+  
+      <div>
+        <span class="small">Zahlungen: </span>
+        <span *ngFor="let x of broker.frequencies; let i = index">
+            {{x}}<span *ngIf="i + 1 < broker.frequencies.length">,</span>
+          </span>
+      </div>
+  
+      <div>
+        <span class="small">Ausführungstage im Monat: </span>
+        <span *ngFor="let x of broker.executionDays; let i = index">
+          am {{x}}.<span *ngIf="i + 1 < broker.executionDays.length">,</span>
+        </span>
+      </div>
+      
+      <div *ngIf="broker.discountedEtfs" class="alert alert-info">
+        <span>Es werden ETFs zu günstigeren Konditionen angeboten.</span>
+      </div>
+  
+      <div>
+        <span class="clickable"
+              (click)="showMore=false"
+              *ngIf="showMore">
+          weniger
+          <span class="fa fa-arrow-circle-o-up"></span>
+        </span>
+      </div>
+      
+    </ng-container>
+  
+    
+    
+  </div>
+
+</div>

@@ -3,5 +3,7 @@ export enum SavingFrequency {
   'zweimonatlich' = 'zweimonatlich',
   'quartalsweise' = 'quartalsweise',
   'vierteljaehrlich' = 'vierteljährlich',
-  'halbjaehrlich' = 'halbjährlich'
-};
+  'halbjaehrlich' = 'halbjährlich',
+  'jaehrlich' = 'jährlich',
+}
+
