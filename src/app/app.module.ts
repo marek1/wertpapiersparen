@@ -44,6 +44,7 @@ import { GetPercentageComponent } from './components/get-percentage/get-percenta
 import { SparplanChartComponent } from './components/sparplan-chart/sparplan-chart.component';
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 import { SparplanKostenDetailsComponent } from './components/sparplan-kosten-details/sparplan-kosten-details.component';
+import { Ng5SliderModule } from 'ng5-slider';
 
 registerLocaleData(localeDe, 'de');
 
@@ -97,7 +98,8 @@ registerLocaleData(localeDe, 'de');
     EffectsModule.forRoot([BasketEffects]),
     HttpClientModule,
     StoreRouterConnectingModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng5SliderModule
   ],
   providers: [
     BasketService,

@@ -1,22 +1,38 @@
 <div class="row">
   
   <div class="col-12 col-sm-6">
+    
     <div class="font-weight-bold">
       {{broker.name}}
     </div>
+    
     <div>
       <img class="{{broker.name.toLowerCase().indexOf('flatex') > -1 ? 'background-black' : ''}}"
            src="{{broker.logo}}">
     </div>
+    
+    <div class="alert alert-warning margin vertical top-bottom-10" *ngIf="savingRate < broker.minAmountPerSavingPlan">
+      Achtung. Die Minimumsparrate ist {{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}}
+    </div>
+    
+    <div class="alert alert-info margin vertical top-bottom-10" *ngIf="savingRate >= broker.minAmountPerSavingPlan">
+      <span>
+        Kosten bei einer Sparrate von {{savingRate}} {{Currency.EUR}}:
+      </span>
+      <span class="font-weight-bold">
+        {{getCosts() | number:'1.2-2':'de'}} {{Currency.EUR}}
+      </span>
+    </div>
+
   </div>
   
   <div class="col-12 col-sm-6">
-    
+  
     <div>
       <span class="small">Sparplanfähig ist/sind: </span>
       <span *ngFor="let x of broker.securityTypesIncluded; let i = index">
-            {{x}}<span *ngIf="i + 1 < broker.securityTypesIncluded.length">,</span>
-          </span>
+        {{x}}<span *ngIf="i + 1 < broker.securityTypesIncluded.length">,</span>
+      </span>
     </div>
     
     <div>
@@ -59,7 +75,7 @@
         </span>
       </div>
       
-      <div *ngIf="broker.discountedEtfs" class="alert alert-info">
+      <div *ngIf="broker.discountedEtfs" class="alert alert-secondary">
         <span>Es werden ETFs zu günstigeren Konditionen angeboten.</span>
       </div>
   

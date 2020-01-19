@@ -13,9 +13,19 @@
   
   </div>
   
+  <div class="col-12 margin vertical top-bottom-10">
+    <div class="small">
+      Bei einer Sparrate von
+    </div>
+    <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+    <div>
+      ergibt das Kosten von
+    </div>
+  </div>
+  
   <div class="col-12  margin vertical top-bottom-10" *ngFor="let broker of sparplanBroker">
    
-    <app-sparplan-kosten-details [broker]="broker"></app-sparplan-kosten-details>
+    <app-sparplan-kosten-details [broker]="broker" [savingRate]="value"></app-sparplan-kosten-details>
   
   </div>
   
