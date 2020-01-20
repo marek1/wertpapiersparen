@@ -21,12 +21,4 @@ export class SparplanKostenDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  getCosts(): number {
-    if (this.broker.fixAmountOrPercent === '%') {
-      return this.savingRate * (this.broker.costs / 100);
-    }
-    return this.broker.costs;
-  }
-
 }

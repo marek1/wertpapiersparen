@@ -45,6 +45,7 @@ import { SparplanChartComponent } from './components/sparplan-chart/sparplan-cha
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 import { SparplanKostenDetailsComponent } from './components/sparplan-kosten-details/sparplan-kosten-details.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { SparplanKostenPerBrokerComponent } from './components/sparplan-kosten-per-broker/sparplan-kosten-per-broker.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -78,7 +79,8 @@ registerLocaleData(localeDe, 'de');
     GetPercentageComponent,
     SparplanChartComponent,
     SparplanKostenComponent,
-    SparplanKostenDetailsComponent
+    SparplanKostenDetailsComponent,
+    SparplanKostenPerBrokerComponent
   ],
   imports: [
     FormsModule,

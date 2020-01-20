@@ -20,7 +20,7 @@
         Kosten bei einer Sparrate von {{savingRate}} {{Currency.EUR}}:
       </span>
       <span class="font-weight-bold">
-        {{getCosts() | number:'1.2-2':'de'}} {{Currency.EUR}}
+        <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="savingRate"></app-sparplan-kosten-per-broker>
       </span>
     </div>
 
@@ -89,8 +89,6 @@
       </div>
       
     </ng-container>
-  
-    
     
   </div>
 

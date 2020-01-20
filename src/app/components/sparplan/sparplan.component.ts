@@ -11,6 +11,8 @@ import { Performances } from '../../enums/performances';
 import { HelperService } from '../../services/helpers';
 import { SecurityType } from '../../enums/securityType';
 import { Etf } from '../../interfaces/etf';
+import { SavingplanBroker } from '../../data/savingplanBroker';
+import { Currency } from '../../enums/currencies';
 
 @Component({
   selector: 'app-sparplan',
@@ -31,6 +33,10 @@ export class SparplanComponent implements OnInit {
   public SecurityType = SecurityType;
   public sparplanSum$: Observable<number>;
   public chartExpanded: boolean;
+  public showCosts: boolean;
+
+  public Currency = Currency;
+  public sparplanBroker = SavingplanBroker;
 
   constructor(
     private priceService: PriceService,
@@ -42,6 +48,7 @@ export class SparplanComponent implements OnInit {
     this.performanceYears = this.helperService.enumToArray(Performances);
     this.yieldYears = [];
     this.chartExpanded = false;
+    this.showCosts = false;
   }
 
   ngOnInit() {
@@ -115,4 +122,9 @@ export class SparplanComponent implements OnInit {
     });
     return x === 100;
   }
+
+  getAmount(percentage: number, sparplanSum: number) {
+    return sparplanSum * (percentage / 100);
+  }
+
 }

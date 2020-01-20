@@ -6,8 +6,7 @@ export class BasketService {
 
   getBasket() {
     const basket: AmountOfItem[] = JSON.parse(localStorage.getItem('stockpicking_basket'));
-
-    if (basket != null) {
+    if (basket !== null) {
       return of(basket);
     }
     return of([]);
@@ -19,10 +18,9 @@ export class BasketService {
   }
 
   getSparplanSum() {
-    const sum: number = parseInt(localStorage.getItem('stockpicking_sparplansum'), 10);
-
-    if (sum != null) {
-      return of(sum);
+    const sum: string = localStorage.getItem('stockpicking_sparplansum');
+    if (sum !== null ) {
+      return of(parseInt(sum, 10));
     }
     return of(0);
   }
