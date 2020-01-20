@@ -14,7 +14,7 @@ export interface State {
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
-  selectedSearchMethod: SearchMethods['Industrie(n)'],
+  selectedSearchMethod: SearchMethods.Suchbegriff,
   searchTerm: '',
 };
 

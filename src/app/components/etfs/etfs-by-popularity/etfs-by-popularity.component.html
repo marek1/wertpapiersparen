@@ -1,0 +1,21 @@
+<div class="margin vertical top-bottom-10">
+  
+  <div>
+    ... oder vielleicht schaust du dir mal die ETFs, die sich auf nachhaltige Unternehmen konzentrieren.
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-12" *ngFor="let etf of finalList">
+    <div class="card">
+      <div class="card-body">
+        <a [routerLink]="['/etf', etf.name, etf.isin]">
+          {{etf.name}}
+          <span class="fa fa-arrow-circle-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

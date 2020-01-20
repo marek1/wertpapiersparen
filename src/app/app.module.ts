@@ -47,6 +47,7 @@ import { SparplanKostenDetailsComponent } from './components/sparplan-kosten-det
 import { Ng5SliderModule } from 'ng5-slider';
 import { SparplanKostenPerBrokerComponent } from './components/sparplan-kosten-per-broker/sparplan-kosten-per-broker.component';
 import { CompaniesByPopularityComponent } from './components/companies/companies-by-popularity/companies-by-popularity.component';
+import { EtfsByPopularityComponent } from './components/etfs/etfs-by-popularity/etfs-by-popularity.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -82,7 +83,8 @@ registerLocaleData(localeDe, 'de');
     SparplanKostenComponent,
     SparplanKostenDetailsComponent,
     SparplanKostenPerBrokerComponent,
-    CompaniesByPopularityComponent
+    CompaniesByPopularityComponent,
+    EtfsByPopularityComponent
   ],
   imports: [
     FormsModule,

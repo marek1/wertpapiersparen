@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Rankings } from '../../../data/rankings';
 import { Ranking, ShareRank } from '../../../interfaces/ranking';
 
-interface FinalListItem {
+export interface FinalListItem {
   id: number;
   name: string;
   isin: string;
