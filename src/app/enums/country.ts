@@ -4,7 +4,7 @@ export enum Country {
   'Niederlande',
   'Luxemburg',
   'UK',
-  'Österreich',
+  'Oesterreich',
   'Belgien',
   'Frankreich',
   'Spanien',
@@ -17,6 +17,7 @@ export enum Country {
   'Japan',
   'Kanada',
   'Australien',
-  'Hongkong'
+  'Hongkong',
+  'Portugal'
 }
 

@@ -102,8 +102,15 @@
         </div>
       </li>
     </ul>
-    <div class="col-12" *ngIf="favouredSecurities.length === 0">
-      Du hast noch keine Aktien oder ETFs in deinem Sparplan.
+    <div class="col-12 card margin vertical top-bottom-10 text-center" *ngIf="favouredSecurities.length === 0">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="fa fa-warning"></span> Du hast noch keine Aktien oder ETFs in deinem Sparplan.
+        </h5>
+        <div class="card-text">
+          Wenn du möchtest kannst auch den <a [routerLink]="['/muster-sparplan']">Muster-Sparplan</a> nutzen.
+        </div>
+      </div>
     </div>
   </div>
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">

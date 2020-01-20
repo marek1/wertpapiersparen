@@ -24,6 +24,8 @@ export enum SecurityType {
   'NamnAktierB' = 'Namn-Aktier B (SE)',
   'NavneAktierB' = 'Navne-Aktier B (DK)',
   'ETF' = 'ETF',
-  'ADR' = 'ADR'
+  'ADR' = 'ADR',
+  'GovtBond' = 'Staatsanleihe',
+  'CorpBond' = 'Unternehmensanleihe',
 }
 

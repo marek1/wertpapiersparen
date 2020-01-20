@@ -22,7 +22,7 @@ export interface Etf {
   id: number;
   name: string;
   description: string;
-  tracks: string;
+  tracks: string|null;
   securityType: SecurityType;
   url: string;
   isin: string;

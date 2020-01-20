@@ -13,14 +13,12 @@ import * as fromRoot from '../../reducers';
 export class SparplanKostenComponent implements OnInit {
 
   public sparplanBroker = SavingplanBroker;
-  public sparplanSums: number[];
   public sparplanSum$: Observable<number>;
 
   public value: number;
   public options: Options;
 
   constructor(private store: Store<fromRoot.AppState>) {
-    this.sparplanSums = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 300];
     this.value = 50;
     this.options = {
       floor: 0,

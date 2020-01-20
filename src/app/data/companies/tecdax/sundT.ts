@@ -1626,7 +1626,7 @@ const prices = {
 export const sundTCompany: Company = {
   id: 1108,
   name: 'S&T AG',
-  country: Country.Österreich,
+  country: Country.Oesterreich,
   city: 'Linz',
   url: 'http://www.snt.at/',
   description: 'Die S&T AG (ehemals Quanmax AG) ist ein IT-Technologiekonzern mit Sitz im oberösterreichischen Linz. Das Unternehmen ist aus der ehemaligen Gericom AG und dem Systemhaus S&T System Integration & Technology Distribution hervorgegangen und befand sich anfangs mehrheitlich im Besitz der taiwanischen Quanmax Inc.',

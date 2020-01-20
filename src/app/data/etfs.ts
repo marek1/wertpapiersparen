@@ -7,6 +7,8 @@ import { isharesDax } from './etfs/ishares/isharesDax';
 import { isharesMdax } from './etfs/ishares/isharesMdax';
 import { isharesMsciWorldUsd } from './etfs/ishares/isharesMsciWorldUsd';
 import { isharesDowJonesEurozoneSustainability } from './etfs/ishares/isharesDowJonesEurozoneSustainability';
+import { isharesEuroGovtBonds } from './etfs/ishares/isharesEuroGovtBonds';
+import { isharesEuroCorpBonds } from './etfs/ishares/isharesEuroCorpBonds';
 
 export const Etfs: Etf[] = [
   isharesDax, // 5001
@@ -16,5 +18,7 @@ export const Etfs: Etf[] = [
   isharesMsciEuropeSriThesaurierend, // 5006
   isharesMsciEuropeSriAusschuettend, // 5005
   isharesMsciWorldUsd,  // 5007
-  isharesTecdax // 5008
+  isharesTecdax, // 5008
+  isharesEuroGovtBonds, // 5009
+  isharesEuroCorpBonds // 5010
 ];

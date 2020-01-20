@@ -1,0 +1,17 @@
+<div class="home row">
+  <div class="col-12 margin vertical top-bottom-10">
+    <div class="small">
+      Bestimme deine <span class="font-weight-bold">Risikobereitschaft</span>
+    </div>
+    <ng5-slider
+    [(value)]="value"
+    [options]="options"
+    (valueChange)="setPortfolio()"
+    ></ng5-slider>
+  </div>
+  <div class="col-12 margin vertical top-bottom-10">
+    <div *ngFor="let x of etfs">
+      {{x.name}}
+    </div>
+  </div>
+</div>
