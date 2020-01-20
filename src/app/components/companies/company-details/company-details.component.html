@@ -1,4 +1,4 @@
-<div class="margin vertical top-bottom-10">
+<div class="margin vertical top-bottom-10" *ngIf="company">
   <div class="row">
     <div class="col-5 text-center">
       <img class="logo" src="{{company.logo}}">
@@ -132,6 +132,7 @@
         <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===1}" (click)="selectedTab = 1">Chart</button>
         <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===0}" (click)="selectedTab = 0">Wertpapier</button>
         <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===2}" (click)="selectedTab = 2">Produkte</button>
+        <button type="button" class="btn btn-secondary" [ngClass]="{'active': selectedTab===3}" (click)="selectedTab = 3">Peer-Group</button>
       </div>
 
     </div>
@@ -234,6 +235,20 @@
     </div>
     <div class="col-12" *ngIf="company.products.length===0">
       Keine Produkte gefunden
+    </div>
+  </div>
+  <div class="row" *ngIf="selectedTab===3">
+    <div class="col-12" *ngIf="company.products.length>0">
+      <a name="produkte"><small>Unternehmen, die in den gleichen Industrien tätig sind:</small></a>
+    </div>
+    <div class="col-12" *ngFor="let security of getPeerGroup()">
+      <div class="card">
+        <div class="card-body">
+          <a [routerLink]="['/unternehmen', security.name, security.id]">
+            {{security.name}} <span class="fa fa-arrow-circle-right"></span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

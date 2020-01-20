@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Ranking, ShareRank } from '../../../interfaces/ranking';
@@ -10,6 +10,7 @@ import { HelperService } from '../../../services/helpers';
 import { Performances } from '../../../enums/performances';
 import { PriceService } from '../../../services/price.service';
 import { Rankings } from '../../../data/rankings';
+import { Companies } from '../../../data/companies';
 
 interface ShowMore {
   noIndustries: number;
@@ -73,10 +74,19 @@ export class CompanyDetailsComponent implements OnInit {
     this.endNo = 0;
     this.selectedTab = 1;
     this.performanceYears = this.helperService.enumToArray(Performances);
-
   }
 
   ngOnInit() {
+    this.init();
+  }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes.company  && changes.company.currentValue) {
+  //     this.init();
+  //   }
+  // }
+
+  init() {
     this.fillChartData();
     this.setNumberOfProducts();
     this.performances = this.performanceYears.map((x, y) => {
@@ -133,6 +143,14 @@ export class CompanyDetailsComponent implements OnInit {
 
   findInEtfs(): Etf[] {
     return Etfs.filter((etf) => etf.shares.filter((comp) => comp.id === this.company.id));
+  }
+
+  getPeerGroup() {
+    return Companies.filter((comp: Company) => {
+      return comp.industries.filter((ind) => {
+        return this.company.industries.includes(ind);
+      }).length > 0 && comp.id !== this.company.id;
+    });
   }
 
 }

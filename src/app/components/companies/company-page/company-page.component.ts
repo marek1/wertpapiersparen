@@ -12,10 +12,21 @@ export class CompanyPageComponent implements OnInit {
 
   public company: Company;
 
-  constructor(public route: ActivatedRoute) { }
+  constructor(public route: ActivatedRoute) {
+    // get route changes
+    this.route.params.subscribe((x) => {
+      if (x && x.id !== undefined && x.id) {
+        this.setCompany(x.id);
+      }
+    });
+  }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+    this.setCompany(this.route.snapshot.paramMap.get('id'));
+
+  }
+
+  setCompany(id) {
     if (id && !isNaN(parseInt(id, 10))) {
       this.company = Companies.filter((company: Company) => company.id === parseInt(id, 10))[0];
     }
