@@ -23,6 +23,7 @@
   
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">
     <app-companies-by-searchterm></app-companies-by-searchterm>
+    <app-companies-by-popularity></app-companies-by-popularity>
   </div>
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Industrie(n)']">
     <app-companies-by-industry></app-companies-by-industry>

@@ -2,6 +2,8 @@ import { ResponsibilityType } from '../enums/responsibility';
 
 export interface ShareRank {
   id: number;
+  name: string;
+  isin: string;
   points: number;
 }
 

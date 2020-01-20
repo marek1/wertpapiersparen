@@ -46,6 +46,7 @@ import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-k
 import { SparplanKostenDetailsComponent } from './components/sparplan-kosten-details/sparplan-kosten-details.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { SparplanKostenPerBrokerComponent } from './components/sparplan-kosten-per-broker/sparplan-kosten-per-broker.component';
+import { CompaniesByPopularityComponent } from './components/companies/companies-by-popularity/companies-by-popularity.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -80,7 +81,8 @@ registerLocaleData(localeDe, 'de');
     SparplanChartComponent,
     SparplanKostenComponent,
     SparplanKostenDetailsComponent,
-    SparplanKostenPerBrokerComponent
+    SparplanKostenPerBrokerComponent,
+    CompaniesByPopularityComponent
   ],
   imports: [
     FormsModule,

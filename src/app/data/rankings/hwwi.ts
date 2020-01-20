@@ -17,22 +17,32 @@ export const hwwi: Ranking = {
   results: [
     {
       id: continentalCompany.id,
+      name: continentalCompany.name,
+      isin: continentalCompany.isin,
       points: 100
     },
     {
       id: osramCompany.id,
+      name: osramCompany.name,
+      isin: osramCompany.isin,
       points: 92
     },
     {
       id: siemensCompany.id,
+      name: siemensCompany.name,
+      isin: siemensCompany.isin,
       points: 88.6
     },
     {
       id: normaCompany.id,
+      name: normaCompany.name,
+      isin: normaCompany.isin,
       points: 84.7
     },
     {
       id: suedzuckerCompany.id,
+      name: suedzuckerCompany.name,
+      isin: suedzuckerCompany.isin,
       points: 84.4
     }
   ]

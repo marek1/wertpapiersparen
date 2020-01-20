@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Ranking, ShareRank } from '../../../interfaces/ranking';
-import { AllRankings } from '../../../data/rankings';
 import { ChartOptions } from 'chart.js';
 import { IndustryService } from '../../../services/industry.service';
 import { Etfs } from '../../../data/etfs';
@@ -10,6 +9,7 @@ import { Etf } from '../../../interfaces/etf';
 import { HelperService } from '../../../services/helpers';
 import { Performances } from '../../../enums/performances';
 import { PriceService } from '../../../services/price.service';
+import { Rankings } from '../../../data/rankings';
 
 interface ShowMore {
   noIndustries: number;
@@ -105,7 +105,7 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   getRankingsForCompany(): Ranking[] {
-    return AllRankings
+    return Rankings
       .filter((x) => x.results.filter((res) => res.id === this.company.id).length > 0 ? true : false)
       .sort((x, y) => {
         const _x = this.getPercentage(this.getPointsInRanking(x).points, x.maxResult);

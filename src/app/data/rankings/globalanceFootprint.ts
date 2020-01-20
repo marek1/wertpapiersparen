@@ -42,122 +42,182 @@ export const globalanceFootprint: Ranking = {
   results: [
     {
       id: allianzCompany.id,
+      name: allianzCompany.name,
+      isin: allianzCompany.isin,
       points: 89
     },
     {
       id: munichReCompany.id,
+      name: munichReCompany.name,
+      isin: munichReCompany.isin,
       points: 86,
     },
     {
       id: deutschBoerseCompany.id,
+      name: deutschBoerseCompany.name,
+      isin: deutschBoerseCompany.isin,
       points: 85,
     },
     {
       id: infineonCompany.id,
+      name: infineonCompany.name,
+      isin: infineonCompany.isin,
       points: 75,
     },
     {
       id: sapCompany.id,
+      name: sapCompany.name,
+      isin: sapCompany.isin,
       points: 74,
     },
     {
       id: beiersdorfCompany.id,
+      name: beiersdorfCompany.name,
+      isin: beiersdorfCompany.isin,
       points: 74,
     },
     {
       id: siemensCompany.id,
+      name: siemensCompany.name,
+      isin: siemensCompany.isin,
       points: 66,
     },
     {
       id: henkelCompany.id,
+      name: henkelCompany.name,
+      isin: henkelCompany.isin,
       points: 64,
     },
     {
       id: merckKgCompany.id,
+      name: merckKgCompany.name,
+      isin: merckKgCompany.isin,
       points: 64,
     },
     {
       id: wirecardCompany.id,
+      name: wirecardCompany.name,
+      isin: wirecardCompany.isin,
       points: 64,
     },
     {
       id: deutscheTelekomCompany.id,
+      name: deutscheTelekomCompany.name,
+      isin: deutscheTelekomCompany.isin,
       points: 61,
     },
     {
       id: deutschePostCompany.id,
+      name: deutscheBankCompany.name,
+      isin: deutscheBankCompany.isin,
       points: 61,
     },
     {
       id: adidasCompany.id,
+      name: adidasCompany.name,
+      isin: adidasCompany.isin,
       points: 58,
     },
     {
       id: fmcCompany.id,
+      name: fmcCompany.name,
+      isin: fmcCompany.isin,
       points: 56,
     },
     {
       id: bmwCompany.id,
+      name: bmwCompany.name,
+      isin: bmwCompany.isin,
       points: 46,
     },
     {
       id: continentalCompany.id,
+      name: continentalCompany.name,
+      isin: continentalCompany.isin,
       points: 43,
     },
     {
       id: covestroCompany.id,
+      name: covestroCompany.name,
+      isin: covestroCompany.isin,
       points: 43,
     },
     {
       id: daimlerCompany.id,
+      name: daimlerCompany.name,
+      isin: daimlerCompany.isin,
       points: 41,
     },
     {
       id: lindeCompany.id,
+      name: lindeCompany.name,
+      isin: lindeCompany.isin,
       points: 40,
     },
     {
       id: basfCompany.id,
+      name: basfCompany.name,
+      isin: basfCompany.isin,
       points: 39,
     },
     {
       id: deutscheBankCompany.id,
+      name: deutscheBankCompany.name,
+      isin: deutscheBankCompany.isin,
       points: 39,
     },
     {
       id: bayerCompany.id,
+      name: bayerCompany.name,
+      isin: bayerCompany.isin,
       points: 38,
     },
     {
       id: lufthansaCompany.id,
+      name: lufthansaCompany.name,
+      isin: lufthansaCompany.isin,
       points: 38,
     },
     {
       id: vonoviaCompany.id,
+      name: vonoviaCompany.name,
+      isin: vonoviaCompany.isin,
       points: 37,
     },
     {
       id: eonCompany.id,
+      name: eonCompany.name,
+      isin: eonCompany.isin,
       points: 36,
     },
     {
       id: thyssenKruppCompany.id,
+      name: thyssenKruppCompany.name,
+      isin: thyssenKruppCompany.isin,
       points: 36
     },
     {
       id: heidelbergCementCompany.id,
+      name: heidelbergCementCompany.name,
+      isin: heidelbergCementCompany.isin,
       points: 35,
     },
     {
       id: freseniusCompany.id,
+      name: freseniusCompany.name,
+      isin: freseniusCompany.isin,
       points: 35,
     },
     {
       id: rweCompany.id,
+      name: rweCompany.name,
+      isin: rweCompany.isin,
       points: 31,
     },
     {
       id: vwCompany.id,
+      name: vwCompany.name,
+      isin: vwCompany.isin,
       points: 31,
     }
   ]

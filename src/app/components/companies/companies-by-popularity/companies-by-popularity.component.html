@@ -1,0 +1,19 @@
+<div class="margin vertical top-bottom-10">
+  
+  <div>
+    ... oder vielleicht schaust du dir mal die Unternehmen an, über die im Bereich Nachhaltigkeit
+    und soziale Verantwortung positiv berichtet wurde.
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-12" *ngFor="let security of finalList | slice:0:10">
+    <div class="card">
+      <div class="card-body">
+          <a [routerLink]="['/unternehmen', security.name, security.id]">
+            {{security.name}} <span class="fa fa-arrow-circle-right"></span>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
