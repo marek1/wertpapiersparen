@@ -38,68 +38,24 @@
               <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
             </span>
           </div>
-          <div class="alert alert-danger" role="alert" *ngIf="!percentagesAreCorrect(favouredSecurities)">
-            Die Gewichtungen ergeben keine 100%!
+          <div class="alert alert-danger" role="alert" *ngIf="!this.sparplanService.addsUptoSparplanSum(favouredSecurities, sparplanSum$|async)">
+            Die einzelnen Sparpläne ergeben nicht die Gesamtsparplansumme.
           </div>
         </div>
       </div>
     </div>
     <ul class="list-group" *ngIf="favouredSecurities.length > 0">
       <li class="list-group-item" *ngFor="let fav of favouredSecurities; let ind = index">
-        <div class="row">
-          <div class="col-12">
-            <a *ngIf="fav.item.securityType!==SecurityType.ETF" class="" [routerLink]="['/unternehmen', fav.item.name, fav.item.id]">
-              <span class="badge badge-yellow">Aktie</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
-            </a>
-            <a *ngIf="fav.item.securityType===SecurityType.ETF" class="" [routerLink]="['/etf', fav.item.name, fav.item.isin]">
-              <span class="badge badge-green">ETF</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
-            </a>
-            <div class="float-right">
-              <app-add-to-sparplan [version]="'short'" [company]="fav.item"></app-add-to-sparplan>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-5">
-                <app-number-input
-                [anzahl]="fav.amount"
-                [smallestUnit]="fav.item.smallestTradeableUnit"
-                [unit]="'Stk.'"
-                (numberChanged)="updateStore($event, fav.item)"
-                ></app-number-input>
-                <app-price-display [fav]="fav"></app-price-display>
-              </div>
-              <div class="col-7">
-                <app-get-percentage [fav]="fav" [totalPrice]="totalPrice" [sparplanSum]="sparplanSum$|async"></app-get-percentage>
-                <div class="error" *ngIf="!percentagesAreCorrect(favouredSecurities)">
-                  Überprüfe den Wert
-                </div>
-                <div *ngIf="showCosts" class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Sparplan {{ind+1}}:
-                    </h5>
-                    <div>
-                      <span class="small">bestehend aus: </span>
-                      <span>{{fav.item.name}}</span>
-                    </div>
-                    <div *ngFor="let broker of sparplanBroker">
-                      <div class="alert alert-info" *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1">
-                        {{broker.name}}:
-                        <span *ngIf="broker.minAmountPerSavingPlan > getAmount(fav.percentage, sparplanSum$|async)">
-                        <span class="error">Minimum-Sparrate nicht erreicht</span>
-                      </span>
-                        <span *ngIf="broker.minAmountPerSavingPlan <= getAmount(fav.percentage, sparplanSum$|async)">
-                        <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="sparplanSum$|async"></app-sparplan-kosten-per-broker>
-                      </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-security-list-item
+          [fav]="fav"
+          [totalPrice]="totalPrice"
+          [sparplanSum]="sparplanSum$|async"
+          [percentagesAreCorrect]="this.sparplanService.addsUptoSparplanSum(favouredSecurities, sparplanSum$|async)"
+          [showCosts]="showCosts"
+          [listItemCounter]="ind"
+          [isTemplate]="false"
+        >
+        </app-security-list-item>
       </li>
     </ul>
     <div class="col-12 card margin vertical top-bottom-10 text-center" *ngIf="favouredSecurities.length === 0">
@@ -127,7 +83,7 @@
         </div>
         <div class="col-7" *ngIf="favouredSecurities.length > 0">
           <div>
-            <div>Deine Sparplansumme beträgt</div>
+            <div>Deine gesamte Sparplansumme beträgt</div>
             <div class="font-weight-bold">
               <app-number-input
               [anzahl]="sparplanSum$|async"

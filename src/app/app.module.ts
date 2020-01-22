@@ -49,6 +49,8 @@ import { SparplanKostenPerBrokerComponent } from './components/sparplan-kosten-p
 import { CompaniesByPopularityComponent } from './components/companies/companies-by-popularity/companies-by-popularity.component';
 import { EtfsByPopularityComponent } from './components/etfs/etfs-by-popularity/etfs-by-popularity.component';
 import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-muster.component';
+import { SecurityListItemComponent } from './components/security-list-item/security-list-item.component';
+import { SparplanService } from './services/sparplan.service';
 
 registerLocaleData(localeDe, 'de');
 
@@ -86,7 +88,8 @@ registerLocaleData(localeDe, 'de');
     SparplanKostenPerBrokerComponent,
     CompaniesByPopularityComponent,
     EtfsByPopularityComponent,
-    SparplanMusterComponent
+    SparplanMusterComponent,
+    SecurityListItemComponent
   ],
   imports: [
     FormsModule,
@@ -112,7 +115,8 @@ registerLocaleData(localeDe, 'de');
   providers: [
     BasketService,
     PriceService,
-    IndustryService
+    IndustryService,
+    SparplanService
   ],
   bootstrap: [AppComponent]
 })

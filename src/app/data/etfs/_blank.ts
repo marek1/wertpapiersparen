@@ -24,6 +24,7 @@ export const _blank: Etf = {
   end_of_month_prices: null,
   yields: [],
   lastUpdate: '2019-12-26',
+  contains: SecurityType.Aktie,
   shares: [],
   sectors: [],
   industries: [],

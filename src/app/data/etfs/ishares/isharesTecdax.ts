@@ -1046,6 +1046,7 @@ export const isharesTecdax: Etf = {
     22.36, 64.16, 115.74, 257.68
   ],
   lastUpdate: '2019-12-31',
+  contains: SecurityType.Aktie,
   shares: findCompaniesInIndex(Indices.TecDAX),
   countries: [
     {name: Country[Country.Deutschland], portion: 99.98}

@@ -529,6 +529,7 @@ export const isharesMsciWorldUsd: Etf = {
     27.35, 41.85, 50.94, 140.02
   ],
   lastUpdate: '2019-12-31',
+  contains: SecurityType.Aktie,
   shares: findCompaniesInIndex(Indices.MSCIWorld), // ignores shares with weight <= 0.3 %
   countries: [
     {name: Country[Country.USA], portion: 63.2},

@@ -1,14 +1,8 @@
-<app-number-input
-  [anzahl]="percentage"
-  [smallestUnit]="1"
-  [unit]="'%'"
-  (numberChanged)="updateStore($event, fav.item)"
-></app-number-input>
 <div>
-  ca. <span class="font-weight-bold">{{calculatedAmount | number:'1.0-0':'de'}} {{fav.item.currency}}</span>
-  <small> oder {{share | number:'1.2-2':'de'}} Anteile</small>
-</div>
-<div class="small" *ngIf="percentage !== suggestedPercentage">
-  Gewichtung gemäß Stückzahlen wäre aber {{suggestedPercentage}} %.
-  <span class="btn-link clickable" (click)="updatePercentage(suggestedPercentage)">OK, übernehmen.</span>
+  <app-number-input
+  [anzahl]="currentAmount"
+  [smallestUnit]="1"
+  [unit]="'EUR'"
+  (numberChanged)="doEmit($event)"
+  ></app-number-input>
 </div>

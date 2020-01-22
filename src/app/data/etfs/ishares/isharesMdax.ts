@@ -1502,6 +1502,7 @@ export const isharesMdax: Etf = {
     30.23, 24.72, 61.81, 256.71
   ],
   lastUpdate: '2019-12-31',
+  contains: SecurityType.Aktie,
   shares: findCompaniesInIndex(Indices.MDAX),
   countries: [
     {name: Country[Country.Deutschland], portion: 89.91},

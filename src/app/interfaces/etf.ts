@@ -38,6 +38,7 @@ export interface Etf {
   end_of_month_prices: any;
   yields: number[]; // 1, 3, 5, 10, 15, 20 Jahre
   lastUpdate: string;
+  contains: SecurityType;
   shares: CompanyShort[];
   countries?: Portion[];
   sectors?: Portion[];

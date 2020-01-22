@@ -59,5 +59,15 @@ export class PriceService {
     return [newestPrice, priceInYear];
   }
 
+  getNetSum(items: AmountOfItem[], currency: string) {
+    let returnValue = 0;
+    items.map((item) => {
+      if (item.item.currency === currency) {
+        returnValue += this.getLatestTotalPrice(item);
+      }
+    });
+    return returnValue;
+  }
+
 
 }

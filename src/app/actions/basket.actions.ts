@@ -25,7 +25,7 @@ export const removeFromFavourites = createAction(
 
 export const updateFavourites = createAction(
   '[Basket Component] Update a Favourite',
-  props<{amount: number|null, percentage: number|null, item: Company|Etf}>()
+  props<{amount: number|null, savingRate: number|null, item: Company|Etf}>()
 );
 
 export const setSelectedTab = createAction(

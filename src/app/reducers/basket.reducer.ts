@@ -2,10 +2,11 @@ import { createReducer, on } from '@ngrx/store';
 import { BasketActions } from '../actions';
 import { Company } from '../interfaces/company';
 import { Etf } from '../interfaces/etf';
+import { standardSparplanSum } from '../data/etfs';
 
 export interface AmountOfItem {
   amount: number;
-  percentage: number;
+  savingRate: number;
   item: Company|Etf;
 }
 export const featureKey = 'basket';
@@ -23,7 +24,7 @@ const initialState: State = {
   errorMessage: null,
   items: [],
   selectedTab: 0,
-  sparplanSum: 25
+  sparplanSum: standardSparplanSum
 };
 
 export const reducer = createReducer(
@@ -46,13 +47,13 @@ export const reducer = createReducer(
     ...state,
     items: [...state.items.filter(com => com.item.id !== item.id)]
   })),
-  on(BasketActions.updateFavourites, (state, {amount, percentage, item}) =>  ({
+  on(BasketActions.updateFavourites, (state, {amount, savingRate, item}) =>  ({
     ...state,
     items: [...state.items.map((com: AmountOfItem) => {
       // overwrite the amount for the given company
       if (com.item.id === item.id) {
         com = {...com,
-          percentage: percentage !== null ? percentage : com.percentage,
+          savingRate: savingRate !== null ? savingRate : com.savingRate,
           amount: amount !== null ? amount : com.amount};
       }
       return com;

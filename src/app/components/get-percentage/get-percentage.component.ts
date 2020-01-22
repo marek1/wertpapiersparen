@@ -1,11 +1,12 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AmountOfItem } from '../../reducers/basket.reducer';
 import { PriceService } from '../../services/price.service';
 import { BasketActions } from '../../actions';
 import { Etf } from '../../interfaces/etf';
 import { Company } from '../../interfaces/company';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-get-percentage',
@@ -17,11 +18,11 @@ export class GetPercentageComponent implements OnInit, OnChanges {
   @Input() fav: AmountOfItem;
   @Input() totalPrice: number;
   @Input() sparplanSum: number;
+  @Input() isTemplate: boolean;
+  @Input() noOfSecurities: number;
+  @Output() numberChanged = new EventEmitter<number>();
 
-  public percentage: number;
-  public calculatedAmount: number;
-  public suggestedPercentage: number;
-  public share: number;
+  public currentAmount: number;
 
   constructor(private priceService: PriceService,
               private store: Store<fromRoot.AppState>) {
@@ -32,28 +33,24 @@ export class GetPercentageComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if ((changes.totalPrice  && changes.totalPrice.currentValue) ||
-    (changes.sparplanSum && changes.sparplanSum.currentValue)) {
-      this.getPercentage();
+      (changes.sparplanSum && changes.sparplanSum.currentValue) ||
+      (changes.noOfSecurities && changes.noOfSecurities.currentValue)) {
+      // amount is initially null if the item is an ETF
+      if (!this.fav.savingRate) {
+        this.calculateSum();
+      } else {
+        this.currentAmount = this.fav.savingRate;
+      }
     }
   }
 
-  getPercentage() {
-    this.suggestedPercentage = Math.round((this.priceService.getLatestTotalPrice(this.fav) * 100) / this.totalPrice);
-    if (!this.fav.percentage) {
-      this.percentage = this.suggestedPercentage;
-      this.updateStore(this.percentage, this.fav.item);
-    } else {
-      this.percentage = this.fav.percentage;
-    }
-    this.calculatedAmount = (this.sparplanSum * this.percentage) / 100;
-    this.share = this.calculatedAmount / this.priceService.getLatestPrice(this.fav);
+  calculateSum() {
+    this.currentAmount = this.sparplanSum * ((100 / this.noOfSecurities) / 100);
+    this.doEmit(this.currentAmount);
   }
 
-  updatePercentage(percentage: number) {
-    this.updateStore(percentage, this.fav.item);
+  doEmit(anzahl: number) {
+    this.numberChanged.emit(anzahl);
   }
 
-  updateStore(percentage: number, item: Etf|Company) {
-    this.store.dispatch(BasketActions.updateFavourites({amount: null, percentage, item}));
-  }
 }

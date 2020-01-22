@@ -10,6 +10,8 @@ import { isharesDowJonesEurozoneSustainability } from './etfs/ishares/isharesDow
 import { isharesEuroGovtBonds } from './etfs/ishares/isharesEuroGovtBonds';
 import { isharesEuroCorpBonds } from './etfs/ishares/isharesEuroCorpBonds';
 
+export const standardSparplanSum = 50;
+
 export const Etfs: Etf[] = [
   isharesDax, // 5001
   isharesDowJonesEurozoneSustainability,  // 5002

@@ -1613,6 +1613,7 @@ export const isharesEurostoxx50: Etf = {
     29.51, 25.05, 40.43, 80.71
   ],
   lastUpdate: '2019-12-26',
+  contains: SecurityType.Aktie,
   shares: findCompaniesInIndex(Indices.EuroStoxx50),
   countries: [
     {name: Country[Country.Frankreich], portion: 38.8},

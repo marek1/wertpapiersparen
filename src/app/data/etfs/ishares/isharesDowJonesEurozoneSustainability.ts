@@ -1038,6 +1038,7 @@ export const isharesDowJonesEurozoneSustainability: Etf = {
     29.63
   ],
   lastUpdate: '2019-12-31',
+  contains: SecurityType.Aktie,
   shares: [],
   sectors: [
     {name: IsharesIndustryNames.Financials, portion: 18.88},

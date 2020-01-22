@@ -1,5 +1,6 @@
 import { of } from 'rxjs';
 import { AmountOfItem } from '../reducers/basket.reducer';
+import { standardSparplanSum } from '../data/etfs';
 
 export class BasketService {
   constructor() {}
@@ -22,7 +23,7 @@ export class BasketService {
     if (sum !== null ) {
       return of(parseInt(sum, 10));
     }
-    return of(0);
+    return of(standardSparplanSum);
   }
 
   setSparplanSum(sum: number) {

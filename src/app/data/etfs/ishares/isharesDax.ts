@@ -1040,6 +1040,7 @@ export const isharesDax: Etf = {
     24.79, 13.97, 33.08, 117.09
   ],
   lastUpdate: '2019-12-31',
+  contains: SecurityType.Aktie,
   shares: findCompaniesInIndex(Indices.DAX),
   countries: [
     {name: Country[Country.Deutschland], portion: 90.41},

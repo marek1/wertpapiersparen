@@ -619,6 +619,7 @@ export const isharesMsciEuropeSriThesaurierend: Etf = {
     20.57, 38.18, 40.19
   ],
   lastUpdate: '2019-12-26',
+  contains: SecurityType.Aktie,
   shares: findCompaniesInIndex(Indices.MSCIEuropeSRI),
   sectors: [
     {name: IsharesIndustryNames.Financials, portion: 19.41},

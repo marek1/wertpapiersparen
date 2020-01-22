@@ -1,7 +1,7 @@
 <div class="number-input">
   
-  <div *ngIf="!editMode">
-    {{anzahl}} {{unit}} <span class="fa fa-edit" (click)="editMode=!editMode"></span>
+  <div *ngIf="!editMode" class="font-weight-bold">
+    {{anzahl | number:'1.2-2':'de'}} {{unit}} <span class="fa fa-edit" (click)="editMode=!editMode"></span>
   </div>
   <div *ngIf="editMode">
     <div class="input-group mb-2">

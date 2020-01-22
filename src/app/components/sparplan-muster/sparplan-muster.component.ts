@@ -1,23 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Options } from 'ng5-slider';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Etf } from '../../interfaces/etf';
 import { Etfs } from '../../data/etfs';
 import { SecurityType } from '../../enums/securityType';
+import { Observable } from 'rxjs';
+import { SparplanService } from '../../services/sparplan.service';
+import { AmountOfItem } from '../../reducers/basket.reducer';
+import { PriceService } from '../../services/price.service';
+import { Currency } from '../../enums/currencies';
+import { BasketActions } from '../../actions';
 
 @Component({
   selector: 'app-sparplan-muster',
   templateUrl: './sparplan-muster.component.html',
   styleUrls: ['./sparplan-muster.component.scss']
 })
-export class SparplanMusterComponent implements OnInit {
+export class SparplanMusterComponent implements OnInit, OnChanges {
 
   public value: number;
   public options: Options;
   public etfs: Etf[];
+  public sparplanMuster: AmountOfItem[];
+  public sparplanSum$: Observable<number>;
+  private currentSparplanSum: number;
 
-  constructor(private store: Store<fromRoot.AppState>) {
+  public Currency = Currency;
+
+  constructor(public sparplanService: SparplanService,
+              public priceService: PriceService,
+              private store: Store<fromRoot.AppState>) {
     this.value = 50;
     this.options = {
       showTicksValues: true,
@@ -30,41 +43,74 @@ export class SparplanMusterComponent implements OnInit {
       ]
     };
     this.etfs = [];
+    this.sparplanMuster = [];
   }
+
   ngOnInit() {
+    this.sparplanSum$ = this.store.pipe(select(fromRoot.getSparplanSum));
+    this.reset();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.sparplanSum && changes.sparplanSum.currentValue) {
+      this.setSparplan();
+    }
+  }
+
+  reset() {
     this.setPortfolio();
+    this.setSparplan();
   }
 
   setPortfolio() {
-    console.log('set port with ', this.value);
     switch (this.value) {
       case 0:
-        this.etfs = Etfs.filter((etf: Etf) => etf.securityType === SecurityType.GovtBond);
+        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond);
         break;
       case 25:
-        this.etfs = Etfs.filter((etf: Etf) => etf.securityType === SecurityType.GovtBond
-          || etf.securityType === SecurityType.CorpBond);
+        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond
+          || etf.contains === SecurityType.CorpBond);
         break;
       case 50:
-        this.etfs = Etfs.filter((etf: Etf) => etf.securityType === SecurityType.GovtBond
-          || etf.securityType === SecurityType.CorpBond
+        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond
+          || etf.contains === SecurityType.CorpBond
           || etf.name.toLowerCase().indexOf('msci world') > -1
           || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1);
         break;
       case 75:
-        this.etfs = Etfs.filter((etf: Etf) => etf.securityType === SecurityType.GovtBond
-          || etf.securityType === SecurityType.CorpBond
+        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.CorpBond
           || etf.name.toLowerCase().indexOf('msci world') > -1
           || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
-          || etf.name.toLowerCase().indexOf('dax') > -1);
+          || etf.name.toLowerCase().indexOf('mdax') > -1);
         break;
       case 100:
         this.etfs = Etfs.filter((etf: Etf) => etf.name.toLowerCase().indexOf('msci world') > -1
           || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
-          || etf.name.toLowerCase().indexOf('dax') > -1);
+          || etf.name.toLowerCase().indexOf('mdax') > -1
+          || etf.name.toLowerCase().indexOf('tecdax') > -1);
         break;
       default:
         break;
     }
+  }
+
+  setSparplan() {
+    const x = this.sparplanSum$.subscribe((sum: number) => {
+      // TODO : fix !!! as its the old sum !!!
+      console.log('sum : ', sum);
+      this.sparplanMuster = [];
+      this.etfs.map((etf: Etf) => {
+        this.sparplanMuster.push({
+          amount: 1,
+          savingRate: sum / this.etfs.length,
+          item: etf
+        });
+      });
+    });
+    x.unsubscribe();
+  }
+
+  updateSparplanTotal(x) {
+    this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
   }
 }
