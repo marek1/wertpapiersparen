@@ -95,9 +95,7 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   setSparplan() {
-    const x = this.sparplanSum$.subscribe((sum: number) => {
-      // TODO : fix !!! as its the old sum !!!
-      console.log('sum : ', sum);
+    this.sparplanSum$.subscribe((sum: number) => {
       this.sparplanMuster = [];
       this.etfs.map((etf: Etf) => {
         this.sparplanMuster.push({
@@ -107,7 +105,6 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
         });
       });
     });
-    x.unsubscribe();
   }
 
   updateSparplanTotal(x) {
