@@ -59,11 +59,11 @@
             <div *ngFor="let broker of sparplanBroker">
               <div class="alert alert-info" *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1">
                 {{broker.name}}:
-                <span *ngIf="broker.minAmountPerSavingPlan > fav.amount">
+                <span *ngIf="broker.minAmountPerSavingPlan > fav.savingRate">
                   <span class="error">Minimum-Sparrate nicht erreicht</span>
                 </span>
-                <span *ngIf="broker.minAmountPerSavingPlan <= fav.amount">
-                  <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="sparplanSum"></app-sparplan-kosten-per-broker>
+                <span *ngIf="broker.minAmountPerSavingPlan <= fav.savingRate">
+                  <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="fav.savingRate"></app-sparplan-kosten-per-broker>
                 </span>
               </div>
             </div>

@@ -24,7 +24,7 @@ const initialState: State = {
   errorMessage: null,
   items: [],
   selectedTab: 0,
-  sparplanSum: standardSparplanSum
+  sparplanSum: 50
 };
 
 export const reducer = createReducer(
