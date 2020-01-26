@@ -36,22 +36,26 @@
         <app-price-display [fav]="fav"></app-price-display>
       </div>
       <div class="col-7">
-        <app-get-percentage
+        <app-get-savingrate
           [fav]="fav"
           [totalPrice]="totalPrice"
           [sparplanSum]="sparplanSum"
           [noOfSecurities]="(favouredSecuritiesIdList$|async).length"
           [isTemplate]="isTemplate"
           (numberChanged)="updateSavingRate($event, fav.item)">
-        </app-get-percentage>
+        </app-get-savingrate>
         <div class="error" *ngIf="!percentagesAreCorrect">
           Überprüfe den Wert
         </div>
         <div *ngIf="showCosts" class="card">
           <div class="card-body">
             <h5 class="card-title">
-              Sparplan {{listItemCounter+1}}: {{fav.savingRate}} {{Currency.EUR}}
+              Sparplan {{listItemCounter+1}}:
             </h5>
+            <div>
+              <span class="small">Sparsumme: </span>
+              <span>{{fav.savingRate}} {{Currency.EUR}}</span>
+            </div>
             <div>
               <span class="small">bestehend aus: </span>
               <span>{{fav.item.name}}</span>

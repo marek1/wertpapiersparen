@@ -40,7 +40,6 @@ import { EtfsResultComponent } from './components/etfs/etfs-result/etfs-result.c
 import { EtfsByIndustryComponent } from './components/etfs/etfs-by-industry/etfs-by-industry.component';
 import { SparplanComponent } from './components/sparplan/sparplan.component';
 import { AddToSparplanComponent } from './components/add-to-sparplan/add-to-sparplan.component';
-import { GetPercentageComponent } from './components/get-percentage/get-percentage.component';
 import { SparplanChartComponent } from './components/sparplan-chart/sparplan-chart.component';
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 import { SparplanKostenDetailsComponent } from './components/sparplan-kosten-details/sparplan-kosten-details.component';
@@ -51,6 +50,7 @@ import { EtfsByPopularityComponent } from './components/etfs/etfs-by-popularity/
 import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-muster.component';
 import { SecurityListItemComponent } from './components/security-list-item/security-list-item.component';
 import { SparplanService } from './services/sparplan.service';
+import { GetSavingrateComponent } from './components/get-savingrate/get-savingrate.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -81,7 +81,7 @@ registerLocaleData(localeDe, 'de');
     EtfsByRegionComponent,
     EtfsResultComponent,
     EtfsByIndustryComponent,
-    GetPercentageComponent,
+    GetSavingrateComponent,
     SparplanChartComponent,
     SparplanKostenComponent,
     SparplanKostenDetailsComponent,

@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { GetSavingrateComponent } from './get-savingrate.component';
 
-import { GetPercentageComponent } from './get-percentage.component';
-
-describe('GetPercentageComponent', () => {
-  let component: GetPercentageComponent;
-  let fixture: ComponentFixture<GetPercentageComponent>;
+describe('GetSavingrateComponent', () => {
+  let component: GetSavingrateComponent;
+  let fixture: ComponentFixture<GetSavingrateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetPercentageComponent ]
+      declarations: [ GetSavingrateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GetPercentageComponent);
+    fixture = TestBed.createComponent(GetSavingrateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

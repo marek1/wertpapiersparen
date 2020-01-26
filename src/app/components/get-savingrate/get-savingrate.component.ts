@@ -9,11 +9,11 @@ import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-get-percentage',
-  templateUrl: './get-percentage.component.html',
-  styleUrls: ['./get-percentage.component.scss']
+  selector: 'app-get-savingrate',
+  templateUrl: './get-savingrate.component.html',
+  styleUrls: ['./get-savingrate.component.scss']
 })
-export class GetPercentageComponent implements OnInit, OnChanges {
+export class GetSavingrateComponent implements OnInit, OnChanges {
 
   @Input() fav: AmountOfItem;
   @Input() totalPrice: number;

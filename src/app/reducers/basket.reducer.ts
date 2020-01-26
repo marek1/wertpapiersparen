@@ -24,7 +24,7 @@ const initialState: State = {
   errorMessage: null,
   items: [],
   selectedTab: 0,
-  sparplanSum: 50
+  sparplanSum: standardSparplanSum
 };
 
 export const reducer = createReducer(
@@ -39,7 +39,7 @@ export const reducer = createReducer(
     ...state,
     items: [...state.items, {
       amount: item.smallestTradeableUnit,
-      percentage: null,
+      savingRate: standardSparplanSum,
       item
     }]
   })),
