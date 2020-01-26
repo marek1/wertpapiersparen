@@ -15,14 +15,19 @@
     </div>
   </div>
   <div class="col-12 margin vertical top-bottom-10">
-    <div class="font-weight-bold">
-      Ausgehend von einer gesamten Sparplansumme von
-      <app-number-input
-      [anzahl]="sparplanSum$|async"
-      [smallestUnit]="1"
-      [unit]="'EUR'"
-      (numberChanged)="updateSparplanTotal($event)"
-      ></app-number-input>
+    <div class="row">
+      <div class="col-6 font-weight-bold">
+        Ausgehend von einer gesamten Sparplansumme von
+        <app-number-input
+        [anzahl]="sparplanSum$|async"
+        [smallestUnit]="1"
+        [unit]="'EUR'"
+        (numberChanged)="updateSparplanTotal($event)"
+        ></app-number-input>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
+      </div>
     </div>
   </div>
   <div class="col-12 margin vertical top-bottom-10">

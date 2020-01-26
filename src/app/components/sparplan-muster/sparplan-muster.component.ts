@@ -110,4 +110,11 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   updateSparplanTotal(x) {
     this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
   }
+
+  saveAll() {
+    this.sparplanMuster.map((amountOfItem: AmountOfItem) => {
+      this.store.dispatch(BasketActions.addToFavourites({item: amountOfItem.item}));
+      this.store.dispatch(BasketActions.updateFavourites({amount: amountOfItem.amount, savingRate: amountOfItem.savingRate, item: amountOfItem.item}));
+    });
+  }
 }

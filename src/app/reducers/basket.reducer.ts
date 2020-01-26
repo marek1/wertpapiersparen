@@ -37,11 +37,12 @@ export const reducer = createReducer(
   })),
   on(BasketActions.addToFavourites, (state, {item}) => ({
     ...state,
-    items: [...state.items, {
+    // only if the items isnt already in the array!
+    items: state.items.filter((i: AmountOfItem) => i.item.id === item.id).length === 0 ? [...state.items, {
       amount: item.smallestTradeableUnit,
       savingRate: standardSparplanSum,
       item
-    }]
+    }] : [...state.items]
   })),
   on(BasketActions.removeFromFavourites, (state, {item}) =>  ({
     ...state,
