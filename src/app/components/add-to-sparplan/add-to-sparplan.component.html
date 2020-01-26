@@ -2,9 +2,16 @@
   <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary" (click)="addToFavourites(company)">
       Zu Sparplan hinzufügen
   </button>
-  <button *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1" type="button" class="btn btn-danger" (click)="removeFromFavourites(company)">
+  <ng-container *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1">
+    <button  type="button" class="btn btn-danger" (click)="removeFromFavourites(company)">
       Aus Sparplan entfernen
-  </button>
+    </button>
+    <div class="small">
+      <a class="clickable small btn-link" [routerLink]="'sparplan'">
+        <span class="fa fa-list"></span> Wertpapier-Sparplan ansehen
+      </a>
+    </div>
+  </ng-container>
 </ng-container>
 <ng-container *ngIf="version === 'short'">
   <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary btn-sm" (click)="addToFavourites(company)">

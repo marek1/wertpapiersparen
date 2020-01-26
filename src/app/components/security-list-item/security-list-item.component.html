@@ -50,7 +50,7 @@
         <div *ngIf="showCosts" class="card">
           <div class="card-body">
             <h5 class="card-title">
-              Sparplan {{listItemCounter+1}}:
+              Sparplan {{listItemCounter+1}}: {{fav.savingRate}} {{Currency.EUR}}
             </h5>
             <div>
               <span class="small">bestehend aus: </span>
@@ -60,7 +60,7 @@
               <div class="alert alert-info" *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1">
                 {{broker.name}}:
                 <span *ngIf="broker.minAmountPerSavingPlan > fav.savingRate">
-                  <span class="error">Minimum-Sparrate nicht erreicht</span>
+                  <span class="color color--red">Minimum-Sparrate von {{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}} nicht erreicht</span>
                 </span>
                 <span *ngIf="broker.minAmountPerSavingPlan <= fav.savingRate">
                   <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="fav.savingRate"></app-sparplan-kosten-per-broker>

@@ -8,6 +8,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { SavingplanBroker } from '../../data/savingplanBroker';
 import { Observable } from 'rxjs';
+import { Currency } from '../../enums/currencies';
 
 @Component({
   selector: 'app-security-list-item',
@@ -26,6 +27,7 @@ export class SecurityListItemComponent implements OnInit {
 
   public favouredSecuritiesIdList$: Observable<number[]>;
   public SecurityType = SecurityType;
+  public Currency = Currency;
   public sparplanBroker = SavingplanBroker;
   
   constructor(private store: Store<fromRoot.AppState>) { }
