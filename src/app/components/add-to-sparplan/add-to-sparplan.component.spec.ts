@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { AddToSparplanComponent } from './add-to-favourites.component';
+import { AddToSparplanComponent } from './add-to-sparplan.component';
 
 describe('AddToFavouritesComponent', () => {
   let component: AddToSparplanComponent;

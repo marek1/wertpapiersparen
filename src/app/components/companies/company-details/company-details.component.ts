@@ -3,7 +3,6 @@ import { Company } from '../../../interfaces/company';
 import { Country } from '../../../enums/country';
 import { Ranking, ShareRank } from '../../../interfaces/ranking';
 import { ChartOptions } from 'chart.js';
-import { IndustryService } from '../../../services/industry.service';
 import { Etfs } from '../../../data/etfs';
 import { Etf } from '../../../interfaces/etf';
 import { HelperService } from '../../../services/helpers';
@@ -13,7 +12,6 @@ import { Rankings } from '../../../data/rankings';
 import { Companies } from '../../../data/companies';
 
 interface ShowMore {
-  noIndustries: number;
   noBadges: number;
   etfs: number;
   description: boolean;
@@ -42,8 +40,7 @@ export class CompanyDetailsComponent implements OnInit {
   public performanceYears: number[];
   public performances: number[];
 
-  constructor(private industryService: IndustryService,
-              private priceService: PriceService,
+  constructor(private priceService: PriceService,
               private helperService: HelperService) {
     this.Countries = Country;
     this.chartLabels = [];
@@ -64,7 +61,6 @@ export class CompanyDetailsComponent implements OnInit {
       }
     };
     this.showMore = {
-      noIndustries: 1,
       noBadges: 1,
       etfs: 1,
       description: false,
@@ -137,9 +133,6 @@ export class CompanyDetailsComponent implements OnInit {
     return (x * 100) / of;
   }
 
-  getIndustryName(industryId: number) {
-    return this.industryService.getIndustryName(industryId);
-  }
 
   findInEtfs(): Etf[] {
     return Etfs.filter((etf) => etf.shares.filter((comp) => comp.id === this.company.id));

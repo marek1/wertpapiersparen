@@ -31,13 +31,12 @@
     <div class="text-center">
       
       <div>
-        Nutze unsere Software um einen Sparplan <small class="clickable" (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan"><span class="fa fa-question-circle"></span></small>
-        aus den Aktien und ETFs zu erstellen. Einen Aktien-Sparplan bzw. ETF-Sparplan, den zu selbst einfach zusammengestellt hast.
-        Anhand von Stichwörtern, Produkten und/oder Industriebereichen kannst du die Wertpapiere finden, die du interessant findest.
+        Nutze unsere Software um einen Wertpapiersparplan <small class="clickable" (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan"><span class="fa fa-question-circle"></span></small>
+        aus Aktien und ETFs zu erstellen. Anhand von Stichwörtern, Produkten und/oder Industriebereichen kannst du die Wertpapiere (Aktien, ETFs) finden, die du interessant findest.
       </div>
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsASavingPlan" >
         Ein Sparplan beinhaltet die regelmässige Einzahlung eines gewählten Betrages, um eine Sparsumme anzusparen. Im Fall eines
-        Wertpapiersparplan geht es um einen Sparplan auf Aktien (Aktien-Sparen) oder ETFs/Indexfonds (ETF-Sparen), um neben der Ansparsumme
+        Wertpapiersparplan geht es um einen Sparplan mit Aktien (Aktien-Sparen) und/oder ETFs (ETF-Sparen), um neben der Ansparsumme
         auch noch mögliche Rendite zu erzielen.
         <button (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan" type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -58,7 +57,10 @@
       <small class="clickable" (click)="show.whatIsAStock=!show.whatIsAStock">Was ist eine Aktie <span class="fa fa-question-circle"></span></small>
   
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsAStock">
-        Die Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft oder einer Kommanditgesellschaft auf Aktien verbrieft.
+        Die Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft oder einer Kommanditgesellschaft auf Aktien verbrieft. [..]
+        Die Aktie ist ein Finanzierungsinstrument für die Kapitalgesellschaften der Aktiengesellschaft (AG), Kommanditgesellschaft auf Aktien
+        (KGaA) oder Europäischen Gesellschaft (SE). Mit ihm können sich diese Rechtsformen Eigenkapital (Grundkapital oder Kommanditkapital)
+        beschaffen, indem sie diese Aktien auf dem Aktienmarkt an Aktionäre veräußern.
         Quelle: <a target="_blank" href="https://de.wikipedia.org/wiki/Aktie">Wikipedia</a>
         <button (click)="show.whatIsAStock=!show.whatIsAStock" type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -79,7 +81,10 @@
       <small class="clickable" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">Was ist ein ETF <span class="fa fa-question-circle"></span></small>
     
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsAnEtf">
-        Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird.
+        Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird. [..]
+        Die Anlagestrategie von börsengehandelten Fonds ist in aller Regel passiv, das Fondsmanagement investiert also das Fondsvermögen
+        nicht auf der Basis eigener Meinungen, sondern bildet die Wertentwicklung einer vorab definierten Benchmark in Form eines
+        Finanzindexes nach (siehe hierzu Index Investing).
         Quelle: <a target="_blank" href="https://de.wikipedia.org/wiki/B%C3%B6rsengehandelter_Fonds">Wikipedia</a>
         <button (click)="show.whatIsAnEtf=!show.whatIsAnEtf" type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>

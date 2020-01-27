@@ -24,13 +24,7 @@
       </small>
     </div>
     <div class="col-12">
-      <span class="small badge badge-info margin horizontal right-5" *ngFor="let industryId of company.industries | slice:0:showMore.noIndustries">
-        {{getIndustryName(industryId)}}
-      </span>
-      <ng-container *ngIf="company.industries.length > 1">
-        <span class="clickable badge badge-secondary" *ngIf="showMore.noIndustries === 1" (click)="showMore.noIndustries = company.industries.length">weitere <span class="fa fa-plus-circle"></span> </span>
-        <span class="clickable badge badge-secondary" *ngIf="showMore.noIndustries > 1" (click)="showMore.noIndustries = 1">weniger <span class="fa fa-minus-circle"></span> </span>
-      </ng-container>
+      <app-company-industries [company]="company"></app-company-industries>
     </div>
   </div>
   

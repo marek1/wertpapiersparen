@@ -51,6 +51,7 @@ import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-m
 import { SecurityListItemComponent } from './components/security-list-item/security-list-item.component';
 import { SparplanService } from './services/sparplan.service';
 import { GetSavingrateComponent } from './components/get-savingrate/get-savingrate.component';
+import { CompanyIndustriesComponent } from './components/companies/company-industries/company-industries.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -89,7 +90,8 @@ registerLocaleData(localeDe, 'de');
     CompaniesByPopularityComponent,
     EtfsByPopularityComponent,
     SparplanMusterComponent,
-    SecurityListItemComponent
+    SecurityListItemComponent,
+    CompanyIndustriesComponent
   ],
   imports: [
     FormsModule,

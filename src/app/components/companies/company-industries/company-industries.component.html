@@ -1,0 +1,7 @@
+<span class="small badge badge-info margin horizontal right-5" *ngFor="let industryId of company.industries | slice:0:showResults">
+  {{getIndustryName(industryId)}}
+</span>
+<ng-container *ngIf="company.industries.length > initialNumber">
+  <span class="clickable badge badge-secondary" *ngIf="showResults === initialNumber" (click)="showResults = company.industries.length">weitere <span class="fa fa-plus-circle"></span> </span>
+  <span class="clickable badge badge-secondary" *ngIf="showResults > initialNumber" (click)="showResults = initialNumber">weniger <span class="fa fa-minus-circle"></span> </span>
+</ng-container>

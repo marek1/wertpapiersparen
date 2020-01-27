@@ -10,19 +10,25 @@
       <app-add-to-sparplan [version]="'short'" [company]="fav.item"></app-add-to-sparplan>
     </div>
   </div>
-  <div class="col-12" *ngIf="fav.item.securityType === SecurityType.ETF">
-    <div class="small">
-      besteht hauptsächlich aus {{fav.item.contains + 'n'}}
-      <ng-container *ngIf="fav.item.countries[0] !== undefined">
-        der Länder {{fav.item.countries[0].name}} ({{fav.item.countries[0].portion}}%)
-      </ng-container>
-      <ng-container *ngIf="fav.item.countries[1] !== undefined">
-        , {{fav.item.countries[1].name}} ({{fav.item.countries[1].portion}}%)
-      </ng-container>
-      <ng-container *ngIf="fav.item.countries[2] !== undefined">
-        , {{fav.item.countries[2].name}} ({{fav.item.countries[2].portion}}%)
-      </ng-container>
-    </div>
+  <div class="col-12">
+    <ng-container *ngIf="fav.item.securityType === SecurityType.ETF">
+      <div class="small">
+        Der ETF besteht hauptsächlich aus {{fav.item.contains + 'n'}}
+        <ng-container *ngIf="fav.item.countries[0] !== undefined">
+          der Länder {{fav.item.countries[0].name}} ({{fav.item.countries[0].portion | number:'1.2-2':'de'}}%)
+        </ng-container>
+        <ng-container *ngIf="fav.item.countries[1] !== undefined">
+          , {{fav.item.countries[1].name}} ({{fav.item.countries[1].portion | number:'1.2-2':'de'}}%)
+        </ng-container>
+        <ng-container *ngIf="fav.item.countries[2] !== undefined">
+          , {{fav.item.countries[2].name}} ({{fav.item.countries[2].portion | number:'1.2-2':'de'}}%)
+        </ng-container>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="fav.item.securityType !== SecurityType.ETF">
+      <app-company-industries [company]="fav.item"></app-company-industries>
+    </ng-container>
+
   </div>
   <div class="col-12">
     <div class="row">
