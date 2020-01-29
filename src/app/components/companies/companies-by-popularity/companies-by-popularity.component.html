@@ -36,10 +36,28 @@
     <div class="card">
       <div class="card-body">
         <div class="card-title">
-          Top 10 nach Bekanntheit ihrer Marken
-          <span class="small">
-            Quelle: <a class="clickable" target="_blank" href="https://www.handelsblatt.com/unternehmen/handel-konsumgueter/ranking-europas-wertvollste-marken/3550388.html?ticket=ST-2848053-FkavKLDjFUbaKddlbxy5-ap4">Handelsblatt</a>
-          </span>
+          Top 10 nach Markenwert <span (click)="show.top10Brands=!show.top10Brands" class="fa fa-question-circle clickable"></span>
+          <div class="clickable alert alert-info alert-dismissible" *ngIf="show.top10Brands">
+            Ranking der wertvollsten europäischen Unternehmen nach ihrem Markenwert im Jahr 2019.
+            Quelle: <a class="clickable" target="_blank" href="https://de.statista.com/statistik/daten/studie/202750/umfrage/wertvollste-unternehmen-in-europa/">Statista</a>
+            <button (click)="show.top10Brands=!show.top10Brands" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-text clearfix">
+          <div class="row result" *ngFor="let security of top10Brands">
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/unternehmen', security.name, security.id]">
+                <img src="{{security.logo}}">
+              </a>
+            </div>
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/unternehmen', security.name, security.id]">
+                {{security.name}} <span class="fa fa-arrow-circle-right"></span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

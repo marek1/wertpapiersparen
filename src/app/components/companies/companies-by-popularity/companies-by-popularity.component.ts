@@ -4,6 +4,15 @@ import { Ranking, ShareRank } from '../../../interfaces/ranking';
 import { Companies } from '../../../data/companies';
 import { Company } from '../../../interfaces/company';
 import { ROUTE_RANKING } from '../../../app.routes';
+import { lvmhCompany } from '../../../data/companies/eurostoxx50/lvmh';
+import { nestleCompany } from '../../../data/companies/other/nestle';
+import { abInbevCompany } from '../../../data/companies/eurostoxx50/abInbev';
+import { unileverCompany } from '../../../data/companies/eurostoxx50/unilever';
+import { keringCompany } from '../../../data/companies/eurostoxx50/kering';
+import { deutscheTelekomCompany } from '../../../data/companies/dax/deutscheTelekom';
+import { vwCompany } from '../../../data/companies/dax/vw';
+import { daimlerCompany } from '../../../data/companies/dax/daimler';
+import { nokiaCompany } from '../../../data/companies/eurostoxx50/nokia';
 
 export interface Top10ListItem {
   id: number;
@@ -25,20 +34,25 @@ export interface Top10GoodListItem extends Top10ListItem {
 export class CompaniesByPopularityComponent implements OnInit {
 
   public top10Good: Top10GoodListItem[];
+  public top10Brands: Top10ListItem[];
   public show: {
     top10Good: boolean;
+    top10Brands: boolean;
   };
   public ROUTE_RANKING = ROUTE_RANKING;
 
   constructor() {
     this.top10Good = [];
+    this.top10Brands = [];
     this.show = {
-      top10Good: false
+      top10Good: false,
+      top10Brands: false
     };
   }
 
   ngOnInit() {
     this.createTop10GoodList();
+    this.createTop10BrandsList();
   }
 
   createTop10GoodList() {
@@ -85,6 +99,33 @@ export class CompaniesByPopularityComponent implements OnInit {
       this.top10Good[foundIndex].counter = this.top10Good[foundIndex].counter++;
       this.top10Good[foundIndex].points += this.calculatePoints(result.points, maxPoints);
     }
+  }
+
+  createTop10BrandsList() {
+    // https://de.statista.com/statistik/daten/studie/202750/umfrage/wertvollste-unternehmen-in-europa/
+    const fromStatista = [
+      lvmhCompany.id,
+      nestleCompany.id,
+      abInbevCompany.id,
+      unileverCompany.id,
+      keringCompany.id,
+      deutscheTelekomCompany.id,
+      vwCompany.id,
+      daimlerCompany.id,
+      nokiaCompany.id
+    ];
+    fromStatista.map((id: number) => {
+      Companies.map((result: Company) => {
+        if (result.id === id) {
+          this.top10Brands.push({
+            id: result.id,
+            name: result.name,
+            isin: result.isin,
+            logo: this.getLogoFor(result.id),
+          });
+        }
+      });
+    });
   }
 
   calculatePoints(points: number, maxPoints: number): number {
