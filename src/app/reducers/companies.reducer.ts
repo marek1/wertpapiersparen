@@ -18,7 +18,7 @@ export interface State {
 const initialState: State = {
   isLoading: false,
   errorMessage: null,
-  selectedSearchMethod: SearchMethods.Suchbegriff,
+  selectedSearchMethod: SearchMethods.Top10,
   selectedIndustries: [
     {
       id: 0,

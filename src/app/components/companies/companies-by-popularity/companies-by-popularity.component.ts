@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Rankings } from '../../../data/rankings';
 import { Ranking, ShareRank } from '../../../interfaces/ranking';
+import { Companies } from '../../../data/companies';
+import { Company } from '../../../interfaces/company';
+import { ROUTE_RANKING } from '../../../app.routes';
 
-export interface FinalListItem {
+export interface Top10ListItem {
   id: number;
   name: string;
   isin: string;
+  logo?: string;
+}
+
+export interface Top10GoodListItem extends Top10ListItem {
   counter: number;
   points: number;
 }
@@ -17,13 +24,24 @@ export interface FinalListItem {
 })
 export class CompaniesByPopularityComponent implements OnInit {
 
-  public finalList: FinalListItem[];
+  public top10Good: Top10GoodListItem[];
+  public show: {
+    top10Good: boolean;
+  };
+  public ROUTE_RANKING = ROUTE_RANKING;
 
   constructor() {
-    this.finalList = [];
+    this.top10Good = [];
+    this.show = {
+      top10Good: false
+    };
   }
 
   ngOnInit() {
+    this.createTop10GoodList();
+  }
+
+  createTop10GoodList() {
     /**
      * go through all rankings,
      * consider only those that
@@ -35,12 +53,12 @@ export class CompaniesByPopularityComponent implements OnInit {
     Rankings.map((ranking: Ranking) => {
       ranking.results.map((result: ShareRank, counter: number) => {
         if (ranking.maxResult === 1 || (ranking.maxResult > 1 && counter < (ranking.results.length / 2))) {
-          this.updateList(result, ranking.maxResult);
+          this.updateTop10GoodList(result, ranking.maxResult);
         }
       });
     });
     // then sort by lowest
-    this.finalList = this.finalList.sort((a: FinalListItem, b: FinalListItem) => {
+    this.top10Good = this.top10Good.sort((a: Top10GoodListItem, b: Top10GoodListItem) => {
       // counter is the number of times it appeared
       // and points is the number of points achieved (the higher the better)
       if (a.points < b.points) {
@@ -52,19 +70,20 @@ export class CompaniesByPopularityComponent implements OnInit {
     });
   }
 
-  updateList(result: ShareRank, maxPoints: number): void {
-    const foundIndex = this.finalList.findIndex((finalListItem: FinalListItem) => finalListItem.id === result.id);
+  updateTop10GoodList(result: ShareRank, maxPoints: number): void {
+    const foundIndex = this.top10Good.findIndex((top10GoodItem: Top10GoodListItem) => top10GoodItem.id === result.id);
     if (foundIndex === -1) {
-      this.finalList.push({
+      this.top10Good.push({
         id: result.id,
         name: result.name,
         isin: result.isin,
+        logo: this.getLogoFor(result.id),
         counter: 1,
         points: this.calculatePoints(result.points, maxPoints)
       });
     } else {
-      this.finalList[foundIndex].counter = this.finalList[foundIndex].counter++;
-      this.finalList[foundIndex].points += this.calculatePoints(result.points, maxPoints);
+      this.top10Good[foundIndex].counter = this.top10Good[foundIndex].counter++;
+      this.top10Good[foundIndex].points += this.calculatePoints(result.points, maxPoints);
     }
   }
 
@@ -72,6 +91,10 @@ export class CompaniesByPopularityComponent implements OnInit {
     // add up to 100
     const quotient = 100 / maxPoints;
     return points * quotient;
+  }
+
+  getLogoFor(id: number) {
+    return Companies.filter((comp: Company) => comp.id === id)[0].logo;
   }
 
 }

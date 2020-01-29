@@ -20,6 +20,7 @@ export class CompaniesHomeComponent implements OnInit {
   constructor(private store: Store<fromRoot.AppState>, private helperService: HelperService) {
     this.SearchMethods = SearchMethods;
     this.searchMethods = [
+      SearchMethods[SearchMethods.Top10],
       SearchMethods[SearchMethods.Suchbegriff],
       SearchMethods[SearchMethods['Industrie(n)']],
       SearchMethods[SearchMethods['Produkt(e)']]

@@ -13,7 +13,7 @@ export const hwwi: Ranking = {
   issuer: 'Hamburgische WeltWirtschaftsInstitut (HWWI)',
   link: '',
   maxResult: 100,
-  unit: 'Punkten',
+  unit: 'Punkte',
   results: [
     {
       id: continentalCompany.id,

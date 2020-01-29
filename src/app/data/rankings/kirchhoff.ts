@@ -38,7 +38,7 @@ export const kirchhoff: Ranking = {
   issuer: 'Kirchhoff',
   link: 'https://www.kirchhoff.de/fileadmin/20_Download/Studien/20180924_CGR_final.pdf',
   maxResult: 25,
-  unit: 'Punkten',
+  unit: 'Punkte',
   results: [
     {
       id: freseniusCompany.id,

@@ -25,14 +25,13 @@
   <div class="col-12">
     
     <h4 class="text-center">
-      Warte also nicht. Plane deine private Rente jetzt - mit einem Wertpapiersparplan.
+      Warte also nicht. Plane deine private Rente jetzt - mit einem Wertpapiersparplan  <small class="clickable" (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan"><span class="fa fa-question-circle"></span></small>.
     </h4>
     
     <div class="text-center">
       
       <div>
-        Nutze unsere Software um einen Wertpapiersparplan <small class="clickable" (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan"><span class="fa fa-question-circle"></span></small>
-        aus Aktien und ETFs zu erstellen. Anhand von Stichwörtern, Produkten und/oder Industriebereichen kannst du die Wertpapiere (Aktien, ETFs) finden, die du interessant findest.
+        Erstelle einen Wertpapiersparplan (oder mehrere) aus ETFs und/oder Aktien. Anhand von Rankings, Stichwörtern, Produkten oder Industriebereichen kannst du interessante ETFs und Aktien ganz einfach finden.
       </div>
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsASavingPlan" >
         Ein Sparplan beinhaltet die regelmässige Einzahlung eines gewählten Betrages, um eine Sparsumme anzusparen. Im Fall eines
@@ -49,7 +48,7 @@
     class="btn btn-primary w-100-percent margin vertical top-bottom-10"
     [routerLink]="'/unternehmen'"
     role="button">
-      Finde börsengelistete Unternehmen (bzw. deren Aktien)
+      Finde Unternehmen (und deren Aktien)
     </a>
     
     <div class="text-center">
@@ -73,7 +72,7 @@
     class="btn btn-primary w-100-percent margin vertical top-bottom-10"
     [routerLink]="'/etfs'"
     role="button">
-      Finde börsengelistete ETFs
+      Finde ETFs
     </a>
   
     <div class="text-center">

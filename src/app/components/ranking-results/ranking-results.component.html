@@ -1,0 +1,18 @@
+<div class="small">
+  Ergebnisse:
+  <span class="clickable" (click)="showResults = !showResults">
+      <span *ngIf="!showResults">Zeige Ergebnisse <span class="fa fa-chevron-down"></span></span>
+      <span *ngIf="showResults">Verstecke Ergebnisse <span class="fa fa-chevron-up"></span></span>
+  </span>
+</div>
+<div *ngIf="showResults">
+  <div *ngFor="let result of results; let i = index;">
+    {{maxScore > 1 ? (i+1) + '.' : ''}}
+    <a [routerLink]="['/unternehmen', result.name, result.id]">
+      {{result.name}} <span class="fa fa-arrow-circle-right"></span>
+    </a>
+    <span *ngIf="maxScore > 1">
+      ({{result.points}} {{unit}})
+    </span>
+  </div>
+</div>

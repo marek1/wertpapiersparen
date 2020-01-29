@@ -1,18 +1,46 @@
 <div class="margin vertical top-bottom-10">
-  
-  <div>
-    ... oder vielleicht schaust du dir mal die Unternehmen an, über die im Bereich Nachhaltigkeit <span class="fa fa-leaf color color--green"></span>
-    und soziale Verantwortung <span class="fa fa-child"></span> positiv berichtet wurde.
-  </div>
-
+  Hier findest du Unternehmen sortiert nach gewissen Kriterien.
 </div>
 <div class="row">
-  <div class="col-12" *ngFor="let security of finalList | slice:0:10">
+  <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-          <a [routerLink]="['/unternehmen', security.name, security.id]">
-            {{security.name}} <span class="fa fa-arrow-circle-right"></span>
-          </a>
+        <div class="card-title">
+          Top 10 im Bereich Nachhaltigkeit <span class="fa fa-leaf color color--green"></span>
+          und sozialer Verantwortung <span (click)="show.top10Good=!show.top10Good" class="fa fa-question-circle clickable"></span>
+          <div class="clickable alert alert-info alert-dismissible" *ngIf="show.top10Good">
+            Hierbei wurden verschiedene <a [routerLink]="'/' + ROUTE_RANKING">Studien <span class="fa fa-arrow-circle-right"></span></a> einbezogen.
+            <button (click)="show.top10Good=!show.top10Good" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-text clearfix">
+          <div class="row result" *ngFor="let security of top10Good | slice:0:10">
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/unternehmen', security.name, security.id]">
+                <img src="{{security.logo}}">
+              </a>
+            </div>
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/unternehmen', security.name, security.id]">
+                {{security.name}} <span class="fa fa-arrow-circle-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          Top 10 nach Bekanntheit ihrer Marken
+          <span class="small">
+            Quelle: <a class="clickable" target="_blank" href="https://www.handelsblatt.com/unternehmen/handel-konsumgueter/ranking-europas-wertvollste-marken/3550388.html?ticket=ST-2848053-FkavKLDjFUbaKddlbxy5-ap4">Handelsblatt</a>
+          </span>
+        </div>
       </div>
     </div>
   </div>

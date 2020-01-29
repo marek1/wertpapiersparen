@@ -7,6 +7,9 @@ import { EtfsHomeComponent } from './components/etfs/etfs-home/etfs-home.compone
 import { SparplanComponent } from './components/sparplan/sparplan.component';
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-muster.component';
+import { RankingsComponent } from './components/rankings/rankings.component';
+
+export const ROUTE_RANKING = 'studien-zu-nachhaltigkeit';
 
 export const appRoutes = [
   {
@@ -20,6 +23,10 @@ export const appRoutes = [
   {
     path: 'sparplan',
     component: SparplanComponent
+  },
+  {
+    path: ROUTE_RANKING,
+    component: RankingsComponent
   },
   {
     path: 'muster-sparplan',

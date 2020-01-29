@@ -3,5 +3,6 @@ export enum SearchMethods {
   'Industrie(n)',
   'Produkt(e)',
   'Region(en)',
-  'Sektor(en)'
+  'Sektor(en)',
+  'Top10'
 }

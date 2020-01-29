@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FinalListItem } from '../../companies/companies-by-popularity/companies-by-popularity.component';
 import { Etfs } from '../../../data/etfs';
 import { Etf } from '../../../interfaces/etf';
+import { Top10GoodListItem, Top10ListItem } from '../../companies/companies-by-popularity/companies-by-popularity.component';
 
 @Component({
   selector: 'app-etfs-by-popularity',
@@ -10,7 +10,7 @@ import { Etf } from '../../../interfaces/etf';
 })
 export class EtfsByPopularityComponent implements OnInit {
 
-  public finalList: FinalListItem[];
+  public finalList: Top10GoodListItem[];
 
   constructor() {
     this.finalList = [];

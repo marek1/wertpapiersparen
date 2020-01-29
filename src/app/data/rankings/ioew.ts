@@ -43,7 +43,7 @@ export const ioew: Ranking = {
   issuer: 'IÖW und future',
   link: 'https://www.emas.de/aktuelles/2019/15-05-19-ranking-nachhaltigkeitsberichte/',
   maxResult: 700,
-  unit: 'Punkten',
+  unit: 'Punkte',
   results: [
     {
       id: bmwCompany.id,

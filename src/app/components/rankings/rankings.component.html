@@ -1,0 +1,56 @@
+<div class="home row">
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    
+    <div class="card hero">
+      <div class="card-body text-center">
+        <p>
+          Es gibt eine Reihe von Studien zum Thema Nachhaltigkeitung und sozialer Verantwortung (CSR) von Unternehmen.
+          Wir haben nur eine kleine Anzahl von Studien hier erfasst.
+        </p>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    <div class="card" *ngFor="let ranking of Rankings">
+      <div class="card-body">
+        <div class="card-title font-weight-bold">
+          {{ranking.name}}
+        </div>
+        <div class="card-text">
+          <div>
+            <p>
+              <span class="small">Eine Studie</span>
+            </p>
+            <p>
+              <span class="small">von</span> {{ranking.issuer}}
+            </p>
+            <p>
+              <span class="small">zum Thema</span> {{ranking.responsibilityType}}
+            </p>
+            <p>
+              <span class="small">aus dem Jahr</span> {{ranking.year}}.
+            </p>
+            <p>
+              <span class="small">Maximale Punktzahl: </span> {{ranking.maxResult}} {{ranking.unit}}
+            </p>
+            <p>
+              <app-ranking-results [results]="ranking.results" [maxScore]="ranking.maxResult" [unit]="ranking.unit"></app-ranking-results>
+            </p>
+            <p>
+              <span class="small">Mehr Informationen auf der <a href="{{ranking.link}}" target="_blank">Webseite</a></span> .
+            </p>
+          </div>
+          <div>
+          
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
