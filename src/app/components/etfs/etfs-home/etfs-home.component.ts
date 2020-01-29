@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { findCompaniesInIndex } from '../../../data/companies';
-import { Indices } from '../../../enums/indices';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
-import { HelperService } from '../../../services/helpers';
 import { SearchMethods } from '../../../enums/searchMethods';
-import { CompaniesActions, EtfsActions } from '../../../actions';
+import { EtfsActions } from '../../../actions';
 
 @Component({
   selector: 'app-etfs-home',
@@ -19,9 +16,10 @@ export class EtfsHomeComponent implements OnInit {
   public SearchMethods: typeof SearchMethods;
   public searchMethods: string[];
 
-  constructor(private store: Store<fromRoot.AppState>, private helperService: HelperService) {
+  constructor(private store: Store<fromRoot.AppState>) {
     this.SearchMethods = SearchMethods;
     this.searchMethods = [
+      SearchMethods[SearchMethods.Top10],
       SearchMethods[SearchMethods.Suchbegriff],
       SearchMethods[SearchMethods['Industrie(n)']],
       SearchMethods[SearchMethods['Region(en)']],

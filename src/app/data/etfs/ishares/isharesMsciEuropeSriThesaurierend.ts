@@ -599,7 +599,7 @@ const prices = {
 // tslint:disable:max-line-length
 export const isharesMsciEuropeSriThesaurierend: Etf = {
   id: 5005,
-  name: 'iShares MSCI Europe SRI UCITS (thesaurierend)',
+  name: 'iShares MSCI Europe SRI UCITS (thesaurierend) - Währung: EURO',
   description: 'Der Fonds ist bestrebt, die Performance eines Index nachzubilden, der sich aus europäischen ESG (umweltverträglich, sozial und staatlich)-überprüften Unternehmensanleihen zusammensetzt.',
   tracks: Indices.MSCIEuropeSRI,
   securityType: SecurityType.ETF,

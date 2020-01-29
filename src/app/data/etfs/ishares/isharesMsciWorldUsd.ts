@@ -509,7 +509,7 @@ const prices = {
 // tslint:disable:max-line-length
 export const isharesMsciWorldUsd: Etf = {
   id: 5007,
-  name: 'iShares MSCI World UCITS ETF',
+  name: 'iShares MSCI World UCITS ETF - Währung USD',
   description: 'Der Fonds strebt die Nachbildung der Wertentwicklung eines Index an, der aus Unternehmen aus Industrieländern besteht.',
   tracks: Indices.MSCIWorld,
   securityType: SecurityType.ETF,

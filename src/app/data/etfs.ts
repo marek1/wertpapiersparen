@@ -9,6 +9,8 @@ import { isharesMsciWorldUsd } from './etfs/ishares/isharesMsciWorldUsd';
 import { isharesDowJonesEurozoneSustainability } from './etfs/ishares/isharesDowJonesEurozoneSustainability';
 import { isharesEuroGovtBonds } from './etfs/ishares/isharesEuroGovtBonds';
 import { isharesEuroCorpBonds } from './etfs/ishares/isharesEuroCorpBonds';
+import { isharesCOREMsciWorldUSDThesaurierend } from './etfs/ishares/isharesCOREMsciWorldUSDThesaurierend';
+import { isharesCOREMsciWorldUSDAusschuettend } from './etfs/ishares/isharesCOREMsciWorldUSDAusschuettend';
 
 export const standardSparplanSum = 50;
 
@@ -22,5 +24,7 @@ export const Etfs: Etf[] = [
   isharesMsciWorldUsd,  // 5007
   isharesTecdax, // 5008
   isharesEuroGovtBonds, // 5009
-  isharesEuroCorpBonds // 5010
+  isharesEuroCorpBonds, // 5010
+  isharesCOREMsciWorldUSDThesaurierend, // 5011
+  isharesCOREMsciWorldUSDAusschuettend // 5012
 ];

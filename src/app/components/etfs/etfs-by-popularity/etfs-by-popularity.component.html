@@ -1,21 +1,68 @@
 <div class="margin vertical top-bottom-10">
-  
-  <div>
-    ... oder vielleicht schaust du dir mal die ETFs, die vor allem in nachhaltige Unternehmen <span class="fa fa-leaf color color--green"></span> investieren.
-  </div>
-
+  Hier findest du ETFS sortiert nach gewissen Kriterien.
 </div>
 
 <div class="row">
-  <div class="col-12" *ngFor="let etf of finalList">
+  <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <a [routerLink]="['/etf', etf.name, etf.isin]">
-          {{etf.name}}
-          <span class="fa fa-arrow-circle-right"></span>
-        </a>
+        <div class="card-title">
+          Meistgehandelte ETFs  <span (click)="show.top10Traded=!show.top10Traded" class="fa fa-question-circle clickable"></span>
+          <div class="clickable alert alert-info alert-dismissible" *ngIf="show.top10Traded">
+            Diese ETFs wiesen den höchsten gehandelten Umsatz aus.
+            Quelle: <a class="clickable" target="_blank" href="https://www.boerse-frankfurt.de/etfs/">Börse Frankfurt</a> (29.01.2020)
+            <button (click)="show.top10Traded=!show.top10Traded" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-text clearfix">
+          <div class="row result" *ngFor="let etf of top10Traded">
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/etf', etf.name, etf.isin]">
+                <img src="{{etf.logo}}">
+              </a>
+            </div>
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/etf', etf.name, etf.isin]">
+                {{etf.name}}
+                <span class="fa fa-arrow-circle-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          ETFs mit den geringsten Gebühren <span (click)="show.top10Priced=!show.top10Priced" class="fa fa-question-circle clickable"></span>
+          <div class="clickable alert alert-info alert-dismissible" *ngIf="show.top10Priced">
+            Hier wird der TER (Total Expanse Ratio) in Betracht gezogen, der die jährlich an den Emittenten
+            zu leistende Gebühr (in %) angibt.
+            <button (click)="show.top10Priced=!show.top10Priced" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-text clearfix">
+          <div class="row result" *ngFor="let etf of top10Priced">
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/etf', etf.name, etf.isin]">
+                <img src="{{etf.logo}}">
+              </a>
+            </div>
+            <div class="col-sm-6 col-12">
+              <a [routerLink]="['/etf', etf.name, etf.isin]">
+                {{etf.name}}
+                <span class="fa fa-arrow-circle-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

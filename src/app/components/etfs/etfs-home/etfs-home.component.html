@@ -21,9 +21,12 @@
 
   </div>
   
+  <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Top10']">
+    <app-etfs-by-popularity></app-etfs-by-popularity>
+  </div>
+  
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">
     <app-etfs-by-searchterm></app-etfs-by-searchterm>
-    <app-etfs-by-popularity></app-etfs-by-popularity>
   </div>
   
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Industrie(n)']">

@@ -22,7 +22,6 @@
   </div>
   
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Top10']">
-    
     <app-companies-by-popularity></app-companies-by-popularity>
   </div>
   <div *ngIf="(selectedSearchMethod$ | async) === SearchMethods['Suchbegriff']">

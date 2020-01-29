@@ -102,7 +102,7 @@ export class CompaniesByPopularityComponent implements OnInit {
   }
 
   createTop10BrandsList() {
-    // https://de.statista.com/statistik/daten/studie/202750/umfrage/wertvollste-unternehmen-in-europa/
+    // Source: https://de.statista.com/statistik/daten/studie/202750/umfrage/wertvollste-unternehmen-in-europa/
     const fromStatista = [
       lvmhCompany.id,
       nestleCompany.id,
