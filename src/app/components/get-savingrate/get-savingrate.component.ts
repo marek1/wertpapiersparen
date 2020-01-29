@@ -20,6 +20,7 @@ export class GetSavingrateComponent implements OnInit, OnChanges {
   @Input() sparplanSum: number;
   @Input() isTemplate: boolean;
   @Input() noOfSecurities: number;
+  @Input() percentagesAreCorrect: boolean;
   @Output() numberChanged = new EventEmitter<number>();
 
   public currentAmount: number;

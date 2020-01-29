@@ -1,8 +1,11 @@
-<div>
+<div [ngClass]="!percentagesAreCorrect ? 'error' : ''">
   <app-number-input
   [anzahl]="currentAmount"
   [smallestUnit]="1"
   [unit]="'EUR'"
   (numberChanged)="doEmit($event)"
   ></app-number-input>
+  <div class="small" *ngIf="!percentagesAreCorrect">
+    Überprüfe den Wert. Die Einzelsparsummen ergeben nicht die gesamte Sparplansumme.
+  </div>
 </div>

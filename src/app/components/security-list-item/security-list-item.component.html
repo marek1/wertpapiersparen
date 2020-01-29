@@ -48,11 +48,9 @@
           [sparplanSum]="sparplanSum"
           [noOfSecurities]="(favouredSecuritiesIdList$|async).length"
           [isTemplate]="isTemplate"
+          [percentagesAreCorrect]="percentagesAreCorrect"
           (numberChanged)="updateSavingRate($event, fav.item)">
         </app-get-savingrate>
-        <div class="error" *ngIf="!percentagesAreCorrect">
-          Überprüfe den Wert
-        </div>
         <div *ngIf="showCosts" class="card">
           <div class="card-body">
             <h5 class="card-title">
