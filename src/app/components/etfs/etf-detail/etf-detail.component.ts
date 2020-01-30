@@ -5,7 +5,7 @@ import { HelperService } from '../../../services/helpers';
 import { Performances } from '../../../enums/performances';
 import { ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
-import { Label } from 'ng2-charts';
+import { ROUTE_COMPANIES } from '../../../routes';
 
 @Component({
   selector: 'app-etf-detail',
@@ -41,6 +41,8 @@ export class EtfDetailComponent implements OnInit {
       },
     }
   };
+
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor(
     private helperService: HelperService

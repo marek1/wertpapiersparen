@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
-import { HelperService } from '../../../services/helpers';
 import { CompaniesActions } from '../../../actions';
 import { SearchMethods } from '../../../enums/searchMethods';
 
@@ -17,7 +16,7 @@ export class CompaniesHomeComponent implements OnInit {
   public SearchMethods: typeof SearchMethods;
   public searchMethods: string[];
 
-  constructor(private store: Store<fromRoot.AppState>, private helperService: HelperService) {
+  constructor(private store: Store<fromRoot.AppState>) {
     this.SearchMethods = SearchMethods;
     this.searchMethods = [
       SearchMethods[SearchMethods.Top10],

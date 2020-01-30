@@ -8,8 +8,7 @@ import { SparplanComponent } from './components/sparplan/sparplan.component';
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-muster.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
-
-export const ROUTE_RANKING = 'studien-zu-nachhaltigkeit';
+import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTE_RANKING } from './routes';
 
 export const appRoutes = [
   {
@@ -41,11 +40,11 @@ export const appRoutes = [
     component: HomeComponent
   },
   {
-    path: 'unternehmen',
+    path: ROUTE_COMPANIES,
     component: CompaniesHomeComponent
   },
   {
-    path: 'etfs',
+    path: ROUTE_ETFS,
     component: EtfsHomeComponent
   },
   { path: '',

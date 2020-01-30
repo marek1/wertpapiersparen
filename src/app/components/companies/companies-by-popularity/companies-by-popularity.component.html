@@ -18,12 +18,12 @@
         <div class="card-text clearfix">
           <div class="row result" *ngFor="let security of top10Good | slice:0:10">
             <div class="col-sm-6 col-12">
-              <a [routerLink]="['/unternehmen', security.name, security.id]">
+              <a [routerLink]="['/' + ROUTE_COMPANIES, security.name, security.id]">
                 <img src="{{security.logo}}">
               </a>
             </div>
             <div class="col-sm-6 col-12">
-              <a [routerLink]="['/unternehmen', security.name, security.id]">
+              <a [routerLink]="['/' + ROUTE_COMPANIES, security.name, security.id]">
                 {{security.name}} <span class="fa fa-arrow-circle-right"></span>
               </a>
             </div>
@@ -48,12 +48,12 @@
         <div class="card-text clearfix">
           <div class="row result" *ngFor="let security of top10Brands">
             <div class="col-sm-6 col-12">
-              <a [routerLink]="['/unternehmen', security.name, security.id]">
+              <a [routerLink]="['/' + ROUTE_COMPANIES, security.name, security.id]">
                 <img src="{{security.logo}}">
               </a>
             </div>
             <div class="col-sm-6 col-12">
-              <a [routerLink]="['/unternehmen', security.name, security.id]">
+              <a [routerLink]="['/' + ROUTE_COMPANIES, security.name, security.id]">
                 {{security.name}} <span class="fa fa-arrow-circle-right"></span>
               </a>
             </div>

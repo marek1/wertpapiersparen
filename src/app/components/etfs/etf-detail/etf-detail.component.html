@@ -124,7 +124,7 @@
     </div>
     <div class="col-12 col-sm-8">
       <div *ngFor="let comps of etf.shares">
-        <a [routerLink]="['/unternehmen', comps.name, comps.id]">
+        <a [routerLink]="['/' + ROUTE_COMPANIES, comps.name, comps.id]">
           {{comps.name}} <span class="fa fa-arrow-circle-right"></span>
         </a>
       </div>

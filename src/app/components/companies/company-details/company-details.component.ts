@@ -10,6 +10,7 @@ import { Performances } from '../../../enums/performances';
 import { PriceService } from '../../../services/price.service';
 import { Rankings } from '../../../data/rankings';
 import { Companies } from '../../../data/companies';
+import { ROUTE_COMPANIES } from '../../../routes';
 
 interface ShowMore {
   noBadges: number;
@@ -39,6 +40,8 @@ export class CompanyDetailsComponent implements OnInit {
   public selectedTab: number;
   public performanceYears: number[];
   public performances: number[];
+
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor(private priceService: PriceService,
               private helperService: HelperService) {

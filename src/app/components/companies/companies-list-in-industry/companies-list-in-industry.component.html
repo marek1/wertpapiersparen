@@ -4,12 +4,12 @@
 <div *ngFor="let security of foundSecurities">
   <div class="row result">
     <div class="col-5">
-      <a [routerLink]="['/unternehmen', security.name, security.id]">
+      <a [routerLink]="['/' + ROUTE_COMPANIES, security.name, security.id]">
         <img src="{{security.logo}}">
       </a>
     </div>
     <div class="col-5">
-      <a [routerLink]="['/unternehmen', security.name, security.id]">
+      <a [routerLink]="['/' + ROUTE_COMPANIES, security.name, security.id]">
         {{security.name}} <span class="fa fa-arrow-circle-right"></span>
       </a>
     </div>

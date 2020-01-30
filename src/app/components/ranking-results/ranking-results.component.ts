@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ranking, ShareRank } from '../../interfaces/ranking';
+import { ShareRank } from '../../interfaces/ranking';
+import { ROUTE_COMPANIES } from '../../routes';
 
 @Component({
   selector: 'app-ranking-results',
@@ -13,6 +14,8 @@ export class RankingResultsComponent implements OnInit {
   @Input() unit: string;
 
   public showResults: boolean;
+
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor() {
     this.showResults = false;

@@ -35,7 +35,6 @@ export class EtfsBySearchtermComponent implements OnInit {
   ngOnInit() {
     this.searchTerm$ = this.store.pipe(select(fromRoot.getEtfsSearchTerm));
     this.searchTerm$.subscribe((val) => {
-      console.log('val : ', val);
       this.searchTermFormControl.setValue(val);
       if (val && val.length > 0) {
         this.results = this.searchWithinEtfs(val);
@@ -49,12 +48,13 @@ export class EtfsBySearchtermComponent implements OnInit {
     const etfs = Etfs.filter((etf: Etf) => {
       return etf.name.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.description.toLowerCase().indexOf(val.toLowerCase()) > -1
-        || etf.tracks.toLowerCase().indexOf(val.toLowerCase()) > -1
+        || (etf.tracks && etf.tracks.toLowerCase().indexOf(val.toLowerCase()) > -1)
         || etf.isin.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.manager.toLowerCase().indexOf(val.toLowerCase()) > -1
         || etf.issuer.toLowerCase().indexOf(val.toLowerCase()) > -1
         || this.isInCompanies(etf.shares, val).length > 0;
     });
+    console.log('etfs: ', etfs);
     return etfs;
   }
 

@@ -7,6 +7,7 @@ import * as fromRoot from '../../../reducers';
 import { Observable } from 'rxjs';
 import { ProductFilters } from '../../../data/product-filters';
 import { Companies } from '../../../data/companies';
+import { ROUTE_COMPANIES } from '../../../routes';
 
 interface CompanyProduct {
   company: Company;
@@ -24,6 +25,8 @@ export class CompaniesByProductComponent implements OnInit {
   public productFilter$: Observable<string>;
   public filteredProducts: CompanyProduct[];
   public filterArgs = ProductFilters;
+
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor(private store: Store<fromRoot.AppState>) {
     this.products = [];

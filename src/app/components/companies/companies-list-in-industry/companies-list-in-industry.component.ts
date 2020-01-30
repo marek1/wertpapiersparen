@@ -3,6 +3,7 @@ import { Company } from '../../../interfaces/company';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { Companies } from '../../../data/companies';
+import { ROUTE_COMPANIES } from '../../../routes';
 
 @Component({
   selector: 'app-companies-list-in-industry',
@@ -14,6 +15,8 @@ export class CompaniesListInIndustryComponent implements OnInit, OnChanges {
   @Input() industryId: number;
 
   public foundSecurities: Company[];
+
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor(private store: Store<fromRoot.AppState>) {
     this.foundSecurities = [];

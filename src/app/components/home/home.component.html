@@ -31,7 +31,11 @@
     <div class="text-center">
       
       <div>
-        Erstelle einen Wertpapiersparplan (oder mehrere) aus ETFs und/oder Aktien. Anhand von Rankings, Stichwörtern, Produkten oder Industriebereichen kannst du interessante ETFs und Aktien ganz einfach finden.
+        Erstelle einen Wertpapiersparplan (oder mehrere) aus
+        <span class="clickable" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">ETFs <span class="fa fa-question-circle"></span></span>
+        und/oder
+        <span class="clickable" (click)="show.whatIsAStock=!show.whatIsAStock">Aktien <span class="fa fa-question-circle"></span></span>.
+        Anhand von Rankings, Stichwörtern, Produkten oder Industriebereichen kannst du interessante ETFs und Aktien ganz einfach finden.
       </div>
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsASavingPlan" >
         Ein Sparplan beinhaltet die regelmässige Einzahlung eines gewählten Betrages, um eine Sparsumme anzusparen. Im Fall eines
@@ -41,20 +45,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-    
-    </div>
-    
-    <a
-    class="btn btn-primary w-100-percent margin vertical top-bottom-10"
-    [routerLink]="'/unternehmen'"
-    role="button">
-      Finde Unternehmen (und deren Aktien)
-    </a>
-    
-    <div class="text-center">
-  
-      <small class="clickable" (click)="show.whatIsAStock=!show.whatIsAStock">Was ist eine Aktie <span class="fa fa-question-circle"></span></small>
-  
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsAStock">
         Die Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft oder einer Kommanditgesellschaft auf Aktien verbrieft. [..]
         Die Aktie ist ein Finanzierungsinstrument für die Kapitalgesellschaften der Aktiengesellschaft (AG), Kommanditgesellschaft auf Aktien
@@ -65,20 +55,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
-    </div>
-    
-    <a
-    class="btn btn-primary w-100-percent margin vertical top-bottom-10"
-    [routerLink]="'/etfs'"
-    role="button">
-      Finde ETFs
-    </a>
-  
-    <div class="text-center">
-      
-      <small class="clickable" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">Was ist ein ETF <span class="fa fa-question-circle"></span></small>
-    
       <div class="clickable alert alert-info alert-dismissible" *ngIf="show.whatIsAnEtf">
         Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird. [..]
         Die Anlagestrategie von börsengehandelten Fonds ist in aller Regel passiv, das Fondsmanagement investiert also das Fondsvermögen
@@ -92,10 +68,41 @@
     
     </div>
     
+    <a
+    class="btn btn-primary w-100-percent margin vertical top-bottom-10"
+    [routerLink]="'/' + ROUTE_COMPANIES"
+    role="button">
+      Finde Unternehmen (und deren Aktien)
+    </a>
+    <div class="row">
+      <div class="col-12 small text-center">
+        Finde Unternehmen in <span class="clickable btn-link margin horizontal right-5 left-5"
+              (click)="goToCompanySearch(companyButton)"
+              *ngFor="let companyButton of companyButtons"
+        >{{companyButton}}</span>
+      </div>
+    </div>
+    
+    <a
+    class="btn btn-primary w-100-percent margin vertical top-bottom-10"
+    [routerLink]="'/' + ROUTE_ETFS"
+    role="button">
+      Finde ETFs
+    </a>
+    
+    <div class="row">
+      <div class="col-12 small text-center">
+        Finde ETFs in <span class="clickable btn-link margin horizontal right-5 left-5"
+                                   (click)="goToEtfSearch(etfButton)"
+                                   *ngFor="let etfButton of etfButtons"
+      >{{etfButton}}</span>
+      </div>
+    </div>
+    
   </div>
   
-  <div class="col-12 card margin vertical top-bottom-10">
-    <div class="card-body text-center">
+  <div class="col-12 margin vertical top-bottom-10">
+    <div class="alert alert-success text-center">
       Du kannst auch den <a [routerLink]="['/muster-sparplan']">Muster-Sparplan</a> nutzen.
     </div>
   </div>

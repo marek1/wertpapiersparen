@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { CompaniesActions } from '../../../actions';
 import { Product } from '../../../interfaces/product';
 import { Companies } from '../../../data/companies';
+import { ROUTE_COMPANIES } from '../../../routes';
 
 @Component({
   selector: 'app-companies-by-searchterm',
@@ -23,6 +24,8 @@ export class CompaniesBySearchtermComponent implements OnInit {
   public results: Company[];
   public searchTermFormControl: FormControl;
   public Countries: typeof Country;
+
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor(private industryService: IndustryService, private store: Store<fromRoot.AppState>) {
     this.submitted = false;

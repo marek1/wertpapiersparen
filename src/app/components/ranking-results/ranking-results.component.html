@@ -8,7 +8,7 @@
 <div *ngIf="showResults">
   <div *ngFor="let result of results; let i = index;">
     {{maxScore > 1 ? (i+1) + '.' : ''}}
-    <a [routerLink]="['/unternehmen', result.name, result.id]">
+    <a [routerLink]="['/' + ROUTE_COMPANIES, result.name, result.id]">
       {{result.name}} <span class="fa fa-arrow-circle-right"></span>
     </a>
     <span *ngIf="maxScore > 1">

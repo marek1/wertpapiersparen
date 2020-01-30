@@ -3,7 +3,6 @@ import { Rankings } from '../../../data/rankings';
 import { Ranking, ShareRank } from '../../../interfaces/ranking';
 import { Companies } from '../../../data/companies';
 import { Company } from '../../../interfaces/company';
-import { ROUTE_RANKING } from '../../../app.routes';
 import { lvmhCompany } from '../../../data/companies/eurostoxx50/lvmh';
 import { nestleCompany } from '../../../data/companies/other/nestle';
 import { abInbevCompany } from '../../../data/companies/eurostoxx50/abInbev';
@@ -13,6 +12,7 @@ import { deutscheTelekomCompany } from '../../../data/companies/dax/deutscheTele
 import { vwCompany } from '../../../data/companies/dax/vw';
 import { daimlerCompany } from '../../../data/companies/dax/daimler';
 import { nokiaCompany } from '../../../data/companies/eurostoxx50/nokia';
+import { ROUTE_COMPANIES, ROUTE_RANKING } from '../../../routes';
 
 export interface Top10ListItem {
   id: number;
@@ -40,6 +40,7 @@ export class CompaniesByPopularityComponent implements OnInit {
     top10Brands: boolean;
   };
   public ROUTE_RANKING = ROUTE_RANKING;
+  public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor() {
     this.top10Good = [];
