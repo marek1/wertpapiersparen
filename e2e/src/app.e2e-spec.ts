@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('stockpicking app is running!');
+    expect(page.getTitleText()).toEqual('wertpapiersparen app is running!');
   });
 
   afterEach(async () => {

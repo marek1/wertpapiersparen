@@ -6,7 +6,7 @@ export class BasketService {
   constructor() {}
 
   getBasket() {
-    const basket: AmountOfItem[] = JSON.parse(localStorage.getItem('stockpicking_basket'));
+    const basket: AmountOfItem[] = JSON.parse(localStorage.getItem('wertpapiersparen_basket'));
     if (basket !== null) {
       return of(basket);
     }
@@ -14,12 +14,12 @@ export class BasketService {
   }
 
   setBasket(items: AmountOfItem[]) {
-    localStorage.setItem('stockpicking_basket', JSON.stringify(items));
+    localStorage.setItem('wertpapiersparen_basket', JSON.stringify(items));
     return of(items);
   }
 
   getSparplanSum() {
-    const sum: string = localStorage.getItem('stockpicking_sparplansum');
+    const sum: string = localStorage.getItem('wertpapiersparen_sparplansum');
     if (sum !== null ) {
       return of(parseInt(sum, 10));
     }
@@ -27,7 +27,7 @@ export class BasketService {
   }
 
   setSparplanSum(sum: number) {
-    localStorage.setItem('stockpicking_sparplansum', sum.toString());
+    localStorage.setItem('wertpapiersparen_sparplansum', sum.toString());
     return of(sum);
   }
 

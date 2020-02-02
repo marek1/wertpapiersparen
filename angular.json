@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "stockpicking": {
+    "wertpapiersparen": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/stockpicking",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "stockpicking:build"
+            "browserTarget": "wertpapiersparen:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "stockpicking:build:production"
+              "browserTarget": "wertpapiersparen:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "stockpicking:build"
+            "browserTarget": "wertpapiersparen:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "stockpicking:serve"
+            "devServerTarget": "wertpapiersparen:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "stockpicking:serve:production"
+              "devServerTarget": "wertpapiersparen:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "stockpicking"
+  "defaultProject": "wertpapiersparen"
 }

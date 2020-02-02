@@ -1,6 +1,6 @@
 {
-  "name": "stockpicking",
-  "version": "0.0.0",
+  "name": "wertpapiersparen",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
