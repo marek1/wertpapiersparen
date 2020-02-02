@@ -13,14 +13,16 @@
   <div class="col-12">
     <ng-container *ngIf="fav.item.securityType === SecurityType.ETF">
       <div class="small">
-        Der ETF besteht hauptsächlich aus {{fav.item.contains + 'n'}}
-        <ng-container *ngIf="fav.item.countries[0] !== undefined">
+        <ng-container *ngIf="fav.item.contains !== undefined">
+          Der ETF besteht hauptsächlich aus {{fav.item.contains + 'n'}}
+        </ng-container>
+        <ng-container *ngIf="fav.item.countries !== undefined && fav.item.countries[0] !== undefined">
           der Länder {{fav.item.countries[0].name}} ({{fav.item.countries[0].portion | number:'1.2-2':'de'}}%)
         </ng-container>
-        <ng-container *ngIf="fav.item.countries[1] !== undefined">
+        <ng-container *ngIf="fav.item.countries !== undefined && fav.item.countries[1] !== undefined">
           , {{fav.item.countries[1].name}} ({{fav.item.countries[1].portion | number:'1.2-2':'de'}}%)
         </ng-container>
-        <ng-container *ngIf="fav.item.countries[2] !== undefined">
+        <ng-container *ngIf="fav.item.countries !== undefined && fav.item.countries[2] !== undefined">
           , {{fav.item.countries[2].name}} ({{fav.item.countries[2].portion | number:'1.2-2':'de'}}%)
         </ng-container>
       </div>

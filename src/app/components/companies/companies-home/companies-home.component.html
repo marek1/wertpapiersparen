@@ -13,8 +13,8 @@
     <div class="btn-group" role="group" aria-label="Suchmethoden" *ngFor="let x of searchMethods | keyvalue; let i = index">
       <button type="button"
               class="btn btn-secondary"
-              [ngClass]="{'active': (selectedSearchMethod$ | async) === SearchMethods[x.value]}"
-              (click)="setMethod(SearchMethods[x.value])">
+              [ngClass]="{'active': SearchMethods[(selectedSearchMethod$ | async)] === x.value}"
+              (click)="setMethod(x.value)">
         {{searchMethods[i]}}
       </button>
     </div>

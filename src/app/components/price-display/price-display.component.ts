@@ -10,6 +10,6 @@ import { PriceService } from '../../services/price.service';
 export class PriceDisplayComponent {
 
   @Input() fav: AmountOfItem;
-  constructor(private priceService: PriceService) { }
+  constructor(public priceService: PriceService) { }
 
 }

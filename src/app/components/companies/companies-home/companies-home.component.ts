@@ -30,8 +30,8 @@ export class CompaniesHomeComponent implements OnInit {
     this.selectedSearchMethod$ = this.store.pipe(select(fromRoot.getCompaniesSelectedSearchMethod));
   }
 
-  setMethod(which: SearchMethods): void {
-    this.store.dispatch(CompaniesActions.setSelectedSearchMethod({selectedSearchMethod: which}));
+  setMethod(which: string): void {
+    this.store.dispatch(CompaniesActions.setSelectedSearchMethod({selectedSearchMethod: SearchMethods[which]}));
   }
 
 }

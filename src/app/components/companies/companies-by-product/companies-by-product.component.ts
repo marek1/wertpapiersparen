@@ -21,7 +21,7 @@ interface CompanyProduct {
 })
 export class CompaniesByProductComponent implements OnInit {
 
-  private products: CompanyProduct[];
+  public products: CompanyProduct[];
   public productFilter$: Observable<string>;
   public filteredProducts: CompanyProduct[];
   public filterArgs = ProductFilters;
