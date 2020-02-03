@@ -28,8 +28,7 @@
             Wer "investiert" der kann in der Zukunft von den "Früchten" leben.
             "Investieren" ist heute einfacher als je zuvor - selbst mit kleinsten
             Beträgen kann man einsteigen. Natürlich sind Investitionen mit Risiken
-            verbunden.
-            Mehr zum Thema: <a [routerLink]="'/' + ROUTES_RISIKO_INVESTITION">Risiken minimieren</a>.
+            verbunden. Mehr zum Thema: <a [routerLink]="'/' + ROUTES_RISIKO_INVESTITION">Risiken minimieren</a>.
           </div>
           <div>
             Einfache Investitionen sind:
@@ -44,8 +43,8 @@
                 eine Rendite um die 1-2% erzielen, wenn man lang genug sucht. Allerdings liegen Einsteigspreise
                 (z.B. 1-Zimmer-Wohnung) in Städten meist im sechsstelligen Bereich.
               </div>
-              <div class="color color--white background-light-grey">
-                Alternative: In <a [routerLink]="'/' + ROUTES_FONDS">Immobilien-Fonds</a> oder in Aktien von Immobiliengesellschaften investieren.
+              <div class="alert alert-secondary">
+                Alternative: In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Immobilien-Fonds</a> oder in Aktien von Immobiliengesellschaften investieren.
                 Dies ist auch mit (sehr) kleinen Beträgen möglich.
               </div>
             </li>
@@ -62,14 +61,15 @@
             <li class="list-group-item">
               <div>
                 <span class="fa fa-certificate"></span> Aktien
+                <a [routerLink]="'/' + ROUTES_WAS_SIND_AKTIEN"><span class="fa fa-question-circle"></span></a>
               </div>
               <div>
                 Um in Aktien aktiv zu investieren braucht man eigentlich nur Geduld. Langfristig lassen sich
                 fast immer Gewinne erzielen. Um selbst aktiv an der Börse erfolgreich zu sein sollten einige
                 <a [routerLink]="'/' + ROUTES_RICHTIG_AN_DER_BOERSE_AGIEREN">wichtige Grundsätze</a> eingehalten werden.
               </div>
-              <div class="color color--white background-light-grey">
-                Alternative: In <a [routerLink]="'/' + ROUTES_FONDS">Aktien-Fonds</a> investieren.
+              <div class="alert alert-secondary">
+                Alternative: In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Aktien-Fonds</a> investieren.
               </div>
             </li>
           </ul>
@@ -86,7 +86,13 @@
       </div>
       <div class="collapse {{show2 ? 'show' : ''}}">
         <div class="card-body">
-          ...
+          Natürlich kann man das Geld auch auf dem Konto (oder Sparbuch) lassen. Allerdings gibt es dafür keine
+          Zinsen mehr. Das Gegenteil ist teilweise der Fall: Die Banken verlagen einen Strafzins. Zusätzlich
+          verliert das Geld in Jahren mit Inflation an Wert.
+          <div class="alert alert-secondary">
+            Alternative: Festverzinsliche Anlagen. Hier sollte darauf geachtet werden, daß der Zinssatz über der
+            Inflationsrate liegt.
+          </div>
         </div>
       </div>
     </div>

@@ -55,10 +55,8 @@ import { RankingsComponent } from './components/rankings/rankings.component';
 import { RankingResultsComponent } from './components/ranking-results/ranking-results.component';
 import { SparplanHomeComponent } from './components/sparplan/sparplan-home/sparplan-home.component';
 import { BasketComponent } from './components/basket/basket.component';
-import { RichtigSparenComponent } from './components/content-components/richtig-sparen/richtig-sparen.component';
-import { RisikenBeachtenComponent } from './components/content-components/risiken-beachten/risiken-beachten.component';
-import { AnDerBoerseHandelnComponent } from './components/content-components/an-der-boerse-handeln/an-der-boerse-handeln.component';
-import { InFondsAnlegenComponent } from './components/content-components/in-fonds-anlegen/in-fonds-anlegen.component';
+import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
+import { ContentComponentComponent } from './components/content-component/content-component.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -103,9 +101,7 @@ registerLocaleData(localeDe, 'de');
     RankingResultsComponent,
     SparplanHomeComponent,
     RichtigSparenComponent,
-    RisikenBeachtenComponent,
-    AnDerBoerseHandelnComponent,
-    InFondsAnlegenComponent
+    ContentComponentComponent
   ],
   imports: [
     FormsModule,
