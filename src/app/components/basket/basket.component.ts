@@ -16,11 +16,11 @@ import { Currency } from '../../enums/currencies';
 import { SparplanService } from '../../services/sparplan.service';
 
 @Component({
-  selector: 'app-sparplan',
-  templateUrl: './sparplan.component.html',
-  styleUrls: ['./sparplan.component.scss']
+  selector: 'app-basket',
+  templateUrl: './basket.component.html',
+  styleUrls: ['./basket.component.scss']
 })
-export class SparplanComponent implements OnInit {
+export class BasketComponent implements OnInit {
 
   public favouredSecurities$: Observable<AmountOfItem[]>;
   public showMore: number;

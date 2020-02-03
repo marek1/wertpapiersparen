@@ -38,7 +38,6 @@ import { EtfSectorChartComponent } from './components/etf-sector-chart/etf-secto
 import { EtfsByRegionComponent } from './components/etfs/etfs-by-region/etfs-by-region.component';
 import { EtfsResultComponent } from './components/etfs/etfs-result/etfs-result.component';
 import { EtfsByIndustryComponent } from './components/etfs/etfs-by-industry/etfs-by-industry.component';
-import { SparplanComponent } from './components/sparplan/sparplan.component';
 import { AddToSparplanComponent } from './components/add-to-sparplan/add-to-sparplan.component';
 import { SparplanChartComponent } from './components/sparplan-chart/sparplan-chart.component';
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
@@ -54,6 +53,9 @@ import { GetSavingrateComponent } from './components/get-savingrate/get-savingra
 import { CompanyIndustriesComponent } from './components/companies/company-industries/company-industries.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
 import { RankingResultsComponent } from './components/ranking-results/ranking-results.component';
+import { SparplanHomeComponent } from './components/sparplan-home/sparplan-home.component';
+import { BasketComponent } from './components/basket/basket.component';
+import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -66,7 +68,7 @@ registerLocaleData(localeDe, 'de');
     CompaniesByIndustryComponent,
     CompaniesListInIndustryComponent,
     CompanyDetailsComponent,
-    SparplanComponent,
+    BasketComponent,
     AddToSparplanComponent,
     NumberInputComponent,
     PriceDisplayComponent,
@@ -95,7 +97,9 @@ registerLocaleData(localeDe, 'de');
     SecurityListItemComponent,
     CompanyIndustriesComponent,
     RankingsComponent,
-    RankingResultsComponent
+    RankingResultsComponent,
+    SparplanHomeComponent,
+    RichtigSparenComponent
   ],
   imports: [
     FormsModule,

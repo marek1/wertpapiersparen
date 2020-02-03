@@ -1,3 +1,18 @@
+.hero {
+  max-width: 760px;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  background-position: center;
+  .card-body {
+    padding-top: 30%;
+    a {
+      color: white !important;
+    }
+  }
+}
+
+
 .margin {
   &.vertical {
     &.top-bottom-10 {
@@ -79,8 +94,14 @@
 .background-grey{
   background-color: #999999;
 }
+.background-dark-grey {
+  background-color: #4c4c4c;
+}
 .background-black{
   background-color: #000000;
+}
+.opacity-75 {
+  opacity: 0.75;
 }
 @media (max-width: 360px) {
   .btn-group {

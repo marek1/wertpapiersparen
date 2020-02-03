@@ -1,0 +1,46 @@
+<div class="home row">
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    
+    <div class="card hero">
+      <div class="card-body text-center">
+        <p class="background-dark-grey opacity-75">
+          Wie spart man richtig, so daß man im Alter auch weiterhin gut leben kann.
+        </p>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="col-12" id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button class="btn btn-link" (click)="show1 = !show1">
+            Investieren und von Wertzuwächsen profitieren
+          </button>
+        </h5>
+      </div>
+      <div class="collapse {{show1 ? 'show' : ''}}">
+        <div class="card-body">
+          ...
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" (click)="show2 = !show2">
+            Geld sparen und aufgrund von Inflation Zahlungskraft verlieren
+          </button>
+        </h5>
+      </div>
+      <div class="collapse {{show2 ? 'show' : ''}}">
+        <div class="card-body">
+          ...
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

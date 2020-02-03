@@ -4,11 +4,13 @@ import { EtfPageComponent } from './components/etfs/etf-page/etf-page.component'
 import { CompanyPageComponent } from './components/companies/company-page/company-page.component';
 import { CompaniesHomeComponent } from './components/companies/companies-home/companies-home.component';
 import { EtfsHomeComponent } from './components/etfs/etfs-home/etfs-home.component';
-import { SparplanComponent } from './components/sparplan/sparplan.component';
 import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
 import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-muster.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
-import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTE_RANKING } from './routes';
+import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTE_RANKING, ROUTES_RICHTIG_SPAREN } from './routes';
+import { BasketComponent } from './components/basket/basket.component';
+import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
+
 
 export const appRoutes = [
   {
@@ -20,8 +22,8 @@ export const appRoutes = [
     component: EtfPageComponent,
   },
   {
-    path: 'sparplan',
-    component: SparplanComponent
+    path: 'mein-sparplan',
+    component: BasketComponent
   },
   {
     path: ROUTE_RANKING,
@@ -36,7 +38,11 @@ export const appRoutes = [
     component: SparplanKostenComponent
   },
   {
-    path: 'home',
+    path: ROUTES_RICHTIG_SPAREN,
+    component: RichtigSparenComponent
+  },
+  {
+    path: '',
     component: HomeComponent
   },
   {

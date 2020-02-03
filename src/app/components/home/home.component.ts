@@ -4,7 +4,7 @@ import { CompaniesActions, EtfsActions } from '../../actions';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Router } from '@angular/router';
-import { ROUTE_COMPANIES, ROUTE_ETFS } from '../../routes';
+import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTES_RICHTIG_SPAREN } from '../../routes';
 
 @Component({
   selector: 'app-home',
@@ -13,50 +13,14 @@ import { ROUTE_COMPANIES, ROUTE_ETFS } from '../../routes';
 })
 export class HomeComponent implements OnInit {
 
-  public show: {
-    whatIsASavingPlan: boolean;
-    whatIsAStock: boolean;
-    whatIsAnEtf: boolean;
-  };
-  public companyButtons: string[];
-  public etfButtons: string[];
+  public ROUTES_RICHTIG_SPAREN = ROUTES_RICHTIG_SPAREN;
 
-  public ROUTE_COMPANIES = ROUTE_COMPANIES;
-  public ROUTE_ETFS = ROUTE_ETFS;
+  constructor() { }
 
-  constructor(private store: Store<fromRoot.AppState>,
-              private router: Router) {
-    this.show = {
-      whatIsASavingPlan: false,
-      whatIsAStock: false,
-      whatIsAnEtf: false
-    };
-    this.companyButtons = [
-      SearchMethods[SearchMethods.Top10],
-      SearchMethods[SearchMethods.Suchbegriff],
-      SearchMethods[SearchMethods['Industrie(n)']],
-      SearchMethods[SearchMethods['Produkt(e)']]
-    ];
-    this.etfButtons = [
-      SearchMethods[SearchMethods.Top10],
-      SearchMethods[SearchMethods.Suchbegriff],
-      SearchMethods[SearchMethods['Industrie(n)']],
-      SearchMethods[SearchMethods['Region(en)']]
-    ];
-  }
 
   ngOnInit() {
   }
 
-  goToCompanySearch(companyButton: string) {
-    this.store.dispatch(CompaniesActions.setSelectedSearchMethod({selectedSearchMethod: SearchMethods[companyButton]}));
-    this.router.navigate(['/' + ROUTE_COMPANIES]);
-  }
-
-  goToEtfSearch(etfButton: string) {
-    this.store.dispatch(EtfsActions.setSelectedSearchMethod({selectedSearchMethod: SearchMethods[etfButton]}));
-    this.router.navigate(['/' + ROUTE_ETFS]);
-  }
 
 }
 
