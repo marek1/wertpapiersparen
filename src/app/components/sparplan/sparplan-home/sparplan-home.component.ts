@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CompaniesActions, EtfsActions } from '../../actions';
-import { SearchMethods } from '../../enums/searchMethods';
+import { CompaniesActions, EtfsActions } from '../../../actions';
+import { SearchMethods } from '../../../enums/searchMethods';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
+import * as fromRoot from '../../../reducers';
 import { Router } from '@angular/router';
-import { ROUTE_COMPANIES, ROUTE_ETFS } from '../../routes';
+import { ROUTE_COMPANIES, ROUTE_ETFS } from '../../../routes';
 
 @Component({
   selector: 'app-sparplan-home',

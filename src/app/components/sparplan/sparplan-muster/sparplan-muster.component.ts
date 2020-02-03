@@ -1,16 +1,16 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Options } from 'ng5-slider';
 import { select, Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
-import { Etf } from '../../interfaces/etf';
-import { Etfs } from '../../data/etfs';
-import { SecurityType } from '../../enums/securityType';
+import * as fromRoot from '../../../reducers';
+import { Etf } from '../../../interfaces/etf';
+import { Etfs } from '../../../data/etfs';
+import { SecurityType } from '../../../enums/securityType';
 import { Observable } from 'rxjs';
-import { SparplanService } from '../../services/sparplan.service';
-import { AmountOfItem } from '../../reducers/basket.reducer';
-import { PriceService } from '../../services/price.service';
-import { Currency } from '../../enums/currencies';
-import { BasketActions } from '../../actions';
+import { SparplanService } from '../../../services/sparplan.service';
+import { AmountOfItem } from '../../../reducers/basket.reducer';
+import { PriceService } from '../../../services/price.service';
+import { Currency } from '../../../enums/currencies';
+import { BasketActions } from '../../../actions';
 
 @Component({
   selector: 'app-sparplan-muster',

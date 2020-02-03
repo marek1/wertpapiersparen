@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from
 import { ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
-import { AmountOfItem } from '../../reducers/basket.reducer';
+import { AmountOfItem } from '../../../reducers/basket.reducer';
 
 @Component({
   selector: 'app-sparplan-chart',

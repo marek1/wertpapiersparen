@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { SavingplanBroker } from '../../data/savingplanBroker';
+import { SavingplanBroker } from '../../../data/savingplanBroker';
 import { Options } from 'ng5-slider';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
+import * as fromRoot from '../../../reducers';
 
 @Component({
   selector: 'app-sparplan-kosten',

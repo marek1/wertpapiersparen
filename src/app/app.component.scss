@@ -5,7 +5,7 @@
   font-weight: bold;
   background-position: center;
   .card-body {
-    padding-top: 30%;
+    padding-top: 20%;
     a {
       color: white !important;
     }
@@ -37,6 +37,9 @@
   width: 100%;
 }
 .color {
+  &.color--white {
+    color: white;
+  }
   &.color--green {
     color: green;
   }
@@ -45,6 +48,9 @@
   }
   &.color--blue{
     color: blue;
+  }
+  &.color--light-gray{
+    color: #d8d8d8;
   }
 }
 .badge {
@@ -93,6 +99,9 @@
 }
 .background-grey{
   background-color: #999999;
+}
+.background-light-grey{
+  background-color: #d8d8d8;
 }
 .background-dark-grey {
   background-color: #4c4c4c;

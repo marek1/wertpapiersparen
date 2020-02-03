@@ -39,23 +39,26 @@ import { EtfsByRegionComponent } from './components/etfs/etfs-by-region/etfs-by-
 import { EtfsResultComponent } from './components/etfs/etfs-result/etfs-result.component';
 import { EtfsByIndustryComponent } from './components/etfs/etfs-by-industry/etfs-by-industry.component';
 import { AddToSparplanComponent } from './components/add-to-sparplan/add-to-sparplan.component';
-import { SparplanChartComponent } from './components/sparplan-chart/sparplan-chart.component';
-import { SparplanKostenComponent } from './components/sparplan-kosten/sparplan-kosten.component';
-import { SparplanKostenDetailsComponent } from './components/sparplan-kosten-details/sparplan-kosten-details.component';
+import { SparplanChartComponent } from './components/sparplan/sparplan-chart/sparplan-chart.component';
+import { SparplanKostenComponent } from './components/sparplan/sparplan-kosten/sparplan-kosten.component';
+import { SparplanKostenDetailsComponent } from './components/sparplan/sparplan-kosten-details/sparplan-kosten-details.component';
 import { Ng5SliderModule } from 'ng5-slider';
-import { SparplanKostenPerBrokerComponent } from './components/sparplan-kosten-per-broker/sparplan-kosten-per-broker.component';
+import { SparplanKostenPerBrokerComponent } from './components/sparplan/sparplan-kosten-per-broker/sparplan-kosten-per-broker.component';
 import { CompaniesByPopularityComponent } from './components/companies/companies-by-popularity/companies-by-popularity.component';
 import { EtfsByPopularityComponent } from './components/etfs/etfs-by-popularity/etfs-by-popularity.component';
-import { SparplanMusterComponent } from './components/sparplan-muster/sparplan-muster.component';
+import { SparplanMusterComponent } from './components/sparplan/sparplan-muster/sparplan-muster.component';
 import { SecurityListItemComponent } from './components/security-list-item/security-list-item.component';
 import { SparplanService } from './services/sparplan.service';
 import { GetSavingrateComponent } from './components/get-savingrate/get-savingrate.component';
 import { CompanyIndustriesComponent } from './components/companies/company-industries/company-industries.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
 import { RankingResultsComponent } from './components/ranking-results/ranking-results.component';
-import { SparplanHomeComponent } from './components/sparplan-home/sparplan-home.component';
+import { SparplanHomeComponent } from './components/sparplan/sparplan-home/sparplan-home.component';
 import { BasketComponent } from './components/basket/basket.component';
-import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
+import { RichtigSparenComponent } from './components/content-components/richtig-sparen/richtig-sparen.component';
+import { RisikenBeachtenComponent } from './components/content-components/risiken-beachten/risiken-beachten.component';
+import { AnDerBoerseHandelnComponent } from './components/content-components/an-der-boerse-handeln/an-der-boerse-handeln.component';
+import { InFondsAnlegenComponent } from './components/content-components/in-fonds-anlegen/in-fonds-anlegen.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -99,7 +102,10 @@ registerLocaleData(localeDe, 'de');
     RankingsComponent,
     RankingResultsComponent,
     SparplanHomeComponent,
-    RichtigSparenComponent
+    RichtigSparenComponent,
+    RisikenBeachtenComponent,
+    AnDerBoerseHandelnComponent,
+    InFondsAnlegenComponent
   ],
   imports: [
     FormsModule,
