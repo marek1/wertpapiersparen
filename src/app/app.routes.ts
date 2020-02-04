@@ -12,7 +12,7 @@ import {
   ROUTE_ETFS,
   ROUTE_RANKING,
   ROUTES_INVESTMENTFONDS,
-  ROUTES_RICHTIG_AN_DER_BOERSE_AGIEREN,
+  ROUTES_IN_AKTIEN_INVESTIEREN,
   ROUTES_RICHTIG_SPAREN,
   ROUTES_RISIKO_INVESTITION,
   ROUTES_WAS_SIND_AKTIEN
@@ -47,7 +47,7 @@ export const appRoutes = [
     component: SparplanKostenComponent
   },
   {
-    path: ROUTES_RICHTIG_AN_DER_BOERSE_AGIEREN,
+    path: ROUTES_IN_AKTIEN_INVESTIEREN,
     component: ContentComponentComponent
   },
   {

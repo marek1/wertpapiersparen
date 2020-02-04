@@ -5,26 +5,25 @@
     <div class="card hero">
       <div class="card-body text-center">
         <p class="background-dark-grey opacity-75">
-  
-          <ng-container [ngSwitch]="currentRoute">
-            <ng-container *ngSwitchCase="ROUTES_RISIKO_INVESTITION">
-              Investitionen sind mit Risiken verbunden.
-            </ng-container>
-            <ng-container *ngSwitchCase="ROUTES_RICHTIG_AN_DER_BOERSE_AGIEREN">
-              An der Börse keine dummen Fehler machen.
-            </ng-container>
-            <ng-container *ngSwitchCase="ROUTES_INVESTMENTFONDS">
-              Was sind Investmentfonds?
-            </ng-container>
-            <ng-container *ngSwitchCase="ROUTES_WAS_SIND_AKTIEN">
-              Was sind Aktien?
-            </ng-container>
-          </ng-container>
-          
+            {{content.headline}}
         </p>
       </div>
     </div>
-  
+    
   </div>
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    <div [innerHTML]="content.body">
+    </div>
+    <div class="small" *ngIf="content.source">
+      Quelle:
+      <a href="{{content.source}}" target="_blank">{{content.source}}</a>
+    </div>
+    <div *ngIf="content.more">
+      Weitergehende Informationen können hier gefunden werden:
+      <a href="{{content.more}}" target="_blank">{{content.more}}</a>
+    </div>
+  </div>
+
   
 </div>

@@ -16,29 +16,73 @@
     <div class="card">
       <div class="card-header">
         <h5 class="mb-0">
+          <button class="btn btn-link collapsed" (click)="show2 = !show2">
+            "Einfaches Sparen" - auf dem Konto oder Sparbuch
+          </button>
+        </h5>
+      </div>
+      <div class="collapse {{show2 ? 'show' : ''}}">
+        <div class="card-body">
+          <div class="margin vertical top-bottom-10">
+            Natürlich kann man das Geld auch auf dem Konto (oder Sparbuch) lassen. Allerdings gibt es dafür keine
+            Zinsen mehr. Das Gegenteil ist teilweise der Fall: Die Banken verlagen einen Strafzins. Zusätzlich
+            verliert das Geld in Jahren mit Inflation an Wert.
+          </div>
+          <div class="alert alert-secondary">
+            Alternative: Festverzinsliche Anlagen. Hier sollte darauf geachtet werden, daß der Zinssatz über der
+            Inflationsrate liegt.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
           <button class="btn btn-link" (click)="show1 = !show1">
             <span class="fa fa-bar-chart"></span>
-            "Investieren"
+              "Investieren"
           </button>
         </h5>
       </div>
       <div class="collapse {{show1 ? 'show' : ''}}">
         <div class="card-body">
-          <div>
+          <div class="margin vertical top-bottom-10">
             Wer "investiert" der kann in der Zukunft von den "Früchten" leben.
             "Investieren" ist heute einfacher als je zuvor - selbst mit kleinsten
             Beträgen kann man einsteigen. Natürlich sind Investitionen mit Risiken
             verbunden. Mehr zum Thema: <a [routerLink]="'/' + ROUTES_RISIKO_INVESTITION">Risiken minimieren</a>.
-          </div>
-          <div>
-            Einfache Investitionen sind:
+            Investionen sind z.B.:
           </div>
           <ul class="list-group">
             <li class="list-group-item">
               <div>
+                <span class="fa fa-certificate"></span> Aktien
+                <a [routerLink]="'/' + ROUTES_WAS_SIND_AKTIEN"><span class="fa fa-question-circle"></span></a>
+              </div>
+              <div class="margin vertical top-bottom-10">
+                Um in Aktien aktiv zu investieren braucht man eigentlich nur Geduld. Langfristig lassen sich
+                fast immer Gewinne erzielen. Um selbst aktiv an der Börse erfolgreich zu sein sollten einige
+                <a [routerLink]="'/' + ROUTES_IN_AKTIEN_INVESTIEREN">wichtige Grundsätze</a> eingehalten werden.
+              </div>
+              <div class="alert alert-secondary">
+                Alternative: In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Aktien-Fonds</a> investieren.
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
+                <span class="fa fa-car"></span> Knappe und seltene Güter
+              </div>
+              <div class="margin vertical top-bottom-10">
+                Güter wie Kunstwerke, Sammlerstücke wie Briefmarken und Münzen, Oldtimer, Schmuck, Porzellan
+                oder Wein können im Wert steigen. Oftmals geht der Preis aber mit nur mit steigender Seltenheit
+                aufwärts. Daher ist diese Anlage wohl hauptsächlich für echte Connoisseure.
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
                 <span class="fa fa-home"></span> Immobilien
               </div>
-              <div>
+              <div class="margin vertical top-bottom-10">
                 Die Immobilienpreise sind in den letzten Jahren stark gestiegen. Doch kann man immer noch
                 eine Rendite um die 1-2% erzielen, wenn man lang genug sucht. Allerdings liegen Einsteigspreise
                 (z.B. 1-Zimmer-Wohnung) in Städten meist im sechsstelligen Bereich.
@@ -48,51 +92,7 @@
                 Dies ist auch mit (sehr) kleinen Beträgen möglich.
               </div>
             </li>
-            <li class="list-group-item">
-              <div>
-                <span class="fa fa-car"></span> Knappe und seltene Güter
-              </div>
-              <div>
-                Güter wie Kunstwerke, Sammlerstücke wie Briefmarken und Münzen, Oldtimer, Schmuck, Porzellan
-                oder Wein können im Wert steigen. Oftmals geht der Preis aber mit nur mit steigender Seltenheit
-                aufwärts. Daher ist diese Anlage wohl hauptsächlich für echte Connoisseure.
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div>
-                <span class="fa fa-certificate"></span> Aktien
-                <a [routerLink]="'/' + ROUTES_WAS_SIND_AKTIEN"><span class="fa fa-question-circle"></span></a>
-              </div>
-              <div>
-                Um in Aktien aktiv zu investieren braucht man eigentlich nur Geduld. Langfristig lassen sich
-                fast immer Gewinne erzielen. Um selbst aktiv an der Börse erfolgreich zu sein sollten einige
-                <a [routerLink]="'/' + ROUTES_RICHTIG_AN_DER_BOERSE_AGIEREN">wichtige Grundsätze</a> eingehalten werden.
-              </div>
-              <div class="alert alert-secondary">
-                Alternative: In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Aktien-Fonds</a> investieren.
-              </div>
-            </li>
           </ul>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" (click)="show2 = !show2">
-            "Einfaches Sparen" - auf dem Konto oder Sparbuch
-          </button>
-        </h5>
-      </div>
-      <div class="collapse {{show2 ? 'show' : ''}}">
-        <div class="card-body">
-          Natürlich kann man das Geld auch auf dem Konto (oder Sparbuch) lassen. Allerdings gibt es dafür keine
-          Zinsen mehr. Das Gegenteil ist teilweise der Fall: Die Banken verlagen einen Strafzins. Zusätzlich
-          verliert das Geld in Jahren mit Inflation an Wert.
-          <div class="alert alert-secondary">
-            Alternative: Festverzinsliche Anlagen. Hier sollte darauf geachtet werden, daß der Zinssatz über der
-            Inflationsrate liegt.
-          </div>
         </div>
       </div>
     </div>

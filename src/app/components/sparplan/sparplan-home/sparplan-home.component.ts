@@ -4,7 +4,7 @@ import { SearchMethods } from '../../../enums/searchMethods';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { Router } from '@angular/router';
-import { ROUTE_COMPANIES, ROUTE_ETFS } from '../../../routes';
+import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTES_WAS_SIND_AKTIEN } from '../../../routes';
 
 @Component({
   selector: 'app-sparplan-home',
@@ -22,7 +22,8 @@ export class SparplanHomeComponent implements OnInit {
   public etfButtons: string[];
 
   public ROUTE_COMPANIES = ROUTE_COMPANIES;
-  public ROUTE_ETFS = ROUTE_ETFS
+  public ROUTE_ETFS = ROUTE_ETFS;
+  public ROUTES_WAS_SIND_AKTIEN = ROUTES_WAS_SIND_AKTIEN;
 
   constructor(private store: Store<fromRoot.AppState>,
               private router: Router) {
