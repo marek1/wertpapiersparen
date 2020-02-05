@@ -15,13 +15,13 @@
   <div class="col-12 margin vertical top-bottom-10">
     <div [innerHTML]="content.body">
     </div>
-    <div class="small" *ngIf="content.source">
+    <div class="small" *ngIf="content.source !== undefined">
       Quelle:
-      <a href="{{content.source}}" target="_blank">{{content.source}}</a>
+      <a href="{{content.source.url}}" target="_blank">{{content.source.name}}</a>
     </div>
-    <div *ngIf="content.more">
+    <div *ngIf="content.more !== undefined">
       Weitergehende Informationen können hier gefunden werden:
-      <a href="{{content.more}}" target="_blank">{{content.more}}</a>
+      <a href="{{content.more.url}}" target="_blank">{{content.more.name}}</a>
     </div>
   </div>
 
