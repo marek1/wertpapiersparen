@@ -15,7 +15,7 @@ import {
   ROUTES_IN_AKTIEN_INVESTIEREN,
   ROUTES_RICHTIG_SPAREN,
   ROUTES_RISIKO_INVESTITION,
-  ROUTES_WAS_SIND_AKTIEN, ROUTE_SAVING_PLAN
+  ROUTES_WAS_SIND_AKTIEN, ROUTE_SAVING_PLAN, ROUTES_WAS_SIND_ETFS
 } from './routes';
 import { BasketComponent } from './components/basket/basket.component';
 import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
@@ -65,6 +65,10 @@ export const appRoutes = [
   },
   {
     path: ROUTES_WAS_SIND_AKTIEN,
+    component: ContentComponentComponent
+  },
+  {
+    path: ROUTES_WAS_SIND_ETFS,
     component: ContentComponentComponent
   },
   {

@@ -12,12 +12,20 @@
   
   </div>
   
+  <div class="col-12 margin vertical top-bottom-10">
+    Du kannst entweder Geld "parken" (auf dem Konto oder Sparbuch) oder dein Geld "investieren".
+    Natürlich kannst die Scheine auch irgendwo verstecken. Vergiss dabei nicht das Versteck und
+    beachte den Fakt, daß der Wert durch bei Inflation sinkt.
+  </div>
+  
   <div class="col-12" id="accordion">
     <div class="card">
       <div class="card-header">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" (click)="show2 = !show2">
-            "Einfaches Sparen" - auf dem Konto oder Sparbuch
+            <span class="fa fa-book"></span> Geld "parken"
+            <span class="small" *ngIf="!show2"> ... mehr <span class="fa fa-arrow-circle-down"></span></span>
+            <span class="small" *ngIf="show2"> ... weniger <span class="fa fa-arrow-circle-up"></span></span>
           </button>
         </h5>
       </div>
@@ -40,7 +48,9 @@
         <h5 class="mb-0">
           <button class="btn btn-link" (click)="show1 = !show1">
             <span class="fa fa-bar-chart"></span>
-              "Investieren"
+              Geld "investieren"
+              <span class="small" *ngIf="!show1"> ... mehr <span class="fa fa-arrow-circle-down"></span></span>
+              <span class="small" *ngIf="show1"> ... weniger <span class="fa fa-arrow-circle-up"></span></span>
           </button>
         </h5>
       </div>
@@ -57,8 +67,7 @@
           <ul class="list-group">
             <li class="list-group-item">
               <div>
-                <span class="fa fa-certificate"></span>
-                <a [routerLink]="'/' + ROUTES_WAS_SIND_AKTIEN">Aktien <span class="fa fa-question-circle"></span></a>
+                <span class="fa fa-exchange"></span> <a [routerLink]="'/' + ROUTES_WAS_SIND_AKTIEN">Aktien <span class="fa fa-question-circle"></span></a>
               </div>
               <div class="margin vertical top-bottom-10">
                 Um in Aktien aktiv zu investieren braucht man eigentlich nur Geduld. Langfristig lassen sich
@@ -66,15 +75,44 @@
                 <a [routerLink]="'/' + ROUTES_IN_AKTIEN_INVESTIEREN">wichtige Grundsätze <span class="fa fa-question-circle"></span></a>
                 eingehalten werden.
               </div>
-              <div class="alert alert-secondary">
+              <div class="alert alert-secondary vertical top-bottom-10">
                 Alternative:
                 In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Aktien-Fonds <span class="fa fa-question-circle"></span></a>
-                investieren. Besonders beliebt sind passiv gemanagte Fonds (ETFs), da die Kosten geringer sind als bei aktiv
-                gemanagten Fonds. Du kannst auch mit (sehr) kleinen Beträgen in Aktienfonds investieren.
+                investieren. Besonders beliebt sind
+                <a [routerLink]="'/' + ROUTES_WAS_SIND_ETFS">ETFs (Exchange Traded Funds) <span class="fa fa-question-circle"></span></a>,
+                also passiv gemanagte Fonds, da die Kosten geringer
+                sind als bei aktiv gemanagten Fonds. Des Weiteren  Du kannst auch mit (sehr) kleinen Beträgen in Aktienfonds investieren.
               </div>
               <div class="alert alert-primary">
                 Unsere Empfehlung: Mit einem <a [routerLink]="'/' + ROUTE_SAVING_PLAN">Sparplan</a> kannst du
                 schon mit 25 EUR im Monat an der Börse partizieren und langfristig ein Vermögen aufbauen.
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
+                <span class="fa fa-home"></span> Immobilien
+              </div>
+              <div class="margin vertical top-bottom-10">
+                Die Immobilienpreise sind in den letzten Jahren stark gestiegen. Doch kann man immer noch
+                eine Rendite um die 1-2 % erzielen, wenn man lang genug sucht. Allerdings liegen Einsteigspreise
+                (z.B. 1-Zimmer-Wohnung) in Städten meist im sechsstelligen Bereich.
+              </div>
+              <div class="alert alert-secondary vertical top-bottom-10">
+                Alternative: In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Immobilien-Fonds <span class="fa fa-question-circle"></span></a>
+                oder in Aktien von Immobiliengesellschaften investieren. Dies ist auch mit (sehr) kleinen Beträgen möglich.
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
+                <span class="fa fa-leaf"></span> Rohstoffe
+              </div>
+              <div class="margin vertical top-bottom-10">
+                Rohstoffe wie Kaffee, Öl, Palladium, Zucker etc. werden an Rohstoffbörsen gehandelt und können an
+                Wert steigen und fallen. Als Privatperson kann man entweder den Rohstoff selbst kaufen oder über gehelbelte
+                Finanzprodukte wie Optionsscheine. Von letzerem sollten Otto-Normalverbraucher aber besser die Finger lassen.
+              </div>
+              <div class="alert alert-secondary vertical top-bottom-10">
+                Alternative: In ETCs (Exchange Traded Commodities) investieren und auch mit (sehr) kleinen Beträgen teilnehmen.
               </div>
             </li>
             <li class="list-group-item">
@@ -87,23 +125,22 @@
                 aufwärts. Daher ist diese Anlage wohl hauptsächlich für echte Connoisseure.
               </div>
             </li>
-            <li class="list-group-item">
-              <div>
-                <span class="fa fa-home"></span> Immobilien
-              </div>
-              <div class="margin vertical top-bottom-10">
-                Die Immobilienpreise sind in den letzten Jahren stark gestiegen. Doch kann man immer noch
-                eine Rendite um die 1-2% erzielen, wenn man lang genug sucht. Allerdings liegen Einsteigspreise
-                (z.B. 1-Zimmer-Wohnung) in Städten meist im sechsstelligen Bereich.
-              </div>
-              <div class="alert alert-secondary">
-                Alternative: In <a [routerLink]="'/' + ROUTES_INVESTMENTFONDS">Immobilien-Fonds <span class="fa fa-question-circle"></span></a>
-                oder in Aktien von Immobiliengesellschaften investieren. Dies ist auch mit (sehr) kleinen Beträgen möglich.
-              </div>
-            </li>
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+  
+  <div class="col-12 margin vertical top-bottom-20">
+    Wenn du dir keine Gedanken machen willst in was du investierst kannst du auch zu einem Vermögensverwalter gehen.
+    Diese bekommen dafür Provisionen und/oder eine Gewinnbeteiligung. Die Kosten können daher auch mal über 10 %
+    liegen. Für die meisten Anleger sind Vermögensverwalter selten eine Option, da diese erst ab sechsstelligen Anlagesummen
+    Kunden aufnehmen.
+    <div class="alert alert-secondary margin vertical top-bottom-10">
+      Alternative: Mit oft 500 EUR kann man von algorithmus-gesteuerten Vermögensverwaltern Geld verwalten lassen.
+      Diese sogenannten <span class="font-weight-bold">Robo-Advisor</span> legen das Geld je nach individueller
+      Risikobereitschaft in dazu passende Finanzprodukte an und treffen ständig Kauf-und Verkaufsentscheidungen.
+      Die Provision liegt meist unter 1 %. Mehr Informationen bei <a href="https://www.finanzfluss.de/robo-advisor-vergleich/" target="_blank">Finanzfluss.de</a>.
     </div>
   </div>
   

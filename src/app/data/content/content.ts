@@ -1,4 +1,4 @@
-import { ROUTES_IN_AKTIEN_INVESTIEREN, ROUTES_INVESTMENTFONDS, ROUTES_RISIKO_INVESTITION, ROUTES_WAS_SIND_AKTIEN } from '../../routes';
+import { ROUTES_IN_AKTIEN_INVESTIEREN, ROUTES_INVESTMENTFONDS, ROUTES_RISIKO_INVESTITION, ROUTES_WAS_SIND_AKTIEN, ROUTES_WAS_SIND_ETFS } from '../../routes';
 
 export interface HeadlineBodySource {
   route: string;
@@ -27,6 +27,22 @@ export const content: HeadlineBodySource[] = [
     more: {
       name: 'Finanzfluss.de',
       url: 'https://www.finanzfluss.de/was-sind-aktien/'
+    }
+  },
+  {
+    route: ROUTES_WAS_SIND_ETFS,
+    headline: 'Was sind ETFs',
+    body: ' Ein börsengehandelter Fonds (englisch exchange-traded fund, ETF) ist ein Investmentfonds, der an einer Börse gehandelt wird. [..]' +
+      'Die Anlagestrategie von börsengehandelten Fonds ist in aller Regel passiv, das Fondsmanagement investiert also das Fondsvermögen' +
+      'nicht auf der Basis eigener Meinungen, sondern bildet die Wertentwicklung einer vorab definierten Benchmark in Form eines' +
+      'Finanzindexes nach (siehe hierzu Index Investing). ',
+    source: {
+      name: 'Wikipedia',
+      url: 'https://de.wikipedia.org/wiki/B%C3%B6rsengehandelter_Fonds'
+    },
+    more: {
+      name: 'Finanzfluss.de',
+      url: 'https://www.finanzfluss.de/was-sind-etfs/'
     }
   },
   {

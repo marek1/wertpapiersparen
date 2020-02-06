@@ -7,14 +7,17 @@ export const ROUTES_RISIKO_INVESTITION = 'risiken-beim-investieren';
 export const ROUTES_IN_AKTIEN_INVESTIEREN = 'richtig-in-aktien-investieren';
 export const ROUTES_INVESTMENTFONDS = 'was-sind-investmentfonds';
 export const ROUTES_WAS_SIND_AKTIEN = 'was-sind-aktien';
+export const ROUTES_WAS_SIND_ETFS = 'was-ist-ein-etf-bwz-etc';
 
 export const AllRoutes = [
   ROUTE_RANKING,
   ROUTE_COMPANIES,
   ROUTE_ETFS,
+  ROUTE_SAVING_PLAN,
   ROUTES_RICHTIG_SPAREN,
   ROUTES_RISIKO_INVESTITION,
   ROUTES_IN_AKTIEN_INVESTIEREN,
   ROUTES_INVESTMENTFONDS,
-  ROUTES_WAS_SIND_AKTIEN
+  ROUTES_WAS_SIND_AKTIEN,
+  ROUTES_WAS_SIND_ETFS
 ];

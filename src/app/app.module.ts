@@ -57,6 +57,7 @@ import { SparplanHomeComponent } from './components/sparplan/sparplan-home/sparp
 import { BasketComponent } from './components/basket/basket.component';
 import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
 import { ContentComponentComponent } from './components/content-component/content-component.component';
+import { SparplanStarterComponent } from './components/sparplan/sparplan-starter/sparplan-starter.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -101,7 +102,8 @@ registerLocaleData(localeDe, 'de');
     RankingResultsComponent,
     SparplanHomeComponent,
     RichtigSparenComponent,
-    ContentComponentComponent
+    ContentComponentComponent,
+    SparplanStarterComponent
   ],
   imports: [
     FormsModule,
