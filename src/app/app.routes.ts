@@ -15,12 +15,17 @@ import {
   ROUTES_IN_AKTIEN_INVESTIEREN,
   ROUTES_RICHTIG_SPAREN,
   ROUTES_RISIKO_INVESTITION,
-  ROUTES_WAS_SIND_AKTIEN, ROUTE_SAVING_PLAN, ROUTES_WAS_SIND_ETFS
+  ROUTES_WAS_SIND_AKTIEN,
+  ROUTE_SAVING_PLAN_HOME,
+  ROUTES_WAS_SIND_ETFS,
+  ROUTES_SAVING_PLAN_COSTS,
+  ROUTE_SAVING_PLAN_KONFIGURATOR
 } from './routes';
 import { BasketComponent } from './components/basket/basket.component';
 import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
 import { ContentComponentComponent } from './components/content-component/content-component.component';
 import { SparplanHomeComponent } from './components/sparplan/sparplan-home/sparplan-home.component';
+import { SparplanStarterComponent } from './components/sparplan/sparplan-starter/sparplan-starter.component';
 
 export const appRoutes = [
   {
@@ -44,12 +49,16 @@ export const appRoutes = [
     component: SparplanMusterComponent
   },
   {
-    path: 'kosten-eines-sparplans',
+    path: ROUTES_SAVING_PLAN_COSTS,
     component: SparplanKostenComponent
   },
   {
-    path: ROUTE_SAVING_PLAN,
+    path: ROUTE_SAVING_PLAN_HOME,
     component: SparplanHomeComponent
+  },
+  {
+    path: ROUTE_SAVING_PLAN_KONFIGURATOR,
+    component: SparplanStarterComponent
   },
   {
     path: ROUTES_IN_AKTIEN_INVESTIEREN,
