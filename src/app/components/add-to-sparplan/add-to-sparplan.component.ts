@@ -25,7 +25,9 @@ export class AddToSparplanComponent implements OnInit {
   }
 
   addToFavourites(item: Company|Etf) {
-    this.store.dispatch(BasketActions.addToFavourites({item}));
+    if (window.confirm('Dieses Wertpapier zum Sparplan hinzufügen?.')) {
+      this.store.dispatch(BasketActions.addToFavourites({item}));
+    }
   }
 
   removeFromFavourites(item: Company|Etf) {
