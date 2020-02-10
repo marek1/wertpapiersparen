@@ -4,28 +4,36 @@
     
     <div class="card hero">
       <div class="card-body text-center">
-        <p>
-          Es gibt so viele Banken und Broker, die Sparpläne anbieten.
-          Hier einige unserer beliebtesten.
+        <p class="background-dark-grey opacity-75">
+          Sparpläne gibt es bei fast allen Banken und Brokern.
+          Und die verlangen Ausführungskosten.
         </p>
       </div>
     </div>
   
   </div>
-  
+
   <div class="col-12 margin vertical top-bottom-10">
     <div>
-      Bei einer <span class="font-weight-bold">Sparrate</span> von
+      Bei einer <span class="font-weight-bold">Sparrate von {{value}} EUR</span>
     </div>
     <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
     <div>
-      ergibt das Kosten von
+      verlangen die von uns getesteten Banken bzw. Broker folgende Gebühren (pro Ausführung einer Einzahlung):
     </div>
   </div>
   
-  <div class="col-12  margin vertical top-bottom-10" *ngFor="let broker of sparplanBroker">
-   
-    <app-sparplan-kosten-details [broker]="broker" [savingRate]="value"></app-sparplan-kosten-details>
+  <div class="col-12  margin vertical top-bottom-10">
+    
+    <ul class="list-group">
+      
+      <li class="list-group-item" *ngFor="let broker of sparplanBroker">
+        
+        <app-sparplan-kosten-details [broker]="broker" [savingRate]="value"></app-sparplan-kosten-details>
+    
+      </li>
+      
+    </ul>
   
   </div>
   

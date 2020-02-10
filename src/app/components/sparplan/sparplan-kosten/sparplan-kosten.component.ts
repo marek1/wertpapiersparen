@@ -22,14 +22,16 @@ export class SparplanKostenComponent implements OnInit {
     this.value = 50;
     this.options = {
       floor: 0,
-      ceil: 500
+      ceil: 500,
+      translate: (value: number): string => {
+        return value + ' EUR';
+      },
     };
   }
 
   ngOnInit() {
     this.sparplanSum$ = this.store.pipe(select(fromRoot.getSparplanSum));
     this.sparplanSum$.subscribe((val: number) => {
-      console.log('val : ', val);
       if (val !== undefined && !isNaN(val)) {
         this.value = val;
       }
