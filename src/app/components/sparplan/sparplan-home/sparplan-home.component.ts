@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTE_SAVING_PLAN_STARTER, ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
+import { ROUTE_SAVING_PLAN_KONFIGURATOR, ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
 
 @Component({
   selector: 'app-sparplan-home',
@@ -9,7 +9,7 @@ import { ROUTE_SAVING_PLAN_STARTER, ROUTES_SAVING_PLAN_COSTS } from '../../../ro
 export class SparplanHomeComponent implements OnInit {
 
   public ROUTES_SAVING_PLAN_COSTS = ROUTES_SAVING_PLAN_COSTS;
-  public ROUTE_SAVING_PLAN_STARTER = ROUTE_SAVING_PLAN_STARTER;
+  public ROUTE_SAVING_PLAN_KONFIGURATOR = ROUTE_SAVING_PLAN_KONFIGURATOR;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AmountOfItem } from '../../reducers/basket.reducer';
 import { SecurityType } from '../../enums/securityType';
 import { Etf } from '../../interfaces/etf';
@@ -25,6 +25,7 @@ export class SecurityListItemComponent implements OnInit {
   @Input() showCosts: boolean;
   @Input() listItemCounter: number;
   @Input() isTemplate: boolean;
+  @Output() savingRateChanged = new EventEmitter<number>();
 
   public favouredSecuritiesIdList$: Observable<number[]>;
   public SecurityType = SecurityType;
@@ -48,6 +49,7 @@ export class SecurityListItemComponent implements OnInit {
     if (!this.isTemplate) {
       this.store.dispatch(BasketActions.updateFavourites({amount: null, savingRate, item}));
     }
+    this.savingRateChanged.emit(savingRate);
   }
 
 }

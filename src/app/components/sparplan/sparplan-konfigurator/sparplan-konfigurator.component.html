@@ -12,49 +12,69 @@
   
   </div>
   
-  <div class="col-12 margin vertical top-bottom-10">
-    <div class="card">
-      <div class="card-body text-center">
-        <div>
-          Ich möchte
-          <app-sparplan-sum></app-sparplan-sum>
-          monatlich sparen.
-        </div>
-      </div>
-    </div>
-  </div>
+  <ng-container *ngIf="(sparplanSum$|async) === 0 && !started">
   
-  <div class="col-12 margin vertical top-bottom-10">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Ich möchte ein Muster nutzen</h5>
-            <p class="card-text">Mit einem Mustersparplan fortfahren, in dem vorausgewählte ETFs vorhanden sind.</p>
-            <a [routerLink]="'/' + ROUTE_SAVING_PLAN_MUSTER" class="btn btn-primary btn-lg float-right">Zum Muster-Sparplan</a>
+    <div class="col-12 text-center">
+  
+      <button class="btn btn-primary btn-lg" (click)="started=true">
+        Jetzt starten
+      </button>
+      
+    </div>
+  
+  </ng-container>
+  
+  <ng-container *ngIf="(sparplanSum$|async) > 0 || started">
+    
+    <div class="col-12 margin vertical top-bottom-10">
+      <div class="card">
+        <div class="card-body text-center">
+          <div>
+            Wieviel möchtest du monatlich sparen ?
+            <app-sparplan-sum></app-sparplan-sum>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Ich wähle selbst</h5>
-            <p class="card-text">Aus einer Auswahl an europäischen Aktien und ETFs selbst auswählen</p>
-            <div class="text-right">
-              <a [routerLink]="'/' + ROUTE_COMPANIES" class="btn btn-primary btn-lg margin horizontal right-5">Aktien</a>
-              <a [routerLink]="'/' + ROUTE_ETFS" class="btn btn-primary btn-lg">ETFS</a>
+    </div>
+  
+  </ng-container>
+  
+  <ng-container *ngIf="(sparplanSum$|async) > 0">
+  
+    <div class="col-12 margin vertical top-bottom-10">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ich möchte ein Muster nutzen</h5>
+              <p class="card-text">Mit einem Mustersparplan fortfahren, in dem vorausgewählte ETFs vorhanden sind.</p>
+              <a [routerLink]="'/' + ROUTE_SAVING_PLAN_MUSTER" class="btn btn-primary btn-lg float-right">Zum Muster-Sparplan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ich wähle selbst</h5>
+              <p class="card-text">Aus einer Auswahl an europäischen Aktien und ETFs selbst auswählen</p>
+              <div class="text-right">
+                <a [routerLink]="'/' + ROUTE_COMPANIES" class="btn btn-primary btn-lg margin horizontal right-5">Aktien</a>
+                <a [routerLink]="'/' + ROUTE_ETFS" class="btn btn-primary btn-lg">ETFS</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+  
+    </div>
+  
+    <div class="col-12 margin vertical top-bottom-10">
+      <a [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME" class="btn btn-primary float-right">
+        Meinen Sparplan ansehen <span class="fa fa-arrow-right"></span>
+      </a>
     </div>
     
-  </div>
+  </ng-container>
   
-  <div class="col-12 margin vertical top-bottom-10">
-    <a [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME" class="btn btn-primary float-right">
-      Meinen Sparplan ansehen <span class="fa fa-arrow-right"></span>
-    </a>
-  </div>
 
 </div>

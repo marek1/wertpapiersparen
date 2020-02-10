@@ -49,7 +49,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
+  <div class="row" *ngIf="(favouredSecurities$|async).length > 0">
     <div class="col-12">
       <div>Deine gesamte Sparplansumme beträgt <span class="font-weight-bold">{{sparplanSum$|async}} {{Currency.EUR}}</span></div>
       <div class="small">

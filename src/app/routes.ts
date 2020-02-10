@@ -3,7 +3,6 @@ export const ROUTE_COMPANIES = 'unternehmen';
 export const ROUTE_ETFS = 'etfs';
 export const ROUTE_MY_SAVING_PLAN_HOME = 'mein-sparplan';
 export const ROUTE_SAVING_PLAN_HOME = 'sparplan';
-export const ROUTE_SAVING_PLAN_STARTER = 'sparplan-starten';
 export const ROUTE_SAVING_PLAN_KONFIGURATOR = 'sparplan-konfigurator';
 export const ROUTE_SAVING_PLAN_MUSTER = 'muster-sparplan';
 export const ROUTES_RICHTIG_SPAREN = 'wie-richtig-sparen';
@@ -19,7 +18,6 @@ export const AllRoutes = [
   ROUTE_COMPANIES,
   ROUTE_ETFS,
   ROUTE_SAVING_PLAN_HOME,
-  ROUTE_SAVING_PLAN_STARTER,
   ROUTE_SAVING_PLAN_KONFIGURATOR,
   ROUTE_SAVING_PLAN_MUSTER,
   ROUTES_RICHTIG_SPAREN,

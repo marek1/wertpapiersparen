@@ -43,13 +43,6 @@ export const reducer = createReducer(
       savingRate: standardSparplanSum,
       item
     }] : [...state.items],
-    // sparplanSum: state.items.map((com: AmountOfItem) => {
-    //   // for the item to be updated take "new" savingRate
-    //   if (com.item.id === item.id) {
-    //     return 0;
-    //   }
-    //   return com.savingRate;
-    // }).reduce((a, b) => a + b, 0)
   })),
   on(BasketActions.removeFromFavourites, (state, {item}) =>  ({
     ...state,
@@ -66,13 +59,6 @@ export const reducer = createReducer(
       }
       return com;
     })],
-    // sparplanSum: state.items.map((com: AmountOfItem) => {
-    //   // for the item to be updated take "new" savingRate
-    //   if (com.item.id === item.id) {
-    //     return savingRate !== null ? savingRate : com.savingRate;
-    //   }
-    //   return com.savingRate;
-    // }).reduce((a, b) => a + b, 0)
   })),
   on(BasketActions.setSelectedTab, (state, {selectedTab}) =>  ({
     ...state,

@@ -24,7 +24,8 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   public etfs: Etf[];
   public sparplanMuster: AmountOfItem[];
   public sparplanSum$: Observable<number>;
-  private currentSparplanSum: number;
+
+  private changedSparplanManually: boolean;
 
   public Currency = Currency;
 
@@ -44,6 +45,7 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
     };
     this.etfs = [];
     this.sparplanMuster = [];
+    this.changedSparplanManually = false;
   }
 
   ngOnInit() {
@@ -96,19 +98,35 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
 
   setSparplan() {
     this.sparplanSum$.subscribe((sum: number) => {
-      this.sparplanMuster = [];
-      this.etfs.map((etf: Etf) => {
-        this.sparplanMuster.push({
-          amount: 1,
-          savingRate: sum / this.etfs.length,
-          item: etf
+      if (!this.changedSparplanManually) {
+        this.sparplanMuster = [];
+        this.etfs.map((etf: Etf) => {
+          this.sparplanMuster.push({
+            amount: 1,
+            savingRate: sum / this.etfs.length,
+            item: etf
+          });
         });
-      });
+      }
     });
   }
 
   updateSparplanTotal(x) {
     this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
+  }
+
+  updateSavingrate(savingRate: number, etf: AmountOfItem) {
+    this.changedSparplanManually = true;
+    let newSum = 0;
+    this.sparplanMuster.map((x: AmountOfItem) => {
+      if (x.item.id === etf.item.id) {
+        x.savingRate = savingRate;
+      }
+      newSum += x.savingRate;
+    });
+    if (window.confirm('Willst du die Sparplansumme ändern?')) {
+      this.store.dispatch(BasketActions.updateSparplanSum({sum: newSum}));
+    }
   }
 
   saveAll() {

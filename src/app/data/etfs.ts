@@ -12,7 +12,7 @@ import { isharesEuroCorpBonds } from './etfs/ishares/isharesEuroCorpBonds';
 import { isharesCOREMsciWorldUSDThesaurierend } from './etfs/ishares/isharesCOREMsciWorldUSDThesaurierend';
 import { isharesCOREMsciWorldUSDAusschuettend } from './etfs/ishares/isharesCOREMsciWorldUSDAusschuettend';
 
-export const standardSparplanSum = 50;
+export const standardSparplanSum = 0;
 
 export const Etfs: Etf[] = [
   isharesDax, // 5001
