@@ -2,7 +2,7 @@
   <a class="navbar-brand" [routerLink]="'/'">
     wertpapiersparen
   </a>
-  <a class="right" [routerLink]="'sparplan'">
+  <a class="right" [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME">
     <span class="fa fa-list"></span>
     <span class="badge-number" *ngIf="(favouredSecuritiesIdList$|async)?.length as favs">
       {{favs}}

@@ -100,10 +100,4 @@ export class BasketComponent implements OnInit {
     this.store.dispatch(BasketActions.setSelectedTab({selectedTab: which}));
   }
 
-  updateSparplanTotal(x) {
-    this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
-  }
-
-
-
 }

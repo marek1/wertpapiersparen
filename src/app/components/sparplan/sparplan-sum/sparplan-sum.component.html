@@ -1,0 +1,6 @@
+<app-number-input
+[anzahl]="sparplanSum$|async"
+[smallestUnit]="1"
+[unit]="'EUR'"
+(numberChanged)="updateSparplanTotal($event)"
+></app-number-input>

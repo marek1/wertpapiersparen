@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
+import { ROUTE_MY_SAVING_PLAN_HOME } from '../../routes';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 export class NavComponent implements OnInit {
 
   public favouredSecuritiesIdList$: Observable<number[]>;
-
+  public ROUTE_MY_SAVING_PLAN_HOME = ROUTE_MY_SAVING_PLAN_HOME;
   constructor(private store: Store<fromRoot.AppState>) { }
 
   ngOnInit() {

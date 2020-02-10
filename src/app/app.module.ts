@@ -58,6 +58,8 @@ import { BasketComponent } from './components/basket/basket.component';
 import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
 import { ContentComponentComponent } from './components/content-component/content-component.component';
 import { SparplanStarterComponent } from './components/sparplan/sparplan-starter/sparplan-starter.component';
+import { SparplanSumComponent } from './components/sparplan/sparplan-sum/sparplan-sum.component';
+import { SparplanKonfiguratorComponent } from './components/sparplan/sparplan-konfigurator/sparplan-konfigurator.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -103,7 +105,9 @@ registerLocaleData(localeDe, 'de');
     SparplanHomeComponent,
     RichtigSparenComponent,
     ContentComponentComponent,
-    SparplanStarterComponent
+    SparplanStarterComponent,
+    SparplanSumComponent,
+    SparplanKonfiguratorComponent
   ],
   imports: [
     FormsModule,

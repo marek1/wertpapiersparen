@@ -1,61 +1,32 @@
-
-<!--<div class="col-12">-->
-<!--  -->
-<!--  <h4 class="text-center">-->
-<!--    Warte also nicht. Plane deine private Rente jetzt - mit einem Wertpapiersparplan  <small class="clickable" (click)="show.whatIsASavingPlan=!show.whatIsASavingPlan"><span class="fa fa-question-circle"></span></small>.-->
-<!--  </h4>-->
-<!--  -->
-<!--  <div class="text-center">-->
-<!--    -->
-<!--    <div>-->
-<!--      Erstelle einen Wertpapiersparplan (oder mehrere) aus-->
-<!--      <span class="clickable" (click)="show.whatIsAnEtf=!show.whatIsAnEtf">-->
-<!--        <a [routerLink]="'/' + ROUTES_WAS_SIND_ETFS">ETFs <span class="fa fa-question-circle"></span></a>-->
-<!--      </span>-->
-<!--      und/oder-->
-<!--      <span class="clickable" (click)="show.whatIsAStock=!show.whatIsAStock">-->
-<!--        <a [routerLink]="'/' + ROUTES_WAS_SIND_AKTIEN">Aktien <span class="fa fa-question-circle"></span></a>-->
-<!--      </span>.-->
-<!--      Anhand von Rankings, Stichwörtern, Produkten oder Industriebereichen kannst du interessante ETFs und Aktien ganz einfach finden.-->
-<!--    </div>-->
-<!--  -->
-<!--  </div>-->
-<!--  -->
-<!--  <a-->
-<!--  class="btn btn-primary w-100-percent margin vertical top-bottom-10"-->
-<!--  [routerLink]="'/' + ROUTE_COMPANIES"-->
-<!--  role="button">-->
-<!--    Finde Unternehmen (und deren Aktien)-->
-<!--  </a>-->
-<!--  <div class="row">-->
-<!--    <div class="col-12 small text-center">-->
-<!--      Finde Unternehmen in <span class="clickable btn-link margin horizontal right-5 left-5"-->
-<!--                                 (click)="goToCompanySearch(companyButton)"-->
-<!--                                 *ngFor="let companyButton of companyButtons"-->
-<!--    >{{companyButton}}</span>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  -->
-<!--  <a-->
-<!--  class="btn btn-primary w-100-percent margin vertical top-bottom-10"-->
-<!--  [routerLink]="'/' + ROUTE_ETFS"-->
-<!--  role="button">-->
-<!--    Finde ETFs-->
-<!--  </a>-->
-<!--  -->
-<!--  <div class="row">-->
-<!--    <div class="col-12 small text-center">-->
-<!--      Finde ETFs in <span class="clickable btn-link margin horizontal right-5 left-5"-->
-<!--                          (click)="goToEtfSearch(etfButton)"-->
-<!--                          *ngFor="let etfButton of etfButtons"-->
-<!--    >{{etfButton}}</span>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--</div>-->
-
-<!--<div class="col-12 margin vertical top-bottom-10">-->
-<!--  <div class="alert alert-success text-center">-->
-<!--    Du kannst auch den <a [routerLink]="['/muster-sparplan']">Muster-Sparplan</a> nutzen.-->
-<!--  </div>-->
-<!--</div>-->
+<div class="home row">
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    
+    <div class="card hero">
+      <div class="card-body text-center">
+        <p class="background-dark-grey opacity-75">
+          Einen Sparplan erstellen
+        </p>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    <div class="card">
+      <div class="card-body text-center">
+        <div>
+          Ich möchte
+          <app-sparplan-sum></app-sparplan-sum>
+          monatlich sparen.
+        </div>
+        <div class="text-right">
+          <a [routerLink]="'/' + ROUTE_SAVING_PLAN_KONFIGURATOR" class="btn btn-primary btn-lg">
+            Sparplan starten <span class="fa fa-arrow-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

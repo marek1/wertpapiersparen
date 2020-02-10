@@ -19,13 +19,14 @@ import {
   ROUTE_SAVING_PLAN_HOME,
   ROUTES_WAS_SIND_ETFS,
   ROUTES_SAVING_PLAN_COSTS,
-  ROUTE_SAVING_PLAN_KONFIGURATOR
+  ROUTE_SAVING_PLAN_KONFIGURATOR, ROUTE_SAVING_PLAN_STARTER, ROUTE_SAVING_PLAN_MUSTER, ROUTE_MY_SAVING_PLAN_HOME
 } from './routes';
 import { BasketComponent } from './components/basket/basket.component';
 import { RichtigSparenComponent } from './components/richtig-sparen/richtig-sparen.component';
 import { ContentComponentComponent } from './components/content-component/content-component.component';
 import { SparplanHomeComponent } from './components/sparplan/sparplan-home/sparplan-home.component';
 import { SparplanStarterComponent } from './components/sparplan/sparplan-starter/sparplan-starter.component';
+import { SparplanKonfiguratorComponent } from './components/sparplan/sparplan-konfigurator/sparplan-konfigurator.component';
 
 export const appRoutes = [
   {
@@ -37,7 +38,7 @@ export const appRoutes = [
     component: EtfPageComponent,
   },
   {
-    path: 'mein-sparplan',
+    path: ROUTE_MY_SAVING_PLAN_HOME,
     component: BasketComponent
   },
   {
@@ -45,7 +46,7 @@ export const appRoutes = [
     component: RankingsComponent
   },
   {
-    path: 'muster-sparplan',
+    path: ROUTE_SAVING_PLAN_MUSTER,
     component: SparplanMusterComponent
   },
   {
@@ -57,8 +58,12 @@ export const appRoutes = [
     component: SparplanHomeComponent
   },
   {
-    path: ROUTE_SAVING_PLAN_KONFIGURATOR,
+    path: ROUTE_SAVING_PLAN_STARTER,
     component: SparplanStarterComponent
+  },
+  {
+    path: ROUTE_SAVING_PLAN_KONFIGURATOR,
+    component: SparplanKonfiguratorComponent
   },
   {
     path: ROUTES_IN_AKTIEN_INVESTIEREN,

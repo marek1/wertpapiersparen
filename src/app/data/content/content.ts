@@ -90,6 +90,11 @@ export const content: HeadlineBodySource[] = [
           '<span class="font-weight-bold">Liquide Märkte</span>: Kaufe Aktien, die jederzeit am Markt verkauft werden können. Dazu gehören Blue Chips (siehe oben). Bei Penny Stocks' +
           '(Aktien unter 1 EUR) oder Aktien aus Entwicklungsländern kann es passieren, daß man keinen Abnehmer am Markt findet.' +
         '</li>' +
+        '<li class="list-group-item">' +
+          '<span class="font-weight-bold">Währungsrisiko verringern</span>: Kaufe am Besten Aktien aus der Europäischen Währungsunion, die an der Stammbörse ebenfalls in der Währung EURO ' +
+          'gehandelt werden. Denn du wirst Aktien höchstwahrscheinlich nur an Handelsplätzen in Deutschland handeln können, die lediglich den Kurs der Heimatbörse reflektieren. Der Kurs ist ' +
+          'als einer in EURO konvertierter Kurs. Durch den Kauf von Aktien aus der Währungsunion vermeidest du potenzielle negative Währungseinflüsse.' +
+        '</li>' +
         '</ul>',
     more: {
       name: 'Sechs goldene Regeln (ARD)',
