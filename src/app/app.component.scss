@@ -31,6 +31,9 @@
     &.left-5 {
       margin-left: 5px;
     }
+    &.right-20 {
+      margin-right: 20px;
+    }
   }
 }
 .btn-group {
@@ -58,7 +61,8 @@
   overflow: hidden;
 }
 .badge-number {
-  font-size: 9px;
+  font-size: 8px;
+  margin-left: 5px;
   padding: 0;
   background: red;
   border-radius: 10px;

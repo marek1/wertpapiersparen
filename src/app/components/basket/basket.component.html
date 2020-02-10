@@ -21,27 +21,12 @@
       </div>
     </div>
     <div class="col-12" *ngIf="favouredSecurities.length > 0">
-      <div class="row">
-        <div class="col-5">
-          <div>
-            Du investierst direkt an der Börse
-          </div>
-        </div>
-        <div class="col-7 font-weight-bold">
-          <div>
-            oder machst einen oder mehrere Sparpläne
-          </div>
-          <div>
-            <span class="btn-link clickable small" (click)="showCosts=!showCosts">
-              Sparplaninformation
-              <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
-              <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
-            </span>
-          </div>
-          <div class="alert alert-danger" role="alert" *ngIf="!this.sparplanService.addsUptoSparplanSum(favouredSecurities, sparplanSum$|async)">
-            Die einzelnen Sparpläne ergeben nicht die Gesamtsparplansumme.
-          </div>
-        </div>
+      <div>
+        <span class="btn-link clickable small" (click)="showCosts=!showCosts">
+          Sparplaninformation
+          <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
+          <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
+        </span>
       </div>
     </div>
     <ul class="list-group" *ngIf="favouredSecurities.length > 0">
@@ -66,68 +51,22 @@
   </div>
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-12">
-      <div class="row">
-        <div class="col-5" *ngIf="favouredSecurities.length > 0">
-          <div>
-            <div>Deine Kaufsumme an der Börse</div>
-            <div>wäre ca. <span class="font-weight-bold">{{totalPrice | number:'1.0-0':'de'}} {{Currency.EUR}}</span></div>
-          </div>
-          <div class="small">
-            (Ohne Kaufgebühren, Provisionen etc.)
-          </div>
-        </div>
-        <div class="col-7" *ngIf="favouredSecurities.length > 0">
-          <div>
-            <div>Deine gesamte Sparplansumme beträgt</div>
-            <div class="font-weight-bold">
-              <app-sparplan-sum></app-sparplan-sum>
-            </div>
-            <div class="small">
-              (Ohne Kaufgebühren)
-              <span class="btn-link clickable" (click)="showCosts=!showCosts">
-                Kaufgebühren & Sparplaninformationen
-                <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
-                <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
-              </span>
-            </div>
-          </div>
-        </div>
+      <div>Deine gesamte Sparplansumme beträgt <span class="font-weight-bold">{{sparplanSum$|async}} {{Currency.EUR}}</span></div>
+      <div class="small">
+        (Ohne Kaufgebühren)
+        <span class="btn-link clickable" (click)="showCosts=!showCosts">
+          Kaufgebühren & Sparplaninformationen
+          <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
+          <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
+        </span>
       </div>
     </div>
   </div>
   <hr />
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
-    <div class="{{chartExpanded ? 'col-2 small' : 'col-5'}}" *ngIf="favouredSecurities.length > 0">
-      <small>
-        Performance (kumulativ, und ohne Dividende)
-      </small>
-      <div class="row" *ngFor="let x of totalPastPrices; let i = index">
-        <div class="col-12 col-sm-6" >
-          {{performanceYears[i]}}
-        </div>
-        <div class="col-12 col-sm-6">
-          <ng-container *ngIf="x > 0">
-            <div>
-              ca. {{getPerformance(x) | number:'1.0-0':'de' }} %
-            </div>
-          </ng-container>
-          <ng-container *ngIf="x==0">
-            -
-          </ng-container>
-        </div>
-        <div class="col-12" *ngIf="x > 0">
-          <div class="super-small" *ngIf="totalPastPrices[i]>0">
-            D.h. vor {{performanceYears[i]}} Jahre(n) hättest du ca. {{totalPastPrices[i] | number:'1.0-0':'de'}} EUR bezahlt.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="{{chartExpanded ? 'col-10' : 'col-7'}}" *ngIf="favouredSecurities.length > 0">
+    <div class="col-12" *ngIf="favouredSecurities.length > 0">
       <small>
         Mit ähnlicher Performance und monatlicher Einzahlung würde sich dein Sparplan so entwickeln:
-        <div class="float-right clickable" (click)="chartExpanded=!chartExpanded">
-          <span class="fa fa-expand"></span>
-        </div>
       </small>
       <div>
         <app-sparplan-chart
@@ -150,7 +89,7 @@
   </div>
 </ng-container>
 <ng-container *ngIf="(selectedTab$|async) === 2">
-  <<div class="row">
+  <div class="row">
     <div class="col-12">
       <small>
         Diese ETFs enthalten ähnliche Aktien (wie in deinem Sparplan):

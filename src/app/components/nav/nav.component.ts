@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import { Observable } from 'rxjs';
-import { ROUTE_MY_SAVING_PLAN_HOME } from '../../routes';
+import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTE_MY_SAVING_PLAN_HOME, ROUTE_SAVING_PLAN_KONFIGURATOR } from '../../routes';
 
 @Component({
   selector: 'app-nav',
@@ -13,6 +13,7 @@ export class NavComponent implements OnInit {
 
   public favouredSecuritiesIdList$: Observable<number[]>;
   public ROUTE_MY_SAVING_PLAN_HOME = ROUTE_MY_SAVING_PLAN_HOME;
+  public ROUTE_SAVING_PLAN_KONFIGURATOR = ROUTE_SAVING_PLAN_KONFIGURATOR;
   constructor(private store: Store<fromRoot.AppState>) { }
 
   ngOnInit() {

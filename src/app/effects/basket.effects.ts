@@ -7,6 +7,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../reducers';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AmountOfItem } from '../reducers/basket.reducer';
 
 @Injectable()
 export class BasketEffects {
@@ -38,7 +39,8 @@ export class BasketEffects {
         exhaustMap(([company, itemList]) => {
           return this.basketService.setBasket(itemList)
             .pipe(
-              map(items => BasketActions.savedToLocalStorageSuccess({success: items.toString()})),
+              // map(items => BasketActions.savedToLocalStorageSuccess({success: items.toString()})),
+              map(items => BasketActions.updateSparplanSum({sum: items.map((com: AmountOfItem) => com.savingRate).reduce((a, b) => a + b, 0)})),
               catchError(error => of(BasketActions.savedToLocalStorageFailed({ error })))
             );
         })

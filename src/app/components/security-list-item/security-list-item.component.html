@@ -1,5 +1,21 @@
 <div class="row">
   <div class="col-12">
+    <h5>
+      Sparplan {{listItemCounter+1}}:
+      <div class="float-right">
+        <app-get-savingrate
+        [fav]="fav"
+        [totalPrice]="totalPrice"
+        [sparplanSum]="sparplanSum"
+        [noOfSecurities]="(favouredSecuritiesIdList$|async).length"
+        [isTemplate]="isTemplate"
+        [percentagesAreCorrect]="percentagesAreCorrect"
+        (numberChanged)="updateSavingRate($event, fav.item)">
+        </app-get-savingrate>
+      </div>
+    </h5>
+  </div>
+  <div class="col-12">
     <a *ngIf="fav.item.securityType!==SecurityType.ETF" class="" [routerLink]="['/' + ROUTE_COMPANIES, fav.item.name, fav.item.id]">
       <span class="badge badge-yellow">Aktie</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
     </a>
@@ -20,10 +36,13 @@
           der Länder {{fav.item.countries[0].name}} ({{fav.item.countries[0].portion | number:'1.2-2':'de'}}%)
         </ng-container>
         <ng-container *ngIf="fav.item.countries !== undefined && fav.item.countries[1] !== undefined">
-          , {{fav.item.countries[1].name}} ({{fav.item.countries[1].portion | number:'1.2-2':'de'}}%)
+          und {{fav.item.countries[1].name}} ({{fav.item.countries[1].portion | number:'1.2-2':'de'}}%)
         </ng-container>
         <ng-container *ngIf="fav.item.countries !== undefined && fav.item.countries[2] !== undefined">
-          , {{fav.item.countries[2].name}} ({{fav.item.countries[2].portion | number:'1.2-2':'de'}}%)
+          und {{fav.item.countries[2].name}} ({{fav.item.countries[2].portion | number:'1.2-2':'de'}}%)
+        </ng-container>
+        <ng-container *ngIf="fav.item.countries !== undefined && fav.item.countries[3] !== undefined">
+          und weitere.
         </ng-container>
       </div>
     </ng-container>
@@ -33,61 +52,20 @@
 
   </div>
   <div class="col-12">
-    <div class="row">
-      <div class="col-5">
-        <app-number-input
-          [anzahl]="fav.amount"
-          [smallestUnit]="fav.item.smallestTradeableUnit"
-          [unit]="'Stk.'"
-          (numberChanged)="updateAmount($event, fav.item)"
-        ></app-number-input>
-        <app-price-display [fav]="fav"></app-price-display>
-      </div>
-      <div class="col-7">
-        <app-get-savingrate
-          [fav]="fav"
-          [totalPrice]="totalPrice"
-          [sparplanSum]="sparplanSum"
-          [noOfSecurities]="(favouredSecuritiesIdList$|async).length"
-          [isTemplate]="isTemplate"
-          [percentagesAreCorrect]="percentagesAreCorrect"
-          (numberChanged)="updateSavingRate($event, fav.item)">
-        </app-get-savingrate>
-        <div *ngIf="showCosts" class="card">
-          <div class="card-body">
-            <h5 class="card-title">
-              Sparplan {{listItemCounter+1}}:
-            </h5>
-            <div>
-              <span class="small badge badge-secondary margin horizontal right-5">
-                 Jederzeit kündbar
-              </span>
-              <span class="small badge badge-secondary margin horizontal right-5">
-                 Jederzeit veräußerbar
-              </span>
-              <span class="small badge badge-secondary margin horizontal right-5">
-                 Jederzeit transferierbar
-              </span>
-            </div>
-            <div>
-              <span class="small">Sparsumme: </span>
-              <span>{{fav.savingRate}} {{Currency.EUR}}</span>
-            </div>
-            <div>
-              <span class="small">bestehend aus: </span>
-              <span>{{fav.item.name}}</span>
-            </div>
-            <div *ngFor="let broker of sparplanBroker">
-              <div class="alert alert-info" *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1">
-                {{broker.name}}:
-                <span *ngIf="broker.minAmountPerSavingPlan > fav.savingRate">
-                  <span class="color color--red">Minimum-Sparrate von {{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}} nicht erreicht</span>
-                </span>
-                <span *ngIf="broker.minAmountPerSavingPlan <= fav.savingRate">
-                  <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="fav.savingRate"></app-sparplan-kosten-per-broker>
-                </span>
-              </div>
-            </div>
+    <div *ngIf="showCosts" class="card">
+      <div class="card-body">
+        <div>
+          Kosten bei (monatlichen) Ausführung des Sparplans bei
+        </div>
+        <div *ngFor="let broker of sparplanBroker">
+          <div class="alert alert-info" *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1">
+            {{broker.name}}:
+            <span *ngIf="broker.minAmountPerSavingPlan > fav.savingRate">
+              <span class="color color--red">Minimum-Sparrate von {{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}} nicht erreicht</span>
+            </span>
+            <span *ngIf="broker.minAmountPerSavingPlan <= fav.savingRate">
+              <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="fav.savingRate"></app-sparplan-kosten-per-broker>
+            </span>
           </div>
         </div>
       </div>

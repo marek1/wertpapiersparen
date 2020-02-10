@@ -5,6 +5,7 @@ import * as fromRoot from '../../reducers';
 import { Company } from '../../interfaces/company';
 import { BasketActions } from '../../actions';
 import { Etf } from '../../interfaces/etf';
+import { ROUTE_MY_SAVING_PLAN_HOME } from '../../routes';
 
 @Component({
   selector: 'app-add-to-sparplan',
@@ -17,6 +18,7 @@ export class AddToSparplanComponent implements OnInit {
   @Input() company: Company;
 
   public favouredSecuritiesIdList$: Observable<number[]>;
+  public ROUTE_MY_SAVING_PLAN_HOME = ROUTE_MY_SAVING_PLAN_HOME;
 
   constructor(private store: Store<fromRoot.AppState>) { }
 
