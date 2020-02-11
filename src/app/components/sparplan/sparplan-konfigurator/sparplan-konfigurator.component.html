@@ -17,7 +17,7 @@
     <div class="col-12 text-center">
   
       <button class="btn btn-primary btn-lg" (click)="started=true">
-        Jetzt starten
+        Jetzt einen Sparplan starten
       </button>
       
     </div>
@@ -30,8 +30,11 @@
       <div class="card">
         <div class="card-body text-center">
           <div>
-            Wieviel möchtest du monatlich sparen ?
+            Monatliche Sparsumme:
             <app-sparplan-sum></app-sparplan-sum>
+          </div>
+          <div class="alert alert-secondary" *ngIf="(sparplanSum$|async) === 0">
+            Bitte eine Sparsumme wählen, die höher als 0 ist.
           </div>
         </div>
       </div>

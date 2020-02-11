@@ -28,6 +28,9 @@
                 {{etf.name}}
                 <span class="fa fa-arrow-circle-right"></span>
               </a>
+              <div class="small">
+                Jährliche Kosten (TER): {{getCostsFor(etf.id)}}%
+              </div>
             </div>
           </div>
         </div>
@@ -59,6 +62,9 @@
                 {{etf.name}}
                 <span class="fa fa-arrow-circle-right"></span>
               </a>
+              <div class="small">
+                Jährliche Kosten (TER): {{ getCostsFor(etf.id) | number:'1.2-2':'de' }}%
+              </div>
             </div>
           </div>
         </div>

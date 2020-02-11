@@ -1,4 +1,5 @@
 <div class="home row">
+  
   <div class="col-12 margin vertical top-bottom-10">
     <div class="small">
       Bestimme deine <span class="font-weight-bold">Risikobereitschaft</span>
@@ -12,6 +13,14 @@
   <div class="col-12 margin vertical top-bottom-20">
     <div class="alert alert-danger" role="alert" *ngIf="!this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)">
       Die einzelnen Sparpläne ergeben nicht die Gesamtsparplansumme.
+    </div>
+  </div>
+  <div class="col-12" *ngIf="sparplanMuster.length > 1">
+    <div class="alert alert-warning" role="alert">
+      Achtung! Die meisten Banken/Broker erlauben nur Sparpläne mit einen Wert.
+      Du müsstest also <span class="font-weight-bold">mehrere Sparpläne</span> eröffnen,
+      sprich für jedes Wertpapier 1 Sparplan.
+      <a [routerLink]="['/' + ROUTES_SAVING_PLAN_COSTS]">Mehr Informationen <span class="fa fa-arrow-circle-right"></span></a>
     </div>
   </div>
   <div class="col-12 margin vertical top-bottom-10">

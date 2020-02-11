@@ -11,6 +11,7 @@ import { AmountOfItem } from '../../../reducers/basket.reducer';
 import { PriceService } from '../../../services/price.service';
 import { Currency } from '../../../enums/currencies';
 import { BasketActions } from '../../../actions';
+import { ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
 
 @Component({
   selector: 'app-sparplan-muster',
@@ -24,8 +25,8 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   public etfs: Etf[];
   public sparplanMuster: AmountOfItem[];
   public sparplanSum$: Observable<number>;
-
   private changedSparplanManually: boolean;
+  public ROUTES_SAVING_PLAN_COSTS = ROUTES_SAVING_PLAN_COSTS;
 
   public Currency = Currency;
 
@@ -130,9 +131,11 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   saveAll() {
-    this.sparplanMuster.map((amountOfItem: AmountOfItem) => {
-      this.store.dispatch(BasketActions.addToFavourites({item: amountOfItem.item}));
-      this.store.dispatch(BasketActions.updateFavourites({amount: amountOfItem.amount, savingRate: amountOfItem.savingRate, item: amountOfItem.item}));
-    });
+    if (window.confirm('Willst du wirklich alles übernehmen?')) {
+      this.sparplanMuster.map((amountOfItem: AmountOfItem) => {
+        this.store.dispatch(BasketActions.addToFavourites({item: amountOfItem.item}));
+        this.store.dispatch(BasketActions.updateFavourites({amount: amountOfItem.amount, savingRate: amountOfItem.savingRate, item: amountOfItem.item}));
+      });
+    }
   }
 }

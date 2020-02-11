@@ -84,4 +84,8 @@ export class EtfsByPopularityComponent implements OnInit {
   getLogoFor(id: number) {
     return Etfs.filter((etf: Etf) => etf.id === id)[0].logo;
   }
+
+  getCostsFor(id: number) {
+    return Etfs.filter((etf: Etf) => etf.id === id)[0].ter;
+  }
 }
