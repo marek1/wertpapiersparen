@@ -25,27 +25,30 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   public etfs: Etf[];
   public sparplanMuster: AmountOfItem[];
   public sparplanSum$: Observable<number>;
-  private changedSparplanManually: boolean;
   public ROUTES_SAVING_PLAN_COSTS = ROUTES_SAVING_PLAN_COSTS;
-
+  public showSlider: boolean;
   public Currency = Currency;
+  private changedSparplanManually: boolean;
 
   constructor(public sparplanService: SparplanService,
               public priceService: PriceService,
               private store: Store<fromRoot.AppState>) {
-    this.value = 50;
+    this.value = -1;
     this.options = {
-      showTicksValues: true,
+      showTicksValues: false,
+      showTicks: true,
+      hideLimitLabels: true,
+      hidePointerLabels: true,
       stepsArray: [
-        {value: 0, legend: 'Keine'},
-        {value: 25},
-        {value: 50, legend: 'Mittlere'},
-        {value: 75},
-        {value: 100, legend: 'Hohe'}
+        {value: 0, legend: 'Keine Risikobereitschaft'},
+        {value: 25, legend: 'Geringe Risikobereitschaft'},
+        {value: 50, legend: 'Mittlere Risikobereitschaft'},
+        {value: 75, legend: 'Hohe Risikobereitschaft'}
       ]
     };
     this.etfs = [];
     this.sparplanMuster = [];
+    this.showSlider = false;
     this.changedSparplanManually = false;
   }
 
@@ -65,6 +68,11 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
     this.setSparplan();
   }
 
+  setOption(x: number) {
+    this.value = x;
+    this.reset();
+  }
+
   setPortfolio() {
     switch (this.value) {
       case 0:
@@ -77,20 +85,12 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
       case 50:
         this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond
           || etf.contains === SecurityType.CorpBond
-          || etf.name.toLowerCase().indexOf('msci world') > -1
+          || etf.name.toLowerCase().indexOf(' dax') > -1
           || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1);
         break;
       case 75:
-        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.CorpBond
-          || etf.name.toLowerCase().indexOf('msci world') > -1
-          || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
-          || etf.name.toLowerCase().indexOf('mdax') > -1);
-        break;
-      case 100:
-        this.etfs = Etfs.filter((etf: Etf) => etf.name.toLowerCase().indexOf('msci world') > -1
-          || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
-          || etf.name.toLowerCase().indexOf('mdax') > -1
-          || etf.name.toLowerCase().indexOf('tecdax') > -1);
+        this.etfs = Etfs.filter((etf: Etf) => etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
+          || etf.name.toLowerCase().indexOf('dax') > -1);
         break;
       default:
         break;

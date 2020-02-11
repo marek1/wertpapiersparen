@@ -1,5 +1,20 @@
 :host {
-  .ng5-slider-span {
-    font-weight: bold !important;
+  .ng5-slider {
+    margin-bottom: 30px;
+  }
+  .card {
+    &:hover {
+      background-color: gray;
+      cursor: pointer;
+    }
+  }
+}
+::ng-deep {
+  .ng5-slider-tick-legend {
+    font-size: 10px;
+    width: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

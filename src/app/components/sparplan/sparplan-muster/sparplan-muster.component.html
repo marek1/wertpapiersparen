@@ -1,57 +1,88 @@
 <div class="home row">
   
-  <div class="col-12 margin vertical top-bottom-10">
-    <div class="small">
-      Bestimme deine <span class="font-weight-bold">Risikobereitschaft</span>
-    </div>
-    <ng5-slider
-    [(value)]="value"
-    [options]="options"
-    (valueChange)="reset()"
-    ></ng5-slider>
-  </div>
-  <div class="col-12 margin vertical top-bottom-20">
-    <div class="alert alert-danger" role="alert" *ngIf="!this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)">
-      Die einzelnen Sparpläne ergeben nicht die Gesamtsparplansumme.
-    </div>
-  </div>
-  <div class="col-12" *ngIf="sparplanMuster.length > 1">
-    <div class="alert alert-warning" role="alert">
-      Achtung! Die meisten Banken/Broker erlauben nur Sparpläne mit einen Wert.
-      Du müsstest also <span class="font-weight-bold">mehrere Sparpläne</span> eröffnen,
-      sprich für jedes Wertpapier 1 Sparplan.
-      <a [routerLink]="['/' + ROUTES_SAVING_PLAN_COSTS]">Mehr Informationen <span class="fa fa-arrow-circle-right"></span></a>
-    </div>
-  </div>
-  <div class="col-12 margin vertical top-bottom-10">
-    <div class="row">
-      <div class="col-6 font-weight-bold">
-        Ausgehend von einer gesamten Sparplansumme von
-        <app-number-input
-        [anzahl]="sparplanSum$|async"
-        [smallestUnit]="1"
-        [unit]="'EUR'"
-        (numberChanged)="updateSparplanTotal($event)"
-        ></app-number-input>
+  <ng-container *ngIf="value < 0">
+    
+    <div class="col-12 margin vertical top-bottom-10">
+      <div class="row margin vertical top-bottom-10">
+        <div class="col-sm-6" *ngFor="let x of options.stepsArray|slice:0:2">
+          <div class="card" (click)="setOption(x.value)">
+            <div class="card-body">
+              <h5 class="card-title">{{x.legend}}</h5>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6 text-right">
-        <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
+      <div class="row margin vertical top-bottom-10">
+        <div class="col-sm-6"  *ngFor="let x of options.stepsArray|slice:2:4">
+          <div class="card" (click)="setOption(x.value)">
+            <div class="card-body">
+              <h5 class="card-title">{{x.legend}}</h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-12 margin vertical top-bottom-10">
-    <div *ngFor="let etf of sparplanMuster; let ind = index">
-      <app-security-list-item
-      [fav]="etf"
-      [totalPrice]="this.priceService.getNetSum(sparplanMuster, 'EUR')"
-      [sparplanSum]="sparplanSum$|async"
-      [percentagesAreCorrect]="this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)"
-      [showCosts]="false"
-      [listItemCounter]="ind"
-      [isTemplate]="true"
-      (savingRateChanged)="updateSavingrate($event, etf)"
-      >
-      </app-security-list-item>
+    
+  </ng-container>
+  
+  <ng-container *ngIf="value >= 0">
+    <div class="col-12 margin vertical top-bottom-10">
+      <div class="">
+        Ändere deine
+        <span class="btn-link clickable" (click)="showSlider=!showSlider">
+          Risikobereitschaft
+          <span class="fa fa-arrow-circle-down" *ngIf="!showSlider"></span>
+          <span class="fa fa-arrow-circle-up" *ngIf="showSlider"></span>
+        </span>
+        
+      </div>
+      <div *ngIf="showSlider">
+        <ng5-slider
+        [(value)]="value"
+        [options]="options"
+        (valueChange)="reset()"
+        ></ng5-slider>
+      </div>
     </div>
-  </div>
+   
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="!this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)">
+      <div class="alert alert-danger" role="alert">
+        Die einzelnen Sparpläne ergeben nicht die Gesamtsparplansumme.
+      </div>
+    </div>
+    <div class="col-12 margin vertical top-bottom-10">
+      <div class="row">
+        <div class="col-6 font-weight-bold">
+          Ausgehend von einer gesamten Sparplansumme von {{sparplanSum$|async}} {{Currency.EUR}}:
+        </div>
+        <div class="col-6 text-right">
+          <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 margin vertical top-bottom-10">
+      <div *ngFor="let etf of sparplanMuster; let ind = index">
+        <app-security-list-item
+        [fav]="etf"
+        [totalPrice]="this.priceService.getNetSum(sparplanMuster, 'EUR')"
+        [sparplanSum]="sparplanSum$|async"
+        [percentagesAreCorrect]="this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)"
+        [showCosts]="false"
+        [listItemCounter]="ind"
+        [isTemplate]="true"
+        (savingRateChanged)="updateSavingrate($event, etf)"
+        >
+        </app-security-list-item>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="sparplanMuster.length > 1">
+      <div class="alert alert-warning" role="alert">
+        Zur Info: Die meisten Banken/Broker erlauben nur Sparpläne mit einen Wert.
+        Du müsstest also <span class="font-weight-bold">mehrere Sparpläne</span> eröffnen,
+        sprich für jedes Wertpapier 1 Sparplan.
+        <a [routerLink]="['/' + ROUTES_SAVING_PLAN_COSTS]">Mehr Informationen <span class="fa fa-arrow-circle-right"></span></a>
+      </div>
+    </div>
+  </ng-container>
+  
 </div>
