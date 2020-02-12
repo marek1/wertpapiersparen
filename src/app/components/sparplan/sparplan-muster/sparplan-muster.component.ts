@@ -1,5 +1,4 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Options } from 'ng5-slider';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { Etf } from '../../../interfaces/etf';
@@ -13,6 +12,12 @@ import { Currency } from '../../../enums/currencies';
 import { BasketActions } from '../../../actions';
 import { ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
 
+interface TextForStepArray {
+  value: number;
+  header: string;
+  text: string;
+  yield: string;
+}
 @Component({
   selector: 'app-sparplan-muster',
   templateUrl: './sparplan-muster.component.html',
@@ -21,31 +26,43 @@ import { ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
 export class SparplanMusterComponent implements OnInit, OnChanges {
 
   public value: number;
-  public options: Options;
   public etfs: Etf[];
   public sparplanMuster: AmountOfItem[];
   public sparplanSum$: Observable<number>;
   public ROUTES_SAVING_PLAN_COSTS = ROUTES_SAVING_PLAN_COSTS;
   public showSlider: boolean;
   public Currency = Currency;
+  public textForStepArray: TextForStepArray[] = [
+    {
+      value: 0,
+      header: 'Keine Risikobereitschaft',
+      text: 'Ich vertrage nur das geringstmöglichste Risiko',
+      yield: 'Dich erwarten vielleicht 1-2 % Rendite pro Jahr.'
+    },
+    {
+      value: 25,
+      header: 'Geringe Risikobereitschaft',
+      text: 'Ich vertrage nur ein klein wenig Risiko',
+      yield: 'Dich erwarten 2-3 % Rendite pro Jahr.'
+    },
+    {
+      value: 50,
+      header: 'Gewisse Risikobereitschaft',
+      text: 'Ich kann Risiko ertragen.',
+      yield: 'Dich könnte eine Rendite von 3-5 % pro Jahr erwarten.'
+    },
+    {
+      value: 75,
+      header: 'Hohe Risikobereitschaft',
+      text: 'Ich bin keineswegs risikoscheu.',
+      yield: 'Dich könnte eine Rendite über 5 % pro Jahr erwarten.'
+    }
+  ];
   private changedSparplanManually: boolean;
-
   constructor(public sparplanService: SparplanService,
               public priceService: PriceService,
               private store: Store<fromRoot.AppState>) {
     this.value = -1;
-    this.options = {
-      showTicksValues: false,
-      showTicks: true,
-      hideLimitLabels: true,
-      hidePointerLabels: true,
-      stepsArray: [
-        {value: 0, legend: 'Keine Risikobereitschaft'},
-        {value: 25, legend: 'Geringe Risikobereitschaft'},
-        {value: 50, legend: 'Mittlere Risikobereitschaft'},
-        {value: 75, legend: 'Hohe Risikobereitschaft'}
-      ]
-    };
     this.etfs = [];
     this.sparplanMuster = [];
     this.showSlider = false;
@@ -69,6 +86,7 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   setOption(x: number) {
+    this.showSlider = false;
     this.value = x;
     this.reset();
   }
@@ -113,6 +131,7 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   updateSparplanTotal(x) {
+    this.changedSparplanManually = false;
     this.store.dispatch(BasketActions.updateSparplanSum({sum: x}));
   }
 
@@ -137,5 +156,9 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
         this.store.dispatch(BasketActions.updateFavourites({amount: amountOfItem.amount, savingRate: amountOfItem.savingRate, item: amountOfItem.item}));
       });
     }
+  }
+
+  getHeaderRisk() {
+    return this.textForStepArray.filter((x: TextForStepArray) => x.value === this.value)[0].header;
   }
 }

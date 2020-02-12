@@ -1,7 +1,9 @@
 import { of } from 'rxjs';
 import { AmountOfItem } from '../reducers/basket.reducer';
 import { standardSparplanSum } from '../data/etfs';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class BasketService {
   constructor() {}
 

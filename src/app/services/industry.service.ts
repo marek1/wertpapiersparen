@@ -1,6 +1,8 @@
 import { Industry } from '../interfaces/industry';
 import { Industries } from '../data/industries';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class IndustryService {
 
   constructor() {

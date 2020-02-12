@@ -12,7 +12,7 @@
   
   </div>
   
-  <ng-container *ngIf="(sparplanSum$|async) === 0 && !started">
+  <ng-container *ngIf="(sparplanSum$|async) <= 0 && !started">
   
     <div class="col-12 text-center">
   
@@ -33,7 +33,7 @@
             Monatliche Sparsumme:
             <app-sparplan-sum></app-sparplan-sum>
           </div>
-          <div class="alert alert-secondary" *ngIf="(sparplanSum$|async) === 0">
+          <div class="alert alert-secondary" *ngIf="(sparplanSum$|async) <= 0">
             Bitte eine Sparsumme wählen, die höher als 0 ist.
           </div>
         </div>

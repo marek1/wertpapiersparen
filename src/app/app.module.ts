@@ -6,9 +6,9 @@ import { appRoutes } from './app.routes';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ROOT_REDUCERS, metaReducers } from './reducers';
+import { metaReducers, ROOT_REDUCERS } from './reducers';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -113,18 +113,21 @@ registerLocaleData(localeDe, 'de');
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
     ),
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true
       }
+    }),
+    StoreRouterConnectingModule.forRoot({
+      routerState: RouterState.Minimal
     }),
     EffectsModule.forRoot([BasketEffects]),
     HttpClientModule,
-    StoreRouterConnectingModule.forRoot(),
     ReactiveFormsModule,
     Ng5SliderModule
   ],

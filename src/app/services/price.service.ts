@@ -1,5 +1,7 @@
 import { AmountOfItem } from '../reducers/basket.reducer';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class PriceService {
   thisYear: number;
   constructor() {
