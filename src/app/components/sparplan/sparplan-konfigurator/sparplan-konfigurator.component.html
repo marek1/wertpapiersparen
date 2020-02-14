@@ -44,6 +44,17 @@
   
   <ng-container *ngIf="(sparplanSum$|async) > 0">
   
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="(favouredSecurities$|async).length < 1">
+  
+      <div class="alert alert-secondary">
+        Du musst mindestens ein Wertpapier (Aktie oder ETF) zu deinem Sparplan hinzufügen.
+        Nutze dafür bitte entweder einen <a [routerLink]="'/' + ROUTE_SAVING_PLAN_MUSTER">Muster-Sparplan</a>,
+        wo du einfach ein Muster (oder Teile davon) übernehmen kannst, oder suche nach
+        <a [routerLink]="'/' + ROUTE_COMPANIES">Aktien</a> und/oder <a [routerLink]="'/' + ROUTE_ETFS">ETFs</a>.
+      </div>
+
+    </div>
+  
     <div class="col-12 margin vertical top-bottom-10">
       <div class="row">
         <div class="col-sm-6">
@@ -59,10 +70,12 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Ich wähle selbst</h5>
-              <p class="card-text">Aus einer Auswahl an europäischen Aktien und ETFs selbst auswählen</p>
+              <p class="card-text">Aus einer Auswahl an europäischen <a [routerLink]="'/' + ROUTE_COMPANIES">Aktien</a>
+                und <a [routerLink]="'/' + ROUTE_ETFS">ETFs</a> selbst auswählen
+              </p>
               <div class="text-right">
                 <a [routerLink]="'/' + ROUTE_COMPANIES" class="btn btn-primary btn-lg margin horizontal right-5">Aktien</a>
-                <a [routerLink]="'/' + ROUTE_ETFS" class="btn btn-primary btn-lg">ETFS</a>
+                <a [routerLink]="'/' + ROUTE_ETFS" class="btn btn-primary btn-lg">ETFs</a>
               </div>
             </div>
           </div>
@@ -71,8 +84,8 @@
   
     </div>
   
-    <div class="col-12 margin vertical top-bottom-10">
-      <a [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME" class="btn btn-primary float-right">
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="(favouredSecurities$|async).length > 0">
+      <a [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME" class="btn btn-secondary float-right">
         Meinen Sparplan ansehen <span class="fa fa-arrow-right"></span>
       </a>
     </div>

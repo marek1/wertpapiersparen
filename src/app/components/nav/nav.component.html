@@ -4,7 +4,7 @@
   </a>
   <div class="">
     <a class="float-left margin horizontal right-20" [routerLink]="'/' + ROUTE_SAVING_PLAN_KONFIGURATOR">Sparplan-Konfigurator</a>
-    <a class="float-right" [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME">
+    <a class="float-right {{(favouredSecuritiesIdList$|async)?.length > 0 ? 'color color--white font-weight-bold' : '' }}" [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME">
       <span class="badge-number" *ngIf="(favouredSecuritiesIdList$|async)?.length as favs">
         {{favs}}
       </span><span class="fa fa-list"></span> Sparplan

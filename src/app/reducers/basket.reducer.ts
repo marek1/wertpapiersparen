@@ -40,7 +40,7 @@ export const reducer = createReducer(
     // only if the items isnt already in the array!
     items: state.items.filter((i: AmountOfItem) => i.item.id === item.id).length === 0 ? [...state.items, {
       amount: item.smallestTradeableUnit,
-      savingRate: standardSparplanSum,
+      savingRate: state.sparplanSum,
       item
     }] : [...state.items],
   })),

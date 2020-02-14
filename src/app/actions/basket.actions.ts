@@ -3,6 +3,8 @@ import { Company } from '../interfaces/company';
 import { AmountOfItem } from '../reducers/basket.reducer';
 import { Etf } from '../interfaces/etf';
 
+export const ADD_TO_FAVOURITIES = 'Detail Component] Add To Favourites';
+
 export const getFavourites = createAction(
   '[Detail Component] Retrieve Favourites (from Localstorage)',
   props<{}>()
@@ -14,7 +16,7 @@ export const getFavouritesFromLocalStorageSuccess = createAction(
 );
 
 export const addToFavourites = createAction(
-  '[Detail Component] Add To Favourites',
+  ADD_TO_FAVOURITIES,
   props<{item: Company|Etf}>()
 );
 

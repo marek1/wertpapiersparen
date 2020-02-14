@@ -14,7 +14,7 @@ import { Etf } from '../../interfaces/etf';
 import { SavingplanBroker } from '../../data/savingplanBroker';
 import { Currency } from '../../enums/currencies';
 import { SparplanService } from '../../services/sparplan.service';
-import { ROUTES_SAVING_PLAN_COSTS } from '../../routes';
+import { ROUTE_SAVING_PLAN_KONFIGURATOR, ROUTES_SAVING_PLAN_COSTS } from '../../routes';
 
 @Component({
   selector: 'app-basket',
@@ -39,6 +39,7 @@ export class BasketComponent implements OnInit {
 
   public Currency = Currency;
   public ROUTES_SAVING_PLAN_COSTS = ROUTES_SAVING_PLAN_COSTS;
+  public ROUTE_SAVING_PLAN_KONFIGURATOR = ROUTE_SAVING_PLAN_KONFIGURATOR;
 
   constructor(
     public sparplanService: SparplanService,

@@ -41,7 +41,7 @@
 }
 .color {
   &.color--white {
-    color: white;
+    color: white !important;
   }
   &.color--green {
     color: green;

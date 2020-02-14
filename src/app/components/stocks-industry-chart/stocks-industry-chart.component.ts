@@ -80,12 +80,12 @@ export class StocksIndustryChartComponent implements OnInit, OnChanges {
     if (foundItems.length === 0) {
       const industryNames = industryIds.map(industryId => this.industryService.iterateThroughChildren(Industries, industryId).description);
       this.StockAmountsByIndustry.push({
-        amount: this.priceService.getLatestTotalPrice(companyStock),
+        amount: companyStock.savingRate,
         industryIds,
         industryNames: industryNames.length > 1 ? [ this.returnShortIndustryName(industryNames[0]) + ' & weitere Branchen (Mischkonzern)'] : [this.returnShortIndustryName(industryNames[0])]
       });
     } else {
-      foundItems[0].amount += this.priceService.getLatestTotalPrice(companyStock);
+      foundItems[0].amount += companyStock.savingRate;
     }
   }
 

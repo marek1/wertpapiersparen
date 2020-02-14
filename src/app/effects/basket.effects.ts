@@ -8,6 +8,7 @@ import * as fromRoot from '../reducers';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AmountOfItem } from '../reducers/basket.reducer';
+import { ADD_TO_FAVOURITIES } from '../actions/basket.actions';
 
 @Injectable()
 export class BasketEffects {
@@ -36,7 +37,11 @@ export class BasketEffects {
         withLatestFrom(
           this.store.pipe(select(fromRoot.getFavouredSecurities))
         ),
-        exhaustMap(([company, itemList]) => {
+        exhaustMap(([action, itemList]) => {
+          // @ts-ignore
+          if (action.type !== undefined && action.type === ADD_TO_FAVOURITIES) {
+            window.alert('Wurde erfolgreich hinzugefügt');
+          }
           return this.basketService.setBasket(itemList)
             .pipe(
               // map(items => BasketActions.savedToLocalStorageSuccess({success: items.toString()})),

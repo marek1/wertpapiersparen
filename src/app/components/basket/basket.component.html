@@ -44,8 +44,13 @@
       </li>
     </ul>
     <ng-container *ngIf="favouredSecurities.length === 0">
-      <div class="col-12">
-        <app-sparplan-home></app-sparplan-home>
+      <div class="col-12 text-center">
+        <div>
+          Du hast noch keine Wertpapiere hinzugefügt.
+        </div>
+        <a [routerLink]="'/' + ROUTE_SAVING_PLAN_KONFIGURATOR" class="btn btn-primary">Konfiguriere deinen Sparplan</a>
+  
+        <!--        <app-sparplan-home></app-sparplan-home>-->
       </div>
     </ng-container>
   </div>
@@ -98,5 +103,5 @@
         <app-etfs-matcher [favourites]="favouredSecurities$|async"></app-etfs-matcher>
       </div>
     </div>
-  </div>>
+  </div>
 </ng-container>
