@@ -14,7 +14,12 @@
   </ng-container>
   
   <ng-container *ngIf="value < 0 || showSlider">
-    
+  
+    <div class="col-12 margin vertical top-bottom-10">
+      <h5>
+        Wähle deine Risikobereitschaft
+      </h5>
+    </div>
     <div class="col-12 margin vertical top-bottom-10">
       <div class="row margin vertical top-bottom-10">
         <div class="col-sm-6" *ngFor="let x of textForStepArray|slice:0:2">
@@ -65,7 +70,7 @@
     </div>
     <div class="col-12 margin vertical top-bottom-10">
       <div class="row">
-        <div class="col-6">
+        <div class="col-sm-6 col-12">
           <div class="alert alert-info">
             Ausgehend von <span class="font-weight-bold">{{getHeaderRisk()}}</span>
             und einer gesamten Sparplansumme von
@@ -73,7 +78,7 @@
             wurde folgendes Portfolio aus ETFs zusammengestellt.
           </div>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-sm-6 col-12 text-right">
           <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
         </div>
       </div>
