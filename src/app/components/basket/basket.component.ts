@@ -50,12 +50,12 @@ export class BasketComponent implements OnInit {
   ) {
     this.tabs = [];
     this.performanceYears = this.helperService.enumToArray(Performances);
-    this.yieldYears = [];
     this.chartExpanded = false;
     this.showCosts = false;
   }
 
   ngOnInit() {
+    this.yieldYears = [];
     this.showMore = 1;
     this.favouredSecurities$ = this.store.pipe(select(fromRoot.getFavouredSecurities));
     this.favouredSecurities$.subscribe((items: AmountOfItem[]) => {
@@ -63,12 +63,16 @@ export class BasketComponent implements OnInit {
       this.totalPastPrices = [];
       this.performanceYears.map((x) => {
         // i.e. x = 1 Jahr, Performances[x] = 1
-        // TODO: if 1 returns a 0 -> then the whole result is to be 0 !!!
         const results = [];
         items.map((item: AmountOfItem) => {
           results.push(item.amount * this.priceService.getPriceAt(item.item.end_of_month_prices, parseInt(Performances[x], 10))[1]);
         });
-        if (results.includes(0)) {
+        // adds all prices of the results array to one price
+        // unless "all" prices are 0
+        // so if one of the prices is not existing, it has no performance,
+        // but the overall performance is not affected
+        if ((results.length === 1 && results[0] === 0) ||
+          (results.length === 2 && results[0] === 0 && results[1] === 0)) {
           this.totalPastPrices.push(0);
           this.yieldYears.push(0);
         } else {
