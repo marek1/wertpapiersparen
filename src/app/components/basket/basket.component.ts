@@ -71,16 +71,17 @@ export class BasketComponent implements OnInit {
         // unless "all" prices are 0
         // so if one of the prices is not existing, it has no performance,
         // but the overall performance is not affected
-        if ((results.length === 1 && results[0] === 0) ||
-          (results.length === 2 && results[0] === 0 && results[1] === 0)) {
-          this.totalPastPrices.push(0);
-          this.yieldYears.push(0);
+        let pastPrice = 0;
+        if (results.length === 1 && results[0] === 0) {
+          pastPrice = results[results.length - 1][0];
+        } else if (results.length === 2 && results[0] === 0 && results[1] === 0) {
+          pastPrice = results[results.length - 1][0] + results[results.length - 1][1];
         } else {
-          const pastPrice = results.reduce((a, b) => a + b, 0);
-          this.totalPastPrices.push(pastPrice);
-          this.yieldYears.push(Math.pow((this.totalPrice / pastPrice), 1 / parseInt(Performances[x], 10)));
-          this.numberOfYearsWithPerformance = parseInt(Performances[x], 10);
+          pastPrice = results.reduce((a, b) => a + b, 0);
         }
+        this.totalPastPrices.push(pastPrice);
+        this.yieldYears.push(Math.pow((this.totalPrice / pastPrice), 1 / parseInt(Performances[x], 10)));
+        this.numberOfYearsWithPerformance = parseInt(Performances[x], 10);
       });
       // if there are items in favourites which arent ETFs
       if (items.filter((amountOfItem: AmountOfItem) => amountOfItem.item.securityType !== SecurityType.ETF).length > 0) {
