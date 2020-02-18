@@ -68,18 +68,14 @@
   <hr />
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-12" *ngIf="favouredSecurities.length > 0">
-      <small>
-        Würden sich die Wertpapiere so weiterentwickeln wie in der Vergangenheit und
-        würdest du über den Zeitraum von 20 Jahren deinen monatlicher Einzahlungen
-        nachkommen könnte sich dein Sparplan so entwickeln:
-      </small>
       <div>
-        <app-sparplan-chart
-        [sparplanSum]="sparplanSum$|async"
-        [numberOfYearsWithPerformance]="numberOfYearsWithPerformance"
-        [yieldYears]="yieldYears"
-        [favouredSecurities]="favouredSecurities"></app-sparplan-chart>
+        Information zur Entwicklung deines Sparplans:
       </div>
+      <app-sparplan-chart
+      [sparplanSum]="sparplanSum$|async"
+      [numberOfYearsWithPerformance]="numberOfYearsWithPerformance"
+      [yieldYears]="yieldYears"
+      [favouredSecurities]="favouredSecurities"></app-sparplan-chart>
     </div>
   </div>
 </ng-container>

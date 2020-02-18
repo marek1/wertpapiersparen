@@ -3,6 +3,7 @@ import { ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
 import { AmountOfItem } from '../../../reducers/basket.reducer';
+import { Currency } from '../../../enums/currencies';
 
 @Component({
   selector: 'app-sparplan-chart',
@@ -36,6 +37,7 @@ export class SparplanChartComponent implements OnInit, OnChanges {
       },
     }
   };
+  public Currency = Currency;
 
   constructor() {
   }
@@ -81,4 +83,11 @@ export class SparplanChartComponent implements OnInit, OnChanges {
     this.chartData.push(line2);
   }
 
+  getPayins() {
+    return this.chartData[0].data[this.chartData[0].data.length - 1];
+  }
+
+  getPayinsAndPerformance() {
+    return this.chartData[1].data[this.chartData[1].data.length - 1];
+  }
 }

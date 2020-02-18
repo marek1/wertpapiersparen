@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import * as fromRoot from './reducers';
 import { BasketActions } from './actions';
 import { Route, Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { AmountOfItem } from './reducers/basket.reducer';
 
 declare global {
   interface Window { ga: any; }
@@ -19,12 +20,15 @@ export class AppComponent implements OnInit {
   constructor(private store: Store<fromRoot.AppState>,
               public router: Router) {
       this.router.events.subscribe((event) => {
-        console.log('event : ', event);
         if (event instanceof NavigationEnd) {
-          console.log('YESSSSS!');
           if (window.ga !== undefined) {
             window.ga('set', 'page', event.urlAfterRedirects);
             window.ga('send', 'pageview');
+            if (event.urlAfterRedirects === '/mein-sparplan') {
+              this.store.pipe(select(fromRoot.getFavouredSecurities)).subscribe((fav: AmountOfItem[]) => {
+                window.ga('send', 'event', 'sparplan', 'sparplan_created_and_viewed', '', fav.length);
+              });
+            }
           }
         }
       });

@@ -1,4 +1,17 @@
 <div>
+  <div class="alert alert-secondary margin vertical top-bottom-10">
+    Die Summe aller Einzahlungen über 20 Jahre wäre {{getPayins() | number:'1.0-0':'de'}} {{Currency.EUR}}.
+    <div class="small">
+        Würden sich die Wertpapiere so weiterentwickeln wie in der Vergangenheit und
+        würdest du über den Zeitraum von 20 Jahren deinen monatlicher Einzahlungen
+        nachkommen könnte sich dein angesparte Summe
+        <span class="font-weight-bold">
+          {{getPayinsAndPerformance() | number:'1.0-0':'de'}}
+        </span>
+        {{Currency.EUR}} betragen. Die Entwicklung würde so aussehen:
+    </div>
+  </div>
+  
   
   <canvas baseChart
           [datasets]="chartData"
