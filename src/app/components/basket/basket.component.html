@@ -22,8 +22,12 @@
     </div>
     <div class="col-12" *ngIf="favouredSecurities.length > 0">
       <div>
+        <span *ngIf="favouredSecurities.length===1">Dein Sparplan</span>
+        <span *ngIf="favouredSecurities.length>1">Deine Sparpläne</span>
+      </div>
+      <div>
         <span class="btn-link clickable small" (click)="showCosts=!showCosts">
-          Sparplaninformation
+          Jeweilige Sparplaninformation(en)
           <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
           <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
         </span>
@@ -51,19 +55,6 @@
         <a [routerLink]="'/' + ROUTE_SAVING_PLAN_KONFIGURATOR" class="btn btn-primary">Starte einen Sparplan</a>
       </div>
     </ng-container>
-  </div>
-  <div class="row" *ngIf="(favouredSecurities$|async).length > 0">
-    <div class="col-12">
-      <div>Deine gesamte Sparplansumme beträgt <span class="font-weight-bold">{{sparplanSum$|async}} {{Currency.EUR}}</span></div>
-      <div class="small">
-        (Ohne Kaufgebühren)
-        <span class="btn-link clickable" (click)="showCosts=!showCosts">
-          Kaufgebühren & Sparplaninformationen
-          <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
-          <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
-        </span>
-      </div>
-    </div>
   </div>
   <hr />
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">

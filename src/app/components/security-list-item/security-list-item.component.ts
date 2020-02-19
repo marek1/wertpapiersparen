@@ -10,6 +10,7 @@ import { SavingplanBroker } from '../../data/savingplanBroker';
 import { Observable } from 'rxjs';
 import { Currency } from '../../enums/currencies';
 import { ROUTE_COMPANIES } from '../../routes';
+import { Etfs } from '../../data/etfs';
 
 @Component({
   selector: 'app-security-list-item',
@@ -36,6 +37,7 @@ export class SecurityListItemComponent implements OnInit {
   constructor(private store: Store<fromRoot.AppState>) { }
 
   ngOnInit() {
+    console.log('sparplanSum : ', this.sparplanSum);
     this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
   }
 
@@ -46,10 +48,17 @@ export class SecurityListItemComponent implements OnInit {
   }
 
   updateSavingRate(savingRate: number, item: Etf|Company ) {
+    console.log('savingRate: ', savingRate, isNaN(savingRate));
+    if (isNaN(savingRate)) {
+      return;
+    }
     if (!this.isTemplate) {
       this.store.dispatch(BasketActions.updateFavourites({amount: null, savingRate, item}));
     }
     this.savingRateChanged.emit(savingRate);
   }
 
+  getYearlyCosts() {
+    return this.fav.savingRate * this.fav.item.ter;
+  }
 }

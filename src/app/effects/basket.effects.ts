@@ -38,9 +38,10 @@ export class BasketEffects {
           this.store.pipe(select(fromRoot.getFavouredSecurities))
         ),
         exhaustMap(([action, itemList]) => {
+          console.log('action : ', action);
           // @ts-ignore
           if (action.type !== undefined && action.type === ADD_TO_FAVOURITIES) {
-            window.alert('Wurde erfolgreich hinzugefügt');
+            window.alert('Das Wertpapier erfolgreich hinzugefügt');
           }
           return this.basketService.setBasket(itemList)
             .pipe(

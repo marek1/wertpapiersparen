@@ -57,4 +57,5 @@ export interface Company {
   tags: string[];
   contains?: SecurityType; // <-- only for AOT compiler
   countries?: Portion[]; // <-- only for AOT compiler
+  ter?: any; // <-- only for AOT compiler
 }

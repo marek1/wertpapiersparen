@@ -45,9 +45,6 @@
           und weitere.
         </ng-container>
       </div>
-      <div class="small">
-<!--        Jährliche Kosten (TER): {{ fav.item.ter | number:'1.2-2':'de' }}%-->
-      </div>
     </ng-container>
     <ng-container *ngIf="fav.item.securityType !== SecurityType.ETF">
       <app-company-industries [company]="fav.item"></app-company-industries>
@@ -55,8 +52,14 @@
 
   </div>
   <div class="col-12">
+    <!-- TODO: Put this into a separate component and get rid of showCosts -->
     <div *ngIf="showCosts" class="card">
       <div class="card-body">
+        <div *ngIf="fav.item['ter'] !== undefined">
+          Jährliche Kosten (TER):
+          <span class="font-weight-bold"> {{getYearlyCosts() | number:'1.2-2':'de'}} {{fav.item.currency}} </span>
+          ({{ fav.item.ter | number:'1.2-2':'de' }} %)
+        </div>
         <div>
           Kosten bei (monatlichen) Ausführung des Sparplans bei
         </div>

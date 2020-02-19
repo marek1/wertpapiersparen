@@ -11,11 +11,17 @@ import { PriceService } from '../../../services/price.service';
 import { Currency } from '../../../enums/currencies';
 import { BasketActions } from '../../../actions';
 import { ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
+import { InvestmentOptions } from '../../../enums/investmentOptions';
+import { Indices } from '../../../enums/indices';
 
-interface TextForStepArray {
-  value: number;
+interface TextForStepArraySmall {
+  value: string|number;
   header: string;
   text: string;
+}
+
+interface TextForStepArray extends TextForStepArraySmall {
+  value: number;
   yield: string;
 }
 @Component({
@@ -25,6 +31,21 @@ interface TextForStepArray {
 })
 export class SparplanMusterComponent implements OnInit, OnChanges {
 
+  public InvestmentOptions = InvestmentOptions;
+  public selectedInvestmentOption: string|null;
+  public investmentOptions: TextForStepArraySmall[] = [
+    {
+      value: InvestmentOptions.CLEAN,
+      header: 'Nachhaltigkeites Investment',
+      text: 'Ich möchte ETFs kaufen, die in nachhaltige Unternehmen investieren',
+    },
+    {
+      value: InvestmentOptions.CLASSIC,
+      header: 'Klassiches Investment',
+      text: 'Ich möchte ETFS kaufen, die in Unternehmen (oder Staaten) ' +
+        'investieren ohne dabei unbedingt auf die Nachhaltigkeit zu achten.',
+    }
+  ];
   public value: number;
   public etfs: Etf[];
   public sparplanMuster: AmountOfItem[];
@@ -62,15 +83,15 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   constructor(public sparplanService: SparplanService,
               public priceService: PriceService,
               private store: Store<fromRoot.AppState>) {
-    this.value = -1;
+    this.restart();
     this.etfs = [];
     this.sparplanMuster = [];
-    this.showSlider = false;
     this.changedSparplanManually = false;
   }
 
   ngOnInit() {
     this.sparplanSum$ = this.store.pipe(select(fromRoot.getSparplanSum));
+    this.sparplanSum$.subscribe((x:any) => console.log('OOOOOO ; ', x));
     this.reset();
   }
 
@@ -80,18 +101,34 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
     }
   }
 
+  restart() {
+    this.selectedInvestmentOption = null;
+    this.value = -1;
+    this.showSlider = false;
+  }
+
   reset() {
     this.setPortfolio();
     this.setSparplan();
   }
 
-  setOption(x: number) {
+  setInvestmentOption(x: string) {
+    this.showSlider = false;
+    this.selectedInvestmentOption = x;
+    this.reset();
+  }
+
+  setRiskAppetite(x: number) {
     this.showSlider = false;
     this.value = x;
     this.reset();
   }
 
   setPortfolio() {
+    if (this.selectedInvestmentOption === InvestmentOptions.CLEAN) {
+      this.etfs = Etfs.filter((etf: Etf) => etf.tracks === Indices.DowJonesSustainabilityEurozone);
+      return;
+    }
     switch (this.value) {
       case 0:
         this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond);
@@ -101,14 +138,12 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
           || etf.contains === SecurityType.CorpBond);
         break;
       case 50:
-        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond
-          || etf.contains === SecurityType.CorpBond
-          || etf.name.toLowerCase().indexOf(' dax') > -1
+        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.CorpBond
           || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1);
         break;
       case 75:
         this.etfs = Etfs.filter((etf: Etf) => etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
-          || etf.name.toLowerCase().indexOf('dax') > -1);
+          || etf.name.toLowerCase().indexOf('mdax') > -1);
         break;
       default:
         break;
@@ -136,6 +171,10 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   updateSavingrate(savingRate: number, etf: AmountOfItem) {
+    console.log('savingRate: ', savingRate);
+    if (isNaN(savingRate)) {
+      return;
+    }
     this.changedSparplanManually = true;
     let newSum = 0;
     this.sparplanMuster.map((x: AmountOfItem) => {

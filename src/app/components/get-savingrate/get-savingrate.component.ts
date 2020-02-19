@@ -30,6 +30,7 @@ export class GetSavingrateComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+    console.log('this.sparplanSum : ', this.sparplanSum);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -37,6 +38,7 @@ export class GetSavingrateComponent implements OnInit, OnChanges {
       (changes.sparplanSum && changes.sparplanSum.currentValue) ||
       (changes.noOfSecurities && changes.noOfSecurities.currentValue)) {
       // amount is initially null if the item is an ETF
+      console.log('this.fav.savingRate : ', this.fav.savingRate);
       if (!this.fav.savingRate) {
         this.calculateSum();
       } else {
@@ -46,11 +48,17 @@ export class GetSavingrateComponent implements OnInit, OnChanges {
   }
 
   calculateSum() {
+    console.log('calculating sum with sparplansum being ', this.sparplanSum);
     this.currentAmount = this.sparplanSum * ((100 / this.noOfSecurities) / 100);
-    this.doEmit(this.currentAmount);
+    if (!isNaN(this.currentAmount) && this.currentAmount !== this.sparplanSum) {
+      this.doEmit(this.currentAmount);
+    } else {
+      this.currentAmount = 0;
+    }
   }
 
   doEmit(anzahl: number) {
+    console.log('anzahl : ', anzahl, isNaN(anzahl));
     this.numberChanged.emit(anzahl);
   }
 

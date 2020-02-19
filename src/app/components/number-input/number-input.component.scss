@@ -1,0 +1,18 @@
+:host {
+  input {
+    border-top: 0;
+    border-bottom: 2px solid blue;
+    height: 50px;
+  }
+  .input-group-text {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .btn {
+    height: 50px;
+    margin-top: 0px;
+  }
+  .unit {
+    line-height: 50px;
+  }
+}

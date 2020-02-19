@@ -17,9 +17,10 @@
              (keyup.enter)="changeAnzahl()"
       >
       <div class="input-group-append">
-        <div class="input-group-text" (click)="increase()">{{unit}} +</div>
+        <div class="input-group-text" (click)="increase()">+</div>
       </div>
-      <button class="btn btn-primary" (click)="changeAnzahl()">OK</button>
+      <div class="unit margin horizontal left-5">{{unit}}</div>
+      <button class="btn btn-primary margin horizontal left-5" (click)="changeAnzahl()">OK</button>
     </div>
   </div>
   

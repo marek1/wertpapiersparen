@@ -1,29 +1,58 @@
+
 <div class="home row">
+
+  <ng-container *ngIf="(value >= 0 || selectedInvestmentOption === InvestmentOptions.CLEAN)">
   
-  <ng-container *ngIf="value >= 0">
     <div class="col-12 margin vertical top-bottom-10">
-      <div class="">
-        Ändere deine
-        <span class="btn-link clickable" (click)="showSlider=!showSlider">
-          Risikobereitschaft
-          <span class="fa fa-arrow-circle-down" *ngIf="!showSlider"></span>
-          <span class="fa fa-arrow-circle-up" *ngIf="showSlider"></span>
-        </span>
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          Ändere deine
+          <span class="btn-link clickable" (click)="restart()">
+            Investmententscheidung
+            <span class="fa fa-arrow-circle-down" *ngIf="!showSlider"></span>
+            <span class="fa fa-arrow-circle-up" *ngIf="showSlider"></span>
+          </span>
+        </div>
+        <div class="col-sm-6 col-12 text-right">
+          <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
+        </div>
       </div>
     </div>
   </ng-container>
   
-  <ng-container *ngIf="value < 0 || showSlider">
-  
-    <div class="col-12 margin vertical top-bottom-10">
+  <ng-container *ngIf="value < 0 || selectedInvestmentOption === null">
+    
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="selectedInvestmentOption === null">
+      <h5>
+        Wähle deine Investmentstrategie
+      </h5>
+      <div class="row margin vertical top-bottom-10">
+        <div class="col-sm-6" *ngFor="let x of investmentOptions">
+          <div class="card {{x.value === selectedInvestmentOption ? 'background-grey' : ''}}" (click)="setInvestmentOption(x.value)">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{x.header}}
+                <span *ngIf="x.value === InvestmentOptions.CLEAN" class="fa fa-leaf color color--green"></span>
+              </h5>
+              <div>
+                {{x.text}}
+              </div>
+              <div class="text-right">
+                <span class="btn btn-primary">Passt zu mir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="selectedInvestmentOption === InvestmentOptions.CLASSIC">
       <h5>
         Wähle deine Risikobereitschaft
       </h5>
-    </div>
-    <div class="col-12 margin vertical top-bottom-10">
       <div class="row margin vertical top-bottom-10">
         <div class="col-sm-6" *ngFor="let x of textForStepArray|slice:0:2">
-          <div class="card {{x.value === value ? 'background-grey' : ''}}" (click)="setOption(x.value)">
+          <div class="card {{x.value === value ? 'background-grey' : ''}}" (click)="setRiskAppetite(x.value)">
             <div class="card-body">
               <h5 class="card-title">{{x.header}}</h5>
               <div>
@@ -41,7 +70,7 @@
       </div>
       <div class="row margin vertical top-bottom-10">
         <div class="col-sm-6"  *ngFor="let x of textForStepArray|slice:2:4">
-          <div class="card {{x.value === value ? 'background-grey' : ''}}" (click)="setOption(x.value)">
+          <div class="card {{x.value === value ? 'background-grey' : ''}}" (click)="setRiskAppetite(x.value)">
             <div class="card-body">
               <h5 class="card-title">{{x.header}}</h5>
               <div>
@@ -61,7 +90,7 @@
     
   </ng-container>
   
-  <ng-container *ngIf="value >= 0">
+  <ng-container *ngIf="value >= 0 || selectedInvestmentOption === InvestmentOptions.CLEAN">
     
     <div class="col-12 margin vertical top-bottom-10" *ngIf="!this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)">
       <div class="alert alert-danger" role="alert">
@@ -69,18 +98,20 @@
       </div>
     </div>
     <div class="col-12 margin vertical top-bottom-10">
-      <div class="row">
-        <div class="col-sm-6 col-12">
-          <div class="alert alert-info">
-            Ausgehend von <span class="font-weight-bold">{{getHeaderRisk()}}</span>
-            und einer gesamten Sparplansumme von
-            <span class="font-weight-bold">{{sparplanSum$|async}} {{Currency.EUR}}</span>
-            wurde folgendes Portfolio aus ETFs zusammengestellt.
-          </div>
-        </div>
-        <div class="col-sm-6 col-12 text-right">
-          <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
-        </div>
+      <div class="alert alert-info">
+        Ausgehend von
+        <span *ngIf="selectedInvestmentOption !== InvestmentOptions.CLEAN" class="font-weight-bold">
+          {{getHeaderRisk()}}
+        </span>
+        <span *ngIf="selectedInvestmentOption === InvestmentOptions.CLEAN" class="font-weight-bold">
+          deiner Entscheidung nachhaltig  <span class="fa fa-leaf color color--green"></span> zu investieren
+        </span>
+        und einer gesamten Sparplansumme von
+        <span class="font-weight-bold">{{sparplanSum$|async}} {{Currency.EUR}}</span>
+        wurde folgendes Portfolio aus
+        <span *ngIf="sparplanMuster.length === 1">einem ETF</span>
+        <span *ngIf="sparplanMuster.length > 1">{{sparplanMuster.length}} ETFs</span>
+        zusammengestellt.
       </div>
     </div>
     <div class="col-12 margin vertical top-bottom-10">
