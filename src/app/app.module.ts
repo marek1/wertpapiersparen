@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -59,8 +59,11 @@ import { RichtigSparenComponent } from './components/richtig-sparen/richtig-spar
 import { ContentComponentComponent } from './components/content-component/content-component.component';
 import { SparplanSumComponent } from './components/sparplan/sparplan-sum/sparplan-sum.component';
 import { SparplanKonfiguratorComponent } from './components/sparplan/sparplan-konfigurator/sparplan-konfigurator.component';
+import { SparplanKostenPerItemComponent } from './components/sparplan/sparplan-kosten-per-item/sparplan-kosten-per-item.component';
 
 registerLocaleData(localeDe, 'de');
+
+const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 
 @NgModule({
   declarations: [
@@ -105,7 +108,8 @@ registerLocaleData(localeDe, 'de');
     RichtigSparenComponent,
     ContentComponentComponent,
     SparplanSumComponent,
-    SparplanKonfiguratorComponent
+    SparplanKonfiguratorComponent,
+    SparplanKostenPerItemComponent
   ],
   imports: [
     FormsModule,
@@ -135,7 +139,14 @@ registerLocaleData(localeDe, 'de');
     BasketService,
     PriceService,
     IndustryService,
-    SparplanService
+    SparplanService,
+    {
+      provide: externalUrlProvider,
+      useValue: (route: ActivatedRouteSnapshot) => {
+        const externalUrl = route.paramMap.get('externalUrl');
+        window.open(externalUrl, '_self');
+      },
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -121,7 +121,6 @@
         [totalPrice]="this.priceService.getNetSum(sparplanMuster, 'EUR')"
         [sparplanSum]="sparplanSum$|async"
         [percentagesAreCorrect]="this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)"
-        [showCosts]="false"
         [listItemCounter]="ind"
         [isTemplate]="true"
         (savingRateChanged)="updateSavingrate($event, etf)"

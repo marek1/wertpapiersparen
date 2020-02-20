@@ -52,29 +52,6 @@
 
   </div>
   <div class="col-12">
-    <!-- TODO: Put this into a separate component and get rid of showCosts -->
-    <div *ngIf="showCosts" class="card">
-      <div class="card-body">
-        <div *ngIf="fav.item['ter'] !== undefined">
-          Jährliche Kosten (TER):
-          <span class="font-weight-bold"> {{getYearlyCosts() | number:'1.2-2':'de'}} {{fav.item.currency}} </span>
-          ({{ fav.item.ter | number:'1.2-2':'de' }} %)
-        </div>
-        <div>
-          Kosten bei (monatlichen) Ausführung des Sparplans bei
-        </div>
-        <div *ngFor="let broker of sparplanBroker">
-          <div class="alert alert-info" *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1">
-            {{broker.name}}:
-            <span *ngIf="broker.minAmountPerSavingPlan > fav.savingRate">
-              <span class="color color--red">Minimum-Sparrate von {{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}} nicht erreicht</span>
-            </span>
-            <span *ngIf="broker.minAmountPerSavingPlan <= fav.savingRate">
-              <app-sparplan-kosten-per-broker [broker]="broker" [savingRate]="fav.savingRate"></app-sparplan-kosten-per-broker>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-sparplan-kosten-per-item [fav]="fav"></app-sparplan-kosten-per-item>
   </div>
 </div>

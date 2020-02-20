@@ -23,7 +23,6 @@ export class SecurityListItemComponent implements OnInit {
   @Input() totalPrice: number;
   @Input() sparplanSum: number;
   @Input() percentagesAreCorrect: boolean;
-  @Input() showCosts: boolean;
   @Input() listItemCounter: number;
   @Input() isTemplate: boolean;
   @Output() savingRateChanged = new EventEmitter<number>();
@@ -31,13 +30,11 @@ export class SecurityListItemComponent implements OnInit {
   public favouredSecuritiesIdList$: Observable<number[]>;
   public SecurityType = SecurityType;
   public Currency = Currency;
-  public sparplanBroker = SavingplanBroker;
   public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
   constructor(private store: Store<fromRoot.AppState>) { }
 
   ngOnInit() {
-    console.log('sparplanSum : ', this.sparplanSum);
     this.favouredSecuritiesIdList$ = this.store.pipe(select(fromRoot.getFavouredSecuritiesAsList));
   }
 
@@ -48,7 +45,6 @@ export class SecurityListItemComponent implements OnInit {
   }
 
   updateSavingRate(savingRate: number, item: Etf|Company ) {
-    console.log('savingRate: ', savingRate, isNaN(savingRate));
     if (isNaN(savingRate)) {
       return;
     }
@@ -58,7 +54,4 @@ export class SecurityListItemComponent implements OnInit {
     this.savingRateChanged.emit(savingRate);
   }
 
-  getYearlyCosts() {
-    return this.fav.savingRate * this.fav.item.ter;
-  }
 }

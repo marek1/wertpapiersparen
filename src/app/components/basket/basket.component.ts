@@ -35,7 +35,6 @@ export class BasketComponent implements OnInit {
   public SecurityType = SecurityType;
   public sparplanSum$: Observable<number>;
   public chartExpanded: boolean;
-  public showCosts: boolean;
 
   public Currency = Currency;
   public ROUTES_SAVING_PLAN_COSTS = ROUTES_SAVING_PLAN_COSTS;
@@ -51,7 +50,6 @@ export class BasketComponent implements OnInit {
     this.tabs = [];
     this.performanceYears = this.helperService.enumToArray(Performances);
     this.chartExpanded = false;
-    this.showCosts = false;
   }
 
   ngOnInit() {

@@ -25,13 +25,6 @@
         <span *ngIf="favouredSecurities.length===1">Dein Sparplan</span>
         <span *ngIf="favouredSecurities.length>1">Deine Sparpläne</span>
       </div>
-      <div>
-        <span class="btn-link clickable small" (click)="showCosts=!showCosts">
-          Jeweilige Sparplaninformation(en)
-          <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
-          <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
-        </span>
-      </div>
     </div>
     <ul class="list-group" *ngIf="favouredSecurities.length > 0">
       <li class="list-group-item" *ngFor="let fav of favouredSecurities; let ind = index">
@@ -40,7 +33,6 @@
           [totalPrice]="totalPrice"
           [sparplanSum]="sparplanSum$|async"
           [percentagesAreCorrect]="this.sparplanService.addsUptoSparplanSum(favouredSecurities, sparplanSum$|async)"
-          [showCosts]="showCosts"
           [listItemCounter]="ind"
           [isTemplate]="false"
         >
