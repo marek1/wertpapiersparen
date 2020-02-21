@@ -13,6 +13,8 @@ import { BasketActions } from '../../../actions';
 import { ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
 import { InvestmentOptions } from '../../../enums/investmentOptions';
 import { Indices } from '../../../enums/indices';
+import { RiskDefinition, RiskDefinitions } from '../../../data/riskDefinitions';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 interface TextForStepArraySmall {
   value: string|number;
@@ -55,26 +57,22 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   public Currency = Currency;
   public textForStepArray: TextForStepArray[] = [
     {
-      value: 0,
-      header: 'Keine Risikobereitschaft',
+      ...RiskDefinitions.filter((x: RiskDefinition) => x.value === 0)[0],
       text: 'Ich vertrage nur das geringstmöglichste Risiko',
       yield: 'Dich erwarten vielleicht 1-2 % Rendite pro Jahr.'
     },
     {
-      value: 25,
-      header: 'Geringe Risikobereitschaft',
+      ...RiskDefinitions.filter((x: RiskDefinition) => x.value === 25)[0],
       text: 'Ich vertrage nur ein klein wenig Risiko',
       yield: 'Dich erwarten 2-3 % Rendite pro Jahr.'
     },
     {
-      value: 50,
-      header: 'Gewisse Risikobereitschaft',
+      ...RiskDefinitions.filter((x: RiskDefinition) => x.value === 50)[0],
       text: 'Ich kann Risiko ertragen.',
       yield: 'Dich könnte eine Rendite von 3-5 % pro Jahr erwarten.'
     },
     {
-      value: 75,
-      header: 'Hohe Risikobereitschaft',
+      ...RiskDefinitions.filter((x: RiskDefinition) => x.value === 75)[0],
       text: 'Ich bin keineswegs risikoscheu.',
       yield: 'Dich könnte eine Rendite über 5 % pro Jahr erwarten.'
     }

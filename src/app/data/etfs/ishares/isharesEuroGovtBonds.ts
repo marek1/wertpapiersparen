@@ -3,6 +3,7 @@ import { Etf } from '../../../interfaces/etf';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Country } from '../../../enums/country';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-20': {
@@ -813,6 +814,8 @@ export const isharesEuroGovtBonds: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251740/ishares-euro-government-bond-ucits-etf',
   isin: 'IE00B4WXJJ64',
   symbol: 'EUNH.DE',
+  riskClass: 25, //RiskClasses.Keine,
+  isGreen: false,
   smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',

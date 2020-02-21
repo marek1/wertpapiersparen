@@ -5,6 +5,7 @@ import { findCompaniesInIndex } from '../../companies';
 import { Indices } from '../../../enums/indices';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 import { SecurityType } from '../../../enums/securityType';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-03': {
@@ -1026,6 +1027,8 @@ export const isharesDax: Etf = {
   securityType: SecurityType.ETF,
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251464/',
   isin: 'DE0005933931',
+  riskClass: RiskClasses.Hohe,
+  isGreen: false,
   symbol: 'EXS1.DE',
   smallestTradeableUnit: 1,
   currency: Currency.EUR,

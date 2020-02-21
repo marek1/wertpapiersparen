@@ -1,6 +1,7 @@
 import { Currency } from '../enums/currencies';
 import { Country } from '../enums/country';
 import { SecurityType } from '../enums/securityType';
+import { RiskClasses } from '../enums/riskClasses';
 
 export interface CompanyShort {
   id: number;
@@ -27,6 +28,8 @@ export interface Etf {
   url: string;
   isin: string;
   symbol: string;
+  riskClass: RiskClasses;
+  isGreen: boolean;
   smallestTradeableUnit: number;
   currency: Currency;
   manager: string;

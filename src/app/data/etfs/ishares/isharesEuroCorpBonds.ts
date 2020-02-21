@@ -3,6 +3,7 @@ import { Etf } from '../../../interfaces/etf';
 import { SecurityType } from '../../../enums/securityType';
 import { Currency } from '../../../enums/currencies';
 import { Country } from '../../../enums/country';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-20': {
@@ -855,6 +856,8 @@ export const isharesEuroCorpBonds: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251726/ishares-euro-corporate-bond-ucits-etf',
   isin: 'IE00B3F81R35',
   symbol: 'EUN5.DE',
+  riskClass: RiskClasses.Gering,
+  isGreen: false,
   smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',

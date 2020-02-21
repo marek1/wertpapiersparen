@@ -3,6 +3,7 @@ import { Currency } from '../../../enums/currencies';
 import { Country } from '../../../enums/country';
 import { SecurityType } from '../../../enums/securityType';
 import { isharesCOREMsciWorldUSDThesaurierend } from './isharesCOREMsciWorldUSDThesaurierend';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-29': {

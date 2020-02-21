@@ -5,6 +5,7 @@ import { Country } from '../../../enums/country';
 import { Indices } from '../../../enums/indices';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 import { SecurityType } from '../../../enums/securityType';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-03': {
@@ -1033,6 +1034,8 @@ export const isharesTecdax: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251975/',
   isin: 'DE0005933972',
   symbol: 'EXS2.DE',
+  riskClass: RiskClasses.Hohe,
+  isGreen: false,
   smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',

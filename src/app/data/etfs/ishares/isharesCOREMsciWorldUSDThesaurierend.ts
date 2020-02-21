@@ -5,6 +5,7 @@ import { SecurityType } from '../../../enums/securityType';
 import { Indices } from '../../../enums/indices';
 import { findCompaniesInIndex } from '../../companies';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-29': {
@@ -824,6 +825,8 @@ export const isharesCOREMsciWorldUSDThesaurierend: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251882/ishares-msci-world-ucits-etf-acc-fund',
   isin: 'IE00B4L5Y983',
   symbol: 'EUNL.DE',
+  riskClass: RiskClasses.Gewisse,
+  isGreen: false,
   smallestTradeableUnit: 1,
   currency: Currency.USD,
   manager: 'BlackRock Asset Management Ireland Limited',

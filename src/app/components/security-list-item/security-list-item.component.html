@@ -17,10 +17,10 @@
   </div>
   <div class="col-12">
     <a *ngIf="fav.item.securityType!==SecurityType.ETF" class="" [routerLink]="['/' + ROUTE_COMPANIES, fav.item.name, fav.item.id]">
-      <span class="badge badge-yellow">Aktie</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
+      <span class="badge badge-primary">Aktie</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
     </a>
     <a *ngIf="fav.item.securityType===SecurityType.ETF" class="" [routerLink]="['/etf', fav.item.name, fav.item.isin]">
-      <span class="badge badge-green">ETF</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
+      <span class="badge badge-secondary">ETF</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
     </a>
     <div class="float-right">
       <app-add-to-sparplan [version]="'short'" [company]="fav.item"></app-add-to-sparplan>
@@ -29,6 +29,9 @@
   <div class="col-12">
     <ng-container *ngIf="fav.item.securityType === SecurityType.ETF">
       <div class="small">
+        <ng-container *ngIf="fav.item.isGreen">
+          Der ETF investiert in Unternehmen, die etwas für Nachhaltigkeit <span class="fa fa-leaf color color--green"></span> tun.
+        </ng-container>
         <ng-container *ngIf="fav.item.contains !== undefined">
           Der ETF besteht hauptsächlich aus {{fav.item.contains + 'n'}}
         </ng-container>
@@ -45,13 +48,29 @@
           und weitere.
         </ng-container>
       </div>
+      <div class="small" *ngIf="fav.item.riskClass !== undefined">
+        Risikoklasse:
+        <span class="badge
+          {{fav.item.riskClass===RiskClasses.Keine ? 'badge-success' : ''}}
+          {{fav.item.riskClass===RiskClasses.Gering ? 'badge-yellow' : ''}}
+          {{fav.item.riskClass===RiskClasses.Gewisse ? 'badge-warning' : ''}}
+          {{fav.item.riskClass===RiskClasses.Hohe ? 'badge-danger' : ''}}">
+          {{getRiskClass(fav.item.riskClass)}}
+        </span>
+      </div>
     </ng-container>
     <ng-container *ngIf="fav.item.securityType !== SecurityType.ETF">
       <app-company-industries [company]="fav.item"></app-company-industries>
+      <div class="small">
+        Risikoklasse:
+        <span class="badge badge-danger">
+          {{getRiskClass(RiskClasses.Hohe)}}
+        </span>
+      </div>
     </ng-container>
 
   </div>
-  <div class="col-12">
+  <div class="col-12" *ngIf="!isTemplate">
     <app-sparplan-kosten-per-item [fav]="fav"></app-sparplan-kosten-per-item>
   </div>
 </div>

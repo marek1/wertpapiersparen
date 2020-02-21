@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 import { Currency } from '../../enums/currencies';
 import { ROUTE_COMPANIES } from '../../routes';
 import { Etfs } from '../../data/etfs';
+import { RiskDefinition, RiskDefinitions } from '../../data/riskDefinitions';
+import { RiskClasses } from '../../enums/riskClasses';
 
 @Component({
   selector: 'app-security-list-item',
@@ -31,6 +33,7 @@ export class SecurityListItemComponent implements OnInit {
   public SecurityType = SecurityType;
   public Currency = Currency;
   public ROUTE_COMPANIES = ROUTE_COMPANIES;
+  public RiskClasses = RiskClasses;
 
   constructor(private store: Store<fromRoot.AppState>) { }
 
@@ -52,6 +55,13 @@ export class SecurityListItemComponent implements OnInit {
       this.store.dispatch(BasketActions.updateFavourites({amount: null, savingRate, item}));
     }
     this.savingRateChanged.emit(savingRate);
+  }
+
+  getRiskClass(x: number) {
+    if (x === undefined) {
+      return;
+    }
+    return RiskDefinitions.filter((rD: RiskDefinition) => rD.value === x)[0].text;
   }
 
 }

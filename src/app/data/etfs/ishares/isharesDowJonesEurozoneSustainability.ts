@@ -4,6 +4,7 @@ import { Country } from '../../../enums/country';
 import { Indices } from '../../../enums/indices';
 import { SecurityType } from '../../../enums/securityType';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-03': {
@@ -1025,6 +1026,8 @@ export const isharesDowJonesEurozoneSustainability: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251706/ishares-dow-jones-eurozone-sustainability-screened-ucits-etf-de-fund',
   isin: 'DE000A0F5UG3',
   symbol: 'EXXV.DE',
+  riskClass: RiskClasses.Gewisse,
+  isGreen: true,
   smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',

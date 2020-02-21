@@ -5,6 +5,7 @@ import { findCompaniesInIndex } from '../../companies';
 import { Indices } from '../../../enums/indices';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 import { SecurityType } from '../../../enums/securityType';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-03': {
@@ -1600,6 +1601,8 @@ export const isharesEurostoxx50: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251783/',
   isin: 'DE0005933956',
   symbol: 'EXW1.DE',
+  riskClass: RiskClasses.Gewisse,
+  isGreen: false,
   smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',

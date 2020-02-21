@@ -5,6 +5,7 @@ import { Indices } from '../../../enums/indices';
 import { findCompaniesInIndex } from '../../companies';
 import { IsharesIndustryNames } from '../../../enums/isharesIndustryNames';
 import { SecurityType } from '../../../enums/securityType';
+import { RiskClasses } from '../../../enums/riskClasses';
 
 const prices = {
   '2020-01-03': {
@@ -1489,6 +1490,8 @@ export const isharesMdax: Etf = {
   url: 'https://www.ishares.com/de/privatanleger/de/produkte/251845/',
   isin: 'DE0005933923',
   symbol: 'EXS3.DE',
+  riskClass: RiskClasses.Hohe,
+  isGreen: false,
   smallestTradeableUnit: 1,
   currency: Currency.EUR,
   manager: 'BlackRock Asset Management Deutschland AG',

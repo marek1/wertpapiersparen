@@ -7,13 +7,21 @@
 </div>
 <div *ngIf="showCosts" class="card">
   <div class="card-body">
-    <div *ngIf="fav.item['ter'] !== undefined">
-      Jährliche Kosten (TER):
+    <div class="margin vertical top-bottom-10">
+      <h5>1. Jährliche Kosten:</h5>
+    </div>
+    <div *ngIf="fav.item.ter !== undefined">
+      Emmitent / Fondsanbieter (TER):
       <span class="font-weight-bold"> {{getYearlyCosts() | number:'1.2-2':'de'}} {{fav.item.currency}} </span>
       ({{ fav.item.ter | number:'1.2-2':'de' }} %)
     </div>
     <div>
-      Kosten bei (monatlichen) Ausführung des Sparplans bei
+      Depotbank: Eventuelle Depotgebühren
+    </div>
+    <div class="margin vertical top-bottom-10">
+      <h5>
+        2. Kosten bei monatlichen (oder einmaliger) Ausführung des Sparplans bei:
+      </h5>
     </div>
     <div *ngFor="let broker of sparplanBroker">
       <div class="alert alert-light clickable {{chosenBroker && chosenBroker.name === broker.name ? 'background-grey color color--white' : ''}}"
