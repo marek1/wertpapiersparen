@@ -58,4 +58,6 @@ export interface Company {
   contains?: SecurityType; // <-- only for AOT compiler
   countries?: Portion[]; // <-- only for AOT compiler
   ter?: any; // <-- only for AOT compiler
+  riskClass?: any; // <-- only for AOT compiler
+  isGreen?: any; // <-- only for AOT compiler
 }

@@ -14,9 +14,8 @@
   <div class="row" *ngIf="(favouredSecurities$|async) as favouredSecurities">
     <div class="col-12" *ngIf="favouredSecurities.length > 1">
       <div class="alert alert-warning" role="alert">
-        Zur Info: Die meisten Banken/Broker erlauben nur Sparpläne mit einen Wert.
-        Du müsstest also <span class="font-weight-bold">mehrere Sparpläne</span> eröffnen,
-        sprich für jedes Wertpapier 1 Sparplan.
+        Deine <span class="font-weight-bold">gesamte Sparplansumme beträgt {{(sparplanSum$|async) | number:'1.2-2':'de'}} {{Currency.EUR}}</span>.
+        Diese wurde aufgeteilt auf mehrere Sparpläne, da Banken/Broker nur 1 Wertpapier pro Sparplan erlauben.
         <a [routerLink]="['/' + ROUTES_SAVING_PLAN_COSTS]">Mehr Informationen <span class="fa fa-arrow-circle-right"></span></a>
       </div>
     </div>

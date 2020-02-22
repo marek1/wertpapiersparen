@@ -70,11 +70,11 @@ export const reducer = createReducer(
   })),
   on(BasketActions.updateSparplanSum, (state, {sum}) =>  ({
     ...state,
-    items: [...state.items.map((com: AmountOfItem) => {
-      com = {...com,
-        savingRate: sum / state.items.length};
-      return com;
-    })],
+    // items: [...state.items.map((com: AmountOfItem) => {
+    //   com = {...com,
+    //     savingRate: sum / state.items.length};
+    //   return com;
+    // })],
     sparplanSum: sum
   })),
 );

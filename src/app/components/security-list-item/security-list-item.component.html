@@ -22,7 +22,7 @@
     <a *ngIf="fav.item.securityType===SecurityType.ETF" class="" [routerLink]="['/etf', fav.item.name, fav.item.isin]">
       <span class="badge badge-secondary">ETF</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
     </a>
-    <div class="float-right">
+    <div class="float-right" *ngIf="!isTemplate">
       <app-add-to-sparplan [version]="'short'" [company]="fav.item"></app-add-to-sparplan>
     </div>
   </div>
