@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment';
 import * as fromCompanies from './companies.reducer';
 import * as fromEtfs from './etfs.reducer';
 import * as fromBasket from './basket.reducer';
+import * as fromMuster from './muster.reducer';
 import { InjectionToken } from '@angular/core';
 
 /**
@@ -21,6 +22,7 @@ export interface AppState {
   [fromCompanies.featureKey]: fromCompanies.State;
   [fromEtfs.featureKey]: fromEtfs.State;
   [fromBasket.featureKey]: fromBasket.State;
+  [fromMuster.featureKey]: fromMuster.State;
 }
 
 /**
@@ -32,7 +34,8 @@ export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Actio
   factory: () => ({
     [fromCompanies.featureKey]: fromCompanies.reducer,
     [fromEtfs.featureKey]: fromEtfs.reducer,
-    [fromBasket.featureKey]: fromBasket.reducer
+    [fromBasket.featureKey]: fromBasket.reducer,
+    [fromMuster.featureKey]: fromMuster.reducer
   })
 });
 
@@ -131,4 +134,22 @@ export const getSelectedTab = createSelector(
 export const getSparplanSum = createSelector(
   selectBasketState,
   fromBasket.getSparplanSum
+);
+
+/**
+ * Muster
+ */
+
+export const selectMusterState = createFeatureSelector<AppState, fromMuster.State>(
+  fromMuster.featureKey
+);
+
+export const getSelectedInvestmentOption = createSelector(
+  selectMusterState,
+  fromMuster.getSelectedInvestmentOption
+);
+
+export const getSelectedRiskProfile = createSelector(
+  selectMusterState,
+  fromMuster.getSelectedRiskProfile
 );

@@ -1,7 +1,6 @@
-
 <div class="home row">
-
-  <ng-container *ngIf="(value >= 0 || selectedInvestmentOption === InvestmentOptions.CLEAN)">
+  
+  <ng-container *ngIf="((selectedRiskProfile$|async) !== null || (selectedInvestmentOption$|async) === InvestmentOptions.CLEAN)">
   
     <div class="col-12 margin vertical top-bottom-10">
       <div class="row">
@@ -20,15 +19,15 @@
     </div>
   </ng-container>
   
-  <ng-container *ngIf="value < 0 || selectedInvestmentOption === null">
+  <ng-container *ngIf="(selectedRiskProfile$|async) === null || (selectedInvestmentOption$|async) === null">
     
-    <div class="col-12 margin vertical top-bottom-10" *ngIf="selectedInvestmentOption === null">
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="(selectedInvestmentOption$|async) === null">
       <h5>
         Wähle deine Investmentstrategie
       </h5>
       <div class="row margin vertical top-bottom-10">
         <div class="col-sm-6" *ngFor="let x of investmentOptions">
-          <div class="card {{x.value === selectedInvestmentOption ? 'background-grey' : ''}}" (click)="setInvestmentOption(x.value)">
+          <div class="card {{x.value === (selectedInvestmentOption$|async) ? 'background-grey' : ''}}" (click)="setInvestmentOption(x.value)">
             <div class="card-body">
               <h5 class="card-title">
                 {{x.header}}
@@ -46,13 +45,13 @@
       </div>
     </div>
     
-    <div class="col-12 margin vertical top-bottom-10" *ngIf="selectedInvestmentOption === InvestmentOptions.CLASSIC">
+    <div class="col-12 margin vertical top-bottom-10" *ngIf="(selectedInvestmentOption$|async) === InvestmentOptions.CLASSIC">
       <h5>
         Wähle deine Risikobereitschaft
       </h5>
       <div class="row margin vertical top-bottom-10">
         <div class="col-sm-6" *ngFor="let x of textForStepArray|slice:0:2">
-          <div class="card {{x.value === value ? 'background-grey' : ''}}" (click)="setRiskAppetite(x.value)">
+          <div class="card {{x.value === (selectedRiskProfile$|async) ? 'background-grey' : ''}}" (click)="setRiskAppetite(x.value)">
             <div class="card-body">
               <h5 class="card-title">{{x.header}}</h5>
               <div>
@@ -70,7 +69,7 @@
       </div>
       <div class="row margin vertical top-bottom-10">
         <div class="col-sm-6"  *ngFor="let x of textForStepArray|slice:2:4">
-          <div class="card {{x.value === value ? 'background-grey' : ''}}" (click)="setRiskAppetite(x.value)">
+          <div class="card {{x.value === (selectedRiskProfile$|async) ? 'background-grey' : ''}}" (click)="setRiskAppetite(x.value)">
             <div class="card-body">
               <h5 class="card-title">{{x.header}}</h5>
               <div>
@@ -90,7 +89,7 @@
     
   </ng-container>
   
-  <ng-container *ngIf="value >= 0 || selectedInvestmentOption === InvestmentOptions.CLEAN">
+  <ng-container *ngIf="(selectedRiskProfile$|async) !== null || (selectedInvestmentOption$|async) === InvestmentOptions.CLEAN">
     
     <div class="col-12 margin vertical top-bottom-10" *ngIf="!this.sparplanService.addsUptoSparplanSum(sparplanMuster, sparplanSum$|async)">
       <div class="alert alert-danger" role="alert">
@@ -100,10 +99,10 @@
     <div class="col-12 margin vertical top-bottom-10">
       <div class="alert alert-info">
         Ausgehend von
-        <span *ngIf="selectedInvestmentOption !== InvestmentOptions.CLEAN" class="font-weight-bold">
+        <span *ngIf="(selectedInvestmentOption$|async) !== InvestmentOptions.CLEAN" class="font-weight-bold">
           {{getHeaderRisk()}}
         </span>
-        <span *ngIf="selectedInvestmentOption === InvestmentOptions.CLEAN" class="font-weight-bold">
+        <span *ngIf="(selectedInvestmentOption$|async) === InvestmentOptions.CLEAN" class="font-weight-bold">
           deiner Entscheidung nachhaltig  <span class="fa fa-leaf color color--green"></span> zu investieren
         </span>
         und einer gesamten Sparplansumme von

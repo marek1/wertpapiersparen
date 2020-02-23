@@ -9,12 +9,12 @@ import { SparplanService } from '../../../services/sparplan.service';
 import { AmountOfItem } from '../../../reducers/basket.reducer';
 import { PriceService } from '../../../services/price.service';
 import { Currency } from '../../../enums/currencies';
-import { BasketActions } from '../../../actions';
+import { BasketActions, MusterActions } from '../../../actions';
 import { ROUTES_SAVING_PLAN_COSTS } from '../../../routes';
 import { InvestmentOptions } from '../../../enums/investmentOptions';
 import { Indices } from '../../../enums/indices';
 import { RiskDefinition, RiskDefinitions } from '../../../data/riskDefinitions';
-import { RiskClasses } from '../../../enums/riskClasses';
+import { combineAll, concatMap } from 'rxjs/operators';
 
 interface TextForStepArraySmall {
   value: string|number;
@@ -34,7 +34,7 @@ interface TextForStepArray extends TextForStepArraySmall {
 export class SparplanMusterComponent implements OnInit, OnChanges {
 
   public InvestmentOptions = InvestmentOptions;
-  public selectedInvestmentOption: string|null;
+  public selectedInvestmentOption$: Observable<string|null>;
   public investmentOptions: TextForStepArraySmall[] = [
     {
       value: InvestmentOptions.CLEAN,
@@ -48,7 +48,7 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
         'investieren ohne dabei unbedingt auf die Nachhaltigkeit zu achten.',
     }
   ];
-  public value: number;
+  public selectedRiskProfile$: Observable<number>;
   public etfs: Etf[];
   public sparplanMuster: AmountOfItem[];
   public sparplanSum$: Observable<number>;
@@ -81,15 +81,16 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   constructor(public sparplanService: SparplanService,
               public priceService: PriceService,
               private store: Store<fromRoot.AppState>) {
-    this.restart();
+    // this.restart();
     this.etfs = [];
     this.sparplanMuster = [];
     this.changedSparplanManually = false;
   }
 
   ngOnInit() {
+    this.selectedInvestmentOption$ = this.store.pipe((select(fromRoot.getSelectedInvestmentOption)));
+    this.selectedRiskProfile$ = this.store.pipe(select(fromRoot.getSelectedRiskProfile));
     this.sparplanSum$ = this.store.pipe(select(fromRoot.getSparplanSum));
-    this.sparplanSum$.subscribe((x:any) => console.log('OOOOOO ; ', x));
     this.reset();
   }
 
@@ -100,8 +101,7 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   restart() {
-    this.selectedInvestmentOption = null;
-    this.value = -1;
+    this.store.dispatch(MusterActions.setSelectedInvestmentOption({selectedInvestmentOption: null}));
     this.showSlider = false;
   }
 
@@ -110,42 +110,48 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
     this.setSparplan();
   }
 
-  setInvestmentOption(x: string) {
+  setInvestmentOption(x: string|null) {
     this.showSlider = false;
-    this.selectedInvestmentOption = x;
+    this.store.dispatch(MusterActions.setSelectedInvestmentOption({selectedInvestmentOption: x}));
     this.reset();
   }
 
   setRiskAppetite(x: number) {
     this.showSlider = false;
-    this.value = x;
+    this.store.dispatch(MusterActions.setSelectedRiskProfile({selectedRiskProfile: x}));
     this.reset();
   }
 
   setPortfolio() {
-    if (this.selectedInvestmentOption === InvestmentOptions.CLEAN) {
-      this.etfs = Etfs.filter((etf: Etf) => etf.tracks === Indices.DowJonesSustainabilityEurozone);
-      return;
-    }
-    switch (this.value) {
-      case 0:
-        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond);
-        break;
-      case 25:
-        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond
-          || etf.contains === SecurityType.CorpBond);
-        break;
-      case 50:
-        this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.CorpBond
-          || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1);
-        break;
-      case 75:
-        this.etfs = Etfs.filter((etf: Etf) => etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
-          || etf.name.toLowerCase().indexOf('mdax') > -1);
-        break;
-      default:
-        break;
-    }
+    this.selectedInvestmentOption$.subscribe((selectedInvestmentOption: string|null) => {
+      console.log('selectedInvestmentOption : ', selectedInvestmentOption);
+      if (selectedInvestmentOption === InvestmentOptions.CLEAN) {
+        this.etfs = Etfs.filter((etf: Etf) => etf.tracks === Indices.DowJonesSustainabilityEurozone);
+      } else {
+        this.selectedRiskProfile$.subscribe((selectedRiskProfile: number | null) => {
+          console.log('selectedRiskProfile : ', selectedRiskProfile);
+          switch (selectedRiskProfile) {
+            case 0:
+              this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond);
+              break;
+            case 25:
+              this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.GovtBond
+                || etf.contains === SecurityType.CorpBond);
+              break;
+            case 50:
+              this.etfs = Etfs.filter((etf: Etf) => etf.contains === SecurityType.CorpBond
+                || etf.name.toLowerCase().indexOf('euro stoxx 50') > -1);
+              break;
+            case 75:
+              this.etfs = Etfs.filter((etf: Etf) => etf.name.toLowerCase().indexOf('euro stoxx 50') > -1
+                || etf.name.toLowerCase().indexOf('mdax') > -1);
+              break;
+            default:
+              break;
+          }
+        });
+      }
+    });
   }
 
   setSparplan() {
@@ -169,7 +175,6 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   updateSavingrate(savingRate: number, etf: AmountOfItem) {
-    console.log('savingRate: ', savingRate);
     if (isNaN(savingRate)) {
       return;
     }
@@ -196,6 +201,6 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   }
 
   getHeaderRisk() {
-    return this.textForStepArray.filter((x: TextForStepArray) => x.value === this.value)[0].header;
+    return ''; // this.textForStepArray.filter((x: TextForStepArray) => x.value === this.selectedRiskProfile)[0].header;
   }
 }
