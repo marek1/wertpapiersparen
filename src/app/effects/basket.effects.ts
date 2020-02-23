@@ -9,6 +9,8 @@ import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AmountOfItem } from '../reducers/basket.reducer';
 import { ADD_TO_FAVOURITIES } from '../actions/basket.actions';
+import { Router } from '@angular/router';
+import { ROUTE_MY_SAVING_PLAN_HOME, ROUTE_SAVING_PLAN_HOME } from '../routes';
 
 @Injectable()
 export class BasketEffects {
@@ -41,7 +43,9 @@ export class BasketEffects {
           console.log('action : ', action);
           // @ts-ignore
           if (action.type !== undefined && action.type === ADD_TO_FAVOURITIES) {
-            window.alert('Das Wertpapier erfolgreich hinzugefügt');
+            if (window.confirm('Das Wertpapier erfolgreich zum Sparplan hinzugefügt. Möchtest du den Sparplan sehen?')) {
+              this.router.navigate(['/' + ROUTE_MY_SAVING_PLAN_HOME]);
+            }
           }
           return this.basketService.setBasket(itemList)
             .pipe(
@@ -88,6 +92,7 @@ export class BasketEffects {
   );
 
   constructor(
+    private router: Router,
     private actions$: Actions,
     private store: Store<fromRoot.AppState>,
     private basketService: BasketService

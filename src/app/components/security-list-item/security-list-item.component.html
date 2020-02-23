@@ -23,7 +23,7 @@
       <span class="badge badge-secondary">ETF</span> {{fav.item.name}} <span class="fa fa-arrow-circle-right"></span>
     </a>
     <div class="float-right" *ngIf="!isTemplate">
-      <app-add-to-sparplan [version]="'short'" [company]="fav.item"></app-add-to-sparplan>
+      <app-add-to-sparplan [version]="whichVersion" [company]="fav.item"></app-add-to-sparplan>
     </div>
   </div>
   <div class="col-12">

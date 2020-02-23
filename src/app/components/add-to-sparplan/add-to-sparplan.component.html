@@ -1,16 +1,16 @@
 <ng-container *ngIf="version === 'long'">
-  <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary" (click)="addToFavourites(company)">
+  <button *ngIf="(favouredSecuritiesIdList$|async).length === 0 || (favouredSecuritiesIdList$|async).indexOf(company.id) === -1" type="button" class="btn btn-primary btn-sm" (click)="addToFavourites(company)">
       Zu Sparplan hinzufügen
   </button>
   <ng-container *ngIf="(favouredSecuritiesIdList$|async).length > 0 && (favouredSecuritiesIdList$|async).indexOf(company.id) > -1">
-    <button  type="button" class="btn btn-danger" (click)="removeFromFavourites(company)">
+    <button  type="button" class="btn btn-secondary btn-sm" (click)="removeFromFavourites(company)">
       Aus Sparplan entfernen
     </button>
-    <div class="small">
-      <a class="clickable small btn-link" [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME">
-        <span class="fa fa-list"></span> Wertpapiersparplan ansehen
-      </a>
-    </div>
+<!--    <div class="small">-->
+<!--      <a class="clickable small btn-link" [routerLink]="'/' + ROUTE_MY_SAVING_PLAN_HOME">-->
+<!--        <span class="fa fa-list"></span> Wertpapiersparplan ansehen-->
+<!--      </a>-->
+<!--    </div>-->
   </ng-container>
 </ng-container>
 <ng-container *ngIf="version === 'short'">

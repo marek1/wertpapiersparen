@@ -27,6 +27,7 @@ export class SecurityListItemComponent implements OnInit {
   @Input() percentagesAreCorrect: boolean;
   @Input() listItemCounter: number;
   @Input() isTemplate: boolean;
+  @Input() whichVersion: 'short'|'long';
   @Output() savingRateChanged = new EventEmitter<number>();
 
   public favouredSecuritiesIdList$: Observable<number[]>;

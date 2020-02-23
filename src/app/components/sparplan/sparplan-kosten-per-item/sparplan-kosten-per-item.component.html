@@ -1,34 +1,38 @@
-<div>
-  <div class="btn-link clickable small" (click)="showCosts=!showCosts">
-      Kosten
-      <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>
-      <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>
-  </div>
-</div>
+<!--<div>-->
+<!--  <div class="btn-link clickable small" (click)="showCosts=!showCosts">-->
+<!--      Kosten-->
+<!--      <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>-->
+<!--      <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>-->
+<!--  </div>-->
+<!--</div>-->
 <div *ngIf="showCosts" class="card">
   <div class="card-body">
     <div class="margin vertical top-bottom-10">
       <h5>1. Jährliche Kosten:</h5>
     </div>
     <div *ngIf="fav.item.ter !== undefined">
-      Emmitent / Fondsanbieter (TER):
+      - Emmitent / Fondsanbieter (TER):
       <span class="font-weight-bold"> {{getYearlyCosts() | number:'1.2-2':'de'}} {{fav.item.currency}} </span>
       ({{ fav.item.ter | number:'1.2-2':'de' }} %)
     </div>
     <div>
-      Depotbank: Eventuelle Depotgebühren
+      - Depotbank: Eventuelle Depotgebühren, z.B. bei FlatEx
     </div>
     <div class="margin vertical top-bottom-10">
       <h5>
-        2. Kosten bei monatlichen (oder einmaliger) Ausführung des Sparplans bei:
+        2. Die Kosten bei monatlichen (oder einmaliger) Ausführung des Sparplans variieren bei den Banken/Brokern:
       </h5>
     </div>
     <div *ngFor="let broker of sparplanBroker">
       <div class="alert alert-light clickable {{chosenBroker && chosenBroker.name === broker.name ? 'background-grey color color--white' : ''}}"
          *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1"
          (click)="selectBroker(broker)">
-        {{broker.name}}:
         <div>
+          <img class="{{broker.name.toLowerCase().indexOf('flatex') > -1 ? 'background-black' : ''}}"
+               src="{{broker.logo}}">
+        </div>
+        <div>
+          {{broker.name}}:
           <span *ngIf="broker.minAmountPerSavingPlan > fav.savingRate">
             <span class="color color--red">Minimum-Sparrate von {{broker.minAmountPerSavingPlan}} {{broker.currencyOfSavingPlan}} nicht erreicht</span>
           </span>
@@ -37,7 +41,7 @@
           </span>
         </div>
         <div class="text-right">
-          <span class="btn btn-primary" *ngIf="!chosenBroker || chosenBroker.name !== broker.name">
+          <span class="btn btn-primary" *ngIf="(!chosenBroker || chosenBroker.name !== broker.name) && (broker.minAmountPerSavingPlan <= fav.savingRate)">
             Auswählen
           </span>
           <span *ngIf="chosenBroker && chosenBroker.name === broker.name">
@@ -53,5 +57,5 @@
   <div class="alert alert-danger" *ngIf="showCosts && !chosenBroker">
     Bitte wähle einen Broker bzw. eine Bank
   </div>
-  <button class="float-right btn btn-primary" *ngIf="!showCosts" (click)="showCosts=!showCosts">Broker auswählen</button>
+  <button class="float-right btn btn-primary" *ngIf="!showCosts" (click)="showCosts=!showCosts">Kosten anzeigen und Broker auswählen</button>
 </div>
