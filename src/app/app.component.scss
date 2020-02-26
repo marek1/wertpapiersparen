@@ -11,8 +11,17 @@
     }
   }
 }
-
-
+.home{
+  margin-bottom: 120px;
+}
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  background-color: #bfbfbf;
+  margin: 0 !important;
+  padding: 10px;
+  max-height: 120px;
+}
 .margin {
   &.vertical {
     &.top-bottom-10 {

@@ -38,12 +38,12 @@ export class SparplanMusterComponent implements OnInit, OnChanges {
   public investmentOptions: TextForStepArraySmall[] = [
     {
       value: InvestmentOptions.CLEAN,
-      header: 'Nachhaltigkeites Investment',
+      header: 'ETFs mit Fokus auf ESR (Nachhaltigkeit und sozialer Verantwortung) ',
       text: 'Ich möchte ETFs kaufen, die in nachhaltige Unternehmen investieren',
     },
     {
       value: InvestmentOptions.CLASSIC,
-      header: 'Klassiches Investment',
+      header: 'Klassische ETFs - ohne Fokus auf ESR Kriterien',
       text: 'Ich möchte ETFS kaufen, die in Unternehmen (oder Staaten) ' +
         'investieren ohne dabei unbedingt auf die Nachhaltigkeit zu achten.',
     }

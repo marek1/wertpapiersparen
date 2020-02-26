@@ -6,8 +6,8 @@
     <div class="card">
       <div class="card-body">
         <div class="card-title">
-          Top 10 im Bereich Nachhaltigkeit <span class="fa fa-leaf color color--green"></span>
-          und sozialer Verantwortung <span (click)="show.top10Good=!show.top10Good" class="fa fa-question-circle clickable"></span>
+          Top 10 im Bereich ESR (Nachhaltigkeit und sozialer Verantwortung) <span class="fa fa-leaf color color--green"></span>
+          <span (click)="show.top10Good=!show.top10Good" class="fa fa-question-circle clickable"></span>
           <div class="clickable alert alert-info alert-dismissible" *ngIf="show.top10Good">
             Hierbei wurden verschiedene <a [routerLink]="'/' + ROUTE_RANKING">Studien <span class="fa fa-arrow-circle-right"></span></a> einbezogen.
             <button (click)="show.top10Good=!show.top10Good" type="button" class="close" data-dismiss="alert" aria-label="Close">

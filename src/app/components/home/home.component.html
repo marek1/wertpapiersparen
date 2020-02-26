@@ -1,31 +1,47 @@
-<div class="jumbotron">
-  <h3>
-    Vorgesorgt!?
-  </h3>
-  <p class="lead">
-    Das Versorgungsniveau der künftigen Rentner werde
-    "ohne zusätzliche Altersvorsorge in den kommenden Jahren deutlich zurückgehen".
-  </p>
-  <p class="small">
-    Quelle:
-    <a href="https://www.sueddeutsche.de/karriere/rente-zeitung-regierung-raet-in-rentenbericht-zur-privaten-vorsorge-dpa.urn-newsml-dpa-com-20090101-161026-99-940200"
-       target="_blank">
-      Süddeutsche Zeitung
-    </a>
-  </p>
-  <hr class="my-4">
-  <p>
-    Ohne selbst vorzusorgen ist ein &quot;schönes&quot; Leben im hohen Alter nicht garantiert.
-    Daher ist es wichtig, daß du eine gewisse Summe ansparst. Und Ansparen ist nicht ganz einfach,
-    denn für Geld auf einem Konto oder Sparbuch bekommst du keine Zinsen mehr (im Gegenteil).
-    Wir zeigen dir einige Wege auf, wie du ansparen kannst und von Wertzuwächsen profitieren kannst,
-    z.B. mit einem <a [routerLink]="'/' + ROUTE_SAVING_PLAN_HOME">Wertpapiersparplan <span class="fa fa-question-circle"></span> </a>.
-  </p>
-  <p class="lead text-right">
-    <a [routerLink]="'/' + ROUTE_SAVING_PLAN_KONFIGURATOR" class="btn btn-primary">Erstelle direkt einen Sparplan</a>
-    oder
-    <a [routerLink]="'/' + ROUTES_RICHTIG_SPAREN" class="btn btn-secondary" href="#" role="button">
-      Lerne, wie du richtig ansparst
-    </a>
-  </p>
+<div class="home row">
+  
+  <div class="col-12 margin vertical top-bottom-10">
+    
+    <div class="card hero">
+      <div class="card-body text-center">
+        <div class="background-dark-grey opacity-75">
+          Das Versorgungsniveau der künftigen Rentner werde
+          "ohne zusätzliche Altersvorsorge in den kommenden Jahren deutlich zurückgehen".
+          <div class="small">
+            Quelle:
+            <a href="https://www.sueddeutsche.de/karriere/rente-zeitung-regierung-raet-in-rentenbericht-zur-privaten-vorsorge-dpa.urn-newsml-dpa-com-20090101-161026-99-940200"
+               target="_blank">
+              Süddeutsche Zeitung
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="col-12 margin vertical top-bottom-10">
+  
+    <h4>
+      Vorgesorgt?!?
+    </h4>
+    <p>
+      Ohne selbst vorzusorgen ist ein &quot;schönes&quot; Leben im hohen Alter nicht garantiert.
+      Daher ist es wichtig, daß du eine gewisse Summe ansparst. Und Ansparen ist nicht ganz einfach,
+      denn für Geld auf einem Konto oder Sparbuch bekommst du keine Zinsen mehr (im Gegenteil).
+      Wir zeigen dir einige Wege auf, wie du ansparen kannst und von Wertzuwächsen profitieren kannst,
+      z.B. mit einem <a [routerLink]="'/' + ROUTE_SAVING_PLAN_HOME">Wertpapiersparplan <span class="fa fa-question-circle"></span> </a>.
+    </p>
+    
+  </div>
+  
+  <div class="col-12 margin vertical top-bottom-10 bottom-fixed">
+    <div class="text-center">
+      <a [routerLink]="'/' + ROUTE_SAVING_PLAN_KONFIGURATOR" class="btn btn-primary btn-lg margin horizontal left-5 right-5">Erstelle direkt einen Sparplan</a>
+      <a [routerLink]="'/' + ROUTES_RICHTIG_SPAREN" class="btn btn-secondary margin horizontal left-5 right-5" href="#" role="button">
+        Erfahre, wie du richtig ansparst
+      </a>
+    </div>
+  </div>
+ 
 </div>

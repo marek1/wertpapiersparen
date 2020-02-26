@@ -28,6 +28,10 @@ export class SparplanKostenPerItemComponent implements OnInit {
   }
 
   selectBroker(broker: SavingPlanBroker) {
+    if (broker.minAmountPerSavingPlan > this.fav.savingRate) {
+      window.alert('Die minimum Sparrate beträgt ' + broker.minAmountPerSavingPlan + ' ' + broker.currencyOfSavingPlan);
+      return;
+    }
     this.chosenBroker = broker;
     if (window.confirm('Möchtest du zum Angebot des Brokers / der Bank weitergeleitet werden ?')) {
       if (window.ga !== undefined) {

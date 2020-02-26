@@ -3,19 +3,12 @@
   <ng-container *ngIf="((selectedRiskProfile$|async) !== null || (selectedInvestmentOption$|async) === InvestmentOptions.CLEAN)">
   
     <div class="col-12 margin vertical top-bottom-10">
-      <div class="row">
-        <div class="col-sm-6 col-12">
-          Ändere deine
-          <span class="btn-link clickable" (click)="restart()">
-            Investmententscheidung
-            <span class="fa fa-arrow-circle-down" *ngIf="!showSlider"></span>
-            <span class="fa fa-arrow-circle-up" *ngIf="showSlider"></span>
-          </span>
-        </div>
-        <div class="col-sm-6 col-12 text-right">
-          <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
-        </div>
-      </div>
+      Ändere deine
+      <span class="btn-link clickable" (click)="restart()">
+        Investmententscheidung
+        <span class="fa fa-arrow-circle-down" *ngIf="!showSlider"></span>
+        <span class="fa fa-arrow-circle-up" *ngIf="showSlider"></span>
+      </span>
     </div>
   </ng-container>
   
@@ -99,12 +92,12 @@
     <div class="col-12 margin vertical top-bottom-10">
       <div class="alert alert-info">
         Ausgehend von
-        <span *ngIf="(selectedInvestmentOption$|async) !== InvestmentOptions.CLEAN" class="font-weight-bold">
-          {{getHeaderRisk()}}
-        </span>
-        <span *ngIf="(selectedInvestmentOption$|async) === InvestmentOptions.CLEAN" class="font-weight-bold">
-          deiner Entscheidung nachhaltig  <span class="fa fa-leaf color color--green"></span> zu investieren
-        </span>
+        <ng-container *ngIf="(selectedInvestmentOption$|async) !== InvestmentOptions.CLEAN">
+          <span class="font-weight-bold">{{getHeaderRisk()}}</span>
+        </ng-container>
+        <ng-container *ngIf="(selectedInvestmentOption$|async) === InvestmentOptions.CLEAN">
+          deiner Entscheidung in <span class="font-weight-bold">ETFs mit Fokus auf ESR (Nachhaltigkeit und sozialer Verantwortung) <span class="fa fa-leaf color color--green"></span></span> zu investieren
+        </ng-container>
         und einer gesamten Sparplansumme von
         <span class="font-weight-bold">{{sparplanSum$|async}} {{Currency.EUR}}</span>
         wurde folgendes Portfolio aus
@@ -136,6 +129,11 @@
         <a [routerLink]="['/' + ROUTES_SAVING_PLAN_COSTS]">Mehr Informationen <span class="fa fa-arrow-circle-right"></span></a>
       </div>
     </div>
+    
+    <div class="col-12 margin vertical top-bottom-10 bottom-fixed">
+      <button class="btn btn-primary float-right" (click)="saveAll()">Das Muster übernehmen</button>
+    </div>
+    
   </ng-container>
   
 </div>

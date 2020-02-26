@@ -30,7 +30,7 @@
     <ng-container *ngIf="fav.item.securityType === SecurityType.ETF">
       <div class="small">
         <ng-container *ngIf="fav.item.isGreen">
-          Der ETF investiert in Unternehmen, die etwas für Nachhaltigkeit <span class="fa fa-leaf color color--green"></span> tun.
+          Es handelt sich um einen ETF. Der ETF investiert in Unternehmen, die etwas im Bereich ESR (Nachhaltigkeit und sozialer Verantwortung) <span class="fa fa-leaf color color--green"></span> tun.
         </ng-container>
         <ng-container *ngIf="fav.item.contains !== undefined">
           Der ETF besteht hauptsächlich aus {{fav.item.contains + 'n'}}
@@ -60,7 +60,10 @@
       </div>
     </ng-container>
     <ng-container *ngIf="fav.item.securityType !== SecurityType.ETF">
-      <app-company-industries [company]="fav.item"></app-company-industries>
+      <div class="small">
+        Dies ist eine Aktie des Unternehmens {{fav.item.name}}. {{fav.item.description}}
+      </div>
+<!--      <app-company-industries [company]="fav.item"></app-company-industries>-->
       <div class="small">
         Risikoklasse:
         <span class="badge badge-danger">
