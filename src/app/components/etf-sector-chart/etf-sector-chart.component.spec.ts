@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EtfSectorChartComponent } from './etf-sector-chart.component';
 
@@ -6,7 +6,7 @@ describe('EtfSectorChartComponent', () => {
   let component: EtfSectorChartComponent;
   let fixture: ComponentFixture<EtfSectorChartComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EtfSectorChartComponent ]
     })

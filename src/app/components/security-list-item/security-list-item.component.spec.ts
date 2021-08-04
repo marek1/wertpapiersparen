@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SecurityListItemComponent } from './security-list-item.component';
 
 
@@ -6,7 +6,7 @@ describe('SecurityListItemComponent', () => {
   let component: SecurityListItemComponent;
   let fixture: ComponentFixture<SecurityListItemComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SecurityListItemComponent ]
     })

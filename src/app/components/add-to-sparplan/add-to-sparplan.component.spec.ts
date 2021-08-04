@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AddToSparplanComponent } from './add-to-sparplan.component';
 
 describe('AddToFavouritesComponent', () => {
   let component: AddToSparplanComponent;
   let fixture: ComponentFixture<AddToSparplanComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AddToSparplanComponent ]
     })

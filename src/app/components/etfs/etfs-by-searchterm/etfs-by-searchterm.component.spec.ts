@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EtfsBySearchtermComponent } from './etfs-by-searchterm.component';
 
@@ -6,7 +6,7 @@ describe('EtfsBySearchtermComponent', () => {
   let component: EtfsBySearchtermComponent;
   let fixture: ComponentFixture<EtfsBySearchtermComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EtfsBySearchtermComponent ]
     })

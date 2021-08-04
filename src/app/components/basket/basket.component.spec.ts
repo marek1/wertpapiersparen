@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BasketComponent } from './sparplan.component';
 
 describe('FavouritesComponent', () => {
   let component: BasketComponent;
   let fixture: ComponentFixture<BasketComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BasketComponent ]
     })

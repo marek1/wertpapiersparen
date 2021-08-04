@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SparplanChartComponent } from './sparplan-chart.component';
 
@@ -6,7 +6,7 @@ describe('SparplanChartComponent', () => {
   let component: SparplanChartComponent;
   let fixture: ComponentFixture<SparplanChartComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SparplanChartComponent ]
     })

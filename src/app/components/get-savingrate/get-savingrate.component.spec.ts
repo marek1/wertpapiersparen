@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { GetSavingrateComponent } from './get-savingrate.component';
 
 describe('GetSavingrateComponent', () => {
   let component: GetSavingrateComponent;
   let fixture: ComponentFixture<GetSavingrateComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GetSavingrateComponent ]
     })

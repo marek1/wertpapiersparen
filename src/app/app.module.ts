@@ -115,9 +115,7 @@ const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
     FormsModule,
     ChartsModule,
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-    ),
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EtfDetailComponent } from './etf-detail.component';
 
@@ -6,7 +6,7 @@ describe('EtfDetailComponent', () => {
   let component: EtfDetailComponent;
   let fixture: ComponentFixture<EtfDetailComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EtfDetailComponent ]
     })

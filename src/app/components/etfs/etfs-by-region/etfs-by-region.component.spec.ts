@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EtfsByRegionComponent } from './etfs-by-region.component';
 
@@ -6,7 +6,7 @@ describe('EtfsByRegionComponent', () => {
   let component: EtfsByRegionComponent;
   let fixture: ComponentFixture<EtfsByRegionComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EtfsByRegionComponent ]
     })

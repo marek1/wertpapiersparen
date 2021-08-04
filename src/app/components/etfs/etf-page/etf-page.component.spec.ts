@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EtfPageComponent } from './etf-page.component';
 
@@ -6,7 +6,7 @@ describe('EtfPageComponent', () => {
   let component: EtfPageComponent;
   let fixture: ComponentFixture<EtfPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EtfPageComponent ]
     })
