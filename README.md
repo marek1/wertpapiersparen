@@ -1,6 +1,6 @@
 # Wertpapiersparen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
+This app uses Angular 12.
 
 DEMO : https://marek-sonnabend.de/wertpapiersparen/
 
