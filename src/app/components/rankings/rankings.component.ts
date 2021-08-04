@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Rankings } from '../../data/rankings';
 
 @Component({
@@ -6,13 +6,10 @@ import { Rankings } from '../../data/rankings';
   templateUrl: './rankings.component.html',
   styleUrls: ['./rankings.component.scss']
 })
-export class RankingsComponent implements OnInit {
+export class RankingsComponent {
 
   public Rankings = Rankings;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

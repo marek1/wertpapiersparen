@@ -23,7 +23,6 @@ export class EtfsByIndustryComponent implements OnInit {
       }
       return 0;
     });
-    console.log('this.industries : ', this.industries);
   }
 
   private replaceUmlate(x: string) {

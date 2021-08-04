@@ -23,10 +23,9 @@ export class CompanyPageComponent implements OnInit {
 
   ngOnInit() {
     this.setCompany(this.route.snapshot.paramMap.get('id'));
-
   }
 
-  setCompany(id) {
+  setCompany(id: string) {
     if (id && !isNaN(parseInt(id, 10))) {
       this.company = Companies.filter((company: Company) => company.id === parseInt(id, 10))[0];
     }

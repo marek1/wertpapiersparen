@@ -5,8 +5,6 @@ import { Top10ListItem } from '../../companies/companies-by-popularity/companies
 import { isharesDax } from '../../../data/etfs/ishares/isharesDax';
 import { isharesCOREMsciWorldUSDThesaurierend } from '../../../data/etfs/ishares/isharesCOREMsciWorldUSDThesaurierend';
 import { isharesEurostoxx50 } from '../../../data/etfs/ishares/isharesEurostoxx50';
-import { Companies } from '../../../data/companies';
-import { Company } from '../../../interfaces/company';
 
 @Component({
   selector: 'app-etfs-by-popularity',

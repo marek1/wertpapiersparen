@@ -1,26 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AmountOfItem } from '../../../reducers/basket.reducer';
 import { SavingplanBroker } from '../../../data/savingplanBroker';
 import { SavingPlanBroker } from '../../../interfaces/broker';
-import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sparplan-kosten-per-item',
   templateUrl: './sparplan-kosten-per-item.component.html',
   styleUrls: ['./sparplan-kosten-per-item.component.scss']
 })
-export class SparplanKostenPerItemComponent implements OnInit {
+export class SparplanKostenPerItemComponent {
 
   @Input() fav: AmountOfItem;
   public showCosts: boolean;
   public chosenBroker: SavingPlanBroker|null;
   public sparplanBroker = SavingplanBroker;
 
-  constructor(private router: Router) {
+  constructor() {
     this.chosenBroker = null;
-  }
-
-  ngOnInit(): void {
   }
 
   getYearlyCosts() {

@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { SearchMethods } from '../../enums/searchMethods';
-import { CompaniesActions, EtfsActions } from '../../actions';
-import { Store } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
-import { Router } from '@angular/router';
-import { ROUTE_COMPANIES, ROUTE_ETFS, ROUTE_SAVING_PLAN_HOME, ROUTE_SAVING_PLAN_KONFIGURATOR, ROUTES_RICHTIG_SPAREN } from '../../routes';
+import { Component } from '@angular/core';
+import { ROUTE_SAVING_PLAN_HOME, ROUTE_SAVING_PLAN_KONFIGURATOR, ROUTES_RICHTIG_SPAREN } from '../../routes';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   public ROUTES_RICHTIG_SPAREN = ROUTES_RICHTIG_SPAREN;
   public ROUTE_SAVING_PLAN_KONFIGURATOR = ROUTE_SAVING_PLAN_KONFIGURATOR;
@@ -19,11 +14,4 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-
-  ngOnInit() {
-  }
-
-
 }
-
-

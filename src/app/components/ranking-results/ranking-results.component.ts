@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ShareRank } from '../../interfaces/ranking';
 import { ROUTE_COMPANIES } from '../../routes';
 
@@ -7,7 +7,7 @@ import { ROUTE_COMPANIES } from '../../routes';
   templateUrl: './ranking-results.component.html',
   styleUrls: ['./ranking-results.component.scss']
 })
-export class RankingResultsComponent implements OnInit {
+export class RankingResultsComponent {
 
   @Input() results: ShareRank[];
   @Input() maxScore: number;
@@ -19,9 +19,6 @@ export class RankingResultsComponent implements OnInit {
 
   constructor() {
     this.showResults = false;
-  }
-
-  ngOnInit() {
   }
 
 }

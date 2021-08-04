@@ -1,7 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { Company } from '../../../interfaces/company';
-import { Store } from '@ngrx/store';
-import * as fromRoot from '../../../reducers';
 import { Companies } from '../../../data/companies';
 import { ROUTE_COMPANIES } from '../../../routes';
 
@@ -18,7 +16,7 @@ export class CompaniesListInIndustryComponent implements OnInit, OnChanges {
 
   public ROUTE_COMPANIES = ROUTE_COMPANIES;
 
-  constructor(private store: Store<fromRoot.AppState>) {
+  constructor() {
     this.foundSecurities = [];
   }
 

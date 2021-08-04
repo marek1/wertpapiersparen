@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { Country } from '../../../enums/country';
-import { IndustryService } from '../../../services/industry.service';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers';
 import { EtfsActions } from '../../../actions';
@@ -22,7 +21,7 @@ export class EtfsBySearchtermComponent implements OnInit {
   public searchTermFormControl: FormControl;
   public Countries: typeof Country;
 
-  constructor(private industryService: IndustryService, private store: Store<fromRoot.AppState>) {
+  constructor(private store: Store<fromRoot.AppState>) {
     this.submitted = false;
     this.results = [];
     this.searchTermFormControl = new FormControl();
@@ -54,7 +53,6 @@ export class EtfsBySearchtermComponent implements OnInit {
         || etf.issuer.toLowerCase().indexOf(val.toLowerCase()) > -1
         || this.isInCompanies(etf.shares, val).length > 0;
     });
-    console.log('etfs: ', etfs);
     return etfs;
   }
 

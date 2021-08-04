@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
@@ -10,7 +10,7 @@ import { Currency } from '../../../enums/currencies';
   templateUrl: './sparplan-chart.component.html',
   styleUrls: ['./sparplan-chart.component.scss']
 })
-export class SparplanChartComponent implements OnInit, OnChanges {
+export class SparplanChartComponent implements OnChanges {
 
   @Input() sparplanSum: number;
   @Input() numberOfYearsWithPerformance: number;
@@ -40,9 +40,6 @@ export class SparplanChartComponent implements OnInit, OnChanges {
   public Currency = Currency;
 
   constructor() {
-  }
-
-  ngOnInit() {
   }
 
   ngOnChanges(changes: SimpleChanges): void {

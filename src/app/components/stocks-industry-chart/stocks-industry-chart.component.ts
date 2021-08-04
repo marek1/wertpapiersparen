@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AmountOfItem } from '../../reducers/basket.reducer';
-import { PriceService } from '../../services/price.service';
 import { IndustryService } from '../../services/industry.service';
 import { Industries } from '../../data/industries';
 import { Label } from 'ng2-charts';
@@ -44,7 +43,7 @@ export class StocksIndustryChartComponent implements OnInit, OnChanges {
   };
   public pieChartColors = [];
 
-  constructor(private priceService: PriceService, private industryService: IndustryService) { }
+  constructor(private industryService: IndustryService) { }
 
   ngOnInit() {
   }
@@ -89,7 +88,7 @@ export class StocksIndustryChartComponent implements OnInit, OnChanges {
     }
   }
 
-  checkArrays( arrA, arrB ) {
+  checkArrays(arrA: any[], arrB: any[]) {
     return arrA.sort().toString() === arrB.sort().toString();
   }
 

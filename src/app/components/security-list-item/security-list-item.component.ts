@@ -6,11 +6,9 @@ import { Company } from '../../interfaces/company';
 import { BasketActions } from '../../actions';
 import { select, Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
-import { SavingplanBroker } from '../../data/savingplanBroker';
 import { Observable } from 'rxjs';
 import { Currency } from '../../enums/currencies';
 import { ROUTE_COMPANIES } from '../../routes';
-import { Etfs } from '../../data/etfs';
 import { RiskDefinition, RiskDefinitions } from '../../data/riskDefinitions';
 import { RiskClasses } from '../../enums/riskClasses';
 

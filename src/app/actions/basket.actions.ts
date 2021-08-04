@@ -6,8 +6,7 @@ import { Etf } from '../interfaces/etf';
 export const ADD_TO_FAVOURITIES = 'Detail Component] Add To Favourites';
 
 export const getFavourites = createAction(
-  '[Detail Component] Retrieve Favourites (from Localstorage)',
-  props<{}>()
+  '[Detail Component] Retrieve Favourites (from Localstorage)'
 );
 
 export const getFavouritesFromLocalStorageSuccess = createAction(
@@ -52,8 +51,7 @@ export const savedToLocalStorageFailed = createAction(
 );
 
 export const getSparplanSum = createAction(
-  '[Basket Component] Retrieve Sparplan Sum (from Localstorage)',
-  props<{}>()
+  '[Basket Component] Retrieve Sparplan Sum (from Localstorage)'
 );
 
 export const getSparplansumFromLocalStorageSuccess = createAction(

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   ROUTES_INVESTMENTFONDS,
   ROUTES_IN_AKTIEN_INVESTIEREN,
@@ -13,7 +13,7 @@ import {
   templateUrl: './richtig-sparen.component.html',
   styleUrls: ['./richtig-sparen.component.scss']
 })
-export class RichtigSparenComponent implements OnInit {
+export class RichtigSparenComponent {
 
   public show1: boolean;
   public show2: boolean;
@@ -28,9 +28,6 @@ export class RichtigSparenComponent implements OnInit {
   constructor() {
     this.show1 = false;
     this.show2 = false;
-  }
-
-  ngOnInit() {
   }
 
 }

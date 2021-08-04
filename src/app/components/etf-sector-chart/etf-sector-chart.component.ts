@@ -12,7 +12,7 @@ import { IndustryService } from '../../services/industry.service';
   templateUrl: './etf-sector-chart.component.html',
   styleUrls: ['./etf-sector-chart.component.scss']
 })
-export class EtfSectorChartComponent implements OnInit, OnChanges {
+export class EtfSectorChartComponent implements OnChanges {
 
   @Input() etfs: AmountOfItem[];
   // produce an array where you can see a
@@ -39,12 +39,9 @@ export class EtfSectorChartComponent implements OnInit, OnChanges {
   };
   public pieChartColors = [];
 
-  constructor(private priceService: PriceService, private industryService: IndustryService) { }
+  constructor() { }
 
-  ngOnInit() {
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.AmountsByIndustry = [];
     this.pieChartData = [];
     this.pieChartLabels = [];

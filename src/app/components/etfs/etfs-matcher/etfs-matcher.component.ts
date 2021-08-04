@@ -3,7 +3,6 @@ import { AmountOfItem } from '../../../reducers/basket.reducer';
 import { Etfs } from '../../../data/etfs';
 import { CompanyShort, Etf } from '../../../interfaces/etf';
 import { SecurityType } from '../../../enums/securityType';
-import { amadeusCompany } from '../../../data/companies/sdax/amadeus';
 
 @Component({
   selector: 'app-etfs-matcher',

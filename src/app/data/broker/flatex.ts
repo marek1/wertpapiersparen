@@ -6,7 +6,7 @@ import { Currency } from '../../enums/currencies';
 export const Flatex: SavingPlanBroker = {
   name: 'Flatex',
   url: 'https://www.flatex.de/',
-  logo: 'https://www.flatex.de/typo3conf/ext/bgm_theme_flatex/Resources/Public/Images/assets/logo/flatex-logo.svg',
+  logo: 'https://www.flatex.de/fileadmin/dateien_flatex/images/logos/logo-claim_flatex-de_positiv_thumb.jpg',
   securityTypesIncluded: [SecurityType.ETF],
   maxNumberOfSecuritiesPerSavingPlan: 1,
   minAmountPerSavingPlan: 25,

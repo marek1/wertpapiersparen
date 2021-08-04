@@ -7,7 +7,7 @@ import { Currency } from '../../../enums/currencies';
   templateUrl: './sparplan-kosten-details.component.html',
   styleUrls: ['./sparplan-kosten-details.component.scss']
 })
-export class SparplanKostenDetailsComponent implements OnInit {
+export class SparplanKostenDetailsComponent {
 
   @Input() broker: SavingPlanBroker;
   @Input() savingRate: number;
@@ -19,6 +19,4 @@ export class SparplanKostenDetailsComponent implements OnInit {
     this.showMore = false;
   }
 
-  ngOnInit() {
-  }
 }

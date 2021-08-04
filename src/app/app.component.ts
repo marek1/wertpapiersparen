@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(BasketActions.getFavourites({}));
-    this.store.dispatch(BasketActions.getSparplanSum({}));
+    this.store.dispatch(BasketActions.getFavourites());
+    this.store.dispatch(BasketActions.getSparplanSum());
   }
 }

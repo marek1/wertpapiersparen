@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../../enums/country';
 import { HelperService } from '../../../services/helpers';
-import { Etf, Portion } from '../../../interfaces/etf';
-import { Etfs } from '../../../data/etfs';
 
 @Component({
   selector: 'app-etfs-by-region',

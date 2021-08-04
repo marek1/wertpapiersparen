@@ -31,7 +31,6 @@ export class EtfsHomeComponent implements OnInit {
   }
 
   setMethod(which: string): void {
-    console.log('which : ', which, typeof which, SearchMethods[which]);
     this.store.dispatch(EtfsActions.setSelectedSearchMethod({selectedSearchMethod: SearchMethods[which]}));
   }
 }

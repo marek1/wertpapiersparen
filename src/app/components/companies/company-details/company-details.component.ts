@@ -79,12 +79,6 @@ export class CompanyDetailsComponent implements OnInit {
     this.init();
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if (changes.company  && changes.company.currentValue) {
-  //     this.init();
-  //   }
-  // }
-
   init() {
     this.fillChartData();
     this.setNumberOfProducts();
@@ -135,7 +129,6 @@ export class CompanyDetailsComponent implements OnInit {
   getPercentage(x: number, of: number) {
     return (x * 100) / of;
   }
-
 
   findInEtfs(): Etf[] {
     return Etfs.filter((etf) => etf.shares.filter((comp) => comp.id === this.company.id));

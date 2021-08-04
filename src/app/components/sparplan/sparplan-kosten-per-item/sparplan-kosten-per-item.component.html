@@ -1,10 +1,3 @@
-<!--<div>-->
-<!--  <div class="btn-link clickable small" (click)="showCosts=!showCosts">-->
-<!--      Kosten-->
-<!--      <span *ngIf="!showCosts">einblenden <span class="fa fa-plus-circle"></span></span>-->
-<!--      <span *ngIf="showCosts">ausblenden <span class="fa fa-minus-circle"></span></span>-->
-<!--  </div>-->
-<!--</div>-->
 <div *ngIf="showCosts" class="card">
   <div class="card-body">
     <div class="margin vertical top-bottom-10">
@@ -28,8 +21,10 @@
          *ngIf="broker.maxNumberOfSecuritiesPerSavingPlan === 1"
          (click)="selectBroker(broker)">
         <div>
-          <img class="{{broker.name.toLowerCase().indexOf('flatex') > -1 ? 'background-black' : ''}}"
-               src="{{broker.logo}}">
+          <img
+            alt="broker logo"
+            class="{{broker.name.toLowerCase().indexOf('flatex') > -1 ? 'background-black' : ''}}"
+            src="{{broker.logo}}">
         </div>
         <div>
           {{broker.name}}:
